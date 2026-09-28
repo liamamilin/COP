@@ -160,12 +160,36 @@ PATCH/DELETE。测试不是去调一个"应该不存在"的接口，而是**扫 
 **`buildPatch(original, current)` 只发改动过的字段**，不是发整张表单。
 发全量的话，一次保存会覆盖掉用户没碰过的字段。
 
+### 4.7 浏览器测试抓到的两个 bug
+
+单测和 SSR 检查都看不出来，只有真的点按钮才会暴露。
+
+**1. `"5 main processs"`**（复数拼接）
+`ENTITY_LABELS[kind] + "s"` 对 "Main Process" 不成立——它是唯一一个
+本身以单数名词结尾的多词实体名。改成显式的 `ENTITY_PLURALS` 映射 + `entityCountLabel()`。
+
+**2. `router.push()` 静默失败**（更严重）
+`start-draft-button.tsx` 原本是 `router.push(...)` 紧接着 `router.refresh()`。
+结果：**POST 返回 201，draft 建好了，但 URL 纹丝不动**，用户被卡在版本历史页，
+看不见自己刚建的 draft。Playwright 抓到的是 `waitForURL` 超时；
+手动抓请求才看到 RSC 请求被 `ERR_ABORTED`。
+
+改成 `window.location.assign()`。这是**主动降级**，不是最优解：
+客户端导航理论上更好，但这里 push 不可靠，而"创建完必须能到达"是硬需求。
+draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是一个 workaround，
+根因没查清**（Next 15 + standalone 产物下 `push` 解析成功却不导航）。
+
+> 教训：`docker compose build` 有缓存层，源码改了但镜像里还是旧代码。
+> 改前端后必须 `docker compose build --no-cache web`，否则你会对着
+> 一个"改了没生效"的产物调试很久。我在这上面浪费了好几轮。
+
 ## 5. 测试与命令
 
 ```bash
 make test        # 自动起 cop_test 库 + 跑后端/前端测试
 make test-db     # 只建测试库，留着便于迭代
 make test-backend
+make test-e2e    # 浏览器测试，需要 make up 先起栈
 make lint
 make up / make down
 ```
@@ -173,8 +197,9 @@ make up / make down
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：`make test` = 78 后端 + 25 前端，全绿。
+当前基线：`make test` = 78 后端 + 28 前端，全绿。
 其中 30 个是 M5 草稿/发布/版本测试，14 个队列/API，21 个流水线。
+浏览器层另有 `make test-e2e` = 8 个，跑真实 Compose 栈，约 20 秒。
 
 后端测试跑之前必须 `make test-db`（或 `make test`）起 `cop_test` 库。
 直接 `uv run pytest` 会 13 error + 1 failed——这是 conftest 的 fail-fast 设计，
@@ -218,18 +243,23 @@ make up / make down
 
 ## 7. 已知缺口
 
-- **仍没有浏览器实测**。桌面浏览器始终未连接本会话。
-  M4 的 SSE 重连、M5 的草稿表单保存/发布，只覆盖到
-  单测 + SSR 输出 + curl 打真实容器 API，**没有验证过浏览器里的交互**。
-  交互部分（表单脏状态、发布确认框、toast）风险最高，接上浏览器后优先补。
+- **Playwright E2E 已就位（M5 收尾时补上）**，8 个用例覆盖草稿全流程，
+  `make test-e2e` 跑，CI 有独立 `e2e` job。但覆盖面还小：
+  - **M4 的 SSE 进度流仍然没有 E2E**，包括重连
+  - M2 的素材上传/URL、M3 的设置与 provider 测试都没有
+  - 键盘可达性（M8 要求）没有覆盖
+- 桌面浏览器（Electron）里 React **不完整 hydrate**：loading.tsx 的 Suspense
+  fallback 一直留在 DOM，只有一小部分元素挂上 fiber，点任何按钮都没反应。
+  **这个现象只在桌面浏览器出现，Playwright 的干净 Chromium 完全正常**
+  （74/96 元素 hydrate，无报错），所以判定是桌面会话环境问题，不是应用缺陷。
+  以后验证交互一律用 `make test-e2e`，别用桌面浏览器下结论。
 - 前端无 Tailwind/shadcn/TanStack/Zod（规格推荐但未采用，手写约 560 行 CSS）。
   样式质量尚可，但 `settings.appearance.theme` 是**死设置**——能存能选，
   CSS 里没有对应逻辑。属于规格 `15` §13 禁止的"按钮无功能"。
 - `scripts/` 缺 `generate-types.*`（规格 `22` 要求）。CI 已在检测
   `packages/cop-types/generated` 陈旧，但生成器本身不存在，
   所以那个检查目前永远不会失败。
-- CI 已有 schema 一致性检查 + TS 类型陈旧检测，但无 Playwright E2E
-  （规格 `12` 要求）。
+- CI 已有 schema 一致性检查 + TS 类型陈旧检测 + Playwright E2E（`e2e` job）。
 - **M5 没做草稿的 `locked_paths` 记录**，M6 会需要（见 §8）。
 
 ## 8. 下一步：M6 局部 AI 精修
@@ -277,6 +307,7 @@ M5 的 PATCH 目前**没有**记录它，这是 M6 要补的第一个东西。
 | 流水线测试 | `backend/tests/test_harness_pipeline.py` |
 | 队列/API 测试 | `backend/tests/test_generation_runs.py` |
 | 草稿/版本测试 | `backend/tests/test_drafts.py` |
+| 浏览器 E2E | `apps/web/e2e/draft-loop.spec.ts` |
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |
 | 冻结范围 | `cop-studio-development-spec-v1.0/docs/19-v1-scope-freeze.md` |
 | 跨层命名契约 | `cop-studio-development-spec-v1.0/docs/24-cross-layer-consistency.md` |

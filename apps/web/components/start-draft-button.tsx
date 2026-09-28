@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 import { ApiError, createDraftFromVersion } from "../lib/api";
 
@@ -26,7 +25,6 @@ export function StartDraftButton({
   versionNumber,
   existingDraftId,
 }: StartDraftButtonProps) {
-  const router = useRouter();
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,13 +33,19 @@ export function StartDraftButton({
     setError(null);
     try {
       await createDraftFromVersion(projectId, versionId);
-      router.push(`/projects/${projectId}/draft`);
-      router.refresh();
+      // A full document navigation, not `router.push`.
+      //
+      // `router.push` was tried first and proved unreliable here: the promise
+      // resolved while the URL never changed and the in-flight RSC request was
+      // aborted, leaving the user on the version history with a draft they
+      // could not see. Plain navigation via an anchor is reliable, and the
+      // draft editor is a heavy page that benefits from a fresh server render
+      // after a mutation anyway.
+      window.location.assign(`/projects/${projectId}/draft`);
     } catch (cause) {
       setError(
         cause instanceof ApiError ? cause.message : "The draft could not be created.",
       );
-    } finally {
       setPending(false);
     }
   }

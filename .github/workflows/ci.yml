@@ -100,3 +100,31 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+
+  e2e:
+    name: End-to-end
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @cop-studio/web exec playwright install --with-deps chromium
+      # The E2E suite drives the real Compose stack: a Worker to turn a topic
+      # into a candidate, an API that re-validates every draft write, and a
+      # browser to prove the buttons are actually wired up. Unit tests cannot
+      # see that, and SSR HTML cannot either.
+      - name: Start the stack
+        run: docker compose up -d --build --wait
+      - run: docker compose exec -T api alembic upgrade head
+      - name: Run the browser suite
+        run: pnpm --filter @cop-studio/web test:e2e
+      - if: failure()
+        run: docker compose logs api worker web
+      - if: always()
+        run: docker compose down -v

@@ -20,7 +20,7 @@ TEST_DATABASE_URL ?= postgresql+psycopg://cop:cop@localhost:$(TEST_DATABASE_PORT
 TEST_ENV = TEST_DATABASE_URL=$(TEST_DATABASE_URL) \
 	TEST_DATA_DIR=$$(mktemp -d 2>/dev/null || echo /tmp/cop-studio-test-data)
 
-.PHONY: dev up down test test-backend test-web test-db test-db-reset lint \
+.PHONY: dev up down test test-backend test-web test-e2e test-db test-db-reset lint \
 	format typecheck migrate seed backup restore
 
 dev:
@@ -59,6 +59,16 @@ test-backend:
 
 test-web:
 	pnpm test
+
+# Browser tests against the running Compose stack. Unlike the suites above these
+# cannot be mocked: they exist to prove the client components are actually wired
+# to the API, which server-rendered HTML cannot show. The stack must be up
+# already; `make up` first.
+test-e2e:
+	cd apps/web && pnpm exec playwright test
+
+test-e2e-ui:
+	cd apps/web && pnpm exec playwright test --ui
 
 # Provision the test database and leave it running for iteration.
 test-db: test-db-reset

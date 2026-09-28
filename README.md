@@ -154,6 +154,18 @@ make test     # provisions a throwaway PostgreSQL, runs backend + web tests
 make lint
 ```
 
+Browser tests are separate, because they need the real stack running:
+
+```bash
+make up           # or: POSTGRES_HOST_PORT=55432 make up
+make test-e2e     # drives the draft lifecycle in Chromium
+```
+
+`make test-e2e` talks to the running development stack, so it creates its own
+throwaway projects rather than touching yours. It runs serially against one
+database and expects a Worker to be running, since the fixture produces a real
+candidate instead of a hand-written artifact.
+
 The backend suite needs a real PostgreSQL, because job claiming, stale-run
 recovery, and the unique `(run_id, sequence)` constraint are PostgreSQL
 behaviour. `make test` therefore creates a separate `cop_test` database on its
