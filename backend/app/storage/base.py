@@ -1,0 +1,9 @@
+from typing import Protocol
+
+
+class BlobStore(Protocol):
+    def put(self, key: str, data: bytes) -> str: ...
+
+    def get(self, path: str) -> bytes: ...
+
+    def delete(self, path: str) -> None: ...

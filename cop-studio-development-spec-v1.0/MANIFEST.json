@@ -1,0 +1,138 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 654
+  },
+  {
+    "path": "START_HERE.md",
+    "bytes": 3984
+  },
+  {
+    "path": "VALIDATION_REPORT.json",
+    "bytes": 469
+  },
+  {
+    "path": "docs/01-product-vision.md",
+    "bytes": 3876
+  },
+  {
+    "path": "docs/02-cop-specification.md",
+    "bytes": 5122
+  },
+  {
+    "path": "docs/03-product-requirements.md",
+    "bytes": 6013
+  },
+  {
+    "path": "docs/04-system-architecture.md",
+    "bytes": 5487
+  },
+  {
+    "path": "docs/05-data-model.md",
+    "bytes": 4870
+  },
+  {
+    "path": "docs/06-harness-design.md",
+    "bytes": 8366
+  },
+  {
+    "path": "docs/07-backend.md",
+    "bytes": 4837
+  },
+  {
+    "path": "docs/08-frontend-ux.md",
+    "bytes": 5379
+  },
+  {
+    "path": "docs/09-settings.md",
+    "bytes": 2638
+  },
+  {
+    "path": "docs/10-api-contracts.md",
+    "bytes": 3515
+  },
+  {
+    "path": "docs/11-quality-evaluation.md",
+    "bytes": 3364
+  },
+  {
+    "path": "docs/12-testing.md",
+    "bytes": 2187
+  },
+  {
+    "path": "docs/13-security-deployment.md",
+    "bytes": 2529
+  },
+  {
+    "path": "docs/14-roadmap.md",
+    "bytes": 2267
+  },
+  {
+    "path": "docs/15-coding-agent-instructions.md",
+    "bytes": 4887
+  },
+  {
+    "path": "docs/16-state-machines.md",
+    "bytes": 2348
+  },
+  {
+    "path": "docs/17-ui-component-map.md",
+    "bytes": 2859
+  },
+  {
+    "path": "docs/18-implementation-acceptance.md",
+    "bytes": 3098
+  },
+  {
+    "path": "docs/19-v1-scope-freeze.md",
+    "bytes": 3057
+  },
+  {
+    "path": "docs/20-harness-step-contracts.md",
+    "bytes": 7311
+  },
+  {
+    "path": "docs/21-ux-flows-wireframes.md",
+    "bytes": 9826
+  },
+  {
+    "path": "docs/22-repository-blueprint.md",
+    "bytes": 3076
+  },
+  {
+    "path": "docs/23-coding-agent-milestones.md",
+    "bytes": 3138
+  },
+  {
+    "path": "docs/24-cross-layer-consistency.md",
+    "bytes": 2825
+  },
+  {
+    "path": "docs/25-final-engineering-audit.md",
+    "bytes": 2983
+  },
+  {
+    "path": "examples/reference-langchain/README.md",
+    "bytes": 3050
+  },
+  {
+    "path": "examples/reference-langchain/reference-langchain-cop.json",
+    "bytes": 38986
+  },
+  {
+    "path": "examples/sample-cop.json",
+    "bytes": 9798
+  },
+  {
+    "path": "prompts/harness-prompts.md",
+    "bytes": 3850
+  },
+  {
+    "path": "schemas/cop-artifact.schema.json",
+    "bytes": 9816
+  },
+  {
+    "path": "schemas/project-settings.schema.json",
+    "bytes": 1280
+  }
+]

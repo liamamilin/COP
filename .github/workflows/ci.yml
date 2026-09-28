@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  # The test suite truncates every table between cases, so it gets its own
+  # database on the Compose postgres. It is created in the "Backend" job below.
+  TEST_DATABASE_NAME: cop_test
+  TEST_DATABASE_URL: postgresql+psycopg://cop:cop@localhost:5432/cop_test
+
+jobs:
+  schema:
+    name: Schema consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: cd backend && uv sync --all-groups
+      # The canonical schema, the Pydantic domain model, the reference fixture,
+      # and the generated TypeScript types must agree. These are checked in CI
+      # so a schema change cannot drift from its consumers unnoticed.
+      - name: Validate schema, reference artifact, and Pydantic export
+        working-directory: backend
+        run: uv run pytest tests/test_artifact_validation.py -q
+      - name: Check the packaged reference artifact against the canonical schema
+        run: cd backend && uv run python ../scripts/check_reference_artifact.py
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # A stale generated type file would let the frontend compile against a
+      # schema shape the backend no longer produces.
+      - name: Generated COP types are current
+        run: |
+          if ! git diff --quiet -- packages/cop-types/generated; then
+            echo "::error::packages/cop-types/generated is stale. Run the generator and commit the result."
+            git diff -- packages/cop-types/generated
+            exit 1
+          fi
+
+  backend:
+    name: Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: cd backend && uv sync --all-groups
+      - run: cd backend && uv run ruff check .
+      - run: cd backend && uv run ruff format --check .
+      # The backend suite requires PostgreSQL. Job claiming, stale-run recovery,
+      # and the unique (run_id, sequence) constraint are PostgreSQL behaviour,
+      # and the V1 spec makes PostgreSQL the only normative database, so these
+      # tests fail rather than skip when no database is reachable.
+      - name: Start PostgreSQL and create the test database
+        run: |
+          docker compose up -d postgres
+          for attempt in $(seq 1 30); do
+            if docker compose exec -T postgres pg_isready -U cop -d cop; then break; fi
+            sleep 1
+          done
+          docker compose exec -T postgres psql -U cop -d postgres -tc \
+            "SELECT 1 FROM pg_database WHERE datname='$TEST_DATABASE_NAME'" \
+            | grep -q 1 \
+            || docker compose exec -T postgres createdb -U cop "$TEST_DATABASE_NAME"
+      - run: cd backend && DATABASE_URL=$TEST_DATABASE_URL uv run alembic upgrade head
+      - run: cd backend && uv run pytest
+        env:
+          # The repository .env points DATA_DIR at the Compose volume; on the
+          # runner that path is read-only, so tests use a temporary directory.
+          TEST_DATA_DIR: /tmp/cop-studio-test-data
+      - if: failure()
+        run: docker compose logs postgres
+      - if: always()
+        run: docker compose down -v
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build

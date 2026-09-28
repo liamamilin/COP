@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COP Studio Project Settings",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "default": "auto"
+    },
+    "generation_depth": {
+      "enum": [
+        "fast",
+        "standard",
+        "deep"
+      ],
+      "default": "standard"
+    },
+    "learner_level": {
+      "enum": [
+        "new",
+        "some_experience",
+        "advanced"
+      ],
+      "default": "new"
+    },
+    "detail_density": {
+      "enum": [
+        "compact",
+        "balanced",
+        "detailed"
+      ],
+      "default": "balanced"
+    },
+    "practice_mode": {
+      "enum": [
+        "off",
+        "priority",
+        "all"
+      ],
+      "default": "priority"
+    },
+    "evidence_density": {
+      "enum": [
+        "minimal",
+        "key_claims",
+        "high"
+      ],
+      "default": "key_claims"
+    },
+    "critic_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "shared_foundation_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "branch_extraction_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "auto_publish": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "additionalProperties": true
+}

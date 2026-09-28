@@ -1,0 +1,77 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cop
+      POSTGRES_USER: cop
+      POSTGRES_PASSWORD: cop
+    ports:
+      # Configurable because 5432 is frequently already taken by a local
+      # PostgreSQL install, which would silently receive connections meant for
+      # this container. Override with POSTGRES_HOST_PORT.
+      - "${POSTGRES_HOST_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cop -d cop"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build:
+      context: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://cop:cop@postgres:5432/cop
+      DATA_DIR: /data
+    command: ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - cop_data:/data
+      - ./fixtures:/app/fixtures:ro
+      - ./schemas:/app/schemas:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  worker:
+    build:
+      context: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://cop:cop@postgres:5432/cop
+      DATA_DIR: /data
+    command: ["python", "-m", "app.jobs.worker"]
+    volumes:
+      - cop_data:/data
+      - ./fixtures:/app/fixtures:ro
+      - ./schemas:/app/schemas:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000/api/v1
+      INTERNAL_API_BASE_URL: http://api:8000/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  cop_data:
+

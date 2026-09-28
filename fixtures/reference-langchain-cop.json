@@ -1,0 +1,1196 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "artifact.reference.langchain-agent-development",
+  "domain": {
+    "name": "LangChain Agent Development",
+    "scope": "Use current LangChain Python APIs to build and understand common agent patterns centered on create_agent, tools, state/memory, middleware, and retrieval.",
+    "target_user": "Python developer who is new to current LangChain agent development.",
+    "non_goals": [
+      "Exhaustive LangChain API coverage",
+      "Deep Agents product coverage",
+      "Advanced raw LangGraph topology design",
+      "LangSmith deployment and evaluation as a primary topic"
+    ]
+  },
+  "mental_model": {
+    "summary": "A LangChain agent is a model running inside a configurable harness. The model receives messages, may choose tools, receives tool results, and continues until it can finish. The harness supplies prompt, tools, middleware, and state-related behavior; retrieval can be added as a tool or as a preceding retrieval pipeline.",
+    "flow": [
+      "User message",
+      "Agent harness",
+      "Model",
+      "Optional tool call",
+      "Tool result",
+      "Model continues",
+      "Final response"
+    ]
+  },
+  "goals": [
+    {
+      "id": "goal.basic-agent",
+      "title": "Build a basic LangChain agent",
+      "outcome": "A working create_agent instance accepts messages and returns a model response.",
+      "why_it_matters": "It establishes the minimal agent harness and invocation model.",
+      "prerequisite_goal_refs": [],
+      "evidence_refs": [
+        {
+          "source_id": "lc-overview",
+          "segment_id": "overview-create-agent"
+        }
+      ]
+    },
+    {
+      "id": "goal.tool-agent",
+      "title": "Build a tool-calling agent",
+      "outcome": "The agent can select and call a Python tool during its model loop.",
+      "why_it_matters": "Tool use is the core mechanism for extending an agent beyond model-only responses.",
+      "prerequisite_goal_refs": [
+        "goal.basic-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "lc-agents",
+          "segment_id": "agents-tools"
+        }
+      ]
+    },
+    {
+      "id": "goal.stateful-agent",
+      "title": "Build a stateful conversational agent",
+      "outcome": "The agent preserves conversation state across turns using LangChain/LangGraph persistence mechanisms.",
+      "why_it_matters": "State turns isolated invocations into a continuing interaction.",
+      "prerequisite_goal_refs": [
+        "goal.basic-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "lc-memory",
+          "segment_id": "short-term-memory"
+        }
+      ]
+    },
+    {
+      "id": "goal.agentic-rag",
+      "title": "Build an agentic RAG agent",
+      "outcome": "The agent can decide when to fetch external knowledge and use the retrieved content when answering.",
+      "why_it_matters": "It combines agent decision-making with runtime knowledge retrieval.",
+      "prerequisite_goal_refs": [
+        "goal.tool-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "lc-retrieval",
+          "segment_id": "agentic-rag"
+        }
+      ]
+    },
+    {
+      "id": "goal.controlled-agent",
+      "title": "Add execution control with middleware",
+      "outcome": "The agent applies at least one middleware capability such as retries, guardrails, prompt transformation, summarization, or human approval.",
+      "why_it_matters": "Middleware is the main extension point for shaping harness behavior around the core loop.",
+      "prerequisite_goal_refs": [
+        "goal.tool-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "lc-middleware",
+          "segment_id": "middleware-overview"
+        }
+      ]
+    }
+  ],
+  "shared_foundations": [
+    {
+      "id": "foundation.langchain-base",
+      "title": "LangChain base setup",
+      "stage_refs": [
+        "stage.foundation.install",
+        "stage.foundation.model"
+      ]
+    }
+  ],
+  "main_processes": [
+    {
+      "id": "process.basic-agent",
+      "goal_ref": "goal.basic-agent",
+      "title": "Build a basic LangChain agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.langchain-base"
+      },
+      "stage_refs": [
+        "stage.basic.create-agent",
+        "stage.basic.invoke",
+        "stage.basic.inspect"
+      ],
+      "outcome": "A minimal agent returns a response to a user message.",
+      "practice_ref": "practice.basic-agent"
+    },
+    {
+      "id": "process.tool-agent",
+      "goal_ref": "goal.tool-agent",
+      "title": "Build a tool-calling agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.langchain-base"
+      },
+      "stage_refs": [
+        "stage.tool.define",
+        "stage.tool.create-agent",
+        "stage.tool.invoke",
+        "stage.tool.verify-loop"
+      ],
+      "outcome": "The agent calls an external tool when the request requires it and returns a final answer.",
+      "practice_ref": "practice.tool-agent"
+    },
+    {
+      "id": "process.stateful-agent",
+      "goal_ref": "goal.stateful-agent",
+      "title": "Build a stateful conversational agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.langchain-base"
+      },
+      "stage_refs": [
+        "stage.state.configure-persistence",
+        "stage.state.create-agent",
+        "stage.state.invoke-thread",
+        "stage.state.verify-memory"
+      ],
+      "outcome": "Conversation state persists across multiple turns in the same thread.",
+      "practice_ref": "practice.stateful-agent"
+    },
+    {
+      "id": "process.agentic-rag",
+      "goal_ref": "goal.agentic-rag",
+      "title": "Build an agentic RAG agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.langchain-base"
+      },
+      "stage_refs": [
+        "stage.rag.prepare-knowledge-access",
+        "stage.rag.expose-retrieval-tool",
+        "stage.rag.create-agent",
+        "stage.rag.invoke",
+        "stage.rag.verify-grounding"
+      ],
+      "outcome": "The agent can fetch relevant external knowledge at runtime and use it in its answer.",
+      "practice_ref": "practice.agentic-rag"
+    },
+    {
+      "id": "process.controlled-agent",
+      "goal_ref": "goal.controlled-agent",
+      "title": "Add middleware control to an agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.langchain-base"
+      },
+      "stage_refs": [
+        "stage.middleware.choose-control",
+        "stage.middleware.configure",
+        "stage.middleware.attach",
+        "stage.middleware.verify"
+      ],
+      "outcome": "The agent's execution is modified by a configured middleware behavior.",
+      "practice_ref": "practice.middleware"
+    }
+  ],
+  "stages": [
+    {
+      "id": "stage.foundation.install",
+      "title": "Install LangChain",
+      "local_goal": "Make the LangChain runtime available.",
+      "why_it_exists": "The application needs the LangChain package and provider integration.",
+      "local_outcome": "LangChain can be imported and used.",
+      "concept_refs": [
+        "concept.langchain"
+      ],
+      "operation_refs": [
+        "operation.install"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-overview",
+          "segment_id": "overview-create-agent"
+        }
+      ]
+    },
+    {
+      "id": "stage.foundation.model",
+      "title": "Configure a model",
+      "local_goal": "Provide a model that create_agent can use.",
+      "why_it_exists": "The agent loop requires a model to interpret messages and choose responses/actions.",
+      "local_outcome": "A usable model identifier or model instance.",
+      "concept_refs": [
+        "concept.model"
+      ],
+      "operation_refs": [
+        "operation.configure"
+      ],
+      "branch_refs": [
+        "branch.model-provider"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-agents",
+          "segment_id": "agents-model"
+        }
+      ]
+    },
+    {
+      "id": "stage.basic.create-agent",
+      "title": "Create the agent",
+      "local_goal": "Assemble the minimal agent harness.",
+      "why_it_exists": "create_agent is the primary constructor for a configurable LangChain agent harness.",
+      "local_outcome": "An executable agent object.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.harness",
+        "concept.model"
+      ],
+      "operation_refs": [
+        "operation.create"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-overview",
+          "segment_id": "overview-create-agent"
+        }
+      ]
+    },
+    {
+      "id": "stage.basic.invoke",
+      "title": "Invoke the agent",
+      "local_goal": "Send a user message through the agent.",
+      "why_it_exists": "Invocation executes the harness and model loop.",
+      "local_outcome": "An agent execution result.",
+      "concept_refs": [
+        "concept.message",
+        "concept.agent"
+      ],
+      "operation_refs": [
+        "operation.invoke"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.basic.inspect",
+      "title": "Inspect the response",
+      "local_goal": "Read the final message returned by the execution.",
+      "why_it_exists": "The learner needs to connect runtime output back to the message-based mental model.",
+      "local_outcome": "A verified final response.",
+      "concept_refs": [
+        "concept.message"
+      ],
+      "operation_refs": [
+        "operation.inspect"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.tool.define",
+      "title": "Define a tool",
+      "local_goal": "Create an external capability available to the agent.",
+      "why_it_exists": "Tools give the model callable capabilities beyond text generation.",
+      "local_outcome": "A callable tool with an understandable input contract.",
+      "concept_refs": [
+        "concept.tool",
+        "concept.tool-schema"
+      ],
+      "operation_refs": [
+        "operation.define"
+      ],
+      "branch_refs": [
+        "branch.tool-form"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-tools",
+          "segment_id": "tool-definition"
+        }
+      ]
+    },
+    {
+      "id": "stage.tool.create-agent",
+      "title": "Create agent with tools",
+      "local_goal": "Attach the tool set while constructing the agent.",
+      "why_it_exists": "The harness must expose tools to the model loop.",
+      "local_outcome": "An agent configured with tools.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.tool",
+        "concept.harness"
+      ],
+      "operation_refs": [
+        "operation.create",
+        "operation.attach"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.tool.invoke",
+      "title": "Invoke with a tool-requiring request",
+      "local_goal": "Run a request that requires external capability.",
+      "why_it_exists": "A suitable request makes the tool loop observable.",
+      "local_outcome": "An execution that may contain a tool call.",
+      "concept_refs": [
+        "concept.message",
+        "concept.agent",
+        "concept.tool"
+      ],
+      "operation_refs": [
+        "operation.invoke"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.tool.verify-loop",
+      "title": "Verify the tool loop",
+      "local_goal": "Confirm that tool selection, tool execution, tool result, and final response occurred.",
+      "why_it_exists": "Tool calling is a loop, not merely a function existing beside the model.",
+      "local_outcome": "A verified tool-using agent.",
+      "concept_refs": [
+        "concept.agent-loop",
+        "concept.tool-result"
+      ],
+      "operation_refs": [
+        "operation.verify"
+      ],
+      "branch_refs": [
+        "branch.structured-output"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-agents",
+          "segment_id": "agent-loop"
+        }
+      ]
+    },
+    {
+      "id": "stage.state.configure-persistence",
+      "title": "Configure persistence",
+      "local_goal": "Choose and configure the state persistence/checkpoint mechanism.",
+      "why_it_exists": "State must be stored between invocations if a conversation is to continue.",
+      "local_outcome": "A persistence mechanism available to the agent.",
+      "concept_refs": [
+        "concept.state",
+        "concept.persistence"
+      ],
+      "operation_refs": [
+        "operation.configure"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-memory",
+          "segment_id": "short-term-memory"
+        }
+      ]
+    },
+    {
+      "id": "stage.state.create-agent",
+      "title": "Create agent with persistence",
+      "local_goal": "Construct the agent with its persistence configuration.",
+      "why_it_exists": "Persistence behavior must be part of the running harness/graph.",
+      "local_outcome": "A state-capable agent.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.persistence"
+      ],
+      "operation_refs": [
+        "operation.create",
+        "operation.attach"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.state.invoke-thread",
+      "title": "Invoke within a thread",
+      "local_goal": "Execute multiple turns under the same conversation/thread identity.",
+      "why_it_exists": "State is useful only when later turns can recover the earlier thread state.",
+      "local_outcome": "A multi-turn execution history.",
+      "concept_refs": [
+        "concept.thread",
+        "concept.state",
+        "concept.message"
+      ],
+      "operation_refs": [
+        "operation.invoke"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.state.verify-memory",
+      "title": "Verify remembered context",
+      "local_goal": "Check that later turns use earlier conversational context.",
+      "why_it_exists": "This verifies actual continuity instead of merely configured persistence.",
+      "local_outcome": "A verified stateful interaction.",
+      "concept_refs": [
+        "concept.state"
+      ],
+      "operation_refs": [
+        "operation.verify"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.rag.prepare-knowledge-access",
+      "title": "Prepare knowledge access",
+      "local_goal": "Make external knowledge queryable at runtime.",
+      "why_it_exists": "RAG addresses finite context and static model knowledge by retrieving relevant external information.",
+      "local_outcome": "A searchable or directly queryable knowledge source.",
+      "concept_refs": [
+        "concept.knowledge-source",
+        "concept.retrieval"
+      ],
+      "operation_refs": [
+        "operation.prepare"
+      ],
+      "branch_refs": [
+        "branch.rag-architecture"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-retrieval",
+          "segment_id": "retrieval-foundation"
+        }
+      ]
+    },
+    {
+      "id": "stage.rag.expose-retrieval-tool",
+      "title": "Expose retrieval as a tool",
+      "local_goal": "Give the agent a callable route to external knowledge.",
+      "why_it_exists": "In agentic RAG, retrieval can be provided as one or more tools that the agent chooses when needed.",
+      "local_outcome": "A retrieval tool accessible to the agent.",
+      "concept_refs": [
+        "concept.retrieval",
+        "concept.tool"
+      ],
+      "operation_refs": [
+        "operation.define",
+        "operation.attach"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-retrieval",
+          "segment_id": "agentic-rag"
+        }
+      ]
+    },
+    {
+      "id": "stage.rag.create-agent",
+      "title": "Create retrieval-enabled agent",
+      "local_goal": "Construct the agent with retrieval capability and useful instructions.",
+      "why_it_exists": "The model needs both the retrieval capability and context about when to use it.",
+      "local_outcome": "An agent capable of deciding when to retrieve.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.retrieval",
+        "concept.prompt"
+      ],
+      "operation_refs": [
+        "operation.create"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.rag.invoke",
+      "title": "Run a knowledge-dependent request",
+      "local_goal": "Ask a question that requires external knowledge.",
+      "why_it_exists": "The request should force the distinction between model-only knowledge and runtime retrieval.",
+      "local_outcome": "An execution containing retrieved context.",
+      "concept_refs": [
+        "concept.message",
+        "concept.retrieval"
+      ],
+      "operation_refs": [
+        "operation.invoke",
+        "operation.retrieve"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.rag.verify-grounding",
+      "title": "Verify retrieval use",
+      "local_goal": "Confirm the answer uses relevant retrieved information.",
+      "why_it_exists": "A retrieval call alone does not prove useful RAG behavior.",
+      "local_outcome": "A grounded response for the practice case.",
+      "concept_refs": [
+        "concept.retrieval",
+        "concept.tool-result"
+      ],
+      "operation_refs": [
+        "operation.verify"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.middleware.choose-control",
+      "title": "Choose a control behavior",
+      "local_goal": "Select the execution behavior that needs control.",
+      "why_it_exists": "Middleware should solve a concrete harness concern such as retries, guardrails, transformation, summarization, or approval.",
+      "local_outcome": "A concrete middleware requirement.",
+      "concept_refs": [
+        "concept.middleware",
+        "concept.harness"
+      ],
+      "operation_refs": [
+        "operation.select"
+      ],
+      "branch_refs": [
+        "branch.middleware-type"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-middleware",
+          "segment_id": "middleware-overview"
+        }
+      ]
+    },
+    {
+      "id": "stage.middleware.configure",
+      "title": "Configure middleware",
+      "local_goal": "Create/configure the middleware behavior.",
+      "why_it_exists": "Middleware exposes hooks around agent execution and needs explicit behavior/configuration.",
+      "local_outcome": "A configured middleware instance.",
+      "concept_refs": [
+        "concept.middleware"
+      ],
+      "operation_refs": [
+        "operation.configure"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.middleware.attach",
+      "title": "Attach middleware to the agent",
+      "local_goal": "Pass middleware into the agent harness.",
+      "why_it_exists": "The behavior must execute inside the agent's compiled runtime.",
+      "local_outcome": "An agent with middleware attached.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.middleware"
+      ],
+      "operation_refs": [
+        "operation.attach"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": [
+        {
+          "source_id": "lc-middleware",
+          "segment_id": "middleware-create-agent"
+        }
+      ]
+    },
+    {
+      "id": "stage.middleware.verify",
+      "title": "Verify changed behavior",
+      "local_goal": "Run a case that triggers the middleware behavior.",
+      "why_it_exists": "The control is only useful if its effect is observable in execution.",
+      "local_outcome": "Verified middleware behavior.",
+      "concept_refs": [
+        "concept.middleware",
+        "concept.agent-loop"
+      ],
+      "operation_refs": [
+        "operation.verify"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept.langchain",
+      "name": "LangChain",
+      "definition": "The framework providing the configurable create_agent harness and related agent components.",
+      "role": "Supplies the high-level agent construction layer.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.harness"
+      ],
+      "key_operation_refs": [
+        "operation.install",
+        "operation.create"
+      ]
+    },
+    {
+      "id": "concept.agent",
+      "name": "Agent",
+      "definition": "A model operating in a loop that can use tools until the task is complete.",
+      "role": "Coordinates task execution around the model loop.",
+      "related_concept_refs": [
+        "concept.model",
+        "concept.harness",
+        "concept.tool",
+        "concept.agent-loop"
+      ],
+      "key_operation_refs": [
+        "operation.create",
+        "operation.invoke"
+      ]
+    },
+    {
+      "id": "concept.harness",
+      "name": "Harness",
+      "definition": "Everything around the model loop that supplies context and shapes behavior, including prompt, tools, and middleware.",
+      "role": "Makes the raw model useful for a concrete agent application.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.prompt",
+        "concept.tool",
+        "concept.middleware"
+      ],
+      "key_operation_refs": [
+        "operation.configure",
+        "operation.attach"
+      ]
+    },
+    {
+      "id": "concept.model",
+      "name": "Model",
+      "definition": "The language model selected for the agent.",
+      "role": "Interprets messages, produces outputs, and chooses tool calls.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.message",
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.configure",
+        "operation.invoke"
+      ]
+    },
+    {
+      "id": "concept.message",
+      "name": "Message",
+      "definition": "A structured conversational input or output passed through the agent state.",
+      "role": "Carries user, model, and tool communication through execution.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.state"
+      ],
+      "key_operation_refs": [
+        "operation.invoke",
+        "operation.inspect"
+      ]
+    },
+    {
+      "id": "concept.tool",
+      "name": "Tool",
+      "definition": "A callable external capability exposed to the agent.",
+      "role": "Lets the agent fetch information or perform actions beyond model generation.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.tool-schema",
+        "concept.tool-result"
+      ],
+      "key_operation_refs": [
+        "operation.define",
+        "operation.attach"
+      ]
+    },
+    {
+      "id": "concept.tool-schema",
+      "name": "Tool schema",
+      "definition": "The name, description, and argument contract through which a model understands how to call a tool.",
+      "role": "Connects natural-language tool selection to valid callable input.",
+      "related_concept_refs": [
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.define"
+      ]
+    },
+    {
+      "id": "concept.tool-result",
+      "name": "Tool result",
+      "definition": "The output returned by a tool execution to the agent loop.",
+      "role": "Feeds external information/action outcomes back to the model.",
+      "related_concept_refs": [
+        "concept.tool",
+        "concept.agent-loop"
+      ],
+      "key_operation_refs": [
+        "operation.inspect"
+      ]
+    },
+    {
+      "id": "concept.agent-loop",
+      "name": "Agent loop",
+      "definition": "The repeated model → optional tool execution → model cycle that continues until no more tools are needed.",
+      "role": "Explains the runtime behavior of a tool-using agent.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.model",
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.invoke",
+        "operation.verify"
+      ]
+    },
+    {
+      "id": "concept.state",
+      "name": "State",
+      "definition": "The information carried across agent execution, including conversation messages and other agent data.",
+      "role": "Makes multi-step or multi-turn behavior possible.",
+      "related_concept_refs": [
+        "concept.message",
+        "concept.persistence",
+        "concept.thread"
+      ],
+      "key_operation_refs": [
+        "operation.persist",
+        "operation.retrieve"
+      ]
+    },
+    {
+      "id": "concept.persistence",
+      "name": "Persistence",
+      "definition": "The mechanism that stores and recovers agent state between executions.",
+      "role": "Turns ephemeral state into continuing conversational state.",
+      "related_concept_refs": [
+        "concept.state",
+        "concept.thread"
+      ],
+      "key_operation_refs": [
+        "operation.configure",
+        "operation.persist"
+      ]
+    },
+    {
+      "id": "concept.thread",
+      "name": "Thread",
+      "definition": "A conversation/execution identity used to group related state across turns.",
+      "role": "Provides the continuity boundary for a stateful interaction.",
+      "related_concept_refs": [
+        "concept.state",
+        "concept.persistence"
+      ],
+      "key_operation_refs": [
+        "operation.invoke"
+      ]
+    },
+    {
+      "id": "concept.knowledge-source",
+      "name": "Knowledge source",
+      "definition": "External documents, databases, APIs, or other information that can be queried at runtime.",
+      "role": "Provides information that is not reliably contained in the model context or training.",
+      "related_concept_refs": [
+        "concept.retrieval"
+      ],
+      "key_operation_refs": [
+        "operation.prepare",
+        "operation.retrieve"
+      ]
+    },
+    {
+      "id": "concept.retrieval",
+      "name": "Retrieval",
+      "definition": "Fetching relevant external knowledge at query time.",
+      "role": "Adds runtime context and supports RAG.",
+      "related_concept_refs": [
+        "concept.knowledge-source",
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.retrieve"
+      ]
+    },
+    {
+      "id": "concept.prompt",
+      "name": "Prompt",
+      "definition": "Instructions/context supplied to shape agent/model behavior.",
+      "role": "Tells the agent how to approach the task and use available capabilities.",
+      "related_concept_refs": [
+        "concept.harness",
+        "concept.model"
+      ],
+      "key_operation_refs": [
+        "operation.configure"
+      ]
+    },
+    {
+      "id": "concept.middleware",
+      "name": "Middleware",
+      "definition": "Hooks and components that control or transform agent execution around the core loop.",
+      "role": "Adds guardrails, retries, transformations, summarization, human approval, and other execution policies.",
+      "related_concept_refs": [
+        "concept.harness",
+        "concept.agent-loop"
+      ],
+      "key_operation_refs": [
+        "operation.configure",
+        "operation.attach"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation.install",
+      "name": "Install",
+      "definition": "Make the required framework/provider package available.",
+      "purpose": "Prepare the runtime.",
+      "acts_on_concept_refs": [
+        "concept.langchain"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.configure",
+      "name": "Configure",
+      "definition": "Supply the settings or behavior required for a component to operate.",
+      "purpose": "Prepare models, persistence, prompts, or middleware.",
+      "acts_on_concept_refs": [
+        "concept.model",
+        "concept.persistence",
+        "concept.prompt",
+        "concept.middleware"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.create",
+      "name": "Create",
+      "definition": "Construct a runtime object from configured components.",
+      "purpose": "Build an executable agent.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.harness"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.invoke",
+      "name": "Invoke",
+      "definition": "Execute a model or agent with an input message/state.",
+      "purpose": "Run the system.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.model",
+        "concept.message",
+        "concept.thread"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.inspect",
+      "name": "Inspect",
+      "definition": "Read execution output or state to understand what occurred.",
+      "purpose": "Connect runtime behavior to the mental model.",
+      "acts_on_concept_refs": [
+        "concept.message",
+        "concept.tool-result"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.define",
+      "name": "Define",
+      "definition": "Describe and implement a callable capability or contract.",
+      "purpose": "Create tools and their callable schema.",
+      "acts_on_concept_refs": [
+        "concept.tool",
+        "concept.tool-schema"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.attach",
+      "name": "Attach",
+      "definition": "Connect an optional capability to the agent harness.",
+      "purpose": "Add tools, persistence, retrieval, or middleware.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.harness",
+        "concept.tool",
+        "concept.middleware",
+        "concept.persistence"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.verify",
+      "name": "Verify",
+      "definition": "Check that the intended operational behavior actually occurred.",
+      "purpose": "Validate the Goal rather than only configuration.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.agent-loop",
+        "concept.middleware",
+        "concept.state",
+        "concept.retrieval"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.select",
+      "name": "Select",
+      "definition": "Choose an implementation or behavior appropriate to the local goal.",
+      "purpose": "Choose providers, middleware type, or architecture branch.",
+      "acts_on_concept_refs": [
+        "concept.model",
+        "concept.middleware"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.prepare",
+      "name": "Prepare",
+      "definition": "Make an external resource usable by a later Stage.",
+      "purpose": "Prepare a runtime knowledge source.",
+      "acts_on_concept_refs": [
+        "concept.knowledge-source"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.retrieve",
+      "name": "Retrieve",
+      "definition": "Fetch relevant external information for the current query.",
+      "purpose": "Supply runtime knowledge to the agent/model.",
+      "acts_on_concept_refs": [
+        "concept.retrieval",
+        "concept.knowledge-source"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.persist",
+      "name": "Persist",
+      "definition": "Store agent state for later recovery.",
+      "purpose": "Maintain continuity across executions.",
+      "acts_on_concept_refs": [
+        "concept.state",
+        "concept.persistence"
+      ],
+      "common_failures": []
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch.model-provider",
+      "type": "alternative",
+      "title": "Choose model provider",
+      "parent_stage_ref": "stage.foundation.model",
+      "parent_process_ref": null,
+      "description": "LangChain supports multiple model providers through a standard interface; provider choice changes configuration more than process structure."
+    },
+    {
+      "id": "branch.tool-form",
+      "type": "alternative",
+      "title": "Choose tool representation",
+      "parent_stage_ref": "stage.tool.define",
+      "parent_process_ref": null,
+      "description": "A tool may be a Python callable, LangChain tool, or compatible tool description."
+    },
+    {
+      "id": "branch.structured-output",
+      "type": "extension",
+      "title": "Add structured output",
+      "parent_stage_ref": null,
+      "parent_process_ref": "process.tool-agent",
+      "description": "Extend agent output from free-form messages to schema-constrained structured data."
+    },
+    {
+      "id": "branch.rag-architecture",
+      "type": "alternative",
+      "title": "Choose RAG architecture",
+      "parent_stage_ref": "stage.rag.prepare-knowledge-access",
+      "parent_process_ref": null,
+      "description": "Use 2-step RAG, agentic RAG, or a hybrid pattern depending on control and flexibility needs."
+    },
+    {
+      "id": "branch.middleware-type",
+      "type": "alternative",
+      "title": "Choose middleware behavior",
+      "parent_stage_ref": "stage.middleware.choose-control",
+      "parent_process_ref": null,
+      "description": "Examples include logging, prompt/tool transformations, retries, fallbacks, guardrails, summarization, and human-in-the-loop approval."
+    },
+    {
+      "id": "branch.langgraph-advanced",
+      "type": "extension",
+      "title": "Move to advanced LangGraph orchestration",
+      "parent_stage_ref": null,
+      "parent_process_ref": "process.controlled-agent",
+      "description": "When the topology is more than a standard agent loop, embed the agent inside a broader LangGraph workflow."
+    }
+  ],
+  "practices": [
+    {
+      "id": "practice.basic-agent",
+      "title": "Create and invoke a minimal agent",
+      "goal_ref": "goal.basic-agent",
+      "instructions": [
+        "Install LangChain and one provider integration.",
+        "Configure a model.",
+        "Create an agent with a short system prompt.",
+        "Invoke it with one user message.",
+        "Inspect the final message."
+      ],
+      "expected_outcome": "A minimal LangChain agent returns a response.",
+      "checkpoint_questions": [
+        "What is the difference between the Model and the Agent harness?",
+        "What object carries the user's input?"
+      ]
+    },
+    {
+      "id": "practice.tool-agent",
+      "title": "Build a weather tool agent",
+      "goal_ref": "goal.tool-agent",
+      "instructions": [
+        "Define a weather lookup tool.",
+        "Create an agent with the tool.",
+        "Ask a question that requires the tool.",
+        "Inspect execution and confirm the tool result feeds the final response."
+      ],
+      "expected_outcome": "The agent selects the weather tool and returns an answer based on its result.",
+      "checkpoint_questions": [
+        "Why is defining a Tool different from calling it?",
+        "What loop occurs after the model chooses a Tool?"
+      ]
+    },
+    {
+      "id": "practice.stateful-agent",
+      "title": "Continue a two-turn conversation",
+      "goal_ref": "goal.stateful-agent",
+      "instructions": [
+        "Configure a persistence/checkpoint mechanism.",
+        "Create the agent with persistence.",
+        "Invoke a first message under a thread.",
+        "Invoke a second message under the same thread that depends on the first.",
+        "Verify the earlier context is available."
+      ],
+      "expected_outcome": "The second turn uses state from the first turn.",
+      "checkpoint_questions": [
+        "What does persistence add that a normal invocation lacks?",
+        "Why does a thread identity matter?"
+      ]
+    },
+    {
+      "id": "practice.agentic-rag",
+      "title": "Build a documentation lookup agent",
+      "goal_ref": "goal.agentic-rag",
+      "instructions": [
+        "Prepare a small documentation source.",
+        "Expose a retrieval/fetch capability as a Tool.",
+        "Create an agent with instructions to use retrieval when needed.",
+        "Ask a source-dependent question.",
+        "Verify the answer uses retrieved content."
+      ],
+      "expected_outcome": "The agent retrieves external knowledge only when needed and uses it in the answer.",
+      "checkpoint_questions": [
+        "How is agentic RAG different from always retrieving first?",
+        "Where does Retrieval connect to the Agent loop?"
+      ]
+    },
+    {
+      "id": "practice.middleware",
+      "title": "Add one visible execution control",
+      "goal_ref": "goal.controlled-agent",
+      "instructions": [
+        "Choose one middleware behavior such as retry or human approval.",
+        "Configure the middleware.",
+        "Attach it to create_agent.",
+        "Run a case that triggers it.",
+        "Verify its effect."
+      ],
+      "expected_outcome": "The middleware visibly changes execution behavior.",
+      "checkpoint_questions": [
+        "Why is Middleware part of the Harness rather than the Model?",
+        "When would a broader LangGraph workflow be more appropriate?"
+      ]
+    }
+  ],
+  "expansion_map": [
+    {
+      "title": "Structured output",
+      "description": "Return schema-constrained data from an agent.",
+      "from_goal_ref": "goal.tool-agent"
+    },
+    {
+      "title": "LangGraph orchestration",
+      "description": "Compose the agent inside workflows with routing, deterministic nodes, or multiple agents.",
+      "from_goal_ref": "goal.controlled-agent"
+    },
+    {
+      "title": "LangSmith tracing and evaluation",
+      "description": "Inspect traces, debug tool calls/state transitions, and evaluate behavior.",
+      "from_goal_ref": "goal.controlled-agent"
+    }
+  ],
+  "metadata": {
+    "language": "en",
+    "generated_at": "2026-09-28",
+    "generator": "COP Studio reference artifact v1.0",
+    "source_ids": [
+      "lc-overview",
+      "lc-agents",
+      "lc-tools",
+      "lc-memory",
+      "lc-retrieval",
+      "lc-middleware"
+    ]
+  }
+}

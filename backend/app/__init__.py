@@ -1,0 +1,1 @@
+"""COP Studio backend package."""

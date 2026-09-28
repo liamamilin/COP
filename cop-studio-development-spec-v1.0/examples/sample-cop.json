@@ -1,0 +1,333 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "artifact.sample.agent-development",
+  "domain": {
+    "name": "Agent Application Development",
+    "scope": "Build a small tool-using agent application.",
+    "target_user": "Developer new to agent frameworks.",
+    "non_goals": [
+      "Exhaustive framework API coverage"
+    ]
+  },
+  "mental_model": {
+    "summary": "A user request reaches an agent, the model decides how to respond, and tools extend the system with external capabilities.",
+    "flow": [
+      "User request",
+      "Agent",
+      "Model",
+      "Optional tool",
+      "Model",
+      "Response"
+    ]
+  },
+  "goals": [
+    {
+      "id": "goal.tool-agent",
+      "title": "Build a tool-using agent",
+      "outcome": "A working agent can call one external tool and return a final response.",
+      "why_it_matters": "It demonstrates the core model–tool execution loop.",
+      "prerequisite_goal_refs": [],
+      "evidence_refs": []
+    }
+  ],
+  "shared_foundations": [
+    {
+      "id": "foundation.base",
+      "title": "Basic environment",
+      "stage_refs": [
+        "stage.setup-environment",
+        "stage.configure-model"
+      ]
+    }
+  ],
+  "main_processes": [
+    {
+      "id": "process.tool-agent",
+      "goal_ref": "goal.tool-agent",
+      "title": "Build a tool-using agent",
+      "start": {
+        "type": "foundation",
+        "ref": "foundation.base"
+      },
+      "stage_refs": [
+        "stage.define-tool",
+        "stage.construct-agent",
+        "stage.run-agent",
+        "stage.verify-result"
+      ],
+      "outcome": "The agent uses the tool when appropriate and returns a response.",
+      "practice_ref": "practice.weather-tool"
+    }
+  ],
+  "stages": [
+    {
+      "id": "stage.setup-environment",
+      "title": "Prepare the environment",
+      "local_goal": "Create a runnable project environment.",
+      "why_it_exists": "The application needs its runtime and dependencies.",
+      "local_outcome": "A runnable environment.",
+      "concept_refs": [],
+      "operation_refs": [
+        "operation.install"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.configure-model",
+      "title": "Configure the model",
+      "local_goal": "Create a model client the application can invoke.",
+      "why_it_exists": "The agent needs a model to interpret requests and choose actions.",
+      "local_outcome": "An invokable model client.",
+      "concept_refs": [
+        "concept.model"
+      ],
+      "operation_refs": [
+        "operation.configure",
+        "operation.invoke"
+      ],
+      "branch_refs": [
+        "branch.model-provider"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.define-tool",
+      "title": "Define a tool",
+      "local_goal": "Create one external capability the agent can call.",
+      "why_it_exists": "Tools let the system obtain information or perform actions beyond model generation.",
+      "local_outcome": "A callable tool.",
+      "concept_refs": [
+        "concept.tool"
+      ],
+      "operation_refs": [
+        "operation.define"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": {
+        "title": "Weather lookup",
+        "summary": "A tool accepts a city and returns weather text."
+      },
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.construct-agent",
+      "title": "Construct the agent",
+      "local_goal": "Connect the model and tool into an executable agent.",
+      "why_it_exists": "The agent coordinates model reasoning and tool access.",
+      "local_outcome": "An executable agent.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.model",
+        "concept.tool"
+      ],
+      "operation_refs": [
+        "operation.bind"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.run-agent",
+      "title": "Run the agent",
+      "local_goal": "Execute the agent on a user request.",
+      "why_it_exists": "Execution turns the configured structure into observable behavior.",
+      "local_outcome": "An execution result.",
+      "concept_refs": [
+        "concept.agent"
+      ],
+      "operation_refs": [
+        "operation.invoke"
+      ],
+      "branch_refs": [],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    },
+    {
+      "id": "stage.verify-result",
+      "title": "Verify the result",
+      "local_goal": "Confirm that the tool was used when required and a final answer was produced.",
+      "why_it_exists": "A runnable program is not enough; the intended process must actually occur.",
+      "local_outcome": "A verified tool-using agent.",
+      "concept_refs": [
+        "concept.agent",
+        "concept.tool"
+      ],
+      "operation_refs": [
+        "operation.verify"
+      ],
+      "branch_refs": [
+        "branch.add-memory"
+      ],
+      "implementation_details": [],
+      "example": null,
+      "evidence_refs": []
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept.model",
+      "name": "Model",
+      "definition": "The language model used to interpret requests and produce or select actions.",
+      "role": "Provides the core inference capability.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.configure",
+        "operation.invoke"
+      ]
+    },
+    {
+      "id": "concept.tool",
+      "name": "Tool",
+      "definition": "An external callable capability available to the agent.",
+      "role": "Extends the system beyond model-only generation.",
+      "related_concept_refs": [
+        "concept.agent",
+        "concept.model"
+      ],
+      "key_operation_refs": [
+        "operation.define",
+        "operation.bind"
+      ]
+    },
+    {
+      "id": "concept.agent",
+      "name": "Agent",
+      "definition": "The executable coordination layer that handles a request using a model and optional tools.",
+      "role": "Coordinates the operational loop.",
+      "related_concept_refs": [
+        "concept.model",
+        "concept.tool"
+      ],
+      "key_operation_refs": [
+        "operation.invoke"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation.install",
+      "name": "Install",
+      "definition": "Make a required dependency available.",
+      "purpose": "Prepare the runtime.",
+      "acts_on_concept_refs": [],
+      "common_failures": []
+    },
+    {
+      "id": "operation.configure",
+      "name": "Configure",
+      "definition": "Provide the settings required for an object to work.",
+      "purpose": "Prepare a usable model client.",
+      "acts_on_concept_refs": [
+        "concept.model"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.define",
+      "name": "Define",
+      "definition": "Create a usable capability description and implementation.",
+      "purpose": "Create a tool.",
+      "acts_on_concept_refs": [
+        "concept.tool"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.bind",
+      "name": "Bind",
+      "definition": "Associate capabilities into a usable execution unit.",
+      "purpose": "Connect model and tool to the agent.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.model",
+        "concept.tool"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.invoke",
+      "name": "Invoke",
+      "definition": "Execute a configured model or agent.",
+      "purpose": "Produce runtime behavior.",
+      "acts_on_concept_refs": [
+        "concept.model",
+        "concept.agent"
+      ],
+      "common_failures": []
+    },
+    {
+      "id": "operation.verify",
+      "name": "Verify",
+      "definition": "Check that the intended operational behavior occurred.",
+      "purpose": "Validate the Goal.",
+      "acts_on_concept_refs": [
+        "concept.agent",
+        "concept.tool"
+      ],
+      "common_failures": []
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch.model-provider",
+      "type": "alternative",
+      "title": "Choose a model provider",
+      "parent_stage_ref": "stage.configure-model",
+      "parent_process_ref": null,
+      "description": "Different providers can implement the same model-configuration Stage."
+    },
+    {
+      "id": "branch.add-memory",
+      "type": "extension",
+      "title": "Add conversation memory",
+      "parent_stage_ref": null,
+      "parent_process_ref": "process.tool-agent",
+      "description": "Extend the base agent with persisted conversational state."
+    }
+  ],
+  "practices": [
+    {
+      "id": "practice.weather-tool",
+      "title": "Build a weather lookup agent",
+      "goal_ref": "goal.tool-agent",
+      "instructions": [
+        "Configure one model.",
+        "Define a weather lookup tool.",
+        "Construct an agent with the model and tool.",
+        "Ask a request that requires the tool.",
+        "Verify the tool call and final response."
+      ],
+      "expected_outcome": "The agent calls the weather tool and returns a response based on the tool result.",
+      "checkpoint_questions": [
+        "Why is the Tool separate from the Model?",
+        "What role does the Agent play between the user request and the Tool?",
+        "Where would memory attach if the application needed conversational state?"
+      ]
+    }
+  ],
+  "expansion_map": [
+    {
+      "title": "Add memory",
+      "description": "Persist state across multiple interactions.",
+      "from_goal_ref": "goal.tool-agent"
+    }
+  ],
+  "metadata": {
+    "language": "en",
+    "generated_at": "fixture",
+    "generator": "static-fixture",
+    "source_ids": []
+  }
+}

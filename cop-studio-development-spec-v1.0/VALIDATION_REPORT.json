@@ -1,0 +1,20 @@
+{
+  "spec_version": "1.0",
+  "schema_validation": "jsonschema: PASS",
+  "reference_counts": {
+    "goals": 5,
+    "shared_foundations": 1,
+    "main_processes": 5,
+    "stages": 22,
+    "concepts": 16,
+    "operations": 12,
+    "branches": 6,
+    "practices": 5
+  },
+  "referential_integrity": "PASS",
+  "sqlite_mentions": [
+    "docs/19-v1-scope-freeze.md:108:- no SQLite concurrency branch."
+  ],
+  "database_normative": "PostgreSQL 16+",
+  "v1_scope_frozen": true
+}
