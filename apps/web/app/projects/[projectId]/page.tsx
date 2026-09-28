@@ -128,6 +128,35 @@ export default async function ProjectOverviewPage({
           </div>
         </section>
 
+        <section className="manage-section">
+          <div>
+            <p className="eyebrow">MANAGE THIS COP</p>
+            <h2>Revise it without breaking history</h2>
+            <p>
+              Published versions are immutable. To change something you draft a copy,
+              edit it, and publish it as the next version — so what you believed last
+              week stays readable.
+            </p>
+          </div>
+          <div className="manage-actions">
+            {draft ? (
+              <Link className="primary-link" href={`/projects/${projectId}/draft`}>
+                Open the active draft ↗
+              </Link>
+            ) : (
+              <Link className="primary-link" href={`/projects/${projectId}/versions`}>
+                Start a new draft from v{version.version_number} ↗
+              </Link>
+            )}
+            <Link className="secondary-button" href={`/projects/${projectId}/versions`}>
+              Version history
+            </Link>
+            <Link className="secondary-button" href={`/projects/${projectId}/sources`}>
+              Sources
+            </Link>
+          </div>
+        </section>
+
         {artifact.shared_foundations.map((foundation) => (
           <section className="foundation-card" key={foundation.id}>
             <div>

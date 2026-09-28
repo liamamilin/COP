@@ -458,6 +458,14 @@ a:focus-visible, button:focus-visible {
 .version-summary { font-size: 14px; margin: 0 0 5px; }
 .version-meta { color: var(--muted); font-size: 11px; margin: 0; }
 .version-immutable { border: 1px solid var(--line-strong); border-radius: 7px; color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: 0.06em; padding: 6px 9px; text-transform: uppercase; }
+.version-actions { align-items: center; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--green); border-radius: 12px; display: flex; gap: 26px; justify-content: space-between; margin: 34px 0 0; padding: 20px 24px; }
+.version-actions > p { color: var(--muted); font-size: 12px; margin: 0; max-width: 460px; }
+.start-draft { align-items: center; display: flex; flex: 0 0 auto; gap: 12px; }
+.manage-section { align-items: start; border-top: 1px solid var(--line); display: flex; gap: 40px; justify-content: space-between; margin-top: 58px; padding-top: 34px; }
+.manage-section h2 { font-family: Georgia, serif; font-size: 27px; font-weight: 400; margin: 0 0 9px; }
+.manage-section > div > p:last-child { color: var(--muted); font-size: 13px; margin: 0; max-width: 430px; }
+.manage-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 9px; justify-content: flex-end; }
+.manage-actions .secondary-button { align-self: center; }
 
 @media (max-width: 1000px) {
   :root { --sidebar: 240px; }

@@ -1,4 +1,5 @@
 import { ProjectShell } from "../../../../components/project-shell";
+import { StartDraftButton } from "../../../../components/start-draft-button";
 import { getProjectWorkspace, getVersions } from "../../../../lib/api";
 
 export const dynamic = "force-dynamic";
@@ -9,7 +10,7 @@ export default async function VersionsPage({
   params: Promise<{ projectId: string }>;
 }) {
   const { projectId } = await params;
-  const [{ project, version }, versions] = await Promise.all([
+  const [{ project, version, draft }, versions] = await Promise.all([
     getProjectWorkspace(projectId),
     getVersions(projectId),
   ]);
@@ -24,6 +25,21 @@ export default async function VersionsPage({
           version, so the history of what you believed stays readable.
         </p>
       </header>
+
+      {version && (
+        <div className="version-actions">
+          <p>
+            Revising a published version means drafting a copy of it. The version
+            itself is never modified.
+          </p>
+          <StartDraftButton
+            existingDraftId={draft?.id ?? null}
+            projectId={projectId}
+            versionId={version.id}
+            versionNumber={version.version_number}
+          />
+        </div>
+      )}
 
       <ol className="version-list">
         {versions.map((item) => {
