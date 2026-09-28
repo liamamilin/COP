@@ -35,9 +35,9 @@ COP Studio 是一个 local-first 的知识生产 + 学习工作台。它把一�
 | M3 设置 | ✅ | Fernet 加密 key、Mock + OpenAI 兼容适配器 |
 | M4 持久化 Harness | ✅ | 见 §4 |
 | M5 草稿/发布/版本 | ✅ | 见 §4.6 |
-| **M6 局部 AI 精修** | ✅ | **本轮完成**，见 §4.9 |
-| M7 Learn Mode | ⬜ | **下一步** |
-| M8 导出 + 加固 | ⬜ | |
+| **M6 局部 AI 精修** | ✅ | 见 §4.9 |
+| **M7 Learn Mode** | ✅ | **本轮完成**，见 §4.10 |
+| M8 导出 + 加固 | ⬜ | **下一步** |
 
 规格 `23-coding-agent-milestones.md`：**V1 完成 = M0–M8 全部验收通过**。
 
@@ -180,8 +180,10 @@ draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是
 根因没查清**（Next 15 + standalone 产物下 `push` 解析成功却不导航）。
 
 > 教训：`docker compose build` 有缓存层，源码改了但镜像里还是旧代码。
-> 改前端后必须 `docker compose build --no-cache web`，否则你会对着
-> 一个"改了没生效"的产物调试很久。我在这上面浪费了好几轮。
+> 改前端后用 `make web-rebuild`（= `build --no-cache`）。
+> **这个坑今天踩了两次**，症状都是"按钮明明绑了 onClick 却没反应"——
+> 看起来极像应用 bug，其实是镜像里跑的还是旧代码。
+> 以后改前端第一件事：`make web-rebuild`。
 
 ### 4.8 SSE 进度流的 E2E
 
@@ -210,7 +212,7 @@ draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是
 
 ### 4.9 M6 局部 AI 精修
 
-### `target` 字段一直是死的
+`target` 字段一直是死的
 
 M4 的 `GenerationRunCreate` 就有 `target`，存进了 `requested_input`，
 但**没有任何代码读它**。也就是说"局部精修"当时会静默地重新生成整个 COP——
@@ -256,6 +258,40 @@ mock 的 `_mock_refine` 只在有 `recommended_change` 时产出 revision。
 > 破坏 `h110_refine.is_locked` 才真的挂了一个测试。
 > 冗余防御会让某些变异"活下来"，这不一定说明没覆盖。
 
+### 4.10 M7 Learn Mode
+
+进度属于**版本**，不属于项目。这是 M7 最重要的一条：
+切换版本必须看到**各自的**进度，而不是互相覆盖。
+
+`learning_progress` 原本没有唯一约束，`PUT` 会写出重复行。
+迁移 0005 加了 `unique (version_id, goal_id, coalesce(stage_id, ''))`：
+
+- 用 `coalesce` 是因为 `stage_id` 可空（Goal 级完成），
+  普通 unique 索引把每个 NULL 视为不同，正好在最不容易发现的地方放过重复
+- 必须用 `op.execute` 写原生 SQL：alembic 的 `create_index` 会把表达式
+  当列名加引号，Postgres 报 `column "coalesce(...)" does not exist`
+- 同理不能用 `ON CONFLICT ON CONSTRAINT`（那只接受真正的约束，
+  表达式上的 unique 索引不算），要用 `index_elements` 做索引推断
+
+**Goal 完成是推导出来的，不存储。** 存了就得在每次重开 Stage 时失效，
+最后一定和它所依据的 Stage 行对不上。
+
+状态机只允许 `completed → in_progress`（重看/重置），其余按文档顺序。
+
+前端：Stage 勾选是**乐观更新**。原本依赖 `router.refresh()` 回填，
+UI 要等一次网络往返才变，测试里表现为"点了没反应"。
+改成先本地更新、失败再回滚。
+
+### 客户端导航在这个 build 里不可靠（未解决）
+
+第三次遇到了。现象：目标 URL 直接访问**总是**正常，
+但 `<Link>` 点击 / `router.push` 经常不发生导航。
+现在有两处 workaround：
+- `start-draft-button.tsx` 用 `window.location.assign`
+- learn 的 E2E 用 `page.goto(href)` 而不是点击
+
+**根因没查清。** 值得排一下，可能影响所有 SPA 导航。
+
 ## 5. 测试与命令
 
 ```bash
@@ -270,10 +306,11 @@ make up / make down
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：`make test` = 100 后端 + 28 前端，全绿。
-其中 22 个是 M6 patch 测试，30 个 M5 草稿/版本，14 个队列/API，21 个流水线。
-浏览器层 `make test-e2e` = 16 个，跑真实 Compose 栈，约 45 秒：
-M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个。
+当前基线：`make test` = 113 后端 + 28 前端，全绿。
+其中 13 个是 M7 学习进度，22 个 M6 patch，30 个 M5 草稿/版本，
+14 个队列/API，21 个流水线。
+浏览器层 `make test-e2e` = 22 个，跑真实 Compose 栈，约 60 秒：
+M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个、M7 学习 6 个。
 
 > **加字段后必须重跑 `make test-db` / `make test-db-reset`。**
 > pytest 的 `db` fixture 只 TRUNCATE，不 ALTER。schema 没跟上时
@@ -329,6 +366,8 @@ M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个。
   - M4 进度流 3 个：流式推进到完成 / 取消并保留工作 / 断流降级为轮询
   - M6 精修 5 个：before/after 预览且提议不落盘 / reject 不动任何东西 /
     accept 只改 Draft / **手写句子扛过一次精修** / 无 draft 时不提供入口
+  - M7 学习 6 个：**整个 Main Process 始终在屏** / 刷新不丢进度 /
+    Stage 可重开 / 细节与主线同屏 / 切版本各自独立 / 可换 Goal
 - **覆盖缺口**：
   - M2 素材上传/URL、M3 设置与 provider 连接测试，都还没有
   - 键盘可达性（M8 要求）没有覆盖
@@ -349,25 +388,31 @@ M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个。
 - CI 已有 schema 一致性检查 + TS 类型陈旧检测 + Playwright E2E（`e2e` job）。
 
 
-## 8. 下一步：M7 Learn Mode
+## 8. 下一步：M8 导出 + 加固
 
-M6 的 patch 基础设施已就位，M7 直接往上加：
+M8 剩三块：
 
+**1. 导出（规格 `19` §Must ship 明确要求）**
 ```
-GET /projects/{project_id}/learning-progress
-PUT /projects/{project_id}/learning-progress
+POST /versions/{version_id}/exports   # JSON / 单文件 Markdown / Markdown bundle
 ```
+现在是唯一还没做的 spec 明列能力。
 
-表 `learning_progress` 已存在（`project_id` + `version_id` + `goal_id` +
-`stage_id` + `status` + `notes`），缺的是 API + UI。
+**2. 补测试缺口**
+- M2 素材上传/URL 的 E2E
+- M3 设置与 provider 连接测试
+- 键盘可达性（规格 `12` 要求，M8 明列）
+- `scripts/generate-types.*`（规格 `22` 要求）。**现在 CI 那个
+  "生成类型是否陈旧"的检查永远不会失败**，因为生成器本身不存在——
+  这是一个看起来在保护你、实际什么都没做的检查
 
-验收（规格 `23`）：刷新不丢进度、切换工件版本不损坏进度记录、
-**完整 Main Process 始终可见**。
+**3. 查客户端导航**
 
-**最后一个不变量最容易违反。** 前端所有工件渲染必须走 `artifactSelectors`
-（`lib/artifact-selectors.ts`），并且任何进度相关的 UI 都不能
-"只渲染当前 Stage"——用户在任何时刻都要能看到主线全貌，
-这是产品主张（先给结构再给细节）的核心，破坏它比丢进度更严重。
+`router.push` / `<Link>` 在这个 build 里经常不导航（见 §4.10），
+已经绕了三处。根因不清，影响面比单个功能大，M8 做加固时值得先解决。
+
+M8 的验收是"冻结的端到端路径通过 + 没有死按钮 + 全部测试绿"，
+所以第 2 点不补齐，验收过不了。
 
 其余不变量继续遵守（规格 `16`、`24`）：
 
@@ -375,10 +420,6 @@ PUT /projects/{project_id}/learning-progress
 - 每项目最多一个 active draft
 - 发布是显式动作，AI 永不静默覆盖用户内容
 - API 路径用 `/processes`，domain 名用 `MainProcess`（规格 `24` §4）
-
-M8 之前还欠的：素材上传/URL 的 E2E、设置与 provider 的 E2E、
-键盘可达性（规格 `12` 要求）、`scripts/generate-types.*`（规格 `22` 要求，
-现在 CI 那个"类型是否陈旧"的检查永远不会失败）。
 
 ## 9. 常用文件速查
 
@@ -398,7 +439,8 @@ M8 之前还欠的：素材上传/URL 的 E2E、设置与 provider 的 E2E、
 | 流水线测试 | `backend/tests/test_harness_pipeline.py` |
 | 队列/API 测试 | `backend/tests/test_generation_runs.py` |
 | 草稿/版本测试 | `backend/tests/test_drafts.py` |
-| 浏览器 E2E | `apps/web/e2e/`（draft-loop / progress-stream / refinement） |
+| 浏览器 E2E | `apps/web/e2e/`（draft-loop / progress-stream / refinement / learn-mode） |
+| 学习进度 API | `backend/app/api/learning.py` |
 | 精修 patch 领域逻辑 | `backend/app/domain/patches.py` |
 | 精修 API | `backend/app/api/patches.py` |
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |

@@ -22,8 +22,9 @@ work is claimed by a database-backed worker; no Redis service is required.
 - M4: persisted Harness (H00–H130), database-backed run queue, SSE progress, cancellation, and crash recovery
 - M5: candidate-to-draft, manual field editing, explicit publish, immutable versions, version history
 - M6: partial AI refinement, before/after preview, accept/reject, user edits protected
+- M7: Learn Mode, per-version progress, the full Main Process always on screen
 
-M7–M8 (Learn Mode through export hardening) remain under development.
+M8 (export through operational hardening) remains under development.
 
 ### The persisted Harness
 
@@ -120,6 +121,26 @@ draft, rather than discarding whatever was typed while the preview sat open.
 
 Only `accept` writes, and only ever to the draft. There is no path from the patch
 router to a `COPVersion`.
+
+## Learn Mode
+
+```text
+GET /api/v1/projects/{project_id}/learning-progress?version_id=...
+PUT /api/v1/projects/{project_id}/learning-progress
+```
+
+Progress belongs to a **version**, not a project. Publishing v2 gives you a
+separate, intact history rather than overwriting the one you worked through —
+which matters because v2 reuses the same entity ids, so a project-keyed row
+would silently carry your v1 progress into v2.
+
+Goal completion is derived from its Stage rows, never stored, so it cannot drift
+out of agreement with the Stages it was derived from. A completed Stage can be
+reopened, which is how someone revisits what they have already worked through.
+
+The Main Process is rendered in full alongside the current Stage. That is the
+product's central claim: you can always see where you are on the main line, not
+just the step you are standing on.
 
 ## Quick start
 

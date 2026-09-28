@@ -20,8 +20,8 @@ TEST_DATABASE_URL ?= postgresql+psycopg://cop:cop@localhost:$(TEST_DATABASE_PORT
 TEST_ENV = TEST_DATABASE_URL=$(TEST_DATABASE_URL) \
 	TEST_DATA_DIR=$$(mktemp -d 2>/dev/null || echo /tmp/cop-studio-test-data)
 
-.PHONY: dev up down test test-backend test-web test-e2e test-db test-db-reset lint \
-	format typecheck migrate seed backup restore
+.PHONY: dev up down test test-backend test-web test-e2e test-e2e-ui web-rebuild \
+	test-db test-db-reset lint format typecheck migrate seed backup restore
 
 dev:
 	docker compose up --build
@@ -72,6 +72,15 @@ test-e2e:
 
 test-e2e-ui:
 	cd apps/web && pnpm exec playwright test --ui
+
+# Rebuild the web image from scratch. Use this after any frontend change.
+#
+# The cached build has silently shipped stale frontend code more than once,
+# which is expensive to debug: the symptom is a control that appears wired but
+# does nothing, which looks exactly like an application bug.
+web-rebuild:
+	docker compose build --no-cache web
+	docker compose up -d web
 
 # Provision the test database and leave it running for iteration.
 test-db: test-db-reset

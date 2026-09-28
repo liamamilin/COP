@@ -387,6 +387,62 @@ export async function getWorkspace(projectId: string) {
  * The draft is optional, so the version fetch is allowed to 404 as well: a
  * project with neither a version nor a draft is the pre-M4 setup state.
  */
+export type StageStatus = "not_started" | "in_progress" | "completed";
+
+export interface StageProgress {
+  stage_id: string;
+  status: StageStatus;
+  notes: string | null;
+  updated_at: string | null;
+}
+
+export interface GoalProgress {
+  goal_id: string;
+  title: string;
+  /** Derived from the Stage rows, never stored, so it cannot drift. */
+  completed: boolean;
+  total_stages: number;
+  completed_stages: number;
+  stages: StageProgress[];
+}
+
+export interface LearningProgress {
+  project_id: string;
+  version_id: string;
+  version_number: number;
+  goals: GoalProgress[];
+  completed_goals: number;
+  total_goals: number;
+}
+
+// Exported for the E2E suite, which reads progress directly rather than
+// reimplementing the query in a test helper.
+export function getLearningProgress(
+  projectId: string,
+  versionId?: string,
+): Promise<LearningProgress> {
+  const query = versionId ? `?version_id=${encodeURIComponent(versionId)}` : "";
+  return request<LearningProgress>(
+    `/projects/${encodeURIComponent(projectId)}/learning-progress${query}`,
+  );
+}
+
+export function putLearningProgress(
+  projectId: string,
+  body: {
+    version_id: string;
+    goal_id: string;
+    stage_id?: string | null;
+    status: StageStatus;
+    notes?: string | null;
+  },
+): Promise<{ status: StageStatus; version_id: string; stage_id: string | null }> {
+  return send<{ status: StageStatus; version_id: string; stage_id: string | null }>(
+    `/projects/${encodeURIComponent(projectId)}/learning-progress`,
+    { method: "PUT", body: JSON.stringify(body) },
+  );
+}
+
 export async function getProjectWorkspace(projectId: string) {
   const project = await getProject(projectId);
   const [version, draft] = await Promise.all([

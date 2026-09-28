@@ -473,9 +473,7 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
     return {"revisions": revisions}
 
 
-def _synthesise_refinement(
-    artifact: dict[str, Any], entity_type: str, entity_key: str
-) -> str:
+def _synthesise_refinement(artifact: dict[str, Any], entity_type: str, entity_key: str) -> str:
     """Rewrite a field the way a real refiner would, without a model call.
 
     Deterministic on purpose: the mock has to produce the same proposal every
@@ -492,11 +490,7 @@ def _synthesise_refinement(
     if not collection:
         return ""
     entity = next(
-        (
-            item
-            for item in (artifact.get(collection) or [])
-            if str(item.get("id")) == entity_key
-        ),
+        (item for item in (artifact.get(collection) or []) if str(item.get("id")) == entity_key),
         None,
     )
     if entity is None:

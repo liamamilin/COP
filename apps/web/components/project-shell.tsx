@@ -15,6 +15,7 @@ interface ProjectShellProps {
     | "stage"
     | "concept"
     | "operation"
+    | "learn"
     | "draft"
     | "versions"
     | "sources"
@@ -62,6 +63,9 @@ export function ProjectShell({
             </Link>
           ))}
           <p className="nav-label">EXPLORE</p>
+          <Link className={active === "learn" ? "active" : ""} href={`${projectPath}/learn`}>
+            <span>▶</span> Learn
+          </Link>
           {hasDraft && (
             <Link className={active === "draft" ? "active" : ""} href={`${projectPath}/draft`}>
               <span>✎</span> Draft editor
