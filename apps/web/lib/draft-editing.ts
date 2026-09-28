@@ -65,6 +65,25 @@ export const ENTITY_LABELS: Record<DraftEntityKind, string> = {
   operations: "Operation",
 };
 
+/**
+ * Plural section heading.
+ *
+ * Spelling out the plural matters because "Main Process" does not pluralize by
+ * appending "s" — naive concatenation renders "5 main processs".
+ */
+export const ENTITY_PLURALS: Record<DraftEntityKind, string> = {
+  goals: "Goals",
+  processes: "Main Processes",
+  stages: "Stages",
+  concepts: "Concepts",
+  operations: "Operations",
+};
+
+export function entityCountLabel(kind: DraftEntityKind, count: number): string {
+  const plural = ENTITY_PLURALS[kind];
+  return `${count} ${count === 1 ? ENTITY_LABELS[kind].toLowerCase() : plural.toLowerCase()}`;
+}
+
 function readValue(entity: Record<string, unknown>, field: string): string {
   const raw = entity[field];
   if (field === "example") {

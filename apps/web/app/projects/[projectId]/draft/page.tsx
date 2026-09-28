@@ -4,7 +4,11 @@ import { notFound } from "next/navigation";
 import { DraftToolbar } from "../../../../components/draft-toolbar";
 import { ProjectShell } from "../../../../components/project-shell";
 import { getProjectWorkspace } from "../../../../lib/api";
-import { ENTITY_LABELS, listEntities } from "../../../../lib/draft-editing";
+import {
+  ENTITY_PLURALS,
+  entityCountLabel,
+  listEntities,
+} from "../../../../lib/draft-editing";
 import type { DraftEntityKind } from "../../../../lib/api";
 
 const SECTIONS: DraftEntityKind[] = ["goals", "processes", "stages", "concepts", "operations"];
@@ -45,15 +49,12 @@ export default async function DraftPage({
             <div className="draft-section" key={kind}>
               <div className="section-title-row">
                 <div>
-                  <p className="eyebrow">{ENTITY_LABELS[kind].toUpperCase()}S</p>
-                  <h2>
-                    {entities.length} {ENTITY_LABELS[kind].toLowerCase()}
-                    {entities.length === 1 ? "" : "s"}
-                  </h2>
+                  <p className="eyebrow">{ENTITY_PLURALS[kind].toUpperCase()}</p>
+                  <h2>{entityCountLabel(kind, entities.length)}</h2>
                 </div>
               </div>
               {entities.length === 0 ? (
-                <p className="muted-note">No {ENTITY_LABELS[kind].toLowerCase()}s in this draft.</p>
+                <p className="muted-note">No {ENTITY_PLURALS[kind].toLowerCase()} in this draft.</p>
               ) : (
                 <ul className="draft-entity-list">
                   {entities.map((entity) => (

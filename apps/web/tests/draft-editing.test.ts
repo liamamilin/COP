@@ -6,6 +6,7 @@ import {
   changedFields,
   editableFields,
   ENTITY_LABELS,
+  entityCountLabel,
   listEntities,
 } from "../lib/draft-editing";
 import type { COPArtifact } from "@cop-studio/cop-types";
@@ -176,5 +177,25 @@ describe("entity listing", () => {
 
   it("labels processes with the canonical domain name", () => {
     expect(ENTITY_LABELS.processes).toBe("Main Process");
+  });
+});
+
+describe("section headings", () => {
+  it("pluralizes Main Process correctly instead of appending s", () => {
+    // Appending "s" to the singular label renders "5 main processs".
+    expect(entityCountLabel("processes", 5)).toBe("5 main processes");
+  });
+
+  it("uses the singular for a single entity", () => {
+    expect(entityCountLabel("processes", 1)).toBe("1 main process");
+    expect(entityCountLabel("stages", 1)).toBe("1 stage");
+  });
+
+  it("pluralizes every kind without a double s", () => {
+    for (const kind of ["goals", "stages", "concepts", "operations"] as const) {
+      const label = entityCountLabel(kind, 3);
+      expect(label).not.toMatch(/ss\b/);
+      expect(label.endsWith("s")).toBe(true);
+    }
   });
 });
