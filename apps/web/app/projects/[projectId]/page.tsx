@@ -4,11 +4,8 @@ import { GenerationSection } from "../../../components/generation-section";
 import { ProjectSetupShell } from "../../../components/project-setup-shell";
 import { ProjectShell } from "../../../components/project-shell";
 import {
-  ApiError,
-  getLatestVersion,
-  getProject,
   getProjectSources,
-  type VersionDetail,
+  getProjectWorkspace,
 } from "../../../lib/api";
 import { artifactSelectors } from "../../../lib/artifact-selectors";
 
@@ -18,12 +15,8 @@ export default async function ProjectOverviewPage({
   params: Promise<{ projectId: string }>;
 }) {
   const { projectId } = await params;
-  const project = await getProject(projectId);
-  let version: VersionDetail;
-  try {
-    version = await getLatestVersion(projectId);
-  } catch (error) {
-    if (!(error instanceof ApiError) || error.status !== 404) throw error;
+  const { project, version, draft } = await getProjectWorkspace(projectId);
+  if (!version) {
     const sources = await getProjectSources(projectId);
     return (
       <ProjectSetupShell project={project} active="overview">
@@ -67,7 +60,13 @@ export default async function ProjectOverviewPage({
   const artifact = version.artifact;
 
   return (
-    <ProjectShell project={project} version={version} artifact={artifact} active="overview">
+    <ProjectShell
+      project={project}
+      version={version}
+      artifact={artifact}
+      active="overview"
+      hasDraft={draft !== null}
+    >
       <div className="content-wrap">
         <header className="page-header overview-header">
           <div>

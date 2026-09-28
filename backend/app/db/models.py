@@ -160,7 +160,12 @@ class Draft(Base):
     project_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), ForeignKey("projects.id", ondelete="CASCADE"), unique=True
     )
-    base_version_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), nullable=False)
+    # Nullable: a draft created from a generation candidate may have no published
+    # ancestor, since a project's first COP has no prior version.
+    base_version_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True))
+    # The run or version this draft was forked from, so publishing can record
+    # provenance without guessing from timestamps.
+    source_run_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True))
     artifact_json: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False

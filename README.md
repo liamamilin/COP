@@ -20,8 +20,9 @@ work is claimed by a database-backed worker; no Redis service is required.
 - M2: project CRUD plus persisted text, TXT, Markdown, PDF, and public URL sources
 - M3: encrypted provider settings, deterministic Mock Provider, OpenAI-compatible adapter, connection test
 - M4: persisted Harness (H00–H130), database-backed run queue, SSE progress, cancellation, and crash recovery
+- M5: candidate-to-draft, manual field editing, explicit publish, immutable versions, version history
 
-M5–M8 (draft editing through export hardening) remain under development.
+M6–M8 (partial AI refinement through export hardening) remain under development.
 
 ### The persisted Harness
 
@@ -64,6 +65,39 @@ GET  /api/v1/generation-runs/{run_id}/events      (SSE, honours Last-Event-ID)
 GET  /api/v1/generation-runs/{run_id}/candidate
 POST /api/v1/generation-runs/{run_id}/cancel
 ```
+
+## Drafts and versions
+
+A finished run's candidate becomes the project's **draft**, which is the only
+mutable artifact. Editing is deliberately narrow: only text fields
+(`title`, `outcome`, `definition`, …) are editable, and every write re-validates
+the whole artifact before it is stored.
+
+```text
+POST   /api/v1/projects/{project_id}/drafts/from-run/{run_id}
+POST   /api/v1/projects/{project_id}/drafts/from-version/{version_id}
+GET    /api/v1/projects/{project_id}/draft
+PATCH  /api/v1/drafts/{draft_id}/metadata
+PATCH  /api/v1/drafts/{draft_id}/{kind}/{entity_id}   # goals|processes|stages|concepts|operations
+POST   /api/v1/drafts/{draft_id}/publish
+DELETE /api/v1/drafts/{draft_id}
+```
+
+Two deliberate boundaries:
+
+- **Reference fields are not hand-editable.** `stage_refs`, `concept_refs`, and
+  `id` are structure, and structure is the code's job — the same split as Shared
+  Foundation detection in H70. A PATCH that could rewrite `stage_refs` would let
+  a client silently drop a Stage from the main line, which is exactly the
+  failure the product exists to prevent.
+- **Published versions have no write endpoint at all.** There is no PATCH or
+  DELETE for a `COPVersion`; revising a live version means forking it into a new
+  draft. `test_drafts.py` asserts this against the OpenAPI document, so the
+  guarantee survives someone re-adding a route.
+
+A project has at most one active draft, enforced by a unique index rather than a
+read-then-write check. Creating a second returns `409 DRAFT_ALREADY_EXISTS`
+instead of discarding edits the user has not published.
 
 ## Quick start
 

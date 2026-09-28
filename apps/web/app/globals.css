@@ -415,6 +415,50 @@ a:focus-visible, button:focus-visible {
 .settings-message { background: var(--green-soft); border-radius: 9px; color: var(--green); margin: 24px 0 0; padding: 12px 15px; }
 .settings-save { margin-top: 28px; }
 
+/* Draft editing and version history */
+.draft-indicator { align-items: center; border: 1px solid var(--orange); border-radius: 7px; color: var(--orange); display: inline-flex; font-size: 9px; font-weight: 750; gap: 6px; letter-spacing: 0.06em; margin-top: 9px; padding: 6px 9px; text-transform: uppercase; }
+.draft-indicator i { background: var(--orange); border-radius: 50%; display: block; height: 5px; width: 5px; }
+.draft-indicator:hover { background: var(--orange-soft); }
+.standalone-workspace { display: block; padding: 60px 0 110px; }
+.draft-toolbar { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--orange); border-radius: 12px; margin: 34px 0 50px; padding: 24px 26px; }
+.draft-toolbar-head { align-items: start; display: flex; gap: 30px; justify-content: space-between; }
+.draft-toolbar-head h2 { font-family: Georgia, serif; font-size: 27px; font-weight: 400; margin: 0 0 8px; }
+.draft-toolbar-head .lead-copy { max-width: 520px; }
+.draft-toolbar-buttons { display: flex; flex: 0 0 auto; gap: 9px; }
+.danger-button { align-self: flex-start; background: transparent; border: 1px solid var(--orange); border-radius: 8px; color: var(--orange); cursor: pointer; font-size: 10px; padding: 9px 12px; text-transform: uppercase; }
+.danger-button:hover { background: var(--orange); color: #fff; }
+.danger-button:disabled { cursor: wait; opacity: 0.55; }
+.draft-confirm { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 20px; }
+.draft-confirm-note { color: var(--muted); font-size: 12px; margin: 0 0 14px; max-width: 620px; }
+.draft-sections { display: flex; flex-direction: column; gap: 44px; }
+.draft-section h2 { font-family: Georgia, serif; font-size: 27px; font-weight: 400; margin: 0; }
+.muted-note { color: var(--muted); font-size: 13px; }
+.draft-entity-list { border-top: 1px solid var(--line); list-style: none; margin: 18px 0 0; padding: 0; }
+.draft-entity-list li { border-bottom: 1px solid var(--line); }
+.draft-entity-list a { align-items: center; display: grid; gap: 16px; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr) auto; padding: 15px 4px; }
+.draft-entity-list a:hover strong { color: var(--green); }
+.draft-entity-id { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; overflow-wrap: anywhere; }
+.draft-entity-id.standalone { margin: 0 0 22px; }
+.draft-entity-list strong { font-size: 14px; font-weight: 600; }
+.draft-editor { display: flex; flex-direction: column; gap: 19px; }
+.draft-field { display: flex; flex-direction: column; gap: 7px; }
+.draft-field > span { align-items: baseline; color: var(--muted); display: flex; font-size: 9px; font-weight: 750; gap: 8px; letter-spacing: 0.1em; text-transform: uppercase; }
+.draft-field > span em { color: var(--orange); font-size: 8px; font-style: normal; font-weight: 700; letter-spacing: 0.08em; }
+.draft-field input, .draft-field textarea { background: var(--panel); border: 1px solid var(--line-strong); border-radius: 9px; color: var(--ink); outline: 0; padding: 12px 13px; resize: vertical; width: 100%; }
+.draft-field input:focus, .draft-field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-soft); }
+.draft-actions { align-items: center; display: flex; gap: 11px; }
+.draft-dirty { color: var(--orange); font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; }
+.draft-saved { color: var(--green); font-size: 12px; margin: 0; }
+.draft-back-row { border-top: 1px solid var(--line); font-size: 12px; margin-top: 40px; padding-top: 20px; }
+.draft-back-row a:hover { color: var(--green); }
+.version-list { border-top: 1px solid var(--line); list-style: none; margin: 40px 0 0; padding: 0; }
+.version-row { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 64px minmax(0, 1fr) auto; padding: 20px 4px; }
+.version-number { font-family: Georgia, serif; font-size: 25px; }
+.version-row.latest .version-number { color: var(--green); }
+.version-summary { font-size: 14px; margin: 0 0 5px; }
+.version-meta { color: var(--muted); font-size: 11px; margin: 0; }
+.version-immutable { border: 1px solid var(--line-strong); border-radius: 7px; color: var(--muted); font-size: 9px; font-weight: 750; letter-spacing: 0.06em; padding: 6px 9px; text-transform: uppercase; }
+
 @media (max-width: 1000px) {
   :root { --sidebar: 240px; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }

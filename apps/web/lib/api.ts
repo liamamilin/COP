@@ -19,15 +19,56 @@ export interface ProjectSummary {
   latest_version: number | null;
 }
 
-export interface VersionDetail {
+export interface VersionSummary {
   id: string;
   project_id: string;
   version_number: number;
+  /** Null for the first published version; set on every later one. */
+  parent_version_id: string | null;
+  run_id: string | null;
   change_summary: string;
   created_by: "user" | "harness" | "mixed";
   created_at: string;
+}
+
+export interface VersionDetail extends VersionSummary {
   artifact: COPArtifact;
 }
+
+export interface DraftCounts {
+  goals: number;
+  processes: number;
+  stages: number;
+  concepts: number;
+  operations: number;
+  shared_foundations: number;
+  practices: number;
+}
+
+export interface DraftSummary {
+  id: string;
+  project_id: string;
+  base_version_id: string | null;
+  source_run_id: string | null;
+  updated_at: string;
+  title: string;
+  counts: DraftCounts;
+}
+
+export interface DraftDetail extends DraftSummary {
+  artifact: COPArtifact;
+}
+
+/** API path segment -> editable field names, mirroring backend `EDITABLE_FIELDS`. */
+export const DRAFT_EDITABLE_FIELDS = {
+  goals: ["title", "outcome", "why_it_matters"],
+  processes: ["title", "outcome"],
+  stages: ["title", "local_goal", "why_it_exists", "local_outcome", "example"],
+  concepts: ["name", "definition", "role"],
+  operations: ["name", "definition", "purpose"],
+} as const satisfies Record<string, readonly string[]>;
+
+export type DraftEntityKind = keyof typeof DRAFT_EDITABLE_FIELDS;
 
 export interface SourceSummary {
   id: string;
@@ -95,11 +136,29 @@ function baseUrl(): string {
   );
 }
 
-async function request<T>(path: string): Promise<T> {
-  const response = await fetch(`${baseUrl()}${path}`, { cache: "no-store" });
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${baseUrl()}${path}`, { cache: "no-store", ...init });
   if (!response.ok) {
     throw await errorFrom(response, path);
   }
+  if (response.status === 204) return undefined as T;
+  return (await response.json()) as T;
+}
+
+/** Server-rendered reads stay on the internal URL; writes go to the public one. */
+async function post<T>(path: string, body?: unknown): Promise<T> {
+  return send<T>(path, { method: "POST", body: body === undefined ? undefined : JSON.stringify(body) });
+}
+
+async function send<T>(path: string, init: RequestInit): Promise<T> {
+  const response = await fetch(`${publicApiBaseUrl()}${path}`, {
+    ...init,
+    headers: init.body ? { "Content-Type": "application/json", ...init.headers } : init.headers,
+  });
+  if (!response.ok) {
+    throw await errorFrom(response, path);
+  }
+  if (response.status === 204) return undefined as T;
   return (await response.json()) as T;
 }
 
@@ -115,6 +174,72 @@ export function getLatestVersion(projectId: string): Promise<VersionDetail> {
   return request<VersionDetail>(
     `/projects/${encodeURIComponent(projectId)}/versions/latest`,
   );
+}
+
+export function getVersions(projectId: string): Promise<VersionSummary[]> {
+  return request<VersionSummary[]>(`/projects/${encodeURIComponent(projectId)}/versions`);
+}
+
+/**
+ * The project's active draft, or null when there is none.
+ *
+ * A 404 is an ordinary state here, not a failure: most of the time a project has
+ * no draft, so this must not throw or every page would need a try/catch.
+ */
+export async function getDraft(projectId: string): Promise<DraftDetail | null> {
+  try {
+    return await request<DraftDetail>(`/projects/${encodeURIComponent(projectId)}/draft`);
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) return null;
+    throw error;
+  }
+}
+
+export function createDraftFromRun(projectId: string, runId: string): Promise<DraftDetail> {
+  return post<DraftDetail>(
+    `/projects/${encodeURIComponent(projectId)}/drafts/from-run/${encodeURIComponent(runId)}`,
+  );
+}
+
+export function createDraftFromVersion(
+  projectId: string,
+  versionId: string,
+): Promise<DraftDetail> {
+  return post<DraftDetail>(
+    `/projects/${encodeURIComponent(projectId)}/drafts/from-version/${encodeURIComponent(versionId)}`,
+  );
+}
+
+export function publishDraft(draftId: string, changeSummary: string): Promise<VersionSummary> {
+  return post<VersionSummary>(`/drafts/${encodeURIComponent(draftId)}/publish`, {
+    change_summary: changeSummary,
+  });
+}
+
+export function discardDraft(draftId: string): Promise<void> {
+  return request<void>(`/drafts/${encodeURIComponent(draftId)}`, { method: "DELETE" });
+}
+
+export function patchDraftEntity(
+  draftId: string,
+  kind: DraftEntityKind,
+  entityId: string,
+  changes: Record<string, string>,
+): Promise<DraftSummary> {
+  return send<DraftSummary>(
+    `/drafts/${encodeURIComponent(draftId)}/${kind}/${encodeURIComponent(entityId)}`,
+    { method: "PATCH", body: JSON.stringify(changes) },
+  );
+}
+
+export function patchDraftMetadata(
+  draftId: string,
+  changes: Record<string, unknown>,
+): Promise<DraftSummary> {
+  return send<DraftSummary>(`/drafts/${encodeURIComponent(draftId)}/metadata`, {
+    method: "PATCH",
+    body: JSON.stringify(changes),
+  });
 }
 
 export function getProjectSources(projectId: string): Promise<SourceSummary[]> {
@@ -133,16 +258,10 @@ export async function startGenerationRun(
   projectId: string,
   body: GenerationRequest,
 ): Promise<GenerationRun> {
-  const response = await fetch(
-    `${publicApiBaseUrl()}/projects/${encodeURIComponent(projectId)}/generation-runs`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    },
+  return post<GenerationRun>(
+    `/projects/${encodeURIComponent(projectId)}/generation-runs`,
+    body,
   );
-  if (!response.ok) throw await errorFrom(response, "/generation-runs");
-  return (await response.json()) as GenerationRun;
 }
 
 export async function getGenerationRun(runId: string): Promise<GenerationRun> {
@@ -158,12 +277,7 @@ export async function getRunProgress(runId: string): Promise<RunProgress> {
 }
 
 export async function cancelGenerationRun(runId: string): Promise<GenerationRun> {
-  const response = await fetch(
-    `${publicApiBaseUrl()}/generation-runs/${encodeURIComponent(runId)}/cancel`,
-    { method: "POST" },
-  );
-  if (!response.ok) throw await errorFrom(response, "/cancel");
-  return (await response.json()) as GenerationRun;
+  return post<GenerationRun>(`/generation-runs/${encodeURIComponent(runId)}/cancel`);
 }
 
 /**
@@ -183,4 +297,22 @@ export async function getWorkspace(projectId: string) {
     getLatestVersion(projectId),
   ]);
   return { project, version, artifact: version.artifact };
+}
+
+/**
+ * Project, latest published version, and the active draft if one exists.
+ *
+ * The draft is optional, so the version fetch is allowed to 404 as well: a
+ * project with neither a version nor a draft is the pre-M4 setup state.
+ */
+export async function getProjectWorkspace(projectId: string) {
+  const project = await getProject(projectId);
+  const [version, draft] = await Promise.all([
+    getLatestVersion(projectId).catch((error: unknown) => {
+      if (error instanceof ApiError && error.status === 404) return null;
+      throw error;
+    }),
+    getDraft(projectId),
+  ]);
+  return { project, version, draft, artifact: version?.artifact ?? null };
 }

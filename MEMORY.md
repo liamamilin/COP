@@ -1,7 +1,7 @@
 # COP Studio — 工作记忆
 
 > 给新会话的交接文档。开始工作前先读本文件。
-> 最后更新：M4 完成时（2026-09-28）
+> 最后更新：M5 完成时（2026-09-28）
 
 ## 1. 项目是什么
 
@@ -33,9 +33,9 @@ COP Studio 是一个 local-first 的知识生产 + 学习工作台。它把一�
 | M1 渲染器 | ✅ | schema 校验、seed LangChain 工件、层级渲染 |
 | M2 素材 | ✅ | 文本/MD/PDF/URL，SSRF 防护 |
 | M3 设置 | ✅ | Fernet 加密 key、Mock + OpenAI 兼容适配器 |
-| **M4 持久化 Harness** | ✅ | 本轮完成，见下 |
-| M5 草稿/发布/版本 | ⬜ | **下一步** |
-| M6 局部 AI 精修 | ⬜ | |
+| M4 持久化 Harness | ✅ | 见 §4 |
+| **M5 草稿/发布/版本** | ✅ | **本轮完成**，见 §4.6 |
+| M6 局部 AI 精修 | ⬜ | **下一步** |
 | M7 Learn Mode | ⬜ | |
 | M8 导出 + 加固 | ⬜ | |
 
@@ -111,6 +111,55 @@ POST /api/v1/generation-runs/{run_id}/cancel
 - `lib/generation-api.ts`：类型 + 状态文案（失败/取消都明确告知"你的资料和历史版本未变"）
 - candidate 就绪后 `router.refresh()` 切到工作区
 
+### 4.6 M5 草稿/发布/版本
+
+表结构改动
+
+`drafts` 加了 `source_run_id`，`base_version_id` 改为**可空**（迁移 `0002`）。
+可空是必需的：项目第一个 COP 的 run 没有 `base_version_id`，原来 NOT NULL 会让
+首版无法走草稿发布。降级脚本会在有 null 行时**报错**而不是偷偷填值。
+
+### 编辑围栏（`backend/app/domain/drafting.py`）
+
+**只允许改文本字段**，`id` 和所有 `*_ref` / `*_refs` 一律拒绝
+（`FIELD_NOT_EDITABLE`）。理由和 M4 的 Shared Foundation 一样：结构归代码。
+让 PATCH 能改 `stage_refs`，客户端就能静默把一个 Stage 从主线删掉。
+
+**每次写入前全量校验**，不通过就整个请求拒绝，draft 保持字节不变。
+先写后校验会留下一个用户看不出坏在哪的半成品。
+
+必填文本不能清空（`FIELD_REQUIRED`）——`title` 空了 schema 直接不过。
+
+### 状态机
+
+```
+run(completed|needs_attention) --from-run--> Draft --publish--> COPVersion
+COPVersion --from-version--> Draft
+```
+
+- **每项目最多一个 draft**，靠 `drafts.project_id` 的 unique 索引，不是 read-then-write
+- 第二个 draft 返回 `409 DRAFT_ALREADY_EXISTS`，不覆盖已有草稿
+- publish 后 draft 被删除，否则会遮住刚发布的版本
+- `failed` / `cancelled` 的 run **不能**转 draft（`CANDIDATE_NOT_AVAILABLE`）
+
+### 不可变性怎么保证的
+
+**根本没有写版本号的 endpoint。** `drafts.py` 里没有任何对 `COPVersion` 的
+PATCH/DELETE。测试不是去调一个"应该不存在"的接口，而是**扫 OpenAPI 文档**
+断言没有 mutating 路由（`test_no_endpoint_can_mutate_a_published_version`）——
+这样以后有人加回来也会红。
+
+### 前端
+
+- `lib/draft-editing.ts`：实体 → 可编辑字段的扁平化，字段名与后端白名单一一对应
+- `components/draft-editor.tsx`：单实体编辑表单。保存失败**保留用户输入**
+- `components/draft-toolbar.tsx`：发布/放弃，两步确认
+- `/projects/[id]/draft` 草稿总览，`/projects/[id]/draft/[kind]/[id]` 单实体编辑
+- `/projects/[id]/versions` 版本历史，显示 parent 关系和 Immutable 标记
+
+**`buildPatch(original, current)` 只发改动过的字段**，不是发整张表单。
+发全量的话，一次保存会覆盖掉用户没碰过的字段。
+
 ## 5. 测试与命令
 
 ```bash
@@ -124,9 +173,12 @@ make up / make down
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：`make test` = 47 后端 + 8 前端，全绿。
-其中 14 个是队列/API 测试（含一个真实 worker 子进程测试），
-21 个是流水线测试。
+当前基线：`make test` = 78 后端 + 25 前端，全绿。
+其中 30 个是 M5 草稿/发布/版本测试，14 个队列/API，21 个流水线。
+
+后端测试跑之前必须 `make test-db`（或 `make test`）起 `cop_test` 库。
+直接 `uv run pytest` 会 13 error + 1 failed——这是 conftest 的 fail-fast 设计，
+不是代码坏了。
 
 ## 6. 踩过的坑（重要，别再踩）
 
@@ -166,43 +218,46 @@ make up / make down
 
 ## 7. 已知缺口
 
-- **没有浏览器实测**。桌面浏览器未连接本会话，SSE 重连和阶段列表渲染
-  只有单测 + SSR 输出验证覆盖。恢复工作后建议手动过一遍 M4 的 UI。
-- 前端无 Tailwind/shadcn/TanStack/Zod（规格推荐但未采用，手写约 500 行 CSS）。
+- **仍没有浏览器实测**。桌面浏览器始终未连接本会话。
+  M4 的 SSE 重连、M5 的草稿表单保存/发布，只覆盖到
+  单测 + SSR 输出 + curl 打真实容器 API，**没有验证过浏览器里的交互**。
+  交互部分（表单脏状态、发布确认框、toast）风险最高，接上浏览器后优先补。
+- 前端无 Tailwind/shadcn/TanStack/Zod（规格推荐但未采用，手写约 560 行 CSS）。
   样式质量尚可，但 `settings.appearance.theme` 是**死设置**——能存能选，
   CSS 里没有对应逻辑。属于规格 `15` §13 禁止的"按钮无功能"。
-- 仓库未 `git init`。
-- `scripts/` 缺 `generate-types.*`（规格 `22` 要求）。
-- CI 已有 schema 一致性检查 + 生成的 TS 类型陈旧检测，但无 Playwright E2E
+- `scripts/` 缺 `generate-types.*`（规格 `22` 要求）。CI 已在检测
+  `packages/cop-types/generated` 陈旧，但生成器本身不存在，
+  所以那个检查目前永远不会失败。
+- CI 已有 schema 一致性检查 + TS 类型陈旧检测，但无 Playwright E2E
   （规格 `12` 要求）。
+- **M5 没做草稿的 `locked_paths` 记录**，M6 会需要（见 §8）。
 
-## 8. 下一步：M5 草稿/发布/版本
+## 8. 下一步：M6 局部 AI 精修
 
-表已存在（`drafts`、`cop_versions`），主要是 API + UI：
+M5 的 draft 基础设施已就位，M6 直接往上加：
 
 ```
-POST   /projects/{project_id}/drafts/from-version/{version_id}
-GET    /projects/{project_id}/draft
-PATCH  /drafts/{draft_id}/goals/{goal_id}
-PATCH  /drafts/{draft_id}/processes/{process_id}
-PATCH  /drafts/{draft_id}/stages/{stage_id}
-PATCH  /drafts/{draft_id}/concepts/{concept_id}
-PATCH  /drafts/{draft_id}/operations/{operation_id}
-DELETE /drafts/{draft_id}
-POST   /drafts/{draft_id}/publish
-GET    /projects/{project_id}/versions      # 版本列表 UI
+GET  /generation-runs/{run_id}/candidate-patch
+POST /generation-runs/{run_id}/candidate-patch/accept
+POST /generation-runs/{run_id}/candidate-patch/reject
 ```
 
-必须遵守的不变量（规格 `16`、`24`）：
+验收（规格 `23`）：reject 不改任何东西、accept 只改 Draft、
+locked/用户编辑过的兄弟内容要保住。
 
-- **Published version 不可变**
+**关键点：用户手改过的路径必须记下来。** M4 的 `HarnessContext.locked_paths`
+已经存在，但那是 run 内的。M6 的 accept 是把 patch 打到 **Draft** 上，
+所以需要一份跨 run 的"这些字段是用户写的"记录——
+M5 的 PATCH 目前**没有**记录它，这是 M6 要补的第一个东西。
+建议给 `drafts` 加 `locked_paths` JSONB，M5 的每次 PATCH 顺手追加。
+
+其余不变量继续遵守（规格 `16`、`24`）：
+
+- Published version 不可变
 - 每项目最多一个 active draft
 - 发布是显式动作，AI 永不静默覆盖用户内容
-- 每次写入返回校验过的 draft 摘要
 - API 路径用 `/processes`，domain 名用 `MainProcess`（规格 `24` §4）
 - 前端所有工件渲染走 `artifactSelectors`（`lib/artifact-selectors.ts`）
-
-M5 验收（规格 `23`）：发布后不能改、手动编辑刷新后仍在、v2 记录 parent v1。
 
 ## 9. 常用文件速查
 
@@ -216,8 +271,12 @@ M5 验收（规格 `23`）：发布后不能改、手动编辑刷新后仍在、
 | Prompt 构造 | `backend/app/harness/prompts.py` |
 | 稳定 ID 规则 | `backend/app/harness/ids.py` |
 | 前端选择器 | `apps/web/lib/artifact-selectors.ts` |
+| 草稿编辑围栏 | `backend/app/domain/drafting.py` |
+| 草稿/版本 API | `backend/app/api/drafts.py` |
+| 前端草稿编辑 | `apps/web/lib/draft-editing.ts` |
 | 流水线测试 | `backend/tests/test_harness_pipeline.py` |
 | 队列/API 测试 | `backend/tests/test_generation_runs.py` |
+| 草稿/版本测试 | `backend/tests/test_drafts.py` |
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |
 | 冻结范围 | `cop-studio-development-spec-v1.0/docs/19-v1-scope-freeze.md` |
 | 跨层命名契约 | `cop-studio-development-spec-v1.0/docs/24-cross-layer-consistency.md` |

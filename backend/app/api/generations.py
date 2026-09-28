@@ -85,10 +85,11 @@ class PhaseOut(BaseModel):
 
 
 def _require_project(db: Session, project_id: uuid.UUID) -> Project:
-    project = db.get(Project, project_id)
-    if project is None or project.status == "deleted":
-        raise HTTPException(status_code=404, detail="Project not found")
-    return project
+    # Shared with the draft API so a missing project produces one identical 404
+    # envelope rather than a bare FastAPI detail string.
+    from app.api.drafts import require_project
+
+    return require_project(db, project_id)
 
 
 def _require_run(db: Session, run_id: uuid.UUID) -> GenerationRun:

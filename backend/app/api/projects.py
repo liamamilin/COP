@@ -52,6 +52,10 @@ class VersionSummary(BaseModel):
     id: uuid.UUID
     project_id: uuid.UUID
     version_number: int
+    # Null for the first published version; set on every later one, which is what
+    # makes v2 record that it descends from v1.
+    parent_version_id: uuid.UUID | None
+    run_id: uuid.UUID | None
     change_summary: str
     created_by: str
     created_at: datetime

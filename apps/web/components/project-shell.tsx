@@ -15,8 +15,12 @@ interface ProjectShellProps {
     | "stage"
     | "concept"
     | "operation"
+    | "draft"
+    | "versions"
     | "sources"
     | "settings";
+  /** Present when the project has an unpublished draft. */
+  hasDraft?: boolean;
   children: ReactNode;
 }
 
@@ -25,6 +29,7 @@ export function ProjectShell({
   version,
   artifact,
   active,
+  hasDraft = false,
   children,
 }: ProjectShellProps) {
   const projectPath = `/projects/${project.id}`;
@@ -35,6 +40,11 @@ export function ProjectShell({
           <span className="sidebar-kicker">CURRENT COP</span>
           <h2>{project.title}</h2>
           <span className="published-state"><i /> Published v{version.version_number}</span>
+          {hasDraft && (
+            <Link className="draft-indicator" href={`${projectPath}/draft`}>
+              <i /> Draft in progress — edit
+            </Link>
+          )}
         </div>
 
         <nav aria-label="Project navigation">
@@ -52,6 +62,14 @@ export function ProjectShell({
             </Link>
           ))}
           <p className="nav-label">EXPLORE</p>
+          {hasDraft && (
+            <Link className={active === "draft" ? "active" : ""} href={`${projectPath}/draft`}>
+              <span>✎</span> Draft editor
+            </Link>
+          )}
+          <Link className={active === "versions" ? "active" : ""} href={`${projectPath}/versions`}>
+            <span>↻</span> Version history
+          </Link>
           <Link className={active === "sources" ? "active" : ""} href={`${projectPath}/sources`}>
             <span>↳</span> Sources
           </Link>

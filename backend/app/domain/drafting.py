@@ -1,0 +1,245 @@
+"""Draft editing: candidate → draft, manual field edits, publish.
+
+Three invariants from the spec (`16-state-machines.md` §4, `24-cross-layer-consistency.md`
+§9) drive this module:
+
+- `COPVersion` is immutable. There is no code path here that updates one.
+- A project has at most one active draft, enforced by a unique index rather
+  than by a read-then-write check, so two concurrent requests cannot both win.
+- Publishing is an explicit user action. Nothing in the Harness calls
+  `publish_draft`.
+
+Every write re-validates the whole artifact. A draft that references a
+deleted concept is not a draft, it is a broken document, and letting it persist
+would push the failure to the moment of publishing, where the user has the least
+context about what went wrong.
+"""
+
+import copy
+import uuid
+from typing import Any
+
+from app.core.errors import CopStudioError, NotFoundError
+from app.domain.validation import validate_artifact
+
+# Editable text fields per entity type, mirroring the canonical artifact shape.
+# `id` and every `*_ref` / `*_refs` field are deliberately absent: references are
+# structure, and structure is the code's job (same split as Shared Foundation
+# detection in H70). Letting a PATCH body rewrite `stage_refs` would let a
+# client silently drop a Stage from the main line.
+EDITABLE_FIELDS: dict[str, frozenset[str]] = {
+    "goal": frozenset({"title", "outcome", "why_it_matters"}),
+    "process": frozenset({"title", "outcome"}),
+    "stage": frozenset({"title", "local_goal", "why_it_exists", "local_outcome", "example"}),
+    "concept": frozenset({"name", "definition", "role"}),
+    "operation": frozenset({"name", "definition", "purpose"}),
+}
+
+# API path segment -> artifact collection. API paths are plural nouns
+# (`/goals`, `/processes`, ...) while the domain types are singular, and
+# `/processes` is the API name for the `MainProcess` domain entity (spec 24 §4).
+ENTITY_COLLECTIONS: dict[str, str] = {
+    "goal": "goals",
+    "process": "main_processes",
+    "stage": "stages",
+    "concept": "concepts",
+    "operation": "operations",
+}
+
+# Plural API path segment -> singular domain entity type.
+PATH_ENTITIES: dict[str, str] = {
+    "goals": "goal",
+    "processes": "process",
+    "stages": "stage",
+    "concepts": "concept",
+    "operations": "operation",
+}
+
+
+def resolve_entity_type(segment: str) -> str | None:
+    """Map an API path segment to a domain entity type, or None if unknown."""
+    return PATH_ENTITIES.get(segment)
+
+MAX_FIELD_LENGTH = 8000
+MAX_ENTITY_ID_LENGTH = 180
+
+
+def _validate(data: dict[str, Any], schema_path: Any) -> None:
+    try:
+        validate_artifact(data, schema_path)
+    except Exception as exc:  # noqa: BLE001 - jsonschema and pydantic raise different types
+        raise CopStudioError(
+            "DRAFT_VALIDATION_FAILED",
+            f"This edit would leave the draft invalid, so it was rejected: {exc}",
+            status_code=422,
+            details={"reason": str(exc)},
+        ) from exc
+
+
+def apply_entity_edit(
+    artifact: dict[str, Any],
+    entity_type: str,
+    entity_id: str,
+    changes: dict[str, Any],
+    *,
+    schema_path: Any,
+) -> dict[str, Any]:
+    """Return a new artifact with one entity's editable text fields replaced.
+
+    Raises rather than persisting a partial edit: an invalid draft is worse than
+    a rejected request, because the user cannot tell how far the damage goes.
+    """
+    allowed = EDITABLE_FIELDS.get(entity_type)
+    collection_name = ENTITY_COLLECTIONS.get(entity_type)
+    if allowed is None or collection_name is None:
+        raise CopStudioError(
+            "UNKNOWN_ENTITY_TYPE",
+            f"'{entity_type}' is not an editable entity type",
+            status_code=404,
+        )
+    if not changes:
+        raise CopStudioError(
+            "EMPTY_EDIT", "Provide at least one field to change", status_code=422
+        )
+
+    unknown = sorted(set(changes) - allowed)
+    if unknown:
+        raise CopStudioError(
+            "FIELD_NOT_EDITABLE",
+            f"These fields cannot be edited by hand: {', '.join(unknown)}. "
+            f"Editable fields are: {', '.join(sorted(allowed))}",
+            status_code=422,
+            details={"rejected": unknown, "editable": sorted(allowed)},
+        )
+
+    updated = copy.deepcopy(artifact)
+    entities = updated.get(collection_name) or []
+    target = next((item for item in entities if str(item.get("id")) == entity_id), None)
+    if target is None:
+        raise NotFoundError(
+            f"{entity_type} '{entity_id}' is not part of this draft",
+            code="ENTITY_NOT_FOUND",
+        )
+
+    for field, value in changes.items():
+        if field == "example":
+            # The schema types `example` as an object or null. Accept a bare
+            # string for convenience and keep the shape the renderer expects.
+            target["example"] = None if value in (None, "") else {"summary": str(value).strip()}
+            continue
+        if not isinstance(value, str):
+            raise CopStudioError(
+                "FIELD_TYPE_INVALID",
+                f"'{field}' must be a string",
+                status_code=422,
+                details={"field": field},
+            )
+        stripped = value.strip()
+        if len(stripped) > MAX_FIELD_LENGTH:
+            raise CopStudioError(
+                "FIELD_TOO_LONG",
+                f"'{field}' exceeds {MAX_FIELD_LENGTH} characters",
+                status_code=422,
+                details={"field": field},
+            )
+        # Required text fields must not be emptied: an empty `title` produces a
+        # schema-invalid artifact, and a blank outcome is not reviewable.
+        if field in _REQUIRED_TEXT.get(entity_type, frozenset()) and not stripped:
+            raise CopStudioError(
+                "FIELD_REQUIRED",
+                f"'{field}' cannot be empty",
+                status_code=422,
+                details={"field": field},
+            )
+        target[field] = stripped
+
+    _validate(updated, schema_path)
+    return updated
+
+
+_REQUIRED_TEXT: dict[str, frozenset[str]] = {
+    "goal": frozenset({"title", "outcome"}),
+    "process": frozenset({"title", "outcome"}),
+    "stage": frozenset({"title", "local_goal"}),
+    "concept": frozenset({"name", "definition", "role"}),
+    "operation": frozenset({"name", "definition"}),
+}
+
+
+def apply_metadata_edit(
+    artifact: dict[str, Any], changes: dict[str, Any], *, schema_path: Any
+) -> dict[str, Any]:
+    """Update artifact-level descriptive fields (domain, mental model).
+
+    Structural collections are not reachable from here for the same reason they
+    are not reachable from an entity PATCH.
+    """
+    domain_fields = {"name", "scope", "target_user", "non_goals"}
+    mental_model_fields = {"summary", "flow"}
+    allowed = domain_fields | mental_model_fields
+    unknown = sorted(set(changes) - allowed)
+    if unknown:
+        raise CopStudioError(
+            "FIELD_NOT_EDITABLE",
+            f"These fields cannot be edited by hand: {', '.join(unknown)}. "
+            f"Editable fields are: {', '.join(sorted(allowed))}",
+            status_code=422,
+            details={"rejected": unknown, "editable": sorted(allowed)},
+        )
+    if not changes:
+        raise CopStudioError(
+            "EMPTY_EDIT", "Provide at least one field to change", status_code=422
+        )
+
+    updated = copy.deepcopy(artifact)
+    for field, value in changes.items():
+        if field in domain_fields:
+            section = updated.setdefault("domain", {})
+        else:
+            section = updated.setdefault("mental_model", {})
+        if isinstance(section.get(field), list):
+            if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+                raise CopStudioError(
+                    "FIELD_TYPE_INVALID",
+                    f"'{field}' must be a list of strings",
+                    status_code=422,
+                    details={"field": field},
+                )
+            section[field] = [item.strip() for item in value if item.strip()]
+        else:
+            if not isinstance(value, str) or not value.strip():
+                raise CopStudioError(
+                    "FIELD_REQUIRED" if field in ("name", "summary") else "FIELD_TYPE_INVALID",
+                    f"'{field}' must be a non-empty string",
+                    status_code=422,
+                    details={"field": field},
+                )
+            section[field] = value.strip()
+
+    _validate(updated, schema_path)
+    return updated
+
+
+def summarize(artifact: dict[str, Any]) -> dict[str, Any]:
+    """Counts shown next to a draft so the user can see what they are editing."""
+    domain = artifact.get("domain") or {}
+    return {
+        "title": domain.get("name", ""),
+        "counts": {
+            "goals": len(artifact.get("goals") or []),
+            "processes": len(artifact.get("main_processes") or []),
+            "stages": len(artifact.get("stages") or []),
+            "concepts": len(artifact.get("concepts") or []),
+            "operations": len(artifact.get("operations") or []),
+            "shared_foundations": len(artifact.get("shared_foundations") or []),
+            "practices": len(artifact.get("practices") or []),
+        },
+    }
+
+
+def next_version_number(existing: list[int]) -> int:
+    return (max(existing) + 1) if existing else 1
+
+
+def new_draft_id() -> uuid.UUID:
+    return uuid.uuid4()
