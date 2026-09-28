@@ -183,6 +183,31 @@ draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是
 > 改前端后必须 `docker compose build --no-cache web`，否则你会对着
 > 一个"改了没生效"的产物调试很久。我在这上面浪费了好几轮。
 
+### 4.8 SSE 进度流的 E2E
+
+`apps/web/e2e/progress-stream.spec.ts` + `stream-helpers.ts`。
+
+关键做法：**用 mock 的 `slow` 场景把 run 拖住**，否则 `success` 场景一秒就结束，
+任何中间态断言都是碰运气。`setMockScenario()` 直接 PATCH `/settings`，
+每个用例 `afterEach` 复位成 `success`，并软删自己建的 project。
+
+三个用例各自的真实风险点：
+
+1. **流式推进**：不能只断言"有 step 事件"，还要断言事件带 `id:`
+   —— 没有 id，断线就没法续传。`recordStreamEvents()` 包了 `EventSource`，
+   记录 `type#lastEventId#data`。
+2. **取消**：断言用户看到的话里有"previous versions are unchanged"。
+   一个看起来像数据丢失的取消是最糟的失败方式。
+3. **断流降级**：把 `window.EventSource` 换成会抛异常的函数，然后断言
+   transport 行显示 **Polling** 而不是 Streaming。
+   这条是"不许对用户撒谎"：流已经死了还说在流式推送，会让卡住的 run 看起来还活着。
+
+> 写第 3 条时我踩了个坑：本来想断言"断线重连从 lastEventId 续传"，
+> 但 `slow` 场景下 run 会在断言窗口内跑完，`active` 变 false，
+> transport 行整个消失，测试变成随机通过/失败。
+> **所以这条只保留可确定的部分（降级不撒谎 + 不卡死），
+> 续传语义交给后端已有的 `test_event_stream_honours_last_event_id_for_reconnect`。**
+
 ## 5. 测试与命令
 
 ```bash
@@ -199,7 +224,7 @@ make up / make down
 
 当前基线：`make test` = 78 后端 + 28 前端，全绿。
 其中 30 个是 M5 草稿/发布/版本测试，14 个队列/API，21 个流水线。
-浏览器层另有 `make test-e2e` = 8 个，跑真实 Compose 栈，约 20 秒。
+浏览器层另有 `make test-e2e` = 11 个，跑真实 Compose 栈，约 30 秒。
 
 后端测试跑之前必须 `make test-db`（或 `make test`）起 `cop_test` 库。
 直接 `uv run pytest` 会 13 error + 1 failed——这是 conftest 的 fail-fast 设计，
@@ -243,11 +268,17 @@ make up / make down
 
 ## 7. 已知缺口
 
-- **Playwright E2E 已就位（M5 收尾时补上）**，8 个用例覆盖草稿全流程，
-  `make test-e2e` 跑，CI 有独立 `e2e` job。但覆盖面还小：
-  - **M4 的 SSE 进度流仍然没有 E2E**，包括重连
-  - M2 的素材上传/URL、M3 的设置与 provider 测试都没有
+- **Playwright E2E 已就位**，`make test-e2e` 跑，CI 有独立 `e2e` job，
+  目前 11 个用例：
+  - M5 草稿全流程 8 个：fork / 编辑 / 刷新后仍在 / 发布并记 parent /
+    版本不可变 / 拒绝编辑保留输入 / 放弃需确认 / 单草稿规则 / 复数标题
+  - M4 进度流 3 个：流式推进到完成 / 取消并保留工作 / 断流降级为轮询
+- **覆盖缺口**：
+  - M2 素材上传/URL、M3 设置与 provider 连接测试，都还没有
   - 键盘可达性（M8 要求）没有覆盖
+  - `Last-Event-ID` 断线续传只在**后端**有测试，浏览器侧没做。
+    原因是 `slow` 场景下 run 会在断言窗口内跑完，transport 行先消失，
+    写出来只会是随机通过。与其加一个 flaky 的，不如等有更稳的注入点。
 - 桌面浏览器（Electron）里 React **不完整 hydrate**：loading.tsx 的 Suspense
   fallback 一直留在 DOM，只有一小部分元素挂上 fiber，点任何按钮都没反应。
   **这个现象只在桌面浏览器出现，Playwright 的干净 Chromium 完全正常**
