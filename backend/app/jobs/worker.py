@@ -27,6 +27,7 @@ from app.jobs.runner import (
     finish_run,
     load_context,
     load_source_bundle,
+    load_target_context,
     record_worker_heartbeat,
     recover_stale_runs,
 )
@@ -78,6 +79,26 @@ async def execute_run() -> bool:
         run_id = run.id
         context = load_context(run)
         context.source_bundle = load_source_bundle(db, run)
+        if context.partial_target and not load_target_context(db, run, context):
+            # Nothing to refine. Fail with a reason the user can act on rather
+            # than letting H140 crash on a missing artifact.
+            message = "There is no draft or published version to refine yet."
+            append_event(
+                db,
+                run_id,
+                "run.failed",
+                payload={"code": "REFINE_NO_BASE", "message": message},
+            )
+            finish_run(
+                db,
+                run_id,
+                status="failed",
+                context=context,
+                metrics={},
+                error_code="REFINE_NO_BASE",
+                error_message=message,
+            )
+            return True
         try:
             provider = build_provider(db, run.project_id, context.input.get("settings_override"))
         except Exception as exc:  # noqa: BLE001 - configuration errors are user-facing

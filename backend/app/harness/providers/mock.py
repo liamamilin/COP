@@ -457,11 +457,25 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
                 "entity_key": entity_key,
                 "field": "definition"
                 if entity_type in {"concept", "operation"}
-                else "why_it_exists",
+                else _refine_field(entity_type),
                 "value": change,
             }
         )
     return {"revisions": revisions}
+
+
+def _refine_field(entity_type: str) -> str:
+    """The field a targeted refinement should rewrite for this entity type.
+
+    A refinement has to change something the user can review, so it picks a
+    prose field rather than a title: a diff on a paragraph is meaningful, a diff
+    on a two-word title usually is not.
+    """
+    return {
+        "goal": "why_it_matters",
+        "process": "outcome",
+        "stage": "why_it_exists",
+    }.get(entity_type, "why_it_exists")
 
 
 def _mock_repair(payload: dict[str, Any]) -> dict[str, Any]:

@@ -104,6 +104,12 @@ class GenerationRun(TimestampMixin, Base):
     model_config_json: Mapped[dict[str, Any]] = mapped_column(JSONB, default=dict, nullable=False)
     checkpoint_json: Mapped[dict[str, Any]] = mapped_column(JSONB, default=dict, nullable=False)
     candidate_artifact_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
+    # A targeted run's proposal. Separate from candidate_artifact_json because
+    # a patch is a diff against the current draft, not a replacement COP, and
+    # conflating the two is how a refinement could overwrite the whole artifact.
+    candidate_patch_json: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
+    # Spec 16 §5: idle -> generating -> ready -> accepted | rejected | expired.
+    patch_state: Mapped[str] = mapped_column(String(16), default="idle", nullable=False)
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     heartbeat_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
@@ -166,6 +172,10 @@ class Draft(Base):
     # The run or version this draft was forked from, so publishing can record
     # provenance without guessing from timestamps.
     source_run_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True))
+    # Paths the user edited by hand, as `goal.x.why_it_matters`. An AI patch
+    # must never rewrite these; the spec requires user-authored content to
+    # survive refinement.
+    locked_paths: Mapped[list[str]] = mapped_column(JSONB, default=list, nullable=False)
     artifact_json: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False

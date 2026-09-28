@@ -24,6 +24,8 @@ from sqlalchemy.orm import Session
 
 from app.db.models import (
     AppSetting,
+    COPVersion,
+    Draft,
     GenerationEvent,
     GenerationRun,
     Project,
@@ -134,6 +136,11 @@ def load_context(run: GenerationRun) -> HarnessContext:
     context.base_version_id = str(run.base_version_id) if run.base_version_id else None
     context.input = context.input or run.requested_sections_json or {}
     context.settings = context.settings or run.model_config_json or {}
+    # The API accepted `target` from the start but nothing ever read it, so a
+    # targeted run silently produced a whole new COP. Routing on it here is what
+    # makes `target` mean anything.
+    target = context.input.get("target")
+    context.partial_target = dict(target) if isinstance(target, dict) and target else None
     return context
 
 
@@ -239,6 +246,30 @@ def store_checkpoint(db: Session, run_id: Any, context: HarnessContext) -> None:
     db.commit()
 
 
+def load_target_context(db: Session, run: GenerationRun, context: HarnessContext) -> bool:
+    """Point a targeted run at the artifact it should refine.
+
+    Preference order matters: an active draft is what the user is looking at and
+    what accepting will write back to, so it wins over the published version. A
+    refinement proposed against stale published content would show a before/after
+    that does not match the screen it was launched from.
+
+    Returns False when there is nothing to refine, so the caller can fail the run
+    with a real reason instead of letting H140 crash on a missing artifact.
+    """
+    draft = db.scalar(select(Draft).where(Draft.project_id == run.project_id))
+    if draft is not None:
+        context.artifact = draft.artifact_json
+        context.locked_paths = list(draft.locked_paths or [])
+        return True
+    if run.base_version_id:
+        version = db.get(COPVersion, run.base_version_id)
+        if version is not None:
+            context.artifact = version.artifact_json
+            return True
+    return False
+
+
 def finish_run(
     db: Session,
     run_id: Any,
@@ -249,20 +280,23 @@ def finish_run(
     error_code: str | None = None,
     error_message: str | None = None,
 ) -> None:
-    db.execute(
-        update(GenerationRun)
-        .where(GenerationRun.id == run_id)
-        .values(
-            status=status,
-            candidate_artifact_json=context.artifact,
-            checkpoint_json=json.loads(context.to_json()),
-            metrics_json=metrics,
-            completed_at=now(),
-            error_code=error_code,
-            error_message=error_message,
-            updated_at=now(),
-        )
-    )
+    values: dict[str, Any] = {
+        "status": status,
+        "candidate_artifact_json": context.artifact,
+        "checkpoint_json": json.loads(context.to_json()),
+        "metrics_json": metrics,
+        "completed_at": now(),
+        "error_code": error_code,
+        "error_message": error_message,
+        "updated_at": now(),
+    }
+    # A targeted run's proposal is its result. `ready` is only claimed once the
+    # patch actually exists, so a failed refinement never shows an empty
+    # preview as though it had produced something.
+    if context.candidate_patch is not None:
+        values["candidate_patch_json"] = context.candidate_patch
+        values["patch_state"] = "ready"
+    db.execute(update(GenerationRun).where(GenerationRun.id == run_id).values(**values))
     db.commit()
 
 

@@ -45,6 +45,9 @@ test-db-reset:
 		| grep -q 1 \
 		|| docker compose exec -T postgres createdb -U cop $(TEST_DATABASE_NAME)
 	cd backend && DATABASE_URL=$(TEST_DATABASE_URL) uv run alembic upgrade head
+	@echo "Test database is migrated. Run this after adding a column: the pytest" \
+		"'db' fixture truncates but never alters, so a stale schema fails every" \
+		"test with UndefinedColumn rather than a useful error."
 
 # Full suite: provision the test database, run backend tests, restore the
 # development port, run web tests. The development database is never touched.

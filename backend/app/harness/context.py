@@ -105,6 +105,9 @@ class HarnessContext:
     locked_paths: list[str] = field(default_factory=list)
     # Non-empty when the run regenerates one entity instead of a full COP.
     partial_target: dict[str, str] | None = None
+    # A targeted run's proposal, produced by H140. Never merged into `artifact`:
+    # accepting it is a separate, explicit user action.
+    candidate_patch: dict[str, Any] | None = None
 
     def apply(self, patch: dict[str, Any]) -> None:
         """Apply a checkpoint patch, ignoring keys that are not context fields."""

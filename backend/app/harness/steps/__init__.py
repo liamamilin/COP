@@ -20,6 +20,7 @@ from app.harness.steps.h100_critic import CriticStep
 from app.harness.steps.h110_refine import RefineStep
 from app.harness.steps.h120_validate import ValidateRepairStep
 from app.harness.steps.h130_finalize import FinalizeStep
+from app.harness.steps.h140_refine_target import RefineTargetStep
 
 # Progress labels shown in the generation UI. Phases describe the user-visible
 # stage of work, not the internal step name.
@@ -55,7 +56,16 @@ STEP_LABELS: dict[str, str] = {
     "H110": "Applying corrections",
     "H120": "Validating structure",
     "H130": "Finalizing candidate",
+    "H140": "Proposing a refinement",
 }
+
+# A targeted run does not rebuild the COP. It reviews what already exists, then
+# proposes a patch for one entity, so the pipeline here is deliberately short and
+# ends at a proposal rather than at a candidate artifact.
+TARGETED_PIPELINE: tuple[HarnessStep, ...] = (
+    CriticStep(),
+    RefineTargetStep(),
+)
 
 # Phases the user watches, in order. Several steps collapse into one phase so the
 # progress list stays short enough to scan.
@@ -68,8 +78,15 @@ PHASES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("compression", "Compressing shared foundations", ("H70",)),
     ("learning", "Generating learning material", ("H80",)),
     ("assembly", "Assembling the artifact", ("H90",)),
-    ("quality", "Reviewing quality", ("H100", "H110")),
+    ("quality", "Reviewing quality", ("H100", "H110", "H140")),
     ("finalize", "Finalizing artifact", ("H120", "H130")),
+)
+
+# Phases for a targeted refinement. Two, because that is all the work there is:
+# review what exists, then propose a change.
+TARGETED_PHASES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
+    ("quality", "Reviewing this entity", ("H100",)),
+    ("refine", "Proposing a refinement", ("H140",)),
 )
 
 STEP_TO_PHASE: dict[str, str] = {step: phase for phase, _label, steps in PHASES for step in steps}

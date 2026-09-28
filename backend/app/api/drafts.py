@@ -33,6 +33,7 @@ from app.domain.drafting import (
     next_version_number,
     resolve_entity_type,
     summarize,
+    with_locks,
 )
 from app.domain.validation import validate_artifact
 from app.harness.steps.h120_validate import resolve_schema_path
@@ -136,9 +137,7 @@ def _ensure_no_active_draft(db: Session, project_id: uuid.UUID) -> None:
     response_model=DraftDetail,
     status_code=status.HTTP_201_CREATED,
 )
-def create_draft_from_run(
-    project_id: uuid.UUID, run_id: uuid.UUID, db: DbSession
-) -> DraftDetail:
+def create_draft_from_run(project_id: uuid.UUID, run_id: uuid.UUID, db: DbSession) -> DraftDetail:
     """Turn a finished run's candidate into the project's active draft.
 
     The run's `base_version_id` carries forward, so a regeneration started from
@@ -217,9 +216,7 @@ def read_active_draft(project_id: uuid.UUID, db: DbSession) -> DraftDetail:
 
 
 @router.patch("/drafts/{draft_id}/metadata", response_model=DraftSummary)
-def patch_draft_metadata(
-    draft_id: uuid.UUID, body: dict[str, Any], db: DbSession
-) -> DraftSummary:
+def patch_draft_metadata(draft_id: uuid.UUID, body: dict[str, Any], db: DbSession) -> DraftSummary:
     draft = _require_draft(db, draft_id)
     draft.artifact_json = apply_metadata_edit(
         draft.artifact_json, body, schema_path=resolve_schema_path()
@@ -238,15 +235,22 @@ def patch_draft_entity(
     The path segment is plural (`/processes`) per spec 24 §4, mapped here to the
     singular domain type `process` = `MainProcess`. Reference fields are not
     editable; see `drafting.py`.
+
+    Every changed field is recorded as a locked path on the draft, so a later AI
+    refinement cannot silently overwrite what the user just wrote.
     """
     draft = _require_draft(db, draft_id)
-    draft.artifact_json = apply_entity_edit(
+    resolved = resolve_entity_type(entity_type) or entity_type
+    updated, changed = apply_entity_edit(
         draft.artifact_json,
-        resolve_entity_type(entity_type) or entity_type,
+        resolved,
         entity_id,
         body,
         schema_path=resolve_schema_path(),
     )
+    draft.artifact_json = updated
+    if changed:
+        draft.locked_paths = with_locks(draft.locked_paths, entity_id, changed)
     db.commit()
     db.refresh(draft)
     return _draft_out(draft)
@@ -277,9 +281,7 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
         ) from exc
 
     numbers = list(
-        db.scalars(
-            select(COPVersion.version_number).where(COPVersion.project_id == project.id)
-        )
+        db.scalars(select(COPVersion.version_number).where(COPVersion.project_id == project.id))
     )
     parent = db.scalar(
         select(COPVersion)

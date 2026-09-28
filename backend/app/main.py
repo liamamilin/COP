@@ -7,6 +7,7 @@ from sqlalchemy import text
 
 from app.api.drafts import router as drafts_router
 from app.api.generations import router as generations_router
+from app.api.patches import router as patches_router
 from app.api.projects import router as projects_router
 from app.api.settings import router as settings_router
 from app.api.sources import router as sources_router
@@ -36,6 +37,7 @@ app.add_middleware(
 app.include_router(projects_router, prefix="/api/v1")
 app.include_router(generations_router, prefix="/api/v1")
 app.include_router(drafts_router, prefix="/api/v1")
+app.include_router(patches_router, prefix="/api/v1")
 app.include_router(settings_router, prefix="/api/v1")
 app.include_router(sources_router, prefix="/api/v1")
 app.include_router(system_router, prefix="/api/v1")

@@ -346,6 +346,10 @@ CRITIC_ISSUE_CODES = (
     "MISSING_CORE_CONCEPT",
     "WEAK_PRACTICE",
     "UNSUPPORTED_SPECIFIC_CLAIM",
+    # Synthesised by H140 when the critic found nothing for the targeted entity.
+    # Without it the mock would have no recognised issue to act on and a
+    # refinement would silently propose nothing.
+    "USER_REQUESTED_REFINEMENT",
 )
 
 # H120 asks for the whole artifact back, so the schema stays deliberately loose:

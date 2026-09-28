@@ -26,7 +26,7 @@ from app.harness.context import (
     StepStatus,
 )
 from app.harness.providers.base import LLMProvider, ProviderError
-from app.harness.steps import STEP_LABELS, STEP_PIPELINE
+from app.harness.steps import STEP_LABELS, STEP_PIPELINE, TARGETED_PIPELINE
 from app.harness.steps.h120_validate import resolve_schema_path, validate
 
 logger = logging.getLogger("cop.harness")
@@ -133,9 +133,38 @@ async def run_pipeline(
     provider: LLMProvider,
     store: RunStore,
 ) -> HarnessOutcome:
-    """Execute every step in order, persisting a checkpoint after each."""
+    """Execute every step in order, persisting a checkpoint after each.
+
+    A run that named a target takes the short refinement path instead. The
+    distinction is made here rather than in the worker so both callers, and the
+    tests, get the same routing from the same context.
+    """
+    if context.partial_target:
+        return await run_targeted_pipeline(context, provider, store)
+    return await _execute_steps(context, provider, store, STEP_PIPELINE)
+
+
+async def run_targeted_pipeline(
+    context: HarnessContext,
+    provider: LLMProvider,
+    store: RunStore,
+) -> HarnessOutcome:
+    """Review what already exists and propose a patch for one entity.
+
+    The artifact is loaded from the run's base, never regenerated, so a
+    refinement cannot quietly rewrite content the user never asked about.
+    """
+    return await _execute_steps(context, provider, store, TARGETED_PIPELINE)
+
+
+async def _execute_steps(
+    context: HarnessContext,
+    provider: LLMProvider,
+    store: RunStore,
+    pipeline: tuple[HarnessStep, ...],
+) -> HarnessOutcome:
     services = HarnessServicesImpl(provider, context.run_id, store)
-    store.emit(context.run_id, [HarnessEvent("run.started", {"steps": len(STEP_PIPELINE)})])
+    store.emit(context.run_id, [HarnessEvent("run.started", {"steps": len(pipeline)})])
 
     context.settings.setdefault("schema_path", str(resolve_schema_path() or ""))
 
@@ -143,8 +172,8 @@ async def run_pipeline(
     # pipeline. Slicing at the first incomplete step would re-run later steps
     # whose output is already checkpointed, overwriting it: a retry that has
     # scope and goals would regenerate its scope and disagree with the goals.
-    steps = tuple(step for step in STEP_PIPELINE if not _step_satisfied(step.name, context))
-    resumed_from = steps[0].name if steps and len(steps) < len(STEP_PIPELINE) else None
+    steps = tuple(step for step in pipeline if not _step_satisfied(step.name, context))
+    resumed_from = steps[0].name if steps and len(steps) < len(pipeline) else None
     if resumed_from is not None:
         store.emit(
             context.run_id,
@@ -246,6 +275,11 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
     is to decide whether the artifact is publishable, so re-entering a run that
     already holds an artifact must re-run them rather than trust the stored one.
     """
+    if name == "H140":
+        # A proposal is cheap to re-derive and stale the moment the draft moves,
+        # so a resumed refinement always asks again rather than replaying an
+        # answer to a question about content that has since changed.
+        return False
     if name in {"H120", "H130"}:
         return False
     return {
@@ -265,6 +299,11 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
 
 
 def _final_status(context: HarnessContext) -> str:
+    # A targeted run produces a patch, not a candidate artifact. Judging it by
+    # artifact validation would report `failed` for a run that did exactly what
+    # it was asked, because it never produced one.
+    if context.partial_target:
+        return "completed" if context.candidate_patch is not None else "failed"
     if context.artifact is None:
         return "failed"
     if validate(context.artifact, resolve_schema_path(context.settings.get("schema_path"))):

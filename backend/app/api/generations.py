@@ -23,8 +23,9 @@ from sqlalchemy.orm import Session
 from app.core.errors import CopStudioError, NotFoundError
 from app.db.models import COPVersion, GenerationRun, Project
 from app.db.session import SessionLocal, get_db
+from app.domain.patches import REFINABLE_ENTITIES
 from app.harness.provider_factory import resolve_effective_settings_with_run
-from app.harness.steps import PHASES
+from app.harness.steps import PHASES, TARGETED_PHASES
 from app.jobs.events import read_events
 from app.jobs.runner import (
     create_run,
@@ -119,9 +120,25 @@ def run_out(run: GenerationRun) -> GenerationRunOut:
     )
 
 
+def _is_targeted(events: list[dict[str, Any]]) -> bool:
+    """True when the event log shows the short refinement pipeline.
+
+    Detected from H140 rather than from the run row, because `phase_states` only
+    has the events. A refinement that never reached H140 reports the full list,
+    which is the honest answer: it failed before proposing anything.
+    """
+    return any(event.get("step") == "H140" for event in events)
+
+
 def phase_states(events: list[dict[str, Any]], *, run_status: str) -> list[PhaseOut]:
-    """Derive per-phase progress from the event log."""
-    step_to_phase = {step: key for key, _label, steps in PHASES for step in steps}
+    """Derive per-phase progress from the event log.
+
+    A targeted run reports the two phases it actually has, rather than the ten a
+    full generation walks through. Showing an untouched ten-item list for a
+    refinement would imply far more work than is happening.
+    """
+    source = TARGETED_PHASES if _is_targeted(events) else PHASES
+    step_to_phase = {step: key for key, _label, steps in source for step in steps}
     done: set[str] = set()
     active: set[str] = set()
     for event in events:
@@ -137,7 +154,7 @@ def phase_states(events: list[dict[str, Any]], *, run_status: str) -> list[Phase
 
     terminal = run_status in TERMINAL_STATUSES
     states: list[PhaseOut] = []
-    for key, label, steps in PHASES:
+    for key, label, steps in source:
         if key in done:
             state = "done"
         elif key in active and not terminal:
@@ -161,7 +178,18 @@ def start_generation_run(
     project_id: uuid.UUID, body: GenerationRunCreate, db: DbSession
 ) -> GenerationRunOut:
     _require_project(db, project_id)
-    if not body.topic.strip() and not body.source_ids:
+    if body.target is not None:
+        # A targeted run refines something that already exists, so it must not
+        # demand a topic. Validating the target here gives the user a real error
+        # at request time rather than a failed run minutes later.
+        if body.target.entity_type not in REFINABLE_ENTITIES:
+            raise CopStudioError(
+                "TARGET_NOT_REFINABLE",
+                f"'{body.target.entity_type}' cannot be refined. Refinable types are: "
+                f"{', '.join(REFINABLE_ENTITIES)}",
+                status_code=422,
+            )
+    elif not body.topic.strip() and not body.source_ids:
         raise CopStudioError(
             "HARNESS_INTAKE_INCOMPLETE",
             "Provide a topic or attach at least one source before running the Harness",

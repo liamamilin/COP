@@ -60,6 +60,33 @@ def resolve_entity_type(segment: str) -> str | None:
     """Map an API path segment to a domain entity type, or None if unknown."""
     return PATH_ENTITIES.get(segment)
 
+
+def lock_path(entity_id: str, field: str) -> str:
+    """The lock token for one field, matching the H110 refiner's format.
+
+    Entity ids already carry their own type prefix (`goal.x`), so a lock is
+    either a whole entity (`goal.x`) or one field of it (`goal.x.outcome`).
+    Using the same string format in both places is what lets a draft's locks be
+    handed straight to the Harness without translation.
+    """
+    return f"{entity_id}.{field}"
+
+
+def with_locks(locked: list[str] | None, entity_id: str, changed_fields: list[str]) -> list[str]:
+    """Return the lock list extended with the fields just edited.
+
+    Only fields whose value actually changed are locked. Resaving a form
+    unchanged must not quietly make content un-refinable forever, so callers
+    pass the diff, not the whole form.
+    """
+    updated = list(locked or [])
+    for field in changed_fields:
+        token = lock_path(entity_id, field)
+        if token not in updated:
+            updated.append(token)
+    return updated
+
+
 MAX_FIELD_LENGTH = 8000
 MAX_ENTITY_ID_LENGTH = 180
 
@@ -88,6 +115,10 @@ def apply_entity_edit(
 
     Raises rather than persisting a partial edit: an invalid draft is worse than
     a rejected request, because the user cannot tell how far the damage goes.
+
+    Returns the new artifact and the fields whose value actually changed. The
+    caller needs that second value to record locks: a PATCH that resends an
+    unchanged field must not make it permanently un-refinable.
     """
     allowed = EDITABLE_FIELDS.get(entity_type)
     collection_name = ENTITY_COLLECTIONS.get(entity_type)
@@ -98,9 +129,7 @@ def apply_entity_edit(
             status_code=404,
         )
     if not changes:
-        raise CopStudioError(
-            "EMPTY_EDIT", "Provide at least one field to change", status_code=422
-        )
+        raise CopStudioError("EMPTY_EDIT", "Provide at least one field to change", status_code=422)
 
     unknown = sorted(set(changes) - allowed)
     if unknown:
@@ -121,11 +150,15 @@ def apply_entity_edit(
             code="ENTITY_NOT_FOUND",
         )
 
+    changed: list[str] = []
     for field, value in changes.items():
+        before = copy.deepcopy(target.get(field))
         if field == "example":
             # The schema types `example` as an object or null. Accept a bare
             # string for convenience and keep the shape the renderer expects.
             target["example"] = None if value in (None, "") else {"summary": str(value).strip()}
+            if target.get(field) != before:
+                changed.append(field)
             continue
         if not isinstance(value, str):
             raise CopStudioError(
@@ -152,9 +185,11 @@ def apply_entity_edit(
                 details={"field": field},
             )
         target[field] = stripped
+        if target[field] != before:
+            changed.append(field)
 
     _validate(updated, schema_path)
-    return updated
+    return updated, changed
 
 
 _REQUIRED_TEXT: dict[str, frozenset[str]] = {
@@ -187,9 +222,7 @@ def apply_metadata_edit(
             details={"rejected": unknown, "editable": sorted(allowed)},
         )
     if not changes:
-        raise CopStudioError(
-            "EMPTY_EDIT", "Provide at least one field to change", status_code=422
-        )
+        raise CopStudioError("EMPTY_EDIT", "Provide at least one field to change", status_code=422)
 
     updated = copy.deepcopy(artifact)
     for field, value in changes.items():

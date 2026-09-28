@@ -16,7 +16,6 @@ import json
 from pathlib import Path
 
 import pytest
-from fastapi.testclient import TestClient
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -92,9 +91,7 @@ class TestDraftCreation:
         project_id = create_project(db)
         version_id = seed_version(db, project_id)
 
-        response = client.post(
-            f"/api/v1/projects/{project_id}/drafts/from-version/{version_id}"
-        )
+        response = client.post(f"/api/v1/projects/{project_id}/drafts/from-version/{version_id}")
         assert response.status_code == 201, response.text
         assert response.json()["base_version_id"] == version_id
 
@@ -164,9 +161,7 @@ class TestManualEditing:
         fixture = load_fixture()
         first, second = fixture["goals"][0]["id"], fixture["goals"][1]["id"]
 
-        client.patch(
-            f"/api/v1/drafts/{draft_id}/goals/{first}", json={"title": "Renamed goal"}
-        )
+        client.patch(f"/api/v1/drafts/{draft_id}/goals/{first}", json={"title": "Renamed goal"})
 
         stored = client.get(f"/api/v1/projects/{project_id}/draft").json()["artifact"]
         by_id = {item["id"]: item for item in stored["goals"]}
@@ -261,7 +256,9 @@ class TestEditFencing:
         draft_id = make_draft(db, project_id)
         goal_id = load_fixture()["goals"][0]["id"]
 
-        assert client.patch(f"/api/v1/drafts/{draft_id}/goals/{goal_id}", json={}).status_code == 422
+        assert (
+            client.patch(f"/api/v1/drafts/{draft_id}/goals/{goal_id}", json={}).status_code == 422
+        )
 
     def test_editing_an_absent_entity_reports_not_found(self, client, db):
         project_id = create_project(db)
@@ -388,9 +385,7 @@ class TestVersionImmutability:
             f"{method.upper()} {path}"
             for path, operations in client.get("/openapi.json").json()["paths"].items()
             for method in operations
-            if method in mutating
-            and "/versions" in path
-            and "/versions/latest" not in path
+            if method in mutating and "/versions" in path and "/versions/latest" not in path
         ]
         assert published_version_writes == [], (
             f"published versions must stay immutable, found: {published_version_writes}"
