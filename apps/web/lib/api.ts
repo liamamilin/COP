@@ -70,6 +70,19 @@ export const DRAFT_EDITABLE_FIELDS = {
 
 export type DraftEntityKind = keyof typeof DRAFT_EDITABLE_FIELDS;
 
+/**
+ * Entity kinds the model may refine, mapped from the plural API segment to the
+ * singular domain type the run API expects. Concepts and Operations are
+ * deliberately absent: V1 refines Goals, Main Processes, and Stages only.
+ */
+export const REFINABLE_KINDS: Partial<Record<DraftEntityKind, "goal" | "process" | "stage">> = {
+  goals: "goal",
+  processes: "process",
+  stages: "stage",
+};
+
+export type RefinableKind = NonNullable<(typeof REFINABLE_KINDS)[DraftEntityKind]>;
+
 export interface SourceSummary {
   id: string;
   project_id: string;
@@ -178,6 +191,75 @@ export function getLatestVersion(projectId: string): Promise<VersionDetail> {
 
 export function getVersions(projectId: string): Promise<VersionSummary[]> {
   return request<VersionSummary[]>(`/projects/${encodeURIComponent(projectId)}/versions`);
+}
+
+export interface PatchChange {
+  field: string;
+  before: string;
+  after: string;
+}
+
+export interface RejectedProposal {
+  field: string;
+  reason: string;
+  value: string;
+}
+
+export type PatchState =
+  | "idle"
+  | "generating"
+  | "ready"
+  | "accepted"
+  | "rejected"
+  | "expired";
+
+export interface CandidatePatch {
+  run_id: string;
+  state: PatchState;
+  project_id: string;
+  entity_type: string;
+  entity_id: string;
+  entity_title: string;
+  changes: PatchChange[];
+  rejected: RejectedProposal[];
+  locked_paths: string[];
+  /** True when the draft moved on since the proposal was made. */
+  stale: boolean;
+}
+
+export interface PatchResult {
+  state: PatchState;
+  draft_id: string | null;
+  applied_fields: string[];
+  skipped: RejectedProposal[];
+  message: string;
+}
+
+export function getCandidatePatch(runId: string): Promise<CandidatePatch> {
+  return request<CandidatePatch>(
+    `/generation-runs/${encodeURIComponent(runId)}/candidate-patch`,
+  );
+}
+
+export function acceptCandidatePatch(runId: string): Promise<PatchResult> {
+  return post<PatchResult>(
+    `/generation-runs/${encodeURIComponent(runId)}/candidate-patch/accept`,
+  );
+}
+
+export function rejectCandidatePatch(runId: string): Promise<PatchResult> {
+  return post<PatchResult>(
+    `/generation-runs/${encodeURIComponent(runId)}/candidate-patch/reject`,
+  );
+}
+
+export async function getCandidatePatchOrNull(runId: string): Promise<CandidatePatch | null> {
+  try {
+    return await getCandidatePatch(runId);
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 409) return null;
+    throw error;
+  }
 }
 
 /**

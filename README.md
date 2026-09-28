@@ -21,8 +21,9 @@ work is claimed by a database-backed worker; no Redis service is required.
 - M3: encrypted provider settings, deterministic Mock Provider, OpenAI-compatible adapter, connection test
 - M4: persisted Harness (H00–H130), database-backed run queue, SSE progress, cancellation, and crash recovery
 - M5: candidate-to-draft, manual field editing, explicit publish, immutable versions, version history
+- M6: partial AI refinement, before/after preview, accept/reject, user edits protected
 
-M6–M8 (partial AI refinement through export hardening) remain under development.
+M7–M8 (Learn Mode through export hardening) remain under development.
 
 ### The persisted Harness
 
@@ -98,6 +99,27 @@ Two deliberate boundaries:
 A project has at most one active draft, enforced by a unique index rather than a
 read-then-write check. Creating a second returns `409 DRAFT_ALREADY_EXISTS`
 instead of discarding edits the user has not published.
+
+## Partial AI refinement
+
+A run that names a `target` refines one Goal, Main Process, or Stage instead of
+regenerating the COP. It produces a patch, not a candidate artifact, and
+producing one changes nothing.
+
+```text
+GET  /api/v1/generation-runs/{run_id}/candidate-patch    # before/after preview
+POST /api/v1/generation-runs/{run_id}/candidate-patch/accept
+POST /api/v1/generation-runs/{run_id}/candidate-patch/reject
+```
+
+Every field the user edits by hand is recorded on the draft as a locked path, and
+a proposal that touches one is refused. The refusal is reported with a reason
+rather than dropped silently, so a user can see that the model tried. Accepting
+re-checks the locks and refuses a patch whose "before" no longer matches the
+draft, rather than discarding whatever was typed while the preview sat open.
+
+Only `accept` writes, and only ever to the draft. There is no path from the patch
+router to a `COPVersion`.
 
 ## Quick start
 

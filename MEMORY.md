@@ -1,7 +1,7 @@
 # COP Studio — 工作记忆
 
 > 给新会话的交接文档。开始工作前先读本文件。
-> 最后更新：M5 完成时（2026-09-28）
+> 最后更新：M6 完成时（2026-09-28）
 
 ## 1. 项目是什么
 
@@ -34,9 +34,9 @@ COP Studio 是一个 local-first 的知识生产 + 学习工作台。它把一�
 | M2 素材 | ✅ | 文本/MD/PDF/URL，SSRF 防护 |
 | M3 设置 | ✅ | Fernet 加密 key、Mock + OpenAI 兼容适配器 |
 | M4 持久化 Harness | ✅ | 见 §4 |
-| **M5 草稿/发布/版本** | ✅ | **本轮完成**，见 §4.6 |
-| M6 局部 AI 精修 | ⬜ | **下一步** |
-| M7 Learn Mode | ⬜ | |
+| M5 草稿/发布/版本 | ✅ | 见 §4.6 |
+| **M6 局部 AI 精修** | ✅ | **本轮完成**，见 §4.9 |
+| M7 Learn Mode | ⬜ | **下一步** |
 | M8 导出 + 加固 | ⬜ | |
 
 规格 `23-coding-agent-milestones.md`：**V1 完成 = M0–M8 全部验收通过**。
@@ -208,6 +208,54 @@ draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是
 > **所以这条只保留可确定的部分（降级不撒谎 + 不卡死），
 > 续传语义交给后端已有的 `test_event_stream_honours_last_event_id_for_reconnect`。**
 
+### 4.9 M6 局部 AI 精修
+
+### `target` 字段一直是死的
+
+M4 的 `GenerationRunCreate` 就有 `target`，存进了 `requested_input`，
+但**没有任何代码读它**。也就是说"局部精修"当时会静默地重新生成整个 COP——
+正是这个里程碑要防的事：为了改一句话，把周围的东西全重写一遍。
+
+现在 `load_context()` 读它并路由到 `TARGETED_PIPELINE`（只有 H100 → H140）。
+工件从**当前 draft** 取，没有 draft 才退回已发布版本——
+针对用户没在看的旧内容提改动，before/after 会和屏幕对不上。
+
+### locked_paths 终于有了落点（迁移 0003）
+
+M5 故意留的坑。Harness 的 `locked_paths` 是 run 内的，
+而精修是**另一个 run**，所以锁无处可存。`drafts.locked_paths` 解决它。
+
+**只锁真正变了的字段。** PATCH 可能重发整张表单，
+无差别上锁会让内容永久不可精修。`apply_entity_edit` 因此返回
+`(artifact, changed_fields)` 两个值。
+
+### accept 时要重新检查锁
+
+不能信任提议时算过的结果：用户可能在预览还开着的时候改了那个字段。
+所以 accept 会再查一遍 `draft.locked_paths`，
+并且 draft 若已变动（`patch_is_stale`）就整个拒绝——
+否则会把用户更新的内容静默覆盖掉。
+
+### 状态机
+
+`generating → ready → accepted | rejected | expired`，
+存在 `generation_runs.patch_state`（迁移 0004，带 CHECK 约束）。
+`ready` 只在 patch 真的存在时才写，所以失败的精修不会显示一个空预览。
+
+patch 有 30 分钟 TTL，并且**预览时会标记 `stale`**。
+
+### 测试发现的一个真问题
+
+mock 的 `_mock_refine` 只在有 `recommended_change` 时产出 revision。
+定向精修在没有用户指令时就没有可回显的文本，于是**什么都不产出**，
+大部分 accept/reject 测试直接 skip——绿灯但是因为错误的原因。
+现在没指令时它会确定性地合成一个改写。
+
+> 变异测试的一个教训：我先破坏 `patches.py` 里的锁检查，**100 个测试全过**。
+> 因为真正过滤的是 H110 的 `is_locked`，`patches.py` 那道是**第二道防线**。
+> 破坏 `h110_refine.is_locked` 才真的挂了一个测试。
+> 冗余防御会让某些变异"活下来"，这不一定说明没覆盖。
+
 ## 5. 测试与命令
 
 ```bash
@@ -222,9 +270,15 @@ make up / make down
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：`make test` = 78 后端 + 28 前端，全绿。
-其中 30 个是 M5 草稿/发布/版本测试，14 个队列/API，21 个流水线。
-浏览器层另有 `make test-e2e` = 11 个，跑真实 Compose 栈，约 30 秒。
+当前基线：`make test` = 100 后端 + 28 前端，全绿。
+其中 22 个是 M6 patch 测试，30 个 M5 草稿/版本，14 个队列/API，21 个流水线。
+浏览器层 `make test-e2e` = 16 个，跑真实 Compose 栈，约 45 秒：
+M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个。
+
+> **加字段后必须重跑 `make test-db` / `make test-db-reset`。**
+> pytest 的 `db` fixture 只 TRUNCATE，不 ALTER。schema 没跟上时
+> 报的是 `UndefinedColumn`，看不出是哪个改动引起的。
+> Makefile 现在会在迁移后打这句提示。
 
 后端测试跑之前必须 `make test-db`（或 `make test`）起 `cop_test` 库。
 直接 `uv run pytest` 会 13 error + 1 failed——这是 conftest 的 fail-fast 设计，
@@ -273,6 +327,8 @@ make up / make down
   - M5 草稿全流程 8 个：fork / 编辑 / 刷新后仍在 / 发布并记 parent /
     版本不可变 / 拒绝编辑保留输入 / 放弃需确认 / 单草稿规则 / 复数标题
   - M4 进度流 3 个：流式推进到完成 / 取消并保留工作 / 断流降级为轮询
+  - M6 精修 5 个：before/after 预览且提议不落盘 / reject 不动任何东西 /
+    accept 只改 Draft / **手写句子扛过一次精修** / 无 draft 时不提供入口
 - **覆盖缺口**：
   - M2 素材上传/URL、M3 设置与 provider 连接测试，都还没有
   - 键盘可达性（M8 要求）没有覆盖
@@ -291,26 +347,27 @@ make up / make down
   `packages/cop-types/generated` 陈旧，但生成器本身不存在，
   所以那个检查目前永远不会失败。
 - CI 已有 schema 一致性检查 + TS 类型陈旧检测 + Playwright E2E（`e2e` job）。
-- **M5 没做草稿的 `locked_paths` 记录**，M6 会需要（见 §8）。
 
-## 8. 下一步：M6 局部 AI 精修
 
-M5 的 draft 基础设施已就位，M6 直接往上加：
+## 8. 下一步：M7 Learn Mode
+
+M6 的 patch 基础设施已就位，M7 直接往上加：
 
 ```
-GET  /generation-runs/{run_id}/candidate-patch
-POST /generation-runs/{run_id}/candidate-patch/accept
-POST /generation-runs/{run_id}/candidate-patch/reject
+GET /projects/{project_id}/learning-progress
+PUT /projects/{project_id}/learning-progress
 ```
 
-验收（规格 `23`）：reject 不改任何东西、accept 只改 Draft、
-locked/用户编辑过的兄弟内容要保住。
+表 `learning_progress` 已存在（`project_id` + `version_id` + `goal_id` +
+`stage_id` + `status` + `notes`），缺的是 API + UI。
 
-**关键点：用户手改过的路径必须记下来。** M4 的 `HarnessContext.locked_paths`
-已经存在，但那是 run 内的。M6 的 accept 是把 patch 打到 **Draft** 上，
-所以需要一份跨 run 的"这些字段是用户写的"记录——
-M5 的 PATCH 目前**没有**记录它，这是 M6 要补的第一个东西。
-建议给 `drafts` 加 `locked_paths` JSONB，M5 的每次 PATCH 顺手追加。
+验收（规格 `23`）：刷新不丢进度、切换工件版本不损坏进度记录、
+**完整 Main Process 始终可见**。
+
+**最后一个不变量最容易违反。** 前端所有工件渲染必须走 `artifactSelectors`
+（`lib/artifact-selectors.ts`），并且任何进度相关的 UI 都不能
+"只渲染当前 Stage"——用户在任何时刻都要能看到主线全貌，
+这是产品主张（先给结构再给细节）的核心，破坏它比丢进度更严重。
 
 其余不变量继续遵守（规格 `16`、`24`）：
 
@@ -318,7 +375,10 @@ M5 的 PATCH 目前**没有**记录它，这是 M6 要补的第一个东西。
 - 每项目最多一个 active draft
 - 发布是显式动作，AI 永不静默覆盖用户内容
 - API 路径用 `/processes`，domain 名用 `MainProcess`（规格 `24` §4）
-- 前端所有工件渲染走 `artifactSelectors`（`lib/artifact-selectors.ts`）
+
+M8 之前还欠的：素材上传/URL 的 E2E、设置与 provider 的 E2E、
+键盘可达性（规格 `12` 要求）、`scripts/generate-types.*`（规格 `22` 要求，
+现在 CI 那个"类型是否陈旧"的检查永远不会失败）。
 
 ## 9. 常用文件速查
 
@@ -338,7 +398,9 @@ M5 的 PATCH 目前**没有**记录它，这是 M6 要补的第一个东西。
 | 流水线测试 | `backend/tests/test_harness_pipeline.py` |
 | 队列/API 测试 | `backend/tests/test_generation_runs.py` |
 | 草稿/版本测试 | `backend/tests/test_drafts.py` |
-| 浏览器 E2E | `apps/web/e2e/draft-loop.spec.ts` |
+| 浏览器 E2E | `apps/web/e2e/`（draft-loop / progress-stream / refinement） |
+| 精修 patch 领域逻辑 | `backend/app/domain/patches.py` |
+| 精修 API | `backend/app/api/patches.py` |
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |
 | 冻结范围 | `cop-studio-development-spec-v1.0/docs/19-v1-scope-freeze.md` |
 | 跨层命名契约 | `cop-studio-development-spec-v1.0/docs/24-cross-layer-consistency.md` |

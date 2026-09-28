@@ -438,6 +438,7 @@ def _mock_critic(payload: dict[str, Any]) -> dict[str, Any]:
 def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
     issues = payload.get("issues") or []
     locked = set(payload.get("locked_paths") or [])
+    artifact = payload.get("artifact") or {}
     revisions: list[dict[str, Any]] = []
     for issue in issues:
         if issue.get("code") not in CRITIC_ISSUE_CODES:
@@ -449,6 +450,14 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
         if entity_type not in {"goal", "process", "stage", "concept", "operation", "branch"}:
             continue
         change = _clean(issue.get("recommended_change"), "")
+        if not change:
+            # No instruction, so there is no recommended text to echo.
+            # Synthesise a deterministic rewrite rather than returning nothing:
+            # a refiner that silently proposes nothing makes every review
+            # screen look like a failure rather than like "nothing to change".
+            change = _synthesise_refinement(
+                artifact.get("artifact") or artifact, entity_type, entity_key
+            )
         if not change:
             continue
         revisions.append(
@@ -462,6 +471,41 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
             }
         )
     return {"revisions": revisions}
+
+
+def _synthesise_refinement(
+    artifact: dict[str, Any], entity_type: str, entity_key: str
+) -> str:
+    """Rewrite a field the way a real refiner would, without a model call.
+
+    Deterministic on purpose: the mock has to produce the same proposal every
+    run so a before/after diff is reviewable rather than noisy.
+    """
+    collection = {
+        "goal": "goals",
+        "process": "main_processes",
+        "stage": "stages",
+        "concept": "concepts",
+        "operation": "operations",
+        "branch": "branches",
+    }.get(entity_type)
+    if not collection:
+        return ""
+    entity = next(
+        (
+            item
+            for item in (artifact.get(collection) or [])
+            if str(item.get("id")) == entity_key
+        ),
+        None,
+    )
+    if entity is None:
+        return ""
+    field = _refine_field(entity_type)
+    current = entity.get(field)
+    if not isinstance(current, str) or not current.strip():
+        return ""
+    return f"{current.rstrip('.')} — stated so you can check it against a real run."
 
 
 def _refine_field(entity_type: str) -> str:

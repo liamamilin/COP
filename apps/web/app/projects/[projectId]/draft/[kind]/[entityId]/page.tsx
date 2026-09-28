@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { DraftEditor } from "../../../../../../components/draft-editor";
 import { ProjectShell } from "../../../../../../components/project-shell";
+import { RefinePanel } from "../../../../../../components/refine-panel";
 import { getProjectWorkspace } from "../../../../../../lib/api";
 import { editableFields, ENTITY_LABELS } from "../../../../../../lib/draft-editing";
 import { DRAFT_EDITABLE_FIELDS, type DraftEntityKind } from "../../../../../../lib/api";
@@ -45,6 +46,14 @@ export default async function DraftEntityPage({
         draftId={draft.id}
         entityId={decodedId}
         kind={kind}
+      />
+
+      <RefinePanel
+        entityId={decodedId}
+        entityKind={kind}
+        entityTitle={fields.find((f) => f.name === "title" || f.name === "name")?.value ?? decodedId}
+        hasDraft
+        projectId={projectId}
       />
 
       <div className="draft-back-row">

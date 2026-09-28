@@ -56,6 +56,17 @@ export interface GenerationRequest {
   settings_override?: Record<string, unknown>;
   base_version_id?: string | null;
   instruction?: string;
+  /**
+   * Refine one existing entity instead of generating a whole COP.
+   *
+   * Omitting this asks for a full generation, so a client that wants a
+   * refinement must say which entity it means; there is no "refine whatever
+   * seems weakest" mode.
+   */
+  target?: {
+    entity_type: "goal" | "process" | "stage";
+    entity_id: string;
+  };
 }
 
 export interface ApiErrorBody {
