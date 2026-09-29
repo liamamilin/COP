@@ -63,10 +63,12 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
     environment:
-      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000/api/v1
+      # Browser requests stay same-origin and are proxied by Next to the
+      # internal API service. This avoids host-port collisions and CORS.
+      NEXT_PUBLIC_API_BASE_URL: /api/v1
       INTERNAL_API_BASE_URL: http://api:8000/api/v1
     ports:
-      - "3000:3000"
+      - "${WEB_HOST_PORT:-3000}:3000"
     depends_on:
       api:
         condition: service_healthy
@@ -74,4 +76,3 @@ services:
 volumes:
   postgres_data:
   cop_data:
-

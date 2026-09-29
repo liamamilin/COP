@@ -109,12 +109,23 @@ test.describe("learn mode", () => {
     await first.locator(".learn-stage-toggle").click();
     await expect(first).toHaveClass(/completed/);
 
-    // Publish a second version that reuses the same entity ids, the case where
-    // progress could leak across histories.
+    // Publish a second version that reuses the same entity ids but changes its
+    // content. Equal artifacts would let the page accidentally render the
+    // latest version while reading v1 progress and still pass this test.
     const v2 = await fetch(`${API_URL}/projects/${project.projectId}/drafts/from-version/${project.versionId}`, {
       method: "POST",
     });
     const draft = await v2.json();
+    const v2Title = `${project.firstGoal.title} — v2`;
+    const edited = await fetch(
+      `${API_URL}/drafts/${draft.id}/goals/${encodeURIComponent(project.firstGoal.id)}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: v2Title }),
+      },
+    );
+    expect(edited.ok).toBeTruthy();
     await fetch(`${API_URL}/drafts/${draft.id}/publish`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -132,6 +143,39 @@ test.describe("learn mode", () => {
     const two = await getLearningProgress(project.projectId, latest);
     expect(two.version_id).toBe(latest);
     expect(two.goals[0].completed_stages).toBe(0);
+
+    // The selected version controls both the progress and the rendered COP.
+    await page.goto(
+      `/projects/${project.projectId}/learn?version=${project.versionId}` +
+        `&goal=${encodeURIComponent(project.firstGoal.id)}`,
+    );
+    await waitForHydration(page, ".learn-view");
+    await expect(page.locator(".published-state")).toContainText("v1");
+    await expect(page.locator(".learn-goal.active strong")).toHaveText(project.firstGoal.title);
+    await expect(page.locator(".learn-goal.active strong")).not.toHaveText(v2Title);
+    await expect(page.locator(".learn-versions a")).toHaveCount(2);
+  });
+
+  test("stage navigation and implementation detail are keyboard-native", async ({ page }) => {
+    const project = await published();
+    await openLearn(page, project);
+
+    const details = page.locator(".learn-implementation").first();
+    if ((await details.count()) > 0) {
+      await expect(details).not.toHaveAttribute("open", "");
+      await details.locator("summary").focus();
+      await page.keyboard.press("Enter");
+      await expect(details).toHaveAttribute("open", "");
+    }
+
+    const next = page.getByRole("link", { name: "Next" });
+    if ((await next.count()) > 0) {
+      const before = await page.locator(".learn-detail-card h3").textContent();
+      await next.focus();
+      await page.keyboard.press("Enter");
+      await waitForHydration(page, ".learn-view");
+      await expect(page.locator(".learn-detail-card h3")).not.toHaveText(before ?? "");
+    }
   });
 
   test("a goal can be chosen from the goal list", async ({ page }) => {
@@ -147,19 +191,15 @@ test.describe("learn mode", () => {
       // text comparison pass or fail for the wrong reason.
       await expect(goals.first()).toHaveClass(/active/);
 
-      // The second Goal's link points at its own URL, and that URL selects it.
-      //
-      // Navigating by `goto` rather than by clicking is deliberate. Client-side
-      // navigation in this build intermittently does not happen at all -- the
-      // same root cause behind the `router.push` workaround in
-      // start-draft-button.tsx -- while the destination renders correctly every
-      // time. Clicking here would make the suite flaky for a reason that has
-      // nothing to do with Learn Mode.
+      // The second Goal's link is genuinely keyboard/click navigable, not just
+      // a correct-looking href that only works after a full document load.
       const href = await goals.nth(1).getAttribute("href");
       expect(href).toContain("goal=");
       expect(href).toContain("version=");
 
-      await page.goto(href!);
+      const target = new URL(href!, page.url()).toString();
+      await goals.nth(1).click();
+      await expect(page).toHaveURL(target);
       await waitForHydration(page, ".learn-view");
       await expect(goals.nth(1)).toHaveClass(/active/);
       await expect(goals.first()).not.toHaveClass(/active/);

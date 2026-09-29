@@ -17,6 +17,7 @@ interface LearnViewProps {
   artifact: COPArtifact;
   progress: LearningProgress;
   selectedGoalId: string;
+  selectedStageId?: string;
 }
 
 /**
@@ -32,6 +33,7 @@ export function LearnView({
   artifact,
   progress,
   selectedGoalId,
+  selectedStageId,
 }: LearnViewProps) {
   const router = useRouter();
   const [pending, setPending] = useState<string | null>(null);
@@ -79,6 +81,13 @@ export function LearnView({
   const practice = artifactSelectors.getPracticeForProcess(artifact, process);
   // The first Stage the user has not finished: where "continue" should land.
   const nextStage = stages.find((stage) => statusFor(stage.id) !== "completed") ?? stages[0];
+  const currentStage =
+    stages.find((stage) => stage.id === selectedStageId) ?? nextStage;
+  const currentIndex = stages.findIndex((stage) => stage.id === currentStage.id);
+  const stageHref = (stageId: string) =>
+    `/projects/${projectId}/learn?goal=${encodeURIComponent(selectedGoalId)}` +
+    `&version=${encodeURIComponent(progress.version_id)}` +
+    `&stage=${encodeURIComponent(stageId)}`;
   const completedCount = stages.filter((stage) => statusFor(stage.id) === "completed").length;
   const goalComplete = stages.length > 0 && completedCount === stages.length;
 
@@ -156,54 +165,76 @@ export function LearnView({
       <aside className="learn-detail">
         <div className="learn-detail-card">
           <p className="eyebrow">CURRENT STAGE</p>
-          <h3>{nextStage.title}</h3>
-          <p className="lead-copy">{nextStage.local_goal}</p>
-          {nextStage.why_it_exists && <p className="muted-note">{nextStage.why_it_exists}</p>}
+          <h3>{currentStage.title}</h3>
+          <p className="lead-copy">{currentStage.local_goal}</p>
+          {currentStage.why_it_exists && <p className="muted-note">{currentStage.why_it_exists}</p>}
+
+          <div className="learn-stage-navigation" aria-label="Move through stages">
+            {currentIndex > 0 ? (
+              <a className="secondary-button" href={stageHref(stages[currentIndex - 1].id)}>Previous</a>
+            ) : <span />}
+            <button
+              className="primary-button"
+              disabled={pending === currentStage.id}
+              onClick={() =>
+                void mark(
+                  currentStage.id,
+                  statusFor(currentStage.id) === "completed" ? "in_progress" : "completed",
+                )
+              }
+              type="button"
+            >
+              {statusFor(currentStage.id) === "completed" ? "Reopen stage" : "Mark complete"}
+            </button>
+            {currentIndex < stages.length - 1 ? (
+              <a className="secondary-button" href={stageHref(stages[currentIndex + 1].id)}>Next</a>
+            ) : <span />}
+          </div>
 
           <h4>Concepts</h4>
           <ul>
-            {artifactSelectors.getConceptsForStage(artifact, nextStage).map((concept) => (
+            {artifactSelectors.getConceptsForStage(artifact, currentStage).map((concept) => (
               <li key={concept.id}>
                 <strong>{concept.name}</strong>
                 <span>{concept.definition}</span>
               </li>
             ))}
-            {artifactSelectors.getConceptsForStage(artifact, nextStage).length === 0 && (
+            {artifactSelectors.getConceptsForStage(artifact, currentStage).length === 0 && (
               <li className="muted-note">No concepts attached to this stage.</li>
             )}
           </ul>
 
           <h4>Operations</h4>
           <ul>
-            {artifactSelectors.getOperationsForStage(artifact, nextStage).map((operation) => (
+            {artifactSelectors.getOperationsForStage(artifact, currentStage).map((operation) => (
               <li key={operation.id}>
                 <strong>{operation.name}</strong>
                 <span>{operation.definition}</span>
               </li>
             ))}
-            {artifactSelectors.getOperationsForStage(artifact, nextStage).length === 0 && (
+            {artifactSelectors.getOperationsForStage(artifact, currentStage).length === 0 && (
               <li className="muted-note">No operations attached to this stage.</li>
             )}
           </ul>
 
-          {(nextStage.implementation_details ?? []).length > 0 && (
-            <>
-              <h4>Implementation detail</h4>
+          {(currentStage.implementation_details ?? []).length > 0 && (
+            <details className="learn-implementation">
+              <summary>Show implementation detail</summary>
               <ul>
-                {(nextStage.implementation_details ?? []).map((detail, index) => (
+                {(currentStage.implementation_details ?? []).map((detail, index) => (
                   <li key={index}>
                     <strong>{String(detail.title ?? detail.name ?? `Detail ${index + 1}`)}</strong>
                     <span>{String(detail.description ?? "")}</span>
                   </li>
                 ))}
               </ul>
-            </>
+            </details>
           )}
 
-          {nextStage.example && (
+          {currentStage.example && (
             <div className="learn-example">
               <h4>Example</h4>
-              <p>{String(nextStage.example.summary ?? "")}</p>
+              <p>{String(currentStage.example.summary ?? "")}</p>
             </div>
           )}
 

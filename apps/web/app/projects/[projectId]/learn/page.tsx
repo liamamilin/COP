@@ -1,9 +1,14 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LearnView } from "../../../../components/learn-view";
 import { ProjectShell } from "../../../../components/project-shell";
-import { getLearningProgress, getProjectWorkspace } from "../../../../lib/api";
+import {
+  getLatestVersion,
+  getLearningProgress,
+  getProject,
+  getVersion,
+  getVersions,
+} from "../../../../lib/api";
 
 /**
  * Learn Mode.
@@ -17,15 +22,19 @@ export default async function LearnPage({
   searchParams,
 }: {
   params: Promise<{ projectId: string }>;
-  searchParams: Promise<{ goal?: string; version?: string }>;
+  searchParams: Promise<{ goal?: string; version?: string; stage?: string }>;
 }) {
   const { projectId } = await params;
-  const { goal: goalParam, version: versionParam } = await searchParams;
+  const { goal: goalParam, version: versionParam, stage: stageParam } = await searchParams;
 
-  const { project, version } = await getProjectWorkspace(projectId);
-  if (!version) notFound();
+  const [project, version, versions] = await Promise.all([
+    getProject(projectId),
+    versionParam ? getVersion(versionParam) : getLatestVersion(projectId),
+    getVersions(projectId),
+  ]).catch(() => [null, null, []] as const);
+  if (!project || !version || version.project_id !== projectId) notFound();
 
-  const progress = await getLearningProgress(projectId, versionParam).catch(() => null);
+  const progress = await getLearningProgress(projectId, version.id).catch(() => null);
   if (!progress) notFound();
 
   const selectedGoalId = goalParam ?? progress.goals[0]?.goal_id;
@@ -43,17 +52,33 @@ export default async function LearnPage({
           </p>
         </header>
 
+        <nav className="learn-versions" aria-label="Choose an artifact version">
+          {versions.map((item) => (
+            <a
+              className={item.id === version.id ? "active" : ""}
+              href={`/projects/${projectId}/learn?version=${item.id}`}
+              key={item.id}
+            >
+              v{item.version_number}
+            </a>
+          ))}
+        </nav>
+
         <nav className="learn-goals" aria-label="Choose a goal">
           {progress.goals.map((item) => {
             const active = item.goal_id === selectedGoalId;
             const href = `/projects/${projectId}/learn?goal=${encodeURIComponent(item.goal_id)}&version=${progress.version_id}`;
             return (
-              <Link className={active ? "learn-goal active" : "learn-goal"} href={href} key={item.goal_id}>
+              <a
+                className={active ? "learn-goal active" : "learn-goal"}
+                href={href}
+                key={item.goal_id}
+              >
                 <span className="learn-goal-progress">
                   {item.completed ? "✓" : `${item.completed_stages}/${item.total_stages}`}
                 </span>
                 <strong>{item.title}</strong>
-              </Link>
+              </a>
             );
           })}
         </nav>
@@ -63,6 +88,7 @@ export default async function LearnPage({
           projectId={projectId}
           progress={progress}
           selectedGoalId={selectedGoalId}
+          selectedStageId={stageParam}
         />
       </div>
     </ProjectShell>
