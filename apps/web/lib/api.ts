@@ -128,6 +128,29 @@ export class ApiError extends Error {
   }
 }
 
+export type ExportFormat = "json" | "markdown" | "markdown_bundle";
+
+export async function exportVersion(
+  versionId: string,
+  format: ExportFormat,
+): Promise<{ blob: Blob; filename: string }> {
+  const path = `/versions/${encodeURIComponent(versionId)}/exports`;
+  const response = await fetch(`${publicApiBaseUrl()}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ format }),
+  });
+  if (!response.ok) throw await errorFrom(response, path);
+  const disposition = response.headers.get("content-disposition") ?? "";
+  const encoded = disposition.match(/filename\*=utf-8''([^;]+)/i)?.[1];
+  const quoted = disposition.match(/filename="?([^";]+)"?/i)?.[1];
+  const fallback = format === "json" ? "cop.json" : format === "markdown" ? "cop.md" : "cop.zip";
+  return {
+    blob: await response.blob(),
+    filename: encoded ? decodeURIComponent(encoded) : quoted ?? fallback,
+  };
+}
+
 async function errorFrom(response: Response, path: string): Promise<ApiError> {
   const payload = (await response.json().catch(() => null)) as
     | { detail?: string; error?: { code: string; message: string } }

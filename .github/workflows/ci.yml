@@ -40,6 +40,7 @@ jobs:
       # schema shape the backend no longer produces.
       - name: Generated COP types are current
         run: |
+          python3 scripts/generate-types.py
           if ! git diff --quiet -- packages/cop-types/generated; then
             echo "::error::packages/cop-types/generated is stale. Run the generator and commit the result."
             git diff -- packages/cop-types/generated

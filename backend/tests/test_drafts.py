@@ -385,7 +385,10 @@ class TestVersionImmutability:
             f"{method.upper()} {path}"
             for path, operations in client.get("/openapi.json").json()["paths"].items()
             for method in operations
-            if method in mutating and "/versions" in path and "/versions/latest" not in path
+            if method in mutating
+            and "/versions" in path
+            and "/versions/latest" not in path
+            and not path.endswith("/exports")
         ]
         assert published_version_writes == [], (
             f"published versions must stay immutable, found: {published_version_writes}"

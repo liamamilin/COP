@@ -1,4 +1,5 @@
 import { ProjectShell } from "../../../../components/project-shell";
+import { ExportControls } from "../../../../components/export-controls";
 import { StartDraftButton } from "../../../../components/start-draft-button";
 import { getProjectWorkspace, getVersions } from "../../../../lib/api";
 
@@ -38,6 +39,7 @@ export default async function VersionsPage({
             versionId={version.id}
             versionNumber={version.version_number}
           />
+          <ExportControls versionId={version.id} />
         </div>
       )}
 

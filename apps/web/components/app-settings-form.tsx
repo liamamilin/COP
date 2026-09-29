@@ -43,6 +43,8 @@ export function AppSettingsForm({ initial }: { initial: AppSettings }) {
     if (!response.ok) { setMessage("Unable to save settings"); return; }
     const updated = (await response.json()) as AppSettings;
     setSettings(updated);
+    document.documentElement.dataset.theme = updated.appearance.theme;
+    document.documentElement.dataset.density = updated.appearance.density;
     setMessage("Settings saved. Secrets remain encrypted and masked.");
   }
 
@@ -84,4 +86,3 @@ export function AppSettingsForm({ initial }: { initial: AppSettings }) {
     <button className="primary-button settings-save" disabled={pending} type="submit">{pending ? "Working…" : "Save settings"}</button>
   </form>;
 }
-

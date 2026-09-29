@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 
 from app.api.drafts import router as drafts_router
+from app.api.exports import router as exports_router
 from app.api.generations import router as generations_router
 from app.api.learning import router as learning_router
 from app.api.patches import router as patches_router
@@ -34,10 +35,12 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Disposition"],
 )
 app.include_router(projects_router, prefix="/api/v1")
 app.include_router(generations_router, prefix="/api/v1")
 app.include_router(drafts_router, prefix="/api/v1")
+app.include_router(exports_router, prefix="/api/v1")
 app.include_router(patches_router, prefix="/api/v1")
 app.include_router(learning_router, prefix="/api/v1")
 app.include_router(settings_router, prefix="/api/v1")

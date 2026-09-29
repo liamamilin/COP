@@ -21,7 +21,7 @@ TEST_ENV = TEST_DATABASE_URL=$(TEST_DATABASE_URL) \
 	TEST_DATA_DIR=$$(mktemp -d 2>/dev/null || echo /tmp/cop-studio-test-data)
 
 .PHONY: dev up down test test-backend test-web test-e2e test-e2e-ui web-rebuild \
-	test-db test-db-reset lint format typecheck migrate seed backup restore
+	test-db test-db-reset lint format typecheck generate-types migrate seed backup restore
 
 dev:
 	docker compose up --build
@@ -92,6 +92,9 @@ lint:
 
 typecheck:
 	pnpm typecheck
+
+generate-types:
+	python3 scripts/generate-types.py
 
 format:
 	cd backend && uv run ruff format .

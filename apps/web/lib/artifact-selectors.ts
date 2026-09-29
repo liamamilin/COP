@@ -9,34 +9,61 @@ import type {
   Stage,
 } from "@cop-studio/cop-types";
 
+interface ArtifactIndex {
+  entities: Map<string, { id: string }>;
+  processByGoal: Map<string, MainProcess>;
+}
+
+const indexes = new WeakMap<COPArtifact, ArtifactIndex>();
+
+function indexFor(artifact: COPArtifact): ArtifactIndex {
+  const cached = indexes.get(artifact);
+  if (cached) return cached;
+  const collections: ReadonlyArray<ReadonlyArray<{ id: string }>> = [
+    artifact.goals,
+    artifact.main_processes,
+    artifact.stages,
+    artifact.concepts,
+    artifact.operations,
+    artifact.branches ?? [],
+    artifact.practices ?? [],
+  ];
+  const index: ArtifactIndex = {
+    entities: new Map(collections.flat().map((entity) => [entity.id, entity])),
+    processByGoal: new Map(artifact.main_processes.map((item) => [item.goal_ref, item])),
+  };
+  indexes.set(artifact, index);
+  return index;
+}
+
 function requireEntity<T extends { id: string }>(
-  entities: T[],
+  artifact: COPArtifact,
   id: string,
   label: string,
 ): T {
-  const value = entities.find((entity) => entity.id === id);
+  const value = indexFor(artifact).entities.get(id) as T | undefined;
   if (!value) throw new Error(`${label} not found: ${id}`);
   return value;
 }
 
 export const artifactSelectors = {
   getGoal(artifact: COPArtifact, id: string): Goal {
-    return requireEntity(artifact.goals, id, "Goal");
+    return requireEntity(artifact, id, "Goal");
   },
   getProcess(artifact: COPArtifact, id: string): MainProcess {
-    return requireEntity(artifact.main_processes, id, "MainProcess");
+    return requireEntity(artifact, id, "MainProcess");
   },
   getStage(artifact: COPArtifact, id: string): Stage {
-    return requireEntity(artifact.stages, id, "Stage");
+    return requireEntity(artifact, id, "Stage");
   },
   getConcept(artifact: COPArtifact, id: string): Concept {
-    return requireEntity(artifact.concepts, id, "Concept");
+    return requireEntity(artifact, id, "Concept");
   },
   getOperation(artifact: COPArtifact, id: string): Operation {
-    return requireEntity(artifact.operations, id, "Operation");
+    return requireEntity(artifact, id, "Operation");
   },
   getProcessForGoal(artifact: COPArtifact, goalId: string): MainProcess {
-    const process = artifact.main_processes.find((item) => item.goal_ref === goalId);
+    const process = indexFor(artifact).processByGoal.get(goalId);
     if (!process) throw new Error(`MainProcess not found for Goal: ${goalId}`);
     return process;
   },
@@ -51,7 +78,7 @@ export const artifactSelectors = {
   },
   getBranchesForStage(artifact: COPArtifact, stage: Stage): Branch[] {
     return (stage.branch_refs ?? []).map((id) =>
-      requireEntity(artifact.branches, id, "Branch"),
+      requireEntity(artifact, id, "Branch"),
     );
   },
   getPracticeForProcess(
@@ -63,4 +90,3 @@ export const artifactSelectors = {
       : undefined;
   },
 };
-

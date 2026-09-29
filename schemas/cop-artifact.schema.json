@@ -3,6 +3,18 @@
   "$id": "https://cop-studio.local/schemas/cop-artifact.schema.json",
   "title": "COP Artifact",
   "type": "object",
+  "$defs": {
+    "EvidenceRef": {
+      "type": "object",
+      "required": ["source_id"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "segment_id": {"type": "string"},
+        "quote_hint": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
   "required": [
     "schema_version",
     "artifact_id",
@@ -102,7 +114,7 @@
           "evidence_refs": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/$defs/EvidenceRef"
             }
           }
         },
@@ -257,7 +269,7 @@
           "evidence_refs": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/$defs/EvidenceRef"
             }
           }
         },

@@ -1,4 +1,4 @@
-/* Generated-compatible contract for schemas/cop-artifact.schema.json. */
+/* Generated from schemas/cop-artifact.schema.json. Do not edit by hand. */
 
 export interface EvidenceRef {
   source_id: string;
@@ -25,7 +25,10 @@ export interface MainProcess {
   id: string;
   goal_ref: string;
   title: string;
-  start: { type: "zero" | "foundation"; ref?: string | null };
+  start: {
+    type: "zero" | "foundation";
+    ref?: string | null;
+  };
   stage_refs: string[];
   outcome: string;
   practice_ref?: string | null;
@@ -96,7 +99,10 @@ export interface COPArtifact {
     target_user: string;
     non_goals?: string[];
   };
-  mental_model: { summary: string; flow?: string[] };
+  mental_model: {
+    summary: string;
+    flow?: string[];
+  };
   goals: Goal[];
   shared_foundations: SharedFoundation[];
   main_processes: MainProcess[];
@@ -113,4 +119,3 @@ export interface COPArtifact {
     source_ids?: string[];
   };
 }
-

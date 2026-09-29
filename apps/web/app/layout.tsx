@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { getAppSettings } from "../lib/api";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,10 +11,14 @@ export const metadata: Metadata = {
   description: "Turn knowledge into a visible, learnable main process.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const appearance = await getAppSettings()
+    .then((settings) => settings.appearance)
+    .catch(() => ({ theme: "system" as const, density: "comfortable" as const }));
   return (
-    <html lang="zh-CN">
+    <html data-density={appearance.density} data-theme={appearance.theme} lang="zh-CN">
       <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <header className="global-header">
           <Link className="brand" href="/">
             <span className="brand-mark" aria-hidden="true">C</span>
@@ -26,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             <span className="build-badge">Local · v0.1</span>
           </div>
         </header>
-        {children}
+        <div id="main-content" tabIndex={-1}>{children}</div>
       </body>
     </html>
   );
