@@ -16,6 +16,7 @@ from typing import Any
 from sqlalchemy import select
 
 from app.core.config import get_settings
+from app.core.errors import CopStudioError
 from app.db.models import GenerationRun
 from app.db.session import SessionLocal
 from app.harness.provider_factory import build_provider
@@ -31,6 +32,7 @@ from app.jobs.runner import (
     record_worker_heartbeat,
     recover_stale_runs,
 )
+from app.research import ExaSearchClient, enrich_context_with_web_search
 
 settings = get_settings()
 logging.basicConfig(level=settings.log_level)
@@ -78,7 +80,52 @@ async def execute_run() -> bool:
             return False
         run_id = run.id
         context = load_context(run)
-        context.source_bundle = load_source_bundle(db, run)
+        # Database sources are reloaded on every attempt. Synthetic search
+        # sources live in the checkpoint, so preserve them across crash
+        # recovery instead of paying for the same query twice.
+        persisted_search = [
+            item for item in context.source_bundle if item.get("type") == "web_search"
+        ]
+        context.source_bundle = load_source_bundle(db, run) + persisted_search
+        if context.input.get("web_search") and not context.partial_target:
+            try:
+                if not settings.exa_api_key:
+                    raise CopStudioError(
+                        "SEARCH_NOT_CONFIGURED",
+                        "Web research was requested, but EXA_API_KEY is not configured.",
+                        status_code=422,
+                    )
+                result_count = await enrich_context_with_web_search(
+                    context,
+                    ExaSearchClient(
+                        api_key=settings.exa_api_key,
+                        base_url=settings.exa_base_url,
+                    ),
+                    num_results=settings.exa_num_results,
+                )
+                append_event(
+                    db,
+                    run_id,
+                    "research.search_completed",
+                    payload={"provider": "exa", "result_count": result_count},
+                )
+            except CopStudioError as exc:
+                append_event(
+                    db,
+                    run_id,
+                    "run.failed",
+                    payload={"code": exc.code, "message": exc.message},
+                )
+                finish_run(
+                    db,
+                    run_id,
+                    status="failed",
+                    context=context,
+                    metrics={},
+                    error_code=exc.code,
+                    error_message=exc.message,
+                )
+                return True
         if context.partial_target and not load_target_context(db, run, context):
             # Nothing to refine. Fail with a reason the user can act on rather
             # than letting H140 crash on a missing artifact.

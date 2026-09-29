@@ -53,6 +53,7 @@ export interface GenerationRequest {
   target_outcomes?: string[];
   learner_level?: "new" | "some_experience" | "advanced";
   source_ids?: string[];
+  web_search?: boolean;
   settings_override?: Record<string, unknown>;
   base_version_id?: string | null;
   instruction?: string;

@@ -198,6 +198,26 @@ def test_starting_a_run_requires_a_topic_or_source(client: TestClient, db: Sessi
     assert response.json()["error"]["code"] == "HARNESS_INTAKE_INCOMPLETE"
 
 
+def test_a_run_records_explicit_web_search_opt_in(client: TestClient, db: Session) -> None:
+    require_database()
+    run_id = start_run(
+        client,
+        db,
+        "Web Research",
+        web_search=True,
+        settings_override={
+            "generation": {"language": "zh-CN", "generation_depth": "fast"}
+        },
+    )
+
+    row = db.get(GenerationRun, uuid.UUID(run_id))
+    assert row is not None
+    assert row.requested_sections_json["web_search"] is True
+    context = load_context(row)
+    assert context.settings["language"] == "zh-CN"
+    assert context.settings["generation_depth"] == "fast"
+
+
 def test_a_run_is_queued_and_then_claimed_by_exactly_one_worker(
     client: TestClient, db: Session
 ) -> None:

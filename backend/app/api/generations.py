@@ -54,6 +54,7 @@ class GenerationRunCreate(BaseModel):
     target_outcomes: list[str] = Field(default_factory=list, max_length=12)
     learner_level: Literal["new", "some_experience", "advanced"] = "new"
     source_ids: list[uuid.UUID] = Field(default_factory=list, max_length=50)
+    web_search: bool = False
     settings_override: dict[str, Any] = Field(default_factory=dict)
     base_version_id: uuid.UUID | None = None
     target: TargetSelection | None = None
@@ -207,6 +208,7 @@ def start_generation_run(
         "target_outcomes": body.target_outcomes,
         "learner_level": body.learner_level,
         "source_ids": [str(item) for item in body.source_ids],
+        "web_search": body.web_search,
         "settings_override": body.settings_override,
         "target": body.target.model_dump() if body.target else None,
         "instruction": body.instruction,

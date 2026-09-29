@@ -56,6 +56,7 @@ export function GenerationPanel({
   const [warnings, setWarnings] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const [webSearch, setWebSearch] = useState(false);
   const [live, setLive] = useState(false);
   const sourceRef = useRef<EventSource | null>(null);
   const lastEventId = useRef<number | undefined>(undefined);
@@ -172,6 +173,7 @@ export function GenerationPanel({
       scope_hint: scopeHint,
       learner_level: learnerLevel,
       source_ids: sourceIds,
+      web_search: webSearch,
     };
     try {
       const created = await startGenerationRun(projectId, body);
@@ -213,6 +215,18 @@ export function GenerationPanel({
               The Harness turns the topic and attached sources into Goals, Main Processes, and
               Stages. It creates a candidate for you to review; publishing stays your decision.
             </p>
+            <label className="generation-search-option">
+              <input
+                checked={webSearch}
+                disabled={pending}
+                onChange={(event) => setWebSearch(event.target.checked)}
+                type="checkbox"
+              />
+              <span>
+                <strong>Enrich with Exa web research</strong>
+                <small>Uses the configured Exa API key and adds bounded web excerpts as sources.</small>
+              </span>
+            </label>
           </div>
           <button className="primary-button" disabled={pending} onClick={start} type="button">
             {pending ? "Starting…" : "Generate COP"}

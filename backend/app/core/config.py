@@ -15,6 +15,9 @@ class Settings(BaseSettings):
     openai_compatible_base_url: str = ""
     openai_compatible_api_key: str = ""
     openai_compatible_model: str = ""
+    exa_api_key: str = ""
+    exa_base_url: str = "https://api.exa.ai"
+    exa_num_results: int = 5
     worker_poll_seconds: float = 2.0
     max_upload_bytes: int = 20 * 1024 * 1024
     url_timeout_seconds: float = 15.0
