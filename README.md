@@ -23,8 +23,9 @@ work is claimed by a database-backed worker; no Redis service is required.
 - M5: candidate-to-draft, manual field editing, explicit publish, immutable versions, version history
 - M6: partial AI refinement, before/after preview, accept/reject, user edits protected
 - M7: Learn Mode, per-version progress, the full Main Process always on screen
-
-M8 (export through operational hardening) remains under development.
+- M8: JSON/Markdown exports, backup/restore, generated types, appearance and keyboard
+  accessibility, reliable Learn navigation, lean Docker build contexts, final error states,
+  and large-artifact performance gates
 
 ### The persisted Harness
 
@@ -43,6 +44,12 @@ The model handles semantic work; code handles everything structural. In
 particular, Shared Foundation detection is exact normalized-title comparison in
 code rather than a model judgment, because a confident wrong answer there would
 silently drop a Stage from the main line.
+
+OpenAI-compatible structured calls include the concrete step JSON Schema in the
+system prompt and validate the returned object before a checkpoint is accepted.
+Fast mode is enforced in code (at most 4 Goals and 5 Stages per process), not
+left as a suggestion to the model. Large cross-stage prompts use compact views
+so retries cannot multiply a runaway request.
 
 A run is a row in `generation_runs`. The worker claims one with
 `FOR UPDATE SKIP LOCKED`, checkpoints after every step, and heartbeats while it
@@ -92,10 +99,11 @@ Two deliberate boundaries:
   Foundation detection in H70. A PATCH that could rewrite `stage_refs` would let
   a client silently drop a Stage from the main line, which is exactly the
   failure the product exists to prevent.
-- **Published versions have no write endpoint at all.** There is no PATCH or
-  DELETE for a `COPVersion`; revising a live version means forking it into a new
-  draft. `test_drafts.py` asserts this against the OpenAPI document, so the
-  guarantee survives someone re-adding a route.
+- **Published versions have no mutating endpoint.** There is no PATCH or DELETE
+  for a `COPVersion`; revising a live version means forking it into a new draft.
+  The POST export subresource only derives a portable file from immutable JSON.
+  `test_drafts.py` asserts this boundary against the OpenAPI document, so the
+  guarantee survives someone re-adding a write route.
 
 A project has at most one active draft, enforced by a unique index rather than a
 read-then-write check. Creating a second returns `409 DRAFT_ALREADY_EXISTS`
@@ -142,6 +150,26 @@ The Main Process is rendered in full alongside the current Stage. That is the
 product's central claim: you can always see where you are on the main line, not
 just the step you are standing on.
 
+## Export and operational hardening
+
+Each immutable version can be exported from Version history as the canonical
+JSON artifact, one readable Markdown file, or a standalone Markdown ZIP bundle.
+The API endpoint is:
+
+```text
+POST /api/v1/versions/{version_id}/exports
+format = json | markdown | markdown_bundle
+```
+
+Export filenames include the published version number. The generated
+`packages/cop-types/generated/index.ts` is derived from the canonical JSON
+Schema with `make generate-types`; CI regenerates it and rejects stale output.
+
+Theme and density preferences are applied to the whole app, main flows expose
+visible keyboard focus, and Learn Mode supports native keyboard Stage
+navigation. Performance gates cover 200 Stages, multi-megabyte source text,
+1,000 generation events, and 100 published versions.
+
 ## Quick start
 
 ```bash
@@ -151,6 +179,11 @@ docker compose up --build
 
 Open <http://localhost:3000>. API health is available at
 <http://localhost:8000/health>.
+
+The browser talks to the same-origin `/api/v1` path. Next proxies that path to
+the internal `api:8000` service, so browser writes do not depend on the host
+API port or CORS configuration. If port 3000 is occupied, choose another web
+port explicitly, for example `WEB_HOST_PORT=3001 docker compose up --build`.
 
 If port 5432 is already taken by a local PostgreSQL, the container will fail to
 bind. Move it aside:
@@ -189,6 +222,11 @@ For a real endpoint set `OPENAI_COMPATIBLE_BASE_URL`,
 `OPENAI_COMPATIBLE_API_KEY`, and `OPENAI_COMPATIBLE_MODEL`.
 The Settings screen can also store the provider key encrypted with `APP_SECRET`;
 the API returns only a masked hint.
+
+Optional web enrichment uses Exa. Set `EXA_API_KEY` and explicitly select
+"Enrich with Exa web research" for a generation run; ordinary runs never search
+the web implicitly. Search results become bounded, checkpointed source excerpts,
+so crash recovery does not pay for the same query twice.
 
 ## Tests and lint
 
@@ -243,5 +281,15 @@ exercised in mock mode. Switch scenario from Settings to test failure paths:
 
 ## Backups
 
-`make backup` creates a PostgreSQL dump plus an archive of the data directory.
-Use `make restore` with the backup path shown by the backup command.
+`make backup` briefly stops API/worker writers and creates a consistent
+PostgreSQL dump plus an archive of the persistent `/data` volume under
+`backups/`:
+
+```bash
+make backup
+make restore BACKUP=backups/cop-studio-YYYYMMDD-HHMMSS
+```
+
+Restore replaces the current database and data volume with the selected
+snapshot, then restarts and migrates the services. Keep the backup directory
+until the restored app has been verified.

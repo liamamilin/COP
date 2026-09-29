@@ -1,7 +1,11 @@
 # COP Studio — 工作记忆
 
 > 给新会话的交接文档。开始工作前先读本文件。
-> 最后更新：M6 完成时（2026-09-28）
+> 最后更新：M8 实现完成；V1 验收重新打开（2026-09-29）
+
+> **验收状态更新：** M0–M8 的主要实现已存在，但完整用户路径审计发现内容可执行性、
+> 证据追溯、设置生效、Learn Mode 闭环、Expansion Map 和归档恢复仍有缺口。
+> 在 `DEVELOPMENT_PLAN.md` 的 R0–R7 全部通过前，不再声明 V1 完成。
 
 ## 1. 项目是什么
 
@@ -35,11 +39,13 @@ COP Studio 是一个 local-first 的知识生产 + 学习工作台。它把一�
 | M3 设置 | ✅ | Fernet 加密 key、Mock + OpenAI 兼容适配器 |
 | M4 持久化 Harness | ✅ | 见 §4 |
 | M5 草稿/发布/版本 | ✅ | 见 §4.6 |
-| **M6 局部 AI 精修** | ✅ | 见 §4.9 |
-| **M7 Learn Mode** | ✅ | **本轮完成**，见 §4.10 |
-| M8 导出 + 加固 | ⬜ | **下一步** |
+| M6 局部 AI 精修 | ✅ | 见 §4.9；M8 前审计补齐状态机边界 |
+| M7 Learn Mode | ✅ | 见 §4.10；M8 前审计补齐旧版本读取与键盘导航 |
+| **M8 导出 + 加固** | ✅ | **本轮完成**，见 §4.12 |
 
-规格 `23-coding-agent-milestones.md`：**V1 完成 = M0–M8 全部验收通过**。
+上表记录的是工程实现进度，不等于最终产品验收。规格
+`23-coding-agent-milestones.md` 仍规定：**V1 完成 = M0–M8 全部验收通过**。
+当前收口工作见根目录 `DEVELOPMENT_PLAN.md`。
 
 ## 4. M4 已完成内容
 
@@ -144,10 +150,10 @@ COPVersion --from-version--> Draft
 
 ### 不可变性怎么保证的
 
-**根本没有写版本号的 endpoint。** `drafts.py` 里没有任何对 `COPVersion` 的
-PATCH/DELETE。测试不是去调一个"应该不存在"的接口，而是**扫 OpenAPI 文档**
-断言没有 mutating 路由（`test_no_endpoint_can_mutate_a_published_version`）——
-这样以后有人加回来也会红。
+**根本没有修改版本内容的 endpoint。** `drafts.py` 里没有任何对 `COPVersion` 的
+PATCH/DELETE。M8 增加的 POST export subresource 只从 immutable JSON 派生文件。
+测试不是去调一个"应该不存在"的接口，而是**扫 OpenAPI 文档**断言没有版本写路由
+（导出子资源除外）——这样以后有人加回来也会红。
 
 ### 前端
 
@@ -282,15 +288,81 @@ mock 的 `_mock_refine` 只在有 `recommended_change` 时产出 revision。
 UI 要等一次网络往返才变，测试里表现为"点了没反应"。
 改成先本地更新、失败再回滚。
 
-### 客户端导航在这个 build 里不可靠（未解决）
+### 4.11 M4–M7 完整审计（M8 开始前）
 
-第三次遇到了。现象：目标 URL 直接访问**总是**正常，
-但 `<Link>` 点击 / `router.push` 经常不发生导航。
-现在有两处 workaround：
-- `start-draft-button.tsx` 用 `window.location.assign`
-- learn 的 E2E 用 `page.goto(href)` 而不是点击
+逐项对照里程碑规格并跑回归后，修了四个会破坏状态边界的问题：
 
-**根因没查清。** 值得排一下，可能影响所有 SPA 导航。
+- **M4 崩溃恢复**：H100 critic 与 H110 refine 共用 `critic_report`，旧判断会把
+  “critic 已完成”误当成“refine 已完成”。检查点现在记录精确 `completed_steps`；
+  旧检查点在不确定时安全重跑 H110。
+- **M5 版本 lineage**：从旧版本 fork 的草稿发布时，parent 曾被强制改成最新版本。
+  现在优先使用 `draft.base_version_id`，真正保留 fork 来源。
+- **M6 patch 状态机**：定向 run 创建即进入 `generating`；未 ready 的 patch 不能 reject；
+  前端轮询会识别 run 失败并停止，不再无限等待。
+- **M7 版本隔离**：`?version=` 过去只切了进度，页面工件仍取 latest。
+  现在读取精确版本并核对 project ownership；增加版本选择、前后 Stage 导航、
+  显式完成/重开按钮，implementation detail 默认折叠。
+
+对应回归覆盖了“critic 后崩溃恢复”“旧版本 fork parent”“ready 前 reject”以及
+“v1/v2 内容与进度同时隔离”。
+
+### 4.12 M8 导出 + 运行加固
+
+**导出**
+
+`POST /api/v1/versions/{version_id}/exports` 支持：
+
+- canonical JSON；
+- 单文件可读 Markdown；
+- 带 README、artifact.json、逐 Stage/Concept/Operation 文件的 Markdown ZIP。
+
+文件名包含 `-vN`。浏览器端显式读取 `Content-Disposition`，API CORS 暴露该响应头；
+导出只读 published artifact，不经过 Draft，也不改变版本。
+
+**运行与可用性**
+
+- `make backup` / `make restore BACKUP=...` 现在操作真正的 Compose PostgreSQL 与
+  `/data` volume；先停写入服务，失败也会自动重启。
+- 真实执行过一次 backup → 校验 SQL/tar → 恢复同一快照 → 服务健康与记录数检查。
+- light/dark/system 与 comfortable/compact 不再是死设置；保存后立即应用。
+- 增加 skip link、统一 `:focus-visible`、原生 `<details>` 与键盘 Learn/Export E2E。
+- 增加最终 `not-found` 页面；已有全局 error state 保留。
+- 选择器建立 WeakMap 索引，200 Stage 渲染不再反复线性查找。
+- 增加数 MB 文本、1000 events、100 versions 的性能门槛。
+- `scripts/generate-types.py` 从 canonical schema 生成 TS 类型；CI 先生成再检查 diff。
+- 增加根级 `.dockerignore`，构建上下文由约 144 MB 降到约 9 KB，避免本地缓存、
+  测试 trace 与虚拟环境再次挤满 Docker 磁盘。
+
+冻结端到端路径现已自动化：创建项目 → 粘贴素材 → Mock 生成 → 建 Draft → 发布 →
+Learn 中用键盘完成 Stage → 版本页用键盘下载 Markdown，并检查文件内容。
+
+### 4.13 客户端导航加固
+
+最终验收发现 Learn 目标选择的旧 E2E 用 `page.goto(href)` 绕过了真实点击。
+生产跟踪确认：Next 15 在同一路径只改变查询参数时会发出正确的 RSC 请求，API 与
+RSC 都返回 200，但浏览器端将流标记为 `ERR_ABORTED`，URL 不提交。关闭预取无效。
+
+- Learn 的版本/目标选择改为原生锚点；仍是标准键盘链接，但用完整文档导航避开
+  该框架路径。真实点击连续 10 次通过。
+- E2E 不再 `page.goto` 目标链接，并增加项目侧栏 Learn → Version history 的真实点击。
+- Draft 创建后继续用 `window.location.assign`；这是写操作后的有意刷新，确保新 Draft
+  从服务端状态重新渲染，而不是依赖易被取消的 RSC 转换。
+
+### 4.14 真实 Provider + Exa 验收
+
+- Command Code OpenAI-compatible `/models` 与 `/chat/completions` 真实请求成功；
+  Exa `/search` 真实请求成功，返回 5 条受限摘要并进入 Harness checkpoint。
+- 真实模型首次暴露适配器忽略 JSON Schema；现在每次 structured call
+  都显式带 schema，返回值再经 `Draft202012Validator` 验证。
+- 修复了 UI 设置按 `generation.*` 嵌套、Harness 却按顶层读取的真实路径 bug；
+  fast 模式现在在代码层限制为最多 4 Goals × 5 Stages。
+- H60 不再重放 implementation details/example/evidence；H140 只发送目标实体。
+  Provider 内部重试耗尽后不再被 Harness 乘法式重试。
+- 真实 fast 任务已完整产出并通过校验：4 Goals、4 Main Processes、
+  20 Stages、58 Concepts、20 Operations、4 Practices；16 次模型调用全部一次成功、
+  0 次重试，候选已转成 active Draft。
+- 同一 progress phase 中前一步完成时不再过早显示 `done`；要等该 phase
+  的所有步骤都完成。
 
 ## 5. 测试与命令
 
@@ -300,17 +372,22 @@ make test-db     # 只建测试库，留着便于迭代
 make test-backend
 make test-e2e    # 浏览器测试，需要 make up 先起栈
 make lint
+make typecheck
+make generate-types
+make backup
+make restore BACKUP=backups/cop-studio-YYYYMMDD-HHMMSS
 make up / make down
 ```
 
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：`make test` = 113 后端 + 28 前端，全绿。
-其中 13 个是 M7 学习进度，22 个 M6 patch，30 个 M5 草稿/版本，
-14 个队列/API，21 个流水线。
-浏览器层 `make test-e2e` = 22 个，跑真实 Compose 栈，约 60 秒：
-M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个、M7 学习 6 个。
+当前基线：135 个后端 + 29 个前端单元/渲染测试，全绿。
+后端包含 M4–M7 状态回归、Provider schema/Exa 回归、6 个导出测试与
+3 个大数据量门槛。
+浏览器层 `make test-e2e` = 25 个，跑真实 Compose 栈：
+M5 草稿全流程 8 个、冻结 V1/M8 2 个、M4 进度流 3 个、
+M6 精修 5 个、M7 学习 7 个。
 
 > **加字段后必须重跑 `make test-db` / `make test-db-reset`。**
 > pytest 的 `db` fixture 只 TRUNCATE，不 ALTER。schema 没跟上时
@@ -357,69 +434,30 @@ M5 草稿全流程 8 个、M4 进度流 3 个、M6 精修 5 个、M7 学习 6 �
 注意 `stages` 是**必填的一等实体**，spec `05-data-model.md` §3 的示例 JSON
 漏了它，但 `cop-artifact.schema.json` 和 Pydantic 模型都要求。信后者。
 
-## 7. 已知缺口
+## 7. 已知风险与非阻塞缺口
 
-- **Playwright E2E 已就位**，`make test-e2e` 跑，CI 有独立 `e2e` job，
-  目前 11 个用例：
-  - M5 草稿全流程 8 个：fork / 编辑 / 刷新后仍在 / 发布并记 parent /
-    版本不可变 / 拒绝编辑保留输入 / 放弃需确认 / 单草稿规则 / 复数标题
-  - M4 进度流 3 个：流式推进到完成 / 取消并保留工作 / 断流降级为轮询
-  - M6 精修 5 个：before/after 预览且提议不落盘 / reject 不动任何东西 /
-    accept 只改 Draft / **手写句子扛过一次精修** / 无 draft 时不提供入口
-  - M7 学习 6 个：**整个 Main Process 始终在屏** / 刷新不丢进度 /
-    Stage 可重开 / 细节与主线同屏 / 切版本各自独立 / 可换 Goal
-- **覆盖缺口**：
-  - M2 素材上传/URL、M3 设置与 provider 连接测试，都还没有
-  - 键盘可达性（M8 要求）没有覆盖
-  - `Last-Event-ID` 断线续传只在**后端**有测试，浏览器侧没做。
-    原因是 `slow` 场景下 run 会在断言窗口内跑完，transport 行先消失，
-    写出来只会是随机通过。与其加一个 flaky 的，不如等有更稳的注入点。
-- 桌面浏览器（Electron）里 React **不完整 hydrate**：loading.tsx 的 Suspense
-  fallback 一直留在 DOM，只有一小部分元素挂上 fiber，点任何按钮都没反应。
-  **这个现象只在桌面浏览器出现，Playwright 的干净 Chromium 完全正常**
-  （74/96 元素 hydrate，无报错），所以判定是桌面会话环境问题，不是应用缺陷。
-  以后验证交互一律用 `make test-e2e`，别用桌面浏览器下结论。
-- 前端无 Tailwind/shadcn/TanStack/Zod（规格推荐但未采用，手写约 560 行 CSS）。
-  样式质量尚可，但 `settings.appearance.theme` 是**死设置**——能存能选，
-  CSS 里没有对应逻辑。属于规格 `15` §13 禁止的"按钮无功能"。
-- `scripts/` 缺 `generate-types.*`（规格 `22` 要求）。CI 已在检测
-  `packages/cop-types/generated` 陈旧，但生成器本身不存在，
-  所以那个检查目前永远不会失败。
-- CI 已有 schema 一致性检查 + TS 类型陈旧检测 + Playwright E2E（`e2e` job）。
+- `Last-Event-ID` 断线续传在后端有确定性测试，浏览器侧只测断流后降级轮询。
+  `slow` run 在续传断言窗口内可能结束，当前没有加入会随机失败的 E2E。
+- M2 的 TXT/Markdown/PDF/URL 有后端集成覆盖；冻结浏览器路径按规格只走 pasted text。
+  后续可补各上传类型的浏览器覆盖，但不阻塞 V1 主环。
+- 客户端导航在 standalone build 曾出现 `<Link>` / `router.push` 偶发不导航；
+  mutation 后的关键跳转使用 `window.location.assign`，Learn 导航使用原生 `<a>`。
+  25 个真实 Chromium 场景均通过，但根因仍值得单独排查。
+- 桌面内嵌浏览器曾出现与 Chromium 不同的 hydration 行为；交互验收以
+  `make test-e2e` 的干净 Chromium 为准。
 
+## 8. V1 状态与后续方向
 
-## 8. 下一步：M8 导出 + 加固
+M0–M8 已按冻结范围实现。最终不变量继续遵守（规格 `16`、`24`）：
 
-M8 剩三块：
+- Published version 不可变；
+- 每项目最多一个 active draft；
+- 发布是显式动作，AI 永不静默覆盖用户内容；
+- API 路径用 `/processes`，domain 名用 `MainProcess`。
 
-**1. 导出（规格 `19` §Must ship 明确要求）**
-```
-POST /versions/{version_id}/exports   # JSON / 单文件 Markdown / Markdown bundle
-```
-现在是唯一还没做的 spec 明列能力。
-
-**2. 补测试缺口**
-- M2 素材上传/URL 的 E2E
-- M3 设置与 provider 连接测试
-- 键盘可达性（规格 `12` 要求，M8 明列）
-- `scripts/generate-types.*`（规格 `22` 要求）。**现在 CI 那个
-  "生成类型是否陈旧"的检查永远不会失败**，因为生成器本身不存在——
-  这是一个看起来在保护你、实际什么都没做的检查
-
-**3. 查客户端导航**
-
-`router.push` / `<Link>` 在这个 build 里经常不导航（见 §4.10），
-已经绕了三处。根因不清，影响面比单个功能大，M8 做加固时值得先解决。
-
-M8 的验收是"冻结的端到端路径通过 + 没有死按钮 + 全部测试绿"，
-所以第 2 点不补齐，验收过不了。
-
-其余不变量继续遵守（规格 `16`、`24`）：
-
-- Published version 不可变
-- 每项目最多一个 active draft
-- 发布是显式动作，AI 永不静默覆盖用户内容
-- API 路径用 `/processes`，domain 名用 `MainProcess`（规格 `24` §4）
+在扩大功能面之前，优先处理上节的客户端导航根因，并根据真实使用反馈决定
+是否补更多素材类型的浏览器覆盖。不要把 spec `19` 明确排除的账号、协作、
+向量搜索、PDF export、Redis、图编辑器等重新带回 V1。
 
 ## 9. 常用文件速查
 
@@ -443,6 +481,10 @@ M8 的验收是"冻结的端到端路径通过 + 没有死按钮 + 全部测试�
 | 学习进度 API | `backend/app/api/learning.py` |
 | 精修 patch 领域逻辑 | `backend/app/domain/patches.py` |
 | 精修 API | `backend/app/api/patches.py` |
+| 导出 API / 渲染 | `backend/app/api/exports.py` / `backend/app/domain/exports.py` |
+| 类型生成器 | `scripts/generate-types.py` |
+| 备份 / 恢复 | `scripts/backup.sh` / `scripts/restore.sh` |
+| M8 冻结路径 E2E | `apps/web/e2e/frozen-v1.spec.ts` |
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |
 | 冻结范围 | `cop-studio-development-spec-v1.0/docs/19-v1-scope-freeze.md` |
 | 跨层命名契约 | `cop-studio-development-spec-v1.0/docs/24-cross-layer-consistency.md` |
