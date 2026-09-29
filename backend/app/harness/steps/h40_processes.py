@@ -15,12 +15,15 @@ from app.harness.schemas import PROCESSES_SCHEMA
 MIN_STAGES = 3
 MAX_STAGES = 8
 STAGE_LIMIT_WARNING = 10
+DEPTH_STAGE_LIMITS = {"fast": 5, "standard": 8, "deep": 8}
 
 
-def normalize_process(raw: dict[str, Any], goal: dict[str, Any]) -> dict[str, Any]:
+def normalize_process(
+    raw: dict[str, Any], goal: dict[str, Any], *, max_stages: int = MAX_STAGES
+) -> dict[str, Any]:
     """Keep the stage count inside the documented range and rekey stages."""
     raw_stages = [item for item in raw.get("stages") or [] if str(item.get("title", "")).strip()]
-    trimmed = raw_stages[:MAX_STAGES]
+    trimmed = raw_stages[:max_stages]
     stages: list[dict[str, Any]] = []
     for index, stage in enumerate(trimmed, start=1):
         title = str(stage["title"]).strip()
@@ -56,6 +59,8 @@ class ProcessBuildStep:
         scope = ctx.require("scope_result")
         brief = ctx.require("research_brief")
         language = ctx.settings.get("language", "auto")
+        depth = ctx.settings.get("generation_depth", "standard")
+        max_stages = DEPTH_STAGE_LIMITS.get(depth, MAX_STAGES)
 
         async def build(goal: dict[str, Any]) -> dict[str, Any]:
             if services.is_cancelled():
@@ -70,7 +75,7 @@ class ProcessBuildStep:
             payload = await services.complete_structured(
                 system_prompt=system, user_prompt=user, schema=PROCESSES_SCHEMA
             )
-            return normalize_process(payload, goal)
+            return normalize_process(payload, goal, max_stages=max_stages)
 
         results = await asyncio.gather(*(build(goal) for goal in goals))
         processes = [process for process in results if process]

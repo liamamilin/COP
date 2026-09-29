@@ -71,16 +71,34 @@ def app_record(db: Session) -> AppSetting:
     return record
 
 
-def public_settings(data: dict[str, Any]) -> dict[str, Any]:
+def settings_with_defaults(data: dict[str, Any]) -> dict[str, Any]:
+    """Apply built-in and environment defaults without removing stored secrets."""
     merged = deep_merge(BUILT_IN_DEFAULTS, data)
+    config = get_settings()
+    if not data.get("provider") and config.cop_provider_mode == "openai_compatible":
+        merged["provider"] = {
+            **merged["provider"],
+            "type": "openai_compatible",
+            "base_url": config.openai_compatible_base_url,
+            "model": config.openai_compatible_model,
+        }
+    return merged
+
+
+def public_settings(data: dict[str, Any]) -> dict[str, Any]:
+    merged = settings_with_defaults(data)
+    config = get_settings()
     provider = dict(merged["provider"])
     provider.pop("api_key_ciphertext", None)
     provider.pop("api_key", None)
     provider.pop("clear_api_key", None)
-    provider["has_api_key"] = bool(
-        data.get("provider", {}).get("api_key_ciphertext")
-        or get_settings().openai_compatible_api_key
-    )
+    provider["has_api_key"] = bool(data.get("provider", {}).get("api_key_ciphertext"))
+    if provider.get("type") == "openai_compatible":
+        base_url = str(provider.get("base_url") or "").rstrip("/")
+        env_base_url = config.openai_compatible_base_url.rstrip("/")
+        provider["has_api_key"] = provider["has_api_key"] or bool(
+            config.openai_compatible_api_key and base_url == env_base_url
+        )
     provider["api_key_hint"] = data.get("provider", {}).get("api_key_hint")
     merged["provider"] = provider
     merged.pop("worker", None)
@@ -88,18 +106,14 @@ def public_settings(data: dict[str, Any]) -> dict[str, Any]:
 
 
 def resolved_private_settings(data: dict[str, Any]) -> dict[str, Any]:
-    merged = deep_merge(BUILT_IN_DEFAULTS, data)
-    provider = merged["provider"]
+    merged = settings_with_defaults(data)
+    provider = dict(merged["provider"])
     ciphertext = provider.get("api_key_ciphertext")
     api_key = get_secret_cipher().decrypt(ciphertext) if ciphertext else ""
     config = get_settings()
-    if config.cop_provider_mode == "openai_compatible" and not provider.get("base_url"):
-        provider = {
-            **provider,
-            "type": "openai_compatible",
-            "base_url": config.openai_compatible_base_url,
-            "model": config.openai_compatible_model,
-        }
+    base_url = str(provider.get("base_url") or "").rstrip("/")
+    env_base_url = config.openai_compatible_base_url.rstrip("/")
+    if provider.get("type") == "openai_compatible" and base_url == env_base_url and not api_key:
         api_key = config.openai_compatible_api_key
     provider["api_key"] = api_key
     merged["provider"] = provider

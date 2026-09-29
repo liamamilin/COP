@@ -23,6 +23,32 @@ from app.harness.prompts import build_refine_prompt
 from app.harness.schemas import REFINABLE_FIELDS, REFINE_SCHEMA
 from app.harness.steps.h110_refine import apply_revisions
 
+TARGET_COLLECTIONS = {
+    "goal": "goals",
+    "process": "main_processes",
+    "stage": "stages",
+}
+
+
+def targeted_artifact_view(
+    artifact: dict[str, Any], entity_type: str, entity_id: str
+) -> dict[str, Any]:
+    """Return only the entity H140 may change plus minimal domain context."""
+    collection = TARGET_COLLECTIONS[entity_type]
+    target = next(
+        (item for item in artifact.get(collection) or [] if str(item.get("id")) == entity_id),
+        None,
+    )
+    return {
+        "schema_version": artifact.get("schema_version"),
+        "domain": artifact.get("domain"),
+        "target": {
+            "entity_type": entity_type,
+            "entity_id": entity_id,
+            "entity": target,
+        },
+    }
+
 
 class RefineTargetStep:
     """Propose a patch for one entity, scoped by the run's target."""
@@ -55,7 +81,7 @@ class RefineTargetStep:
         # artifact's problems and asked to fix all of them.
         issues = self._issues_for(ctx, entity_type, entity_id)
         system, user = build_refine_prompt(
-            artifact=artifact,
+            artifact=targeted_artifact_view(artifact, entity_type, entity_id),
             issues=issues,
             locked_paths=locked_paths,
             language=language,

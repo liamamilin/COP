@@ -23,6 +23,7 @@ from app.db.models import COPVersion, Draft, GenerationRun, Project
 from app.domain.drafting import with_locks
 from app.harness.provider_factory import build_provider
 from app.harness.runner import run_pipeline
+from app.harness.steps.h140_refine_target import targeted_artifact_view
 from app.jobs.runner import (
     DatabaseRunStore,
     claim_next_run,
@@ -45,6 +46,17 @@ def json_load(handle) -> dict:
     import json
 
     return json.load(handle)
+
+
+def test_targeted_refinement_prompt_view_contains_only_the_requested_entity() -> None:
+    artifact = load_fixture()
+    target = artifact["goals"][0]
+
+    view = targeted_artifact_view(artifact, "goal", target["id"])
+
+    assert view["target"]["entity"] == target
+    assert "stages" not in view
+    assert "concepts" not in view
 
 
 def create_project(db: Session, title: str = "Refine") -> str:

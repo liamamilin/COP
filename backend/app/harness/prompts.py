@@ -163,6 +163,9 @@ def build_goals_prompt(
     depth: str,
     language: str,
 ) -> tuple[str, str]:
+    low, high = {"fast": (2, 4), "standard": (3, 7), "deep": (5, 9)}.get(
+        depth, (3, 7)
+    )
     system = f"""{SHARED_SYSTEM_PREAMBLE}
 Task: propose high-value Goals.
 
@@ -174,8 +177,8 @@ A Goal must be:
 
 Avoid goals such as "learn X" or "understand Y".
 
-Return 3-7 Goals in Standard mode unless the domain clearly needs fewer. Assign
-each Goal a stable "key" and order from foundational to advanced.
+Return {low}-{high} Goals for {depth} mode. Never exceed {high}. Assign each Goal
+a stable "key" and order from foundational to advanced.
 
 Return JSON matching the provided schema. Respond in {language}.
 """

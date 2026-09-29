@@ -16,7 +16,8 @@ from app.harness.providers.base import ProviderError
 from app.harness.providers.mock import MockProvider
 from app.harness.runner import _final_status, build_metrics, run_pipeline
 from app.harness.steps import PHASES, STEP_LABELS, STEP_PIPELINE
-from app.harness.steps.h60_canonicalize import canonicalize
+from app.harness.steps.h30_goals import GoalExtractionStep
+from app.harness.steps.h60_canonicalize import canonicalization_input, canonicalize
 from app.harness.steps.h70_compression import detect_shared_foundation
 from app.harness.steps.h110_refine import apply_revisions
 from app.harness.steps.h120_validate import ValidateRepairStep, resolve_schema_path, validate
@@ -86,6 +87,18 @@ class _SilentServices:
         return False
 
 
+class _SevenGoalServices(_SilentServices):
+    async def complete_structured(
+        self, *, system_prompt: str, user_prompt: str, schema: dict[str, Any]
+    ) -> dict[str, Any]:
+        return {
+            "goals": [
+                {"key": f"g{index}", "title": f"Goal {index}", "outcome": "Ship a result"}
+                for index in range(1, 8)
+            ]
+        }
+
+
 def make_context(**overrides: Any) -> HarnessContext:
     defaults: dict[str, Any] = {
         "run_id": "run-1",
@@ -101,6 +114,49 @@ def make_context(**overrides: Any) -> HarnessContext:
     }
     defaults.update(overrides)
     return HarnessContext(**defaults)
+
+
+@pytest.mark.asyncio
+async def test_fast_mode_caps_model_goals_at_four() -> None:
+    context = make_context(
+        settings={"language": "en", "generation_depth": "fast"},
+    )
+    context.scope_result = {"domain": "d", "scope": "s", "target_user": "u"}
+    context.research_brief = {"domain_purpose": "d"}
+
+    result = await GoalExtractionStep().execute(context, _SevenGoalServices(FakeStore()))
+
+    assert len(result.checkpoint_patch["goals"]) == 4
+    assert any("first 4 of 7" in warning for warning in result.warnings)
+
+
+def test_canonicalization_input_drops_large_stage_details() -> None:
+    compact = canonicalization_input(
+        [
+            {
+                "key": "s1",
+                "title": "Deploy",
+                "local_goal": "Run the service",
+                "local_outcome": "Healthy service",
+                "concept_candidates": [f"concept-{index}" for index in range(12)],
+                "operation_candidates": [f"operation-{index}" for index in range(8)],
+                "implementation_details": [{"large": "value"}],
+                "example": {"large": "value"},
+                "evidence_refs": [{"source_id": "source"}],
+            }
+        ]
+    )
+
+    assert set(compact[0]) == {
+        "key",
+        "title",
+        "local_goal",
+        "local_outcome",
+        "concept_candidates",
+        "operation_candidates",
+    }
+    assert len(compact[0]["concept_candidates"]) == 8
+    assert len(compact[0]["operation_candidates"]) == 6
 
 
 async def run(ctx: HarnessContext, provider: Any = None) -> tuple[str, HarnessContext, FakeStore]:

@@ -14,6 +14,21 @@ from app.harness.schemas import CANONICALIZE_SCHEMA
 STAGE_KEYS_ATTRIBUTE = "stage_keys"
 
 
+def canonicalization_input(stages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep only fields H60 needs instead of replaying every rich Stage detail."""
+    return [
+        {
+            "key": stage.get("key"),
+            "title": stage.get("title"),
+            "local_goal": stage.get("local_goal"),
+            "local_outcome": stage.get("local_outcome"),
+            "concept_candidates": list(stage.get("concept_candidates") or [])[:8],
+            "operation_candidates": list(stage.get("operation_candidates") or [])[:6],
+        }
+        for stage in stages
+    ]
+
+
 def _normalize_key(value: Any, fallback_name: str, index: int) -> str:
     """Normalize a model-supplied key into a stable snake_case identifier.
 
@@ -128,7 +143,9 @@ class CanonicalizeStep:
     async def execute(self, ctx: HarnessContext, services: Any) -> StepResult:
         stage_drafts = ctx.require("stage_drafts")
         language = ctx.settings.get("language", "auto")
-        system, user = build_canonicalize_prompt(stages=stage_drafts, language=language)
+        system, user = build_canonicalize_prompt(
+            stages=canonicalization_input(stage_drafts), language=language
+        )
         payload = await services.complete_structured(
             system_prompt=system, user_prompt=user, schema=CANONICALIZE_SCHEMA
         )

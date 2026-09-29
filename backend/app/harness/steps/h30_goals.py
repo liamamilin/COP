@@ -82,13 +82,19 @@ class GoalExtractionStep:
         if not goals:
             raise HarnessError("HARNESS_NO_GOALS", "The model did not return any usable Goal")
 
+        warnings = quality_gate(goals, depth)
+        _low, high = DEPTH_TARGETS.get(depth, DEPTH_TARGETS["standard"])
+        if len(goals) > high:
+            original_count = len(goals)
+            goals = goals[:high]
+            warnings.append(
+                f"Kept the first {high} of {original_count} Goals to respect {depth} mode"
+            )
         valid_keys = {goal["key"] for goal in goals}
         for goal in goals:
             goal["prerequisite_goal_keys"] = [
                 key for key in goal["prerequisite_goal_keys"] if key in valid_keys
             ]
-
-        warnings = quality_gate(goals, depth)
         return StepResult.success(
             {"goals": goals},
             events=[

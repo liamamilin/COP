@@ -6,7 +6,7 @@ contract: run override > project setting > app setting > built-in default.
 
 from typing import Any
 
-from app.api.settings import deep_merge, public_settings
+from app.api.settings import deep_merge, settings_with_defaults
 from app.core.config import get_settings
 from app.core.errors import CopStudioError
 from app.db.models import AppSetting, ProjectSettings
@@ -20,7 +20,7 @@ def resolve_effective_settings(db, project_id: Any) -> dict[str, Any]:
     app_data = app_record.settings_json if app_record else {}
     project_record = db.get(ProjectSettings, project_id)
     project_data = project_record.settings_json if project_record else {}
-    return deep_merge(public_settings(app_data), project_data)
+    return deep_merge(settings_with_defaults(app_data), project_data)
 
 
 def resolve_effective_settings_with_run(
@@ -39,13 +39,9 @@ def _decrypt_provider(db, provider: dict[str, Any]) -> dict[str, Any]:
     config = get_settings()
     ciphertext = provider.get("api_key_ciphertext")
     api_key = get_secret_cipher().decrypt(ciphertext) if ciphertext else ""
-    if config.cop_provider_mode == "openai_compatible" and not provider.get("base_url"):
-        provider = {
-            **provider,
-            "type": "openai_compatible",
-            "base_url": config.openai_compatible_base_url,
-            "model": config.openai_compatible_model,
-        }
+    base_url = str(provider.get("base_url") or "").rstrip("/")
+    env_base_url = config.openai_compatible_base_url.rstrip("/")
+    if provider.get("type") == "openai_compatible" and base_url == env_base_url and not api_key:
         api_key = config.openai_compatible_api_key
     return {**provider, "api_key": api_key}
 

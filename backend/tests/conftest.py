@@ -28,6 +28,9 @@ if TEST_DATABASE_URL:
     # The app modules read their configuration at import time, so the test
     # environment has to be established before anything under `app` is imported.
     os.environ["DATABASE_URL"] = TEST_DATABASE_URL
+    # A developer may have a live provider in the repository `.env`; tests must
+    # stay deterministic and must never spend external API credits.
+    os.environ["COP_PROVIDER_MODE"] = "mock"
 
     # The repository `.env` is written for Docker Compose, where DATA_DIR is the
     # container's /data volume. On a developer machine that path is either absent

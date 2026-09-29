@@ -135,7 +135,12 @@ def load_context(run: GenerationRun) -> HarnessContext:
     context.project_id = str(run.project_id)
     context.base_version_id = str(run.base_version_id) if run.base_version_id else None
     context.input = context.input or run.requested_sections_json or {}
-    context.settings = context.settings or run.model_config_json or {}
+    effective_settings = context.settings or run.model_config_json or {}
+    generation_settings = effective_settings.get("generation") or {}
+    # Settings are stored by UI section, while Harness steps consume generation
+    # controls directly. Flatten that one section at the execution boundary so
+    # persisted runs and hand-built test contexts share the same contract.
+    context.settings = {**effective_settings, **generation_settings}
     # The API accepted `target` from the start but nothing ever read it, so a
     # targeted run silently produced a whole new COP. Routing on it here is what
     # makes `target` mean anything.
