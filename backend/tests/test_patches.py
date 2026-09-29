@@ -402,6 +402,20 @@ class TestAccept:
 
 
 class TestReject:
+    def test_a_patch_cannot_be_rejected_before_it_is_ready(self, client, db, first_goal):
+        entity_type, entity_id = first_goal
+        project_id = create_project(db)
+        make_draft(db, project_id)
+        run_id = make_targeted_run(db, project_id, entity_type, entity_id)
+
+        run = db.get(GenerationRun, uuid.UUID(run_id))
+        assert run.patch_state == "generating"
+        response = client.post(f"/api/v1/generation-runs/{run_id}/candidate-patch/reject")
+
+        assert response.status_code == 409
+        assert response.json()["error"]["code"] == "PATCH_NOT_REJECTABLE"
+        assert db.get(GenerationRun, uuid.UUID(run_id)).patch_state == "generating"
+
     def test_rejecting_changes_nothing(self, client, db, first_goal):
         """Acceptance: rejecting changes nothing."""
         entity_type, entity_id = first_goal

@@ -21,7 +21,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import update
 from sqlalchemy.orm import Session
 
-from app.api.generations import TERMINAL_STATUSES
+from app.api.generations import TERMINAL_STATUSES, phase_states
 from app.db.models import GenerationRun, Project
 from app.db.session import SessionLocal
 from app.harness.provider_factory import build_provider
@@ -216,6 +216,18 @@ def test_a_run_records_explicit_web_search_opt_in(client: TestClient, db: Sessio
     context = load_context(row)
     assert context.settings["language"] == "zh-CN"
     assert context.settings["generation_depth"] == "fast"
+
+
+def test_a_multi_step_phase_stays_active_until_its_last_step_finishes() -> None:
+    events = [
+        {"type": "step.completed", "step": "H40"},
+        {"type": "step.started", "step": "H50"},
+    ]
+
+    phases = phase_states(events, run_status="running")
+    processes = next(phase for phase in phases if phase.key == "processes")
+
+    assert processes.status == "active"
 
 
 def test_a_run_is_queued_and_then_claimed_by_exactly_one_worker(

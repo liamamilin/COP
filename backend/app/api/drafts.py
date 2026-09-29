@@ -283,12 +283,23 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
     numbers = list(
         db.scalars(select(COPVersion.version_number).where(COPVersion.project_id == project.id))
     )
-    parent = db.scalar(
-        select(COPVersion)
-        .where(COPVersion.project_id == project.id)
-        .order_by(COPVersion.version_number.desc())
-        .limit(1)
-    )
+    parent = db.get(COPVersion, draft.base_version_id) if draft.base_version_id else None
+    if parent is not None and parent.project_id != project.id:
+        raise CopStudioError(
+            "DRAFT_PARENT_INVALID",
+            "The draft's base version does not belong to this project.",
+            status_code=409,
+        )
+    if parent is None:
+        # A first-generation draft has no explicit base. If versions appeared
+        # while it was being reviewed, attach it to the latest known history;
+        # an explicitly forked old version, however, keeps that exact parent.
+        parent = db.scalar(
+            select(COPVersion)
+            .where(COPVersion.project_id == project.id)
+            .order_by(COPVersion.version_number.desc())
+            .limit(1)
+        )
     version = COPVersion(
         project_id=project.id,
         version_number=next_version_number(numbers),

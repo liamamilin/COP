@@ -101,6 +101,13 @@ class HarnessContext:
     critic_report: dict[str, Any] | None = None
     artifact: dict[str, Any] | None = None
 
+    # Exact execution markers make crash recovery unambiguous. Several steps
+    # share output fields (H100 and H110 both leave `critic_report` populated),
+    # so inferring completion from data alone can skip a step after a worker
+    # dies between them. This list lives in the JSON checkpoint and needs no
+    # database migration.
+    completed_steps: list[str] = field(default_factory=list)
+
     # Paths the user has edited by hand. H110 must never rewrite these.
     locked_paths: list[str] = field(default_factory=list)
     # Non-empty when the run regenerates one entity instead of a full COP.

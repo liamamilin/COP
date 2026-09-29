@@ -78,7 +78,7 @@ PHASES: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("compression", "Compressing shared foundations", ("H70",)),
     ("learning", "Generating learning material", ("H80",)),
     ("assembly", "Assembling the artifact", ("H90",)),
-    ("quality", "Reviewing quality", ("H100", "H110", "H140")),
+    ("quality", "Reviewing quality", ("H100", "H110")),
     ("finalize", "Finalizing artifact", ("H120", "H130")),
 )
 

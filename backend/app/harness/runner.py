@@ -19,6 +19,7 @@ from typing import Any
 
 from app.core.errors import HarnessError
 from app.harness.context import (
+    TERMINAL_STEP_STATUSES,
     HarnessContext,
     HarnessEvent,
     HarnessStep,
@@ -220,6 +221,8 @@ async def _execute_steps(
             )
         if result.checkpoint_patch:
             context.apply(result.checkpoint_patch)
+        if result.status in TERMINAL_STEP_STATUSES and step.name not in context.completed_steps:
+            context.completed_steps.append(step.name)
         store.save_checkpoint(context.run_id, context)
         store.heartbeat(context.run_id)
 
@@ -282,6 +285,15 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
         return False
     if name in {"H120", "H130"}:
         return False
+    if name == "H110":
+        # Old checkpoints have no exact completion markers. Re-running the
+        # fenced refiner is safe; skipping it because H100 produced a critic
+        # report is not.
+        return (
+            "H110" in context.completed_steps
+            and context.critic_report is not None
+            and context.artifact is not None
+        )
     return {
         "H00": context.intake is not None,
         "H10": context.scope_result is not None,
@@ -294,7 +306,6 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
         "H80": context.mental_model is not None,
         "H90": context.artifact is not None,
         "H100": context.critic_report is not None,
-        "H110": context.critic_report is not None,
     }.get(name, False)
 
 

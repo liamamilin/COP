@@ -216,6 +216,10 @@ export function getVersions(projectId: string): Promise<VersionSummary[]> {
   return request<VersionSummary[]>(`/projects/${encodeURIComponent(projectId)}/versions`);
 }
 
+export function getVersion(versionId: string): Promise<VersionDetail> {
+  return request<VersionDetail>(`/versions/${encodeURIComponent(versionId)}`);
+}
+
 export interface PatchChange {
   field: string;
   before: string;

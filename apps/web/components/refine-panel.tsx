@@ -7,6 +7,7 @@ import {
   acceptCandidatePatch,
   ApiError,
   getCandidatePatchOrNull,
+  getGenerationRun,
   REFINABLE_KINDS,
   rejectCandidatePatch,
   startGenerationRun,
@@ -79,11 +80,27 @@ export function RefinePanel({
       // The run is queued; poll until a proposal exists. A refinement is short
       // and fires no model calls beyond one, so a tight poll is not wasteful.
       pollRef.current = setInterval(async () => {
-        const candidate = await getCandidatePatchOrNull(run.id).catch(() => null);
-        if (candidate) {
+        try {
+          const candidate = await getCandidatePatchOrNull(run.id);
+          if (candidate) {
+            stopPolling();
+            setPatch(candidate);
+            setStage("reviewing");
+            return;
+          }
+          const current = await getGenerationRun(run.id);
+          if (["failed", "cancelled", "needs_attention"].includes(current.status)) {
+            stopPolling();
+            setError(
+              current.error_message ??
+                `The refinement stopped with status '${current.status}'. Try again or check the provider settings.`,
+            );
+            setStage("idle");
+          }
+        } catch (cause) {
           stopPolling();
-          setPatch(candidate);
-          setStage("reviewing");
+          setError(cause instanceof ApiError ? cause.message : "The refinement could not finish.");
+          setStage("idle");
         }
       }, 1200);
     } catch (cause) {

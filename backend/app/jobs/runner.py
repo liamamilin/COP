@@ -226,6 +226,7 @@ def create_run(
         requested_mode=mode,
         requested_sections_json=requested_input,
         model_config_json=settings,
+        patch_state="generating" if requested_input.get("target") else "idle",
     )
     db.add(run)
     db.commit()

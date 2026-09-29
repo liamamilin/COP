@@ -239,6 +239,21 @@ def reject_candidate_patch(run_id: uuid.UUID, db: DbSession) -> PatchResult:
             status_code=409,
             details={"state": run.patch_state},
         )
+    if run.patch_state != "ready" or not run.candidate_patch_json:
+        raise CopStudioError(
+            "PATCH_NOT_REJECTABLE",
+            f"This proposal is '{run.patch_state}' and is not ready for a decision.",
+            status_code=409,
+            details={"state": run.patch_state},
+        )
+    if _expired(run):
+        run.patch_state = "expired"
+        db.commit()
+        raise CopStudioError(
+            "PATCH_EXPIRED",
+            "This proposal is too old to decide safely. Run the refinement again.",
+            status_code=409,
+        )
     before = db.scalar(select(Draft).where(Draft.project_id == run.project_id))
     artifact_before = dict(before.artifact_json) if before is not None else None
 

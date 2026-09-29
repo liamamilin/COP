@@ -140,30 +140,28 @@ def phase_states(events: list[dict[str, Any]], *, run_status: str) -> list[Phase
     """
     source = TARGETED_PHASES if _is_targeted(events) else PHASES
     step_to_phase = {step: key for key, _label, steps in source for step in steps}
-    done: set[str] = set()
-    active: set[str] = set()
+    completed_steps: set[str] = set()
+    active_steps: set[str] = set()
     for event in events:
         step = event.get("step")
-        phase = step_to_phase.get(str(step)) if step else None
-        if phase is None:
+        if not step or str(step) not in step_to_phase:
             continue
         if event["type"] == "step.started":
-            active.add(phase)
+            active_steps.add(str(step))
         elif event["type"] == "step.completed":
-            done.add(phase)
-            active.discard(phase)
+            completed_steps.add(str(step))
+            active_steps.discard(str(step))
 
     terminal = run_status in TERMINAL_STATUSES
     states: list[PhaseOut] = []
     for key, label, steps in source:
-        if key in done:
+        phase_steps = set(steps)
+        if phase_steps <= completed_steps:
             state = "done"
-        elif key in active and not terminal:
+        elif phase_steps & active_steps:
             state = "active"
         elif terminal:
-            # A terminal run that never reported a step either skipped it
-            # (H110 passes cleanly) or stopped there; report honestly.
-            state = "active" if key in active else "pending"
+            state = "pending"
         else:
             state = "pending"
         states.append(PhaseOut(key=key, label=label, steps=list(steps), status=state))

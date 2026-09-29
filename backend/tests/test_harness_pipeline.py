@@ -446,6 +446,21 @@ async def test_resume_skips_steps_already_checkpointed() -> None:
 
 
 @pytest.mark.asyncio
+async def test_resume_after_critic_does_not_skip_refinement() -> None:
+    """H100 and H110 share fields, so recovery needs exact step markers."""
+    _status, context, _store = await run(make_context())
+    resumed = HarnessContext.from_dict(json.loads(context.to_json()))
+    resumed.completed_steps = [step for step in resumed.completed_steps if step != "H110"]
+
+    store = FakeStore()
+    outcome = await run_pipeline(resumed, MockProvider(), store)
+
+    assert outcome.status == "completed"
+    assert "H100" not in store.steps_started()
+    assert "H110" in store.steps_started()
+
+
+@pytest.mark.asyncio
 async def test_metrics_report_structure_and_provider_usage() -> None:
     _status, context, store = await run(make_context())
     services_calls = [

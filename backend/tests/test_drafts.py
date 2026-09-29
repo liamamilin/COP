@@ -321,6 +321,20 @@ class TestPublish:
         assert second["version_number"] == 2
         assert second["parent_version_id"] == first
 
+    def test_a_draft_forked_from_an_old_version_keeps_that_parent(self, client, db):
+        project_id = create_project(db)
+        first = seed_version(db, project_id)
+        draft_id = make_draft(db, project_id)
+        client.post(f"/api/v1/drafts/{draft_id}/publish", json={})
+
+        fork = client.post(
+            f"/api/v1/projects/{project_id}/drafts/from-version/{first}"
+        ).json()
+        third = client.post(f"/api/v1/drafts/{fork['id']}/publish", json={}).json()
+
+        assert third["version_number"] == 3
+        assert third["parent_version_id"] == first
+
     def test_publishing_clears_the_active_draft(self, client, db):
         """Otherwise the draft would shadow the version just published."""
         project_id = create_project(db)
