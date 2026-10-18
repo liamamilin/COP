@@ -18,13 +18,35 @@ export function ProcessRail({ artifact, process, projectId, compact }: ProcessRa
 
   return (
     <div className={compact ? "process-rail compact" : "process-rail"}>
-      <div className="process-node foundation-node">
-        <span className="node-index">00</span>
-        <div>
-          <small>{foundation ? "SHARED FOUNDATION" : "ZERO STATE"}</small>
-          <strong>{foundation?.title ?? "Start from zero"}</strong>
+      {/*
+        The Foundation is the start of the line, so it has to be reachable the
+        same way every other Stage is. It was a plain div, which left the two
+        setup Stages -- the ones that install the library and set the API key --
+        reachable only by typing a URL, and it carried no arrow to signal that.
+      */}
+      {foundation && foundation.stage_refs.length > 0 ? (
+        <div className="process-step">
+          <Link
+            className="process-node foundation-node stage-node"
+            href={`/projects/${projectId}/stages/${encodeURIComponent(foundation.stage_refs[0])}`}
+          >
+            <span className="node-index">00</span>
+            <div>
+              <small>SHARED FOUNDATION · {foundation.stage_refs.length} STAGES</small>
+              <strong>{foundation.title}</strong>
+            </div>
+            <span className="node-arrow">↗</span>
+          </Link>
         </div>
-      </div>
+      ) : (
+        <div className="process-node foundation-node">
+          <span className="node-index">00</span>
+          <div>
+            <small>ZERO STATE</small>
+            <strong>Start from zero</strong>
+          </div>
+        </div>
+      )}
       {stages.map((stage, index) => (
         <div className="process-step" key={stage.id}>
           <span className="process-connector" aria-hidden="true">↓</span>

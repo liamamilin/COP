@@ -1,0 +1,53 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "You are a product catalog assistant. Use the get_product_info tool to look up products. Answer based on tool results, not your own knowledge. If a product is not found, say so clearly."
+  },
+  "input": "P005 是什么产品？",
+  "messages": [
+    {
+      "type": "human",
+      "content": "P005 是什么产品？"
+    },
+    {
+      "type": "ai",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P005"
+          },
+          "id": "call_00_oi7fp8i90q23w8pm93cjan6s",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"向量数据库对比\", \"price\": 59.0, \"category\": \"电子书\", \"in_stock\": true}",
+      "tool_call_id": "call_00_oi7fp8i90q23w8pm93cjan6s"
+    },
+    {
+      "type": "ai",
+      "content": "P005 是**《向量数据库对比》**，具体信息如下：\n\n- **产品名称**：向量数据库对比\n- **价格**：59.0 元\n- **分类**：电子书\n- **库存状态**：有货 ✅"
+    }
+  ],
+  "tool_name": "get_product_info",
+  "tool_args": {
+    "product_id": "P005"
+  },
+  "tool_call_id": "call_00_oi7fp8i90q23w8pm93cjan6s",
+  "tool_result": {
+    "name": "向量数据库对比",
+    "price": 59.0,
+    "category": "电子书",
+    "in_stock": true
+  },
+  "answer": "P005 是**《向量数据库对比》**，具体信息如下：\n\n- **产品名称**：向量数据库对比\n- **价格**：59.0 元\n- **分类**：电子书\n- **库存状态**：有货 ✅",
+  "evidence_hash": "455698a4998d0a680276589b55a58ea4bf624c2003d902a04755ab0a8f12f373",
+  "note": "One tool-calling invocation; verify tool result matches final answer."
+}

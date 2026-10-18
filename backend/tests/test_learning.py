@@ -57,12 +57,45 @@ def first_goal(artifact: dict) -> tuple[str, str, list[str]]:
     return goal_id, process["id"], list(process["stage_refs"])
 
 
-def put(client, project_id: str, version_id: str, goal_id: str, stage_id: str | None, status: str):
+def put(
+    client,
+    project_id: str,
+    version_id: str,
+    goal_id: str,
+    stage_id: str | None,
+    status: str,
+    *,
+    kind: str = "stage",
+    notes: str | None = None,
+):
+    """Record progress.
+
+    `kind` is explicit rather than defaulted-and-hidden, because the whole point
+    of R5 is that a Foundation Stage, a Main Process Stage, a Practice, and a
+    checkpoint are four different things. A test that omitted it would keep
+    passing whatever the default happened to be.
+    """
     return client.put(
         f"/api/v1/projects/{project_id}/learning-progress",
         json={
             "version_id": version_id,
+            "kind": kind,
             "goal_id": goal_id,
+            "stage_id": stage_id,
+            "status": status,
+            "notes": notes,
+        },
+    )
+
+
+def put_foundation(client, project_id: str, version_id: str, stage_id: str, status: str):
+    """Foundation progress carries no Goal, which is the point of it."""
+    return client.put(
+        f"/api/v1/projects/{project_id}/learning-progress",
+        json={
+            "version_id": version_id,
+            "kind": "foundation",
+            "goal_id": "",
             "stage_id": stage_id,
             "status": status,
         },
@@ -121,9 +154,21 @@ class TestRecordingProgress:
         assert goal["completed_stages"] == 1
 
     def test_goal_completion_is_derived_from_its_stages(self, client, db):
+        """Stages alone no longer complete a Goal.
+
+        R5 makes completion depend on three things, and this test now records all
+        three rather than only the first. The single-Stage case is kept at the end
+        as the control: it has no Practice and no Foundation, so Stages are the
+        whole rule and the old assertion still has to hold.
+        """
         project_id = create_project(db)
-        version_id = publish(db, project_id)
-        goal_id, _process, stages = first_goal(fixture())
+        artifact = fixture()
+        goal_id, _process, stages = first_goal(artifact)
+        # Strip the Foundation and the Practice so this test isolates the Stage
+        # rule. The three-way rule has its own test below.
+        artifact["shared_foundations"] = []
+        artifact["practices"] = []
+        version_id = publish(db, project_id, artifact)
 
         for stage_id in stages[:-1]:
             put(client, project_id, version_id, goal_id, stage_id, "completed")

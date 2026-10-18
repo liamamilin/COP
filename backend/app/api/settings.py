@@ -185,6 +185,44 @@ def get_project_settings(project_id: uuid.UUID, db: DbSession) -> dict[str, Any]
     return {"overrides": project_data, "effective": effective}
 
 
+#: Every value a generation setting accepts, and nothing else.
+#:
+#: Enforced on write so an unusable value cannot be stored. Accepting
+#: `detail_density: "verbose"` and falling back to a default is how a control
+#: starts lying: the API says saved, the form shows the choice, and the Harness
+#: quietly ignores it.
+GENERATION_ENUMS: dict[str, tuple[str, ...]] = {
+    "language": ("auto", "en", "zh-CN", "ja", "ko", "fr", "de", "es", "pt", "ru", "it"),
+    "generation_depth": ("fast", "standard", "deep"),
+    "learner_level": ("new", "some_experience", "advanced"),
+    "detail_density": ("compact", "balanced", "detailed"),
+    "evidence_density": ("minimal", "key_claims", "high"),
+    "practice_mode": ("priority", "all", "off"),
+}
+
+
+def validate_generation(section: dict[str, Any]) -> dict[str, Any]:
+    """Reject a generation value the Harness would not understand.
+
+    Storing an unknown value is how a control ends up lying: the API accepts
+    `detail_density: "verbose"`, the form shows it as saved, and the Harness
+    silently falls back to its default. Failing here names the offender.
+    """
+    unknown: list[str] = []
+    for key, value in section.items():
+        allowed = GENERATION_ENUMS.get(key)
+        if allowed is None:
+            unknown.append(f"{key} (not a generation setting)")
+        elif value not in allowed:
+            unknown.append(f"{key}={value!r} (expected one of {', '.join(allowed)})")
+    if unknown:
+        raise HTTPException(
+            status_code=422,
+            detail={"code": "INVALID_GENERATION_SETTING", "message": "; ".join(unknown)},
+        )
+    return section
+
+
 @router.patch("/projects/{project_id}/settings")
 def update_project_settings(
     project_id: uuid.UUID, body: dict[str, Any], db: DbSession
@@ -195,6 +233,44 @@ def update_project_settings(
     if record is None:
         record = ProjectSettings(project_id=project_id, settings_json={})
         db.add(record)
-    record.settings_json = deep_merge(record.settings_json, body)
+    # `reset` clears a whole section back to the app default. Offered by the UI
+    # because an override the user cannot remove is a trap: there is no other way
+    # back to the app default once set.
+    reset = body.get("reset") or []
+    if not isinstance(reset, list):
+        raise HTTPException(
+            status_code=422,
+            detail={"code": "INVALID_RESET", "message": "'reset' must be a list of section names"},
+        )
+    patch = {key: value for key, value in body.items() if key != "reset"}
+    if patch:
+        unknown_sections = sorted(set(patch) - {"generation", "provider", "appearance"})
+        if unknown_sections:
+            raise HTTPException(
+                status_code=422,
+                detail={
+                    "code": "INVALID_SETTINGS_SECTION",
+                    "message": f"unknown section(s): {', '.join(unknown_sections)}",
+                },
+            )
+    unknown_reset = sorted(set(reset) - {"generation", "provider", "appearance"})
+    if unknown_reset:
+        raise HTTPException(
+            status_code=422,
+            detail={
+                "code": "INVALID_RESET",
+                "message": f"unknown section: {', '.join(unknown_reset)}",
+            },
+        )
+    # Rebuilt rather than popped in place: SQLAlchemy does not track mutations to
+    # a plain dict held in a JSONB column, so an in-place `pop` would be
+    # committed as the unchanged original and the "clear override" button would
+    # silently do nothing.
+    current = dict(record.settings_json)
+    for section in reset:
+        current.pop(section, None)
+    if "generation" in patch:
+        patch["generation"] = validate_generation(patch["generation"])
+    record.settings_json = deep_merge(current, patch)
     db.commit()
     return get_project_settings(project_id, db)

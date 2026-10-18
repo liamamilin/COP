@@ -1,0 +1,26 @@
+[
+  {
+    "id": "basic-agents-docs",
+    "title": "LangChain Agents · 人工摘要（非网页快照）",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/agents",
+    "text": "人工摘要，2026-10-02 核对官方页面：create_agent 是本版本合法的高层入口；model 可以是标识符或已初始化模型，system_prompt 用于系统指令。invoke 接受 messages 状态。本样板将范围限定为无工具、一次文本调用，不把该限制推广为所有 Agent 的消息形状。"
+  },
+  {
+    "id": "basic-models-docs",
+    "title": "LangChain Models · 人工摘要（非网页快照）",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/models",
+    "text": "人工摘要，2026-10-02 核对官方页面：init_chat_model 可以指定模型名和 provider，也可以直接使用对应的模型类。两者是初始化选择，不是新的 Agent 架构。"
+  },
+  {
+    "id": "basic-openai-docs",
+    "title": "ChatOpenAI integration · 人工摘要（非网页快照）",
+    "original_uri": "https://docs.langchain.com/oss/python/integrations/chat/openai",
+    "text": "人工摘要，2026-10-02 核对官方页面：ChatOpenAI 可显式传入 model、api_key 和 base_url。OpenAI-compatible 服务的兼容范围需由对应服务确认；不能因为构造对象成功就推断请求可用。"
+  },
+  {
+    "id": "basic-dotenv-docs",
+    "title": "python-dotenv · 人工摘要（非网页快照）",
+    "original_uri": "https://bbc2.github.io/python-dotenv/",
+    "text": "人工摘要，2026-10-02 核对官方页面：dotenv_values 返回文件配置而不修改进程环境。本样板指定文件路径并关闭变量插值，LC_* 的覆盖规则由 config.py 自己定义。"
+  }
+]

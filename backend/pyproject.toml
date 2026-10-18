@@ -39,6 +39,13 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
+[tool.ruff.lint.per-file-ignores]
+# This file holds literal shell commands and expected outputs for the golden
+# LangChain case. Wrapping a line inside one of those strings would change the
+# command a learner runs, which is the one thing the fixture must get right, so
+# the width check is skipped here rather than the text reflowed.
+"scripts/enrich_langchain_fixture.py" = ["E501"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

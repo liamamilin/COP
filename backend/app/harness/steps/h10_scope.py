@@ -32,13 +32,18 @@ class ScopeStep:
     name = "H10"
 
     async def execute(self, ctx: HarnessContext, services: Any) -> StepResult:
-        intake = ctx.require("input")
+        intake = ctx.require("intake")
+        # The setting is the fallback, not the override: an intake produced from
+        # a run that carried an explicit learner level keeps it, while an intake
+        # that predates the setting, or a run that omitted it, still gets a bar
+        # from the configuration.
+        learner_level = intake.get("learner_level") or ctx.settings.get("learner_level", "new")
         system, user = build_scope_prompt(
             topic=intake.get("topic", ""),
             scope_hint=intake.get("scope_hint", ""),
             target_outcomes=intake.get("target_outcomes", []),
-            learner_level=intake.get("learner_level", "new"),
-            language=intake.get("language", "auto"),
+            learner_level=learner_level,
+            language=ctx.settings.get("language", "auto"),
             sources=ctx.source_bundle,
         )
         payload = await services.complete_structured(

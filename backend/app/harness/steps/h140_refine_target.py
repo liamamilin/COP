@@ -144,20 +144,29 @@ class RefineTargetStep:
         When the critic found nothing, a refinement still needs something to
         work from, so a single instruction-shaped issue is synthesised. Without
         it the refiner has nothing to anchor on and returns nothing at all.
+
+        `entity_ref` is the bare entity id, which is what `critic_rules` writes
+        and what every other consumer already assumes. It used to be built as
+        `f"{entity_type}.{entity_id}"`, which doubled the prefix -- ids are
+        already namespaced by type, so the real value was `goal.goal.basic-agent`
+        and no such entity exists. Two things broke as a result, and both looked
+        like something else: the scoping filter above never matched a genuine
+        critic issue, so a targeted refinement always fell through to the
+        synthetic one; and the refiner was handed a ref that resolved to nothing.
         """
         report = ctx.critic_report or {}
         scoped = [
             issue
             for issue in (report.get("issues") or [])
-            if str(issue.get("entity_ref") or "") == f"{entity_type}.{entity_id}"
+            if str(issue.get("entity_ref") or "") == entity_id
         ]
         if scoped:
             return scoped
         return [
             {
                 "code": "USER_REQUESTED_REFINEMENT",
-                "entity_ref": f"{entity_type}.{entity_id}",
-                "explanation": "The user asked for this entity to be improved.",
+                "entity_ref": entity_id,
+                "explanation": f"The user asked for this {entity_type} to be improved.",
                 "recommended_change": ctx.input.get("instruction") or "",
             }
         ]

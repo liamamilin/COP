@@ -1,0 +1,51 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "You are a product catalog assistant. Use the get_product_info tool to look up products. Answer based on tool results, not your own knowledge. If a product is not found, say so clearly."
+  },
+  "input": "P999 的价格是多少？",
+  "messages": [
+    {
+      "type": "human",
+      "content": "P999 的价格是多少？"
+    },
+    {
+      "type": "ai",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P999"
+          },
+          "id": "call_00_xy8ecp3m9ux3obrk1ky8xxlu",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"error\": \"Product not found\", \"product_id\": \"P999\"}",
+      "tool_call_id": "call_00_xy8ecp3m9ux3obrk1ky8xxlu"
+    },
+    {
+      "type": "ai",
+      "content": "产品 P999 未在目录中找到，因此无法提供其价格。\n\n请注意，产品 ID 的有效范围是 P001 到 P005。如果您想查询这些产品中的任意一个，请告诉我具体的 ID，我可以为您查询价格、分类和库存状态。"
+    }
+  ],
+  "tool_name": "get_product_info",
+  "tool_args": {
+    "product_id": "P999"
+  },
+  "tool_call_id": "call_00_xy8ecp3m9ux3obrk1ky8xxlu",
+  "tool_result": {
+    "error": "Product not found",
+    "product_id": "P999"
+  },
+  "answer": "产品 P999 未在目录中找到，因此无法提供其价格。\n\n请注意，产品 ID 的有效范围是 P001 到 P005。如果您想查询这些产品中的任意一个，请告诉我具体的 ID，我可以为您查询价格、分类和库存状态。",
+  "evidence_hash": "e401e563d4f2974e7dbb6d9913b767b02d41b549462a40f4cae54f9f5f5e4153",
+  "note": "One tool-calling invocation; verify tool result matches final answer."
+}

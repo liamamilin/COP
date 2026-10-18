@@ -1,0 +1,22 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "Answer in one short sentence."
+  },
+  "input": "Name one benefit of using an agent harness.",
+  "messages": [
+    {
+      "type": "human",
+      "content": "Name one benefit of using an agent harness."
+    },
+    {
+      "type": "ai",
+      "content": "It provides a standardized loop for managing tool calls, memory, and safety, making agents easier to build and debug."
+    }
+  ],
+  "answer": "It provides a standardized loop for managing tool calls, memory, and safety, making agents easier to build and debug.",
+  "note": "One no-tool invocation; this is not a tool-use or memory verification."
+}

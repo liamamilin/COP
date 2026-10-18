@@ -73,8 +73,8 @@ export function AppSettingsForm({ initial }: { initial: AppSettings }) {
       <button className="secondary-button" disabled={pending} onClick={testConnection} type="button">Test saved connection</button>
     </div></section>
 
-    <section className="settings-section"><div className="settings-copy"><p className="eyebrow">GENERATION DEFAULTS</p><h2>Useful by default</h2><p>Run overrides still take precedence over project and app settings.</p></div><div className="settings-fields">
-      <label><span>Language</span><select name="language" defaultValue={settings.generation.language}><option value="auto">Auto</option><option value="zh-CN">Chinese</option><option value="en">English</option></select></label>
+    <section className="settings-section"><div className="settings-copy"><p className="eyebrow">GENERATION DEFAULTS</p><h2>Useful by default</h2><p>These are the app-wide defaults. A project can override any of them, and a single run can override the project. Precedence is always run, then project, then these, then the built-in default.</p></div><div className="settings-fields">
+      <label><span>Language</span><select name="language" defaultValue={settings.generation.language}><option value="auto">Auto</option><option value="zh-CN">中文</option><option value="en">English</option><option value="ja">日本語</option></select></label>
       <label><span>Depth</span><select name="generation_depth" defaultValue={settings.generation.generation_depth}><option value="fast">Fast</option><option value="standard">Standard</option><option value="deep">Deep</option></select></label>
       <label><span>Learner level</span><select name="learner_level" defaultValue={settings.generation.learner_level}><option value="new">New to domain</option><option value="some_experience">Some experience</option><option value="advanced">Advanced</option></select></label>
       <label><span>Detail density</span><select name="detail_density" defaultValue={settings.generation.detail_density}><option value="compact">Compact</option><option value="balanced">Balanced</option><option value="detailed">Detailed</option></select></label>

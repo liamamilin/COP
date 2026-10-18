@@ -18,6 +18,36 @@ EVIDENCE_REF = {
     "additionalProperties": True,
 }
 
+# The one shape a Stage's method is allowed to take, shared by the H50 output
+# schema, the canonical artifact schema, and the H110 refiner. Keeping a single
+# definition here is what stops the three from drifting: a detail the generator
+# can produce but the refiner cannot rewrite, or a published detail the schema
+# would reject, is a dead end for the user.
+IMPLEMENTATION_DETAIL_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "required": ["title"],
+    "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "action": {"type": "string"},
+        "command": {"type": "string"},
+        "expected_result": {"type": "string"},
+        "caution": {"type": "string"},
+    },
+    "additionalProperties": True,
+}
+
+EXAMPLE_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "required": ["summary"],
+    "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "input": {"type": "string"},
+        "output": {"type": "string"},
+        "note": {"type": "string"},
+    },
+    "additionalProperties": True,
+}
+
 INTAKE_SCHEMA: dict[str, Any] = {
     "title": "H00Intake",
     "type": "object",
@@ -133,12 +163,20 @@ STAGES_SCHEMA: dict[str, Any] = {
                     "operation_candidates": {"type": "array", "items": {"type": "string"}},
                     "implementation_detail_candidates": {
                         "type": "array",
-                        "items": {"type": "object"},
+                        "items": IMPLEMENTATION_DETAIL_SCHEMA,
+                        "description": (
+                            "At least one per Stage that asks for an Operation. Never empty."
+                        ),
                     },
-                    "example_candidate": {"type": "object"},
+                    "example_candidate": EXAMPLE_SCHEMA,
                     "evidence_refs": {"type": "array", "items": EVIDENCE_REF},
                 },
-                "required": ["key", "local_goal", "local_outcome"],
+                "required": [
+                    "key",
+                    "local_goal",
+                    "local_outcome",
+                    "example_candidate",
+                ],
                 "additionalProperties": True,
             },
         }
@@ -346,10 +384,36 @@ CRITIC_ISSUE_CODES = (
     "MISSING_CORE_CONCEPT",
     "WEAK_PRACTICE",
     "UNSUPPORTED_SPECIFIC_CLAIM",
+    # Content-contract codes. These are raised by the deterministic checker in
+    # `app.domain.quality`, not by the model: whether a Stage carries an example
+    # is a fact about the artifact, and a model asked to grade its own output on
+    # this will agree with itself.
+    "MISSING_STAGE_EXAMPLE",
+    "MISSING_IMPLEMENTATION_DETAIL",
+    "IMPLEMENTATION_DETAIL_NOT_ACTIONABLE",
+    "SETUP_NOT_ACTIONABLE",
+    "MISSING_VALIDATION_STEP",
+    "OPERATION_WITHOUT_COMMON_FAILURES",
     # Synthesised by H140 when the critic found nothing for the targeted entity.
     # Without it the mock would have no recognised issue to act on and a
     # refinement would silently propose nothing.
     "USER_REQUESTED_REFINEMENT",
+)
+
+#: Codes the refiner may act on. A model asked to repair "the artifact is too
+#: long" rewrites whatever it likes; asked to repair
+#: `MISSING_IMPLEMENTATION_DETAIL` on one Stage, it fills that Stage in.
+TARGETED_REPAIR_CODES = frozenset(
+    {
+        "MISSING_STAGE_EXAMPLE",
+        "MISSING_IMPLEMENTATION_DETAIL",
+        "IMPLEMENTATION_DETAIL_NOT_ACTIONABLE",
+        "SETUP_NOT_ACTIONABLE",
+        "MISSING_VALIDATION_STEP",
+        "OPERATION_WITHOUT_COMMON_FAILURES",
+        "UNSUPPORTED_SPECIFIC_CLAIM",
+        "USER_REQUESTED_REFINEMENT",
+    }
 )
 
 # H120 asks for the whole artifact back, so the schema stays deliberately loose:
@@ -378,11 +442,31 @@ ARTIFACT_REPAIR_SCHEMA: dict[str, Any] = {
 }
 
 # Fields a refiner may rewrite. Anything else is structural and stays code-owned.
+#
+# `implementation_details`, `example`, and `common_failures` are refinable because
+# the content gate reports them by name; a repair the refiner is not allowed to
+# make would leave the user with a blocked publish and no way out. They are still
+# leaf content, never references, so the structural boundary is unchanged.
 REFINABLE_FIELDS: dict[str, frozenset[str]] = {
     "goal": frozenset({"title", "outcome", "why_it_matters"}),
     "process": frozenset({"title", "outcome"}),
-    "stage": frozenset({"title", "local_goal", "why_it_exists", "local_outcome", "example"}),
+    "stage": frozenset(
+        {
+            "title",
+            "local_goal",
+            "why_it_exists",
+            "local_outcome",
+            "example",
+            "implementation_details",
+        }
+    ),
     "concept": frozenset({"name", "definition", "role"}),
-    "operation": frozenset({"name", "definition", "purpose"}),
+    "operation": frozenset({"name", "definition", "purpose", "common_failures"}),
     "branch": frozenset({"title", "description"}),
+}
+
+#: Fields whose revision value is structured rather than a single string.
+STRUCTURED_REFINABLE_FIELDS: dict[str, frozenset[str]] = {
+    "stage": frozenset({"example", "implementation_details"}),
+    "operation": frozenset({"common_failures"}),
 }

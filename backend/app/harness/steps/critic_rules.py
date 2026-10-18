@@ -2,10 +2,25 @@
 
 The critic needs both signal types. Structural smells ("this process has 14
 stages", "this Stage cites 19 Concepts") are mechanical and belong in code; the
-critic prompt covers judgment calls. Warnings never fail a run on their own.
+critic prompt covers judgment calls.
+
+Whether a Stage carries an example or an implementation detail is also
+mechanical, so it lives here rather than in the critic prompt. Asking a model
+to grade its own output on "did I write an example" produces agreement, not a
+signal: the model reads its own Stage, decides it is sufficiently illustrated,
+and the gap survives. `app.domain.quality` decides it instead, from the artifact.
+
+Warnings never fail a run on their own, except where a later publish gate makes
+them blocking for new candidates.
 """
 
 from typing import Any
+
+from app.domain.quality import (
+    L2,
+    blocking_issues,
+)
+from app.domain.quality import check_artifact as check_operational_completeness
 
 VAGUE_GOAL_PREFIXES = ("learn", "understand", "study", "know about", "get familiar")
 MAX_REASONABLE_STAGES = 10
@@ -20,6 +35,46 @@ LOW_LEVEL_OPERATION_TOKENS = (
     "await ",
 )
 MIN_EXPANSION_COUNT = 2
+
+#: L2 codes that make a run `needs_attention` rather than `completed`.
+#: Structure is already validated by H120; these are the cases where a
+#: structurally perfect artifact is still not something a learner can act on.
+CONTENT_GATE_CODES = frozenset(
+    {
+        "MISSING_STAGE_EXAMPLE",
+        "MISSING_IMPLEMENTATION_DETAIL",
+        "IMPLEMENTATION_DETAIL_NOT_ACTIONABLE",
+        "SETUP_NOT_ACTIONABLE",
+        "MISSING_VALIDATION_STEP",
+    }
+)
+
+
+def content_issues(artifact: dict[str, Any]) -> list[dict[str, Any]]:
+    """L2 content-contract findings, shaped like every other critic issue.
+
+    `entity_ref` is the Stage or Operation id, so H110 can repair exactly the
+    entity that is broken instead of the whole artifact.
+    """
+    return [
+        {
+            "code": issue.code,
+            "entity_ref": issue.entity_ref,
+            "entity_type": issue.entity_type,
+            "level": issue.level,
+            "explanation": issue.explanation,
+            "recommended_change": issue.recommended_change,
+        }
+        for issue in check_operational_completeness(artifact, levels=[L2])
+    ]
+
+
+def content_gate_failures(artifact: dict[str, Any]) -> list[dict[str, Any]]:
+    """Only the findings that must block publication."""
+    return [
+        issue.as_dict()
+        for issue in blocking_issues(check_operational_completeness(artifact, levels=[L2]))
+    ]
 
 
 def check_artifact(artifact: dict[str, Any]) -> list[dict[str, Any]]:
@@ -125,6 +180,10 @@ def check_artifact(artifact: dict[str, Any]) -> list[dict[str, Any]]:
             }
         )
 
+    # Content contract last, so the structural findings are read first. These
+    # carry a `level` and an `entity_type` the older codes do not need.
+    issues.extend(content_issues(artifact))
+
     return issues
 
 
@@ -155,6 +214,10 @@ def merged_report(
         issue["code"] in {"ENCYCLOPEDIA_DRIFT", "API_MANUAL_DRIFT", "STAGE_TOO_BROAD"}
         for issue in combined
     ):
+        severity = "major"
+    elif any(issue["code"] in CONTENT_GATE_CODES for issue in combined):
+        # A Stage a reader cannot act on is not a stylistic nit. The refiner has
+        # to run, otherwise the candidate ships exactly as unusable as it was.
         severity = "major"
     elif combined and severity == "pass":
         severity = "minor"

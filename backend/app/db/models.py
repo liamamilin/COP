@@ -183,6 +183,19 @@ class Draft(Base):
 
 
 class LearningProgress(Base):
+    """One row per activity, per version.
+
+    Three activities share this table rather than living in separate tables:
+    Stage progress, Practice progress, and Checkpoint answers. They are the same
+    shape (a status, an optional note, a timestamp) and the same key rule
+    (version + owner), and splitting them would mean three near-identical tables
+    and three near-identical endpoints for no gain at V1 scale.
+
+    The owner's id lives in `goal_id` or `stage_id` depending on `kind`, which is
+    why the unique index is built on a coalesced pair: Foundation Stage progress
+    has no Goal, and a plain unique index would treat every NULL as distinct.
+    """
+
     __tablename__ = "learning_progress"
 
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -192,9 +205,13 @@ class LearningProgress(Base):
     version_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), ForeignKey("cop_versions.id", ondelete="CASCADE"), index=True
     )
+    #: `stage` | `foundation` | `practice` | `checkpoint`. Added in migration 0006.
+    kind: Mapped[str] = mapped_column(String(16), default="stage", nullable=False)
     goal_id: Mapped[str] = mapped_column(String(180), nullable=False)
     stage_id: Mapped[str | None] = mapped_column(String(180))
     status: Mapped[str] = mapped_column(String(32), default="not_started", nullable=False)
+    #: The learner's own words, and their checkpoint answer. Kept here rather than
+    #: in a note field per activity so a checkpoint answer survives a reload.
     notes: Mapped[str | None] = mapped_column(Text)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False

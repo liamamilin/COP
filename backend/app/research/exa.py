@@ -6,13 +6,23 @@ cannot override the system prompt or schema contract.
 """
 
 import hashlib
-from typing import Any
+from typing import Any, Protocol
 
 import httpx
 
 from app.core.errors import CopStudioError
 from app.harness.context import HarnessContext
 from app.harness.steps.h00_intake import MAX_SOURCE_EXCERPT
+
+
+class PersistResearch(Protocol):
+    """Write search results into the project's Source list.
+
+    Returns the results actually stored, with their final ids, so the caller
+    appends to the bundle exactly what the user will later be able to open.
+    """
+
+    def __call__(self, project_id: str, results: list[dict[str, Any]]) -> list[dict[str, Any]]: ...
 
 
 class ExaSearchClient:
@@ -116,8 +126,17 @@ async def enrich_context_with_web_search(
     client: ExaSearchClient,
     *,
     num_results: int = 5,
+    persist: PersistResearch | None = None,
 ) -> int:
-    """Attach Exa results once and make H00 include their synthetic ids."""
+    """Attach Exa results once and make H00 include their ids.
+
+    `persist` writes each result to the project's Source list before it is added
+    to the bundle. Without it the ids exist only inside a run's checkpoint: the
+    artifact would cite `exa:abc123`, the Source Manager would be empty, and the
+    user could never open the citation -- the exact orphan-reference failure R3
+    exists to remove. Persisting also means the result survives a restart,
+    because a re-run does not re-pay for the same query.
+    """
     existing = [item for item in context.source_bundle if item.get("type") == "web_search"]
     if existing:
         return len(existing)
@@ -126,6 +145,8 @@ async def enrich_context_with_web_search(
     if not query:
         return 0
     results = await client.search(query, num_results=num_results)
+    if persist is not None:
+        results = persist(context.project_id, results)
     context.source_bundle.extend(results)
     selected_ids = list(context.input.get("source_ids") or [])
     for result in results:

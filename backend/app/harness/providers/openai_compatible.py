@@ -53,9 +53,7 @@ class OpenAICompatibleProvider:
                     raise
             except httpx.TimeoutException as exc:
                 if attempt >= self.max_retries:
-                    raise ProviderError(
-                        "PROVIDER_TIMEOUT", "Provider request timed out"
-                    ) from exc
+                    raise ProviderError("PROVIDER_TIMEOUT", "Provider request timed out") from exc
             except httpx.HTTPError as exc:
                 if attempt >= self.max_retries:
                     raise ProviderError(
@@ -114,8 +112,7 @@ class OpenAICompatibleProvider:
     @staticmethod
     def _validation_detail(error: Any) -> str:
         path = "$" + "".join(
-            f"[{part}]" if isinstance(part, int) else f".{part}"
-            for part in error.absolute_path
+            f"[{part}]" if isinstance(part, int) else f".{part}" for part in error.absolute_path
         )
         if error.validator == "required" and isinstance(error.instance, dict):
             missing = [name for name in error.validator_value if name not in error.instance]

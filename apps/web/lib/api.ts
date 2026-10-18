@@ -31,8 +31,24 @@ export interface VersionSummary {
   created_at: string;
 }
 
+export interface ResolvedSource {
+  id: string;
+  title: string;
+  type: string;
+  uri: string | null;
+  status: string;
+}
+
 export interface VersionDetail extends VersionSummary {
   artifact: COPArtifact;
+  /**
+   * `evidence_ref.source_id` -> the project Source it resolves to.
+   *
+   * Resolved by the backend because "can this citation be opened" depends on the
+   * project's sources, which the browser cannot see. A ref absent from this map
+   * is unresolvable, and the UI says so rather than hiding the citation.
+   */
+  evidence_sources: Record<string, ResolvedSource>;
 }
 
 export interface DraftCounts {
@@ -63,9 +79,16 @@ export interface DraftDetail extends DraftSummary {
 export const DRAFT_EDITABLE_FIELDS = {
   goals: ["title", "outcome", "why_it_matters"],
   processes: ["title", "outcome"],
-  stages: ["title", "local_goal", "why_it_exists", "local_outcome", "example"],
+  stages: [
+    "title",
+    "local_goal",
+    "why_it_exists",
+    "local_outcome",
+    "example",
+    "implementation_details",
+  ],
   concepts: ["name", "definition", "role"],
-  operations: ["name", "definition", "purpose"],
+  operations: ["name", "definition", "purpose", "common_failures"],
 } as const satisfies Record<string, readonly string[]>;
 
 export type DraftEntityKind = keyof typeof DRAFT_EDITABLE_FIELDS;
@@ -119,6 +142,19 @@ export interface AppSettings {
   appearance: { theme: "system" | "light" | "dark"; density: "comfortable" | "compact" };
 }
 
+/**
+ * What a project's settings override, and what those resolve to.
+ *
+ * `overrides` is the project's own layer only; `effective` is the merged result.
+ * The UI needs both: a control has to show the value that will actually be used
+ * *and* say whether it came from the project or is merely inheriting an app
+ * default, otherwise the two are indistinguishable.
+ */
+export interface ProjectSettingsView {
+  overrides: { generation?: Partial<AppSettings["generation"]> };
+  effective: AppSettings;
+}
+
 export class ApiError extends Error {
   constructor(
     public readonly status: number,
@@ -165,11 +201,23 @@ async function errorFrom(response: Response, path: string): Promise<ApiError> {
 }
 
 function baseUrl(): string {
-  return (
-    process.env.INTERNAL_API_BASE_URL ??
-    process.env.NEXT_PUBLIC_API_BASE_URL ??
-    "http://localhost:8000/api/v1"
-  );
+  const configured =
+    process.env.INTERNAL_API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL;
+
+  // A relative base is the browser's own path to the API. `fetch` resolves it
+  // against the page origin, so the proxy handles it and no host is involved.
+  // Returning an absolute URL here instead would send the browser off-origin to
+  // whatever port happened to be configured.
+  if (configured) return configured;
+
+  // Nothing configured at all: this is a Node caller, not a request. The E2E
+  // suite imports this module directly, and a fixed port is wrong on this
+  // machine because 8000 belongs to an unrelated service -- the request would
+  // succeed and report a missing project, which reads as a product bug.
+  if (process.env.E2E_BASE_URL) {
+    return `${process.env.E2E_BASE_URL.replace(/\/$/, "")}/api/v1`;
+  }
+  return "http://localhost:8000/api/v1";
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
@@ -202,6 +250,23 @@ export function getProjects(): Promise<ProjectSummary[]> {
   return request<ProjectSummary[]>("/projects");
 }
 
+/**
+ * Archived projects, kept separate from the active list.
+ *
+ * `status=archived` rather than `include_archived=true`, which would return both
+ * and force the caller to filter a list it cannot tell apart. Archive without a
+ * way back is indistinguishable from losing the work.
+ */
+export function getArchivedProjects(): Promise<ProjectSummary[]> {
+  return request<ProjectSummary[]>("/projects?status=archived");
+}
+
+export function restoreProject(projectId: string): Promise<ProjectSummary> {
+  return send<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}/restore`, {
+    method: "POST",
+  });
+}
+
 export function getProject(projectId: string): Promise<ProjectSummary> {
   return request<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}`);
 }
@@ -218,6 +283,27 @@ export function getVersions(projectId: string): Promise<VersionSummary[]> {
 
 export function getVersion(versionId: string): Promise<VersionDetail> {
   return request<VersionDetail>(`/versions/${encodeURIComponent(versionId)}`);
+}
+
+export function getProjectSettings(projectId: string): Promise<ProjectSettingsView> {
+  return request<ProjectSettingsView>(`/projects/${encodeURIComponent(projectId)}/settings`);
+}
+
+/**
+ * The settings a run would use, merged by the backend.
+ *
+ * `override` is the run-scoped layer. Passing it lets the panel preview exactly
+ * what a run would receive, computed by the same code path that will execute it
+ * rather than by a second merge in the browser.
+ */
+export async function getEffectiveGenerationSettings(
+  projectId: string,
+  override?: Record<string, unknown>,
+): Promise<{ effective: AppSettings["generation"]; harness_view: Record<string, unknown> }> {
+  const query = override ? `?run=${encodeURIComponent(JSON.stringify(override))}` : "";
+  return request<{ effective: AppSettings["generation"]; harness_view: Record<string, unknown> }>(
+    `/projects/${encodeURIComponent(projectId)}/generation-settings${query}`,
+  );
 }
 
 export interface PatchChange {
@@ -423,14 +509,41 @@ export interface StageProgress {
   updated_at: string | null;
 }
 
+export interface CheckpointProgress {
+  question: string;
+  answer: string | null;
+  updated_at: string | null;
+}
+
+export interface PracticeProgress {
+  practice_id: string;
+  title: string;
+  status: StageStatus;
+  checkpoints: CheckpointProgress[];
+  updated_at: string | null;
+}
+
+export interface FoundationProgress {
+  stage_id: string;
+  status: StageStatus;
+  updated_at: string | null;
+}
+
 export interface GoalProgress {
   goal_id: string;
   title: string;
-  /** Derived from the Stage rows, never stored, so it cannot drift. */
+  /** Derived from Foundation, Stage, and Practice rows, never stored. */
   completed: boolean;
   total_stages: number;
   completed_stages: number;
+  /**
+   * What still stands between this Goal and complete, in the order a learner
+   * meets it. A Goal with an empty progress bar and no stated reason reads as a
+   * broken bar rather than as unfinished work.
+   */
+  blocked_by: string[];
   stages: StageProgress[];
+  practice: PracticeProgress | null;
 }
 
 export interface LearningProgress {
@@ -438,6 +551,12 @@ export interface LearningProgress {
   version_id: string;
   version_number: number;
   goals: GoalProgress[];
+  /**
+   * The Shared Foundation, recorded once per version rather than once per Goal
+   * that starts at it. A Foundation Stage belongs to no Goal, which is what stops
+   * the same setup being tracked N times.
+   */
+  foundations: FoundationProgress[];
   completed_goals: number;
   total_goals: number;
 }
@@ -454,17 +573,29 @@ export function getLearningProgress(
   );
 }
 
+/** The four kinds of activity one progress row can describe. */
+export type ProgressKind = "stage" | "foundation" | "practice" | "checkpoint";
+
+export interface ProgressUpdate {
+  version_id: string;
+  kind: ProgressKind;
+  /**
+   * Empty for `foundation` (a Foundation Stage belongs to no Goal) and for
+   * `practice` (a Practice is keyed by its Goal). The backend rejects a
+   * mismatched combination rather than storing an ambiguous row.
+   */
+  goal_id: string;
+  /** The Stage, or for a checkpoint the exact question text. */
+  stage_id?: string | null;
+  status: StageStatus;
+  notes?: string | null;
+}
+
 export function putLearningProgress(
   projectId: string,
-  body: {
-    version_id: string;
-    goal_id: string;
-    stage_id?: string | null;
-    status: StageStatus;
-    notes?: string | null;
-  },
-): Promise<{ status: StageStatus; version_id: string; stage_id: string | null }> {
-  return send<{ status: StageStatus; version_id: string; stage_id: string | null }>(
+  body: ProgressUpdate,
+): Promise<{ status: StageStatus; kind: ProgressKind; version_id: string; stage_id: string | null }> {
+  return send<{ status: StageStatus; kind: ProgressKind; version_id: string; stage_id: string | null }>(
     `/projects/${encodeURIComponent(projectId)}/learning-progress`,
     { method: "PUT", body: JSON.stringify(body) },
   );

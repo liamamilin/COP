@@ -1,5 +1,9 @@
 # COP Studio — 工作记忆
 
+> **优先级说明**：本文只记环境陷阱、命令用法与工程交接经验。
+> 目标、标准（S1–S9）、阶段与当前停靠点在 `docs/COP_GOAL_PLAN_TASK_METHOD.md`；
+> V1 里程碑 M0–M8 的工程记录在 `DEVELOPMENT_PLAN.md`。三者冲突时以总纲为准。
+
 > 给新会话的交接文档。开始工作前先读本文件。
 > 最后更新：M8 实现完成；V1 验收重新打开（2026-09-29）
 
@@ -33,7 +37,7 @@ COP Studio 是一个 local-first 的知识生产 + 学习工作台。它把一�
 
 | 里程碑 | 状态 | 说明 |
 |---|---|---|
-| M0 骨架 | ✅ | monorepo、FastAPI、迁移、worker、Compose、CI |
+| M0 骨架 | ✅ | monorepo、FastAPI、迁移、worker、CI |
 | M1 渲染器 | ✅ | schema 校验、seed LangChain 工件、层级渲染 |
 | M2 素材 | ✅ | 文本/MD/PDF/URL，SSRF 防护 |
 | M3 设置 | ✅ | Fernet 加密 key、Mock + OpenAI 兼容适配器 |
@@ -185,8 +189,8 @@ PATCH/DELETE。M8 增加的 POST export subresource 只从 immutable JSON 派生
 draft 编辑页本身很重，mutation 之后整页重载反而合理。**这是一个 workaround，
 根因没查清**（Next 15 + standalone 产物下 `push` 解析成功却不导航）。
 
-> 教训：`docker compose build` 有缓存层，源码改了但镜像里还是旧代码。
-> 改前端后用 `make web-rebuild`（= `build --no-cache`）。
+> 教训：构建产物可能带缓存，源码改了但跑起来的还是旧代码。
+> 改前端后用 `make web-rebuild`（清 `.next`），并**验证服务出去的 CSS 真的变了**——见 6.12。
 > **这个坑今天踩了两次**，症状都是"按钮明明绑了 onClick 却没反应"——
 > 看起来极像应用 bug，其实是镜像里跑的还是旧代码。
 > 以后改前端第一件事：`make web-rebuild`。
@@ -321,8 +325,8 @@ UI 要等一次网络往返才变，测试里表现为"点了没反应"。
 
 **运行与可用性**
 
-- `make backup` / `make restore BACKUP=...` 现在操作真正的 Compose PostgreSQL 与
-  `/data` volume；先停写入服务，失败也会自动重启。
+- `make backup` / `make restore BACKUP=...` 操作开发库与 `backend/data`；
+  先停写入服务，失败也会自动重启。（原实现走 Compose，已随容器层一起移除。）
 - 真实执行过一次 backup → 校验 SQL/tar → 恢复同一快照 → 服务健康与记录数检查。
 - light/dark/system 与 comfortable/compact 不再是死设置；保存后立即应用。
 - 增加 skip link、统一 `:focus-visible`、原生 `<details>` 与键盘 Learn/Export E2E。
@@ -330,8 +334,7 @@ UI 要等一次网络往返才变，测试里表现为"点了没反应"。
 - 选择器建立 WeakMap 索引，200 Stage 渲染不再反复线性查找。
 - 增加数 MB 文本、1000 events、100 versions 的性能门槛。
 - `scripts/generate-types.py` 从 canonical schema 生成 TS 类型；CI 先生成再检查 diff。
-- 增加根级 `.dockerignore`，构建上下文由约 144 MB 降到约 9 KB，避免本地缓存、
-  测试 trace 与虚拟环境再次挤满 Docker 磁盘。
+- ~~增加根级 `.dockerignore`~~（容器层已移除，见 6.11）。
 
 冻结端到端路径现已自动化：创建项目 → 粘贴素材 → Mock 生成 → 建 Draft → 发布 →
 Learn 中用键盘完成 Stage → 版本页用键盘下载 Markdown，并检查文件内容。
@@ -366,73 +369,223 @@ RSC 都返回 200，但浏览器端将流标记为 `ERR_ABORTED`，URL 不提交
 
 ## 5. 测试与命令
 
+**日常用 `make verify`。** 它跑 CI 的全部检查（lint → typecheck → schema drift →
+后端 → 前端 → E2E），并且**不会动正在运行的 app**。
+
 ```bash
-make test        # 自动起 cop_test 库 + 跑后端/前端测试
-make test-db     # 只建测试库，留着便于迭代
-make test-backend
-make test-e2e    # 浏览器测试，需要 make up 先起栈
+make verify       # 日常：全量校验，不影响运行中的 app
+make test         # 后端 + 前端，测试库先删后建
+```
+
+`make verify` 只在 `cop_test` 不存在时才创建它，绝不 drop，
+所以开着 app 也能跑。
+
+### 全部跑在宿主，没有容器层
+
+`make up` = api(127.0.0.1:8010) + worker + web(localhost:3000)，
+后台启动、PID 记在 `.local-stack/`、立即返回。
+
+```bash
+make up / make down     # 起停
+make local-db           # 只确保 cop_studio 库存在
+make seed               # 导入参考 COP
+```
+
+浏览器访问 **http://localhost:3000**：Next 收请求，把 `/api/v1` 反代到 8010。
+`/health` 也经 Next 转发（`apps/web/app/health/route.ts`），
+所以能区分「Next 活着但 API 挂了」（502）和两者都正常（200）。
+
+端口与库名都不是默认值，原因写在 Makefile 里：8000 被别的应用占着（6.9），
+本机已有一个别项目的 `cop` 库（6.10）。**不要改回默认值。**
+
+> E2E 打的就是 `localhost:3000`，所以 `make up` 之后 `make test-e2e`
+> 跑在 `next dev` 上。按需编译会让首个用例明显变慢，这是正常的。
+
+细粒度目标：
+
+```bash
+make test-backend   # 只跑后端（需要先 make test-db 或 make verify 起过测试库）
+pnpm test           # 只跑前端单元/渲染测试
+make test-e2e       # 只跑浏览器测试，需要 make up 先起栈
+make test-db        # 建测试库并留着，便于迭代
+make test-db-reset  # 删掉重建测试库
 make lint
 make typecheck
+make check-types    # schema drift：fail=忘了重新生成，warn=正确但没提交
 make generate-types
 make backup
 make restore BACKUP=backups/cop-studio-YYYYMMDD-HHMMSS
-make up / make down
+make web-rebuild    # 清 apps/web/.next 缓存
 ```
 
 后端套件**需要真实 PostgreSQL**，因为 job 抢占、崩溃恢复、唯一约束都是 PG 行为。
 无库时**直接 fail 而不是 skip** —— 绿色的测试必须意味着队列真的被执行过。
 
-当前基线：135 个后端 + 29 个前端单元/渲染测试，全绿。
-后端包含 M4–M7 状态回归、Provider schema/Exa 回归、6 个导出测试与
-3 个大数据量门槛。
-浏览器层 `make test-e2e` = 25 个，跑真实 Compose 栈：
-M5 草稿全流程 8 个、冻结 V1/M8 2 个、M4 进度流 3 个、
-M6 精修 5 个、M7 学习 7 个。
+当前基线：276 个后端 + 45 个前端单元/渲染 + 27 个 E2E，全绿。
 
-> **加字段后必须重跑 `make test-db` / `make test-db-reset`。**
+> **`make check-types` 分两层**，因为它们回答不同的问题：
+> 1. **staleness（fail）**——改了 schema 忘了重新生成。开发中最常踩，
+>    后果是浏览器对着后端已经不再满足的契约做类型检查，
+>    而且表现为页面运行时报错，不是构建失败。
+> 2. **uncommitted（warn）**——类型是对的但没提交。CI 比较的是 commit，
+>    所以本地过、CI 挂。只警告不失败，否则开发中途根本没法用这个命令。
+
+> **加字段后必须重跑 `make test-db-reset`。**
 > pytest 的 `db` fixture 只 TRUNCATE，不 ALTER。schema 没跟上时
 > 报的是 `UndefinedColumn`，看不出是哪个改动引起的。
 > Makefile 现在会在迁移后打这句提示。
 
-后端测试跑之前必须 `make test-db`（或 `make test`）起 `cop_test` 库。
-直接 `uv run pytest` 会 13 error + 1 failed——这是 conftest 的 fail-fast 设计，
-不是代码坏了。
-
 ## 6. 踩过的坑（重要，别再踩）
 
-### 6.1 测试会 TRUNCATE 开发库
+### 6.1 `make test` 会删掉测试库
 
-`db` fixture 每个 case 之间 TRUNCATE 所有表。早期 `make test` 指向 Compose 的
-`cop` 库，直接删掉了本地项目和素材。
+`make test` 的语义是 **clean test environment**：先 `test-db-reset`
+（DROP + CREATE `cop_test`），再跑后端 + 前端。
 
-**已修**：测试用独立库 `cop_test`（独立端口 55432），
-`conftest.py` 见到库名是 `cop`/`postgres`/`template1` **直接拒绝运行**。
+它**不再**影响运行中的 app——测试库和开发库 `cop_studio` 按名字分开，
+重建前者不可能断掉后者的连接。开发数据在任何情况下都不会被 TRUNCATE。
 
-### 6.2 本机可能有 PostgreSQL 占用 5432
+但 `make verify` 更常用：它只在 `cop_test` 不存在时才创建，绝不 drop。
 
-`localhost:5432` 可能连到 Homebrew 的本地库而不是 Compose 容器，
-症状是"某个库存在、某个库不存在"这种诡异现象。
-端口已改为 `POSTGRES_HOST_PORT` 可配置，测试用 55432。**不要 kill 用户的库。**
+### 6.2 `127.0.0.1:8000` 不是 COP Studio
 
-### 6.3 仓库 `.env` 是给 Docker 用的
+本机另有一个 Python 服务监听 IPv4 `127.0.0.1:8000`
+（"Video Opportunity Desk API"）。COP Studio 监听 `127.0.0.1:8010`。
 
-`DATA_DIR=/data` 在宿主机上不存在或只读，测试会因此在 app lifespan 里失败。
+用 8000 验证 API 会命中**另一个服务**并读到完全不同的 JSON。
+判身份不要只看 200，要看 `openapi.json` 的 `info.title`（应为 `COP Studio API`）。
+详见 6.9。
+
+### 6.3 Provider 是全局状态
+
+E2E 整轮用 Mock Provider，由 `globalSetup` 设置、`globalTeardown` 还原。
+**不要在单个 spec 里改 provider 再恢复** —— 还原成开发者真实端点后，
+之后运行的 spec 会发起真实网络调用、产不出 candidate，失败方式看起来像
+产品回归。`globalTeardown` 会读回校验，还原不完整时打印警告。
+
+### 6.4 测试会 TRUNCATE 目标库
+
+`db` fixture 每个 case 之间 TRUNCATE 所有表。早期测试曾指向开发库，
+直接删掉了本地项目和素材。
+
+**已修**：测试用独立库 `cop_test`，`conftest.py` 见到库名是
+`cop`/`postgres`/`template1` **直接拒绝运行**。
+
+> 隔离靠**库名**而不是端口。库名是 `conftest.py` 检查的东西，
+> 也是决定一次误操作能波及到哪里的东西；换端口只是多一处要同步的地方，
+> 不增加一层保护。
+
+### 6.5 本机已有 PostgreSQL 在 5432
+
+Homebrew PostgreSQL 16 在跑，所以 `localhost:5432` 就是它。
+**不要 kill 用户的库。** 本项目只创建和删除自己命名的库
+（`cop_studio` / `cop_test`），其他一律不碰。
+
+### 6.6 `.env` 的 DATA_DIR 是相对路径
+
+`DATA_DIR=./data` 只有在进程从 `backend/` 启动时才解析正确
+（→ `backend/data`）。`uv run` 不保证 cwd，所以 Makefile 仍显式传绝对路径。
 测试用 `TEST_DATA_DIR` 指向临时目录。
 
-### 6.4 规格文档自身有笔误
+### 6.7 规格文档自身有笔误
 
 `docs/05-data-model.md` §3 的"顶层形状"示例 JSON **漏了 `stages`**，
 但 `cop-artifact.schema.json` 的 `required` 和 Pydantic 模型都要求它
 （spec `25` §5 明确 "stages is first-class and required"）。
 遇到冲突时以 schema 文件和 Pydantic 模型为准。
 
-### 6.5 容器里的 `alembic upgrade head` 会打印无关的架构提示
+### 6.9 本机 8000 已被另一个应用占用，COP 本地跑在 8010
+
+IPv4 `127.0.0.1:8000` 上是 **"Video Opportunity Desk API"**（另一个项目）。
+在本机直接起后端时如果还用 8000，会得到两种误导性结果：
+
+- `address already in use` —— 绑定失败；
+- 更糟的是健康检查**返回 200**，但那是另一个应用在应答，看起来像启动成功。
+
+`make up` 因此默认用 **8010**，并在 Makefile 里写明了原因。
+判定「哪个服务在应答」不要只看 200，要看 `openapi.json` 的 `info.title`
+（应为 `COP Studio API`）。
+
+### 6.10 本机已有一个**别的项目**的 `cop` 库，不要用
+
+本机 Homebrew PostgreSQL 16 在跑，里面有一个叫 **`cop`** 的库，
+但它属于另一个项目，里面是 "Worker Subprocess"、"Kubernetes Workload
+Debugging" 之类无关数据，且 alembic 停在 `0001_initial`（COP Studio 已到 `0006`）。
+
+- **不要把 COP Studio 的数据灌进去** —— 那是两个产品的数据混在一张表里。
+- **不要因为"名字一样"就当成本项目的库**。
+
+本项目用 **`cop_studio`**（开发）和 **`cop_test`**（测试），与它并存。
+
+> 和 6.5 是同一类问题，但更危险：6.5 是端口撞车，这个是**库名撞车**，
+> 后者不会报错，只会让两个项目的数据互相污染。
+
+### 6.8 `alembic upgrade head` 会打印无关的架构提示
 
 `This program built for i386-apple-darwin11.3.0` 是 uv 链接触发的噪音，
 不是错误。判断成功与否看 `alembic_version` 表或后续 API 是否可用。
 
-注意 `stages` 是**必填的一等实体**，spec `05-data-model.md` §3 的示例 JSON
-漏了它，但 `cop-artifact.schema.json` 和 Pydantic 模型都要求。信后者。
+### 6.11 曾经依赖 Docker，而它会毫无预警地消失
+
+开发过程中 Docker Desktop 在一次会话里停了 6 次。已排除磁盘、内存、
+崩溃报告、OOM 和 `docker desktop quit`，日志末尾是正常活动——
+一次干净停止且未记录原因。
+
+最后一次直接让 `make verify` 失败，而那次失败与产品毫无关系：
+测试库当时还在用 Compose 起。**这才是决定性的**——
+一个会在运行中消失的依赖，会把无关的环境变化伪装成产品故障。
+
+已移除全部容器层：`docker-compose.yml`、两个 `Dockerfile`、`.dockerignore`
+均已删除，CI 改用 GitHub Actions 的 `services:` 跑原生 PostgreSQL。
+
+### 6.12 改前端后要确认改动真的上线
+
+一次改 `globals.css` 后页面仍是旧样式，而我花了很久怀疑一个根本没生效的修复。
+
+`next dev` 会热更新，但**验证要看服务出去的 CSS**：比对
+`/_next/static/css/*.css` 的 hash 与内容里有没有你刚写的规则。
+`make web-rebuild` 清 `apps/web/.next` 缓存。
+
+### 6.13 `make up` 里的 `$!` 与进程归属
+
+三个互相纠缠的坑，都表现为「`make down` 说停了，端口还被占着」：
+
+1. **`$$!` 才是对的**（make 转义一次，shell 拿到 `$!`）。
+   写成 `$$$$!` 时 make 先减半成 `$$`，shell 再把 `$$` 展开成自身 PID，
+   末尾的 `!` 被当字面量写进文件——`.pid` 里是一个**不存在的进程号**。
+
+2. **`&` 作用于整个 `&&` 列表**，所以 `cd X && nohup CMD &` 的 `$!` 是包装
+   subshell 的 PID，不是目标进程。杀它不释放端口。
+   必须写成 `cd X && exec env ... nohup CMD &`，让 subshell **变成**目标进程。
+
+3. **不能用命令行判断归属**。`exec` 之后 `$(CURDIR)/backend/.venv/bin/python`
+   被替换成解释器真实路径（`/opt/homebrew/Cellar/python@3.12/.../Python`），
+   `grep -qF "$(CURDIR)"` 永远匹配不上；而 `pkill -f "next dev"` 又会误杀
+   本机其他项目。**端口才是无歧义的判据。**
+
+4. **持端口的常常是子进程**。`next dev` fork 出 `next-server`，
+   真正 bind 3000 的是它。所以判定要从持端口者**沿 ppid 回溯**到记录的 PID，
+   而不是拿记录的 PID 直接比端口。
+
+> 改完这段后必须实测：`make up` → `make down` → `lsof -iTCP:3000,8010` 为空。
+> 只看 `make down` 打印 "stopped" 是不够的——在修好之前它每次都打印，
+> 但端口一直没释放。
+
+### 6.14 含逗号的命令不能直接传给 `$(call)`
+
+`$(call start_detached,dir,env,python -m uvicorn app.main:app --host ...,api)`
+会因为逗号被拆成两个参数，后半段**静默消失**——api 不报错，就是不启动。
+含空格或逗号的命令要放进变量（`API_CMD`）再传变量名。
+
+### 6.15 pnpm workspace 下 `next` 的真实路径
+
+`node_modules/.bin/next` **不存在**。pnpm 把每个 package 的依赖装在
+`apps/web/node_modules/` 下，正确路径是
+`apps/web/node_modules/.bin/next`。
+
+用错路径时 `next` 立刻退出，而 `make up` 仍然打印全部地址并返回 0——
+看起来启动成功，实际上 web 根本没起。**每次改 `up` 都要 curl 一下 3000。**
+
 
 ## 7. 已知风险与非阻塞缺口
 
@@ -488,3 +641,26 @@ M0–M8 已按冻结范围实现。最终不变量继续遵守（规格 `16`、`
 | 规格里程碑 | `cop-studio-development-spec-v1.0/docs/23-coding-agent-milestones.md` |
 | 冻结范围 | `cop-studio-development-spec-v1.0/docs/19-v1-scope-freeze.md` |
 | 跨层命名契约 | `cop-studio-development-spec-v1.0/docs/24-cross-layer-consistency.md` |
+
+## 10. 标准 COP 质量工作（2026-10-03）
+
+统一执行与交接入口：[COP_GOAL_PLAN_TASK_METHOD.md](/Users/milin/2026/软件开发/COP/docs/COP_GOAL_PLAN_TASK_METHOD.md)。
+
+M0–M8 的实现状态不等于内容/真实能力质量已验。当前按照
+`docs/proposals/cop-quality-standard-and-production-v1.md` 分阶段推进，停在 A1 的 Basic 子样板。
+
+新样板在 `examples/langchain-basic/`，独立产物为 `fixtures/langchain-basic-cop.json`；
+只读预览 `/prototypes/langchain-basic`，不占用项目/学习进度/发布记录。默认脚本显式读
+课件同目录 .env 的 LC_*，不读 COP Studio key；同一次结果以 JSON 交给独立 Inspect。
+
+干净 Python 3.10.13 环境：13 项离线样板测试通过。无库后端回归 26 项、前端 54 项、
+typecheck / lint 通过。Basic 内容审核完成（无阻塞性问题）。详见
+`docs/validation/langchain-basic-prototype-2026-10-03.md`，其中明确记录全套 DB 集成 /
+E2E / production build 未执行、真实 provider 与用户验收待完成。
+
+Tools 子样板目录 `examples/langchain-tools/` 已建立，T01 任务定义草案（产品目录查询）
+见 `docs/proposals/tools-task-definition-v1.md`，待用户确认后进入 T02 实现。
+
+先审核并完成 Basic 真实能力/用户验收，再做 Tools；A2–A5 尚未开始。旧已发布 LangChain
+内容的错误没有被静默修正，不能用导航修复推断其教学内容已合格。真实/收费调用需明确
+provider、模型、凭据范围与预算；不把 Fake 回复或构造 created 当作真实验收。

@@ -1,0 +1,53 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "You are a product catalog assistant. Use the get_product_info tool to look up products. Answer based on tool results, not your own knowledge. If a product is not found, say so clearly."
+  },
+  "input": "P001 的价格是多少？",
+  "messages": [
+    {
+      "type": "human",
+      "content": "P001 的价格是多少？"
+    },
+    {
+      "type": "ai",
+      "content": "I'll look up that product for you.",
+      "tool_calls": [
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P001"
+          },
+          "id": "call_00_k8hnacqovwb69kdjkzvibby6",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"LangChain 入门教程\", \"price\": 99.0, \"category\": \"教程\", \"in_stock\": true}",
+      "tool_call_id": "call_00_k8hnacqovwb69kdjkzvibby6"
+    },
+    {
+      "type": "ai",
+      "content": "P001 的价格是 **99.0 元**。\n\n产品详情如下：\n- **产品名称**：LangChain 入门教程\n- **价格**：99.0 元\n- **分类**：教程\n- **库存状态**：有货 ✅"
+    }
+  ],
+  "tool_name": "get_product_info",
+  "tool_args": {
+    "product_id": "P001"
+  },
+  "tool_call_id": "call_00_k8hnacqovwb69kdjkzvibby6",
+  "tool_result": {
+    "name": "LangChain 入门教程",
+    "price": 99.0,
+    "category": "教程",
+    "in_stock": true
+  },
+  "answer": "P001 的价格是 **99.0 元**。\n\n产品详情如下：\n- **产品名称**：LangChain 入门教程\n- **价格**：99.0 元\n- **分类**：教程\n- **库存状态**：有货 ✅",
+  "evidence_hash": "8200c1afbcc86ed2149292a0b210043c59bab9eedd442b2c09bdd7db9e38a42d",
+  "note": "One tool-calling invocation; verify tool result matches final answer."
+}

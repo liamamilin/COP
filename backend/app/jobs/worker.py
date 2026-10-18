@@ -32,7 +32,11 @@ from app.jobs.runner import (
     record_worker_heartbeat,
     recover_stale_runs,
 )
-from app.research import ExaSearchClient, enrich_context_with_web_search
+from app.research import (
+    ExaSearchClient,
+    enrich_context_with_web_search,
+    persist_search_results,
+)
 
 settings = get_settings()
 logging.basicConfig(level=settings.log_level)
@@ -80,13 +84,11 @@ async def execute_run() -> bool:
             return False
         run_id = run.id
         context = load_context(run)
-        # Database sources are reloaded on every attempt. Synthetic search
-        # sources live in the checkpoint, so preserve them across crash
-        # recovery instead of paying for the same query twice.
-        persisted_search = [
-            item for item in context.source_bundle if item.get("type") == "web_search"
-        ]
-        context.source_bundle = load_source_bundle(db, run) + persisted_search
+        # Database sources are reloaded on every attempt. Web results are already
+        # persisted as Source rows, so they come back through this same query --
+        # which is what makes an evidence ref to one of them resolvable after a
+        # restart instead of only inside a checkpoint.
+        context.source_bundle = load_source_bundle(db, run)
         if context.input.get("web_search") and not context.partial_target:
             try:
                 if not settings.exa_api_key:
@@ -102,6 +104,12 @@ async def execute_run() -> bool:
                         base_url=settings.exa_base_url,
                     ),
                     num_results=settings.exa_num_results,
+                    # Persisted before the run uses them, so every id the artifact
+                    # cites resolves to a Source the user can open, and a later
+                    # run does not pay for the same query twice.
+                    persist=lambda project_id, results: persist_search_results(
+                        db, project_id, results
+                    ),
                 )
                 append_event(
                     db,

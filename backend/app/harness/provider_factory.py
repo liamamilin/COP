@@ -9,17 +9,33 @@ from typing import Any
 from app.api.settings import deep_merge, settings_with_defaults
 from app.core.config import get_settings
 from app.core.errors import CopStudioError
-from app.db.models import AppSetting, ProjectSettings
+from app.db.models import AppSetting, Project, ProjectSettings
 from app.harness.providers import MockProvider, OpenAICompatibleProvider, ProviderError
 from app.harness.providers.base import LLMProvider
 
 
 def resolve_effective_settings(db, project_id: Any) -> dict[str, Any]:
-    """Merge app defaults with project overrides."""
+    """Merge app defaults with project overrides.
+
+    `projects.preferred_language` participates as a project-level source. It is a
+    first-class column rather than a settings row, and the audit found it was
+    written at creation and then never read: a project created in Chinese
+    generated an English COP unless the user re-selected the language by hand.
+    It only fills in when no explicit project override says otherwise, so a
+    deliberate override still wins over it.
+    """
     app_record = db.get(AppSetting, 1)
     app_data = app_record.settings_json if app_record else {}
     project_record = db.get(ProjectSettings, project_id)
-    project_data = project_record.settings_json if project_record else {}
+    project_data = dict(project_record.settings_json) if project_record else {}
+
+    project_row = db.get(Project, project_id)
+    preferred = str(getattr(project_row, "preferred_language", "") or "").strip()
+    if preferred and preferred != "auto":
+        existing = dict(project_data.get("generation") or {})
+        existing.setdefault("language", preferred)
+        project_data["generation"] = existing
+
     return deep_merge(settings_with_defaults(app_data), project_data)
 
 

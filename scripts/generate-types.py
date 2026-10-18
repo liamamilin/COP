@@ -29,6 +29,16 @@ def ts_type(schema: dict[str, Any], *, indent: int = 0) -> str:
         return json.dumps(schema["const"], ensure_ascii=False)
     if "enum" in schema:
         return " | ".join(json.dumps(item, ensure_ascii=False) for item in schema["enum"])
+    if "oneOf" in schema:
+        # `oneOf: [{$ref: Example}, {type: "null"}]` is how a nullable object is
+        # expressed. Without this the whole union collapses to `unknown`, which
+        # is the one thing a generated contract must never emit: `unknown` turns
+        # every property access into a type error, so callers cast it away and
+        # the contract stops protecting anything.
+        variants = list(dict.fromkeys(ts_type(option, indent=indent) for option in schema["oneOf"]))
+        if len(variants) == 1:
+            return variants[0]
+        return " | ".join(f"({item})" if " | " in item else item for item in variants)
     kind = schema.get("type")
     if isinstance(kind, list):
         return " | ".join(ts_type({**schema, "type": item}, indent=indent) for item in kind)

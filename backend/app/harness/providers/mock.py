@@ -200,12 +200,39 @@ def _mock_processes(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _mock_detail(domain: str, title: str) -> dict[str, Any]:
+    """One followable step, in the same shape a real provider must return.
+
+    The mock exists so the acceptance path can run without an API key, and that
+    only works if it honours the same content contract. A mock that emitted
+    `{"label": ..., "body": ...}` while the schema demanded `title`/`action`
+    would make the whole suite green and the real product broken.
+    """
+    return {
+        "title": f"Carry out {title.lower()}",
+        "action": f"Run the {title.lower()} step against your {domain} workspace.",
+        "command": f"cop {title.lower().replace(' ', '-')}",
+        "expected_result": f"The command exits 0 and the {domain} state is observable.",
+        "caution": f"Confirm the {domain} environment is active before running it.",
+    }
+
+
 def _mock_stages(payload: dict[str, Any]) -> dict[str, Any]:
     process = payload.get("process") or {}
     stages = payload.get("stages") or []
     domain = _clean((payload.get("scope") or {}).get("domain"), "Domain")
     process_key = _clean(process.get("key"), "p_g1")
     enriched: list[dict[str, Any]] = []
+    # The run's real source ids, so citations resolve. `payload_block` sends the
+    # scope and stage keys rather than the bundle, so the ids are read from
+    # whichever key the prompt carried them on.
+    source_ids = [
+        str(item)
+        for item in (
+            payload.get("source_ids") or (payload.get("scope") or {}).get("source_ids") or []
+        )
+        if str(item).strip()
+    ]
     for index, stage in enumerate(stages, start=1):
         key = _clean(stage.get("key"), f"{process_key}_s{index}")
         title = _clean(stage.get("title"), f"Stage {index}")
@@ -228,16 +255,33 @@ def _mock_stages(payload: dict[str, Any]) -> dict[str, Any]:
                 "dependency_notes": [] if index == 1 else [f"Requires stage {index - 1}."],
                 "concept_candidates": [item[0] for item in concept_keys],
                 "operation_candidates": [item[0] for item in operation_keys],
-                "implementation_detail_candidates": [
-                    {"label": "Verification", "body": f"Confirm the {domain} result is observable."}
-                ],
+                "implementation_detail_candidates": [_mock_detail(domain, title)],
                 "example_candidate": {
-                    "summary": f"Apply {title.lower()} to a minimal {domain} case."
+                    "summary": f"Apply {title.lower()} to a minimal {domain} case.",
+                    "input": f"A single representative {domain} input.",
+                    "output": f"The expected observable {domain} result.",
                 },
-                "evidence_refs": [],
+                # Cites the sources the run actually read, so the generated
+                # artifact demonstrates an evidence chain the user can open. An
+                # empty list would make every Stage look unsourced, and the
+                # golden case could not prove the citation path works.
+                "evidence_refs": _evidence_for(source_ids, index),
             }
         )
     return {"stages": enriched}
+
+
+def _evidence_for(source_ids: list[str], index: int) -> list[dict[str, str]]:
+    """One citation, rotating through the run's real sources.
+
+    Rotating rather than citing all of them on every Stage: a Stage carrying five
+    references reads as though every sentence were contested, which is the
+    Encyclopedia Failure in a different costume.
+    """
+    if not source_ids:
+        return []
+    source_id = source_ids[(index - 1) % len(source_ids)]
+    return [{"source_id": source_id, "quote_hint": "Supporting passage in the source"}]
 
 
 def _mock_canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
@@ -320,7 +364,12 @@ def _mock_canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
             "definition": definitions[key]["definition"],
             "purpose": definitions[key]["purpose"],
             "acts_on_concept_keys": concept_keys[:1],
-            "common_failures": [],
+            # An Operation with no failure mode tells a beginner nowhere to look
+            # when the thing they were told to do does not work.
+            "common_failures": [
+                f"Running '{definitions[key]['name'].lower()}' before its prerequisite is complete",
+                "Assuming the step succeeded without checking the resulting state",
+            ],
         }
         for key in operation_keys
     ]
@@ -396,12 +445,23 @@ def _mock_learning(payload: dict[str, Any]) -> dict[str, Any]:
             "flow": ["Runtime", "Core Object", "Capability", "Verification"],
         },
         "practices": practices,
+        # Two directions, because the content gate requires an Expansion Map of at
+        # least two. One leaves the learner with a dead end, which is the whole
+        # thing the Map exists to prevent.
         "expansion_map": [
             {
                 "title": f"Advanced {domain} patterns",
                 "description": "Explore scaling and failure-recovery patterns.",
                 "from_goal_key": str(processes[0].get("goal_key")) if processes else None,
-            }
+            },
+            {
+                "title": f"Measuring {domain} quality",
+                "description": (
+                    "Add tracing and evaluation so regressions in the process are visible "
+                    "rather than inferred."
+                ),
+                "from_goal_key": str(processes[-1].get("goal_key")) if processes else None,
+            },
         ],
     }
 
@@ -438,7 +498,8 @@ def _mock_critic(payload: dict[str, Any]) -> dict[str, Any]:
 def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
     issues = payload.get("issues") or []
     locked = set(payload.get("locked_paths") or [])
-    artifact = payload.get("artifact") or {}
+    view = payload.get("artifact") or {}
+    artifact = view.get("artifact") or view
     revisions: list[dict[str, Any]] = []
     for issue in issues:
         if issue.get("code") not in CRITIC_ISSUE_CODES:
@@ -446,18 +507,17 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
         entity_ref = str(issue.get("entity_ref") or "")
         if entity_ref in locked:
             continue
-        entity_type, _, entity_key = entity_ref.partition(".")
-        if entity_type not in {"goal", "process", "stage", "concept", "operation", "branch"}:
+        resolved = _resolve_issue_entity(artifact, issue)
+        if resolved is None:
             continue
+        entity_type, entity_key = resolved
         change = _clean(issue.get("recommended_change"), "")
         if not change:
             # No instruction, so there is no recommended text to echo.
             # Synthesise a deterministic rewrite rather than returning nothing:
             # a refiner that silently proposes nothing makes every review
             # screen look like a failure rather than like "nothing to change".
-            change = _synthesise_refinement(
-                artifact.get("artifact") or artifact, entity_type, entity_key
-            )
+            change = _synthesise_refinement(artifact, entity_type, entity_key)
         if not change:
             continue
         revisions.append(
@@ -473,26 +533,90 @@ def _mock_refine(payload: dict[str, Any]) -> dict[str, Any]:
     return {"revisions": revisions}
 
 
+#: entity type -> the collection holding it, for resolving a critic issue.
+ENTITY_COLLECTIONS: dict[str, str] = {
+    "goal": "goals",
+    "process": "main_processes",
+    "stage": "stages",
+    "concept": "concepts",
+    "operation": "operations",
+    "branch": "branches",
+}
+
+
+def _resolve_issue_entity(
+    artifact: dict[str, Any], issue: dict[str, Any]
+) -> tuple[str, str] | None:
+    """Work out which entity an issue is about, as `(type, id)`.
+
+    Resolved by matching `entity_ref` against the ids actually present rather
+    than by splitting the string on a dot. Splitting only appeared to work because
+    generated ids happen to start with their type -- `goal.ship_a_capability`
+    splits into `goal` and `ship_a_capability`, which is not the id at all. It
+    also could not work for a targeted prompt, where the id appears behind an
+    extra `goal.` prefix, and for a scoped view there are no collections to search
+    at all. Matching ids is the one rule that holds for every prompt shape.
+    """
+    entity_ref = str(issue.get("entity_ref") or "")
+    if not entity_ref:
+        return None
+
+    target = artifact.get("target")
+    if isinstance(target, dict) and str(target.get("entity_id")) == entity_ref:
+        entity_type = str(target.get("entity_type") or "")
+        if entity_type in ENTITY_COLLECTIONS:
+            return (entity_type, entity_ref)
+
+    declared = str(issue.get("entity_type") or "")
+    if declared in ENTITY_COLLECTIONS:
+        collection = ENTITY_COLLECTIONS[declared]
+        if any(str(item.get("id")) == entity_ref for item in (artifact.get(collection) or [])):
+            return (declared, entity_ref)
+        # A targeted view carries the entity even when the collection is absent.
+        if isinstance(target, dict) and isinstance(target.get("entity"), dict):
+            return (declared, entity_ref)
+
+    for entity_type, collection in ENTITY_COLLECTIONS.items():
+        if any(str(item.get("id")) == entity_ref for item in (artifact.get(collection) or [])):
+            return (entity_type, entity_ref)
+    return None
+
+
+def _target_entity(
+    artifact: dict[str, Any], entity_type: str, entity_key: str
+) -> dict[str, Any] | None:
+    """Find the entity to rewrite, in whichever shape the prompt delivered it.
+
+    Two shapes exist. A full H110 prompt carries the whole artifact and the
+    entity is found in its collection. A targeted H140 prompt carries
+    `targeted_artifact_view`, which is deliberately scoped to the one entity the
+    run may touch -- there is no collection to search. Reading only the
+    collection made every targeted refinement propose nothing, and the user saw
+    a review screen with an empty diff and no explanation, which reads as a
+    broken feature rather than as "nothing to change".
+    """
+    target = artifact.get("target")
+    if isinstance(target, dict) and str(target.get("entity_type")) == entity_type:
+        entity = target.get("entity")
+        if isinstance(entity, dict) and str(entity.get("id")) == entity_key:
+            return entity
+
+    collection = ENTITY_COLLECTIONS.get(entity_type)
+    if not collection:
+        return None
+    return next(
+        (item for item in (artifact.get(collection) or []) if str(item.get("id")) == entity_key),
+        None,
+    )
+
+
 def _synthesise_refinement(artifact: dict[str, Any], entity_type: str, entity_key: str) -> str:
     """Rewrite a field the way a real refiner would, without a model call.
 
     Deterministic on purpose: the mock has to produce the same proposal every
     run so a before/after diff is reviewable rather than noisy.
     """
-    collection = {
-        "goal": "goals",
-        "process": "main_processes",
-        "stage": "stages",
-        "concept": "concepts",
-        "operation": "operations",
-        "branch": "branches",
-    }.get(entity_type)
-    if not collection:
-        return ""
-    entity = next(
-        (item for item in (artifact.get(collection) or []) if str(item.get("id")) == entity_key),
-        None,
-    )
+    entity = _target_entity(artifact, entity_type, entity_key)
     if entity is None:
         return ""
     field = _refine_field(entity_type)

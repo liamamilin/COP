@@ -24,6 +24,50 @@ COLLECTIONS = {
 }
 
 
+def _clean(value: Any) -> str:
+    return str(value).strip() if isinstance(value, (str, int, float)) else ""
+
+
+def _as_string_list(value: Any) -> list[str] | None:
+    """Coerce a revision value into a list of non-empty strings.
+
+    A model asked to replace `common_failures` sometimes answers with a single
+    string, or with a list of objects. Rejecting that would leave the exact
+    content-contract gap the repair was meant to close.
+    """
+    if isinstance(value, str):
+        items = [value]
+    elif isinstance(value, list):
+        items = value
+    else:
+        return None
+    cleaned = [_clean(item if not isinstance(item, dict) else item.get("text")) for item in items]
+    result = [item for item in cleaned if item]
+    return result or None
+
+
+def _as_detail_list(value: Any) -> list[dict[str, Any]] | None:
+    """Coerce a revision value into a canonical implementation-detail list.
+
+    Reuses the H50 normaliser so a repaired detail has exactly the shape a
+    generated one does. Diverging shapes here are how a Stage ends up with two
+    different detail formats depending on which step wrote it.
+    """
+    from app.harness.steps.h50_stages import normalize_detail
+
+    if isinstance(value, dict):
+        raw_items: list[Any] = [value]
+    elif isinstance(value, list):
+        raw_items = value
+    else:
+        return None
+    details = [normalize_detail(item) for item in raw_items if isinstance(item, dict)]
+    # `normalize_detail` returns `{}` for a detail whose title was present but
+    # blank, so filtering on the title drops those rather than publishing a
+    # nameless step.
+    return [detail for detail in details if detail.get("title")] or None
+
+
 def is_locked(locked_paths: list[str], entity_key: str, field: str) -> bool:
     """True when a user edit owns this entity or this specific field.
 
@@ -66,9 +110,6 @@ def apply_revisions(
         if is_locked(locked_paths, entity_key, field):
             rejected.append({**revision, "reason": "path is locked by user edits"})
             continue
-        if not isinstance(value, str) or not value.strip():
-            rejected.append({**revision, "reason": "replacement value is empty"})
-            continue
 
         if collection not in index_cache:
             index_cache[collection] = {
@@ -78,10 +119,23 @@ def apply_revisions(
         if entity is None:
             rejected.append({**revision, "reason": "entity id not found in artifact"})
             continue
+
         if field == "example" and entity_type == "stage":
-            entity["example"] = {"summary": value.strip()}
+            replacement = value if isinstance(value, dict) else {"summary": _clean(value)}
+        elif field == "implementation_details" and entity_type == "stage":
+            replacement = _as_detail_list(value)
+        elif field == "common_failures" and entity_type == "operation":
+            replacement = _as_string_list(value)
         else:
-            entity[field] = value.strip()
+            if not isinstance(value, str) or not value.strip():
+                rejected.append({**revision, "reason": "replacement value is empty"})
+                continue
+            replacement = value.strip()
+
+        if replacement is None:
+            rejected.append({**revision, "reason": "replacement value is empty"})
+            continue
+        entity[field] = replacement
         applied.append(f"{entity_type}.{entity_key}.{field}")
 
     return updated, applied, rejected

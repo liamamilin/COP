@@ -5,15 +5,19 @@ import { useCallback, useState } from "react";
 
 import { ApiError, createDraftFromRun } from "../lib/api";
 
-import { GenerationPanel } from "./generation-panel";
+import { GenerationPanel, type EffectiveGeneration } from "./generation-panel";
 
 interface GenerationSectionProps {
   projectId: string;
   topic: string;
   scopeHint: string;
-  learnerLevel: "new" | "some_experience" | "advanced";
-  depth: "fast" | "standard" | "deep";
   sourceIds: string[];
+  /**
+   * Resolved by the backend from run > project > app > built-in. Passed through
+   * untouched: the browser must not own the merge (spec `24` §8), and a second
+   * implementation of precedence would drift from the one that actually runs.
+   */
+  effective: EffectiveGeneration;
 }
 
 /**

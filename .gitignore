@@ -13,10 +13,16 @@ __pycache__/
 .ruff_cache/
 .venv/
 backend/.coverage
-data/
+# Anchored: the unanchored `data/` matched a `data/` directory at any depth,
+# which would silently ignore a real source directory that happens to be called
+# data. The runtime directory is backend/data, named by DATA_DIR.
+/backend/data/
 backups/
 dist/
 *.log
 
 # local pnpm store
 .pnpm-store/
+
+# Local host stack PID files (make up-local)
+.local-stack/

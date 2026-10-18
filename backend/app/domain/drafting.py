@@ -30,10 +30,65 @@ from app.domain.validation import validate_artifact
 EDITABLE_FIELDS: dict[str, frozenset[str]] = {
     "goal": frozenset({"title", "outcome", "why_it_matters"}),
     "process": frozenset({"title", "outcome"}),
-    "stage": frozenset({"title", "local_goal", "why_it_exists", "local_outcome", "example"}),
+    # `implementation_details` and `common_failures` are here because the content
+    # gate reports them by name. A gate that blocks publication on a field the
+    # user cannot reach is a dead end rather than a quality check.
+    "stage": frozenset(
+        {
+            "title",
+            "local_goal",
+            "why_it_exists",
+            "local_outcome",
+            "example",
+            "implementation_details",
+        }
+    ),
     "concept": frozenset({"name", "definition", "role"}),
-    "operation": frozenset({"name", "definition", "purpose"}),
+    "operation": frozenset({"name", "definition", "purpose", "common_failures"}),
 }
+
+#: Fields edited as one `|`-separated line per entry rather than as nested
+#: inputs. A form of nested repeatable inputs is a rich text editor by another
+#: name, and spec `19` excludes one from V1.
+LINE_EDITED_FIELDS: dict[str, frozenset[str]] = {
+    "stage": frozenset({"implementation_details"}),
+    "operation": frozenset({"common_failures"}),
+}
+
+DETAIL_FIELDS = ("title", "action", "command", "expected_result", "caution")
+DETAIL_SEPARATOR = "|"
+
+
+def parse_detail_lines(text: str) -> list[dict[str, str]]:
+    """Parse `title | action | command | expected result | caution` lines.
+
+    The separator is `|` rather than a comma or a newline because a shell command
+    and an expected result both contain commas, and a pasted multi-line command
+    would otherwise silently become several details. A line with no separator is
+    still accepted as a bare title, so a user adding a first line is not forced
+    to learn the format before they can make progress.
+    """
+    details: list[dict[str, str]] = []
+    for line in text.splitlines():
+        entry = line.strip()
+        if not entry:
+            continue
+        parts = [part.strip() for part in entry.split(DETAIL_SEPARATOR)]
+        detail: dict[str, str] = {}
+        for index, field in enumerate(DETAIL_FIELDS):
+            if index < len(parts) and parts[index]:
+                detail[field] = parts[index]
+        if not detail.get("title") and len(parts) == 1 and parts[0]:
+            detail["title"] = parts[0]
+        if detail.get("title"):
+            details.append(detail)
+    return details
+
+
+def parse_string_lines(text: str) -> list[str]:
+    """Parse a newline-separated list, dropping blank lines."""
+    return [line.strip() for line in text.splitlines() if line.strip()]
+
 
 # API path segment -> artifact collection. API paths are plural nouns
 # (`/goals`, `/processes`, ...) while the domain types are singular, and
@@ -158,6 +213,30 @@ def apply_entity_edit(
             # string for convenience and keep the shape the renderer expects.
             target["example"] = None if value in (None, "") else {"summary": str(value).strip()}
             if target.get(field) != before:
+                changed.append(field)
+            continue
+        if field in LINE_EDITED_FIELDS.get(entity_type, frozenset()):
+            if not isinstance(value, str):
+                raise CopStudioError(
+                    "FIELD_TYPE_INVALID",
+                    f"'{field}' must be a string, one entry per line",
+                    status_code=422,
+                    details={"field": field},
+                )
+            stripped = value.strip()
+            if len(stripped) > MAX_FIELD_LENGTH:
+                raise CopStudioError(
+                    "FIELD_TOO_LONG",
+                    f"'{field}' exceeds {MAX_FIELD_LENGTH} characters",
+                    status_code=422,
+                    details={"field": field},
+                )
+            target[field] = (
+                parse_detail_lines(stripped)
+                if field == "implementation_details"
+                else parse_string_lines(stripped)
+            )
+            if target[field] != before:
                 changed.append(field)
             continue
         if not isinstance(value, str):

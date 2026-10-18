@@ -6,6 +6,7 @@ import type {
   MainProcess,
   Operation,
   Practice,
+  SharedFoundation,
   Stage,
 } from "@cop-studio/cop-types";
 
@@ -15,6 +16,17 @@ interface ArtifactIndex {
 }
 
 const indexes = new WeakMap<COPArtifact, ArtifactIndex>();
+
+export interface StageContext {
+  kind: "foundation" | "process" | "standalone";
+  title: string;
+  stages: Stage[];
+  index: number;
+  prerequisites: Stage[];
+  process?: MainProcess;
+  foundation?: SharedFoundation;
+  continuations: MainProcess[];
+}
 
 function indexFor(artifact: COPArtifact): ArtifactIndex {
   const cached = indexes.get(artifact);
@@ -69,6 +81,36 @@ export const artifactSelectors = {
   },
   getStagesForProcess(artifact: COPArtifact, process: MainProcess): Stage[] {
     return process.stage_refs.map((id) => this.getStage(artifact, id));
+  },
+  getStageContext(artifact: COPArtifact, stage: Stage): StageContext {
+    const foundation = (artifact.shared_foundations ?? []).find((item) =>
+      item.stage_refs.includes(stage.id),
+    );
+    if (foundation) {
+      return {
+        kind: "foundation", title: foundation.title, foundation,
+        stages: foundation.stage_refs.map((id) => this.getStage(artifact, id)),
+        index: foundation.stage_refs.indexOf(stage.id), prerequisites: [],
+        continuations: artifact.main_processes.filter((item) =>
+          item.start.type === "foundation" && item.start.ref === foundation.id,
+        ),
+      };
+    }
+    const process = artifact.main_processes.find((item) => item.stage_refs.includes(stage.id));
+    if (process) {
+      const prerequisite = process.start.type === "foundation"
+        ? (artifact.shared_foundations ?? []).find((item) => item.id === process.start.ref)
+        : undefined;
+      return {
+        kind: "process", title: process.title, process,
+        stages: this.getStagesForProcess(artifact, process),
+        index: process.stage_refs.indexOf(stage.id),
+        prerequisites: (prerequisite?.stage_refs ?? []).map((id) => this.getStage(artifact, id)),
+        continuations: [],
+      };
+    }
+    return { kind: "standalone", title: "Stage", stages: [stage], index: 0,
+      prerequisites: [], continuations: [] };
   },
   getConceptsForStage(artifact: COPArtifact, stage: Stage): Concept[] {
     return stage.concept_refs.map((id) => this.getConcept(artifact, id));

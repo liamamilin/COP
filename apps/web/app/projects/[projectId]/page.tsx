@@ -1,13 +1,32 @@
 import Link from "next/link";
 
+import { DuplicateButton } from "../../../components/duplicate-button";
 import { GenerationSection } from "../../../components/generation-section";
+import type { EffectiveGeneration } from "../../../components/generation-panel";
 import { ProjectSetupShell } from "../../../components/project-setup-shell";
 import { ProjectShell } from "../../../components/project-shell";
 import {
+  getEffectiveGenerationSettings,
   getProjectSources,
   getProjectWorkspace,
 } from "../../../lib/api";
 import { artifactSelectors } from "../../../lib/artifact-selectors";
+
+/**
+ * Fallback used only if the settings endpoint is unreachable.
+ *
+ * These are the built-in defaults, not a guess. The alternative -- hard-coding
+ * `depth="standard" learnerLevel="new"` in the component -- is what the audit
+ * found: the panel displayed values the backend never received.
+ */
+const FALLBACK_GENERATION: EffectiveGeneration = {
+  language: "auto",
+  generation_depth: "standard",
+  learner_level: "new",
+  detail_density: "balanced",
+  evidence_density: "key_claims",
+  practice_mode: "priority",
+};
 
 export default async function ProjectOverviewPage({
   params,
@@ -16,6 +35,17 @@ export default async function ProjectOverviewPage({
 }) {
   const { projectId } = await params;
   const { project, version, draft } = await getProjectWorkspace(projectId);
+
+  // Resolved server-side, by the same code path that will resolve it at run
+  // time, so the panel's first render already shows the values this project
+  // will actually generate with.
+  let effectiveGeneration: EffectiveGeneration = FALLBACK_GENERATION;
+  try {
+    effectiveGeneration = (await getEffectiveGenerationSettings(projectId)).effective;
+  } catch {
+    // A project with no settings row is normal; the built-in defaults stand.
+  }
+
   if (!version) {
     const sources = await getProjectSources(projectId);
     return (
@@ -46,8 +76,7 @@ export default async function ProjectOverviewPage({
           </section>
 
           <GenerationSection
-            depth="standard"
-            learnerLevel="new"
+            effective={effectiveGeneration}
             projectId={projectId}
             scopeHint={project.scope}
             sourceIds={sources.map((source) => source.id)}
@@ -97,6 +126,50 @@ export default async function ProjectOverviewPage({
             </div>
           </div>
         </section>
+
+        {/* Non-goals were generated and stored, and never displayed. Without
+            them a domain reads as an encyclopedia rather than a boundary. */}
+        {(artifact.domain.non_goals ?? []).length > 0 && (
+          <section className="reading-section non-goals">
+            <p className="eyebrow">NOT IN SCOPE</p>
+            <ul>
+              {(artifact.domain.non_goals ?? []).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+            {/* The Expansion Map. Three entries existed in the artifact and were
+            rendered nowhere, so a learner who finished the COP had no idea what
+            to do next -- which is the one thing spec 19's Learn loop requires at
+            its end. */}
+        {(artifact.expansion_map ?? []).length > 0 && (
+          <section className="reading-section expansion-map">
+            <p className="eyebrow">WHERE TO GO NEXT</p>
+            <h2>Beyond this COP</h2>
+            <ul>
+              {(artifact.expansion_map ?? []).map((item, index) => {
+                const from = item.from_goal_ref
+                  ? artifact.goals.find((goal) => goal.id === item.from_goal_ref)
+                  : undefined;
+                return (
+                  <li key={`${item.title}-${index}`}>
+                    <div>
+                      <h3>{item.title}</h3>
+                      {item.description && <p>{item.description}</p>}
+                    </div>
+                    {from && (
+                      <a href={`/projects/${projectId}/goals/${encodeURIComponent(from.id)}`}>
+                        Builds on {from.title} ↗
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
 
         <section className="goal-map">
           <div className="section-title-row">
@@ -154,6 +227,10 @@ export default async function ProjectOverviewPage({
             <Link className="secondary-button" href={`/projects/${projectId}/sources`}>
               Sources
             </Link>
+            {/* Duplicate is a real management action, so it belongs here rather
+                than only in Settings where nobody looks. The copy is
+                independent: it gets its own sources, versions, and progress. */}
+            <DuplicateButton projectId={projectId} />
           </div>
         </section>
 

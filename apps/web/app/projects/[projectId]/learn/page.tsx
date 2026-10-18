@@ -89,6 +89,7 @@ export default async function LearnPage({
           progress={progress}
           selectedGoalId={selectedGoalId}
           selectedStageId={stageParam}
+          sources={version.evidence_sources ?? {}}
         />
       </div>
     </ProjectShell>

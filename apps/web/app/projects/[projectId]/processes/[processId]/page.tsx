@@ -1,7 +1,7 @@
-import { PracticeCard } from "../../../../../components/practice-card";
+import { PracticeRecorder } from "../../../../../components/practice-recorder";
 import { ProcessRail } from "../../../../../components/process-rail";
 import { ProjectShell } from "../../../../../components/project-shell";
-import { getWorkspace } from "../../../../../lib/api";
+import { getLearningProgress, getWorkspace } from "../../../../../lib/api";
 import { artifactSelectors } from "../../../../../lib/artifact-selectors";
 
 export default async function ProcessPage({
@@ -14,6 +14,9 @@ export default async function ProcessPage({
   const process = artifactSelectors.getProcess(artifact, decodeURIComponent(processId));
   const goal = artifactSelectors.getGoal(artifact, process.goal_ref);
   const practice = artifactSelectors.getPracticeForProcess(artifact, process);
+  const goalProgress = (
+    await getLearningProgress(projectId, version.id).catch(() => null)
+  )?.goals.find((item) => item.goal_id === goal.id);
 
   return (
     <ProjectShell project={project} version={version} artifact={artifact} active="process">
@@ -24,9 +27,16 @@ export default async function ProcessPage({
           <p className="lead-copy">{goal.outcome}</p>
         </header>
         <ProcessRail artifact={artifact} process={process} projectId={projectId} />
-        {practice && <PracticeCard practice={practice} />}
+        {practice && (
+          <PracticeRecorder
+            goalId={goal.id}
+            practice={practice}
+            progress={goalProgress?.practice ?? null}
+            projectId={projectId}
+            versionId={version.id}
+          />
+        )}
       </div>
     </ProjectShell>
   );
 }
-

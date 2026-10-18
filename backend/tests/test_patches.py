@@ -154,6 +154,67 @@ class TestLocksAreRecorded:
 
 
 class TestTargetedRun:
+    def test_a_critic_issue_for_the_target_is_scoped_rather_than_replaced(
+        self, client, db, first_goal
+    ):
+        """A real critic finding must reach the refiner, not be swapped out.
+
+        H140 builds the issue list for the targeted entity. It used to compare
+        `entity_ref` against `f"{entity_type}.{entity_id}"`, but ids are already
+        namespaced by type, so the comparison never matched: every targeted
+        refinement discarded the critic's own findings and fell back to the
+        synthetic "the user asked for this to be improved" issue. The visible
+        effect was a refinement that ignored the thing the critic had actually
+        said was wrong.
+        """
+        from app.harness.context import HarnessContext
+        from app.harness.steps.h140_refine_target import RefineTargetStep
+
+        entity_type, entity_id = first_goal
+        ctx = HarnessContext(run_id="r", project_id="p", input={}, settings={})
+        ctx.critic_report = {
+            "severity": "minor",
+            "issues": [
+                {
+                    "code": "GOAL_TOO_VAGUE",
+                    "entity_ref": entity_id,
+                    "explanation": "describes learning rather than a result",
+                    "recommended_change": "Name the capability result.",
+                },
+                {
+                    "code": "STAGE_TOO_BROAD",
+                    "entity_ref": "some.other.stage",
+                    "explanation": "unrelated",
+                    "recommended_change": "ignored",
+                },
+            ],
+        }
+
+        issues = RefineTargetStep()._issues_for(ctx, entity_type, entity_id)
+
+        assert [item["code"] for item in issues] == ["GOAL_TOO_VAGUE"], (
+            "the target's own critic issue must be the one the refiner works from"
+        )
+
+    def test_a_synthetic_issue_names_the_entity_by_its_real_id(self, client, db, first_goal):
+        """The fallback must be addressable, or the refiner anchors on nothing.
+
+        `entity_ref` was built as `f"{entity_type}.{entity_id}"`, producing
+        `goal.goal.basic-agent` for an id that was already `goal.basic-agent`.
+        No such entity exists, so the refiner was handed a reference to a target
+        that could not be resolved.
+        """
+        from app.harness.context import HarnessContext
+        from app.harness.steps.h140_refine_target import RefineTargetStep
+
+        entity_type, entity_id = first_goal
+        ctx = HarnessContext(run_id="r", project_id="p", input={}, settings={})
+
+        issues = RefineTargetStep()._issues_for(ctx, entity_type, entity_id)
+
+        assert issues[0]["entity_ref"] == entity_id
+        assert not issues[0]["entity_ref"].startswith(f"{entity_type}.{entity_type}.")
+
     def test_a_targeted_run_produces_a_patch_not_a_new_artifact(self, client, db, first_goal):
         entity_type, entity_id = first_goal
         project_id = create_project(db)

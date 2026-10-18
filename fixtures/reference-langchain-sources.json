@@ -1,0 +1,38 @@
+[
+  {
+    "id": "lc-overview",
+    "title": "LangChain overview",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/overview",
+    "text": "create_agent is the high-level entry point for building agents in LangChain. It takes a model, a list of tools, and optional instructions, and returns a compiled agent that can be invoked with messages. LangGraph is the lower-level runtime underneath it."
+  },
+  {
+    "id": "lc-agents",
+    "title": "LangChain agents guide",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/agents",
+    "text": "An agent is created with create_agent(model, tools, system_prompt). Invoke it with a message dict containing a 'human' role. The response contains an 'ai' message. Tools are plain Python functions; a docstring becomes the tool description the model uses to decide whether to call it."
+  },
+  {
+    "id": "lc-tools",
+    "title": "LangChain tools guide",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/tools",
+    "text": "Any Python callable can be a tool. @tool decorates a function and derives its schema from the type hints and docstring. When a tool needs a live capability -- a database, an HTTP endpoint, the filesystem -- the plain function is called inside a ToolNode, which is what lets the model's tool choice reach real code."
+  },
+  {
+    "id": "lc-memory",
+    "title": "LangChain persistence and short-term memory",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+    "text": "Short-term memory keeps one conversation. Pass a thread_id in the config to invoke so state is scoped to that thread and can be recovered between calls. Checkpointer implementations include InMemorySaver for a single process and SqliteSaver or PostgresSaver to survive a restart."
+  },
+  {
+    "id": "lc-retrieval",
+    "title": "LangChain retrieval guide",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/retrieval",
+    "text": "A retrieval tool wraps a retriever as a callable the agent can choose. Split documents into overlapping chunks, embed them, and store them in a vector store. The agent decides when the question needs external knowledge, which is the difference from a pipeline that always retrieves."
+  },
+  {
+    "id": "lc-middleware",
+    "title": "LangChain middleware guide",
+    "original_uri": "https://docs.langchain.com/oss/python/langchain/middleware",
+    "text": "Middleware wraps agent execution to add control: guardrails, retries, human approval, summarisation, or custom logging. Middleware is passed to create_agent as a list. Ordering matters -- an outer middleware sees the request first and the response last."
+  }
+]

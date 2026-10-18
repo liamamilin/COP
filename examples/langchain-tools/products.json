@@ -1,0 +1,32 @@
+{
+  "P001": {
+    "name": "LangChain 入门教程",
+    "price": 99.00,
+    "category": "教程",
+    "in_stock": true
+  },
+  "P002": {
+    "name": "Agent 开发实战",
+    "price": 149.00,
+    "category": "教程",
+    "in_stock": true
+  },
+  "P003": {
+    "name": "Prompt 工程指南",
+    "price": 79.00,
+    "category": "电子书",
+    "in_stock": false
+  },
+  "P004": {
+    "name": "RAG 系统构建",
+    "price": 129.00,
+    "category": "教程",
+    "in_stock": true
+  },
+  "P005": {
+    "name": "向量数据库对比",
+    "price": 59.00,
+    "category": "电子书",
+    "in_stock": true
+  }
+}

@@ -15,7 +15,7 @@ work is claimed by a database-backed worker; no Redis service is required.
 
 ## Implemented milestones
 
-- M0: runnable monorepo, FastAPI, PostgreSQL migration, worker heartbeat, CI, Docker Compose
+- M0: runnable monorepo, FastAPI, PostgreSQL migration, worker heartbeat, CI
 - M1: canonical schema validation, seeded LangChain reference COP, typed process-first renderer
 - M2: project CRUD plus persisted text, TXT, Markdown, PDF, and public URL sources
 - M3: encrypted provider settings, deterministic Mock Provider, OpenAI-compatible adapter, connection test
@@ -24,7 +24,7 @@ work is claimed by a database-backed worker; no Redis service is required.
 - M6: partial AI refinement, before/after preview, accept/reject, user edits protected
 - M7: Learn Mode, per-version progress, the full Main Process always on screen
 - M8: JSON/Markdown exports, backup/restore, generated types, appearance and keyboard
-  accessibility, reliable Learn navigation, lean Docker build contexts, final error states,
+  accessibility, reliable Learn navigation, final error states,
   and large-artifact performance gates
 
 ### The persisted Harness
@@ -172,52 +172,68 @@ navigation. Performance gates cover 200 Stages, multi-megabyte source text,
 
 ## Quick start
 
+Prerequisites: Python 3.12 via [`uv`](https://docs.astral.sh/uv/), Node 22 with
+`pnpm`, and a local PostgreSQL 16.
+
 ```bash
 cp .env.example .env
-docker compose up --build
+cd backend && uv sync && cd ..   # once
+pnpm install                      # once
+
+make up
 ```
 
 Open <http://localhost:3000>. API health is available at
-<http://localhost:8000/health>.
+<http://localhost:3000/health>, which reports the backend's own status: a `502`
+there means Next is up and the API is not.
 
 The browser talks to the same-origin `/api/v1` path. Next proxies that path to
-the internal `api:8000` service, so browser writes do not depend on the host
-API port or CORS configuration. If port 3000 is occupied, choose another web
-port explicitly, for example `WEB_HOST_PORT=3001 docker compose up --build`.
-
-If port 5432 is already taken by a local PostgreSQL, the container will fail to
-bind. Move it aside:
-
-```bash
-POSTGRES_HOST_PORT=55432 docker compose up --build
-```
+the API, so browser writes do not depend on the host API port or CORS
+configuration.
 
 Seed the reference project after the services are running:
 
 ```bash
-docker compose exec api python -m app.scripts.seed
+make seed
 ```
 
-## Direct development
+### Ports and database names
 
-Requirements: Node 22+, pnpm 11+, Python 3.12+, uv, and PostgreSQL 16+.
+Two settings are machine-specific, and both defaults are deliberate:
 
-```bash
-pnpm install
-cd backend && uv sync --all-groups
-```
+- The API listens on **8010**, because port 8000 is already taken on some
+  machines by an unrelated service. A health check there answers `200` from the
+  wrong application, which reads as success. Override with
+  `make up LOCAL_API_PORT=8020`.
+- The development database is **`cop_studio`**, because a local PostgreSQL may
+  already own a database called `cop` that belongs to a different project at an
+  older schema revision. This project never uses a database name it did not
+  create. Override with `make up LOCAL_DB_NAME=cop_dev`.
 
-Run the API, worker, and web app in separate terminals:
+### `make up` runs on the host
+
+There is no container layer. The Python environment is a `uv` venv, the database
+is a local PostgreSQL that this project names its own databases inside, and the
+frontend is `next dev`.
+
+`make up` starts the API, a worker, and the web server in the background, records
+each PID under `.local-stack/`, and returns immediately. `make down` stops exactly
+those processes — it never matches by command-line pattern, so another project
+running `next dev` on the same machine is unaffected. Logs go to
+`/tmp/cop-{api,worker,web}-local.log`.
+
+
+To run a component in the foreground instead — useful with `--reload` while
+editing:
 
 ```bash
 cd backend && uv run alembic upgrade head && uv run uvicorn app.main:app --reload
 cd backend && uv run python -m app.jobs.worker
-pnpm dev
+cd apps/web && npm run dev
 ```
 
-## Environment variables
+Each of these reads `.env`, so it connects to the same database `make up` uses.
 
-See `.env.example`. The mock provider is the default and requires no API key.
 For a real endpoint set `OPENAI_COMPATIBLE_BASE_URL`,
 `OPENAI_COMPATIBLE_API_KEY`, and `OPENAI_COMPATIBLE_MODEL`.
 The Settings screen can also store the provider key encrypted with `APP_SECRET`;
@@ -231,16 +247,25 @@ so crash recovery does not pay for the same query twice.
 ## Tests and lint
 
 ```bash
-make test     # provisions a throwaway PostgreSQL, runs backend + web tests
+make verify    # the full gate: lint, types, schema drift, backend, web, E2E
+make test      # backend + web from a freshly created test database
 make lint
 ```
 
-Browser tests are separate, because they need the real stack running:
+`make verify` is the one to run while the app is in use. It creates the test
+database only if it is missing, so it cannot disturb a running session.
+
+The browser tests need the stack running:
 
 ```bash
-make up           # or: POSTGRES_HOST_PORT=55432 make up
-make test-e2e     # drives the draft lifecycle in Chromium
+make up
+make test-e2e
 ```
+
+Test data lives in a database named `cop_test`, which is separate from
+`cop_studio` by name. The backend suite TRUNCATEs every table between cases, and
+`conftest.py` refuses to run against `cop`, `postgres`, or `template1` — so the
+name is the isolation, and it is checked rather than assumed.
 
 `make test-e2e` talks to the running development stack, so it creates its own
 throwaway projects rather than touching yours. It runs serially against one

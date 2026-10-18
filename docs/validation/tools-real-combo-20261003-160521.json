@@ -1,0 +1,105 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "You are a product catalog assistant. Use the get_product_info tool to look up products. Answer based on tool results, not your own knowledge. If a product is not found, say so clearly."
+  },
+  "input": "所有教程的价格是多少？",
+  "messages": [
+    {
+      "type": "human",
+      "content": "所有教程的价格是多少？"
+    },
+    {
+      "type": "ai",
+      "content": "我来查询产品目录中所有产品的信息。",
+      "tool_calls": [
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P001"
+          },
+          "id": "call_00_2fjx9dbksabipyoxpzsvepcf",
+          "type": "tool_call"
+        },
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P002"
+          },
+          "id": "call_01_yzbyerxv0dq70wqku0hpyp4l",
+          "type": "tool_call"
+        },
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P003"
+          },
+          "id": "call_02_6h2adtcqoouie8wpcmhgj79t",
+          "type": "tool_call"
+        },
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P004"
+          },
+          "id": "call_03_xjq2juy1s5l2oal73tucxw0v",
+          "type": "tool_call"
+        },
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P005"
+          },
+          "id": "call_04_ebqe5s9jqqq9acjzmy7xclj7",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"LangChain 入门教程\", \"price\": 99.0, \"category\": \"教程\", \"in_stock\": true}",
+      "tool_call_id": "call_00_2fjx9dbksabipyoxpzsvepcf"
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"Agent 开发实战\", \"price\": 149.0, \"category\": \"教程\", \"in_stock\": true}",
+      "tool_call_id": "call_01_yzbyerxv0dq70wqku0hpyp4l"
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"Prompt 工程指南\", \"price\": 79.0, \"category\": \"电子书\", \"in_stock\": false}",
+      "tool_call_id": "call_02_6h2adtcqoouie8wpcmhgj79t"
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"RAG 系统构建\", \"price\": 129.0, \"category\": \"教程\", \"in_stock\": true}",
+      "tool_call_id": "call_03_xjq2juy1s5l2oal73tucxw0v"
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"向量数据库对比\", \"price\": 59.0, \"category\": \"电子书\", \"in_stock\": true}",
+      "tool_call_id": "call_04_ebqe5s9jqqq9acjzmy7xclj7"
+    },
+    {
+      "type": "ai",
+      "content": "根据产品目录，分类为**教程**的产品共有 3 个，价格如下：\n\n| 产品名称 | 价格 | 库存状态 |\n|---|---|---|\n| LangChain 入门教程 | ¥99.0 | 有货 |\n| Agent 开发实战 | ¥149.0 | 有货 |\n| RAG 系统构建 | ¥129.0 | 有货 |\n\n**合计：¥377.0**\n\n另外说明一下，以下两个产品虽然看起来也是学习类内容，但分类是**电子书**，未计入上面的教程价格：\n- Prompt 工程指南 — ¥79.0（暂无库存）\n- 向量数据库对比 — ¥59.0（有货）\n\n如果你需要的是「全部课程/学习资料」的总价，那就是 ¥377.0 + ¥79.0 + ¥59.0 = **¥515.0**。请告诉我你按哪种口径计算。"
+    }
+  ],
+  "tool_name": "get_product_info",
+  "tool_args": {
+    "product_id": "P001"
+  },
+  "tool_call_id": "call_00_2fjx9dbksabipyoxpzsvepcf",
+  "tool_result": {
+    "name": "向量数据库对比",
+    "price": 59.0,
+    "category": "电子书",
+    "in_stock": true
+  },
+  "answer": "根据产品目录，分类为**教程**的产品共有 3 个，价格如下：\n\n| 产品名称 | 价格 | 库存状态 |\n|---|---|---|\n| LangChain 入门教程 | ¥99.0 | 有货 |\n| Agent 开发实战 | ¥149.0 | 有货 |\n| RAG 系统构建 | ¥129.0 | 有货 |\n\n**合计：¥377.0**\n\n另外说明一下，以下两个产品虽然看起来也是学习类内容，但分类是**电子书**，未计入上面的教程价格：\n- Prompt 工程指南 — ¥79.0（暂无库存）\n- 向量数据库对比 — ¥59.0（有货）\n\n如果你需要的是「全部课程/学习资料」的总价，那就是 ¥377.0 + ¥79.0 + ¥59.0 = **¥515.0**。请告诉我你按哪种口径计算。",
+  "evidence_hash": "cdb307f9228ecc55e65e951679ea0597fe10b1a3d20da83f9beb65ae5d41cc5a",
+  "note": "One tool-calling invocation; verify tool result matches final answer."
+}

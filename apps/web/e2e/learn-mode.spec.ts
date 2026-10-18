@@ -86,8 +86,17 @@ test.describe("learn mode", () => {
     await first.locator(".learn-stage-toggle").click();
     await expect(first).not.toHaveClass(/completed/);
 
-    const stored = await getLearningProgress(project.projectId);
-    expect(stored.goals[0].completed_stages).toBe(0);
+    // Polled, not read once. The class assertions above are satisfied by the
+    // panel's optimistic update, which happens before the write is acknowledged,
+    // so reading the server immediately after them races the second PUT. The
+    // server is the record of what the learner actually did, so it is what this
+    // has to wait for.
+    await expect
+      .poll(
+        async () => (await getLearningProgress(project.projectId)).goals[0].completed_stages,
+        { timeout: 10_000 },
+      )
+      .toBe(0);
   });
 
   test("the current stage detail stays visible while the main line is shown", async ({ page }) => {
@@ -98,7 +107,7 @@ test.describe("learn mode", () => {
     // screen, so the user never loses the line of sight.
     await expect(page.locator(".learn-mainline")).toBeVisible();
     await expect(page.locator(".learn-detail-card")).toBeVisible();
-    await expect(page.locator(".learn-detail-card h3")).toBeVisible();
+    await expect(page.locator(".learn-current-stage-title")).toBeVisible();
   });
 
   test("switching version shows that version's own progress", async ({ page }) => {
@@ -160,21 +169,23 @@ test.describe("learn mode", () => {
     const project = await published();
     await openLearn(page, project);
 
-    const details = page.locator(".learn-implementation").first();
-    if ((await details.count()) > 0) {
-      await expect(details).not.toHaveAttribute("open", "");
-      await details.locator("summary").focus();
-      await page.keyboard.press("Enter");
-      await expect(details).toHaveAttribute("open", "");
+    // The implementation detail used to be a collapsed <details>, whose only
+    // interactive part was its summary. It is now an always-visible list, so the
+    // element a keyboard user has to reach is the copy button inside each step.
+    // Asserting on the old <details> would leave this test checking nothing.
+    const copy = page.locator(".learn-stage-content .copy-button").first();
+    if ((await copy.count()) > 0) {
+      await copy.focus();
+      await expect(copy).toBeFocused();
     }
 
     const next = page.getByRole("link", { name: "Next" });
     if ((await next.count()) > 0) {
-      const before = await page.locator(".learn-detail-card h3").textContent();
+      const before = await page.locator(".learn-current-stage-title").textContent();
       await next.focus();
       await page.keyboard.press("Enter");
       await waitForHydration(page, ".learn-view");
-      await expect(page.locator(".learn-detail-card h3")).not.toHaveText(before ?? "");
+      await expect(page.locator(".learn-current-stage-title")).not.toHaveText(before ?? "");
     }
   });
 

@@ -1,0 +1,48 @@
+{
+  "mode": "offline-mock",
+  "configuration": null,
+  "input": "P001 的价格是多少？",
+  "messages": [
+    {
+      "type": "human",
+      "content": "P001 的价格是多少？"
+    },
+    {
+      "type": "ai",
+      "content": "",
+      "tool_calls": [
+        {
+          "name": "get_product_info",
+          "args": {
+            "product_id": "P001"
+          },
+          "id": "call_offline_mock_001",
+          "type": "tool_call"
+        }
+      ]
+    },
+    {
+      "type": "tool",
+      "content": "{\"name\": \"LangChain 入门教程\", \"price\": 99.0, \"category\": \"教程\", \"in_stock\": true}",
+      "tool_call_id": "call_offline_mock_001"
+    },
+    {
+      "type": "ai",
+      "content": "LangChain 入门教程的价格是 99.00 元。"
+    }
+  ],
+  "tool_name": "get_product_info",
+  "tool_args": {
+    "product_id": "P001"
+  },
+  "tool_call_id": "call_offline_mock_001",
+  "tool_result": {
+    "name": "LangChain 入门教程",
+    "price": 99.0,
+    "category": "教程",
+    "in_stock": true
+  },
+  "answer": "LangChain 入门教程的价格是 99.00 元。",
+  "evidence_hash": "0966e3b9ddcb61111fe3711952c49e45270649cb684a2c23dd70d5d0bc49d7bb",
+  "note": "Mock tool sequence: not evidence of real LLM tool-calling quality."
+}

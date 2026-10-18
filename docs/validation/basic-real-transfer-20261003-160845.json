@@ -1,0 +1,22 @@
+{
+  "mode": "provider-response",
+  "configuration": {
+    "key_configured": true,
+    "base_url": "https://api.commandcode.ai/provider/v1",
+    "model": "deepseek/deepseek-v4-flash",
+    "system_prompt": "Answer in one short sentence."
+  },
+  "input": "Explain quantum computing in one sentence.",
+  "messages": [
+    {
+      "type": "human",
+      "content": "Explain quantum computing in one sentence."
+    },
+    {
+      "type": "ai",
+      "content": "Quantum computing uses qubits that can exist in superpositions and become entangled to solve certain complex problems exponentially faster than classical computers."
+    }
+  ],
+  "answer": "Quantum computing uses qubits that can exist in superpositions and become entangled to solve certain complex problems exponentially faster than classical computers.",
+  "note": "One no-tool invocation; this is not a tool-use or memory verification."
+}

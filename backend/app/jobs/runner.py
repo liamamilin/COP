@@ -139,7 +139,9 @@ def load_context(run: GenerationRun) -> HarnessContext:
     generation_settings = effective_settings.get("generation") or {}
     # Settings are stored by UI section, while Harness steps consume generation
     # controls directly. Flatten that one section at the execution boundary so
-    # persisted runs and hand-built test contexts share the same contract.
+    # persisted runs and hand-built test contexts share the same contract. The
+    # run row is already flat (written that way at creation), so this is
+    # idempotent for it and does the real work for older rows.
     context.settings = {**effective_settings, **generation_settings}
     # The API accepted `target` from the start but nothing ever read it, so a
     # targeted run silently produced a whole new COP. Routing on it here is what
@@ -233,6 +235,30 @@ def create_run(
     db.refresh(run)
     append_event(db, run.id, "run.queued", payload={"mode": mode})
     return run
+
+
+def resolvable_source_ids(db: Session, run: GenerationRun) -> set[str]:
+    """Source ids this run's artifact is allowed to cite.
+
+    The project's sources plus anything already persisted as a research
+    snapshot. Used by the content gate so a citation to a real source is never
+    reported as an orphan, and a citation to nothing still is.
+    """
+    return project_source_ids(db, run.project_id)
+
+
+def project_source_ids(db: Session, project_id: Any) -> set[str]:
+    """Every source id a run may legitimately cite.
+
+    Two namespaces, because that is what a project actually owns: the `sources`
+    table id for user material, and the research id for a persisted web
+    snapshot. A resolver that only knew one of them would report every reference
+    from the other as an orphan, which is the R3 bug in reverse.
+    """
+    from app.research.snapshots import research_source_ids
+
+    rows = db.scalars(select(Source.id).where(Source.project_id == project_id))
+    return {str(row) for row in rows} | research_source_ids(db, project_id)
 
 
 def project_for_run(db: Session, run: GenerationRun) -> Project | None:

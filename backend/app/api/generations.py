@@ -47,6 +47,45 @@ class TargetSelection(BaseModel):
     entity_id: str = Field(min_length=1, max_length=180)
 
 
+@router.get("/projects/{project_id}/generation-settings")
+def get_effective_generation_settings(
+    project_id: uuid.UUID, db: DbSession, run: str | None = None
+) -> dict[str, Any]:
+    """The generation settings a run on this project would use right now.
+
+    The browser calls this instead of merging anything itself. Spec `24` §8 puts
+    the merge in the backend, and a second implementation of precedence in the
+    client is a second thing that can drift from what actually runs.
+
+    `?run=` carries a JSON-encoded `settings_override` so the panel can preview
+    the exact values a particular run would receive before starting it.
+    """
+    if db.get(Project, project_id) is None:
+        raise NotFoundError("Project not found", code="PROJECT_NOT_FOUND")
+    override: dict[str, Any] | None = None
+    if run:
+        try:
+            decoded = json.loads(run)
+        except json.JSONDecodeError as exc:
+            raise CopStudioError(
+                "INVALID_SETTINGS_OVERRIDE",
+                "The 'run' query parameter must be a JSON object.",
+                status_code=422,
+            ) from exc
+        if not isinstance(decoded, dict):
+            raise CopStudioError(
+                "INVALID_SETTINGS_OVERRIDE",
+                "The 'run' query parameter must be a JSON object.",
+                status_code=422,
+            )
+        override = decoded
+    effective = resolve_effective_settings_with_run(db, project_id, override)
+    generation = effective.get("generation") or {}
+    # `harness_view` is the flattened form the worker actually reads. Exposing it
+    # makes "the UI shows X, the Harness read Y" checkable without a debugger.
+    return {"effective": generation, "harness_view": {**effective, **generation}}
+
+
 class GenerationRunCreate(BaseModel):
     mode: Literal["fast", "standard", "deep"] = "standard"
     topic: str = Field(default="", max_length=400)
@@ -216,7 +255,11 @@ def start_generation_run(
         project_id=project_id,
         mode=body.mode,
         requested_input=requested_input,
-        settings=effective,
+        # Flattened here, at the point where the effective settings are known,
+        # rather than only inside the worker. A run row that records the nested
+        # request-shaped form cannot answer "which settings did this run use",
+        # and the worker may not run for a long time or at all.
+        settings={**effective, **(effective.get("generation") or {})},
         base_version_id=body.base_version_id,
     )
     return run_out(run)

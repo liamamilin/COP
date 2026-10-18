@@ -5,10 +5,13 @@ on:
   pull_request:
 
 env:
-  # The test suite truncates every table between cases, so it gets its own
-  # database on the Compose postgres. It is created in the "Backend" job below.
+  # The test suite truncates every table between cases, so it gets a database of
+  # its own. Isolation is by name, not by port: the name is what `conftest.py`
+  # refuses to run against and what decides what a stray TRUNCATE can reach.
   TEST_DATABASE_NAME: cop_test
-  TEST_DATABASE_URL: postgresql+psycopg://cop:cop@localhost:5432/cop_test
+  TEST_DATABASE_URL: postgresql+psycopg://cop:cop@127.0.0.1:5432/cop_test
+  LOCAL_DB_NAME: cop_studio
+  LOCAL_DB_URL: postgresql+psycopg://cop:cop@127.0.0.1:5432/cop_studio
 
 jobs:
   schema:
@@ -50,6 +53,25 @@ jobs:
   backend:
     name: Backend
     runs-on: ubuntu-latest
+    # A service container rather than a Compose stack: the suite needs a real
+    # PostgreSQL and nothing else. Job claiming, stale-run recovery, and the
+    # unique (run_id, sequence) constraint are PostgreSQL behaviour, and the V1
+    # spec makes PostgreSQL the only normative database, so these tests fail
+    # rather than skip when no database is reachable.
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: cop
+          POSTGRES_PASSWORD: cop
+          POSTGRES_DB: cop
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U cop -d cop"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -58,31 +80,22 @@ jobs:
       - run: cd backend && uv sync --all-groups
       - run: cd backend && uv run ruff check .
       - run: cd backend && uv run ruff format --check .
-      # The backend suite requires PostgreSQL. Job claiming, stale-run recovery,
-      # and the unique (run_id, sequence) constraint are PostgreSQL behaviour,
-      # and the V1 spec makes PostgreSQL the only normative database, so these
-      # tests fail rather than skip when no database is reachable.
-      - name: Start PostgreSQL and create the test database
+      # The service container ships psql; the runner does not. The Makefile
+      # resolves psql from PATH first, so installing the client is all it needs.
+      - name: Install the PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Create the test database
         run: |
-          docker compose up -d postgres
-          for attempt in $(seq 1 30); do
-            if docker compose exec -T postgres pg_isready -U cop -d cop; then break; fi
-            sleep 1
-          done
-          docker compose exec -T postgres psql -U cop -d postgres -tc \
+          psql -h 127.0.0.1 -U cop -d postgres -tc \
             "SELECT 1 FROM pg_database WHERE datname='$TEST_DATABASE_NAME'" \
             | grep -q 1 \
-            || docker compose exec -T postgres createdb -U cop "$TEST_DATABASE_NAME"
+            || createdb -h 127.0.0.1 -U cop "$TEST_DATABASE_NAME"
       - run: cd backend && DATABASE_URL=$TEST_DATABASE_URL uv run alembic upgrade head
       - run: cd backend && uv run pytest
         env:
-          # The repository .env points DATA_DIR at the Compose volume; on the
-          # runner that path is read-only, so tests use a temporary directory.
+          # The repository .env points DATA_DIR at a container volume; on the
+          # runner that path does not exist, so tests use a temporary directory.
           TEST_DATA_DIR: /tmp/cop-studio-test-data
-      - if: failure()
-        run: docker compose logs postgres
-      - if: always()
-        run: docker compose down -v
 
   frontend:
     name: Frontend
@@ -105,8 +118,31 @@ jobs:
   e2e:
     name: End-to-end
     runs-on: ubuntu-latest
+    # The suite drives the real stack: a Worker to turn a topic into a candidate,
+    # an API that re-validates every draft write, and a browser to prove the
+    # buttons are actually wired up. Unit tests cannot see that, and SSR HTML
+    # cannot either. Started the same way a developer starts it, so CI exercises
+    # the paths that are actually used.
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: cop
+          POSTGRES_PASSWORD: cop
+          POSTGRES_DB: cop
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U cop -d cop"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     steps:
       - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: cd backend && uv sync --all-groups
       - uses: pnpm/action-setup@v4
         with:
           version: 11.17.0
@@ -116,16 +152,24 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @cop-studio/web exec playwright install --with-deps chromium
-      # The E2E suite drives the real Compose stack: a Worker to turn a topic
-      # into a candidate, an API that re-validates every draft write, and a
-      # browser to prove the buttons are actually wired up. Unit tests cannot
-      # see that, and SSR HTML cannot either.
+      - name: Install the PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
       - name: Start the stack
-        run: docker compose up -d --build --wait
-      - run: docker compose exec -T api alembic upgrade head
+        run: |
+          make local-db
+          make up-local
+          for attempt in $(seq 1 30); do
+            if curl -sf http://localhost:3000/api/v1/settings >/dev/null; then break; fi
+            sleep 2
+          done
+          curl -sf http://localhost:3000/api/v1/settings >/dev/null \
+            || { echo "the stack did not come up"; make down-local; exit 1; }
       - name: Run the browser suite
-        run: pnpm --filter @cop-studio/web test:e2e
+        run: make test-e2e
       - if: failure()
-        run: docker compose logs api worker web
+        run: |
+          tail -50 /tmp/cop-api-local.log || true
+          tail -50 /tmp/cop-worker-local.log || true
+          tail -50 /tmp/cop-web-local.log || true
       - if: always()
-        run: docker compose down -v
+        run: make down-local

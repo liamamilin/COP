@@ -11,6 +11,62 @@ Two rules govern every prompt in this module:
 import json
 from typing import Any
 
+#: How many `evidence_refs` a Stage may carry, and whether every one of them
+#: must be backed by a quote. Enforced in code as well as requested in the
+#: prompt: a model asked politely to "keep citations focused" will still return
+#: nineteen of them, and the difference between 4 and 19 is whether the user can
+#: read the citations at all.
+EVIDENCE_LIMITS: dict[str, dict[str, Any]] = {
+    "minimal": {
+        "max_refs": 1,
+        "require_quote": False,
+        "scope": "only the load-bearing claim",
+    },
+    "key_claims": {
+        "max_refs": 3,
+        "require_quote": True,
+        "scope": "the claims a learner would argue with",
+    },
+    "high": {
+        "max_refs": 6,
+        "require_quote": True,
+        "scope": "every factual claim you state",
+    },
+}
+
+DETAIL_LIMITS: dict[str, dict[str, Any]] = {
+    "compact": {"max_details": 1, "max_commands": 1},
+    "balanced": {"max_details": 2, "max_commands": 2},
+    "detailed": {"max_details": 4, "max_commands": 4},
+}
+
+MINIMAL_EVIDENCE = "Cite one source per Stage, and only where the claim could not stand on its own."
+HIGH_EVIDENCE = "Cite generously, but only where you actually assert something specific."
+
+
+def evidence_limit(density: str) -> dict[str, Any]:
+    return EVIDENCE_LIMITS.get(density, EVIDENCE_LIMITS["key_claims"])
+
+
+def detail_limit(density: str) -> dict[str, Any]:
+    return DETAIL_LIMITS.get(density, DETAIL_LIMITS["balanced"])
+
+
+def trim_evidence(refs: list[dict[str, Any]], density: str) -> list[dict[str, Any]]:
+    """Drop the surplus refs a model returns, keeping the ones with quotes first.
+
+    A Stage that cites fifteen sources reads as though every sentence were
+    contested, which is the Encyclopedia Failure in a different costume. The
+    kept refs are the ones a reader can actually act on.
+    """
+    limit = evidence_limit(density)
+    kept = [
+        ref for ref in refs if isinstance(ref, dict) and str(ref.get("source_id") or "").strip()
+    ]
+    kept.sort(key=lambda ref: 0 if str(ref.get("quote_hint") or "").strip() else 1)
+    return kept[: limit["max_refs"]]
+
+
 SHARED_SYSTEM_PREAMBLE = """\
 You are constructing a COP: Concept-Operation Process.
 
@@ -91,6 +147,11 @@ Rules:
 - generate 1-3 ambiguity notes if the topic is genuinely ambiguous,
 - the scope must support at least one operational Goal.
 
+Learner level `{learner_level}` sets the bar for the whole COP: a `new` learner
+needs prerequisites and explicit verification, an `advanced` learner does not.
+Do not write a scope that talks down to someone above the stated level, and do
+not skip the groundwork someone below it will need.
+
 Do not list Concepts yet.
 
 Return JSON matching the provided schema. Respond in {language}.
@@ -126,6 +187,7 @@ def build_research_brief_prompt(
     scope: dict[str, Any],
     sources: list[dict[str, Any]],
     language: str,
+    evidence_density: str = "key_claims",
 ) -> tuple[str, str]:
     system = f"""{SHARED_SYSTEM_PREAMBLE}
 Task: build a concise research brief.
@@ -141,7 +203,14 @@ Identify:
 - version-specific facts,
 - conflicts or uncertainties.
 
-Retain source references for factual claims.
+Retain source references for factual claims, at `{evidence_density}` density:
+{MINIMAL_EVIDENCE}
+
+{HIGH_EVIDENCE}
+
+Never invent a source id. Cite only ids that appear in the source material above;
+a reference to a source that does not exist is worse than no reference at all,
+because the user cannot open it.
 
 Return JSON matching the provided schema. Respond in {language}.
 """
@@ -162,10 +231,27 @@ def build_goals_prompt(
     requested_outcomes: list[str],
     depth: str,
     language: str,
+    evidence_density: str = "key_claims",
+    learner_level: str = "new",
 ) -> tuple[str, str]:
-    low, high = {"fast": (2, 4), "standard": (3, 7), "deep": (5, 9)}.get(
-        depth, (3, 7)
-    )
+    low, high = {"fast": (2, 4), "standard": (3, 7), "deep": (5, 9)}.get(depth, (3, 7))
+    refs = evidence_limit(evidence_density)
+    level_bar = {
+        "new": (
+            "A `new` learner needs every Goal to stand on its own: name the "
+            "prerequisite it assumes, and make the outcome something they can "
+            "demonstrate without having read anything else."
+        ),
+        "some_experience": (
+            "A learner with some experience should not be given a Goal that "
+            "restates the basics, but neither should one require knowledge the "
+            "scope never mentioned."
+        ),
+        "advanced": (
+            "An `advanced` learner wants the Goal that changes what they can do, "
+            "not a guided tour. Prefer Goals with a real trade-off behind them."
+        ),
+    }.get(learner_level, "")
     system = f"""{SHARED_SYSTEM_PREAMBLE}
 Task: propose high-value Goals.
 
@@ -177,8 +263,14 @@ A Goal must be:
 
 Avoid goals such as "learn X" or "understand Y".
 
+{level_bar}
+
 Return {low}-{high} Goals for {depth} mode. Never exceed {high}. Assign each Goal
 a stable "key" and order from foundational to advanced.
+
+Cite evidence at `{evidence_density}` density: at most {refs["max_refs"]} ref(s)
+per Goal, covering {refs["scope"]}. Use only source ids that appear in the
+research brief above. Never invent one.
 
 Return JSON matching the provided schema. Respond in {language}.
 """
@@ -236,7 +328,13 @@ def build_stage_prompt(
     process: dict[str, Any],
     stages: list[dict[str, Any]],
     language: str,
+    detail_density: str = "balanced",
+    evidence_density: str = "key_claims",
+    source_ids: list[str] | None = None,
 ) -> tuple[str, str]:
+    limits = detail_limit(detail_density)
+    refs = evidence_limit(evidence_density)
+    source_ids = list(source_ids or [])
     system = f"""{SHARED_SYSTEM_PREAMBLE}
 Task: enrich each Stage of one Main Process.
 
@@ -253,6 +351,35 @@ For every Stage produce:
 Granularity guard: a Stage must be expressible as "Complete X to obtain Y".
 Do not repeat implementation detail in the title.
 
+Two things are mandatory for every Stage, not optional enrichment. A reader who
+has neither cannot act, which defeats the purpose of the Main Process.
+
+1. `example_candidate` -- required for every Stage. Show the real thing:
+   `summary` says what was done, `input` what went in, `output` what came out.
+   An example that only restates the Stage title is not an example.
+
+2. `implementation_detail_candidates` -- required for every Stage that lists
+   Operation candidates. Each entry is one followable step:
+   - `title`: what this step is, in a few words
+   - `action`: what the reader does, in their own environment
+   - `command`: the literal command, code, or configuration to run
+   - `expected_result`: how to tell it worked, ideally something they can run
+   - `caution`: the mistake a beginner makes here, and what it looks like
+
+For any Stage that installs, sets up, or configures something, `command` and
+`expected_result` are both required. A setup Stage without a runnable command
+leaves the reader stuck at step one, and a setup Stage without an expected
+result leaves them unable to tell whether it worked.
+
+Length budget for this run: at most {limits["max_details"]} implementation
+detail(s) per Stage, and at most {limits["max_commands"]} of them may carry a
+`command`. A tighter budget is deliberate: extra detail the reader skips is
+worse than a shorter Stage they finish.
+
+Cite at `{evidence_density}` density: at most {refs["max_refs"]} evidence ref(s)
+per Stage, covering {refs["scope"]}. Use only source ids present in the material
+above; never invent one.
+
 Return JSON matching the provided schema. Respond in {language}.
 """
     user = f"""Process:
@@ -261,7 +388,10 @@ Return JSON matching the provided schema. Respond in {language}.
 Stages to enrich (preserve each "key"):
 {json.dumps(stages, ensure_ascii=False, indent=2)}
 
-{payload_block(process=process, stages=stages)}"""
+Source ids this Stage may cite (use these exact strings, invent nothing):
+{json.dumps(source_ids, ensure_ascii=False)}
+
+{payload_block(process=process, stages=stages, source_ids=source_ids)}"""
     return system, user
 
 
@@ -337,7 +467,26 @@ def build_learning_layer_prompt(
     processes: list[dict[str, Any]],
     practices_enabled: bool,
     language: str,
+    practice_mode: str = "priority",
 ) -> tuple[str, str]:
+    # `priority` and `all` used to produce an identical prompt, so the setting
+    # offered a choice it did not honour. They now differ in scope, not in
+    # wording: `priority` asks for the processes a learner should reach first,
+    # `all` for every process.
+    if not practices_enabled:
+        practice_instruction = (
+            "Do not generate any Practice. The user turned practices off for this run."
+        )
+    elif practice_mode == "all":
+        practice_instruction = (
+            "Generate one Minimal Practice per Main Process, including the ones a "
+            "learner would only reach later."
+        )
+    else:
+        practice_instruction = (
+            "Generate one Minimal Practice per Main Process, prioritising the ones a "
+            "learner should reach first. Fewer, better practices beat one per process."
+        )
     system = f"""{SHARED_SYSTEM_PREAMBLE}
 Task: generate the learning layer.
 
@@ -347,11 +496,14 @@ Mental Model must explain:
 - why the major Stages exist,
 - where an extension capability would attach.
 
-Minimal Practice: one small practice per priority process. It must exercise the
-main Stage sequence, avoid unnecessary complexity, and have a clearly observable
-expected outcome.
+Minimal Practice: {practice_instruction}
+Every Practice must exercise the main Stage sequence, avoid unnecessary
+complexity, have a clearly observable expected outcome, and carry at least one
+checkpoint question that proves it was actually done. A Practice with no
+checkpoint cannot be marked complete by the learner.
 
-Expansion Map: what the learner should explore next.
+Expansion Map: what the learner should explore next. Give at least two
+directions, and tie each to the Goal it grows out of.
 
 Return JSON matching the provided schema. Respond in {language}.
 """
@@ -416,10 +568,24 @@ def build_refine_prompt(
 Task: apply critic corrections conservatively.
 
 Rules:
+- repair only the entities named in the issues, and only the field each issue
+  is about; an entity with no issue must come back unchanged,
 - prefer local corrections over rewriting the artifact,
 - never rewrite a locked (user-authored) path,
 - never expand merely to increase coverage,
 - preserve the main line and valid IDs.
+
+Structured fields use their own value shapes, not a bare string:
+- `implementation_details` (stage): a list of objects with `title`, and where it
+  applies `action`, `command`, `expected_result`, and `caution`. Send the whole
+  corrected list, not just the entry you are adding.
+- `example` (stage): an object with `summary`, and where you have them `input`
+  and `output`.
+- `common_failures` (operation): a list of short strings.
+
+For `SETUP_NOT_ACTIONABLE` and `MISSING_VALIDATION_STEP`, the correction has to
+name a real command a reader can run and a real thing they can look at. A
+generic sentence satisfies neither.
 
 Return one revision per changed field, naming entity_type, entity_key, field,
 and the new value.

@@ -6,6 +6,7 @@ import {
   ApiError,
   cancelGenerationRun,
   generationEventsUrl,
+  getEffectiveGenerationSettings,
   getRunProgress,
   startGenerationRun,
 } from "../lib/api";
@@ -16,6 +17,25 @@ import {
   type GenerationRequest,
   type GenerationRun,
 } from "../lib/generation-api";
+
+const DEPTH_LABELS = { fast: "Fast", standard: "Standard", deep: "Deep" } as const;
+const LEARNER_LABELS = {
+  new: "New to domain",
+  some_experience: "Some experience",
+  advanced: "Advanced",
+} as const;
+const DETAIL_LABELS = { compact: "Compact", balanced: "Balanced", detailed: "Detailed" } as const;
+const EVIDENCE_LABELS = { minimal: "Minimal", key_claims: "Key claims", high: "High" } as const;
+
+/** The generation controls a run inherits, plus the ones it can override. */
+export interface EffectiveGeneration {
+  language: string;
+  generation_depth: "fast" | "standard" | "deep";
+  learner_level: "new" | "some_experience" | "advanced";
+  detail_density: "compact" | "balanced" | "detailed";
+  evidence_density: "minimal" | "key_claims" | "high";
+  practice_mode: "priority" | "all" | "off";
+}
 
 /** Fallback phase list, used before the first progress poll returns. */
 const PLACEHOLDER_PHASES: GenerationPhase[] = [
@@ -35,9 +55,16 @@ interface GenerationPanelProps {
   projectId: string;
   topic: string;
   scopeHint: string;
-  learnerLevel: "new" | "some_experience" | "advanced";
-  depth: "fast" | "standard" | "deep";
   sourceIds: string[];
+  /**
+   * The settings this run will actually use, already resolved by the backend.
+   *
+   * Passed in rather than re-derived in the browser: spec `24` §8 puts the merge
+   * in the backend, and a client-side copy would be a second implementation that
+   * silently drifts. The panel shows these values and lets the user change them
+   * for this run only, so what is displayed is what the run was given.
+   */
+  effective: EffectiveGeneration;
   /** Shown once a candidate exists, so the user can review before publishing. */
   onCandidateReady: (runId: string) => void;
 }
@@ -46,9 +73,8 @@ export function GenerationPanel({
   projectId,
   topic,
   scopeHint,
-  learnerLevel,
-  depth,
   sourceIds,
+  effective,
   onCandidateReady,
 }: GenerationPanelProps) {
   const [run, setRun] = useState<GenerationRun | null>(null);
@@ -58,8 +84,39 @@ export function GenerationPanel({
   const [pending, setPending] = useState(false);
   const [webSearch, setWebSearch] = useState(false);
   const [live, setLive] = useState(false);
+  // Run-scoped overrides. Empty means "inherit", which is what keeps the default
+  // path identical to no override at all.
+  const [overrides, setOverrides] = useState<Partial<EffectiveGeneration>>({});
+  // What the backend says the run would get. Never computed here: the panel asks
+  // the same endpoint the run uses, so a display value and an executed value
+  // cannot drift (spec `24` §8 puts the merge in the backend).
+  const [resolved, setResolved] = useState<EffectiveGeneration>(effective);
+  const [showOptions, setShowOptions] = useState(false);
   const sourceRef = useRef<EventSource | null>(null);
   const lastEventId = useRef<number | undefined>(undefined);
+  const requestSeq = useRef(0);
+
+  useEffect(() => setResolved(effective), [effective]);
+
+  useEffect(() => {
+    if (Object.keys(overrides).length === 0) {
+      setResolved(effective);
+      return;
+    }
+    // Sequenced so a slow response for an earlier override cannot land after a
+    // newer one and show the user the wrong settings.
+    const seq = ++requestSeq.current;
+    void getEffectiveGenerationSettings(projectId, { generation: overrides })
+      .then((view) => {
+        if (seq === requestSeq.current) setResolved(view.effective);
+      })
+      .catch(() => {
+        // Leave the last confirmed values in place rather than guessing; the
+        // run itself will fail loudly if the override is rejected.
+      });
+  }, [projectId, overrides, effective]);
+
+  const isOverridden = (key: keyof EffectiveGeneration) => overrides[key] !== undefined;
 
   const teardown = useCallback(() => {
     sourceRef.current?.close();
@@ -167,13 +224,17 @@ export function GenerationPanel({
     setPending(true);
     setPhases(PLACEHOLDER_PHASES);
     lastEventId.current = undefined;
+    // `mode` mirrors `generation_depth` rather than being a second concept: the
+    // run previously recorded one value and the Harness read another, so a run's
+    // own record could not explain what it actually did.
     const body: GenerationRequest = {
-      mode: depth,
+      mode: resolved.generation_depth,
       topic,
       scope_hint: scopeHint,
-      learner_level: learnerLevel,
+      learner_level: resolved.learner_level,
       source_ids: sourceIds,
       web_search: webSearch,
+      settings_override: { generation: { ...overrides } },
     };
     try {
       const created = await startGenerationRun(projectId, body);
@@ -227,6 +288,135 @@ export function GenerationPanel({
                 <small>Uses the configured Exa API key and adds bounded web excerpts as sources.</small>
               </span>
             </label>
+
+            <div className="generation-effective">
+              <button
+                aria-expanded={showOptions}
+                className="generation-effective-toggle"
+                onClick={() => setShowOptions((value) => !value)}
+                type="button"
+              >
+                {showOptions ? "Hide" : "Adjust"} this run&apos;s settings
+                <span className="generation-effective-summary">
+                  {DEPTH_LABELS[resolved.generation_depth]} ·{" "}
+                  {LEARNER_LABELS[resolved.learner_level]} ·{" "}
+                  {DETAIL_LABELS[resolved.detail_density]} ·{" "}
+                  {EVIDENCE_LABELS[resolved.evidence_density]}
+                </span>
+              </button>
+              {showOptions && (
+                <div className="generation-options">
+                  <p className="muted-note">
+                    These are the settings this run will use. Change one to override it for this run
+                    only; your project defaults are untouched.
+                  </p>
+                  <label>
+                    <span>Language</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({ ...current, language: event.target.value }))
+                      }
+                      value={resolved.language}
+                    >
+                      <option value="auto">Auto</option>
+                      <option value="zh-CN">中文</option>
+                      <option value="en">English</option>
+                      <option value="ja">日本語</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Depth {isOverridden("generation_depth") ? "(overridden)" : ""}</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({
+                          ...current,
+                          generation_depth: event.target
+                            .value as EffectiveGeneration["generation_depth"],
+                        }))
+                      }
+                      value={resolved.generation_depth}
+                    >
+                      <option value="fast">Fast</option>
+                      <option value="standard">Standard</option>
+                      <option value="deep">Deep</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Learner level {isOverridden("learner_level") ? "(overridden)" : ""}</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({
+                          ...current,
+                          learner_level: event.target
+                            .value as EffectiveGeneration["learner_level"],
+                        }))
+                      }
+                      value={resolved.learner_level}
+                    >
+                      <option value="new">New to domain</option>
+                      <option value="some_experience">Some experience</option>
+                      <option value="advanced">Advanced</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Detail density {isOverridden("detail_density") ? "(overridden)" : ""}</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({
+                          ...current,
+                          detail_density: event.target
+                            .value as EffectiveGeneration["detail_density"],
+                        }))
+                      }
+                      value={resolved.detail_density}
+                    >
+                      <option value="compact">Compact</option>
+                      <option value="balanced">Balanced</option>
+                      <option value="detailed">Detailed</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Evidence {isOverridden("evidence_density") ? "(overridden)" : ""}</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({
+                          ...current,
+                          evidence_density: event.target
+                            .value as EffectiveGeneration["evidence_density"],
+                        }))
+                      }
+                      value={resolved.evidence_density}
+                    >
+                      <option value="minimal">Minimal</option>
+                      <option value="key_claims">Key claims</option>
+                      <option value="high">High</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Practice {isOverridden("practice_mode") ? "(overridden)" : ""}</span>
+                    <select
+                      onChange={(event) =>
+                        setOverrides((current) => ({
+                          ...current,
+                          practice_mode: event.target
+                            .value as EffectiveGeneration["practice_mode"],
+                        }))
+                      }
+                      value={resolved.practice_mode}
+                    >
+                      <option value="priority">Priority</option>
+                      <option value="all">All processes</option>
+                      <option value="off">Off</option>
+                    </select>
+                  </label>
+                  {Object.keys(overrides).length > 0 && (
+                    <button onClick={() => setOverrides({})} type="button">
+                      Reset to project settings
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
           <button className="primary-button" disabled={pending} onClick={start} type="button">
             {pending ? "Starting…" : "Generate COP"}

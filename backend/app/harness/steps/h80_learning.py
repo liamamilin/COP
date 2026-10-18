@@ -26,6 +26,7 @@ class LearningLayerStep:
             processes=processes,
             practices_enabled=practices_enabled,
             language=language,
+            practice_mode=practice_mode,
         )
         payload = await services.complete_structured(
             system_prompt=system, user_prompt=user, schema=LEARNING_LAYER_SCHEMA

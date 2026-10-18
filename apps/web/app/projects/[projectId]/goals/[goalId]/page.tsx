@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-import { PracticeCard } from "../../../../../components/practice-card";
+import { EvidencePanel } from "../../../../../components/evidence-panel";
+import { PracticeRecorder } from "../../../../../components/practice-recorder";
 import { ProcessRail } from "../../../../../components/process-rail";
 import { ProjectShell } from "../../../../../components/project-shell";
-import { getWorkspace } from "../../../../../lib/api";
+import { getLearningProgress, getWorkspace } from "../../../../../lib/api";
 import { artifactSelectors } from "../../../../../lib/artifact-selectors";
 
 export default async function GoalPage({
@@ -16,6 +17,13 @@ export default async function GoalPage({
   const goal = artifactSelectors.getGoal(artifact, decodeURIComponent(goalId));
   const process = artifactSelectors.getProcessForGoal(artifact, goal.id);
   const practice = artifactSelectors.getPracticeForProcess(artifact, process);
+  // Progress for this Goal, so the Practice card can show its real status. Read
+  // here rather than in the client component so the first paint is correct; a
+  // Practice that renders as "not started" and then flips is worse than one that
+  // renders as complete immediately.
+  const goalProgress = (
+    await getLearningProgress(projectId, version.id).catch(() => null)
+  )?.goals.find((item) => item.goal_id === goal.id);
 
   return (
     <ProjectShell project={project} version={version} artifact={artifact} active="goal">
@@ -36,8 +44,46 @@ export default async function GoalPage({
             Focus process ↗
           </Link>
         </div>
+        {/* Prerequisites and evidence were on the artifact and rendered nowhere,
+            so a reader could not tell what this Goal assumes or what backs it. */}
+        {(goal.prerequisite_goal_refs ?? []).length > 0 && (
+          <section className="reading-section">
+            <p className="eyebrow">BUILDS ON</p>
+            <div className="link-list">
+              {(goal.prerequisite_goal_refs ?? []).map((id) => {
+                const prerequisite = artifactSelectors.getGoal(artifact, id);
+                return (
+                  <Link
+                    href={`/projects/${projectId}/goals/${encodeURIComponent(prerequisite.id)}`}
+                    key={prerequisite.id}
+                  >
+                    {prerequisite.title}
+                    <b>↗</b>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        <EvidencePanel
+          projectId={projectId}
+          refs={goal.evidence_refs}
+          sources={version.evidence_sources ?? {}}
+        />
+
         <ProcessRail artifact={artifact} process={process} projectId={projectId} />
-        {practice && <PracticeCard practice={practice} />}
+        {/* Interactive here too, not just in Learn Mode. A Practice the learner
+            can only read on this page is a dead end. */}
+        {practice && (
+          <PracticeRecorder
+            goalId={goal.id}
+            practice={practice}
+            progress={goalProgress?.practice ?? null}
+            projectId={projectId}
+            versionId={version.id}
+          />
+        )}
       </div>
     </ProjectShell>
   );

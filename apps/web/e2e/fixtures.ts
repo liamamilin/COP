@@ -23,7 +23,9 @@ export interface FirstGoal {
   outcome: string;
 }
 
-export const API_URL = process.env.E2E_API_URL ?? "http://localhost:8000/api/v1";
+import { API_URL } from "./endpoints";
+
+export { API_URL };
 
 export interface VersionedProject {
   projectId: string;

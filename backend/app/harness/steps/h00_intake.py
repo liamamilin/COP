@@ -72,7 +72,13 @@ class IntakeStep:
             topic=ctx.input.get("topic", ""),
             scope_hint=ctx.input.get("scope_hint", ""),
             target_outcomes=list(ctx.input.get("target_outcomes") or []),
-            learner_level=ctx.input.get("learner_level", "new"),
+            # Settings first, request second. It used to read `ctx.input` alone,
+            # so a learner level chosen once in Settings was ignored by every
+            # run and the only value that worked was the per-request field. The
+            # request still wins when it carries one, which keeps an explicit
+            # per-run override authoritative.
+            learner_level=ctx.input.get("learner_level")
+            or ctx.settings.get("learner_level", "new"),
             language=ctx.settings.get("language", "auto"),
             depth=ctx.settings.get("generation_depth", "standard"),
             selected_source_ids=list(ctx.input.get("source_ids") or []),

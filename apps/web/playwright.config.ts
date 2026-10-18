@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+import { API_URL, BASE_URL } from "./e2e/endpoints";
+
 /**
  * E2E runs against the real Compose stack, not a mock.
  *
@@ -15,9 +17,6 @@ import { defineConfig, devices } from "@playwright/test";
  * Start the stack first (`POSTGRES_HOST_PORT=55432 docker compose up -d`), or
  * set E2E_BASE_URL when the app is already listening elsewhere.
  */
-const BASE_URL = process.env.E2E_BASE_URL ?? "http://localhost:3000";
-const API_URL = process.env.E2E_API_URL ?? "http://localhost:8000/api/v1";
-
 export default defineConfig({
   testDir: "./e2e",
   // Serial: every test shares one seeded project, and a parallel worker would
@@ -35,6 +34,7 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   globalSetup: "./e2e/global-setup.ts",
+  globalTeardown: "./e2e/global-teardown.ts",
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   metadata: { apiUrl: API_URL },
 });

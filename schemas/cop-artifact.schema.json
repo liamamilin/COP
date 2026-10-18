@@ -13,6 +13,31 @@
         "quote_hint": {"type": "string"}
       },
       "additionalProperties": true
+    },
+    "ImplementationDetail": {
+      "description": "One step a reader can actually follow. `action` says what to do, `command` is the literal thing to run, `expected_result` says how to tell it worked, and `caution` covers the failure a beginner hits first.",
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "action": {"type": "string"},
+        "command": {"type": "string"},
+        "expected_result": {"type": "string"},
+        "caution": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "Example": {
+      "description": "A worked case: what went in and what came out. `summary` is the minimum; a Stage whose example shows real input and real output is far more useful than one that restates the title.",
+      "type": "object",
+      "required": ["summary"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 1},
+        "input": {"type": "string"},
+        "output": {"type": "string"},
+        "note": {"type": "string"}
+      },
+      "additionalProperties": true
     }
   },
   "required": [
@@ -257,13 +282,13 @@
           "implementation_details": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/$defs/ImplementationDetail"
             }
           },
           "example": {
-            "type": [
-              "object",
-              "null"
+            "oneOf": [
+              {"$ref": "#/$defs/Example"},
+              {"type": "null"}
             ]
           },
           "evidence_refs": {

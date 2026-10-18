@@ -95,13 +95,15 @@ test("the frozen V1 loop reaches a portable Markdown export", async ({ page }) =
 test("appearance settings apply and the mock connection button is live", async ({ page }) => {
   const original = await fetch(`${API_URL}/settings`).then((response) => response.json());
   try {
+    // The provider is deliberately *not* switched here. It is set to the mock for
+    // the whole run by `globalSetup` and put back by `globalTeardown`, because the
+    // provider is global state: this spec used to restore the developer's real
+    // endpoint in its own cleanup, and every spec that ran afterwards then made
+    // live model calls and failed as though the product were broken.
     await fetch(`${API_URL}/settings`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        provider: { type: "mock", mock_scenario: "success" },
-        appearance: { theme: "dark", density: "compact" },
-      }),
+      body: JSON.stringify({ appearance: { theme: "dark", density: "compact" } }),
     });
 
     await page.goto("/settings");
@@ -118,21 +120,11 @@ test("appearance settings apply and the mock connection button is live", async (
     await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expect(page.locator("html")).toHaveAttribute("data-density", "comfortable");
   } finally {
+    // Only appearance, because that is all this test changed.
     await fetch(`${API_URL}/settings`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        provider: {
-          type: original.provider.type,
-          base_url: original.provider.base_url,
-          model: original.provider.model,
-          timeout: original.provider.timeout,
-          max_retries: original.provider.max_retries,
-          mock_scenario: original.provider.mock_scenario,
-        },
-        generation: original.generation,
-        appearance: original.appearance,
-      }),
+      body: JSON.stringify({ appearance: original.appearance }),
     });
   }
 });

@@ -109,9 +109,7 @@ def markdown_export(artifact: dict[str, Any], *, version_number: int | None = No
     stages = {str(item.get("id")): item for item in artifact.get("stages") or []}
     branches = {str(item.get("id")): item for item in artifact.get("branches") or []}
     practices = {str(item.get("id")): item for item in artifact.get("practices") or []}
-    foundations = {
-        str(item.get("id")): item for item in artifact.get("shared_foundations") or []
-    }
+    foundations = {str(item.get("id")): item for item in artifact.get("shared_foundations") or []}
 
     title = domain.get("name") or "COP Artifact"
     lines = [f"# {title}", ""]

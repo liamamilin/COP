@@ -16,6 +16,19 @@ export default async function OperationPage({ params }: { params: Promise<{ proj
       <article className="content-wrap entity-detail-page operation-detail">
         <header><span className="entity-glyph">O</span><p className="eyebrow">OPERATION</p><h1>{operation.name}</h1><p className="lead-copy">{operation.definition}</p></header>
         {operation.purpose && <section><p className="eyebrow">PURPOSE</p><h2>{operation.purpose}</h2></section>}
+        {/* The failure modes are the part a beginner needs, and this page is
+            where they belong. They were previously stored on every Operation and
+            rendered nowhere at all. */}
+        {(operation.common_failures ?? []).length > 0 && (
+          <section>
+            <p className="eyebrow">COMMON FAILURES</p>
+            <ul className="failure-list">
+              {(operation.common_failures ?? []).map((failure) => (
+                <li key={failure}><span>{failure}</span></li>
+              ))}
+            </ul>
+          </section>
+        )}
         <section><p className="eyebrow">USED IN STAGES</p><div className="link-list">{stages.map((stage) => <Link href={`/projects/${projectId}/stages/${encodeURIComponent(stage.id)}`} key={stage.id}>{stage.title}<b>↗</b></Link>)}</div></section>
         {concepts.length > 0 && <section><p className="eyebrow">ACTS ON</p><div className="link-list">{concepts.map((item) => <Link href={`/projects/${projectId}/concepts/${encodeURIComponent(item.id)}`} key={item.id}>{item.name}<b>↗</b></Link>)}</div></section>}
       </article>

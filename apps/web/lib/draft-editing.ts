@@ -21,7 +21,10 @@ export type EditableField = {
  * Human labels for the editable fields.
  *
  * `example` is stored as an object in the artifact but edited as text, which is
- * why it needs an accessor rather than a plain property read.
+ * why it needs an accessor rather than a plain property read. The two list
+ * fields are edited the same way: a `|`-separated line per entry, because a
+ * form of nested inputs would be a rich text editor by another name, and V1
+ * explicitly excludes one.
  */
 const FIELD_LABELS: Record<DraftEntityKind, Record<string, string>> = {
   goals: { title: "Title", outcome: "Outcome", why_it_matters: "Why it matters" },
@@ -32,9 +35,16 @@ const FIELD_LABELS: Record<DraftEntityKind, Record<string, string>> = {
     why_it_exists: "Why this stage exists",
     local_outcome: "Local outcome",
     example: "Example",
+    implementation_details:
+      "Implementation details — one per line: title | action | command | expected result | caution",
   },
   concepts: { name: "Name", definition: "Definition", role: "Role" },
-  operations: { name: "Name", definition: "Definition", purpose: "Purpose" },
+  operations: {
+    name: "Name",
+    definition: "Definition",
+    purpose: "Purpose",
+    common_failures: "Common failures — one per line",
+  },
 };
 
 const MULTILINE = new Set([
@@ -47,6 +57,8 @@ const MULTILINE = new Set([
   "definition",
   "purpose",
   "summary",
+  "implementation_details",
+  "common_failures",
 ]);
 
 const REQUIRED: Record<DraftEntityKind, readonly string[]> = {
@@ -92,7 +104,51 @@ function readValue(entity: Record<string, unknown>, field: string): string {
     const summary = (raw as Record<string, unknown>).summary;
     return typeof summary === "string" ? summary : "";
   }
+  if (field === "implementation_details") {
+    return readDetailLines(raw);
+  }
+  if (field === "common_failures") {
+    return readStringLines(raw);
+  }
   return typeof raw === "string" ? raw : "";
+}
+
+/**
+ * The `|` separator, chosen over commas and newlines per field.
+ *
+ * Commands and expected results both contain commas and both may contain
+ * newlines, so either would make the format ambiguous and a pasted multi-line
+ * command would silently become several details.
+ */
+export const DETAIL_SEPARATOR = "|";
+
+function readDetailLines(raw: unknown): string {
+  if (!Array.isArray(raw)) return "";
+  return raw
+    .map((item) => {
+      if (!item || typeof item !== "object") return "";
+      const detail = item as Record<string, unknown>;
+      return [
+        detail.title,
+        detail.action,
+        detail.command,
+        detail.expected_result,
+        detail.caution,
+      ]
+        .map((value) => (typeof value === "string" ? value.trim() : ""))
+        .filter(Boolean)
+        .join(DETAIL_SEPARATOR);
+    })
+    .filter(Boolean)
+    .join("\n");
+}
+
+function readStringLines(raw: unknown): string {
+  if (!Array.isArray(raw)) return "";
+  return raw
+    .map((item) => (typeof item === "string" ? item.trim() : ""))
+    .filter(Boolean)
+    .join("\n");
 }
 
 function findEntity(

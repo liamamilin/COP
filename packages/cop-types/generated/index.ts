@@ -6,6 +6,21 @@ export interface EvidenceRef {
   quote_hint?: string;
 }
 
+export interface ImplementationDetail {
+  title: string;
+  action?: string;
+  command?: string;
+  expected_result?: string;
+  caution?: string;
+}
+
+export interface Example {
+  summary: string;
+  input?: string;
+  output?: string;
+  note?: string;
+}
+
 export interface Goal {
   id: string;
   title: string;
@@ -43,8 +58,8 @@ export interface Stage {
   concept_refs: string[];
   operation_refs: string[];
   branch_refs?: string[];
-  implementation_details?: Record<string, unknown>[];
-  example?: Record<string, unknown> | null;
+  implementation_details?: ImplementationDetail[];
+  example?: Example | null;
   evidence_refs?: EvidenceRef[];
 }
 

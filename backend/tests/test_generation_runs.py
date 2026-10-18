@@ -205,9 +205,7 @@ def test_a_run_records_explicit_web_search_opt_in(client: TestClient, db: Sessio
         db,
         "Web Research",
         web_search=True,
-        settings_override={
-            "generation": {"language": "zh-CN", "generation_depth": "fast"}
-        },
+        settings_override={"generation": {"language": "zh-CN", "generation_depth": "fast"}},
     )
 
     row = db.get(GenerationRun, uuid.UUID(run_id))

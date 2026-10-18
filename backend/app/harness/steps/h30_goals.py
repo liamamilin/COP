@@ -8,7 +8,7 @@ from typing import Any
 
 from app.core.errors import HarnessError
 from app.harness.context import HarnessContext, HarnessEvent, StepResult
-from app.harness.prompts import build_goals_prompt
+from app.harness.prompts import build_goals_prompt, trim_evidence
 from app.harness.schemas import GOALS_SCHEMA
 
 VAGUE_PREFIXES = ("learn ", "understand ", "study ", "know ", "familiarize")
@@ -41,6 +41,12 @@ class GoalExtractionStep:
         brief = ctx.require("research_brief")
         language = ctx.settings.get("language", "auto")
         depth = ctx.settings.get("generation_depth", "standard")
+        evidence_density = ctx.settings.get("evidence_density", "key_claims")
+        # A Goal may only cite a source the run actually read. H20 already drops
+        # invented ids from the brief, and the same rule applies here: a Goal that
+        # cites `lc-agents` when no such Source exists is a claim the user cannot
+        # check, and the Goal is the first thing they read.
+        known_sources = {str(item.get("id")) for item in ctx.source_bundle if item.get("id")}
 
         system, user = build_goals_prompt(
             scope=scope,
@@ -48,6 +54,9 @@ class GoalExtractionStep:
             requested_outcomes=list(ctx.input.get("target_outcomes") or []),
             depth=depth,
             language=language,
+            evidence_density=evidence_density,
+            learner_level=ctx.input.get("learner_level")
+            or ctx.settings.get("learner_level", "new"),
         )
         payload = await services.complete_structured(
             system_prompt=system, user_prompt=user, schema=GOALS_SCHEMA
@@ -68,6 +77,7 @@ class GoalExtractionStep:
             prerequisites = [
                 str(item) for item in raw.get("prerequisite_goal_keys") or [] if str(item) != key
             ]
+            refs = trim_evidence(list(raw.get("evidence_refs") or []), evidence_density)
             goals.append(
                 {
                     "key": key,
@@ -75,7 +85,9 @@ class GoalExtractionStep:
                     "outcome": outcome,
                     "why_it_matters": str(raw.get("why_it_matters", "")).strip(),
                     "prerequisite_goal_keys": prerequisites,
-                    "evidence_refs": list(raw.get("evidence_refs") or []),
+                    "evidence_refs": [
+                        ref for ref in refs if str(ref.get("source_id")) in known_sources
+                    ],
                 }
             )
 
@@ -83,6 +95,18 @@ class GoalExtractionStep:
             raise HarnessError("HARNESS_NO_GOALS", "The model did not return any usable Goal")
 
         warnings = quality_gate(goals, depth)
+        dropped = sum(
+            len(trim_evidence(list(raw.get("evidence_refs") or []), evidence_density))
+            - len(goal["evidence_refs"])
+            for raw, goal in zip(raw_goals, goals, strict=False)
+        )
+        if dropped:
+            # Reported rather than silently corrected: the user should know the
+            # run cited material it never read.
+            warnings.append(
+                f"Dropped {dropped} Goal evidence reference(s) pointing at sources "
+                "this run did not read"
+            )
         _low, high = DEPTH_TARGETS.get(depth, DEPTH_TARGETS["standard"])
         if len(goals) > high:
             original_count = len(goals)

@@ -327,9 +327,7 @@ class TestPublish:
         draft_id = make_draft(db, project_id)
         client.post(f"/api/v1/drafts/{draft_id}/publish", json={})
 
-        fork = client.post(
-            f"/api/v1/projects/{project_id}/drafts/from-version/{first}"
-        ).json()
+        fork = client.post(f"/api/v1/projects/{project_id}/drafts/from-version/{first}").json()
         third = client.post(f"/api/v1/drafts/{fork['id']}/publish", json={}).json()
 
         assert third["version_number"] == 3

@@ -21,6 +21,10 @@ export function NewProjectForm() {
       scope: String(data.get("scope") ?? "").trim(),
       description: String(data.get("outcome") ?? "").trim(),
       preferred_language: String(data.get("preferred_language") ?? "auto"),
+      // Sent so the project's first run already matches what was chosen here.
+      // The backend stores it as a project-level generation override, which is
+      // what makes this field do anything at all.
+      learner_level: String(data.get("learner_level") ?? "new"),
     };
     try {
       const response = await fetch(`${publicApiBaseUrl()}/projects`, {

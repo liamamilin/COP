@@ -1,0 +1,17 @@
+{
+  "mode": "offline-fixture",
+  "configuration": null,
+  "input": "Name one benefit of using an agent harness.",
+  "messages": [
+    {
+      "type": "human",
+      "content": "Name one benefit of using an agent harness."
+    },
+    {
+      "type": "ai",
+      "content": "This is a scripted offline reply, not an LLM response."
+    }
+  ],
+  "answer": "This is a scripted offline reply, not an LLM response.",
+  "note": "Fixed local reply: not evidence of real LLM quality or provider compatibility."
+}

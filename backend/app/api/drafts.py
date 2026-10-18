@@ -15,6 +15,7 @@ Published versions are read-only. There is no PATCH or DELETE for a
 guarantee in spec 16 §4. The version read endpoints live in `projects.py`.
 """
 
+import logging
 import uuid
 from datetime import datetime
 from typing import Annotated, Any
@@ -36,10 +37,48 @@ from app.domain.drafting import (
     with_locks,
 )
 from app.domain.validation import validate_artifact
+from app.harness.steps.critic_rules import content_gate_failures
 from app.harness.steps.h120_validate import resolve_schema_path
+from app.jobs.runner import project_source_ids
 
+logger = logging.getLogger("cop.drafts")
 router = APIRouter(tags=["drafts"])
 DbSession = Annotated[Session, Depends(get_db)]
+
+
+def evidence_refs(artifact: dict[str, Any]) -> list[dict[str, Any]]:
+    """Every evidence reference in the artifact, with the entity carrying it.
+
+    Collected generically over the two collections the schema permits, so a
+    third cannot be added later and silently escape the check.
+    """
+    found: list[dict[str, Any]] = []
+    for collection in ("goals", "stages"):
+        for entity in artifact.get(collection) or []:
+            if not isinstance(entity, dict):
+                continue
+            for ref in entity.get("evidence_refs") or []:
+                source_id = str((ref or {}).get("source_id") or "").strip()
+                if source_id:
+                    found.append(
+                        {
+                            "entity_ref": str(entity.get("id", "")),
+                            "collection": collection,
+                            "source_id": source_id,
+                            "ref": ref,
+                        }
+                    )
+    return found
+
+
+def unresolved_evidence(artifact: dict[str, Any], known: set[str]) -> list[dict[str, Any]]:
+    """Refs pointing at a source the project does not own."""
+    return [
+        {key: item[key] for key in ("entity_ref", "collection", "source_id")}
+        for item in evidence_refs(artifact)
+        if item["source_id"] not in known
+    ]
+
 
 # Runs whose candidate may be turned into a draft. `failed` and `cancelled` are
 # excluded: their candidate is absent or knowingly incomplete, and the user was
@@ -74,6 +113,15 @@ class VersionOut(BaseModel):
     change_summary: str
     created_by: str
     created_at: datetime
+    # Populated only by the publish endpoint, and only when the artifact still
+    # misses something a learner needs. Absent everywhere else, so a read of a
+    # version never implies a judgement that was never made.
+    content_gate: list[dict[str, Any]] | None = None
+    # Evidence refs pointing at sources this project does not own. Reported
+    # rather than blocked: a user may knowingly publish a COP whose citation
+    # predates a deleted source, and refusing would be a worse answer than
+    # telling them.
+    unresolved_evidence: list[dict[str, Any]] | None = None
 
 
 class PublishRequest(BaseModel):
@@ -263,6 +311,12 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
     The next version number is read inside the transaction and the unique
     `(project_id, version_number)` constraint backs it up, so two concurrent
     publishes cannot both claim the same slot.
+
+    Structural invalidity is refused. Content incompleteness is not, and the
+    difference is deliberate: spec `15` §6 requires that "COP remains useful
+    when incomplete", so a user who knowingly publishes a half-built process
+    must be able to. What they must not be able to do is publish it *quietly*,
+    which is why the response carries `content_gate` and the browser says so.
     """
     draft = _require_draft(db, draft_id)
     project = require_project(db, draft.project_id)
@@ -279,6 +333,22 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
             status_code=422,
             details={"reason": str(exc)},
         ) from exc
+
+    # Checked on the artifact as it will be stored, not the incoming model, so
+    # the reported findings describe the version rather than the request.
+    stored = artifact.model_dump(mode="json")
+    content_gate = content_gate_failures(stored)
+    # Every citation must resolve to a source this project owns. A ref the user
+    # cannot open is the R3 failure, and reporting it here is what stops it
+    # becoming permanent history silently.
+    orphans = unresolved_evidence(stored, project_source_ids(db, project.id))
+    if content_gate or orphans:
+        logger.info(
+            "Publishing %s with %d content-gate findings and %d unresolved refs",
+            draft_id,
+            len(content_gate),
+            len(orphans),
+        )
 
     numbers = list(
         db.scalars(select(COPVersion.version_number).where(COPVersion.project_id == project.id))
@@ -315,7 +385,13 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
     db.delete(draft)
     db.commit()
     db.refresh(version)
-    return VersionOut.model_validate(version)
+    out = VersionOut.model_validate(version)
+    if content_gate or orphans:
+        # Shape-compatible with VersionOut but carries the warnings, so the
+        # browser can tell the user what they just published.
+        out.content_gate = content_gate
+        out.unresolved_evidence = orphans or None
+    return out
 
 
 @router.delete("/drafts/{draft_id}", status_code=status.HTTP_204_NO_CONTENT)
