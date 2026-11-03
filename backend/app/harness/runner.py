@@ -295,7 +295,7 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
             and context.critic_report is not None
             and context.artifact is not None
         )
-    return {
+    satisfied = {
         "H00": context.intake is not None,
         "H10": context.scope_result is not None,
         "H20": context.research_brief is not None,
@@ -308,6 +308,9 @@ def _step_satisfied(name: str, context: HarnessContext) -> bool:
         "H90": context.artifact is not None,
         "H100": context.critic_report is not None,
     }.get(name, False)
+    # Modern checkpoints explicitly record successful steps. Populated partial
+    # fields are not proof of completion. Keep legacy crash recovery compatible.
+    return satisfied and (not context.completed_steps or name in context.completed_steps)
 
 
 def _final_status(context: HarnessContext) -> str:

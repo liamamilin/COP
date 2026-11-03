@@ -3,6 +3,7 @@ import { StageContent } from "../../../../../components/stage-content";
 import { StageContextNavigation, StageStepNavigation } from "../../../../../components/stage-navigation";
 import { getWorkspace } from "../../../../../lib/api";
 import { artifactSelectors } from "../../../../../lib/artifact-selectors";
+import Link from "next/link";
 
 export default async function StagePage({
   params,
@@ -20,21 +21,14 @@ export default async function StagePage({
         <StageContextNavigation artifact={artifact} projectId={projectId} stage={stage} />
 
         <article className="stage-content">
+          <nav className="step-breadcrumb" aria-label="Breadcrumb">
+            <Link href={`/projects/${projectId}`}>Overview</Link><span>/</span>
+            {context.process ? <Link href={`/projects/${projectId}/goals/${encodeURIComponent(context.process.goal_ref)}`}>{context.title}</Link> : <span>{context.title}</span>}
+          </nav>
           <header className="page-header detail-header">
-            <p className="eyebrow">{context.kind === "foundation" ? "FOUNDATION" : "STAGE"} {context.index + 1}</p>
+            <p className="eyebrow">{context.kind === "foundation" ? "PREPARATION" : "STEP"} {context.index + 1} OF {context.stages.length}</p>
             <h1>{stage.title}</h1>
-            <div className="local-goal-block">
-              <span>LOCAL GOAL</span>
-              <p>{stage.local_goal}</p>
-            </div>
           </header>
-
-          {stage.why_it_exists && (
-            <section className="reading-section">
-              <p className="eyebrow">WHY THIS EXISTS</p>
-              <p className="lead-copy">{stage.why_it_exists}</p>
-            </section>
-          )}
 
           {/* Shared with Learn Mode. Two renderers of the same fields had already
               drifted: Learn showed the method, this page showed nothing. */}
@@ -44,10 +38,6 @@ export default async function StagePage({
             sources={version.evidence_sources ?? {}}
             stage={stage}
           />
-
-          {stage.local_outcome && (
-            <section className="outcome-banner"><span>LOCAL OUTCOME</span><p>{stage.local_outcome}</p></section>
-          )}
 
           <StageStepNavigation artifact={artifact} projectId={projectId} stage={stage} />
         </article>

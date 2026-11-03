@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-import { ApiError, createDraftFromRun } from "../lib/api";
+import { prepareGenerationDraft } from "../lib/generation-draft";
 
 import { GenerationPanel, type EffectiveGeneration } from "./generation-panel";
 
@@ -32,27 +32,30 @@ interface GenerationSectionProps {
 export function GenerationSection(props: GenerationSectionProps) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const [ready, setReady] = useState<{ matchesRun: boolean } | null>(null);
+  const [failedRunId, setFailedRunId] = useState<string | null>(null);
+  const [opening, setOpening] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ready) resultRef.current?.scrollIntoView({ block: "nearest" });
+  }, [ready]);
 
   const handleCandidateReady = useCallback(
     async (runId: string) => {
+      setOpening(true);
       try {
-        await createDraftFromRun(props.projectId, runId);
+        const result = await prepareGenerationDraft(props.projectId, runId);
+        setReady({ matchesRun: result.matchesRun });
         setError(null);
+        setFailedRunId(null);
+        router.refresh();
       } catch (cause) {
-        // A draft may already exist from an earlier run. That is a normal state,
-        // not a failure worth blocking on: the panel already reports the run
-        // result, and the draft screen is reachable from the sidebar.
-        if (cause instanceof ApiError && cause.status === 409) {
-          setError(null);
-        } else {
-          setError(
-            cause instanceof ApiError
-              ? cause.message
-              : "The candidate is ready, but the draft could not be opened for editing.",
-          );
-        }
+        setFailedRunId(runId);
+        setError(cause instanceof Error ? cause.message : "The candidate is ready, but its draft could not be opened.");
+      } finally {
+        setOpening(false);
       }
-      router.refresh();
     },
     [props.projectId, router],
   );
@@ -60,10 +63,29 @@ export function GenerationSection(props: GenerationSectionProps) {
   return (
     <>
       <GenerationPanel {...props} onCandidateReady={handleCandidateReady} />
+      {ready && (
+        <div className="generation-result" ref={resultRef} role="status">
+          <p className="eyebrow">{ready.matchesRun ? "READY FOR REVIEW" : "EXISTING DRAFT"}</p>
+          <h2>{ready.matchesRun ? "Your draft is ready." : "An earlier draft is still open."}</h2>
+          <p>{ready.matchesRun
+            ? "Review your generated COP and make any edits. Publish only when you are ready."
+            : "The new candidate is saved. Your existing draft and edits have not been replaced."}</p>
+          <a className="primary-link" href={`/projects/${props.projectId}/draft`}>
+            {ready.matchesRun ? "Review draft" : "Review existing draft"} ↗
+          </a>
+        </div>
+      )}
+      {opening && <p className="muted-note" role="status">Preparing your draft…</p>}
       {error && (
         <p className="form-error" role="alert">
           {error}
         </p>
+      )}
+      {failedRunId && (
+        <button className="secondary-button" type="button" disabled={opening}
+          onClick={() => void handleCandidateReady(failedRunId)}>
+          {opening ? "Opening…" : "Retry opening draft"}
+        </button>
       )}
     </>
   );

@@ -16,9 +16,11 @@ import re
 from typing import Any
 
 import pytest
+from jsonschema import Draft202012Validator
 
-from app.harness.prompts import build_refine_prompt
+from app.harness.prompts import build_process_prompt, build_refine_prompt
 from app.harness.providers.mock import MockProvider
+from app.harness.schemas import PROCESSES_SCHEMA, REFINE_SCHEMA
 from app.harness.steps.h140_refine_target import targeted_artifact_view
 
 PAYLOAD = re.compile(r"<payload>(.*?)</payload>", re.S)
@@ -60,30 +62,13 @@ def artifact(goal_id: str = "goal.ship_a_capability") -> dict[str, Any]:
 
 async def ask_refine(view: dict[str, Any], issues: list[dict[str, Any]]) -> dict[str, Any]:
     system, user = build_refine_prompt(artifact=view, issues=issues, locked_paths=[], language="en")
-    return await MockProvider().generate_structured(
+    result = await MockProvider().generate_structured(
         system_prompt=system,
         user_prompt=user,
-        schema={
-            "title": "H110Refine",
-            "type": "object",
-            "properties": {
-                "revisions": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "entity_type": {"type": "string"},
-                            "entity_key": {"type": "string"},
-                            "field": {"type": "string"},
-                            "value": {"type": "string"},
-                        },
-                        "required": ["entity_type", "entity_key", "field", "value"],
-                    },
-                }
-            },
-            "required": ["revisions"],
-        },
+        schema=REFINE_SCHEMA,
     )
+    Draft202012Validator(REFINE_SCHEMA).validate(result)
+    return result
 
 
 @pytest.mark.asyncio
@@ -191,3 +176,18 @@ def test_the_payload_block_is_still_machine_readable() -> None:
     decoded = payload_of(user)
 
     assert decoded["artifact"]["target"]["entity_id"] == GOAL_ID
+
+
+@pytest.mark.asyncio
+async def test_mock_process_plan_obeys_the_same_schema_as_live_generation():
+    system, user = build_process_prompt(
+        goal={"key": "g", "title": "Observe", "outcome": "A checked result"},
+        scope={"domain": "A synthetic task"}, brief={}, siblings=[], language="en",
+    )
+    result = await MockProvider().generate_structured(
+        system_prompt=system, user_prompt=user, schema=PROCESSES_SCHEMA,
+    )
+    Draft202012Validator(PROCESSES_SCHEMA).validate(result)
+    assert [entry["stage_key"] for entry in result["teaching_plan"]["stages"]] == [
+        stage["key"] for stage in result["stages"]
+    ]

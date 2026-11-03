@@ -1,6 +1,6 @@
 # COP 项目执行总纲：Goal · Plan · Task · Method
 
-更新日期：2026-10-04（Asia/Shanghai）。
+更新日期：2026-11-03（Asia/Shanghai）。
 
 ## 文档优先级（先读这段，避免三份计划互相矛盾）
 
@@ -16,9 +16,23 @@
 
 用途：集中记录我们当前的目标、工作原则、开发顺序、任务拆分、验证方法、进度与下一步；也作为新 Harness / 开发者的交接入口。
 
-当前停靠点：**A1 真实 Provider 验证完成（Basic 2/2 + Tools 4/4 全部 PASS），工程实现 79 项测试通过。等待 B08 目标用户验收（独立完成 Practice 练习）。**
+当前停靠点：**内容逻辑优化已实现并通过本轮工程回归；独立传播学教学候选已可预览，等待真人学习验收。自动生产稳定性仍未验证。**
+
+本轮范围、114 个前端测试／174 个选定后端离线测试、浏览器与数据不变验证见
+[CONTENT_OPTIMIZATION.md](CONTENT_OPTIMIZATION.md)，具体教学错误与真人协议见
+[CONTENT_LOGIC_AUDIT.md](CONTENT_LOGIC_AUDIT.md)。旧 Basic 2/2、Tools 4/4 的真实调用
+记录仅覆盖当时样板，不作为本轮 Harness 已部署或新课有效的证据。本轮没有付费调用、
+发布或重启 worker；未确认运行中进程已加载后端修改。B08 仍待目标用户独立验收。
 
 本文汇总已讨论的方向与最新验证记录，不代表所有未来设计已冻结，不新增收费调用、自动发布、任意代码执行或覆盖历史数据的授权。
+
+本轮发布工作区增量：阅读引导、共享步骤阅读器、版本内导航与后续 prompt 写作要求，
+计划与验证见 [WORKSPACE_READABILITY_PLAN.md](WORKSPACE_READABILITY_PLAN.md)。
+该增量不代表 A2 数据契约升级、A4 稳定生产或目标用户学习验收已完成。
+
+用户明确的产品原则：**产品是给人用的，交互要舒服，内容要有用；不能把简洁做成省略必要解释。**
+后续审查以学习者能否理解、完成、解释、排错和迁移为准，不以字段齐全或测试数量代替。
+本轮根因与实施边界见 [LEARNER_FIRST_PLAN.md](LEARNER_FIRST_PLAN.md)。
 
 ## 1. 为什么要做这轮工作
 
@@ -94,9 +108,9 @@ Tools 的能力成果：用户能让 Agent 使用一个本地确定性工具，�
 | --- | --- | --- | --- |
 | A0 标准方向 | 标准要求、模板、rubric、验证状态定义 | 内容/产品/工程对合格的含义一致；待定设计明确列出 | 方向已讨论并用于原型；细节仍是可修订草案，未冻结为新 Schema |
 | A1 最小标准单位 | Basic + Tools，包含 Foundation、脚本、交接、备选、Practice、证据 | 目标用户能独立完成；独立验收可拒绝错误实现；信息负担合理 | Basic 工程/离线通过；真实/用户验收待办；Tools 未开始 |
-| A2 最小契约与展示 | 从样板提炼必要字段，打通保存、编辑、展示、导出 | 字段不丢失；旧版本可读；默认/备选入口可达 | 未开始正式契约升级；A1 已做必要 UI 修复 |
+| A2 最小契约与展示 | 从样板提炼必要字段，打通保存、编辑、展示、导出 | 字段不丢失；旧版本可读；默认/备选入口可达 | 独立实验侧车与阅读器已实现；未升级正式 COP 0.1 契约 |
 | A3 完整 LangChain 样板 | 五个能力 Goal，修复旧审查问题 | 各默认 Process 和 Practice 执行闭合，范围与用户验收有记录 | 未完成；旧发布内容未被覆盖 |
-| A4 Harness 生产升级 | 执行计划驱动一致生成、分层检查、有限修复、诚实候选 | 多次新生成满足相同判据，不靠人工逐份改稿 | 未开始本轮生产契约升级 |
+| A4 Harness 生产升级 | 执行计划驱动一致生成、分层检查、有限修复、诚实候选 | 多次新生成满足相同判据，不靠人工逐份改稿 | H40/H50/H80 计划承接、H60 跨批身份已实现并离线回归；未部署/重跑验证，未达到退出条件 |
 | A5 泛化与稳定性 | 留出场景、输入变体、其他领域、误接受/误拒/成本评估 | 不过拟合 LangChain；改善有基线与样本依据 | 未开始 |
 
 阶段有依赖，不用日历日期假装完成承诺。可以提前设计后续接口，但没有达到当前退出条件时，不把后续阶段标成完成。
@@ -136,11 +150,11 @@ Tools 的能力成果：用户能让 Agent 使用一个本地确定性工具，�
 
 Basic 当前交付入口：
 
-- [课件 README](/Users/milin/2026/软件开发/COP/examples/langchain-basic/README.md)
-- [独立 COP](/Users/milin/2026/软件开发/COP/fixtures/langchain-basic-cop.json)
-- [来源摘要](/Users/milin/2026/软件开发/COP/fixtures/langchain-basic-sources.json)
+- [课件 README](../../examples/langchain-basic/README.md)
+- [独立 COP](../../fixtures/langchain-basic-cop.json)
+- [来源摘要](../../fixtures/langchain-basic-sources.json)
 - [只读原型预览](http://127.0.0.1:3000/prototypes/langchain-basic)
-- [验证记录](/Users/milin/2026/软件开发/COP/docs/validation/langchain-basic-prototype-2026-10-03.md)
+- [验证记录](../../docs/validation/langchain-basic-prototype-2026-10-03.md)
 
 ### 5.3 A1-T：Tools 子样板
 
@@ -368,28 +382,28 @@ Example、Practice、近邻迁移问题
 
 | 用途 | 入口 |
 | --- | --- |
-| 质量标准与生产方案草案 | [cop-quality-standard-and-production-v1.md](/Users/milin/2026/软件开发/COP/docs/proposals/cop-quality-standard-and-production-v1.md) |
-| 旧 LangChain 全面审查 | [langchain-case-audit-2026-10-02.md](/Users/milin/2026/软件开发/COP/docs/validation/langchain-case-audit-2026-10-02.md) |
-| 当前 Basic 验证范围与内容摘要 | [langchain-basic-prototype-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/langchain-basic-prototype-2026-10-03.md) |
-| Basic 内容审核记录 | [langchain-basic-content-review-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/langchain-basic-content-review-2026-10-03.md) |
-| Tools 任务定义草案（T01） | [tools-task-definition-v1.md](/Users/milin/2026/软件开发/COP/docs/proposals/tools-task-definition-v1.md) |
-| Tools 教学入口（待 T01 确认） | [README.md](/Users/milin/2026/软件开发/COP/examples/langchain-tools/README.md) |
-| Basic 与 Tools 对照（T08） | [tools-basic-comparison-t08-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/tools-basic-comparison-t08-2026-10-03.md) |
-| Tools 验证记录 | [tools-tools-prototype-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/tools-tools-prototype-2026-10-03.md) |
-| Tools 完成度审核 | [tools-completion-audit-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/tools-completion-audit-2026-10-03.md) |
-| Tools 内容审核记录 | [langchain-tools-content-review-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/langchain-tools-content-review-2026-10-03.md) |
-| 真实验证授权请求 | [a1-authorization-request-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-authorization-request-2026-10-03.md) |
-| A1 状态摘要 | [a1-status-summary-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-status-summary-2026-10-03.md) |
-| 执行就绪检查清单 | [a1-execution-readiness-checklist-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-execution-readiness-checklist-2026-10-03.md) |
-| 真实验证准备清单 | [a1-real-verification-runbook.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-real-verification-runbook.md) |
-| 真实验证结果（2026-10-03） | [a1-real-verification-results-2026-10-03.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-real-verification-results-2026-10-03.md) |
-| A1 完成总结 | [a1-completion-summary.md](/Users/milin/2026/软件开发/COP/docs/validation/a1-completion-summary.md) |
-| Basic 教学入口 | [README.md](/Users/milin/2026/软件开发/COP/examples/langchain-basic/README.md) |
-| 实际离线结果（Basic） | [langchain-basic-offline-run-2026-10-03.json](/Users/milin/2026/软件开发/COP/docs/validation/langchain-basic-offline-run-2026-10-03.json) |
-| 实际离线结果（Tools） | [tools-tools-offline-run-2026-10-03.json](/Users/milin/2026/软件开发/COP/docs/validation/tools-tools-offline-run-2026-10-03.json) |
-| 项目开发计划 | [DEVELOPMENT_PLAN.md](/Users/milin/2026/软件开发/COP/DEVELOPMENT_PLAN.md) |
-| 工程交接记忆 | [MEMORY.md](/Users/milin/2026/软件开发/COP/MEMORY.md) |
-| 当前 Schema | [cop-artifact.schema.json](/Users/milin/2026/软件开发/COP/schemas/cop-artifact.schema.json) |
-| 当前质量检查实现 | [quality.py](/Users/milin/2026/软件开发/COP/backend/app/domain/quality.py) |
+| 质量标准与生产方案草案 | [cop-quality-standard-and-production-v1.md](../../docs/proposals/cop-quality-standard-and-production-v1.md) |
+| 旧 LangChain 全面审查 | [langchain-case-audit-2026-10-02.md](../../docs/validation/langchain-case-audit-2026-10-02.md) |
+| 当前 Basic 验证范围与内容摘要 | [langchain-basic-prototype-2026-10-03.md](../../docs/validation/langchain-basic-prototype-2026-10-03.md) |
+| Basic 内容审核记录 | [langchain-basic-content-review-2026-10-03.md](../../docs/validation/langchain-basic-content-review-2026-10-03.md) |
+| Tools 任务定义草案（T01） | [tools-task-definition-v1.md](../../docs/proposals/tools-task-definition-v1.md) |
+| Tools 教学入口（待 T01 确认） | [README.md](../../examples/langchain-tools/README.md) |
+| Basic 与 Tools 对照（T08） | [tools-basic-comparison-t08-2026-10-03.md](../../docs/validation/tools-basic-comparison-t08-2026-10-03.md) |
+| Tools 验证记录 | [tools-tools-prototype-2026-10-03.md](../../docs/validation/tools-tools-prototype-2026-10-03.md) |
+| Tools 完成度审核 | [tools-completion-audit-2026-10-03.md](../../docs/validation/tools-completion-audit-2026-10-03.md) |
+| Tools 内容审核记录 | [langchain-tools-content-review-2026-10-03.md](../../docs/validation/langchain-tools-content-review-2026-10-03.md) |
+| 真实验证授权请求 | [a1-authorization-request-2026-10-03.md](../../docs/validation/a1-authorization-request-2026-10-03.md) |
+| A1 状态摘要 | [a1-status-summary-2026-10-03.md](../../docs/validation/a1-status-summary-2026-10-03.md) |
+| 执行就绪检查清单 | [a1-execution-readiness-checklist-2026-10-03.md](../../docs/validation/a1-execution-readiness-checklist-2026-10-03.md) |
+| 真实验证准备清单 | [a1-real-verification-runbook.md](../../docs/validation/a1-real-verification-runbook.md) |
+| 真实验证结果（2026-10-03） | [a1-real-verification-results-2026-10-03.md](../../docs/validation/a1-real-verification-results-2026-10-03.md) |
+| A1 完成总结 | [a1-completion-summary.md](../../docs/validation/a1-completion-summary.md) |
+| Basic 教学入口 | [README.md](../../examples/langchain-basic/README.md) |
+| 实际离线结果（Basic） | [langchain-basic-offline-run-2026-10-03.json](../../docs/validation/langchain-basic-offline-run-2026-10-03.json) |
+| 实际离线结果（Tools） | [tools-tools-offline-run-2026-10-03.json](../../docs/validation/tools-tools-offline-run-2026-10-03.json) |
+| 项目开发计划 | [DEVELOPMENT_PLAN.md](../../DEVELOPMENT_PLAN.md) |
+| 工程交接记忆 | [MEMORY.md](../../MEMORY.md) |
+| 当前 Schema | [cop-artifact.schema.json](../../schemas/cop-artifact.schema.json) |
+| 当前质量检查实现 | [quality.py](../../backend/app/domain/quality.py) |
 
 维护规则：每轮完成后更新日期、任务状态、对应证据和下一停靠点；未运行的验证不勾选；未来计划与已经实现的事实始终分开。

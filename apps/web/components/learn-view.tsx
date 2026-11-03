@@ -11,6 +11,7 @@ import {
   type StageStatus,
 } from "../lib/api";
 import { artifactSelectors } from "../lib/artifact-selectors";
+import { selectLearningStep } from "../lib/learning-guide";
 import { PracticeCard } from "./practice-card";
 import { StageContent } from "./stage-content";
 import type { ResolvedSource } from "./evidence-panel";
@@ -29,10 +30,9 @@ interface LearnViewProps {
 /**
  * Learn Mode for one Goal.
  *
- * The whole Main Process is rendered above the fold at all times, which is the
- * product's central claim: you should always be able to see where you are on the
- * main line, not just the step you are standing on. A progress UI that shows
- * only the current Stage would replace that with a tunnel.
+ * The whole route remains available alongside the active step (below it on
+ * small screens), rather than being replaced by the active step. Viewing and
+ * navigating never write progress; only the explicit completion controls do.
  */
 export function LearnView({
   projectId,
@@ -161,13 +161,17 @@ export function LearnView({
   const practice = artifactSelectors.getPracticeForProcess(artifact, process);
   // The first Stage the user has not finished: where "continue" should land.
   const nextStage = stages.find((stage) => statusFor(stage.id) !== "completed") ?? stages[0];
-  const currentStage =
-    stages.find((stage) => stage.id === selectedStageId) ?? nextStage;
-  const currentIndex = stages.findIndex((stage) => stage.id === currentStage.id);
+  const preparation = artifact.shared_foundations.find((item) => item.id === process.start.ref);
+  const preparationStages = (preparation?.stage_refs ?? []).map((id) => artifactSelectors.getStage(artifact, id));
+  const { stage: currentStage, ordered, isFoundation } = selectLearningStep({
+    stages, foundations: preparationStages, selectedStageId, statusFor, foundationStatusFor,
+  });
+  const currentIndex = ordered.findIndex((stage) => stage.id === currentStage.id);
+  const currentStatus = isFoundation ? foundationStatusFor(currentStage.id) : statusFor(currentStage.id);
   const stageHref = (stageId: string) =>
     `/projects/${projectId}/learn?goal=${encodeURIComponent(selectedGoalId)}` +
     `&version=${encodeURIComponent(progress.version_id)}` +
-    `&stage=${encodeURIComponent(stageId)}`;
+     `&stage=${encodeURIComponent(stageId)}#current-step`;
   const completedCount = stages.filter((stage) => statusFor(stage.id) === "completed").length;
   // Derived the same way the server derives it, so the "Goal complete" line can
   // never disagree with the badge on the Goal list. The server's `blocked_by` is
@@ -188,6 +192,24 @@ export function LearnView({
 
   return (
     <div className="learn-view">
+      <section className="learn-goal-context" aria-label="Current goal">
+        <p className="eyebrow">YOU ARE WORKING TOWARDS</p>
+        {goal.why_it_matters && <div className="learn-goal-rationale">
+          <h2>Why this goal is in the plan</h2>
+          <p>{goal.why_it_matters}</p>
+        </div>}
+        <details>
+          <summary>{goal.title}</summary>
+          <p>{goal.outcome}</p>
+          {!!goal.prerequisite_goal_refs?.length && <>
+            <p className="eyebrow">EARLIER GOALS IN THIS PLAN</p>
+            <ul>{goal.prerequisite_goal_refs.map((id) => {
+              const prerequisite = artifact.goals.find((item) => item.id === id);
+              return prerequisite && <li key={id}><a className="workspace-text-link" href={`/projects/${projectId}/learn?goal=${encodeURIComponent(id)}&version=${encodeURIComponent(progress.version_id)}`}>{prerequisite.title} →</a></li>;
+            })}</ul>
+          </>}
+        </details>
+      </section>
       {/* The shared setup, once. Every Main Process starts here, so it is a
           single checklist rather than something repeated per Goal. */}
       {foundationStages.length > 0 && (
@@ -210,11 +232,8 @@ export function LearnView({
                     {stage ? (
                       <details>
                         <summary>Open foundation: {stage.title}</summary>
-                        <p className="eyebrow">LOCAL GOAL</p>
-                        <p>{stage.local_goal}</p>
-                        {stage.why_it_exists && <p>{stage.why_it_exists}</p>}
-                        <StageContent artifact={artifact} projectId={projectId} stage={stage} sources={sources} />
-                        {stage.local_outcome && <p className="muted-note">Outcome: {stage.local_outcome}</p>}
+                         <StageContent artifact={artifact} projectId={projectId} stage={stage} sources={sources} />
+                         <a className="workspace-text-link" href={stageHref(stage.id)}>Read this preparation step →</a>
                       </details>
                     ) : <span>{item.stage_id}</span>}
                   </div>
@@ -238,14 +257,14 @@ export function LearnView({
         </section>
       )}
 
-      <section className="learn-mainline">
+      <section className="learn-mainline" id="learn-route" aria-label="Steps in this goal">
         <div className="section-title-row">
           <div>
-            <p className="eyebrow">MAIN PROCESS · ALWAYS VISIBLE</p>
-            <h2>{process.title}</h2>
+            <p className="eyebrow">YOUR ROUTE</p>
+            <h2>Steps in this goal</h2>
             <p className="muted-note">
-              {completedCount} of {stages.length} stages complete
-              {goalComplete && " · Goal complete"}
+              {completedCount} of {stages.length} steps marked complete
+                {goalComplete && " · Goal complete"}
             </p>
           </div>
         </div>
@@ -254,39 +273,39 @@ export function LearnView({
           <li className="learn-stage-zero">
             <span className="learn-stage-index">00</span>
             <div>
-              <small>{process.start.type === "foundation" ? "SHARED FOUNDATION" : "ZERO STATE"}</small>
+              <small>{process.start.type === "foundation" ? "SHARED PREPARATION" : "STARTING POINT"}</small>
               <strong>
                 {artifact.shared_foundations.find((f) => f.id === process.start.ref)?.title ??
-                  "Start from zero"}
+                  "No shared preparation listed"}
               </strong>
             </div>
           </li>
           {stages.map((stage, index) => {
             const status = statusFor(stage.id);
             return (
-              <li className={`learn-stage ${status}${stage.id === nextStage.id ? " next" : ""}`} key={stage.id}>
+              <li className={`learn-stage ${status}${stage.id === nextStage.id ? " next" : ""}${stage.id === currentStage.id ? " is-current" : ""}`} key={stage.id}>
                 <button
                   aria-label={
                     status === "completed"
                       ? `Reopen stage ${index + 1}`
                       : `Mark stage ${index + 1} complete`
                   }
-                  className="learn-stage-toggle"
+                   className="learn-stage-toggle"
+                   title={status === "completed" ? `Reopen step ${index + 1}` : `Mark step ${index + 1} complete`}
                   disabled={pending === stage.id}
                   onClick={() =>
                     void mark(stage.id, status === "completed" ? "in_progress" : "completed")
                   }
                   type="button"
                 >
-                  {status === "completed" ? "✓" : String(index + 1).padStart(2, "0")}
+                   {status === "completed" ? "✓" : "○"}
                 </button>
                 <div className="learn-stage-body">
-                  <small>STAGE {index + 1}</small>
+                   <small>STEP {index + 1}{stage.id === currentStage.id ? " · READING NOW" : ""}</small>
                   <strong>{stage.title}</strong>
-                  <p>{stage.local_goal}</p>
                 </div>
-                <a className="secondary-button learn-stage-open" href={`/projects/${projectId}/stages/${encodeURIComponent(stage.id)}`}>
-                  Open
+                <a className="secondary-button learn-stage-open" aria-current={stage.id === currentStage.id ? "step" : undefined} href={stageHref(stage.id)}>
+                  Read step
                 </a>
               </li>
             );
@@ -307,80 +326,44 @@ export function LearnView({
         )}
       </section>
 
-      <aside className="learn-detail">
+      <article className="learn-detail" id="current-step" aria-label="Current step instructions">
         <div className="learn-detail-card">
-          <p className="eyebrow">CURRENT STAGE</p>
+          <p className="eyebrow">{isFoundation ? "PREPARATION" : "CURRENT STEP"} · {currentIndex + 1} OF {ordered.length}</p>
           {/* Own class rather than a bare `h3` selector. The card now also holds
               the Practice, which has its own heading, so "the title of the Stage
               being shown" needs to be addressable on its own instead of by
               position among whatever else the card contains. */}
           <h3 className="learn-current-stage-title">{currentStage.title}</h3>
-          <p className="lead-copy">{currentStage.local_goal}</p>
-          {currentStage.why_it_exists && <p className="muted-note">{currentStage.why_it_exists}</p>}
+          <a className="workspace-text-link learn-route-jump" href="#learn-route">See all steps in this goal ↓</a>
+
+          <div className="learn-stage-content">
+            <StageContent artifact={artifact} projectId={projectId} sources={sources} stage={currentStage} />
+          </div>
+
+          <p className="step-reading-note">Mark complete only after checking your result. Previous and Next change the step you read; they do not save completion.</p>
 
           <div className="learn-stage-navigation" aria-label="Move through stages">
             {currentIndex > 0 ? (
-              <a className="secondary-button" href={stageHref(stages[currentIndex - 1].id)}>Previous</a>
+              <a className="secondary-button" href={stageHref(ordered[currentIndex - 1].id)}>Previous</a>
             ) : <span />}
             <button
               className="primary-button"
               disabled={pending === currentStage.id}
               onClick={() =>
-                void mark(
-                  currentStage.id,
-                  statusFor(currentStage.id) === "completed" ? "in_progress" : "completed",
-                )
+                void (isFoundation ? markFoundation : mark)(currentStage.id,
+                  currentStatus === "completed" ? "in_progress" : "completed")
               }
               type="button"
             >
-              {statusFor(currentStage.id) === "completed" ? "Reopen stage" : "Mark complete"}
+              {currentStatus === "completed" ? "Reopen stage" : "Mark complete"}
             </button>
-            {currentIndex < stages.length - 1 ? (
-              <a className="secondary-button" href={stageHref(stages[currentIndex + 1].id)}>Next</a>
+            {currentIndex < ordered.length - 1 ? (
+              <a className="secondary-button" href={stageHref(ordered[currentIndex + 1].id)}>Next</a>
             ) : <span />}
           </div>
 
-          <h4>Concepts</h4>
-          <ul>
-            {artifactSelectors.getConceptsForStage(artifact, currentStage).map((concept) => (
-              <li key={concept.id}>
-                <strong>{concept.name}</strong>
-                <span>{concept.definition}</span>
-              </li>
-            ))}
-            {artifactSelectors.getConceptsForStage(artifact, currentStage).length === 0 && (
-              <li className="muted-note">No concepts attached to this stage.</li>
-            )}
-          </ul>
-
-          <h4>Operations</h4>
-          <ul>
-            {artifactSelectors.getOperationsForStage(artifact, currentStage).map((operation) => (
-              <li key={operation.id}>
-                <strong>{operation.name}</strong>
-                <span>{operation.definition}</span>
-              </li>
-            ))}
-            {artifactSelectors.getOperationsForStage(artifact, currentStage).length === 0 && (
-              <li className="muted-note">No operations attached to this stage.</li>
-            )}
-          </ul>
-
-          {/* Method, example, evidence, and failure modes. Shared with the
-              Stage page so the two cannot drift again -- the previous pair of
-              renderers already had: Learn showed the method, the Stage page
-              showed nothing, and neither showed evidence. */}
-          <div className="learn-stage-content">
-            <StageContent
-              artifact={artifact}
-              projectId={projectId}
-              showConcepts={false}
-              sources={sources}
-              stage={currentStage}
-            />
-          </div>
-
-          {practice && (
+          {!isFoundation && practice && <details className="learn-practice-disclosure" open={currentIndex === ordered.length - 1}>
+            <summary>After the steps: check your understanding</summary>
             <PracticeCard
               disabled={pending === `practice:${goal.id}`}
               onAnswerCheckpoint={(question, answer) => void answerCheckpoint(question, answer)}
@@ -396,9 +379,9 @@ export function LearnView({
                 updated_at: goalProgress.practice?.updated_at ?? null,
               }}
             />
-          )}
+          </details>}
         </div>
-      </aside>
+      </article>
     </div>
   );
 }

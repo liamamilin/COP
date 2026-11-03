@@ -267,6 +267,18 @@ export function restoreProject(projectId: string): Promise<ProjectSummary> {
   });
 }
 
+/** Lifecycle transport is shared by entry points; confirmation belongs to UI. */
+export function archiveProject(projectId: string): Promise<ProjectSummary> {
+  return send<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}`, {
+    method: "PATCH", body: JSON.stringify({ status: "archived" }),
+  });
+}
+
+/** Existing backend semantics: hide from the app, not a physical data purge. */
+export function deleteProject(projectId: string): Promise<void> {
+  return send<void>(`/projects/${encodeURIComponent(projectId)}`, { method: "DELETE" });
+}
+
 export function getProject(projectId: string): Promise<ProjectSummary> {
   return request<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}`);
 }
@@ -471,8 +483,29 @@ export async function getRunProgress(runId: string): Promise<RunProgress> {
   );
 }
 
+/**
+ * Most recent runs for a project, newest first.
+ *
+ * The panel used to hold its run id only in component state, so leaving the page
+ * and coming back showed the "start a new run" form while a run was still
+ * running or had already finished. The server knows; the browser has to ask.
+ */
+export async function listGenerationRuns(projectId: string): Promise<GenerationRun[]> {
+  return request<GenerationRun[]>(
+    `/projects/${encodeURIComponent(projectId)}/generation-runs`,
+  );
+}
+
 export async function cancelGenerationRun(runId: string): Promise<GenerationRun> {
   return post<GenerationRun>(`/generation-runs/${encodeURIComponent(runId)}/cancel`);
+}
+
+export async function resumeGenerationRun(
+  runId: string, expectedAttempt: number, timeoutSeconds?: number,
+): Promise<GenerationRun> {
+  return post<GenerationRun>(`/generation-runs/${encodeURIComponent(runId)}/resume`, {
+    expected_attempt: expectedAttempt, timeout_seconds: timeoutSeconds,
+  });
 }
 
 /**

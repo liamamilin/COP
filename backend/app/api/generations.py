@@ -16,7 +16,7 @@ from typing import Annotated, Any, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -27,6 +27,7 @@ from app.domain.patches import REFINABLE_ENTITIES
 from app.harness.provider_factory import resolve_effective_settings_with_run
 from app.harness.steps import PHASES, TARGETED_PHASES
 from app.jobs.events import read_events
+from app.jobs.resumption import recovery_view, resume_events, resume_run
 from app.jobs.runner import (
     create_run,
     latest_sequence,
@@ -118,6 +119,12 @@ class GenerationRunOut(BaseModel):
     updated_at: Any = None
 
 
+class ResumeRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    expected_attempt: int = Field(ge=1)
+    timeout_seconds: int | None = Field(default=None, ge=5, le=600)
+
+
 class PhaseOut(BaseModel):
     key: str
     label: str
@@ -182,10 +189,15 @@ def phase_states(events: list[dict[str, Any]], *, run_status: str) -> list[Phase
     completed_steps: set[str] = set()
     active_steps: set[str] = set()
     for event in events:
+        if event["type"] == "run.resume_requested":
+            completed_steps = set(event.get("payload", {}).get("completed_steps", []))
+            active_steps.clear()
+            continue
         step = event.get("step")
         if not step or str(step) not in step_to_phase:
             continue
         if event["type"] == "step.started":
+            completed_steps.discard(str(step))
             active_steps.add(str(step))
         elif event["type"] == "step.completed":
             completed_steps.add(str(step))
@@ -295,6 +307,8 @@ def stream_generation_events(
     rows and closes once the run reaches a terminal state.
     """
     _require_run(db, run_id)
+    attempts = resume_events(db, run_id)
+    attempt_cursor = attempts[-1].sequence if attempts else 0
     db.close()
 
     async def publisher() -> AsyncIterator[bytes]:
@@ -302,6 +316,8 @@ def stream_generation_events(
         header = request.headers.get("last-event-id")
         if header and header.isdigit():
             cursor = int(header)
+        # Old terminal events belong to an earlier attempt, not to the live run.
+        cursor = max(cursor, attempt_cursor)
         idle = 0
         while True:
             if await request.is_disconnected():
@@ -370,14 +386,28 @@ def generation_progress(run_id: uuid.UUID, db: DbSession) -> dict[str, Any]:
     return {
         "run": run_out(run).model_dump(mode="json"),
         "phases": [phase.model_dump() for phase in phase_states(events, run_status=run.status)],
-        "candidate_available": run.candidate_artifact_json is not None,
+        "candidate_available": run.status in {"completed", "needs_attention"}
+        and run.candidate_artifact_json is not None,
+        "recovery": recovery_view(db, run),
+        "last_event_id": latest_sequence(db, run_id),
     }
+
+
+@router.post("/generation-runs/{run_id}/resume", response_model=GenerationRunOut)
+def resume_generation_run(
+    run_id: uuid.UUID, body: ResumeRequest, db: DbSession
+) -> GenerationRunOut:
+    return run_out(
+        resume_run(
+            db, run_id, expected_attempt=body.expected_attempt, timeout_seconds=body.timeout_seconds
+        )
+    )
 
 
 @router.get("/generation-runs/{run_id}/candidate")
 def candidate_artifact(run_id: uuid.UUID, db: DbSession) -> dict[str, Any]:
     run = _require_run(db, run_id)
-    if run.candidate_artifact_json is None:
+    if run.status not in {"completed", "needs_attention"} or run.candidate_artifact_json is None:
         raise CopStudioError(
             "CANDIDATE_NOT_READY",
             "This run has not produced a candidate artifact yet",

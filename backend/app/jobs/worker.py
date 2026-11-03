@@ -19,7 +19,10 @@ from app.core.config import get_settings
 from app.core.errors import CopStudioError
 from app.db.models import GenerationRun
 from app.db.session import SessionLocal
-from app.harness.provider_factory import build_provider
+from app.harness.provider_factory import (
+    build_provider_from_snapshot,
+    resolve_effective_settings_with_run,
+)
 from app.harness.runner import build_metrics, run_pipeline
 from app.jobs.events import append_event
 from app.jobs.runner import (
@@ -84,12 +87,15 @@ async def execute_run() -> bool:
             return False
         run_id = run.id
         context = load_context(run)
-        # Database sources are reloaded on every attempt. Web results are already
-        # persisted as Source rows, so they come back through this same query --
-        # which is what makes an evidence ref to one of them resolvable after a
-        # restart instead of only inside a checkpoint.
-        context.source_bundle = load_source_bundle(db, run)
-        if context.input.get("web_search") and not context.partial_target:
+        # Once intake has completed, reuse its sources verbatim. Reloading a
+        # changed document would mix old Goals with new evidence during resume.
+        if context.intake is None:
+            context.source_bundle = load_source_bundle(db, run)
+        if (
+            context.intake is None
+            and context.input.get("web_search")
+            and not context.partial_target
+        ):
             try:
                 if not settings.exa_api_key:
                     raise CopStudioError(
@@ -155,7 +161,17 @@ async def execute_run() -> bool:
             )
             return True
         try:
-            provider = build_provider(db, run.project_id, context.input.get("settings_override"))
+            snapshot = dict(run.model_config_json or context.settings)
+            if not snapshot.get("provider"):
+                # Older queued jobs did not record a provider. Resolve it once,
+                # then persist it; manual resume refuses missing snapshots.
+                effective = resolve_effective_settings_with_run(
+                    db, run.project_id, context.input.get("settings_override")
+                )
+                snapshot["provider"] = effective["provider"]
+                run.model_config_json = snapshot
+                db.commit()
+            provider = build_provider_from_snapshot(snapshot)
         except Exception as exc:  # noqa: BLE001 - configuration errors are user-facing
             code = getattr(exc, "code", "PROVIDER_NOT_CONFIGURED")
             append_event(db, run_id, "run.failed", payload={"code": code, "message": str(exc)})

@@ -44,7 +44,7 @@ test.describe("generation progress stream", () => {
 
     // The run reaches a terminal state and the copy says so.
     await expect(page.getByText("Candidate ready")).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByRole("button", { name: /Run again/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Start over" })).toBeVisible();
 
     const events = await streamEvents(page);
     const ids = events.map((event) => event.split("#")[1] ?? "-");
@@ -103,6 +103,6 @@ test.describe("generation progress stream", () => {
     // The poll fallback owns the terminal transition, so a dead stream must
     // not strand the UI on a run that actually finished.
     await expect(page.getByText("Candidate ready")).toBeVisible({ timeout: 60_000 });
-    await expect(page.getByRole("button", { name: /Run again/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Start over" })).toBeVisible();
   });
 });

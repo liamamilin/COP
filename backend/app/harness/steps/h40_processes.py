@@ -11,6 +11,7 @@ from app.core.errors import HarnessError
 from app.harness.context import HarnessContext, HarnessEvent, StepResult
 from app.harness.prompts import build_process_prompt
 from app.harness.schemas import PROCESSES_SCHEMA
+from app.harness.teaching_context import normalize_teaching_plan, teaching_plan_status
 
 MIN_STAGES = 3
 MAX_STAGES = 8
@@ -21,12 +22,26 @@ DEPTH_STAGE_LIMITS = {"fast": 5, "standard": 8, "deep": 8}
 def normalize_process(
     raw: dict[str, Any], goal: dict[str, Any], *, max_stages: int = MAX_STAGES
 ) -> dict[str, Any]:
-    """Keep the stage count inside the documented range and rekey stages."""
+    """Rekey the route and its plan together; retain legacy no-plan responses."""
     raw_stages = [item for item in raw.get("stages") or [] if str(item.get("title", "")).strip()]
+    has_plan = raw.get("teaching_plan") is not None
+    if has_plan and len(raw_stages) > max_stages:
+        raise HarnessError(
+            "HARNESS_TEACHING_PLAN_TRUNCATED",
+            f"Process for Goal '{goal['key']}' exceeds {max_stages} Stages; "
+            "cannot silently truncate a planned route",
+        )
     trimmed = raw_stages[:max_stages]
     stages: list[dict[str, Any]] = []
+    stage_key_map: dict[str, str] = {}
     for index, stage in enumerate(trimmed, start=1):
         title = str(stage["title"]).strip()
+        original_key = str(stage.get("key") or "").strip()
+        if has_plan and (not original_key or original_key in stage_key_map):
+            raise HarnessError(
+                "HARNESS_TEACHING_PLAN_REFERENCE", "Planned Stages need unique non-empty keys"
+            )
+        stage_key_map[original_key] = f"{goal['key']}_s{index}"
         stages.append(
             {
                 "key": f"{goal['key']}_s{index}",
@@ -39,6 +54,7 @@ def normalize_process(
         raise HarnessError(
             "HARNESS_PROCESS_EMPTY", f"Process for Goal '{goal['key']}' has no Stage"
         )
+    plan = normalize_teaching_plan(raw.get("teaching_plan"), stages, stage_key_map=stage_key_map)
     return {
         "key": f"p_{goal['key']}",
         "goal_key": goal["key"],
@@ -46,6 +62,8 @@ def normalize_process(
         "outcome": str(raw.get("outcome") or goal["outcome"]).strip(),
         "stage_keys": [stage["key"] for stage in stages],
         "stages": stages,
+        "teaching_plan": plan,
+        "teaching_plan_status": teaching_plan_status(plan),
     }
 
 
@@ -71,6 +89,9 @@ class ProcessBuildStep:
                 brief=brief,
                 siblings=[other for other in goals if other["key"] != goal["key"]],
                 language=language,
+                max_stages=max_stages,
+                learner_level=ctx.settings.get("learner_level")
+                or ctx.input.get("learner_level", "new"),
             )
             payload = await services.complete_structured(
                 system_prompt=system, user_prompt=user, schema=PROCESSES_SCHEMA
@@ -88,6 +109,11 @@ class ProcessBuildStep:
         for process in processes:
             count = len(process["stage_keys"])
             title = process["title"]
+            if process["teaching_plan"] is None:
+                warnings.append(
+                    f"Process '{title}' has no teaching plan (legacy); "
+                    "instructional coherence is not verified."
+                )
             if count < MIN_STAGES:
                 warnings.append(
                     f"Process '{title}' has {count} stages; 3-8 keeps the main line readable"

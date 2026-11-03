@@ -37,22 +37,21 @@ export default async function LearnPage({
   const progress = await getLearningProgress(projectId, version.id).catch(() => null);
   if (!progress) notFound();
 
-  const selectedGoalId = goalParam ?? progress.goals[0]?.goal_id;
-  if (!selectedGoalId) notFound();
+  const selectedGoalId = goalParam ?? progress.goals.find((item) => !item.completed)?.goal_id ?? progress.goals[0]?.goal_id;
+  if (!selectedGoalId || !version.artifact.goals.some((item) => item.id === selectedGoalId)) notFound();
 
   return (
     <ProjectShell active="learn" artifact={version.artifact} project={project} version={version}>
-      <div className="content-wrap">
+      <div className="content-wrap learn-page">
         <header className="page-header detail-header">
           <p className="eyebrow">LEARN · VERSION {progress.version_number}</p>
-          <h1>Work the main line.</h1>
+          <h1>Learn</h1>
           <p className="lead-copy">
-            The whole process stays on screen while you move through it. Your place is saved as
-            you go.
+            Choose a goal, open a step, and follow its instructions. Mark it complete when you&apos;re done.
           </p>
         </header>
 
-        <nav className="learn-versions" aria-label="Choose an artifact version">
+        {versions.length > 1 && <nav className="learn-versions" aria-label="Choose an artifact version">
           {versions.map((item) => (
             <a
               className={item.id === version.id ? "active" : ""}
@@ -62,7 +61,7 @@ export default async function LearnPage({
               v{item.version_number}
             </a>
           ))}
-        </nav>
+        </nav>}
 
         <nav className="learn-goals" aria-label="Choose a goal">
           {progress.goals.map((item) => {
@@ -71,8 +70,10 @@ export default async function LearnPage({
             return (
               <a
                 className={active ? "learn-goal active" : "learn-goal"}
+                aria-current={active ? "page" : undefined}
                 href={href}
                 key={item.goal_id}
+                title={item.title}
               >
                 <span className="learn-goal-progress">
                   {item.completed ? "✓" : `${item.completed_stages}/${item.total_stages}`}

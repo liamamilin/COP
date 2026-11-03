@@ -32,7 +32,7 @@ export function ProcessRail({ artifact, process, projectId, compact }: ProcessRa
           >
             <span className="node-index">00</span>
             <div>
-              <small>SHARED FOUNDATION · {foundation.stage_refs.length} STAGES</small>
+              <small>SHARED PREPARATION · {foundation.stage_refs.length} STEPS</small>
               <strong>{foundation.title}</strong>
             </div>
             <span className="node-arrow">↗</span>
@@ -42,8 +42,8 @@ export function ProcessRail({ artifact, process, projectId, compact }: ProcessRa
         <div className="process-node foundation-node">
           <span className="node-index">00</span>
           <div>
-            <small>ZERO STATE</small>
-            <strong>Start from zero</strong>
+            <small>STARTING POINT</small>
+            <strong>No shared preparation listed</strong>
           </div>
         </div>
       )}
@@ -56,7 +56,7 @@ export function ProcessRail({ artifact, process, projectId, compact }: ProcessRa
           >
             <span className="node-index">{String(index + 1).padStart(2, "0")}</span>
             <div>
-              <small>STAGE {index + 1}</small>
+              <small>STEP {index + 1}</small>
               <strong>{stage.title}</strong>
               {!compact && <p>{stage.local_goal}</p>}
             </div>
@@ -77,4 +77,3 @@ export function ProcessRail({ artifact, process, projectId, compact }: ProcessRa
     </div>
   );
 }
-

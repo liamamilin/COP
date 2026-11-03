@@ -119,6 +119,56 @@ GOALS_SCHEMA: dict[str, Any] = {
     "additionalProperties": True,
 }
 
+# Internal planning contract, persisted in process_drafts rather than added to
+# the published COP schema. H50 realizes it in existing reader-facing fields.
+TEACHING_PLAN_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "central_question": {"type": "string", "minLength": 1, "pattern": r"\S"},
+        "why_this_order": {"type": "string", "minLength": 1, "pattern": r"\S"},
+        "running_case": {
+            "type": "object",
+            "properties": {
+                "scenario": {"type": "string", "minLength": 1, "pattern": r"\S"},
+                "facts": {"type": "array", "items": {"type": "string", "pattern": r"\S"}},
+                "hypotheses": {
+                    "type": "array", "items": {"type": "string", "pattern": r"\S"},
+                },
+            },
+            "required": ["scenario", "facts", "hypotheses"],
+            "additionalProperties": False,
+        },
+        "stages": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "stage_key": {"type": "string", "minLength": 1},
+                    "learning_question": {"type": "string", "pattern": r"\S"},
+                    "why_now": {"type": "string", "pattern": r"\S"},
+                    "builds_on": {
+                        "type": "array", "uniqueItems": True, "items": {"type": "string"},
+                    },
+                    "reasoning_moves": {
+                        "type": "array", "minItems": 1,
+                        "items": {"type": "string", "pattern": r"\S"},
+                    },
+                    "check_focus": {"type": "string", "pattern": r"\S"},
+                    "next_gap": {"type": "string", "pattern": r"\S"},
+                },
+                "required": [
+                    "stage_key", "learning_question", "why_now", "builds_on",
+                    "reasoning_moves", "check_focus", "next_gap",
+                ],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["central_question", "why_this_order", "running_case", "stages"],
+    "additionalProperties": False,
+}
+
 PROCESSES_SCHEMA: dict[str, Any] = {
     "title": "H40MainProcessConstruction",
     "type": "object",
@@ -126,6 +176,7 @@ PROCESSES_SCHEMA: dict[str, Any] = {
         "key": {"type": "string"},
         "title": {"type": "string"},
         "outcome": {"type": "string"},
+        "teaching_plan": TEACHING_PLAN_SCHEMA,
         "stages": {
             "type": "array",
             "items": {
@@ -140,7 +191,7 @@ PROCESSES_SCHEMA: dict[str, Any] = {
             },
         },
     },
-    "required": ["key", "title", "outcome", "stages"],
+    "required": ["key", "title", "outcome", "stages", "teaching_plan"],
     "additionalProperties": True,
 }
 
@@ -346,32 +397,6 @@ CRITIC_SCHEMA: dict[str, Any] = {
     "additionalProperties": True,
 }
 
-REFINE_SCHEMA: dict[str, Any] = {
-    "title": "H110Refine",
-    "type": "object",
-    "properties": {
-        "revisions": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "entity_type": {
-                        "type": "string",
-                        "enum": ["goal", "process", "stage", "concept", "operation", "branch"],
-                    },
-                    "entity_key": {"type": "string"},
-                    "field": {"type": "string"},
-                    "value": {"type": "string"},
-                },
-                "required": ["entity_type", "entity_key", "field", "value"],
-                "additionalProperties": True,
-            },
-        }
-    },
-    "required": ["revisions"],
-    "additionalProperties": True,
-}
-
 CRITIC_ISSUE_CODES = (
     "GOAL_TOO_VAGUE",
     "PROCESS_MAINLINE_HIDDEN",
@@ -465,8 +490,91 @@ REFINABLE_FIELDS: dict[str, frozenset[str]] = {
     "branch": frozenset({"title", "description"}),
 }
 
-#: Fields whose revision value is structured rather than a single string.
-STRUCTURED_REFINABLE_FIELDS: dict[str, frozenset[str]] = {
-    "stage": frozenset({"example", "implementation_details"}),
-    "operation": frozenset({"common_failures"}),
+# The only structured leaf values a refiner may replace. Reuse H50's shapes:
+# generation and repair must agree on what a method or example looks like.
+STRUCTURED_REVISION_SCHEMAS: dict[str, dict[str, dict[str, Any]]] = {
+    "stage": {
+        "example": EXAMPLE_SCHEMA,
+        "implementation_details": {
+            "type": "array",
+            "minItems": 1,
+            "items": IMPLEMENTATION_DETAIL_SCHEMA,
+        },
+    },
+    "operation": {
+        "common_failures": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+        },
+    },
 }
+STRUCTURED_REFINABLE_FIELDS = {
+    kind: frozenset(fields) for kind, fields in STRUCTURED_REVISION_SCHEMAS.items()
+}
+TEXT_REVISION_SCHEMA: dict[str, Any] = {"type": "string", "minLength": 1}
+
+
+def revision_value_schema(entity_type: str, field: str) -> dict[str, Any]:
+    """Shape only; authorization and user locks remain the applier's job."""
+    return STRUCTURED_REVISION_SCHEMAS.get(entity_type, {}).get(field, TEXT_REVISION_SCHEMA)
+
+
+def _refinement_schema(*, text_only: bool = False) -> dict[str, Any]:
+    """Build a field-dependent value contract, not an untyped JSON escape hatch.
+
+    Group plain text fields so the prompt stays compact. An object is valid for
+    Stage.example, for instance, but not Goal.title or any structural reference.
+    Both variants keep the existing mock routing key; H140's review UI still
+    consumes text proposals, while H110 repairs canonical structured content.
+    """
+    variants: list[dict[str, Any]] = []
+    for kind, fields in REFINABLE_FIELDS.items():
+        structured = STRUCTURED_REVISION_SCHEMAS.get(kind, {})
+        variants.append(
+            {
+                "properties": {
+                    "entity_type": {"const": kind},
+                    "field": {"enum": sorted(fields - structured.keys())},
+                    "value": TEXT_REVISION_SCHEMA,
+                }
+            }
+        )
+        if not text_only:
+            for field, value_schema in structured.items():
+                variants.append(
+                    {
+                        "properties": {
+                            "entity_type": {"const": kind},
+                            "field": {"const": field},
+                            "value": value_schema,
+                        }
+                    }
+                )
+    return {
+        "title": "H110Refine",
+        "type": "object",
+        "properties": {
+            "revisions": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "entity_type": {"type": "string", "enum": list(REFINABLE_FIELDS)},
+                        "entity_key": {"type": "string", "minLength": 1},
+                        "field": {"type": "string"},
+                        "value": {"type": ["string", "array", "object"]},
+                    },
+                    "required": ["entity_type", "entity_key", "field", "value"],
+                    "oneOf": variants,
+                    "additionalProperties": True,
+                },
+            }
+        },
+        "required": ["revisions"],
+        "additionalProperties": True,
+    }
+
+
+REFINE_SCHEMA = _refinement_schema()
+TEXT_REFINE_SCHEMA = _refinement_schema(text_only=True)

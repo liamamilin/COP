@@ -48,7 +48,7 @@ def resolve_effective_settings_with_run(
     return effective
 
 
-def _decrypt_provider(db, provider: dict[str, Any]) -> dict[str, Any]:
+def _decrypt_provider(provider: dict[str, Any]) -> dict[str, Any]:
     """Attach the plaintext key for internal use only."""
     from app.core.security import get_secret_cipher
 
@@ -65,7 +65,12 @@ def _decrypt_provider(db, provider: dict[str, Any]) -> dict[str, Any]:
 def build_provider(db, project_id: Any, run_override: dict[str, Any] | None = None) -> LLMProvider:
     """Construct the provider adapter for a run, or explain why it cannot run."""
     effective = resolve_effective_settings_with_run(db, project_id, run_override)
-    provider = _decrypt_provider(db, effective.get("provider") or {})
+    return build_provider_from_snapshot(effective)
+
+
+def build_provider_from_snapshot(settings: dict[str, Any]) -> LLMProvider:
+    """Construct a run's provider without re-reading mutable app/project settings."""
+    provider = _decrypt_provider(settings.get("provider") or {})
 
     if provider.get("type") == "mock":
         return MockProvider(provider.get("mock_scenario", "success"))
@@ -93,6 +98,7 @@ def build_provider(db, project_id: Any, run_override: dict[str, Any] | None = No
 __all__ = [
     "ProviderError",
     "build_provider",
+    "build_provider_from_snapshot",
     "resolve_effective_settings",
     "resolve_effective_settings_with_run",
 ]

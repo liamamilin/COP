@@ -1,0 +1,1076 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cop-studio.local/schemas/learning-unit.experimental.schema.json",
+  "$defs": {
+    "CausalLink": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Concept Ref",
+          "type": "string"
+        },
+        "operation_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Operation Ref",
+          "type": "string"
+        },
+        "before": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Before",
+          "type": "string"
+        },
+        "action": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Action",
+          "type": "string"
+        },
+        "because": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Because",
+          "type": "string"
+        },
+        "after": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "After",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_ref",
+        "operation_ref",
+        "before",
+        "action",
+        "because",
+        "after"
+      ],
+      "title": "CausalLink",
+      "type": "object"
+    },
+    "ConceptExplanation": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Concept Ref",
+          "type": "string"
+        },
+        "plain_language": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Plain Language",
+          "type": "string"
+        },
+        "concrete_example": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Concrete Example",
+          "type": "string"
+        },
+        "contrast": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Contrast",
+          "type": "string"
+        },
+        "why_here": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Why Here",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_ref",
+        "plain_language",
+        "concrete_example",
+        "contrast",
+        "why_here"
+      ],
+      "title": "ConceptExplanation",
+      "type": "object"
+    },
+    "DetailRef": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Stage Ref",
+          "type": "string"
+        },
+        "detail_index": {
+          "minimum": 0,
+          "title": "Detail Index",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "stage_ref",
+        "detail_index"
+      ],
+      "title": "DetailRef",
+      "type": "object"
+    },
+    "EntryResource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Name",
+          "type": "string"
+        },
+        "provenance": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "readiness_check": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Readiness Check",
+          "type": "string"
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "provenance",
+        "readiness_check",
+        "path_ids"
+      ],
+      "title": "EntryResource",
+      "type": "object"
+    },
+    "InputBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "entry",
+            "output"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Ref",
+          "type": "string"
+        },
+        "why_needed": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Why Needed",
+          "type": "string"
+        },
+        "readiness_check": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Readiness Check",
+          "type": "string"
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "ref",
+        "why_needed",
+        "readiness_check",
+        "path_ids"
+      ],
+      "title": "InputBinding",
+      "type": "object"
+    },
+    "LearnerProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "audience": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Audience",
+          "type": "string"
+        },
+        "prior_knowledge": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Prior Knowledge",
+          "type": "array"
+        },
+        "environment": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Environment",
+          "type": "array"
+        },
+        "exclusions": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Exclusions",
+          "type": "array"
+        },
+        "resources": {
+          "items": {
+            "$ref": "#/$defs/EntryResource"
+          },
+          "minItems": 1,
+          "title": "Resources",
+          "type": "array"
+        }
+      },
+      "required": [
+        "audience",
+        "prior_knowledge",
+        "environment",
+        "exclusions",
+        "resources"
+      ],
+      "title": "LearnerProfile",
+      "type": "object"
+    },
+    "LearningPath": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Label",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Description",
+          "type": "string"
+        },
+        "goal_scope": {
+          "enum": [
+            "partial",
+            "full"
+          ],
+          "title": "Goal Scope",
+          "type": "string"
+        },
+        "needs_network": {
+          "title": "Needs Network",
+          "type": "boolean"
+        },
+        "may_cost": {
+          "title": "May Cost",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "description",
+        "goal_scope",
+        "needs_network",
+        "may_cost"
+      ],
+      "title": "LearningPath",
+      "type": "object"
+    },
+    "LearningQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "predict",
+            "explain",
+            "diagnose",
+            "transfer"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "prompt": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Prompt",
+          "type": "string"
+        },
+        "hints": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Hints",
+          "type": "array"
+        },
+        "criteria": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Criteria",
+          "type": "array"
+        },
+        "stage_refs": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Stage Refs",
+          "type": "array"
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "hints",
+        "criteria",
+        "stage_refs",
+        "path_ids"
+      ],
+      "title": "LearningQuestion",
+      "type": "object"
+    },
+    "ReasoningMove": {
+      "additionalProperties": false,
+      "properties": {
+        "observation": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Observation",
+          "type": "string"
+        },
+        "inference": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Inference",
+          "type": "string"
+        },
+        "warrant": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Warrant",
+          "type": "string"
+        },
+        "limitation": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Limitation",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "observation",
+        "inference",
+        "warrant",
+        "limitation",
+        "source_ids"
+      ],
+      "title": "ReasoningMove",
+      "type": "object"
+    },
+    "RouteExplanation": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Stage Ref",
+          "type": "string"
+        },
+        "question": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Question",
+          "type": "string"
+        },
+        "builds_on": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Builds On",
+          "type": "array"
+        },
+        "why_now": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Why Now",
+          "type": "string"
+        },
+        "next_gap": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Next Gap",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage_ref",
+        "question",
+        "builds_on",
+        "why_now",
+        "next_gap"
+      ],
+      "title": "RouteExplanation",
+      "type": "object"
+    },
+    "UnitBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Artifact Sha256",
+          "type": "string"
+        },
+        "goal_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Goal Ref",
+          "type": "string"
+        },
+        "process_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Process Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_sha256",
+        "goal_ref",
+        "process_ref"
+      ],
+      "title": "UnitBinding",
+      "type": "object"
+    },
+    "UnitCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "output_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Output Ref",
+          "type": "string"
+        },
+        "instruction": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Instruction",
+          "type": "string"
+        },
+        "expected": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Expected",
+          "type": "string"
+        },
+        "why": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Why",
+          "type": "string"
+        },
+        "limitation": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Limitation",
+          "type": "string"
+        },
+        "on_failure": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "On Failure",
+          "type": "string"
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "output_ref",
+        "instruction",
+        "expected",
+        "why",
+        "limitation",
+        "on_failure",
+        "path_ids"
+      ],
+      "title": "UnitCheck",
+      "type": "object"
+    },
+    "UnitMethod": {
+      "additionalProperties": false,
+      "properties": {
+        "detail_index": {
+          "minimum": 0,
+          "title": "Detail Index",
+          "type": "integer"
+        },
+        "teaching_note": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Teaching Note",
+          "type": "string"
+        },
+        "optional": {
+          "title": "Optional",
+          "type": "boolean"
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "detail_index",
+        "teaching_note",
+        "optional",
+        "path_ids"
+      ],
+      "title": "UnitMethod",
+      "type": "object"
+    },
+    "UnitOrientation": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Question",
+          "type": "string"
+        },
+        "why_this_route": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Why This Route",
+          "type": "string"
+        },
+        "running_case": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Running Case",
+          "type": "string"
+        },
+        "case_facts": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Case Facts",
+          "type": "array"
+        },
+        "case_unknowns": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Case Unknowns",
+          "type": "array"
+        },
+        "route": {
+          "items": {
+            "$ref": "#/$defs/RouteExplanation"
+          },
+          "minItems": 1,
+          "title": "Route",
+          "type": "array"
+        }
+      },
+      "required": [
+        "question",
+        "why_this_route",
+        "running_case",
+        "case_facts",
+        "case_unknowns",
+        "route"
+      ],
+      "title": "UnitOrientation",
+      "type": "object"
+    },
+    "UnitOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Description",
+          "type": "string"
+        },
+        "producer_stage_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Producer Stage Ref",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "value",
+            "evidence",
+            "private"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "persistence": {
+          "enum": [
+            "durable",
+            "process"
+          ],
+          "title": "Persistence",
+          "type": "string"
+        },
+        "format": {
+          "enum": [
+            "python",
+            "json",
+            "text",
+            "unspecified"
+          ],
+          "title": "Format",
+          "type": "string"
+        },
+        "content_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DetailRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "path_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Path Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "producer_stage_ref",
+        "kind",
+        "persistence",
+        "format",
+        "content_ref",
+        "path_ids"
+      ],
+      "title": "UnitOutput",
+      "type": "object"
+    },
+    "UnitSource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Url",
+          "type": "string"
+        },
+        "scope": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "scope"
+      ],
+      "title": "UnitSource",
+      "type": "object"
+    },
+    "UnitStep": {
+      "additionalProperties": false,
+      "properties": {
+        "stage_ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Stage Ref",
+          "type": "string"
+        },
+        "purpose": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "$ref": "#/$defs/InputBinding"
+          },
+          "minItems": 1,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "concepts": {
+          "items": {
+            "$ref": "#/$defs/ConceptExplanation"
+          },
+          "minItems": 1,
+          "title": "Concepts",
+          "type": "array"
+        },
+        "causal_chain": {
+          "items": {
+            "$ref": "#/$defs/CausalLink"
+          },
+          "minItems": 1,
+          "title": "Causal Chain",
+          "type": "array"
+        },
+        "methods": {
+          "items": {
+            "$ref": "#/$defs/UnitMethod"
+          },
+          "minItems": 1,
+          "title": "Methods",
+          "type": "array"
+        },
+        "output_refs": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Output Refs",
+          "type": "array"
+        },
+        "worked_case": {
+          "$ref": "#/$defs/WorkedCase"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/UnitCheck"
+          },
+          "minItems": 1,
+          "title": "Checks",
+          "type": "array"
+        },
+        "practice": {
+          "$ref": "#/$defs/LearningQuestion"
+        },
+        "reasoning": {
+          "items": {
+            "$ref": "#/$defs/ReasoningMove"
+          },
+          "title": "Reasoning",
+          "type": "array"
+        }
+      },
+      "required": [
+        "stage_ref",
+        "purpose",
+        "inputs",
+        "concepts",
+        "causal_chain",
+        "methods",
+        "output_refs",
+        "worked_case",
+        "checks",
+        "practice"
+      ],
+      "title": "UnitStep",
+      "type": "object"
+    },
+    "WorkedCase": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "illustration",
+          "title": "Kind",
+          "type": "string"
+        },
+        "input_refs": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Input Refs",
+          "type": "array"
+        },
+        "output_refs": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Output Refs",
+          "type": "array"
+        },
+        "walkthrough": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Walkthrough",
+          "type": "array"
+        },
+        "observation": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Observation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "input_refs",
+        "output_refs",
+        "walkthrough",
+        "observation"
+      ],
+      "title": "WorkedCase",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1-experimental",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "unit_id": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Unit Id",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Title",
+      "type": "string"
+    },
+    "outcome": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Outcome",
+      "type": "string"
+    },
+    "task_brief": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Task Brief",
+      "type": "string"
+    },
+    "binding": {
+      "$ref": "#/$defs/UnitBinding"
+    },
+    "profile": {
+      "$ref": "#/$defs/LearnerProfile"
+    },
+    "paths": {
+      "items": {
+        "$ref": "#/$defs/LearningPath"
+      },
+      "minItems": 1,
+      "title": "Paths",
+      "type": "array"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/UnitOutput"
+      },
+      "minItems": 1,
+      "title": "Outputs",
+      "type": "array"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/UnitStep"
+      },
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "assessment": {
+      "items": {
+        "$ref": "#/$defs/LearningQuestion"
+      },
+      "minItems": 3,
+      "title": "Assessment",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/UnitSource"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "minLength": 1,
+        "pattern": "\\S",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Limitations",
+      "type": "array"
+    },
+    "orientation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/UnitOrientation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "schema_version",
+    "unit_id",
+    "title",
+    "outcome",
+    "task_brief",
+    "binding",
+    "profile",
+    "paths",
+    "outputs",
+    "steps",
+    "assessment",
+    "sources",
+    "limitations"
+  ],
+  "title": "LearningUnit",
+  "type": "object"
+}

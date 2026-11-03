@@ -44,6 +44,7 @@ test.describe("partial AI refinement", () => {
   async function openGoalEditor(page: Page, project: VersionedProject) {
     await page.goto(`/projects/${project.projectId}/draft`);
     await waitForHydration(page, ".draft-toolbar");
+    await page.locator(".draft-advanced > summary").click();
     await page
       .locator(".draft-entity-list a", { hasText: project.firstGoal.title })
       .first()
