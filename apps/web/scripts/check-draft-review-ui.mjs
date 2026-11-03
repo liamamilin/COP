@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
-import { chromium } from "@playwright/test";
+import { launchChrome } from "./safe-browser.mjs";
 
 const require = createRequire(import.meta.url);
 const vitestRequire = createRequire(require.resolve("vitest/package.json"));
@@ -33,7 +33,7 @@ const result = await build({
 });
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8") + result.outputFiles.filter((file) => file.path.endsWith(".css")).map((file) => file.text).join("\n");
 const html = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${css}</style></head><body><main class="content-wrap draft-review-page"><div id="root"></div></main><script>${result.outputFiles.find((file) => file.path.endsWith(".js")).text}</script></body></html>`;
-const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+const browser = await launchChrome();
 try {
   const page = await browser.newPage();
   const errors = [];

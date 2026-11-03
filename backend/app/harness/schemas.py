@@ -419,6 +419,13 @@ CRITIC_ISSUE_CODES = (
     "SETUP_NOT_ACTIONABLE",
     "MISSING_VALIDATION_STEP",
     "OPERATION_WITHOUT_COMMON_FAILURES",
+    # Concept-frame defects, raised by the same deterministic checker. A model
+    # asked to review its own definitions tends to approve them; a string check
+    # for a placeholder or a self-referential definition cannot.
+    "CONCEPT_MISSING_EXPLANATION",
+    "CONCEPT_MISSING_ROLE",
+    "CONCEPT_CIRCULAR_DEFINITION",
+    "CONCEPT_UNUSED",
     # Synthesised by H140 when the critic found nothing for the targeted entity.
     # Without it the mock would have no recognised issue to act on and a
     # refinement would silently propose nothing.
@@ -437,6 +444,14 @@ TARGETED_REPAIR_CODES = frozenset(
         "MISSING_VALIDATION_STEP",
         "OPERATION_WITHOUT_COMMON_FAILURES",
         "UNSUPPORTED_SPECIFIC_CLAIM",
+        # Concept-frame defects. The refiner is already allowed to rewrite
+        # `definition`/`role`; without these codes it would be told about the
+        # defect and never act on it. Bindings stay untouched, so a repair here
+        # can explain a Concept but cannot silently drop it from a Stage.
+        "CONCEPT_MISSING_EXPLANATION",
+        "CONCEPT_MISSING_ROLE",
+        "CONCEPT_CIRCULAR_DEFINITION",
+        "CONCEPT_UNUSED",
         "USER_REQUESTED_REFINEMENT",
     }
 )

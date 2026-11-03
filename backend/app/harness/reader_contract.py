@@ -74,6 +74,9 @@ STAGE_GUIDANCE = """Reader-facing step:
 CONCEPT_GUIDANCE = """Teach the Concepts, not just name them:
 - In definition, explain what the object does in plain language, give a small
   concrete example, and distinguish the nearest easily confused object.
+- Never define a Concept with its own name, a synonym of its name, or a
+  placeholder like "a thing" / "the concept". The reader already saw the name;
+  the definition must add what the name does not tell them.
 - In role, explain why the learner needs it here and what later action depends
   on it. Use the Stage's action context to connect the object to its operation.
 - Expanding an acronym into more acronyms is not an explanation. Do not use
@@ -83,6 +86,9 @@ CONCEPT_GUIDANCE = """Teach the Concepts, not just name them:
 - Explain where a model or abstraction is useful and where it stops fitting the
   observed case; never identify the abstraction with reality itself. Use only
   Concepts needed to support the reasoning, not a fixed concept count.
+- Every Concept must be used: referenced by a Stage it supports or by an
+  Operation that acts on it. A Concept that only cross-links other Concepts is
+  a glossary entry, and it will be rejected.
 """
 
 CRITIC_GUIDANCE = """Reader-facing review:
@@ -115,6 +121,11 @@ CRITIC_GUIDANCE = """Reader-facing review:
   Name the exact entity, quote the faulty claim or identify the missing logical
   link, and recommend the corrected reasoning or a discriminating counterexample.
   Do not prescribe extra length or concept counts as a substitute for correction.
+- In particular, read each Concept definition as if you did not know the term.
+  A definition that is long but defines something other than how the term is
+  used in this route is a conceptual error, not a style issue: report it with
+  OVERSIMPLIFIED or MISSING_CORE_CONCEPT and name the Stage that relies on the
+  wrong sense. Mechanical placeholder/circular/unused checks are handled in code.
 - Judge semantic coherence from reader-visible fields, not an unseen teaching
   plan or the presence of planning labels. Do not claim instructional effectiveness
   or learner understanding has been empirically verified by this review.

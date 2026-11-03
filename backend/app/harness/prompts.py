@@ -509,6 +509,15 @@ Responsibilities:
 Concept promotion test: promote when misunderstanding it would break the mental
 model, when it is reused across stages, or when it is a stable object category.
 
+Concept quality contract (these are rejected mechanically, not by a reviewer):
+- `definition` must explain what the thing is in plain language. It must not be
+  empty, a placeholder, or a restatement of `name`.
+- `role` must say which part of the route depends on it.
+- Every Concept you emit must be bound to at least one Stage in `stage_bindings`,
+  or be acted on by an Operation. Do not emit glossary-only entries.
+Do not satisfy these by padding with words; a longer restatement of the name is
+still circular.
+
 Operation promotion test: promote when it changes or connects Concepts in a
 meaningful way, is useful across implementations, and sits above raw API syntax.
 
@@ -659,6 +668,12 @@ Use these stable issue codes where applicable:
                 "MISSING_CORE_CONCEPT",
                 "WEAK_PRACTICE",
                 "UNSUPPORTED_SPECIFIC_CLAIM",
+                # `CONCEPT_MISSING_EXPLANATION`, `CONCEPT_MISSING_ROLE`,
+                # `CONCEPT_CIRCULAR_DEFINITION` and `CONCEPT_UNUSED` are raised
+                # by deterministic string checks in `app.domain.quality`, so the
+                # model is not asked to reproduce them. It should still flag a
+                # definition that is technically long but explains the wrong
+                # thing, which no string check can see.
             )
         )
     }

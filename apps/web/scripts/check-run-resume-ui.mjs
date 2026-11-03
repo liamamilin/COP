@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { chromium } from "@playwright/test";
+import { launchChrome } from "./safe-browser.mjs";
 
 // Reuse the bundler already shipped with Vitest/Vite, without a new dependency.
 const require = createRequire(import.meta.url);
@@ -38,7 +38,7 @@ const result = await build({
 });
 const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 const html = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>${css}</style></head><body><main style="max-width:800px;margin:40px auto;padding:24px"><div id="root"></div><div id="candidate">0</div></main><script>${result.outputFiles[0].text}</script></body></html>`;
-const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+const browser = await launchChrome();
 const page = await browser.newPage();
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));

@@ -37,7 +37,7 @@ from app.domain.drafting import (
     with_locks,
 )
 from app.domain.validation import validate_artifact
-from app.harness.steps.critic_rules import content_gate_failures
+from app.harness.steps.critic_rules import concept_frame_failures, content_gate_failures
 from app.harness.steps.h120_validate import resolve_schema_path
 from app.jobs.runner import project_source_ids
 
@@ -117,6 +117,11 @@ class VersionOut(BaseModel):
     # misses something a learner needs. Absent everywhere else, so a read of a
     # version never implies a judgement that was never made.
     content_gate: list[dict[str, Any]] | None = None
+    # Concept definitions that are placeholders, circular, or never used. Kept
+    # apart from `content_gate` because the repair target is a Concept rather
+    # than a Stage, and because a definition being *thin* is not the same kind
+    # of defect as a Stage a reader cannot act on.
+    concept_frame: list[dict[str, Any]] | None = None
     # Evidence refs pointing at sources this project does not own. Reported
     # rather than blocked: a user may knowingly publish a COP whose citation
     # predates a deleted source, and refusing would be a worse answer than
@@ -338,15 +343,18 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
     # the reported findings describe the version rather than the request.
     stored = artifact.model_dump(mode="json")
     content_gate = content_gate_failures(stored)
+    concept_frame = concept_frame_failures(stored)
     # Every citation must resolve to a source this project owns. A ref the user
     # cannot open is the R3 failure, and reporting it here is what stops it
     # becoming permanent history silently.
     orphans = unresolved_evidence(stored, project_source_ids(db, project.id))
-    if content_gate or orphans:
+    if content_gate or concept_frame or orphans:
         logger.info(
-            "Publishing %s with %d content-gate findings and %d unresolved refs",
+            "Publishing %s with %d content-gate findings, %d concept-frame findings "
+            "and %d unresolved refs",
             draft_id,
             len(content_gate),
+            len(concept_frame),
             len(orphans),
         )
 
@@ -386,10 +394,11 @@ def publish_draft(draft_id: uuid.UUID, body: PublishRequest, db: DbSession) -> V
     db.commit()
     db.refresh(version)
     out = VersionOut.model_validate(version)
-    if content_gate or orphans:
+    if content_gate or concept_frame or orphans:
         # Shape-compatible with VersionOut but carries the warnings, so the
         # browser can tell the user what they just published.
         out.content_gate = content_gate
+        out.concept_frame = concept_frame
         out.unresolved_evidence = orphans or None
     return out
 

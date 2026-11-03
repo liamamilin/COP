@@ -4,7 +4,7 @@
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
-import { chromium } from "@playwright/test";
+import { launchChrome } from "./safe-browser.mjs";
 
 const [projectUrl, apiBase] = process.argv.slice(2);
 assert.ok(projectUrl && apiBase, "Provide a published PROJECT_URL and API_BASE_URL; this check never starts services.");
@@ -40,7 +40,7 @@ const routes = [
   ["sources", `${projectPath}/sources`],
   ["settings", `${projectPath}/settings`],
 ];
-const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+const browser = await launchChrome();
 const writes = [];
 const errors = [];
 try {

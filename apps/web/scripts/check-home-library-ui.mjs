@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
-import { chromium } from "@playwright/test";
+import { launchChrome } from "./safe-browser.mjs";
 
 const [appUrl, apiBase] = process.argv.slice(2);
 assert.ok(appUrl && apiBase, "Provide the running APP_URL and API_BASE_URL.");
@@ -19,7 +19,7 @@ async function snapshot() {
 const before = await snapshot();
 const screenshotDir = process.env.SCREENSHOT_DIR;
 if (screenshotDir) await mkdir(screenshotDir, { recursive: true });
-const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+const browser = await launchChrome();
 const writes = [];
 const errors = [];
 try {

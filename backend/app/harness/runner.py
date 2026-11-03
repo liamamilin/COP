@@ -28,7 +28,7 @@ from app.harness.context import (
 )
 from app.harness.providers.base import LLMProvider, ProviderError
 from app.harness.steps import STEP_LABELS, STEP_PIPELINE, TARGETED_PIPELINE
-from app.harness.steps.critic_rules import content_gate_failures
+from app.harness.steps.critic_rules import concept_frame_failures, content_gate_failures
 from app.harness.steps.h120_validate import resolve_schema_path, validate
 
 logger = logging.getLogger("cop.harness")
@@ -323,12 +323,15 @@ def _final_status(context: HarnessContext) -> str:
         return "failed"
     if validate(context.artifact, resolve_schema_path(context.settings.get("schema_path"))):
         return "needs_attention"
-    if content_gate_failures(context.artifact):
+    if content_gate_failures(context.artifact) or concept_frame_failures(context.artifact):
         # Structurally valid is not the same as usable. A candidate whose Stages
         # carry no example and no method would otherwise be reported `completed`
         # and could reach a published version, which is the whole failure this
-        # gate exists to stop. The candidate is still produced and the user can
-        # fix it in a draft, so this is `needs_attention`, not `failed`.
+        # gate exists to stop. The same holds for a Concept frame made of empty
+        # or circular labels: every Stage can look complete while the model the
+        # reader is supposed to build describes nothing. The candidate is still
+        # produced and the user can fix it in a draft, so this is
+        # `needs_attention`, not `failed`.
         return "needs_attention"
     return "completed"
 
@@ -340,6 +343,7 @@ def build_metrics(
     # The content gate's findings travel with the run, so a user asking "why is
     # this needs_attention" gets the exact Stage ids rather than a status code.
     gate = content_gate_failures(artifact) if artifact else []
+    frame = concept_frame_failures(artifact) if artifact else []
     return {
         "provider_calls": len(provider_calls),
         "retried_calls": sum(1 for call in provider_calls if call.get("attempts", 1) > 1),
@@ -352,5 +356,6 @@ def build_metrics(
         "practices": len(artifact.get("practices") or []),
         "checkpoints": context.completed_checkpoints(),
         "content_gate_failures": gate,
+        "concept_frame_failures": frame,
         "calls": provider_calls,
     }

@@ -27,6 +27,9 @@ from typing import Any
 import pytest
 
 from app.domain.quality import (
+    CONCEPT_CIRCULAR_DEFINITION,
+    CONCEPT_MIN_DEFINITION_CHARS,
+    L1,
     L2,
     MISSING_IMPLEMENTATION_DETAIL,
     MISSING_STAGE_EXAMPLE,
@@ -42,7 +45,11 @@ from app.harness.context import HarnessContext
 from app.harness.prompts import build_stage_prompt
 from app.harness.providers.mock import MockProvider
 from app.harness.runner import _final_status, run_pipeline
-from app.harness.steps.critic_rules import content_gate_failures, merged_report
+from app.harness.steps.critic_rules import (
+    concept_frame_failures,
+    content_gate_failures,
+    merged_report,
+)
 from app.harness.steps.h50_stages import normalize_detail, normalize_example, normalize_stage
 from app.harness.steps.h110_refine import apply_revisions
 from tests.test_harness_pipeline import FakeStore
@@ -257,6 +264,51 @@ async def test_the_mock_and_the_real_contract_are_the_same_contract() -> None:
 
     errors = list(Draft202012Validator(schema).iter_errors(outcome.context.artifact))
     assert errors == [], f"the mock produces an artifact the canonical schema rejects: {errors[:1]}"
+
+
+@pytest.mark.asyncio
+async def test_a_concept_frame_of_labels_is_needs_attention_not_completed() -> None:
+    """A structurally valid artifact can still explain nothing.
+
+    This is the failure the L1 concept checks exist for: every Stage is
+    actionable, every reference resolves, and the model a reader is supposed to
+    build is a list of names. The run must not report `completed`.
+    """
+    good = (await generate()).context.artifact
+    assert good is not None
+    broken = json.loads(json.dumps(good))
+    for concept in broken["concepts"]:
+        concept["definition"] = concept["name"]
+
+    gated = context()
+    gated.artifact = broken
+
+    assert _final_status(gated) == "needs_attention"
+    codes = {issue["code"] for issue in concept_frame_failures(broken)}
+    assert CONCEPT_CIRCULAR_DEFINITION in codes
+
+
+@pytest.mark.asyncio
+async def test_a_complete_candidate_reports_no_concept_frame_failures() -> None:
+    """The positive control: the gate must not fire on the mock's own output."""
+    outcome = await generate()
+    artifact = outcome.context.artifact
+    assert artifact is not None
+
+    assert concept_frame_failures(artifact) == []
+    assert outcome.status == "completed"
+
+
+@pytest.mark.asyncio
+async def test_the_generated_candidate_has_usable_concept_explanations() -> None:
+    """Prompt and gate agree: what the mock writes passes the concept contract."""
+    artifact = (await generate()).context.artifact
+    assert artifact is not None
+    for concept in artifact["concepts"]:
+        assert len(concept["definition"]) >= CONCEPT_MIN_DEFINITION_CHARS
+        assert concept["definition"].strip() != concept["name"].strip()
+        assert concept["role"].strip()
+    assert check_artifact(artifact, levels=[L1]) == []
 
 
 @pytest.mark.asyncio

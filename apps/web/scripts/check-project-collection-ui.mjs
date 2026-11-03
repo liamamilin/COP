@@ -4,7 +4,7 @@ import { mkdir, readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { chromium } from "@playwright/test";
+import { launchChrome } from "./safe-browser.mjs";
 
 const require = createRequire(import.meta.url);
 const vitestRequire = createRequire(require.resolve("vitest/package.json"));
@@ -45,7 +45,7 @@ const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8
 const js = bundled.outputFiles.find((file) => file.path.endsWith(".js")).text;
 const screenshots = process.env.SCREENSHOT_DIR;
 if (screenshots) await mkdir(screenshots, { recursive: true });
-const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+const browser = await launchChrome();
 try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const errors = [], unexpected = [];
