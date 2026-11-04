@@ -1,11 +1,11 @@
 """Schema and graph-integrity gates for the experimental P-C-O capability map."""
 
-from copy import deepcopy
 import json
+from copy import deepcopy
 from pathlib import Path
 
-from jsonschema import Draft202012Validator
 import pytest
+from jsonschema import Draft202012Validator
 
 from app.domain.capability_map_v0 import graph_issues
 
