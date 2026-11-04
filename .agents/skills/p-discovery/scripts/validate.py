@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Validate the small, host-neutral P Discovery JSON artifact.
+"""Check the portable P Discovery output contract.
 
-This checks structure and cross-references, not factual correctness. No extra
-packages, credentials, or vendor API required.
+The validator checks structure, evidence quotations, and cross-references.
+It cannot determine whether source claims are factually correct or whether a
+quotation truly supports the P. Such review remains a separate quality gate.
+
+This script intentionally uses Python's standard library only.
 """
 from __future__ import annotations
 
@@ -11,101 +14,131 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
+SUPPORTED_STATUSES = {"proposed", "source_supported", "reviewed"}
+AVAILABILITIES = {"core", "extension", "unknown"}
+
+
+def nonempty(value: object) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
 
 def validate(data: object) -> list[str]:
-    problems: list[str] = []
+    errors: list[str] = []
     if not isinstance(data, dict):
         return ["Root must be a JSON object"]
-
-    for key in ("topic", "sources", "groups", "possibilities", "coverage_gaps"):
-        if key not in data:
-            problems.append(f"Missing top-level key: {key}")
     if data.get("schema_version") != "0.1":
-        problems.append("schema_version must be 0.1")
-
-    topic = data.get("topic", {})
+        errors.append("schema_version must be 0.1")
+    topic = data.get("topic")
     if not isinstance(topic, dict) or not all(
-        isinstance(topic.get(k), str) and topic[k].strip()
-        for k in ("name", "scope")
+        nonempty(topic.get(key)) for key in ("name", "scope")
     ):
-        problems.append("topic.name and topic.scope are required strings")
+        errors.append("topic must contain nonempty name and scope")
+    for key in ("sources", "groups", "possibilities", "coverage_gaps"):
+        if not isinstance(data.get(key), list):
+            errors.append(f"{key} must be a list")
 
-    ids: dict[str, str] = {}
-    kind_members: dict[str, set[str]] = {}
-    for collection in ("sources", "groups", "possibilities"):
-        items = data.get(collection, [])
-        if not isinstance(items, list):
-            problems.append(f"{collection} must be a list")
-            continue
-        kind_members[collection] = set()
-        for i, item in enumerate(items):
-            loc = f"{collection}[{i}]"
+    if errors and any(not isinstance(data.get(k), list) for k in
+                      ("sources", "groups", "possibilities", "coverage_gaps")):
+        return errors
+
+    sources: dict[str, dict] = {}
+    groups: dict[str, dict] = {}
+    possibilities: dict[str, dict] = {}
+    all_ids: set[str] = set()
+
+    for field, sink in (
+        ("sources", sources),
+        ("groups", groups),
+        ("possibilities", possibilities),
+    ):
+        for index, item in enumerate(data[field]):
+            loc = f"{field}[{index}]"
             if not isinstance(item, dict):
-                problems.append(f"{loc} must be an object")
+                errors.append(f"{loc} must be an object")
                 continue
-            uid = item.get("id")
-            if not isinstance(uid, str) or not uid.strip():
-                problems.append(f"{loc}.id must be a nonempty string")
+            item_id = item.get("id")
+            if not nonempty(item_id):
+                errors.append(f"{loc}.id must be a nonempty string")
                 continue
-            if uid in ids:
-                problems.append(f"Duplicate ID {uid!r} in {ids[uid]} and {loc}")
-            ids[uid] = loc
-            kind_members[collection].add(uid)
-
-    source_ids = kind_members.get("sources", set())
-    group_ids = kind_members.get("groups", set())
-    for source in data.get("sources", []) if isinstance(data.get("sources"), list) else []:
-        if not isinstance(source, dict):
-            continue
-        if not isinstance(source.get("title"), str) or not source["title"].strip():
-            problems.append(f"Source {source.get('id')!r}: missing title")
-        url = source.get("url")
-        if not isinstance(url, str) or urlparse(url).scheme not in ("http", "https"):
-            problems.append(f"Source {source.get('id')!r}: invalid http(s) URL")
-        if not isinstance(source.get("evidence"), str) or not source["evidence"].strip():
-            problems.append(f"Source {source.get('id')!r}: missing evidence")
-
-    for group in data.get("groups", []) if isinstance(data.get("groups"), list) else []:
-        if isinstance(group, dict) and (
-            not isinstance(group.get("name"), str) or not group["name"].strip()
-        ):
-            problems.append(f"Group {group.get('id')!r}: missing name")
-
-    for p in (
-        data.get("possibilities", [])
-        if isinstance(data.get("possibilities"), list)
-        else []
-    ):
-        if not isinstance(p, dict):
-            continue
-        pid = p.get("id", "?")
-        for k in ("title", "result"):
-            if not isinstance(p.get(k), str) or not p[k].strip():
-                problems.append(f"P {pid!r}: missing {k}")
-        status = p.get("status")
-        if status not in ("proposed", "source_supported", "reviewed"):
-            problems.append(f"P {pid!r}: invalid status {status!r}")
-        availability = p.get("availability")
-        if availability not in ("core", "extension", "unknown"):
-            problems.append(f"P {pid!r}: invalid availability {availability!r}")
-        for k, valid_ids in (("source_ids", source_ids), ("group_ids", group_ids)):
-            refs = p.get(k)
-            if not isinstance(refs, list) or any(not isinstance(ref, str) for ref in refs):
-                problems.append(f"P {pid!r}: {k} must be a list of IDs")
+            if item_id in all_ids:
+                errors.append(f"Duplicate ID: {item_id} ({loc})")
             else:
-                for ref in refs:
-                    if ref not in valid_ids:
-                        problems.append(f"P {pid!r}: unknown {k} reference {ref!r}")
-        if status in ("source_supported", "reviewed") and not p.get("source_ids"):
-            problems.append(f"P {pid!r}: confirmed status requires source_ids")
-        if availability == "extension" and not str(p.get("conditions", "")).strip():
-            problems.append(f"P {pid!r}: extension requires conditions")
+                all_ids.add(item_id)
+            sink[item_id] = item
 
-    gaps = data.get("coverage_gaps")
-    if not isinstance(gaps, list) or not all(isinstance(g, str) for g in gaps):
-        problems.append("coverage_gaps must be a list of strings")
+    for source_id, source in sources.items():
+        if not nonempty(source.get("title")):
+            errors.append(f"Source {source_id}: missing title")
+        url = source.get("url")
+        parsed = urlparse(url) if isinstance(url, str) else None
+        if not parsed or parsed.scheme not in ("http", "https") or not parsed.netloc:
+            errors.append(f"Source {source_id}: invalid http(s) URL")
+        if not nonempty(source.get("evidence")):
+            errors.append(f"Source {source_id}: missing captured evidence")
 
-    return problems
+    for group_id, group in groups.items():
+        if not nonempty(group.get("name")):
+            errors.append(f"Group {group_id}: missing name")
+
+    for possibility_id, p in possibilities.items():
+        for field in ("title", "result"):
+            if not nonempty(p.get(field)):
+                errors.append(f"P {possibility_id}: missing {field}")
+        status = p.get("status")
+        if status not in SUPPORTED_STATUSES:
+            errors.append(f"P {possibility_id}: invalid status {status!r}")
+        availability = p.get("availability")
+        if availability not in AVAILABILITIES:
+            errors.append(f"P {possibility_id}: invalid availability {availability!r}")
+        if availability == "extension" and not nonempty(p.get("conditions")):
+            errors.append(f"P {possibility_id}: extension must name conditions")
+
+        source_ids = p.get("source_ids")
+        group_ids = p.get("group_ids")
+        evidence_refs = p.get("evidence_refs", [])
+        for field, refs, allowed in (
+            ("source_ids", source_ids, sources),
+            ("group_ids", group_ids, groups),
+        ):
+            if not isinstance(refs, list) or not all(nonempty(ref) for ref in refs):
+                errors.append(f"P {possibility_id}: {field} must be a list of IDs")
+                continue
+            if len(refs) != len(set(refs)):
+                errors.append(f"P {possibility_id}: duplicate {field}")
+            for ref in refs:
+                if ref not in allowed:
+                    errors.append(f"P {possibility_id}: unknown {field} {ref!r}")
+
+        if not isinstance(evidence_refs, list):
+            errors.append(f"P {possibility_id}: evidence_refs must be a list")
+            evidence_refs = []
+
+        if status in {"source_supported", "reviewed"} and not evidence_refs:
+            errors.append(f"P {possibility_id}: confirmed P needs claim-specific evidence_refs")
+        if status == "reviewed" and not nonempty(p.get("reviewed_by")):
+            errors.append(f"P {possibility_id}: reviewed status needs human reviewed_by")
+
+        for index, ref in enumerate(evidence_refs):
+            loc = f"P {possibility_id}: evidence_refs[{index}]"
+            if not isinstance(ref, dict):
+                errors.append(f"{loc} must be an object")
+                continue
+            ref_id, quote = ref.get("source_id"), ref.get("quote")
+            if not nonempty(ref_id) or ref_id not in sources:
+                errors.append(f"{loc} references unknown source {ref_id!r}")
+                continue
+            if not isinstance(source_ids, list) or ref_id not in source_ids:
+                errors.append(f"{loc} must also appear in source_ids")
+            if not nonempty(quote):
+                errors.append(f"{loc} missing verbatim quote")
+            elif quote not in str(sources[ref_id].get("evidence", "")):
+                errors.append(f"{loc} quote not present in captured source excerpt")
+
+    gaps = data.get("coverage_gaps", [])
+    if not all(isinstance(gap, str) for gap in gaps):
+        errors.append("coverage_gaps must contain only strings")
+
+    return errors
 
 
 def main() -> int:
@@ -120,9 +153,10 @@ def main() -> int:
         return 2
     errors = validate(data)
     if errors:
-        print("\n".join(f"FAIL: {e}" for e in errors))
+        for error in errors:
+            print(f"FAIL: {error}")
         return 1
-    print(f"PASS: {path} (structural checks only; review sources separately)")
+    print(f"PASS: {path} (structural/evidence checks only; assess sources manually)")
     return 0
 
 
