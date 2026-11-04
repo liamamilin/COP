@@ -9,13 +9,13 @@
       "id": "src-geom-point",
       "title": "ggplot2: geom_point reference",
       "url": "https://ggplot2.tidyverse.org/reference/geom_point.html",
-      "evidence": "geom_point() is the geometric object for scatterplots."
+      "evidence": "The point geom is used to create scatterplots."
     },
     {
       "id": "src-patchwork",
       "title": "patchwork: Assembly",
       "url": "https://patchwork.data-imaginist.com/articles/guides/assembly.html",
-      "evidence": "The patchwork assembly guide shows ways to combine separate plots, including side-by-side layouts."
+      "evidence": "| will place plots next to each other while / will place them on top of each other."
     }
   ],
   "groups": [
@@ -44,6 +44,12 @@
       ],
       "aliases": [
         "散点关系图"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-geom-point",
+          "quote": "The point geom is used to create scatterplots."
+        }
       ]
     },
     {
@@ -61,6 +67,12 @@
       ],
       "aliases": [
         "多图拼接"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-patchwork",
+          "quote": "| will place plots next to each other while / will place them on top of each other."
+        }
       ]
     }
   ],
