@@ -1,0 +1,43 @@
+name: P Discovery Skill Quality
+
+on:
+  pull_request:
+    paths:
+      - ".agents/skills/p-discovery/**"
+      - "scripts/install_p_discovery_skill.py"
+      - ".github/workflows/p-discovery-quality.yml"
+  push:
+    branches:
+      - "proposal/**"
+    paths:
+      - ".agents/skills/p-discovery/**"
+      - "scripts/install_p_discovery_skill.py"
+      - ".github/workflows/p-discovery-quality.yml"
+
+jobs:
+  skill-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile source
+        run: |
+          python -m compileall -q .agents/skills/p-discovery scripts/install_p_discovery_skill.py
+      - name: Verify example and evidence references
+        run: |
+          python .agents/skills/p-discovery/scripts/validate.py .agents/skills/p-discovery/examples/ggplot2-mini.json
+      - name: Run rejection and regression tests
+        run: |
+          python -m unittest discover -s .agents/skills/p-discovery/tests -v
+      - name: Verify Claude Code project installation
+        run: |
+          python scripts/install_p_discovery_skill.py --host claude --scope project
+          diff -r .agents/skills/p-discovery .claude/skills/p-discovery
+      - name: Verify Codex/OpenCode canonical project installation
+        run: |
+          python scripts/install_p_discovery_skill.py --host codex --scope project
+          python scripts/install_p_discovery_skill.py --host opencode --scope project
