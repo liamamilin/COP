@@ -1,0 +1,3425 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "ggplot2",
+    "scope": "R 中以 ggplot2 为基础的数据探索、统计表达、叙事与可复用图形生产；涵盖核心静态图、明确标注的扩展与集成，以及有原始证据的任务案例。",
+    "audience": "希望了解可提出哪些有效绘图需求的分析者、研究者、内容作者与初学者。",
+    "included": [
+      "核心静态图与统计图层",
+      "地图和数值网格",
+      "注释、配色、布局与导出",
+      "参数化复用与扩展机制",
+      "明确依赖的领域图、动画、网页交互和三维集成"
+    ],
+    "excluded": [
+      "逐函数 API 清单",
+      "完整绘图代码教程",
+      "对全部扩展生态的穷举",
+      "数据获取与任意统计分析的自动完成",
+      "已在本机复现或已被人工评审的声明"
+    ],
+    "version_basis": "官方参考站点标示 ggplot2 4.0.3；各扩展版本仅在来源明确显示时记录。"
+  },
+  "sources": [
+    {
+      "id": "src-overview",
+      "title": "ggplot2 official overview",
+      "url": "https://ggplot2.tidyverse.org/",
+      "evidence": "system for declaratively creating graphics",
+      "location": "Overview",
+      "source_type": "official_overview",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "97a2cc47b85e9d8e9e8ff6483957712e1cdfc51c639b9b2694cc9f80ced15a57"
+      }
+    },
+    {
+      "id": "src-point",
+      "title": "Points and bubble charts",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_point.html",
+      "evidence": "create scatterplots.\nthird variable mapped to the size of points.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_point.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "dce56d82989b7c0c7b3ea6438d18da5dc70cb130a5bb0b2597add0976a081461"
+      }
+    },
+    {
+      "id": "src-path",
+      "title": "Connect observations",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_path.html",
+      "evidence": "connects the observations in the order in which they appear",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_path.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "ca800ba10504059a239e750cf5d82678428fbd968b4ed5b79d0b11d98da122ea"
+      }
+    },
+    {
+      "id": "src-bar",
+      "title": "Bar charts",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_bar.html",
+      "evidence": "counts the number of cases\nrepresent values in the data",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_bar.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "9b3a2772efdcd6807cb2b452aab9351f106f0cfaa6cac7cd070ba90b1a05f26e"
+      }
+    },
+    {
+      "id": "src-stack",
+      "title": "Stack and standardise bars",
+      "url": "https://ggplot2.tidyverse.org/reference/position_stack.html",
+      "evidence": "stacks bars and standardises each stack to have constant height.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/position_stack.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "bdef2a0fd98a342290db111588a372567e079372fb59867dacae77541392cd16"
+      }
+    },
+    {
+      "id": "src-hist",
+      "title": "Histograms and frequency polygons",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_histogram.html",
+      "evidence": "dividing the x axis into bins and counting",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_histogram.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "4eef2e8819dfaf6f77e864d27731695a85a18fb63444098ecdf458bd24f002c5"
+      }
+    },
+    {
+      "id": "src-density",
+      "title": "Smoothed density estimates",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_density.html",
+      "evidence": "Computes and draws kernel density estimate",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_density.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "faa56f2bdb03b43419410c5b4281f887b23919a6fbf38f26dfeae0606cf4418f"
+      }
+    },
+    {
+      "id": "src-box",
+      "title": "Box and whiskers plots",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_boxplot.html",
+      "evidence": "the median, two hinges and two whiskers",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_boxplot.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "48e03ebfa97f87b36755c16524a4b3bb1aae40fa7998630c52f55d99f34091bb"
+      }
+    },
+    {
+      "id": "src-violin",
+      "title": "Violin plots",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_violin.html",
+      "evidence": "a violin plot is a mirrored density plot",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_violin.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "57744ff2d46ada8fc1c5f375f7b277a1e9889202004bd5e88dfac7ecffbf36af"
+      }
+    },
+    {
+      "id": "src-ecdf",
+      "title": "Empirical cumulative distribution",
+      "url": "https://ggplot2.tidyverse.org/reference/stat_ecdf.html",
+      "evidence": "doesn't require any tuning parameters",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/stat_ecdf.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "d51ec7f07e0a9ac857e797da4173ad958cf74a6a715dc7b40a78ea3e7210f1b7"
+      }
+    },
+    {
+      "id": "src-qq",
+      "title": "Quantile-quantile plots",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_qq.html",
+      "evidence": "produce quantile-quantile plots.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_qq.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f39160a8299e62031170828bfae14fd6a90fb39ca8f535cd8b8198c7a1a448e0"
+      }
+    },
+    {
+      "id": "src-jitter",
+      "title": "Jittered observations",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_jitter.html",
+      "evidence": "handling overplotting caused by discreteness in smaller datasets.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_jitter.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "62b3384bb8d456e2cf6902f81d2a87b79d09e1147a44e98ad4645b234921dd25"
+      }
+    },
+    {
+      "id": "src-count",
+      "title": "Count overlapping observations",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_count.html",
+      "evidence": "maps the count to point area.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_count.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "3854e4fcdd88b9b56165e4001dcab6040fefb83df95ddda89e3a3f8a5fd0f164"
+      }
+    },
+    {
+      "id": "src-hex",
+      "title": "Hexagonal bin counts",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_hex.html",
+      "evidence": "counts the number of cases in each hexagon",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_hex.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "eb5abd386040702730c8870ee40d1ef84ea0180a203e4756b720e5cbe981a1f1"
+      }
+    },
+    {
+      "id": "src-density2d",
+      "title": "Contours of two-dimensional density",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_density_2d.html",
+      "evidence": "2D kernel density estimation",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_density_2d.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "8f958a51d0dc745dc8ad0d8da3799c0c13c24ed6c2ce1b4d3f01102324fa511c"
+      }
+    },
+    {
+      "id": "src-contour",
+      "title": "Display a surface in two dimensions",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_contour.html",
+      "evidence": "visualise 3D surfaces in 2D.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_contour.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "b2b02786502f4824051d5802f4b33cc958f7971f6fa70963121976a8eaceedc0"
+      }
+    },
+    {
+      "id": "src-tile",
+      "title": "Tile and raster heatmaps",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_tile.html",
+      "evidence": "geom_tile(aes(fill = z), colour = \"grey50\")",
+      "location": "Examples: df grid with fill = z",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_tile.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "46c14df2bad838fc9e820d5ad2ea73db35a29021e7c218e3a25d6483057062dd"
+      }
+    },
+    {
+      "id": "src-interval",
+      "title": "Intervals, point ranges and error bars",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_linerange.html",
+      "evidence": "representing a vertical interval defined by",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_linerange.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "ba006acb4b356c613c5217166b2647b2133ce854862b46abcfb9fa99ca8eb2a9"
+      }
+    },
+    {
+      "id": "src-ribbon",
+      "title": "Ribbons and area plots",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_ribbon.html",
+      "evidence": "displays a y interval\nymin is fixed to 0",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_ribbon.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "02b67fedaa050c60df522993eb79c6f48b818115ec306a4e57d6211c7c29191c"
+      }
+    },
+    {
+      "id": "src-smooth",
+      "title": "Smooth trends with confidence bands",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_smooth.html",
+      "evidence": "Smoothed conditional means\nDisplay confidence band around smooth?",
+      "location": "Page heading; se argument",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_smooth.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "e7239fa47ea1d42dc7d6d0d3e95d703e07be2666be5c9f1fb2781861156b6d5e"
+      }
+    },
+    {
+      "id": "src-quantile",
+      "title": "Quantile regression",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_quantile.html",
+      "evidence": "draws the fitted quantiles with lines.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_quantile.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "c2238872ff449948520c42131e217fa1eca83d7152a0202e464f406c3de7fceb"
+      }
+    },
+    {
+      "id": "src-summary",
+      "title": "Summary statistics by category or bins",
+      "url": "https://ggplot2.tidyverse.org/reference/stat_summary.html",
+      "evidence": "they can compute any aggregate.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/stat_summary.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "a9ba88b37cd4d12c97ac13ab10dce4f408756b437b2eb02f107b1ce1683617b5"
+      }
+    },
+    {
+      "id": "src-function",
+      "title": "Draw a mathematical function",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_function.html",
+      "evidence": "draws a function as a continuous curve.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_function.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "5ef852143fdb481e542bbf821a32bb174dfcc8bd86e3bcca2318c715c9f43a4c"
+      }
+    },
+    {
+      "id": "src-sf",
+      "title": "Visualise simple-feature geographic objects",
+      "url": "https://ggplot2.tidyverse.org/reference/ggsf.html",
+      "evidence": "you can get points, lines, or polygons.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/ggsf.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "ec18887c55baa9de000c3eeb2d6c85861cd2db81193a3c11d3b4b0b18f1e04aa"
+      }
+    },
+    {
+      "id": "src-spoke",
+      "title": "Direction and distance vectors",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_spoke.html",
+      "evidence": "variables that describe direction and distance.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_spoke.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "53b30225ffb1ebcf16b0da47be57dcd63c25faecc5fda7c60604a187363a2273"
+      }
+    },
+    {
+      "id": "src-facet",
+      "title": "Facets by two grouping variables",
+      "url": "https://ggplot2.tidyverse.org/reference/facet_grid.html",
+      "evidence": "matrix of panels defined by row and column faceting variables.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/facet_grid.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "0fc3c011c189ddc8109cd0ecbbc2e5557a8e8ecb1fb0d2c6030cd97d417d72f1"
+      }
+    },
+    {
+      "id": "src-wrap",
+      "title": "Wrap small multiples",
+      "url": "https://ggplot2.tidyverse.org/reference/facet_wrap.html",
+      "evidence": "wraps a 1d sequence of panels into 2d.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/facet_wrap.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "2f863170634a4f1f5797fa16b9323cafa1d4cddfaedd565cd6857cb0141579ae"
+      }
+    },
+    {
+      "id": "src-transform",
+      "title": "Transformed numeric axes",
+      "url": "https://ggplot2.tidyverse.org/reference/scale_continuous.html",
+      "evidence": "scale_*_log10(), scale_*_sqrt() and scale_*_reverse().",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/scale_continuous.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "65bac6b9e27e2f52ba8f7d0424beb13dd1a31aaf6c2b433db5fb1c4af67867b5"
+      }
+    },
+    {
+      "id": "src-zoom",
+      "title": "Zoom without discarding observations",
+      "url": "https://ggplot2.tidyverse.org/reference/coord_cartesian.html",
+      "evidence": "The data is unchanged",
+      "location": "Examples: coordinate limits versus scale limits",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/coord_cartesian.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "6b01f464c067b9ed729c70c42b99ac93ca4d62f1ca7a9d7ded1f6956411a5c88"
+      }
+    },
+    {
+      "id": "src-polar",
+      "title": "Polar coordinate graphics",
+      "url": "https://ggplot2.tidyverse.org/reference/coord_polar.html",
+      "evidence": "pie charts, which are a stacked bar chart in polar coordinates.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/coord_polar.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f8b460617919106f7972e53cda35423c1fe0ae224a08a50f591276e4a9630af6"
+      }
+    },
+    {
+      "id": "src-annotate",
+      "title": "Add plot annotations",
+      "url": "https://ggplot2.tidyverse.org/reference/annotate.html",
+      "evidence": "adding small annotations",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/annotate.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "5c650537a2e4ba989953147b406d3f5f356d8dade0ab0b26d0513875f98ca0f3"
+      }
+    },
+    {
+      "id": "src-segment",
+      "title": "Line segments and curves",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_segment.html",
+      "evidence": "draws a straight line between points",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/geom_segment.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "6f1b15467d2a338a24b6e29e78688524955ee6fa54b5e87ec9271003eb89120e"
+      }
+    },
+    {
+      "id": "src-theme",
+      "title": "Consistent graphical style",
+      "url": "https://ggplot2.tidyverse.org/reference/theme.html",
+      "evidence": "give plots a consistent customized look.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/theme.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "19a0a72aa26ae4d8598f35f00806e074a2d77eab908d0e552c13f818f041224f"
+      }
+    },
+    {
+      "id": "src-viridis",
+      "title": "Colour scales for colour-vision accessibility",
+      "url": "https://ggplot2.tidyverse.org/reference/scale_viridis.html",
+      "evidence": "perceived by viewers with common forms of colour blindness.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/scale_viridis.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "7c55775bf05461ebb08640249aea85529ea9459407f6f7ef2adb493668c24ab9"
+      }
+    },
+    {
+      "id": "src-labels",
+      "title": "Plot metadata and alternative text",
+      "url": "https://ggplot2.tidyverse.org/reference/labs.html",
+      "evidence": "information about the data source\ngeneration of alt-text for the plot",
+      "location": "Description; alt / alt_insight arguments",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/labs.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "e13ee35554d8fe6c545afb14d98d4d9fd79e7923609df432ba8f5f29b6b19535"
+      }
+    },
+    {
+      "id": "src-save",
+      "title": "Export graphic files",
+      "url": "https://ggplot2.tidyverse.org/reference/ggsave.html",
+      "evidence": "\"pdf\", \"jpeg\", \"tiff\", \"png\", \"bmp\", \"svg\"",
+      "location": "device argument; width, height, units and dpi arguments",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/ggsave.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "b35ae751aa724c632a0a92c454717087a788fab0d91e39d4447d3997afc4441d"
+      }
+    },
+    {
+      "id": "src-ellipse",
+      "title": "Data ellipses",
+      "url": "https://ggplot2.tidyverse.org/reference/stat_ellipse.html",
+      "evidence": "Compute normal data ellipses",
+      "location": "Page heading; type and level arguments",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/stat_ellipse.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "b476462d74d24e4d7f7773040d7ff3ebe1d6ee8df10c0f417cd03149219b7dcc"
+      }
+    },
+    {
+      "id": "src-secondary",
+      "title": "Secondary axes for transformed units",
+      "url": "https://ggplot2.tidyverse.org/reference/sec_axis.html",
+      "evidence": "one-to-one transformation of the primary axes.",
+      "location": "Description / introductory paragraph",
+      "source_type": "official_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/reference/sec_axis.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "4c823b7b536cd931f57c25a0e8df5da43eb1d2d498a8369f67b4a2b51cfdfe78"
+      }
+    },
+    {
+      "id": "src-program",
+      "title": "Programming with ggplot2",
+      "url": "https://ggplot2-book.org/programming.html",
+      "evidence": "reduce duplicated code by writing functions.",
+      "location": "Introduction; 18.4 Plot functions",
+      "source_type": "official_book",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2-book.org/programming.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "26ab62618d843464bc6f8a5397477ec5a00471b1dc03b649be8855b79bbff3e7"
+      }
+    },
+    {
+      "id": "src-extend",
+      "title": "Official ggplot2 extension mechanism",
+      "url": "https://ggplot2.tidyverse.org/articles/extending-ggplot2.html",
+      "evidence": "creating a new stat, geom, or theme.",
+      "location": "Introduction",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "4.0.3",
+      "retrieval_check": {
+        "checked_url": "https://ggplot2.tidyverse.org/articles/extending-ggplot2.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "6e82b234e6d4d1ef2a66c9fd55900ce3b9a13d7d6845f9709e5aec1098e8a55c"
+      }
+    },
+    {
+      "id": "src-ridge",
+      "title": "ggridges",
+      "url": "https://wilkelab.org/ggridges/",
+      "evidence": "visualizing changes in distributions over time or space.",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://wilkelab.org/ggridges/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "35f7386a43278d86dc6de9475714820c079479a491739f025b79cceab0b6ca6a"
+      }
+    },
+    {
+      "id": "src-pairs",
+      "title": "GGally pairwise plot matrix",
+      "url": "https://ggobi.github.io/ggally/reference/ggpairs.html",
+      "evidence": "Make a matrix of plots with a given data set",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "2.4.0",
+      "retrieval_check": {
+        "checked_url": "https://ggobi.github.io/ggally/reference/ggpairs.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "057a1785a2b1b9e847268db197e899f905675af192c76af2eb2683637a03295d"
+      }
+    },
+    {
+      "id": "src-parallel",
+      "title": "GGally parallel coordinates",
+      "url": "https://ggobi.github.io/ggally/reference/ggparcoord.html",
+      "evidence": "plotting static parallel coordinate plots",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "2.4.0",
+      "retrieval_check": {
+        "checked_url": "https://ggobi.github.io/ggally/reference/ggparcoord.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "9293eb0b0fc15461385e9d05a4682971ce956322bf67fde22e9c3784860920c6"
+      }
+    },
+    {
+      "id": "src-alluvial",
+      "title": "ggalluvial: design and Titanic example",
+      "url": "https://corybrunson.github.io/ggalluvial/",
+      "evidence": "frequency tables involving several categorical variables.",
+      "location": "Design; Usage / Titanic example",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "0.12.5",
+      "retrieval_check": {
+        "checked_url": "https://corybrunson.github.io/ggalluvial/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "0dd7c6e9d9f9a4ca63800a656344dc0b64067e179d57cc9befa0819f3493ca0e"
+      }
+    },
+    {
+      "id": "src-treemap",
+      "title": "treemapify: G20 treemap example",
+      "url": "https://wilkox.org/treemapify/",
+      "evidence": "area of the tile proportional to a variable.",
+      "location": "Drawing a simple treemap; Subgrouping",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://wilkox.org/treemapify/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "95cb298885c7d484f9dd80bb2a0a93cd4fd22122d0a1be6eb3f4de5e2c273d1b"
+      }
+    },
+    {
+      "id": "src-network",
+      "title": "ggraph: high-school friendship network",
+      "url": "https://ggraph.data-imaginist.com/",
+      "evidence": "relational data structures such as networks, graphs, and trees.",
+      "location": "Introduction; An example",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://ggraph.data-imaginist.com/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f22d5cd9909cfd9eacf1d38303d102a84f7be58b3429c1385b2c9411ebcbe4c0"
+      }
+    },
+    {
+      "id": "src-tree",
+      "title": "ggtree author book: phylogenetic tree visualisation",
+      "url": "https://yulab-smu.top/treedata-book/chapter4.html",
+      "evidence": "display tree graphics with the ggplot2 package",
+      "location": "4.1 Introduction; tree layouts",
+      "source_type": "extension_author_book",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://yulab-smu.top/treedata-book/chapter4.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "81624fadc3f052daaf476ab131f39f9081a2aba1f800dd7fe724849b8021506f"
+      }
+    },
+    {
+      "id": "src-pca",
+      "title": "ggfortify author paper in The R Journal",
+      "url": "https://journal.r-project.org/articles/RJ-2016-060/",
+      "evidence": "PCA with colors for each class.",
+      "location": "3.1 Principal components analysis / Figure 1",
+      "source_type": "author_research_paper",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "2016 paper",
+      "retrieval_check": {
+        "checked_url": "https://journal.r-project.org/articles/RJ-2016-060/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "5bb800fcc05a1922dfb74195aff1ece4b463b90e17b575e2e800202bffbdb8c6"
+      }
+    },
+    {
+      "id": "src-see",
+      "title": "see: model visualisation toolbox",
+      "url": "https://easystats.github.io/see/",
+      "evidence": "visualizations for model parameters, predictions, and performance diagnostics.\nnormality of residuals.",
+      "location": "Introduction; parameters; performance",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://easystats.github.io/see/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "4d785553dd04a9978a8f40fbfc5aeae0b5b128d83756a7033d1335e05ee85dba"
+      }
+    },
+    {
+      "id": "src-survival",
+      "title": "survminer: survival curves",
+      "url": "https://rpkgs.datanovia.com/survminer/",
+      "evidence": "Draws survival curves with the ‘number at risk’ table",
+      "location": "Survival Curves / ggsurvplot",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://rpkgs.datanovia.com/survminer/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "1431e2033c158c7408a678ca1f5eea566ae72a8ee80dbc431fe3cfa72e53eb81"
+      }
+    },
+    {
+      "id": "src-ggdist",
+      "title": "ggdist: uncertainty and distributions",
+      "url": "https://mjskay.github.io/ggdist/",
+      "evidence": "composite plots like rain cloud plots\narbitrary number of uncertainty bands",
+      "location": "Overview: dotsinterval and lineribbon families",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "3.3.3.9000 documentation",
+      "retrieval_check": {
+        "checked_url": "https://mjskay.github.io/ggdist/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "838f649cdb0e0bc59f649c71870d342ab88bf48e72ad439334b989d5a87ff072"
+      }
+    },
+    {
+      "id": "src-animate",
+      "title": "gganimate: animated graphics",
+      "url": "https://gganimate.com/",
+      "evidence": "customise how it should change with time.",
+      "location": "Introduction; boxplot transition example",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://gganimate.com/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "764db9b6925327885e03dc6e90c06dfc1b96c7fc6f4e56b1cfe20c8521cdb783"
+      }
+    },
+    {
+      "id": "src-interactive",
+      "title": "ggiraph: interactive SVG graphics",
+      "url": "https://davidgohel.github.io/ggiraph/",
+      "evidence": "add tooltips, hover effects and JavaScript actions",
+      "location": "Overview; Why use ggiraph; Usage",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://davidgohel.github.io/ggiraph/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "69332a0bc2993f0d5b0471e7d6976003ea9d364f691912d25a9f7918e396b458"
+      }
+    },
+    {
+      "id": "src-plotly",
+      "title": "Plotly official ggplot2 integration guide",
+      "url": "https://plotly.com/ggplot2/getting-started/",
+      "evidence": "click-and-drag on the chart to zoom",
+      "location": "Initialization; ggplotly conversion explanation",
+      "source_type": "integration_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://plotly.com/ggplot2/getting-started/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "3a9203d2a1badee568cb49e74fc72a7d517314f06be50d4a942394de2c59ec52"
+      }
+    },
+    {
+      "id": "src-patchwork",
+      "title": "patchwork: assemble separate plots",
+      "url": "https://patchwork.data-imaginist.com/",
+      "evidence": "combine separate ggplots into the same graphic.",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://patchwork.data-imaginist.com/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "23061f72f3f34202ea78cdf1be989964eb8d144341fd6a001708c9800d55c7c2"
+      }
+    },
+    {
+      "id": "src-inset",
+      "title": "patchwork: controlling layouts / Insets",
+      "url": "https://patchwork.data-imaginist.com/articles/guides/layout.html",
+      "evidence": "place a plot as an inset in another plot.",
+      "location": "Insets",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://patchwork.data-imaginist.com/articles/guides/layout.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "b5ef3fd689bcf9a73f3f32c18c53695b7fcca8bd4dca34d458e911edbf601182"
+      }
+    },
+    {
+      "id": "src-contextzoom",
+      "title": "ggforce: zoom with context",
+      "url": "https://ggforce.data-imaginist.com/reference/facet_zoom.html",
+      "evidence": "keeping the view of the full dataset as a separate panel.",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "0.5.0.9000 documentation",
+      "retrieval_check": {
+        "checked_url": "https://ggforce.data-imaginist.com/reference/facet_zoom.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "4d8f8e9e8bae06aeeab1a392e416992df8b9c1e47cf02c631d414b3f897e4ea8"
+      }
+    },
+    {
+      "id": "src-paginate",
+      "title": "ggforce: paginate facets",
+      "url": "https://ggforce.data-imaginist.com/reference/facet_wrap_paginate.html",
+      "evidence": "split a facetted plot over multiple pages.",
+      "location": "Description / introductory paragraph",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "0.5.0.9000 documentation",
+      "retrieval_check": {
+        "checked_url": "https://ggforce.data-imaginist.com/reference/facet_wrap_paginate.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "8265e154e158c67fb809b5e14048180e24cc4fcc9a20d72d8c95b2c8b47c05d4"
+      }
+    },
+    {
+      "id": "src-repel",
+      "title": "ggrepel: label placement",
+      "url": "https://ggrepel.slowkow.com/",
+      "evidence": "Text labels repel away from each other",
+      "location": "Overview",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://ggrepel.slowkow.com/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "88c1a4e64f7562d699cfbad49b1ad81957c9b11c733f2bd5a4a881f468b7a30f"
+      }
+    },
+    {
+      "id": "src-rich",
+      "title": "ggtext: Markdown and HTML text",
+      "url": "https://wilkelab.org/ggtext/",
+      "evidence": "provides simple Markdown and HTML rendering for ggplot2.",
+      "location": "Introduction; limited supported subset",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://wilkelab.org/ggtext/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "6cfff3ee064ee9a7a29bfe7839caca59a2752319684eec8fc16ce0c82fd0f94d"
+      }
+    },
+    {
+      "id": "src-highlight",
+      "title": "gghighlight: focus on selected series",
+      "url": "https://yutannihilation.github.io/gghighlight/",
+      "evidence": "highlight the lines whose max values are larger than 20",
+      "location": "Example",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://yutannihilation.github.io/gghighlight/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "90ead625e6960d458f6e6e57fab5de38d3f64655a666cb61cf2d4cd04e4d266f"
+      }
+    },
+    {
+      "id": "src-pattern",
+      "title": "ggpattern: pattern-filled graphics",
+      "url": "https://coolbutuseless.github.io/package/ggpattern/",
+      "evidence": "filled areas with geometric and image-based patterns.",
+      "location": "Introduction; Quickstart",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://coolbutuseless.github.io/package/ggpattern/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "37273272b5cb45a5ea036f9dbe30e85b8284a39e280a1422c35e554d56fbb5df"
+      }
+    },
+    {
+      "id": "src-newscale",
+      "title": "ggnewscale: multiple scales",
+      "url": "https://eliocamp.github.io/ggnewscale/",
+      "evidence": "use multiple scales in ggplot2.",
+      "location": "Introduction",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "0.5.2 shown in citation",
+      "retrieval_check": {
+        "checked_url": "https://eliocamp.github.io/ggnewscale/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "e50080e89bf31155e0193570a6bbf425c15a58b32ac1343e95c44cd7439c08f2"
+      }
+    },
+    {
+      "id": "src-spatial",
+      "title": "ggspatial: cartographic additions",
+      "url": "https://paleolimbot.github.io/ggspatial/",
+      "evidence": "spatial-aware automagic scale bar\nspatial-aware automagic north arrow",
+      "location": "Introduction / Long Lake example code comments",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://paleolimbot.github.io/ggspatial/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "8cc036e69d6eff61a10c7df19fa8a0388715beca4d6e4647b045e7e70d094aef"
+      }
+    },
+    {
+      "id": "src-tiles",
+      "title": "ggspatial: background map tiles",
+      "url": "https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html",
+      "evidence": "add background tiles.",
+      "location": "Description; attribution requirement",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://paleolimbot.github.io/ggspatial/reference/annotation_map_tile.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "a7961192904c4f13d56f27ad4a5057705fd8a917ef3d85c03bdc983cc5ead1bf"
+      }
+    },
+    {
+      "id": "src-raster",
+      "title": "ggrastr: rasterise dense plot layers",
+      "url": "https://github.com/VPetukhov/ggrastr",
+      "evidence": "keeping all labels and text in vector format.",
+      "location": "README introduction",
+      "source_type": "extension_author_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://raw.githubusercontent.com/VPetukhov/ggrastr/HEAD/README.md",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "d0e5e6df5342613228bdae426dbbba1732ae8681cf1b159cf18a837c2e2b9058"
+      }
+    },
+    {
+      "id": "src-stats",
+      "title": "ggstatsplot: graphics with statistical details",
+      "url": "https://cran.r-project.org/web/packages/ggstatsplot/readme/README.html",
+      "evidence": "graphics with details from statistical tests",
+      "location": "Introduction; Statistical reporting",
+      "source_type": "extension_author_readme",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://cran.r-project.org/web/packages/ggstatsplot/readme/README.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "32bdb49027ade1744a0cfc3da2cede2a14f792bb47d53fd1fc641e0cc207fc9f"
+      }
+    },
+    {
+      "id": "src-wordcloud",
+      "title": "ggwordcloud",
+      "url": "https://lepennec.github.io/ggwordcloud/",
+      "evidence": "provides a word cloud text geom",
+      "location": "Introduction; love_words examples",
+      "source_type": "extension_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://lepennec.github.io/ggwordcloud/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f0a73099d5bdb696b49421953eab0699f50aa6b6117b5560e8d03b5e61837c74"
+      }
+    },
+    {
+      "id": "src-bump",
+      "title": "ggbump: rankings over time",
+      "url": "https://github.com/davidsjoberg/ggbump",
+      "evidence": "plot ranking over time",
+      "location": "README introduction; Bump chart examples",
+      "source_type": "extension_author_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://raw.githubusercontent.com/davidsjoberg/ggbump/HEAD/README.md",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "2d24fb247467b0fd34572e8c8bec879a0e3c32e8f98e4db223062c40464bb421"
+      }
+    },
+    {
+      "id": "src-waffle",
+      "title": "waffle: square-pie graphics",
+      "url": "https://github.com/hrbrmstr/waffle",
+      "evidence": "Waffle (Square pie chart) Geom",
+      "location": "README / geom_waffle; faceted examples",
+      "source_type": "extension_author_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://raw.githubusercontent.com/hrbrmstr/waffle/HEAD/README.md",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "15816c2327cb880e5762378211193ab5ff64d5501043921f423f900afb9bdba6"
+      }
+    },
+    {
+      "id": "src-calendar",
+      "title": "calendR: printable calendars and daily heatmaps",
+      "url": "https://github.com/R-CoderDotCom/calendR",
+      "evidence": "monthly and yearly calendars made with ggplot2\nCalendar heatmap (Gradient)",
+      "location": "README introduction; Calendar heatmap (Gradient)",
+      "source_type": "extension_author_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://raw.githubusercontent.com/R-CoderDotCom/calendR/HEAD/README.md",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "30b3d20e1ebeaa5abb7a590b2aac1824285f623ae8dfaf6ca7665f7a62eb8543"
+      }
+    },
+    {
+      "id": "src-3d",
+      "title": "rayshader: transform ggplots into 3D",
+      "url": "https://www.rayshader.com/reference/plot_gg.html",
+      "evidence": "mapping the color or fill aesthetic to elevation.",
+      "location": "Description; restrictions; density examples",
+      "source_type": "integration_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://www.rayshader.com/reference/plot_gg.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "65b7218547ac1f5ebc6eed422f3e75603216eea6cf9fef2d9ff8a3b71a7a9082"
+      }
+    },
+    {
+      "id": "src-bbc",
+      "title": "BBC Visual and Data Journalism cookbook",
+      "url": "https://bbc.github.io/rcookbook/",
+      "evidence": "Another way of showing difference is a dumbbell chart:",
+      "location": "Make a dumbbell chart / Gapminder 1967 and 2007",
+      "source_type": "practitioner_cookbook",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "2019-01-24",
+      "retrieval_check": {
+        "checked_url": "https://bbc.github.io/rcookbook/",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f14449bda980eb1bcf03d314f611c63c8f9e886c29ff4634cd417f09a6547ab5"
+      }
+    },
+    {
+      "id": "src-mario",
+      "title": "Cédric Scherer Mario Kart visualisation, authorised walkthrough",
+      "url": "https://r-graph-gallery.com/web-lollipop-plot-with-r-mario-kart-64-world-records.html",
+      "evidence": "lollipop chart showing world records",
+      "location": "Introduction; About; complete R code",
+      "source_type": "author_authorised_case",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "retrieval_check": {
+        "checked_url": "https://r-graph-gallery.com/web-lollipop-plot-with-r-mario-kart-64-world-records.html",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "b85c8ec269eca7a3bd5858676c28cd84664131548267167cf6921538a3979b19"
+      }
+    },
+    {
+      "id": "src-mariocode",
+      "title": "Original Mario Kart visualisation source by Cédric Scherer",
+      "url": "https://github.com/z3tt/TidyTuesday/blob/main/R/2021_22_MarioKart.Rmd",
+      "evidence": "TidyTuesday 2021/22 - Mario Kart 64 World Records by mkwrs.com\ngeom_linerange\ngeom_point",
+      "location": "R Markdown YAML title; plot-building code",
+      "source_type": "practitioner_source_code",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim excerpts from the retrieved source; newline-separated fragments may be discontinuous. Surrounding context was also read.",
+      "version_observed": "25 May 2021",
+      "retrieval_check": {
+        "checked_url": "https://raw.githubusercontent.com/z3tt/TidyTuesday/main/R/2021_22_MarioKart.Rmd",
+        "checked_at": "2026-11-04T17:29:15Z",
+        "excerpt_match": true,
+        "match_scope": "Retrieved HTML text (or original repository text), HTML-decoded and Unicode/whitespace-normalised; exact substring for each captured fragment.",
+        "response_bytes_sha256": "f66e608d26382f9a1d473f8362a47dc1c3d727c9703bb223b8849be78a43b8ad"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp-relationships",
+      "name": "发现关系与追踪变化"
+    },
+    {
+      "id": "grp-comparison",
+      "name": "比较类别与组成"
+    },
+    {
+      "id": "grp-distributions",
+      "name": "理解分布与样本结构"
+    },
+    {
+      "id": "grp-statistics",
+      "name": "表达统计摘要、趋势与不确定性"
+    },
+    {
+      "id": "grp-spatial",
+      "name": "理解空间、网格与数值表面"
+    },
+    {
+      "id": "grp-structure",
+      "name": "探索多变量、网络与树"
+    },
+    {
+      "id": "grp-models",
+      "name": "解释分析与模型结果"
+    },
+    {
+      "id": "grp-communication",
+      "name": "解释、强调与改善可读性"
+    },
+    {
+      "id": "grp-layout",
+      "name": "组织多图与总览细节"
+    },
+    {
+      "id": "grp-dynamic",
+      "name": "制作动画、交互与日历成品"
+    },
+    {
+      "id": "grp-production",
+      "name": "导出、复用与定制生产"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-scatter",
+      "title": "观察两个变量之间的关系、分组与异常点",
+      "result": "得到散点图，用位置和分组颜色观察关联、聚集及偏离常见模式的观测。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可比较的变量和观测行；相关图形不能自行证明因果关系，重叠严重时应聚合或改用密度表达。",
+      "source_ids": [
+        "src-point"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-point",
+          "quote": "create scatterplots.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "散点关系图"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-bubble",
+      "title": "在二维关系图中同时展示第三个数量变量",
+      "result": "得到气泡图，以点面积补充第三个变量，例如同时对比收入、寿命和人口。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "第三个变量需适合大小编码；面积比不易精确读取，不能把半径误当面积。",
+      "source_ids": [
+        "src-point"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-point",
+          "quote": "third variable mapped to the size of points.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "气泡图"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-trend",
+      "title": "追踪指标随时间或观测顺序的发展",
+      "result": "得到折线、阶梯或路径图，展示趋势、跳变发生的位置及按顺序经过的轨迹。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "时间值和分组必须正确；折线按 x 排序，路径按数据顺序连接，二者不可混用。",
+      "source_ids": [
+        "src-path"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-path",
+          "quote": "connects the observations in the order in which they appear",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "时间序列折线",
+        "阶梯趋势",
+        "有序轨迹"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-bars",
+      "title": "比较不同类别的频数、数量或汇总值",
+      "result": "得到类别条形图，可比较原始观测计数，也可显示已经计算好的业务或实验指标。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "计数与已汇总数值采用不同统计方式；排序、缺失类别和零基线应有明确含义。",
+      "source_ids": [
+        "src-bar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-bar",
+          "quote": "counts the number of cases",
+          "location": "Description / introductory paragraph"
+        },
+        {
+          "source_id": "src-bar",
+          "quote": "represent values in the data",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "类别比较",
+        "计数条形图",
+        "排序条形图"
+      ],
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-composition",
+      "title": "比较不同群体的组成与占比",
+      "result": "得到堆叠或标准化的百分比条形图，查看整体由哪些部分构成及比例如何不同。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要类别及其分组或权重；百分比图隐藏总量差异，应另给分母或总量。",
+      "source_ids": [
+        "src-stack"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-stack",
+          "quote": "stacks bars and standardises each stack to have constant height.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "堆叠条形图",
+        "百分比堆叠图"
+      ],
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-histogram",
+      "title": "查看数值数据的分布形状与集中区间",
+      "result": "得到直方图或频率多边形，发现偏斜、多峰、稀疏区以及不同组分布的差异。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要连续或近似连续数值；分箱宽度会改变外观，不能只采用任意默认分箱作结论。",
+      "source_ids": [
+        "src-hist"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-hist",
+          "quote": "dividing the x axis into bins and counting",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "直方图",
+        "频率多边形"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-density",
+      "title": "比较连续变量的平滑分布形状",
+      "result": "得到核密度曲线，观察不同群体在哪些取值范围集中及尾部如何变化。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "带宽影响结果；密度不是逐点观测频数，小样本、离散值和边界需特别处理。",
+      "source_ids": [
+        "src-density"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-density",
+          "quote": "Computes and draws kernel density estimate",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "核密度曲线"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-boxplot",
+      "title": "紧凑比较多组数据的中位数、离散程度与异常值",
+      "result": "得到并列箱线图，在有限空间内比较各组分布摘要及按规则识别的离群观测。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "箱线摘要会隐藏多峰与样本量；图中离群规则不等于证明记录有错。",
+      "source_ids": [
+        "src-box"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-box",
+          "quote": "the median, two hinges and two whiskers",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "箱线图"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-violin",
+      "title": "比较多组分布的形状而不只比较均值",
+      "result": "得到小提琴图，以对称密度形状展示每组数据在不同取值处的集中程度。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "分组样本量和带宽会影响形状；宜同时给样本量或原始点。",
+      "source_ids": [
+        "src-violin"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-violin",
+          "quote": "a violin plot is a mirrored density plot",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "小提琴图"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-ecdf",
+      "title": "读取达到某个阈值的样本比例",
+      "result": "得到经验累积分布图，可比较多少观测低于某值，以及各组整体分布如何移动。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "纵轴是累计比例，读者需理解其含义；无需选择直方图分箱或密度带宽。",
+      "source_ids": [
+        "src-ecdf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ecdf",
+          "quote": "doesn't require any tuning parameters",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "ECDF",
+        "经验累积分布"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-qq",
+      "title": "检查样本分布与理论分布的偏离",
+      "result": "得到分位数对比分布图和参考线，观察尾部、偏斜等对分布假设的偏离。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "必须选择适当的理论分布；视觉近似不能证明模型正确或代替其他诊断。",
+      "source_ids": [
+        "src-qq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-qq",
+          "quote": "produce quantile-quantile plots.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "Q-Q 图"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-overlap",
+      "title": "揭示离散或重复取值下被遮挡的观测",
+      "result": "用轻微抖动分开小样本重叠点，或用点面积表示相同位置的观测数量。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "抖动位置不是实际测量值；需固定随机性以便复现，计数图则保留重复位置的计数。",
+      "source_ids": [
+        "src-jitter",
+        "src-count"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-jitter",
+          "quote": "handling overplotting caused by discreteness in smaller datasets.",
+          "location": "Description / introductory paragraph"
+        },
+        {
+          "source_id": "src-count",
+          "quote": "maps the count to point area.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "抖动点图",
+        "重复点计数图"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-hexbin",
+      "title": "辨认大量二维样本在哪些区域集中",
+      "result": "得到六边形分箱计数图，用颜色展示密集散点的位置与局部数量。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "geom_hex 属于 ggplot2，但需要可用的 hexbin 依赖；分箱大小会改变局部结构。",
+      "source_ids": [
+        "src-hex"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-hex",
+          "quote": "counts the number of cases in each hexagon",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "六边形热图",
+        "密集散点聚合"
+      ],
+      "group_ids": [
+        "grp-distributions",
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-density2d",
+      "title": "比较二维数据的密集区域和分布轮廓",
+      "result": "得到二维核密度等高线或填色密度带，以轮廓呈现聚集模式。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用 MASS::kde2d 等统计依赖；密度带宽和样本分布影响轮廓，不是地理边界。",
+      "source_ids": [
+        "src-density2d"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-density2d",
+          "quote": "2D kernel density estimation",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "二维密度等高线"
+      ],
+      "group_ids": [
+        "grp-distributions",
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-surface",
+      "title": "把三变量形成的数值表面表达为二维等高图",
+      "result": "得到等值线或填色等值带，例如展示空间位置上的高度、温度或响应值变化。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要规则的 x-y 网格和 z 值；不规则数据须先外部插值，核心包不绘制真正三维曲面。",
+      "source_ids": [
+        "src-contour"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-contour",
+          "quote": "visualise 3D surfaces in 2D.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "等高线图",
+        "填色等值图"
+      ],
+      "group_ids": [
+        "grp-spatial"
+      ]
+    },
+    {
+      "id": "p-heatmap",
+      "title": "把矩阵或二维网格数值转换为颜色热图",
+      "result": "得到按行列或空间格点排布的色块图，用颜色辨认高低值、周期与局部模式。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "矩阵需整理成坐标和值；相关系数、聚类、标准化或缺失值判定需另行计算。",
+      "source_ids": [
+        "src-tile"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-tile",
+          "quote": "geom_tile(aes(fill = z), colour = \"grey50\")",
+          "location": "Examples: df grid with fill = z"
+        }
+      ],
+      "aliases": [
+        "矩阵热图",
+        "栅格热图"
+      ],
+      "group_ids": [
+        "grp-spatial"
+      ]
+    },
+    {
+      "id": "p-interval",
+      "title": "比较估计值及其区间范围",
+      "result": "得到点区间、误差棒或线范围图，让读者同时看到中心值和不确定范围。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需提供或计算上下限，并说明它是置信区间、标准差、标准误还是取值范围；绘制不会自动验证其含义。",
+      "source_ids": [
+        "src-interval"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-interval",
+          "quote": "representing a vertical interval defined by",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "误差棒",
+        "点区间图"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-band",
+      "title": "沿连续横轴展示上下界与不确定范围",
+      "result": "得到围绕曲线或时序的带状区域，展示测量范围、预测区间或上下限。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需提供每个横轴位置的上下界；预测模型和区间计算可以来自其他工具。",
+      "source_ids": [
+        "src-ribbon"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ribbon",
+          "quote": "displays a y interval",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "不确定带",
+        "区间带"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-area",
+      "title": "展示数量随连续横轴的变化及累积组成",
+      "result": "得到面积图或堆叠面积图，呈现总量与组成随时间等连续变量的变化。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "通常以零为基线；需统一分组、顺序和横轴对齐方式，面积形状不适合精确比较中间系列。",
+      "source_ids": [
+        "src-ribbon"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ribbon",
+          "quote": "ymin is fixed to 0",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "面积图",
+        "堆叠面积图"
+      ],
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-smooth",
+      "title": "在噪声样本中显示趋势与拟合置信带",
+      "result": "在原始样本上叠加平滑或回归曲线及置信带，便于观察整体变化模式。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需选择合适的方法、公式和分组；置信带不是所有未来观测的预测区间，也不证明因果。",
+      "source_ids": [
+        "src-smooth"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-smooth",
+          "quote": "Smoothed conditional means",
+          "location": "Page heading; se argument"
+        },
+        {
+          "source_id": "src-smooth",
+          "quote": "Display confidence band around smooth?",
+          "location": "Page heading; se argument"
+        }
+      ],
+      "aliases": [
+        "回归趋势图",
+        "平滑趋势"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-quantile",
+      "title": "观察变量关系在不同分位数上的差异",
+      "result": "得到多条分位数回归曲线，比较下尾、中位数和上尾随解释变量如何变化。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需 quantreg 等依赖并指定分位数和拟合方法；结果依赖模型假设。",
+      "source_ids": [
+        "src-quantile"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-quantile",
+          "quote": "draws the fitted quantiles with lines.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "分位数回归图"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-aggregate",
+      "title": "按分组或区间展示自定义统计摘要",
+      "result": "直接在图层中汇总均值、中位数或其他函数结果，并可返回中心值和上下界。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需明确汇总函数和有效样本；默认摘要不能代替研究设计或错误数据清理。",
+      "source_ids": [
+        "src-summary"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-summary",
+          "quote": "they can compute any aggregate.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "分组统计摘要图"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-theory",
+      "title": "把数学函数或理论分布叠加到数据上",
+      "result": "得到函数曲线，可用于比较观测数据与理论形状，或讲解模型参数的影响。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "提供可在数值网格上求值的函数及参数；这只是绘制，不自动拟合或检验理论。",
+      "source_ids": [
+        "src-function"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-function",
+          "quote": "draws a function as a continuous curve.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "函数图",
+        "理论曲线叠加"
+      ],
+      "group_ids": [
+        "grp-statistics"
+      ]
+    },
+    {
+      "id": "p-map",
+      "title": "绘制带数据编码的点、线和区域地图",
+      "result": "将 sf 空间对象及其属性绘制成地图，可叠加观测点、道路或区域填色。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 sf 及空间数据依赖，并确保坐标参考系、区域关联和统计口径正确；绘图不自动取得地图数据。",
+      "source_ids": [
+        "src-sf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-sf",
+          "quote": "you can get points, lines, or polygons.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "专题地图",
+        "区域填色地图",
+        "空间数据叠加"
+      ],
+      "group_ids": [
+        "grp-spatial"
+      ]
+    },
+    {
+      "id": "p-direction",
+      "title": "表达位置上的方向与距离或强度",
+      "result": "得到方向线段或向量场式图，展示每个位置的方向和长度信息。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需提供起点、方向和长度；角度从东起逆时针，风向等领域惯例须先转换。",
+      "source_ids": [
+        "src-spoke"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-spoke",
+          "quote": "variables that describe direction and distance.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "方向向量图"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-facets",
+      "title": "用同一规则并列比较不同群体或条件",
+      "result": "得到一组小多图，可按单一分组换行，也可按两个分类变量构成行列矩阵。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "各面板共享图层结构；需明确固定还是自由坐标尺度，分面不是任意独立图的拼版。",
+      "source_ids": [
+        "src-facet",
+        "src-wrap"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-facet",
+          "quote": "matrix of panels defined by row and column faceting variables.",
+          "location": "Description / introductory paragraph"
+        },
+        {
+          "source_id": "src-wrap",
+          "quote": "wraps a 1d sequence of panels into 2d.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "小多图",
+        "分面比较"
+      ],
+      "group_ids": [
+        "grp-layout",
+        "grp-structure"
+      ]
+    },
+    {
+      "id": "p-transformed",
+      "title": "在跨数量级或逆序的数据中保留可读的轴",
+      "result": "得到对数、平方根或反向坐标轴，以合适尺度显示跨度很大或方向有特定含义的数据。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "对数变换要求适用的值域；坐标变换会影响统计及视觉解释，不应隐藏变换。",
+      "source_ids": [
+        "src-transform"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-transform",
+          "quote": "scale_*_log10(), scale_*_sqrt() and scale_*_reverse().",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "对数轴图",
+        "反向坐标轴"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-zoom",
+      "title": "放大局部图形而保留完整数据的统计结果",
+      "result": "得到局部放大的静态视图，同时避免因为删去轴范围外数据而重新改变平滑或汇总。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用坐标范围作视觉缩放；它与改变 scale limits 导致数据被排除的行为不同。",
+      "source_ids": [
+        "src-zoom"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-zoom",
+          "quote": "The data is unchanged",
+          "location": "Examples: coordinate limits versus scale limits"
+        }
+      ],
+      "aliases": [
+        "坐标局部放大"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-polar",
+      "title": "把组成数据表达为极坐标图",
+      "result": "把堆叠条形等图形转换为饼图或其他极坐标表达，用于圆周上的组成展示。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "极坐标图的角度和面积较难比较；精确比较通常优先条形图，不把装饰性当作准确性。",
+      "source_ids": [
+        "src-polar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-polar",
+          "quote": "pie charts, which are a stacked bar chart in polar coordinates.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "饼图",
+        "极坐标图"
+      ],
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-annotate",
+      "title": "直接在图内解释关键发现、阈值与事件",
+      "result": "把文字、连线或几何注释放到相关位置，使图表能够说明关键点和背景。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "注释内容及定位由作者提供；多面板、裁剪和文本碰撞需要检查。",
+      "source_ids": [
+        "src-annotate",
+        "src-segment",
+        "src-labels"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-annotate",
+          "quote": "adding small annotations",
+          "location": "Description / introductory paragraph"
+        },
+        {
+          "source_id": "src-segment",
+          "quote": "draws a straight line between points",
+          "location": "Description / introductory paragraph"
+        },
+        {
+          "source_id": "src-labels",
+          "quote": "information about the data source",
+          "location": "Description; alt / alt_insight arguments"
+        }
+      ],
+      "aliases": [
+        "事件注释",
+        "解释型图表"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-style",
+      "title": "为一组图表建立一致的出版或品牌风格",
+      "result": "统一字体、背景、网格、图例和间距，使不同图表呈现一致的视觉规范。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "主题控制非数据元素；数据配色和字体安装仍需单独配置，组织规范也需作者制定。",
+      "source_ids": [
+        "src-theme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-theme",
+          "quote": "give plots a consistent customized look.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "可复用主题",
+        "出版风格图表"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-accessible",
+      "title": "使用兼顾常见色觉差异的颜色编码",
+      "result": "用 viridis 系列颜色表达分类或连续数值，减少常见色觉差异造成的阅读障碍。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "配色不能保证整图可访问性；仍要检查对比、文字、形状和导出效果。",
+      "source_ids": [
+        "src-viridis"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-viridis",
+          "quote": "perceived by viewers with common forms of colour blindness.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "色觉友好配色"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-alt",
+      "title": "为图表保存可被报告系统读取的替代文字",
+      "result": "在图对象中提供替代描述与要点，供支持的输出或报告系统读取使用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要作者编写或审核描述；并非所有图片格式或宿主都会自动嵌入和展示这些文字。",
+      "source_ids": [
+        "src-labels"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-labels",
+          "quote": "generation of alt-text for the plot",
+          "location": "Description; alt / alt_insight arguments"
+        }
+      ],
+      "aliases": [
+        "alt text",
+        "替代文本"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-export",
+      "title": "导出用于论文、印刷或网页的图形文件",
+      "result": "保存 PDF、SVG、PNG、TIFF 等文件，并控制版面尺寸与位图分辨率。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "具体格式依赖可用的图形设备和字体；部分设备需额外包，保存后仍应检查渲染。",
+      "source_ids": [
+        "src-save"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-save",
+          "quote": "\"pdf\", \"jpeg\", \"tiff\", \"png\", \"bmp\", \"svg\"",
+          "location": "device argument; width, height, units and dpi arguments"
+        }
+      ],
+      "aliases": [
+        "矢量图导出",
+        "高分辨率图片"
+      ],
+      "group_ids": [
+        "grp-production"
+      ]
+    },
+    {
+      "id": "p-automate",
+      "title": "用同一个图形模板批量生成可更新的图表",
+      "result": "把绘图逻辑封装为 R 函数，数据或参数变化后可重复生成一组一致的图表。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要编写 R 函数并提供数据；数据获取、调度、报告编译和自动部署由外部工作流负责。",
+      "source_ids": [
+        "src-program"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-program",
+          "quote": "reduce duplicated code by writing functions.",
+          "location": "Introduction; 18.4 Plot functions"
+        }
+      ],
+      "aliases": [
+        "参数化绘图",
+        "批量图表"
+      ],
+      "group_ids": [
+        "grp-production"
+      ]
+    },
+    {
+      "id": "p-extend",
+      "title": "为特殊数据设计可复用的新图层或统计图形",
+      "result": "编写自己的几何图层、统计变换或主题，使团队能重复绘制领域特定图形。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这里指核心包提供的扩展机制；需要开发 R 代码、理解 ggproto 并测试，不是现成的一键图表。",
+      "source_ids": [
+        "src-extend"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-extend",
+          "quote": "creating a new stat, geom, or theme.",
+          "location": "Introduction"
+        }
+      ],
+      "aliases": [
+        "自定义统计图形"
+      ],
+      "group_ids": [
+        "grp-production"
+      ]
+    },
+    {
+      "id": "p-ellipse",
+      "title": "用数据椭圆比较二维分组的集中范围",
+      "result": "在散点图上叠加分组椭圆，观察各组二维分布的方向、尺度与重叠。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "t、正态和欧氏类型的含义不同；数据椭圆不应被误读为均值的置信区域。",
+      "source_ids": [
+        "src-ellipse"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ellipse",
+          "quote": "Compute normal data ellipses",
+          "location": "Page heading; type and level arguments"
+        }
+      ],
+      "aliases": [
+        "二维数据椭圆"
+      ],
+      "group_ids": [
+        "grp-distributions",
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-units",
+      "title": "在同一数值轴上同时显示可换算的两套单位",
+      "result": "在主轴对面增加对应的第二套单位或刻度，例如摄氏与华氏温度。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "副轴必须是主轴的一一变换；不能直接借此绘制两套无关、任意缩放的数据轴。",
+      "source_ids": [
+        "src-secondary"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-secondary",
+          "quote": "one-to-one transformation of the primary axes.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "换算单位副轴"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-paired",
+      "title": "突出同一对象两次测量的差距",
+      "result": "得到哑铃式比较图，突出多个对象在起点和终点之间的变化幅度。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "所引 BBC 实现使用 ggalt 和 bbplot，并整理两次测量为同一行；2019 示例未在当前环境复现。该结果也可用核心点线自行组合，本文按证据中的实现标注。",
+      "source_ids": [
+        "src-bbc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-bbc",
+          "quote": "Another way of showing difference is a dumbbell chart:",
+          "location": "Make a dumbbell chart / Gapminder 1967 and 2007"
+        }
+      ],
+      "aliases": [
+        "哑铃图",
+        "前后变化比较"
+      ],
+      "example": "BBC 用 Gapminder 比较各国 1967 与 2007 年预期寿命差距。",
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-lollipop",
+      "title": "用端点和细线制作紧凑的成绩或排名比较图",
+      "result": "得到棒棒糖式图形，比较每个项目的数值，并可在相邻区域安排文字和记录说明。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "主体可由核心点和线段组合；所引 Mario Kart 成品另外使用 ggtext、自定义字体和 ragg 等美化或输出工具，完整成品不全是核心能力。",
+      "source_ids": [
+        "src-mario",
+        "src-mariocode"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-mario",
+          "quote": "lollipop chart showing world records",
+          "location": "Introduction; About; complete R code"
+        },
+        {
+          "source_id": "src-mariocode",
+          "quote": "TidyTuesday 2021/22 - Mario Kart 64 World Records by mkwrs.com",
+          "location": "R Markdown YAML title; plot-building code"
+        },
+        {
+          "source_id": "src-mariocode",
+          "quote": "geom_linerange",
+          "location": "R Markdown YAML title; plot-building code"
+        },
+        {
+          "source_id": "src-mariocode",
+          "quote": "geom_point",
+          "location": "R Markdown YAML title; plot-building code"
+        }
+      ],
+      "aliases": [
+        "棒棒糖图",
+        "纪录比较图"
+      ],
+      "example": "Cédric Scherer 的 TidyTuesday Mario Kart 64 世界纪录图，附作者原始 R Markdown。",
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-ridge",
+      "title": "比较很多组分布随时间或空间的变化",
+      "result": "得到山脊图，以错层密度或曲线形状紧凑比较多组分布。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggridges；应明确带宽、归一化和重叠比例，避免把高度或面积误当样本量。",
+      "source_ids": [
+        "src-ridge"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ridge",
+          "quote": "visualizing changes in distributions over time or space.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "山脊图",
+        "ridgeline plot"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-pairs",
+      "title": "一次检查多个变量之间的两两关系",
+      "result": "得到包含散点、分布和相关摘要的图形矩阵，用来筛查多变量的关系结构。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 GGally::ggpairs；变量数过多会产生过大的矩阵，相关摘要仍需核对变量类型。",
+      "source_ids": [
+        "src-pairs"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-pairs",
+          "quote": "Make a matrix of plots with a given data set",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "散点矩阵",
+        "成对关系矩阵"
+      ],
+      "group_ids": [
+        "grp-structure"
+      ]
+    },
+    {
+      "id": "p-parallel",
+      "title": "比较每个对象跨多个指标的整体轮廓",
+      "result": "得到平行坐标图，以每条线连接同一个对象在多个变量轴上的取值。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 GGally；变量尺度、排序、缺失处理和标准化会显著影响模式。",
+      "source_ids": [
+        "src-parallel"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-parallel",
+          "quote": "plotting static parallel coordinate plots",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "平行坐标图"
+      ],
+      "group_ids": [
+        "grp-structure"
+      ]
+    },
+    {
+      "id": "p-alluvial",
+      "title": "展示人群或对象在多个类别之间的组成流向",
+      "result": "得到冲积图，展示类别之间对应的人数、频数或群体构成。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggalluvial 和适合的数据框；流带表示给定群体的对应或频数，不会自动推断真实因果或个体转移。",
+      "source_ids": [
+        "src-alluvial"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-alluvial",
+          "quote": "frequency tables involving several categorical variables.",
+          "location": "Design; Usage / Titanic example"
+        }
+      ],
+      "aliases": [
+        "冲积图",
+        "类别流向图"
+      ],
+      "example": "包作者用 Titanic 乘客数据展示多维人口类别的组成。",
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-treemap",
+      "title": "用嵌套面积展示层级组成与第二个指标",
+      "result": "得到矩形树图，以矩形面积表示数量，以颜色或嵌套分组补充另一维信息。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 treemapify，面积值应适合非负的部分与整体比较；面积编码不适合精确读取。",
+      "source_ids": [
+        "src-treemap"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-treemap",
+          "quote": "area of the tile proportional to a variable.",
+          "location": "Drawing a simple treemap; Subgrouping"
+        }
+      ],
+      "aliases": [
+        "矩形树图"
+      ],
+      "example": "包作者用 G20 数据把 GDP 映射为面积、HDI 映射为颜色，并演示区域分组。",
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-network",
+      "title": "绘制关系网络与层级结构",
+      "result": "得到节点和连接边组成的网络图，或按树状、圆形等布局显示关系结构。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggraph，通常配合 tidygraph 或 igraph；节点位置依赖布局算法，不天然等于距离或因果强度。",
+      "source_ids": [
+        "src-network"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-network",
+          "quote": "relational data structures such as networks, graphs, and trees.",
+          "location": "Introduction; An example"
+        }
+      ],
+      "aliases": [
+        "网络图",
+        "关系图",
+        "层级树图"
+      ],
+      "example": "ggraph 官方示例绘制高中友谊网络，并把入度作为节点大小。",
+      "group_ids": [
+        "grp-structure"
+      ]
+    },
+    {
+      "id": "p-phylogeny",
+      "title": "绘制可整合关联数据的系统发育树",
+      "result": "得到系统发育树视图，可选择布局，并继续使用配套工具加入分支或外部数据注释。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Bioconductor 的 ggtree 及兼容的树数据、R 和包版本；构建或估计系统发育树是前置分析。",
+      "source_ids": [
+        "src-tree"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-tree",
+          "quote": "display tree graphics with the ggplot2 package",
+          "location": "4.1 Introduction; tree layouts"
+        }
+      ],
+      "aliases": [
+        "系统发育树可视化"
+      ],
+      "group_ids": [
+        "grp-structure"
+      ]
+    },
+    {
+      "id": "p-pca",
+      "title": "把主成分分析结果转换为可解释的样本图",
+      "result": "展示 PCA 得分、类别差异和可选的载荷向量，以观察降维后的结构。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggfortify 和预先计算的 prcomp 或 princomp 对象；所引作者论文为 2016 年，当前组合需复现确认。",
+      "source_ids": [
+        "src-pca"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-pca",
+          "quote": "PCA with colors for each class.",
+          "location": "3.1 Principal components analysis / Figure 1"
+        }
+      ],
+      "aliases": [
+        "PCA 得分图",
+        "主成分双标图"
+      ],
+      "example": "ggfortify 作者在 The R Journal 用 iris 展示按物种着色及带载荷的 PCA。",
+      "group_ids": [
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-model-diagnostics",
+      "title": "把模型假设检查结果转换为诊断图",
+      "result": "展示残差等模型诊断结果，帮助检查正态性和其他适用的模型假设。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 see 和 easystats 中相应分析包，如 performance；支持的诊断依模型类型而异，图形不自动判定模型可用。",
+      "source_ids": [
+        "src-see"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-see",
+          "quote": "normality of residuals.",
+          "location": "Introduction; parameters; performance"
+        }
+      ],
+      "aliases": [
+        "回归诊断图"
+      ],
+      "group_ids": [
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-model-results",
+      "title": "把模型参数与预测摘要整理为可比较图形",
+      "result": "把模型参数、预测或不确定区间变成点须等图形，便于比较效应方向与大小。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 see 及 parameters、modelbased 等对应的 easystats 包；必须解释估计对象、变换和区间口径。",
+      "source_ids": [
+        "src-see"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-see",
+          "quote": "visualizations for model parameters, predictions, and performance diagnostics.",
+          "location": "Introduction; parameters; performance"
+        }
+      ],
+      "aliases": [
+        "模型结果图",
+        "参数点须图"
+      ],
+      "group_ids": [
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-survival",
+      "title": "把生存分析结果与风险人数同时展示",
+      "result": "得到生存曲线及风险人数表，也可显示事件和删失数量等辅助信息。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 survminer 与适当的 survival 拟合结果；删失规则、组间可比性和检验选择属于分析前提。",
+      "source_ids": [
+        "src-survival"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-survival",
+          "quote": "Draws survival curves with the ‘number at risk’ table",
+          "location": "Survival Curves / ggsurvplot"
+        }
+      ],
+      "aliases": [
+        "生存曲线",
+        "风险人数表"
+      ],
+      "group_ids": [
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-raincloud",
+      "title": "同时比较样本点、分布形状与区间摘要",
+      "result": "得到雨云式组合图，在同一画面中同时展示个体观测、半密度和摘要。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggdist 及相应组合图层；各部分应基于相同数据和清楚的统计口径。",
+      "source_ids": [
+        "src-ggdist"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ggdist",
+          "quote": "composite plots like rain cloud plots",
+          "location": "Overview: dotsinterval and lineribbon families"
+        }
+      ],
+      "aliases": [
+        "雨云图"
+      ],
+      "group_ids": [
+        "grp-distributions"
+      ]
+    },
+    {
+      "id": "p-multiband",
+      "title": "展示拟合曲线的多层不确定带",
+      "result": "沿拟合线显示多种覆盖水平的区间带，表达不确定性的层次而不只给单一误差带。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggdist；需要抽样、分布对象或合法的区间数据，并说明是置信还是后验等不确定性。",
+      "source_ids": [
+        "src-ggdist"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ggdist",
+          "quote": "arbitrary number of uncertainty bands",
+          "location": "Overview: dotsinterval and lineribbon families"
+        }
+      ],
+      "aliases": [
+        "多层区间带"
+      ],
+      "group_ids": [
+        "grp-statistics",
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-animation",
+      "title": "把图形随时间或状态的变化制作成动画",
+      "result": "得到随时间或状态过渡的动画图，可呈现各阶段变化并保持对象之间的对应。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 gganimate；输出 GIF 或视频还需要合适渲染器，插帧是表现方式而非新增观测。",
+      "source_ids": [
+        "src-animate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-animate",
+          "quote": "customise how it should change with time.",
+          "location": "Introduction; boxplot transition example"
+        }
+      ],
+      "aliases": [
+        "动态图",
+        "状态过渡动画"
+      ],
+      "example": "gganimate 官方示例让汽车油耗箱线图随变速挡位状态切换。",
+      "group_ids": [
+        "grp-dynamic"
+      ]
+    },
+    {
+      "id": "p-svg-interaction",
+      "title": "让读者悬浮查看详情并点击图中对象",
+      "result": "得到带提示、悬浮效果和点击动作的 SVG 网页图；配合 Shiny 可把选中元素回传应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggiraph 的交互图层和支持 HTML/JavaScript 的输出环境；Shiny 联动另需应用逻辑，静态图片不会保留这些交互。",
+      "source_ids": [
+        "src-interactive"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-interactive",
+          "quote": "add tooltips, hover effects and JavaScript actions",
+          "location": "Overview; Why use ggiraph; Usage"
+        }
+      ],
+      "aliases": [
+        "交互 SVG",
+        "悬浮说明",
+        "图元选择"
+      ],
+      "group_ids": [
+        "grp-dynamic",
+        "grp-production"
+      ]
+    },
+    {
+      "id": "p-plotly",
+      "title": "把支持的静态图转换成可缩放的网页图",
+      "result": "通过 ggplotly 转换为可缩放、平移和切换系列显示的浏览器图形。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 plotly 及 HTML/JavaScript 环境；转换并不保证所有 ggplot2 或扩展图层完整还原，应对目标图逐项检查。",
+      "source_ids": [
+        "src-plotly"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-plotly",
+          "quote": "click-and-drag on the chart to zoom",
+          "location": "Initialization; ggplotly conversion explanation"
+        }
+      ],
+      "aliases": [
+        "ggplotly",
+        "交互式网页图"
+      ],
+      "group_ids": [
+        "grp-dynamic"
+      ]
+    },
+    {
+      "id": "p-compose",
+      "title": "把多幅独立图组合成同一叙事版面",
+      "result": "得到对齐、嵌套的多图组合，可把不同图形用于解释同一个问题。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 patchwork；不同于核心分面，子图可以拥有各自的数据、图层和坐标。",
+      "source_ids": [
+        "src-patchwork"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-patchwork",
+          "quote": "combine separate ggplots into the same graphic.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "多图拼版",
+        "复合图"
+      ],
+      "group_ids": [
+        "grp-layout"
+      ]
+    },
+    {
+      "id": "p-inset",
+      "title": "在主图中嵌入补充图或局部图",
+      "result": "把另一幅图放入主图的指定区域，展示补充背景、总览或局部细节。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 patchwork 的 inset 布局；插图位置、裁剪、比例和图例遮挡须检查。",
+      "source_ids": [
+        "src-inset"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-inset",
+          "quote": "place a plot as an inset in another plot.",
+          "location": "Insets"
+        }
+      ],
+      "aliases": [
+        "插图",
+        "图中图"
+      ],
+      "group_ids": [
+        "grp-layout"
+      ]
+    },
+    {
+      "id": "p-contextzoom",
+      "title": "在展示局部放大的同时保留整体背景",
+      "result": "得到总览与局部放大并列的图形，并在总览中标明放大的范围。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggforce::facet_zoom；这是静态的总览与细节布局，不是鼠标交互缩放。",
+      "source_ids": [
+        "src-contextzoom"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-contextzoom",
+          "quote": "keeping the view of the full dataset as a separate panel.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "局部放大与总览"
+      ],
+      "group_ids": [
+        "grp-layout"
+      ]
+    },
+    {
+      "id": "p-paginate",
+      "title": "把大量分面分成可阅读的多页图",
+      "result": "按设定的行列数把分组图拆成多页，适合逐地区、逐对象的审阅或报告。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggforce；页码和输出循环由调用者控制，合成报告另需文档工具。",
+      "source_ids": [
+        "src-paginate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-paginate",
+          "quote": "split a facetted plot over multiple pages.",
+          "location": "Description / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "分面分页"
+      ],
+      "group_ids": [
+        "grp-layout"
+      ]
+    },
+    {
+      "id": "p-repel",
+      "title": "自动减少数据标签之间的遮挡",
+      "result": "在点或其他对象附近放置相互避让的标签，并可用连线保留对应关系。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggrepel；非常拥挤时可能无法显示全部标签，应检查迭代、随机种子与标签省略。",
+      "source_ids": [
+        "src-repel"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-repel",
+          "quote": "Text labels repel away from each other",
+          "location": "Overview"
+        }
+      ],
+      "aliases": [
+        "标签避让"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-richtext",
+      "title": "用富文本标题和说明表达重点",
+      "result": "在标题、轴、图例或文本框中混合强调、颜色、上下标和可换行文字。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggtext 与 gridtext；只支持有限的 Markdown/HTML/CSS 子集，不是完整网页排版引擎。",
+      "source_ids": [
+        "src-rich"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-rich",
+          "quote": "provides simple Markdown and HTML rendering for ggplot2.",
+          "location": "Introduction; limited supported subset"
+        }
+      ],
+      "aliases": [
+        "富文本图表",
+        "Markdown 标注"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-highlight",
+      "title": "在许多系列中突出满足条件的对象",
+      "result": "在保留背景系列的同时强调达到阈值或规则的曲线和观测。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 gghighlight；强调条件由作者指定，不能把突出显示解释为统计显著。",
+      "source_ids": [
+        "src-highlight"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-highlight",
+          "quote": "highlight the lines whose max values are larger than 20",
+          "location": "Example"
+        }
+      ],
+      "aliases": [
+        "条件高亮",
+        "重点系列强调"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-patterns",
+      "title": "用纹理或图案区分图中的填充区域",
+      "result": "为条形、区域、地图等图形增加条纹、几何或图像图案，补充颜色编码。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggpattern 及其图形依赖；密集纹理、设备和缩小印刷后的可读性需要检查。",
+      "source_ids": [
+        "src-pattern"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-pattern",
+          "quote": "filled areas with geometric and image-based patterns.",
+          "location": "Introduction; Quickstart"
+        }
+      ],
+      "aliases": [
+        "纹理填充",
+        "图案填充"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-multiple-scales",
+      "title": "在不同图层中独立编码不同含义的颜色",
+      "result": "使一张图的不同图层使用独立的颜色或填充尺度与图例，而非被迫共享同一映射。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggnewscale；多个图例要清楚说明各自含义，过多尺度会增加阅读负担。",
+      "source_ids": [
+        "src-newscale"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-newscale",
+          "quote": "use multiple scales in ggplot2.",
+          "location": "Introduction"
+        }
+      ],
+      "aliases": [
+        "多颜色尺度"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-cartography",
+      "title": "为专题地图补充底图、比例尺与指北信息",
+      "result": "在数据地图上加入背景瓦片、空间比例尺和指北针，提供地理阅读背景。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggspatial 和 sf 等依赖；在线瓦片需要网络并遵守提供方的使用及署名要求，投影须匹配。",
+      "source_ids": [
+        "src-spatial",
+        "src-tiles"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-spatial",
+          "quote": "spatial-aware automagic scale bar",
+          "location": "Introduction / Long Lake example code comments"
+        },
+        {
+          "source_id": "src-spatial",
+          "quote": "spatial-aware automagic north arrow",
+          "location": "Introduction / Long Lake example code comments"
+        },
+        {
+          "source_id": "src-tiles",
+          "quote": "add background tiles.",
+          "location": "Description; attribution requirement"
+        }
+      ],
+      "aliases": [
+        "地图底图",
+        "地图整饰"
+      ],
+      "example": "ggspatial 的 Long Lake 示例叠加道路、水深、底图、比例尺与指北针。",
+      "group_ids": [
+        "grp-spatial",
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-rasterize",
+      "title": "缩小密集图形文件而保留清晰的矢量文字",
+      "result": "只把大量点等指定图层转成栅格，同时保留标签和其他元素为矢量。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggrastr 和相应输出设备；被栅格化层的质量取决于分辨率，不保证任意大数据都能快速绘制。",
+      "source_ids": [
+        "src-raster"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-raster",
+          "quote": "keeping all labels and text in vector format.",
+          "location": "README introduction"
+        }
+      ],
+      "aliases": [
+        "混合矢量栅格图"
+      ],
+      "group_ids": [
+        "grp-production"
+      ]
+    },
+    {
+      "id": "p-statistical-report",
+      "title": "把统计检验和效应量放进对应图表",
+      "result": "得到同时包含数据分布、检验结果以及支持的效应量或区间的统计图。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggstatsplot 及统计依赖；检验类型、研究设计、样本假设和多重比较仍需人工选择与核对。",
+      "source_ids": [
+        "src-stats"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-stats",
+          "quote": "graphics with details from statistical tests",
+          "location": "Introduction; Statistical reporting"
+        }
+      ],
+      "aliases": [
+        "统计结果注释图"
+      ],
+      "group_ids": [
+        "grp-models"
+      ]
+    },
+    {
+      "id": "p-wordcloud",
+      "title": "用文字大小展示词项的频数或权重",
+      "result": "得到可旋转、分面或按形状布局的词云，以文字大小表达给定的词项权重。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggwordcloud；分词、清洗和权重计算另行完成，布局可能省略放不下的词，不适合精确比较。",
+      "source_ids": [
+        "src-wordcloud"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-wordcloud",
+          "quote": "provides a word cloud text geom",
+          "location": "Introduction; love_words examples"
+        }
+      ],
+      "aliases": [
+        "词云"
+      ],
+      "group_ids": [
+        "grp-communication"
+      ]
+    },
+    {
+      "id": "p-ranking",
+      "title": "跟踪对象排名随时间的升降",
+      "result": "得到排名变化图，突出各对象相对名次的上升、下降与交叉。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 ggbump，名次和并列规则需先确定；平滑连接不是两个时点之间的实际测量。",
+      "source_ids": [
+        "src-bump"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-bump",
+          "quote": "plot ranking over time",
+          "location": "README introduction; Bump chart examples"
+        }
+      ],
+      "aliases": [
+        "排名变化图",
+        "bump chart"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ]
+    },
+    {
+      "id": "p-waffle",
+      "title": "用等面积小格表达整体中的份额",
+      "result": "得到华夫图，以固定单位的小格数量表现各部分占整体的比例或数量。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "所引实现需 waffle::geom_waffle；必须说明每格单位和舍入方式，核心也能手动排格但不自动完成此布局。",
+      "source_ids": [
+        "src-waffle"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-waffle",
+          "quote": "Waffle (Square pie chart) Geom",
+          "location": "README / geom_waffle; faceted examples"
+        }
+      ],
+      "aliases": [
+        "华夫图",
+        "方格组成图"
+      ],
+      "group_ids": [
+        "grp-comparison"
+      ]
+    },
+    {
+      "id": "p-calendar-heat",
+      "title": "在日历上寻找日度数值的周期与异常",
+      "result": "把每天的数值映射到月历或年历中的颜色，从星期和月份位置观察日度模式。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "所引实现需 calendR；需正确日期序列、缺失值及本地化设置，部分双颜色功能在文档中限定 GitHub 版。",
+      "source_ids": [
+        "src-calendar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-calendar",
+          "quote": "Calendar heatmap (Gradient)",
+          "location": "README introduction; Calendar heatmap (Gradient)"
+        }
+      ],
+      "aliases": [
+        "日历热图"
+      ],
+      "group_ids": [
+        "grp-dynamic",
+        "grp-spatial"
+      ]
+    },
+    {
+      "id": "p-calendar-print",
+      "title": "生成可打印并标注日期事件的月历或年历",
+      "result": "生成按月或按年排列的日历，可用于规划、标记指定日期与呈现活动安排。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 calendR；文字、事件与语言环境由调用者提供，具体字体和打印尺寸需要检查。",
+      "source_ids": [
+        "src-calendar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-calendar",
+          "quote": "monthly and yearly calendars made with ggplot2",
+          "location": "README introduction; Calendar heatmap (Gradient)"
+        }
+      ],
+      "aliases": [
+        "可打印日历",
+        "事件月历"
+      ],
+      "group_ids": [
+        "grp-dynamic"
+      ]
+    },
+    {
+      "id": "p-3d",
+      "title": "把二维图中的颜色或填充值转换为三维高度",
+      "result": "通过 rayshader 把兼容的 ggplot 图形挤出为三维场景，例如把密度颜色转换为高度。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 rayshader、rgl 等三维渲染依赖；不是 ggplot2 原生三维，也不是任意三维数据绘制；文档明确不支持把映射为颜色的线条转换为三维。",
+      "source_ids": [
+        "src-3d"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-3d",
+          "quote": "mapping the color or fill aesthetic to elevation.",
+          "location": "Description; restrictions; density examples"
+        }
+      ],
+      "aliases": [
+        "三维挤出图",
+        "三维密度场景"
+      ],
+      "group_ids": [
+        "grp-spatial",
+        "grp-communication"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "这是一次尽量广泛的来源调研，不是穷举，也没有建立独立人工关键能力基准，因此不报告覆盖率或宣称完整。",
+    "没有在本机安装 R、ggplot2 或扩展包并执行示例；source_supported 表示原始来源明确支持该结果，不表示已在本机实测。",
+    "ggplot2 官网当前显示 4.0.3。扩展站点可能展示开发版；未统一锁定全部包版本、操作系统、字体和设备。较旧 BBC / ggfortify 案例应在实际采用时复现。",
+    "未系统调查全部领域生态：基因组轨道、单细胞、临床专用图、空间统计、金融 K 线、复杂时间序列、体育场地和工程专用图仍有未覆盖扩展。",
+    "研究发现的扩展并非互斥实现或推荐排行榜；同一结果可能由核心图层手工实现或由多个不同扩展完成。availability 按本文有证据的实现路径标注，条件中指出已知替代路径。",
+    "没有把数据采集、清洗、任意模型训练、GIS 分析、文本挖掘、因果推断、网站开发或任务调度归给 ggplot2。图形可接收这些过程的结果。",
+    "HTML 交互、三维、动画和地图瓦片都有额外环境或服务要求；兼容性、可访问性、性能和设备渲染需要在真实交付中复核。",
+    "官方扩展目录部分条目有陈旧接口；本文回到扩展作者文档核对，没有直接采用目录中的旧 gganimate frame / gg_animate 用法。",
+    "人工独立评审、实际用户新增选择价值和对学习效果的验证尚未进行；没有任何条目标为 reviewed。"
+  ],
+  "generated_at": "2026-11-04T17:19:24Z",
+  "research_method": {
+    "collection_date_local": "2026-11-05",
+    "timezone": "Asia/Shanghai",
+    "sequence": [
+      "先读取官方概览、参考索引、作者书籍和扩展目录，确定研究边界。",
+      "结果视角：从官方说明提取可观察的用户结果，先不分类。",
+      "案例视角：核对 BBC、作者代码、R Journal 和各扩展官方案例的成品与数据任务。",
+      "扩展视角：回到扩展作者文档，确认可新增的结果和额外依赖。",
+      "缺口复查：检查地图、模型、动画、交互、三维、日历、生产输出等未充分覆盖的意图。",
+      "规范化和合并重复：抖动与重复计数合为遮挡处理；分面两种布局合为小多图；没有把每个参数独立当能力。",
+      "候选稳定后按用户目的建立分类，允许交叉标签，最后核对证据和扩展边界。"
+    ],
+    "stop_reason": "后续查阅主要重复已有结果或提供不同实现；保留可明确说明的数据结果，未将缺少直接证据的想法扩充为已确认条目。",
+    "additional_sources_consulted": [
+      "https://ggplot2.tidyverse.org/reference/",
+      "https://ggplot2-book.org/",
+      "https://exts.ggplot2.tidyverse.org/gallery/",
+      "https://ggplot2-book.org/maps.html",
+      "https://ggplot2-book.org/annotations.html",
+      "https://ggplot2-book.org/arranging-plots.html"
+    ],
+    "inaccessible_examples_not_used": [
+      "Nicola Rennie 的部分指定页面未能读取；未将其猜测内容写成引文。",
+      "部分旧扩展页不可读，改用可读取的作者主页或正式论文。"
+    ],
+    "evidence_policy": "短摘录逐字记录在 sources.evidence；逐项 evidence_refs 标明对应摘录和位置。引文只表明来源支持，语义核对及真人评审与机器结构校验分开。"
+  },
+  "verification": {
+    "source_pages_retrieved": 75,
+    "source_pages_with_matching_excerpts": 75,
+    "supported_possibilities": 74,
+    "evidence_reference_count": 85,
+    "reviewed_possibilities": 0,
+    "limitations": [
+      "Structural and excerpt matching checks do not establish semantic truth, runtime compatibility, statistical validity or independent human review."
+    ]
+  }
+}
