@@ -1,0 +1,338 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cop-studio.local/schemas/cop-capability-map-v0.schema.json",
+  "title": "COP Capability Map v0.1",
+  "description": "An evidence-backed P–C–O capability map, independent of the existing goal-stage learning artifact.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "topic",
+    "sources",
+    "possibilities",
+    "concepts",
+    "operations",
+    "relations",
+    "examples"
+  ],
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote_hint": {
+          "type": "string"
+        }
+      }
+    },
+    "evidences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "source_supported",
+        "reviewed"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$"
+    },
+    "node_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "artifact_id": {
+      "$ref": "#/$defs/id"
+    },
+    "topic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "scope",
+        "purpose"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "version": {
+            "type": "string"
+          },
+          "excerpt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "possibilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "outcome",
+          "value",
+          "status",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcome": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "evidence_refs": {
+            "$ref": "#/$defs/evidences"
+          }
+        }
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "term",
+          "definition",
+          "status",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "term": {
+            "type": "string",
+            "minLength": 1
+          },
+          "definition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "evidence_refs": {
+            "$ref": "#/$defs/evidences"
+          }
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "action",
+          "conditions",
+          "effect",
+          "status",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effect": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implementation_hints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "evidence_refs": {
+            "$ref": "#/$defs/evidences"
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "from_id",
+          "to_id",
+          "rationale",
+          "status",
+          "evidence_refs"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "requires_concept",
+              "enabled_by",
+              "acts_on",
+              "related_to",
+              "alternative_to"
+            ]
+          },
+          "from_id": {
+            "$ref": "#/$defs/id"
+          },
+          "to_id": {
+            "$ref": "#/$defs/id"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "evidence_refs": {
+            "$ref": "#/$defs/evidences"
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "possibility_id",
+          "concept_ids",
+          "operation_ids",
+          "summary",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "possibility_id": {
+            "$ref": "#/$defs/id"
+          },
+          "concept_ids": {
+            "$ref": "#/$defs/node_refs"
+          },
+          "operation_ids": {
+            "$ref": "#/$defs/node_refs"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "$ref": "#/$defs/evidences"
+          }
+        }
+      }
+    }
+  }
+}
