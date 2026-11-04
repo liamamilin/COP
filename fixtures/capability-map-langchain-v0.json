@@ -1,0 +1,283 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "langchain-agent-capability-map-v0",
+  "topic": {
+    "name": "LangChain Agent",
+    "scope": "LangChain Python 1.x 的 agent 核心能力，以 create_agent 为中心",
+    "purpose": "帮助编码者知道 Agent 可以实现的能力及其相关概念/操作",
+    "exclusions": [
+      "不把独立 RAG 全部能力当成该主题主线",
+      "不做安装到上线的固定教程"
+    ]
+  },
+  "sources": [
+    {
+      "id": "lc-create",
+      "title": "LangChain Python Reference — create_agent",
+      "url": "https://reference.langchain.com/python/langchain/agents/factory/create_agent",
+      "version": "LangChain 1.x",
+      "excerpt": "create_agent configures model, tools, middleware and response_format, and returns a graph whose tool loop continues until stopping."
+    },
+    {
+      "id": "lc-agents",
+      "title": "LangChain Python agents reference",
+      "url": "https://reference.langchain.com/python/langchain/agents",
+      "version": "LangChain 1.x",
+      "excerpt": "AgentState, tools strategies, structured response strategies, and middleware hooks are included in the agents API."
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p_tool_agent",
+      "title": "构建能够调用外部工具的 Agent",
+      "outcome": "Agent 能根据输入选择并调用提供的工具",
+      "value": "使 Agent 可以利用模型自身以外的能力",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "p_structured",
+      "title": "让 Agent 返回可预测结构的结果",
+      "outcome": "Agent 的最终结果按照预先定义的结构呈现",
+      "value": "便于与其他软件组件可靠地交换信息",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "c_agent",
+      "term": "Agent",
+      "definition": "模型与工具/控制框架组合的可运行交互系统",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "c_model",
+      "term": "语言模型",
+      "definition": "解释用户请求并决定响应或是否调用工具的模型",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "c_tool",
+      "term": "Tool",
+      "definition": "提供给 Agent 调用的函数或工具接口",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "c_response_format",
+      "term": "Response Format",
+      "definition": "Agent 输出结果需要遵循的结构性约束或策略",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "o_construct",
+      "title": "创建 Agent",
+      "action": "使用指定模型和配置创建 Agent",
+      "conditions": "已选定可用的模型或模型对象",
+      "effect": "得到可调用的 Agent",
+      "implementation_hints": [
+        "create_agent(model=...)"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "o_attach_tools",
+      "title": "为 Agent 配置工具",
+      "action": "将可调用函数或工具集合传入 Agent",
+      "conditions": "已定义或可访问工具；模型支持所需工具交互",
+      "effect": "Agent 在合适情况下能发起工具调用",
+      "implementation_hints": [
+        "create_agent(model=..., tools=[...])"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "id": "o_format",
+      "title": "约束 Agent 的结果结构",
+      "action": "设置响应格式以产生结构化结果",
+      "conditions": "已确定下游所需结果结构及适用的模型能力",
+      "effect": "获得更适合程序处理的最终输出",
+      "implementation_hints": [
+        "create_agent(model=..., response_format=...)"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "requires_concept",
+      "from_id": "p_tool_agent",
+      "to_id": "c_agent",
+      "rationale": "目标产物为 Agent",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_tool_agent",
+      "to_id": "c_tool",
+      "rationale": "外部工具提供可执行能力",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_tool_agent",
+      "to_id": "o_construct",
+      "rationale": "需要创建 Agent",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_tool_agent",
+      "to_id": "o_attach_tools",
+      "rationale": "配置外部工具",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_structured",
+      "to_id": "c_response_format",
+      "rationale": "需要有输出结构约束",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_structured",
+      "to_id": "o_format",
+      "rationale": "通过配置 response_format 实现",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_construct",
+      "to_id": "c_agent",
+      "rationale": "构造 Agent 对象",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_attach_tools",
+      "to_id": "c_tool",
+      "rationale": "连接工具与 Agent",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_format",
+      "to_id": "c_response_format",
+      "rationale": "设置输出的结构形式",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_tool_agent",
+      "title": "一个可以调用自定义查询函数的 Agent",
+      "possibility_id": "p_tool_agent",
+      "concept_ids": [
+        "c_agent",
+        "c_model",
+        "c_tool"
+      ],
+      "operation_ids": [
+        "o_construct",
+        "o_attach_tools"
+      ],
+      "summary": "定义一个可调用的 Python 查询函数，将其作为 tools 传给 create_agent；实际结果是否发生工具调用需要运行时验证。",
+      "evidence_refs": [
+        {
+          "source_id": "lc-create"
+        }
+      ]
+    }
+  ]
+}
