@@ -1,0 +1,209 @@
+{
+  "topic": "changedetection",
+  "generated_at": "2026-11-05T10:06:29.317099+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-ai",
+      "requested_url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key",
+      "capture_origin": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key",
+      "retrieved_at": "2026-11-05T09:48:31.964687+00:00",
+      "capture_sha256": "6a5697c910222cc881d0a2e6abf6802212b7f42a858d60c552152b58f94a22aa",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 7359,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-api",
+      "requested_url": "https://changedetection.io/docs/api_v1/index.html",
+      "capture_origin": "https://changedetection.io/docs/api_v1/index.html",
+      "retrieved_at": "2026-11-05T09:39:51.766240+00:00",
+      "capture_sha256": "b4c14bfb5e09863cbf4cf3ee0e8e08f0302cbeba2ef26a87fa5dccc8852d4f2c",
+      "content_type": "text/html",
+      "captured_text_characters": 81440,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-cases",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Case-Studies.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Case-Studies.md",
+      "retrieved_at": "2026-11-05T09:48:29.852845+00:00",
+      "capture_sha256": "4f7d64017689437e6d93f5724f3f797054f3935d98a13148025b616b8db8fb2c",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 11,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-conditions",
+      "requested_url": "https://changedetection.io/tutorial/conditional-actions-web-page-changes",
+      "capture_origin": "https://changedetection.io/tutorial/conditional-actions-web-page-changes",
+      "retrieved_at": "2026-11-05T09:48:31.877933+00:00",
+      "capture_sha256": "9c3b11fed4b1ec6d5ba2d71ac7b876c81ac9109bf296add11e62aba14f2db3c1",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 3401,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-home",
+      "requested_url": "https://changedetection.io/",
+      "capture_origin": "https://changedetection.io/",
+      "retrieved_at": "2026-11-05T09:47:15.076823+00:00",
+      "capture_sha256": "c9e3116808b6cb470f95ce22401fb5937f9bc73188fc7c1495d32a0fd73024da",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 4282,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-html",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md",
+      "retrieved_at": "2026-11-05T09:48:31.365795+00:00",
+      "capture_sha256": "0d25052fd1016b4f4a94131701c7c5693a1a7a8ddb920d5bfeb187f789184b52",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1042,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-images",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md",
+      "retrieved_at": "2026-11-05T09:48:29.839520+00:00",
+      "capture_sha256": "9a498023df3254993b9818048e8e6d81b14f12802ad9cc44de89db32d022a6f1",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1464,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-javascript",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Run-JavaScript-before-change-detection.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Run-JavaScript-before-change-detection.md",
+      "retrieved_at": "2026-11-05T09:48:31.360047+00:00",
+      "capture_sha256": "227c02a8d95307f3d7c58de1e38a11da1e8456e54b752d216f23ab182f32d9e4",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 4500,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-json",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md",
+      "retrieved_at": "2026-11-05T09:48:29.866505+00:00",
+      "capture_sha256": "f9eb8ca63ad9af05d2909c241b401a01819f26ae1c1c5a10ed81753c1e2e13f4",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 2644,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-keywords",
+      "requested_url": "https://changedetection.io/tutorial/how-monitor-keywords-any-website",
+      "capture_origin": "https://changedetection.io/tutorial/how-monitor-keywords-any-website",
+      "retrieved_at": "2026-11-05T09:48:33.263899+00:00",
+      "capture_sha256": "16cfb9720226374b92f5bfb27b3e083fb0df0390814db8f6c212ba8288ca7637",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 3055,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-notifications",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md",
+      "retrieved_at": "2026-11-05T09:48:29.975005+00:00",
+      "capture_sha256": "cc9ad8be7d0b7762bb1baf043f14e0046344765a2987fd94e008c9e150baf27f",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 3599,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-readme",
+      "requested_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/README.md",
+      "retrieved_at": "2026-11-05T09:39:49.418200+00:00",
+      "capture_sha256": "c803db49b4b0fb2519798b26a863cdde4b7a9bf375f77d64e164913f80dae043",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 22218,
+      "used_for_confirmed_results": true,
+      "git_commit": "38e0668c1cd6b773b9f9efb50c17281974d0ba21",
+      "git_repository": "dgtlmoon/changedetection.io",
+      "pinned_raw_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md",
+      "pinned_content_sha256": "c803db49b4b0fb2519798b26a863cdde4b7a9bf375f77d64e164913f80dae043",
+      "pinned_verified_at": "2026-11-05T10:35:54.610Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md"
+    },
+    {
+      "id": "s-recipes",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Recipes.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Recipes.md",
+      "retrieved_at": "2026-11-05T09:48:29.974112+00:00",
+      "capture_sha256": "81e82dc4c3b8c5839bbcbf3da7639d86ca60157da063d93e89454f868a51f26c",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1279,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-selectors",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md",
+      "retrieved_at": "2026-11-05T09:48:31.368005+00:00",
+      "capture_sha256": "61bb20fa6e8cfb58b5954e62d00f5dd7e7d86ba1aecf2d9abc651f5a0130525d",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1775,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-sharing",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md",
+      "retrieved_at": "2026-11-05T09:48:31.754190+00:00",
+      "capture_sha256": "c9c673f2c3780db01aa4a3ac8b372d3e041eddf7aa6ee8c1258e256950ff0285",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1433,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-steps",
+      "requested_url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md",
+      "retrieved_at": "2026-11-05T09:48:29.845944+00:00",
+      "capture_sha256": "3e30cc44d73446a5aa2f3ce630f95ce560f3abdb04aac273c2132eabbc10d303",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 738,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-wiki",
+      "requested_url": "https://github.com/dgtlmoon/changedetection.io/wiki",
+      "capture_origin": "https://github.com/dgtlmoon/changedetection.io/wiki",
+      "retrieved_at": "2026-11-05T09:39:50.638740+00:00",
+      "capture_sha256": "487be448edae5ba16df2e45b02be6626203598ed37034612675202c62131b782",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6587,
+      "used_for_confirmed_results": false
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-stock2",
+      "requested_url": "https://changedetection.io/stock-availability-notification",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-docs",
+      "requested_url": "https://changedetection.io/docs/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-browser",
+      "requested_url": "https://changedetection.io/tutorial/website-change-detection-browser-steps",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-stock",
+      "requested_url": "https://changedetection.io/tutorial/monitoring-stock-prices-and-restocks",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.060945+00:00"
+}

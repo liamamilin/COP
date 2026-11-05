@@ -73,6 +73,8 @@ export function SafeMarkdown({
         "possibilities.json",
         "possibilities.md",
         "validation-report.txt",
+        "discovery-log.md",
+        "source-coverage.json",
       ].includes(value)
     )
       return githubFile(slug, value, revision);

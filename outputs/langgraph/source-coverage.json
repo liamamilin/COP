@@ -1,0 +1,198 @@
+{
+  "topic": "langgraph",
+  "generated_at": "2026-11-05T10:06:29.326999+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-deploy",
+      "requested_url": "https://docs.langchain.com/langsmith/deployment.md",
+      "capture_origin": "https://docs.langchain.com/langsmith/deployment.md",
+      "retrieved_at": "2026-11-05T08:36:34.334727+00:00",
+      "capture_sha256": "30508f0806894c9d8faeb121e9622eda1b3823aeb65363048cc4aaab32616ebe",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8248,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-email",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api.md",
+      "retrieved_at": "2026-11-05T08:36:34.394415+00:00",
+      "capture_sha256": "42ab024ab2b45671af16ce92589a6adafa8d16bdb1c269a6744f4e98a38ab5f3",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 22240,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-faults",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md",
+      "retrieved_at": "2026-11-05T08:36:31.371026+00:00",
+      "capture_sha256": "aa54c00cb1a97c0a4afc7dcaaa34f0f7ed1c4aade4e0f94bd083eba1fd477337",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 34398,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-graph",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/graph-api.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/graph-api.md",
+      "retrieved_at": "2026-11-05T08:39:06.761707+00:00",
+      "capture_sha256": "709d4df4f8f337675fbbc5527cf05abd3275e1faed7cad9e8c6eaeb3ffe9a09c",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 31841,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-interrupts",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/interrupts.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/interrupts.md",
+      "retrieved_at": "2026-11-05T08:36:31.422469+00:00",
+      "capture_sha256": "9d3dc74c19236853cfdc8770d443a5da12acb1ea26797a77d0323773494d04c5",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 46569,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-memory",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/add-memory.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/add-memory.md",
+      "retrieved_at": "2026-11-05T08:36:31.564355+00:00",
+      "capture_sha256": "4490d0c46a26d937196c27663eaee1acdd3a8e45a27b0fd2be3666ebf536f015",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 80758,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/overview.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/overview.md",
+      "retrieved_at": "2026-11-05T08:35:11.237386+00:00",
+      "capture_sha256": "0af559054d2b9874c795c5f1b188ccff01f17165b15fc133a92d1f4bcb71c464",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5848,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-patterns",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md",
+      "retrieved_at": "2026-11-05T08:36:32.822133+00:00",
+      "capture_sha256": "eeddf8e63761d1c845f644bbf3a0db7c142d678f32fa314264248fadffe6ac0c",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 38757,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-persistence",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/persistence.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/persistence.md",
+      "retrieved_at": "2026-11-05T08:36:30.993535+00:00",
+      "capture_sha256": "9985e697f3f56c9c703360f75d7e56c0d3040307d46ccff4b0a7d4964ab07932",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5321,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-rag",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md",
+      "retrieved_at": "2026-11-05T08:36:33.030974+00:00",
+      "capture_sha256": "8a936698ed4adb5b1fdbb0705133bf466d40c06af54b3ccbb939992dd7b03f38",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 23058,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-research",
+      "requested_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "retrieved_at": "2026-11-05T08:39:06.363055+00:00",
+      "capture_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 10224,
+      "used_for_confirmed_results": true,
+      "git_commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "git_repository": "langchain-ai/open_deep_research",
+      "pinned_raw_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "pinned_content_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "pinned_verified_at": "2026-11-05T10:35:53.380Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md"
+    },
+    {
+      "id": "s-sql",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md",
+      "retrieved_at": "2026-11-05T08:36:33.228551+00:00",
+      "capture_sha256": "56c011f918584bcbcd81099f04a69ae2601d4f6fd3923109a5ef407bebc1670b",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 33692,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-store",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/stores.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/stores.md",
+      "retrieved_at": "2026-11-05T08:39:07.188014+00:00",
+      "capture_sha256": "9c2261dad1d2d3f1949add4e7eede7eb679a315be1718a5e12f7218fb19819b4",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 17755,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-streaming",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/streaming.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/streaming.md",
+      "retrieved_at": "2026-11-05T08:36:31.489682+00:00",
+      "capture_sha256": "52567184b0f55fde14423e9cea1dcf5ee7b3d1b9b5580f941a25616360527ca0",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 45546,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-subgraphs",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md",
+      "retrieved_at": "2026-11-05T08:36:32.657537+00:00",
+      "capture_sha256": "854d707a7679f0f4a0f31bbfd1b8a437a43b643d6ac7a7fdad094fd841fdfb72",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 36788,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/test.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/test.md",
+      "retrieved_at": "2026-11-05T08:36:32.840420+00:00",
+      "capture_sha256": "f52f5a58fdcefa65873037aca4a09358fdac685c355d05832ad6055a2735990b",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 6996,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-time",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md",
+      "retrieved_at": "2026-11-05T08:36:31.198123+00:00",
+      "capture_sha256": "56cea55cfa011f3a4afbe6c28aa93339416e2cccf3ad16d2b22b10c78952b84a",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 12867,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-ui",
+      "requested_url": "https://docs.langchain.com/oss/python/langgraph/ui.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/ui.md",
+      "retrieved_at": "2026-11-05T08:36:34.079182+00:00",
+      "capture_sha256": "6394406f841c99da2ed61ef39b1bb2170ee2081e5f85dcbf7f2f7ffaf49698ab",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 3484,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.206286+00:00"
+}

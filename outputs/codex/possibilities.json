@@ -1,0 +1,995 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Codex",
+    "scope": "当前官方文档中的 Codex 编码工作流；覆盖 CLI、IDE、桌面与 Cloud 的结果，明确独立 SDK、插件和客户端的依赖。"
+  },
+  "sources": [
+    {
+      "id": "s-goals",
+      "title": "Using Goals in Codex: Persistent Objectives for Long-Running Work",
+      "url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md",
+      "evidence": "fix a bug, add a test\n[…]\nworking toward a defined outcome",
+      "location": "Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 7–7 行；Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 5–5 行",
+      "source_class": "official_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:24.681142+00:00",
+      "capture_origin": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md",
+      "capture_sha256": "1aa0c0e22f11484f526b59e98cacabaa1ffa15227e064591f597cf202df26621",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-02",
+          "location": "Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 7–7 行",
+          "url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md"
+        },
+        {
+          "possibility_id": "codex-08",
+          "location": "Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 5–5 行",
+          "url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md"
+        }
+      ]
+    },
+    {
+      "id": "s-ide",
+      "title": "Codex IDE extension",
+      "url": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "evidence": "Review changes beside your code",
+      "location": "Why use Codex IDE extension；取回 Markdown第 19–19 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:48.124294+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "capture_sha256": "bbecaad17ae60f9e3ca79ef1e1323da89b71d9f46150aeba25fb0fb84ca5fa63",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-03",
+          "location": "Why use Codex IDE extension；取回 Markdown第 19–19 行",
+          "url": "https://learn.chatgpt.com/docs/codex/ide.md"
+        }
+      ]
+    },
+    {
+      "id": "s-review",
+      "title": "Code review",
+      "url": "https://learn.chatgpt.com/docs/code-review.md",
+      "evidence": "prepare review feedback",
+      "location": "Code review；取回 Markdown第 6–6 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:22.814992+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/code-review.md",
+      "capture_sha256": "c18b2fe184104facf5d044631ee151b2394baab1c44218be8b9d60c7dbd33020",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-04",
+          "location": "Code review；取回 Markdown第 6–6 行",
+          "url": "https://learn.chatgpt.com/docs/code-review.md"
+        }
+      ]
+    },
+    {
+      "id": "s-cloud",
+      "title": "Codex Cloud",
+      "url": "https://learn.chatgpt.com/docs/cloud.md",
+      "evidence": "while your computer is asleep",
+      "location": "Why use Codex Cloud；取回 Markdown第 18–18 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:22.784514+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/cloud.md",
+      "capture_sha256": "6d4e5f7c3078e670d85ce5927ffa5a7bf930ecc6e81b90f1b6771271dc49ead6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-05",
+          "location": "Why use Codex Cloud；取回 Markdown第 18–18 行",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        }
+      ]
+    },
+    {
+      "id": "s-worktrees",
+      "title": "Worktrees",
+      "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "evidence": "multiple independent chats in the same project",
+      "location": "Worktrees；取回 Markdown第 5–5 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:22.976414+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "capture_sha256": "a40b85b40e9166a59043f62251565500c35c4376e23261f6cb94fdace0824ef6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-06",
+          "location": "Worktrees；取回 Markdown第 5–5 行",
+          "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md"
+        }
+      ]
+    },
+    {
+      "id": "s-mobile",
+      "title": "Codex on mobile",
+      "url": "https://learn.chatgpt.com/docs/mobile.md",
+      "evidence": "Follow progress, approve actions",
+      "location": "Start, guide, and review tasks from your phone；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:24.417442+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/mobile.md",
+      "capture_sha256": "18748906f1404a2e6ce1544525a766060739589607d70707331b5dc15780dd5c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-07",
+          "location": "Start, guide, and review tasks from your phone；取回 Markdown第 7–7 行",
+          "url": "https://learn.chatgpt.com/docs/mobile.md"
+        }
+      ]
+    },
+    {
+      "id": "s-instructions",
+      "title": "Custom instructions with AGENTS.md",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "evidence": "Codex reads `AGENTS.md` files",
+      "location": "Custom instructions with AGENTS.md；取回 Markdown第 5–5 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:24.343519+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "capture_sha256": "9d1f87a2d1cb55b4782b95abe710692b35b9659789c2db31a22c7074a3383e8e",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-09",
+          "location": "Custom instructions with AGENTS.md；取回 Markdown第 5–5 行",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md"
+        }
+      ]
+    },
+    {
+      "id": "s-skills",
+      "title": "Skills & Plugins",
+      "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "evidence": "packages instructions and supporting resources",
+      "location": "Skills & Plugins；取回 Markdown第 13–13 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:24.350901+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "capture_sha256": "39aa27568d3b43caa874ddb3be384787ad57c83814d87723d3b1b8cde49ae153",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-10",
+          "location": "Skills & Plugins；取回 Markdown第 13–13 行",
+          "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md"
+        }
+      ]
+    },
+    {
+      "id": "s-memories",
+      "title": "Memories",
+      "url": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "evidence": "carry useful context from earlier work into future work",
+      "location": "Memories；取回 Markdown第 5–6 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:47.946745+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "capture_sha256": "1776e4e65a523214e7a3c428e57f002348c096f2eec6bf2fe5583d968cdc43a3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-11",
+          "location": "Memories；取回 Markdown第 5–6 行",
+          "url": "https://learn.chatgpt.com/docs/customization/memories.md"
+        }
+      ]
+    },
+    {
+      "id": "s-mcp",
+      "title": "Model Context Protocol",
+      "url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "evidence": "tools and information from other systems",
+      "location": "Model Context Protocol；取回 Markdown第 5–5 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:23.015097+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "capture_sha256": "faf9407740483f7ee27ac4d0db08a9d15510b3d241251edc9d00cf7b35c29e3b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-12",
+          "location": "Model Context Protocol；取回 Markdown第 5–5 行",
+          "url": "https://learn.chatgpt.com/docs/extend/mcp.md"
+        }
+      ]
+    },
+    {
+      "id": "s-subagents",
+      "title": "Subagents",
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "evidence": "spawning specialized agents in parallel",
+      "location": "Subagents；取回 Markdown第 5–6 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:48.111329+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "capture_sha256": "e7469d41c5a18a4ee66ee40ca4a9a2617a697e42554a0198ac4481e1e597357f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-13",
+          "location": "Subagents；取回 Markdown第 5–6 行",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+        }
+      ]
+    },
+    {
+      "id": "s-hooks",
+      "title": "Hooks",
+      "url": "https://learn.chatgpt.com/docs/hooks.md",
+      "evidence": "Run a custom validation check when a chat turn stops",
+      "location": "Hooks；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:23.194168+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/hooks.md",
+      "capture_sha256": "3aacad763bc074bf4f3521dc942ff445fb4ad90032fdb20d379074dc02a02030",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-14",
+          "location": "Hooks；取回 Markdown第 11–11 行",
+          "url": "https://learn.chatgpt.com/docs/hooks.md"
+        }
+      ]
+    },
+    {
+      "id": "s-noninteractive",
+      "title": "Non-interactive mode",
+      "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "evidence": "summarize the repository structure\n[…]\nCreate structured outputs with a schema",
+      "location": "Basic usage；取回 Markdown第 24–24 行；Create structured outputs with a schema；取回 Markdown第 94–94 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:48.125555+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "capture_sha256": "a80f8549209c988749177954b3a295d105d2aa86dae287ba387bc028b4854877",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-01",
+          "location": "Basic usage；取回 Markdown第 24–24 行",
+          "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md"
+        },
+        {
+          "possibility_id": "codex-15",
+          "location": "Create structured outputs with a schema；取回 Markdown第 94–94 行",
+          "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md"
+        }
+      ]
+    },
+    {
+      "id": "s-sdk",
+      "title": "Codex SDK",
+      "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "evidence": "Control Codex as part of your CI/CD pipeline",
+      "location": "Codex SDK；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:22.906093+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "capture_sha256": "dc0051f1791cfb05a34e5843ffc9e1a9af7097c52d59c48df0267b8d180e348d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-16",
+          "location": "Codex SDK；取回 Markdown第 9–9 行",
+          "url": "https://learn.chatgpt.com/docs/codex-sdk.md"
+        }
+      ]
+    },
+    {
+      "id": "s-appserver",
+      "title": "Codex App Server",
+      "url": "https://learn.chatgpt.com/docs/app-server.md",
+      "evidence": "authentication, conversation history, approvals",
+      "location": "Codex App Server；取回 Markdown第 5–5 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:48.509487+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/app-server.md",
+      "capture_sha256": "bb74cd23b269d7e5f9d179221a0083850edff4eef76fa8657bacbf85e0db080c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-17",
+          "location": "Codex App Server；取回 Markdown第 5–5 行",
+          "url": "https://learn.chatgpt.com/docs/app-server.md"
+        }
+      ]
+    },
+    {
+      "id": "s-automations",
+      "title": "Scheduled tasks",
+      "url": "https://learn.chatgpt.com/docs/automations.md",
+      "evidence": "Schedule recurring tasks to run in the background.",
+      "location": "Scheduled tasks；取回 Markdown第 5–5 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:25.850277+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/automations.md",
+      "capture_sha256": "cd6ad46c3c8304a56fa64657492ce2585afda5212ba3fe0562d59cc9be9596db",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-18",
+          "location": "Scheduled tasks；取回 Markdown第 5–5 行",
+          "url": "https://learn.chatgpt.com/docs/automations.md"
+        }
+      ]
+    },
+    {
+      "id": "s-github",
+      "title": "Review GitHub pull requests with Codex",
+      "url": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "evidence": "Codex posts a review on the pull request",
+      "location": "Request a Codex review；取回 Markdown第 68–68 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:24.728708+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "capture_sha256": "1ab502138a121ac571faa37f161bf79224e1e23cdc0e70f7a0be835f2c2d3c9f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-19",
+          "location": "Request a Codex review；取回 Markdown第 68–68 行",
+          "url": "https://learn.chatgpt.com/docs/third-party/github.md"
+        }
+      ]
+    },
+    {
+      "id": "s-security-plugin",
+      "title": "Codex Security plugin quickstart",
+      "url": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "evidence": "evidence and remediation guidance",
+      "location": "Codex Security plugin quickstart；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:21:24.512209+00:00",
+      "capture_origin": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "capture_sha256": "cd509ffd1f14ae14da274bcee62ee433b93a2e5191486a1a203ed3c418f5a43f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-20",
+          "location": "Codex Security plugin quickstart；取回 Markdown第 7–7 行",
+          "url": "https://learn.chatgpt.com/docs/security/plugin.md"
+        }
+      ]
+    },
+    {
+      "id": "s-repair",
+      "title": "Build iterative repair loops with Codex",
+      "url": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md",
+      "evidence": "stale or broken API",
+      "location": "Build iterative repair loops with Codex；取回 Markdown第 7–7 行",
+      "source_class": "official_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:24.933799+00:00",
+      "capture_origin": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md",
+      "capture_sha256": "fe7eab303096479fa593b463ec18e8d3a700490cd3fe79326004ea2d824941e2",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "codex-21",
+          "location": "Build iterative repair loops with Codex；取回 Markdown第 7–7 行",
+          "url": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "engineering",
+      "name": "理解与交付工程改动"
+    },
+    {
+      "id": "continuity",
+      "name": "持续推进和跨设备协作"
+    },
+    {
+      "id": "team",
+      "name": "复用项目背景与专业流程"
+    },
+    {
+      "id": "automation",
+      "name": "把任务接入自动化和自有工具"
+    },
+    {
+      "id": "security",
+      "name": "专项安全调查"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "codex-01",
+      "title": "理解陌生仓库与定位修改入口",
+      "result": "让 Codex 阅读仓库、解释模块关系及故障相关代码，形成后续修改的依据。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可读取的代码与足够任务上下文。",
+      "source_ids": [
+        "s-noninteractive"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-noninteractive",
+          "quote": "summarize the repository structure",
+          "location": "Basic usage；取回 Markdown第 24–24 行",
+          "source_line_start": 24,
+          "source_line_end": 24,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-02",
+      "title": "修复故障并补充回归测试",
+      "result": "围绕具体失败复现、修改实现并添加测试；把可验证的修复作为交付物。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "必须提供或构造验证条件；模型建议和测试通过均不等于无遗漏。",
+      "source_ids": [
+        "s-goals"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-goals",
+          "quote": "fix a bug, add a test",
+          "location": "Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-03",
+      "title": "在编辑器上下文中实现功能修改",
+      "result": "利用打开的文件和选区提出修改，在同一工作流检查差异并继续迭代。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要受支持 IDE 集成；复杂任务依赖环境、工具和账户。",
+      "source_ids": [
+        "s-ide"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ide",
+          "quote": "Review changes beside your code",
+          "location": "Why use Codex IDE extension；取回 Markdown第 19–19 行",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/codex/ide.md"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-04",
+      "title": "审查代码变更并形成可定位的问题反馈",
+      "result": "结合变更及周边代码调查潜在问题，准备审查意见。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "GitHub 支持与 GitLab 预览状态有区别；审查结果需要核实。",
+      "source_ids": [
+        "s-review"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-review",
+          "quote": "prepare review feedback",
+          "location": "Code review；取回 Markdown第 6–6 行",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/code-review.md"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-05",
+      "title": "让远程任务持续完成并产出可审查改动",
+      "result": "把调查或开发任务交给有仓库和工具的云环境，在本机休眠时继续，返回后检查文件与测试结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Codex Cloud、已发布环境及仓库访问权；不是本地进程休眠后仍执行。",
+      "source_ids": [
+        "s-cloud"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-cloud",
+          "quote": "while your computer is asleep",
+          "location": "Why use Codex Cloud；取回 Markdown第 18–18 行",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/cloud.md"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-06",
+      "title": "并行推进互不干扰的仓库任务",
+      "result": "通过 Git worktree 为独立任务提供工作目录，再审查和整合各自变更。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Git 仓库、本机可用环境；目录隔离不等于依赖和外部状态全部隔离。",
+      "source_ids": [
+        "s-worktrees"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-worktrees",
+          "quote": "multiple independent chats in the same project",
+          "location": "Worktrees；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-07",
+      "title": "从手机跟进并指导已启动任务",
+      "result": "在手机查看进度、处理审批并继续向云端或已连接电脑上的任务发送指令。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "依赖账户可用性、云环境或在线电脑；工作树不在手机上运行。",
+      "source_ids": [
+        "s-mobile"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mobile",
+          "quote": "Follow progress, approve actions",
+          "location": "Start, guide, and review tasks from your phone；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/mobile.md"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-08",
+      "title": "让长期任务围绕验收条件持续迭代",
+      "result": "把目标、成功判据与约束作为持久目标，依据调查和验证反馈继续工作。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "不是无限执行或必然成功；需要适用版本、预算与可检查的完成条件。",
+      "source_ids": [
+        "s-goals"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-goals",
+          "quote": "working toward a defined outcome",
+          "location": "Using Goals in Codex: Persistent Objectives for Long-Running Work；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-09",
+      "title": "将团队规范带入仓库任务",
+      "result": "用分层项目说明为任务提供代码规范、测试要求和工作约定。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "AGENTS.md 是指导信息，不能代替权限控制或确定性校验。",
+      "source_ids": [
+        "s-instructions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-instructions",
+          "quote": "Codex reads `AGENTS.md` files",
+          "location": "Custom instructions with AGENTS.md；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md"
+        }
+      ],
+      "group_ids": [
+        "team"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-10",
+      "title": "把反复完成的专业工作包装为可复用流程",
+      "result": "以 Skill 的说明和资源复用研究、评审或制作过程，减少重复交代。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要编写或安装可信 Skill；Plugin 可附加工具，能力取决于具体资源。",
+      "source_ids": [
+        "s-skills"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-skills",
+          "quote": "packages instructions and supporting resources",
+          "location": "Skills & Plugins；取回 Markdown第 13–13 行",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/skills-and-plugins.md"
+        }
+      ],
+      "group_ids": [
+        "team"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-11",
+      "title": "在后续工作中复用已积累的项目背景",
+      "result": "启用本地记忆后，让符合条件的既往聊天提炼背景供后续任务参考。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "本地 Codex 记忆与 ChatGPT 网页记忆分开；默认、启用范围和延迟见当前文档，不作为唯一规范来源。",
+      "source_ids": [
+        "s-memories"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-memories",
+          "quote": "carry useful context from earlier work into future work",
+          "location": "Memories；取回 Markdown第 5–6 行",
+          "source_line_start": 5,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/customization/memories.md"
+        }
+      ],
+      "group_ids": [
+        "team"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-12",
+      "title": "利用外部系统的信息完成开发任务",
+      "result": "通过配置好的 MCP 服务检索工单、文档等资料或调用外部工具。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要相应服务器、授权及依赖；每个外部服务的写入能力与权限不同。",
+      "source_ids": [
+        "s-mcp"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mcp",
+          "quote": "tools and information from other systems",
+          "location": "Model Context Protocol；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/extend/mcp.md"
+        }
+      ],
+      "group_ids": [
+        "team"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-13",
+      "title": "对独立子任务分工并收敛结果",
+      "result": "按明确请求将代码探索、测试或方案调查交给专门子代理，再合并结论。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "本地版本和客户端支持有条件；额外模型与工具工作消耗更多 token，写入需协调。",
+      "source_ids": [
+        "s-subagents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subagents",
+          "quote": "spawning specialized agents in parallel",
+          "location": "Subagents；取回 Markdown第 5–6 行",
+          "source_line_start": 5,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-14",
+      "title": "在任务结束点自动执行自定义检查",
+      "result": "以 Hook 调用本地校验脚本，收集或阻止不符合项目要求的结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "用户需实现脚本并信任非托管 Hook；并发 Hook 的执行不能假定串行防护。",
+      "source_ids": [
+        "s-hooks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-hooks",
+          "quote": "Run a custom validation check when a chat turn stops",
+          "location": "Hooks；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/hooks.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-15",
+      "title": "批量生成机器可处理的仓库分析结果",
+      "result": "在脚本中运行非交互任务，用 JSON Schema 约束最终报告，交给下游流程处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 CLI、认证、预设权限及对结果内容的验证；结构化不代表语义正确。",
+      "source_ids": [
+        "s-noninteractive"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-noninteractive",
+          "quote": "Create structured outputs with a schema",
+          "location": "Create structured outputs with a schema；取回 Markdown第 94–94 行",
+          "source_line_start": 94,
+          "source_line_end": 94,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/non-interactive-mode.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-16",
+      "title": "把编码任务接入现有 CI 或内部工具",
+      "result": "使用 Codex SDK 在程序中启动任务、追踪结果并组织自己的工程流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "SDK 是开发集成路线，仍需运行环境、认证、成本与失败处理。",
+      "source_ids": [
+        "s-sdk"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sdk",
+          "quote": "Control Codex as part of your CI/CD pipeline",
+          "location": "Codex SDK；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/codex-sdk.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-17",
+      "title": "构建有会话与审批的自有 Codex 客户端",
+      "result": "通过 app-server 接入认证、会话历史、审批和流式事件，制作定制交互界面。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要开发客户端并管理协议兼容性；旧 codex mcp-server 已移除，不能照旧教程直接使用。",
+      "source_ids": [
+        "s-appserver"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-appserver",
+          "quote": "authentication, conversation history, approvals",
+          "location": "Codex App Server；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/app-server.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-18",
+      "title": "定期执行本地项目巡检和报告任务",
+      "result": "安排周期任务在项目目录或隔离工作树执行，再检查运行结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "本地文件任务要求电脑开机且应用运行；账户、工作区及云端任务能力不同。",
+      "source_ids": [
+        "s-automations"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-automations",
+          "quote": "Schedule recurring tasks to run in the background.",
+          "location": "Scheduled tasks；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/automations.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-19",
+      "title": "为 GitHub PR 自动触发审查反馈",
+      "result": "配置 GitHub 集成，让 PR 或指定评论触发 Codex 审查，形成仓库内反馈。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要连接仓库、正确权限与审查配置；与独立 Security 服务区分。",
+      "source_ids": [
+        "s-github"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-github",
+          "quote": "Codex posts a review on the pull request",
+          "location": "Request a Codex review；取回 Markdown第 68–68 行",
+          "source_line_start": 68,
+          "source_line_end": 68,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/third-party/github.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-20",
+      "title": "对仓库生成有证据的安全发现报告",
+      "result": "安装 Codex Security 插件，在仓库执行扫描并取得证据和修复指导。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "独立插件能力；本地与 Cloud 插件分开，访问资格及使用条件需另核实，不保证发现所有漏洞。",
+      "source_ids": [
+        "s-security-plugin"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-security-plugin",
+          "quote": "evidence and remediation guidance",
+          "location": "Codex Security plugin quickstart；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://learn.chatgpt.com/docs/security/plugin.md"
+        }
+      ],
+      "group_ids": [
+        "security"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "codex-21",
+      "title": "迭代修复陈旧文档中的 API 示例",
+      "result": "按官方 Cookbook 的检测、修复、验证闭环，识别过时示例并用运行反馈逐次改进。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是具名工作流示例；需要自行提供文档解析、运行环境及验证器，不能保证对任意仓库直接复用。",
+      "source_ids": [
+        "s-repair"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-repair",
+          "quote": "stale or broken API",
+          "location": "Build iterative repair loops with Codex；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未安装运行各客户端、SDK、Security 或 Cloud 环境；这些条目是文档支持，不是本次执行证书。",
+    "没有把 ChatGPT Work 专属的联网办公、事件任务、Computer History 等直接视为 Codex 通用能力。",
+    "版本迁移后官方文档位于 learn.chatgpt.com；不同客户端、计划和工作区的功能开放范围需部署前再确认。",
+    "真实案例以官方迭代修复 Cookbook 为主；未获得独立第三方项目成效的可重复评测。"
+  ],
+  "generated_at": "2026-11-05T09:37:22.484900+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "结果遍历从仓库理解、修改、验证和审查开始，随后检查云端、自动化、扩展与完整修复案例。",
+      "归一化：将命令调用、文件读写合并入实际开发结果；移动端保留为跨设备接续这一独立结果。",
+      "补漏发现当前集成路线为 app-server，旧 MCP server 命令已移除；本地记忆与网页记忆、Security 与普通审查分别核实。",
+      "按所有候选的实际目的建立导航；未因已有主题的分类结构或预定数量停止。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_worked_example"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 26,
+    "evidence_revision_at": "2026-11-05T10:56:01.161392+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

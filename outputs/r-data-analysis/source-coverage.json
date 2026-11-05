@@ -1,0 +1,327 @@
+{
+  "topic": "r-data-analysis",
+  "generated_at": "2026-11-05T10:06:29.351360+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-arrow",
+      "requested_url": "https://arrow.apache.org/docs/r/",
+      "capture_origin": "https://arrow.apache.org/docs/r/",
+      "retrieved_at": "2026-11-05T09:39:40.694149+00:00",
+      "capture_sha256": "5b822cbd0f359c543b981959be2cac2baa4885e67bb7bd5f27cab255251c8bb5",
+      "content_type": "text/html",
+      "captured_text_characters": 6951,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-bioc",
+      "requested_url": "https://bioconductor.org/help/workflows/",
+      "capture_origin": "https://bioconductor.org/help/workflows/",
+      "retrieved_at": "2026-11-05T09:39:45.829083+00:00",
+      "capture_sha256": "174d4fd21b680dd5b5ff1d78e3fde49bd3d34b668144d627b794e95061ac3a56",
+      "content_type": "text/html",
+      "captured_text_characters": 896,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-cluster",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html",
+      "retrieved_at": "2026-11-05T09:47:10.276044+00:00",
+      "capture_sha256": "328952439ed3b589585f167660963e8541969526986dce52e95d1b661585cec4",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 9300,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-database",
+      "requested_url": "https://dbplyr.tidyverse.org/",
+      "capture_origin": "https://dbplyr.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:39:40.162826+00:00",
+      "capture_sha256": "6a18c89ce0cf57490ac6a8fd51affa1cb3c77efd8cdc09e44a4f09747d44aab4",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 3423,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-excel",
+      "requested_url": "https://readxl.tidyverse.org/",
+      "capture_origin": "https://readxl.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:47:11.798622+00:00",
+      "capture_sha256": "4b7074ca1b83b469779b8b5304a57aea455ab02f2d1c77a653647933580452cb",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 7464,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-fable",
+      "requested_url": "https://fable.tidyverts.org/",
+      "capture_origin": "https://fable.tidyverts.org/",
+      "retrieved_at": "2026-11-05T09:40:51.463529+00:00",
+      "capture_sha256": "269c09565333573314564f270ba38592479e5e8aadc8248558f3fc71f358a0a6",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 2099,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-glm",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+      "retrieved_at": "2026-11-05T09:47:10.741029+00:00",
+      "capture_sha256": "6b9a6fad58fad62386050ceba47abe28e40241544dd71d20df000fc40563d6c3",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 14320,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-graphics",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html",
+      "retrieved_at": "2026-11-05T09:47:10.028195+00:00",
+      "capture_sha256": "5e75f6313a250bafc3b0fcf033771d28e4de207717f0c02f507e0c7af84b3c98",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 6886,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-haven",
+      "requested_url": "https://haven.tidyverse.org/",
+      "capture_origin": "https://haven.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:47:11.681844+00:00",
+      "capture_sha256": "eaa84ba72331a708102af29a617414797aec1e05bcb0b8d4edf42f4ff23bb577",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 2470,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-import",
+      "requested_url": "https://readr.tidyverse.org/",
+      "capture_origin": "https://readr.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:39:40.206806+00:00",
+      "capture_sha256": "3973537b33dd73e00efcd99fddec2c54f85c5d1a0babb13de5533a5feee59882",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 7838,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-intro",
+      "requested_url": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+      "capture_origin": "https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+      "retrieved_at": "2026-11-05T09:39:53.407489+00:00",
+      "capture_sha256": "e49123c8dff249ccd261416b1365b3b732f1ca48c41997975314c9b5cadf00ed",
+      "content_type": "text/html",
+      "captured_text_characters": 242070,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-joins",
+      "requested_url": "https://dplyr.tidyverse.org/articles/two-table.html",
+      "capture_origin": "https://dplyr.tidyverse.org/articles/two-table.html",
+      "retrieved_at": "2026-11-05T10:01:26.534258+00:00",
+      "capture_sha256": "01fdf8a3ff2b3c33345cfc5eb38b0b3651709361d5d33f3f8678115c02dc7a01",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 11032,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-lm",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html",
+      "retrieved_at": "2026-11-05T09:47:10.488382+00:00",
+      "capture_sha256": "9d15d4437d064d80d89c90d6a0df05083a5024324172a8ea902861562702c749",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 9414,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-model-case",
+      "requested_url": "https://www.tidymodels.org/start/case-study/",
+      "capture_origin": "https://www.tidymodels.org/start/case-study/",
+      "retrieved_at": "2026-11-05T09:40:51.972966+00:00",
+      "capture_sha256": "68dc7fd8aedbb08aa4b184fbfa20e3807c05d791d9dcf174d3de8268a42d8796",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 28994,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-models",
+      "requested_url": "https://www.tidymodels.org/start/",
+      "capture_origin": "https://www.tidymodels.org/start/",
+      "retrieved_at": "2026-11-05T09:39:41.865847+00:00",
+      "capture_sha256": "822f273b5b7941bdfa12dde8e2e3ad688fe366c2aefa5fbfc599b12d8ab95806",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 1095,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-network",
+      "requested_url": "https://r.igraph.org/",
+      "capture_origin": "https://r.igraph.org/",
+      "retrieved_at": "2026-11-05T09:39:42.586643+00:00",
+      "capture_sha256": "bb04b7cec5bf82917a80998d42bf6041c735ac804feb06797072dd5a498ff641",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 8244,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-quarto",
+      "requested_url": "https://quarto.org/docs/computations/r.html",
+      "capture_origin": "https://quarto.org/docs/computations/r.html",
+      "retrieved_at": "2026-11-05T09:39:44.317306+00:00",
+      "capture_sha256": "8659e6e7ee26e24b367d0e8a413ce792cebd8e90c6f55a7935155fd81170196f",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 17603,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-renv",
+      "requested_url": "https://rstudio.github.io/renv/",
+      "capture_origin": "https://rstudio.github.io/renv/",
+      "retrieved_at": "2026-11-05T09:39:44.265832+00:00",
+      "capture_sha256": "bd0968ea659fcad19e03ba14e2b991f82cb0217cd1de5d8d81fae1e34b7ee889",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 2895,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-reshape",
+      "requested_url": "https://tidyr.tidyverse.org/",
+      "capture_origin": "https://tidyr.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:39:40.115575+00:00",
+      "capture_sha256": "ee813b6b695ddf17c2732ff2357a6383c7bc29c8458eddcd0e775eba95c686f9",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 3878,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-rnaseq",
+      "requested_url": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html",
+      "capture_origin": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html",
+      "retrieved_at": "2026-11-05T09:48:34.646513+00:00",
+      "capture_sha256": "793a23312f8a91e5eeb8d00065865dd78278825a0620a6454e3a330fdee2eb99",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 110960,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-shiny",
+      "requested_url": "https://shiny.posit.co/r/gallery/",
+      "capture_origin": "https://shiny.posit.co/r/gallery/",
+      "retrieved_at": "2026-11-05T09:39:44.058393+00:00",
+      "capture_sha256": "2b551ad8b8216672ff0822544655e567df255c1e1c715267b7603906ac28d6b1",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 6081,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-simulate",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html",
+      "retrieved_at": "2026-11-05T09:47:10.021763+00:00",
+      "capture_sha256": "094a82620e1d353202315d9057d1835aee45f0f503da52701de7ab3cf1688c89",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 1714,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-spatial",
+      "requested_url": "https://r-spatial.github.io/sf/",
+      "capture_origin": "https://r-spatial.github.io/sf/",
+      "retrieved_at": "2026-11-05T09:39:42.041153+00:00",
+      "capture_sha256": "5dc7b8b6dd99b9cbd147e85d21f7d7dc967f84b179db36e436f3d6be7fade67f",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 7207,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-survey",
+      "requested_url": "https://r-survey.r-forge.r-project.org/survey/",
+      "capture_origin": "https://r-survey.r-forge.r-project.org/survey/",
+      "retrieved_at": "2026-11-05T09:39:46.618380+00:00",
+      "capture_sha256": "ee26d9f5fcf915cd82d374fd4efd920bca0149c8f6eadde0c11f269a965a9492",
+      "content_type": "text/html",
+      "captured_text_characters": 5338,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-survival",
+      "requested_url": "https://cran.r-project.org/web/packages/survival/index.html",
+      "capture_origin": "https://cran.r-project.org/web/packages/survival/index.html",
+      "retrieved_at": "2026-11-05T09:39:52.816468+00:00",
+      "capture_sha256": "7e976fb3ad609f443b04ff4339064d6c6bdd77ddc269b6bbc791f51ed94ddd5b",
+      "content_type": "text/html",
+      "captured_text_characters": 15407,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-targets",
+      "requested_url": "https://docs.ropensci.org/targets/",
+      "capture_origin": "https://docs.ropensci.org/targets/",
+      "retrieved_at": "2026-11-05T09:39:44.323347+00:00",
+      "capture_sha256": "06f871775749d3581fe4fbaf081cf791d62a111b081f2c0505a7967748dadc64",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6628,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test",
+      "requested_url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html",
+      "retrieved_at": "2026-11-05T09:47:10.015598+00:00",
+      "capture_sha256": "0542a39f016054cfa8e0ada1873d923e9eee9f1fea8ec87afa0a7fa5ee5b72d4",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 4377,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-text-case",
+      "requested_url": "https://www.tidytextmining.com/twitter",
+      "capture_origin": "https://www.tidytextmining.com/twitter",
+      "retrieved_at": "2026-11-05T09:40:52.454124+00:00",
+      "capture_sha256": "b2e45dde68720a6dd33fe1d4a33b8a8720ca9288b594eb64fda4a9e6426c9bdf",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 25214,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-text",
+      "requested_url": "https://www.tidytextmining.com/",
+      "capture_origin": "https://www.tidytextmining.com/",
+      "retrieved_at": "2026-11-05T09:39:42.546968+00:00",
+      "capture_sha256": "a6d369a664de7188e69c2b6b5e513f5ff674357fcca9b4a7b4a9e3d98863e8eb",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 1104,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-transform",
+      "requested_url": "https://dplyr.tidyverse.org/",
+      "capture_origin": "https://dplyr.tidyverse.org/",
+      "retrieved_at": "2026-11-05T09:39:40.123754+00:00",
+      "capture_sha256": "f0add6631cf399c6a7a8bf51eb861cafe488f962c1ca8a22a3517d871a28b8a3",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 5286,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-shiny-case",
+      "requested_url": "https://shiny.posit.co/r/gallery/interactive-visualizations/stock-prices/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-forecast",
+      "requested_url": "https://otexts.com/fpp3/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-survey-cran",
+      "requested_url": "https://cran.r-project.org/web/packages/survey/index.html",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.505835+00:00"
+}

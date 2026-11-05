@@ -1,0 +1,1035 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Ollama",
+    "scope": "面向个人、应用开发者与自托管使用者，研究 Ollama 本地运行、模型接口与管理，以及明确注明的云服务和外部应用路线；资料实际取回于 2026-11-05。"
+  },
+  "sources": [
+    {
+      "id": "s-readme",
+      "title": "Ollama",
+      "url": "https://github.com/ollama/ollama/blob/a6d33251620eef7629c73b09e672f2df243eb363/README.md",
+      "evidence": "locally or in the cloud",
+      "location": "Ollama；取回 Markdown第 9–9 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:24.787124+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/ollama/ollama/main/README.md",
+      "capture_sha256": "9e5a7d406950fdd2742084065ab38a3ea09b5aab5e2f13ef7d64147229ae0d8b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-local",
+          "location": "Ollama；取回 Markdown第 9–9 行",
+          "url": "https://github.com/ollama/ollama/blob/a6d33251620eef7629c73b09e672f2df243eb363/README.md#L9-L9"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/ollama/ollama/main/README.md",
+      "git_commit": "a6d33251620eef7629c73b09e672f2df243eb363",
+      "git_repository": "ollama/ollama",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ollama/ollama/a6d33251620eef7629c73b09e672f2df243eb363/README.md",
+      "pinned_content_sha256": "9e5a7d406950fdd2742084065ab38a3ea09b5aab5e2f13ef7d64147229ae0d8b",
+      "pinned_verified_at": "2026-11-05T10:35:54.506Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-chat",
+      "title": "Generate a chat message",
+      "url": "https://docs.ollama.com/api/chat.md",
+      "evidence": "next chat message in a conversation",
+      "location": "Generate a chat message；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:28.073083+00:00",
+      "capture_origin": "https://docs.ollama.com/api/chat.md",
+      "capture_sha256": "4d0f6557a1adaa49bbeb630b3d82e8a1b8f2cac8c944438c3ef29803e89a3597",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-chat",
+          "location": "Generate a chat message；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/api/chat.md"
+        }
+      ]
+    },
+    {
+      "id": "s-vision",
+      "title": "Vision",
+      "url": "https://docs.ollama.com/capabilities/vision.md",
+      "evidence": "describe, classify, and answer questions",
+      "location": "Vision；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:28.298688+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/vision.md",
+      "capture_sha256": "476320eebf762f24954fef8ab98a51b2e5741b464f5df617745f9c564d352026",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-vision",
+          "location": "Vision；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/vision.md"
+        }
+      ]
+    },
+    {
+      "id": "s-structured",
+      "title": "Structured Outputs",
+      "url": "https://docs.ollama.com/capabilities/structured-outputs.md",
+      "evidence": "enforce a JSON schema on model responses",
+      "location": "Structured Outputs；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:29.571065+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/structured-outputs.md",
+      "capture_sha256": "4cc74387d95a2ac3491d9d0c9767415d8add7e9ac62fe8a20e4d54aaf45a8c5e",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-fields",
+          "location": "Structured Outputs；取回 Markdown第 11–11 行",
+          "url": "https://docs.ollama.com/capabilities/structured-outputs.md"
+        }
+      ]
+    },
+    {
+      "id": "s-embed",
+      "title": "Embeddings",
+      "url": "https://docs.ollama.com/capabilities/embeddings.md",
+      "evidence": "Generate text embeddings for semantic search",
+      "location": "Embeddings；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:28.514872+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/embeddings.md",
+      "capture_sha256": "da65b364d4f946cd85fa07a1c9509a0955e4440a86c4383398f5aa9c66d0ef36",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-embeddings",
+          "location": "Embeddings；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/embeddings.md"
+        }
+      ]
+    },
+    {
+      "id": "s-tools",
+      "title": "Tool calling",
+      "url": "https://docs.ollama.com/capabilities/tool-calling.md",
+      "evidence": "invoke tools and incorporate their results",
+      "location": "Tool calling；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:28.130498+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/tool-calling.md",
+      "capture_sha256": "ca6a7457b7f99fa4effd5fd5188fe99b33dddf00b52250a7351bdf84a9e3f2bf",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-tool-work",
+          "location": "Tool calling；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/tool-calling.md"
+        }
+      ]
+    },
+    {
+      "id": "s-thinking",
+      "title": "Thinking",
+      "url": "https://docs.ollama.com/capabilities/thinking.md",
+      "evidence": "separates their reasoning trace from the final answer",
+      "location": "Thinking；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:29.566874+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/thinking.md",
+      "capture_sha256": "d9a0c2e377a41e37aa08c7b0fac0a6174c94735156c2aca2ce668739dd5b9613",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-thinking",
+          "location": "Thinking；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/thinking.md"
+        }
+      ]
+    },
+    {
+      "id": "s-modelfile",
+      "title": "Modelfile Reference",
+      "url": "https://docs.ollama.com/modelfile.md",
+      "evidence": "create and share customized models",
+      "location": "Modelfile Reference；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:31.158898+00:00",
+      "capture_origin": "https://docs.ollama.com/modelfile.md",
+      "capture_sha256": "feb5bec6c2b8eb1766da03880732ba0e2c69ae9c524fe7d933d69e77cd151324",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-presets",
+          "location": "Modelfile Reference；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/modelfile.md"
+        }
+      ]
+    },
+    {
+      "id": "s-import",
+      "title": "Importing a Model",
+      "url": "https://docs.ollama.com/import.md",
+      "evidence": "Importing a GGUF model\n[…]\nshare any model",
+      "location": "Table of Contents；取回 Markdown第 10–10 行；Sharing your model on ollama.com；取回 Markdown第 59–59 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:29.839909+00:00",
+      "capture_origin": "https://docs.ollama.com/import.md",
+      "capture_sha256": "616a89a2aa249e7115ae3eaa3a9d312aa60098701e618b15002ef5e7c2c73601",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-import",
+          "location": "Table of Contents；取回 Markdown第 10–10 行",
+          "url": "https://docs.ollama.com/import.md"
+        },
+        {
+          "possibility_id": "p-share-model",
+          "location": "Sharing your model on ollama.com；取回 Markdown第 59–59 行",
+          "url": "https://docs.ollama.com/import.md"
+        }
+      ]
+    },
+    {
+      "id": "s-openai",
+      "title": "OpenAI compatibility",
+      "url": "https://docs.ollama.com/api/openai-compatibility.md",
+      "evidence": "Connect OpenAI clients to Ollama",
+      "location": "OpenAI compatibility；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:30.947890+00:00",
+      "capture_origin": "https://docs.ollama.com/api/openai-compatibility.md",
+      "capture_sha256": "470c6386233c998aac03fddda9aecd27826d6416e2726e3431b1ab24a4f15384",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-compatible-clients",
+          "location": "OpenAI compatibility；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/api/openai-compatibility.md"
+        }
+      ]
+    },
+    {
+      "id": "s-faq",
+      "title": "FAQ",
+      "url": "https://docs.ollama.com/faq.md",
+      "evidence": "parallel request processing\n[…]\nexposed using a proxy server\n[…]\nlocal only mode",
+      "location": "How does Ollama handle concurrent requests?；取回 Markdown第 327–327 行；How can I use Ollama with a proxy server?；取回 Markdown第 192–192 行；How do I disable Ollama's cloud features?；取回 Markdown第 166–166 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:31.086212+00:00",
+      "capture_origin": "https://docs.ollama.com/faq.md",
+      "capture_sha256": "799c4f0830f93fe8a466e5953e75969770357ad590f98cf6684796bc3c6123eb",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-concurrency",
+          "location": "How does Ollama handle concurrent requests?；取回 Markdown第 327–327 行",
+          "url": "https://docs.ollama.com/faq.md"
+        },
+        {
+          "possibility_id": "p-network-service",
+          "location": "How can I use Ollama with a proxy server?；取回 Markdown第 192–192 行",
+          "url": "https://docs.ollama.com/faq.md"
+        },
+        {
+          "possibility_id": "p-local-only",
+          "location": "How do I disable Ollama's cloud features?；取回 Markdown第 166–166 行",
+          "url": "https://docs.ollama.com/faq.md"
+        }
+      ]
+    },
+    {
+      "id": "s-cloud",
+      "title": "Cloud",
+      "url": "https://docs.ollama.com/cloud.md",
+      "evidence": "No model or app download required",
+      "location": "Cloud；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:30.998170+00:00",
+      "capture_origin": "https://docs.ollama.com/cloud.md",
+      "capture_sha256": "6ef73aef9c4f237198dac4076269b6902d885eba24daf24446476d873ed16948",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-cloud",
+          "location": "Cloud；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/cloud.md"
+        }
+      ]
+    },
+    {
+      "id": "s-websearch",
+      "title": "Web search",
+      "url": "https://docs.ollama.com/capabilities/web-search.md",
+      "evidence": "augment models with the latest information",
+      "location": "Web search；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:26.653271+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/web-search.md",
+      "capture_sha256": "e3495f8dbd49e00b4a42a8c89c76f619fd3b32d3410a12ca6e4264e75dc71a91",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-web-current",
+          "location": "Web search；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/web-search.md"
+        }
+      ]
+    },
+    {
+      "id": "s-integrations",
+      "title": "Overview",
+      "url": "https://docs.ollama.com/integrations.md",
+      "evidence": "Read code, edit files, and run commands",
+      "location": "Launch a coding agent；取回 Markdown第 15–15 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:31.240683+00:00",
+      "capture_origin": "https://docs.ollama.com/integrations.md",
+      "capture_sha256": "21f21d870b1961a8341cf99c6f7de3ecf706b70f62bb4160b316011833742a76",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-code-agent",
+          "location": "Launch a coding agent；取回 Markdown第 15–15 行",
+          "url": "https://docs.ollama.com/integrations.md"
+        }
+      ]
+    },
+    {
+      "id": "s-overview",
+      "title": "Quickstart",
+      "url": "https://docs.ollama.com/quickstart.md",
+      "evidence": "Connect **Claude** or **ChatGPT (Desktop)**",
+      "location": "Connect a desktop app；取回 Markdown第 21–21 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:26.855646+00:00",
+      "capture_origin": "https://docs.ollama.com/quickstart.md",
+      "capture_sha256": "2aa3f8da21079c07e9f4359945988b81a285a20739e2168377cdf14fe74e1cc8",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-desktop",
+          "location": "Connect a desktop app；取回 Markdown第 21–21 行",
+          "url": "https://docs.ollama.com/quickstart.md"
+        }
+      ]
+    },
+    {
+      "id": "s-webui-rag",
+      "title": "Retrieval Augmented Generation (RAG) / Open WebUI",
+      "url": "https://docs.openwebui.com/features/chat-conversations/rag/",
+      "evidence": "supports Ollama and OpenAI models",
+      "location": "页面正文；本次 HTML 提取正文第 157–157 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:19.594536+00:00",
+      "capture_origin": "https://docs.openwebui.com/features/chat-conversations/rag/",
+      "capture_sha256": "38d493400902576ed79e2a3a02b6ca2a6dda228d653813c79fa38086d94467ce",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-document-chat",
+          "location": "页面正文；本次 HTML 提取正文第 157–157 行（不是 HTML 源码行号）",
+          "url": "https://docs.openwebui.com/features/chat-conversations/rag/"
+        }
+      ]
+    },
+    {
+      "id": "s-webui",
+      "title": "Open WebUI · Quick Start",
+      "url": "https://docs.openwebui.com/getting-started/quick-start/",
+      "evidence": "a separate Ollama instance",
+      "location": "页面正文；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:28.109799+00:00",
+      "capture_origin": "https://docs.openwebui.com/getting-started/quick-start/",
+      "capture_sha256": "43ac9ab630c199074b8bcb826f14eaf7b4955816e9a6b271091f448c12f66c61",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-web-interface",
+          "location": "页面正文；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+          "url": "https://docs.openwebui.com/getting-started/quick-start/"
+        }
+      ]
+    },
+    {
+      "id": "s-decision",
+      "title": "Decision",
+      "url": "https://docs.ollama.com/capabilities/decision.md",
+      "evidence": "Classify text, estimate yes/no probabilities, and score ordered criteria.",
+      "location": "Decision；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:00:07.158228+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/decision.md",
+      "capture_sha256": "a689c0f28e7eac0abfd9adb82fb556b90d02eea46e3c0d59c674551632a2647f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-decisions",
+          "location": "Decision；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/decision.md"
+        }
+      ]
+    },
+    {
+      "id": "s-speech",
+      "title": "Speech",
+      "url": "https://docs.ollama.com/capabilities/speech.md",
+      "evidence": "Turn text into spoken audio",
+      "location": "Speech；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:00:07.031419+00:00",
+      "capture_origin": "https://docs.ollama.com/capabilities/speech.md",
+      "capture_sha256": "1ace11be60300ff8099d95d6c6d2472493f1f4040bc3fa28d67b0108dc42d490",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-speech",
+          "location": "Speech；取回 Markdown第 7–7 行",
+          "url": "https://docs.ollama.com/capabilities/speech.md"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-model-results",
+      "name": "让应用取得文本、图像和结构化结果"
+    },
+    {
+      "id": "g-custom-models",
+      "name": "复用和分享适合自己的模型"
+    },
+    {
+      "id": "g-serving",
+      "name": "把模型接入应用并管理运行边界"
+    },
+    {
+      "id": "g-cloud",
+      "name": "按需采用远端算力和当前网页信息"
+    },
+    {
+      "id": "g-applications",
+      "name": "连接工程、桌面与资料工作场景"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-local",
+      "title": "在自己机器上运行开放模型回答问题",
+      "result": "下载兼容模型后在本地处理提示，采用自己的计算资源进行文本交互。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "选择 local 模型并准备足够内存和兼容硬件；云模型和额外联网工具不是离线路线。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "locally or in the cloud",
+          "location": "Ollama；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ollama/ollama/blob/a6d33251620eef7629c73b09e672f2df243eb363/README.md#L9-L9"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-chat",
+      "title": "把应用接到可多轮交互的聊天模型接口",
+      "result": "应用提交会话消息并取得下一轮助手答复，用于自建聊天或任务界面。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "调用者须管理消息历史和上下文；可用模型、端点认证与本地或云端路线需匹配。",
+      "source_ids": [
+        "s-chat"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-chat",
+          "quote": "next chat message in a conversation",
+          "location": "Generate a chat message；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/api/chat.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-vision",
+      "title": "围绕图片进行描述、分类和问答",
+      "result": "给视觉模型同时提供图片与文字，获得基于图像内容的回答。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需支持图像的具体模型；图片格式、显存与上下文限制需核对，识别结果需验证。",
+      "source_ids": [
+        "s-vision"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-vision",
+          "quote": "describe, classify, and answer questions",
+          "location": "Vision；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/vision.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-fields",
+      "title": "把文本或图像信息提取为指定字段的 JSON",
+      "result": "用 JSON Schema 约束回复结构，便于应用读取结构化字段并继续处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "当前文档明确云端不支持 structured outputs；本地需兼容模型和 schema，结构约束不保证字段事实正确。",
+      "source_ids": [
+        "s-structured"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-structured",
+          "quote": "enforce a JSON schema on model responses",
+          "location": "Structured Outputs；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/structured-outputs.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-embeddings",
+      "title": "为语义检索和资料问答生成文本向量",
+      "result": "把文字转成可索引和比较的向量，交给后续语义搜索或 RAG 流程使用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 embedding 模型；向量库、文档导入、检索和回答流程需另行建立，索引与查询使用匹配模型。",
+      "source_ids": [
+        "s-embed"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-embed",
+          "quote": "Generate text embeddings for semantic search",
+          "location": "Embeddings；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/embeddings.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-tool-work",
+      "title": "让模型在任务中请求工具并利用执行结果继续回答",
+      "result": "把工具定义提供给模型，执行应用选定的调用，再把结果送回模型形成多步交互。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需支持 tool calling 的模型；实际工具执行、权限、错误处理与循环预算由应用负责。",
+      "source_ids": [
+        "s-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tools",
+          "quote": "invoke tools and incorporate their results",
+          "location": "Tool calling；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/tool-calling.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-thinking",
+      "title": "把思考输出与最终答复分别呈现",
+      "result": "对支持的模型分别读取 thinking 字段与最终回复，选择在界面显示或隐藏中间过程。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "只适用于支持 thinking 的模型，控制值依模型而异；该输出不是事实正确或内部机制完整可见的证明。",
+      "source_ids": [
+        "s-thinking"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-thinking",
+          "quote": "separates their reasoning trace from the final answer",
+          "location": "Thinking；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/thinking.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-presets",
+      "title": "保存具有固定行为约定的命名模型配置",
+      "result": "把系统说明、提示模板和推理参数固化为可复用模型配置，供同类任务持续调用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "通过 Modelfile 创建；这是配置和封装路线，不代表已进行参数微调或改变模型权重。",
+      "source_ids": [
+        "s-modelfile"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-modelfile",
+          "quote": "create and share customized models",
+          "location": "Modelfile Reference；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/modelfile.md"
+        }
+      ],
+      "group_ids": [
+        "g-custom-models"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-import",
+      "title": "运行自己准备的兼容模型权重",
+      "result": "把受支持的 Safetensors 或 GGUF 权重导入本地模型管理，再通过 Ollama 使用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "架构和文件必须受支持；GGUF 导入不会自动量化，需提前用兼容工具准备。",
+      "source_ids": [
+        "s-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-import",
+          "quote": "Importing a GGUF model",
+          "location": "Table of Contents；取回 Markdown第 10–10 行",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/import.md"
+        }
+      ],
+      "group_ids": [
+        "g-custom-models"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-share-model",
+      "title": "把已创建的模型发布给其他用户试用",
+      "result": "将有权发布的模型推送到 ollama.com 命名空间，让其他人取得同一模型。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需账户、网络与模型再分发许可；不得推定适配权重、训练数据或上游模型均可公开。",
+      "source_ids": [
+        "s-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-import",
+          "quote": "share any model",
+          "location": "Sharing your model on ollama.com；取回 Markdown第 59–59 行",
+          "source_line_start": 59,
+          "source_line_end": 59,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/import.md"
+        }
+      ],
+      "group_ids": [
+        "g-custom-models"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-compatible-clients",
+      "title": "让已有 OpenAI 客户端改连 Ollama 模型",
+      "result": "调整连接目标后复用支持的客户端调用形式，减少应用迁移时重写全部接口的工作。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "兼容的是明确列出的 API 子集；本地与云端支持不同，不能推定有完整 Responses 状态、内置网络搜索或全部工具回放。",
+      "source_ids": [
+        "s-openai"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-openai",
+          "quote": "Connect OpenAI clients to Ollama",
+          "location": "OpenAI compatibility；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/api/openai-compatibility.md"
+        }
+      ],
+      "group_ids": [
+        "g-serving"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-concurrency",
+      "title": "在资源允许时为多个请求或模型提供推理",
+      "result": "同时处理多个请求，并按可用内存加载模型或排队等待资源。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需足够系统内存或显存；并发数、上下文大小和队列限制要配置，不提供固定吞吐保证。",
+      "source_ids": [
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faq",
+          "quote": "parallel request processing",
+          "location": "How does Ollama handle concurrent requests?；取回 Markdown第 327–327 行",
+          "source_line_start": 327,
+          "source_line_end": 327,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/faq.md"
+        }
+      ],
+      "group_ids": [
+        "g-serving"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-network-service",
+      "title": "把自己的模型服务提供给网络中的应用",
+      "result": "配置监听与反向代理，让其他设备或应用通过网络调用同一 Ollama 服务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "默认绑定回环地址；访问控制、传输保护、认证和网络边界需在部署中实现，不能按本地默认设置推定远端可安全开放。",
+      "source_ids": [
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faq",
+          "quote": "exposed using a proxy server",
+          "location": "How can I use Ollama with a proxy server?；取回 Markdown第 192–192 行",
+          "source_line_start": 192,
+          "source_line_end": 192,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/faq.md"
+        }
+      ],
+      "group_ids": [
+        "g-serving"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-local-only",
+      "title": "选择关闭云功能的纯本地使用路线",
+      "result": "禁用 Ollama 云功能并使用本地模型，避免任务误选 Ollama 云模型或其网络搜索服务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需先取得本地模型并关闭云功能；这只描述 Ollama 本身，外部插件、浏览器或模型下载的网络行为需分别核对。",
+      "source_ids": [
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faq",
+          "quote": "local only mode",
+          "location": "How do I disable Ollama's cloud features?；取回 Markdown第 166–166 行",
+          "source_line_start": 166,
+          "source_line_end": 166,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/faq.md"
+        }
+      ],
+      "group_ids": [
+        "g-serving"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-cloud",
+      "title": "在不下载大模型的情况下调用远端模型",
+      "result": "让终端或应用使用 Ollama 云模型，把本机装不下或不想下载的模型运行交给远端服务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "可直接调用云 API，需账户、API key、网络和当前服务权限；费用、限额与数据处理依服务条款。",
+      "source_ids": [
+        "s-cloud"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-cloud",
+          "quote": "No model or app download required",
+          "location": "Cloud；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/cloud.md"
+        }
+      ],
+      "group_ids": [
+        "g-cloud"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-web-current",
+      "title": "给回答流程补充当前网页搜索结果",
+      "result": "使用 Ollama Web Search API 查找网页，把取回的结果交给模型处理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是联网服务，需 Ollama 账户及 API key；本地 only 模式会禁用，搜索与生成结果仍需核查。",
+      "source_ids": [
+        "s-websearch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-websearch",
+          "quote": "augment models with the latest information",
+          "location": "Web search；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/web-search.md"
+        }
+      ],
+      "group_ids": [
+        "g-cloud"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-code-agent",
+      "title": "把本地或云模型接入编程代理完成工程任务",
+      "result": "将 Ollama 提供的模型供 Claude Code、OpenCode 等代理使用，由代理读取、修改和执行工程内容。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "能力来自另装的编程代理与工具；需兼容集成、模型能力、上下文及权限，不能归为 Ollama 自身会编辑工程。",
+      "source_ids": [
+        "s-integrations"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-integrations",
+          "quote": "Read code, edit files, and run commands",
+          "location": "Launch a coding agent；取回 Markdown第 15–15 行",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/integrations.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-desktop",
+      "title": "在支持的桌面 AI 应用中改用 Ollama 模型",
+      "result": "通过 Ollama 桌面集成连接已有聊天应用，在其支持的场景中使用本地或云模型。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "当前文档路径为 macOS Apps；ChatGPT 集成限定 Codex mode，常规 Chat 和语音仍走原连接。各应用安装与功能权限需核对。",
+      "source_ids": [
+        "s-overview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "Connect **Claude** or **ChatGPT (Desktop)**",
+          "location": "Connect a desktop app；取回 Markdown第 21–21 行",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/quickstart.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-document-chat",
+      "title": "围绕上传的资料进行带检索上下文的问答",
+      "result": "使用 Open WebUI 将本地或远端文档检索内容加入提示，再由 Ollama 等模型生成回复。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "另行部署 Open WebUI，配置聊天及 embedding 模型、文档索引与合适上下文；提问结果和引用需核查。",
+      "source_ids": [
+        "s-webui-rag"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-webui-rag",
+          "quote": "supports Ollama and OpenAI models",
+          "location": "页面正文；本次 HTML 提取正文第 157–157 行（不是 HTML 源码行号）",
+          "source_line_start": 157,
+          "source_line_end": 157,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.openwebui.com/features/chat-conversations/rag/"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-web-interface",
+      "title": "为自己的模型提供可在浏览器使用的聊天界面",
+      "result": "部署 Open WebUI 并连接独立或打包的 Ollama 服务，让用户通过网页访问模型交互。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是第三方 WebUI，不是 Ollama 原生 API 自动产生的成品；需要部署、账户与网络访问配置。",
+      "source_ids": [
+        "s-webui"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-webui",
+          "quote": "a separate Ollama instance",
+          "location": "页面正文；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+          "source_line_start": 77,
+          "source_line_end": 77,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.openwebui.com/getting-started/quick-start/"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-decisions",
+      "title": "对文本作分类、是非判断或分级评分",
+      "result": "给决策模型输入状态与判断标准，取得类别、概率或按序标准评分，供分流和筛选工作使用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需支持 decision 的模型；Nimble 路线要求 Ollama 0.35.0+，图像决策另有模型与版本要求。模型分数并非经过校准的业务事实。",
+      "source_ids": [
+        "s-decision"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-decision",
+          "quote": "Classify text, estimate yes/no probabilities, and score ordered criteria.",
+          "location": "Decision；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/decision.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-speech",
+      "title": "把文字或模型回复播放并保存为语音",
+      "result": "用语音模型边生成边播放朗读，或把结果写成可交付的音频文件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需 Ollama 0.40.9+ 与兼容 speech 模型；当前示例 Phonon 为英语，格式、声音和参数受模型限制，不推定支持所有语言或声音克隆。",
+      "source_ids": [
+        "s-speech"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-speech",
+          "quote": "Turn text into spoken audio",
+          "location": "Speech；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.ollama.com/capabilities/speech.md"
+        }
+      ],
+      "group_ids": [
+        "g-model-results"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未在各操作系统、GPU、模型家族和文件格式上安装实测；速度、上下文、内存占用与工具准确率不能由功能文档推定。",
+    "本地与云端接口并不相同。结构化输出、Responses 状态或工具回放等须按具体端点确认。",
+    "未把权重微调、任意模型兼容、自动量化导入 GGUF、完全替代所有 OpenAI API 或完全离线的外部插件列为内置能力。",
+    "未审计所列第三方应用的数据外传、认证与多用户隔离；Ollama 本地运行的声明不能外推到整个应用栈。",
+    "CLI 的下载、列举、复制和删除视为模型管理步骤，没有为这些微操作单独增加 P；更多集成生态仍有长尾缺口。"
+  ],
+  "generated_at": "2026-11-05T09:04:29.902592+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "结果视角读取聊天、视觉、结构化输出、向量、工具调用、thinking 与运行配置，提取可观察结果而不复述 API 参数。",
+      "示例视角核对桌面和编程代理集成、Open WebUI 完整部署及资料问答，标明真正交付界面或工程任务的是扩展组件。",
+      "扩展视角补读云模型、网络搜索、模型导入与分享；将本地、云端、第三方服务的边界写入条件。",
+      "归一化时合并不同品牌模型和多个代码代理入口；保留结构化提取、文档问答、模型发布与远端服务等不同用户结果。",
+      "补漏复查 FAQ、CLI、Linux 服务部署与 Modelfile；补漏时发现 decision 与 speech 两项新的用户结果，读取专门指南后纳入；其他下载、列举、复制和停止等步骤不单独拆成 P。相关版本限制保留在条件与缺口。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 21,
+    "evidence_revision_at": "2026-11-05T10:56:01.357941+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

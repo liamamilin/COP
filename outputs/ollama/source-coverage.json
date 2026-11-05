@@ -1,0 +1,234 @@
+{
+  "topic": "ollama",
+  "generated_at": "2026-11-05T10:06:29.338781+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-chat",
+      "requested_url": "https://docs.ollama.com/api/chat.md",
+      "capture_origin": "https://docs.ollama.com/api/chat.md",
+      "retrieved_at": "2026-11-05T08:43:28.073083+00:00",
+      "capture_sha256": "4d0f6557a1adaa49bbeb630b3d82e8a1b8f2cac8c944438c3ef29803e89a3597",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 20480,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-cli",
+      "requested_url": "https://docs.ollama.com/cli.md",
+      "capture_origin": "https://docs.ollama.com/cli.md",
+      "retrieved_at": "2026-11-05T08:57:08.949588+00:00",
+      "capture_sha256": "03b9197d374bf0a39c772da065f599b5be975a2ab16e70e3d248cea45fd198b4",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 3180,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-cloud",
+      "requested_url": "https://docs.ollama.com/cloud.md",
+      "capture_origin": "https://docs.ollama.com/cloud.md",
+      "retrieved_at": "2026-11-05T08:43:30.998170+00:00",
+      "capture_sha256": "6ef73aef9c4f237198dac4076269b6902d885eba24daf24446476d873ed16948",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 2792,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-decision",
+      "requested_url": "https://docs.ollama.com/capabilities/decision.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/decision.md",
+      "retrieved_at": "2026-11-05T09:00:07.158228+00:00",
+      "capture_sha256": "a689c0f28e7eac0abfd9adb82fb556b90d02eea46e3c0d59c674551632a2647f",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8891,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-embed",
+      "requested_url": "https://docs.ollama.com/capabilities/embeddings.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/embeddings.md",
+      "retrieved_at": "2026-11-05T08:43:28.514872+00:00",
+      "capture_sha256": "da65b364d4f946cd85fa07a1c9509a0955e4440a86c4383398f5aa9c66d0ef36",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 2909,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-faq",
+      "requested_url": "https://docs.ollama.com/faq.md",
+      "capture_origin": "https://docs.ollama.com/faq.md",
+      "retrieved_at": "2026-11-05T08:43:31.086212+00:00",
+      "capture_sha256": "799c4f0830f93fe8a466e5953e75969770357ad590f98cf6684796bc3c6123eb",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 18691,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-import",
+      "requested_url": "https://docs.ollama.com/import.md",
+      "capture_origin": "https://docs.ollama.com/import.md",
+      "retrieved_at": "2026-11-05T08:43:29.839909+00:00",
+      "capture_sha256": "616a89a2aa249e7115ae3eaa3a9d312aa60098701e618b15002ef5e7c2c73601",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 3386,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-integrations",
+      "requested_url": "https://docs.ollama.com/integrations.md",
+      "capture_origin": "https://docs.ollama.com/integrations.md",
+      "retrieved_at": "2026-11-05T08:43:31.240683+00:00",
+      "capture_sha256": "21f21d870b1961a8341cf99c6f7de3ecf706b70f62bb4160b316011833742a76",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 1614,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-linux",
+      "requested_url": "https://docs.ollama.com/linux.md",
+      "capture_origin": "https://docs.ollama.com/linux.md",
+      "retrieved_at": "2026-11-05T08:47:26.807880+00:00",
+      "capture_sha256": "6213c299a463797492c6115268fd1f6e87ebd875def1776bbb7c384d07359a07",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4665,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-modelfile",
+      "requested_url": "https://docs.ollama.com/modelfile.md",
+      "capture_origin": "https://docs.ollama.com/modelfile.md",
+      "retrieved_at": "2026-11-05T08:43:31.158898+00:00",
+      "capture_sha256": "feb5bec6c2b8eb1766da03880732ba0e2c69ae9c524fe7d933d69e77cd151324",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9229,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-openai",
+      "requested_url": "https://docs.ollama.com/api/openai-compatibility.md",
+      "capture_origin": "https://docs.ollama.com/api/openai-compatibility.md",
+      "retrieved_at": "2026-11-05T08:43:30.947890+00:00",
+      "capture_sha256": "470c6386233c998aac03fddda9aecd27826d6416e2726e3431b1ab24a4f15384",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 27376,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://docs.ollama.com/quickstart.md",
+      "capture_origin": "https://docs.ollama.com/quickstart.md",
+      "retrieved_at": "2026-11-05T08:43:26.855646+00:00",
+      "capture_sha256": "2aa3f8da21079c07e9f4359945988b81a285a20739e2168377cdf14fe74e1cc8",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8869,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-readme",
+      "requested_url": "https://raw.githubusercontent.com/ollama/ollama/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/ollama/ollama/main/README.md",
+      "retrieved_at": "2026-11-05T08:47:24.787124+00:00",
+      "capture_sha256": "9e5a7d406950fdd2742084065ab38a3ea09b5aab5e2f13ef7d64147229ae0d8b",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 19344,
+      "used_for_confirmed_results": true,
+      "git_commit": "a6d33251620eef7629c73b09e672f2df243eb363",
+      "git_repository": "ollama/ollama",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ollama/ollama/a6d33251620eef7629c73b09e672f2df243eb363/README.md",
+      "pinned_content_sha256": "9e5a7d406950fdd2742084065ab38a3ea09b5aab5e2f13ef7d64147229ae0d8b",
+      "pinned_verified_at": "2026-11-05T10:35:54.506Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/ollama/ollama/blob/a6d33251620eef7629c73b09e672f2df243eb363/README.md"
+    },
+    {
+      "id": "s-speech",
+      "requested_url": "https://docs.ollama.com/capabilities/speech.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/speech.md",
+      "retrieved_at": "2026-11-05T09:00:07.031419+00:00",
+      "capture_sha256": "1ace11be60300ff8099d95d6c6d2472493f1f4040bc3fa28d67b0108dc42d490",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5167,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-structured",
+      "requested_url": "https://docs.ollama.com/capabilities/structured-outputs.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/structured-outputs.md",
+      "retrieved_at": "2026-11-05T08:43:29.571065+00:00",
+      "capture_sha256": "4cc74387d95a2ac3491d9d0c9767415d8add7e9ac62fe8a20e4d54aaf45a8c5e",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5056,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-thinking",
+      "requested_url": "https://docs.ollama.com/capabilities/thinking.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/thinking.md",
+      "retrieved_at": "2026-11-05T08:43:29.566874+00:00",
+      "capture_sha256": "d9a0c2e377a41e37aa08c7b0fac0a6174c94735156c2aca2ce668739dd5b9613",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4644,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-tools",
+      "requested_url": "https://docs.ollama.com/capabilities/tool-calling.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/tool-calling.md",
+      "retrieved_at": "2026-11-05T08:43:28.130498+00:00",
+      "capture_sha256": "ca6a7457b7f99fa4effd5fd5188fe99b33dddf00b52250a7351bdf84a9e3f2bf",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 21759,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-vision",
+      "requested_url": "https://docs.ollama.com/capabilities/vision.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/vision.md",
+      "retrieved_at": "2026-11-05T08:43:28.298688+00:00",
+      "capture_sha256": "476320eebf762f24954fef8ab98a51b2e5741b464f5df617745f9c564d352026",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 2060,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-websearch",
+      "requested_url": "https://docs.ollama.com/capabilities/web-search.md",
+      "capture_origin": "https://docs.ollama.com/capabilities/web-search.md",
+      "retrieved_at": "2026-11-05T08:47:26.653271+00:00",
+      "capture_sha256": "e3495f8dbd49e00b4a42a8c89c76f619fd3b32d3410a12ca6e4264e75dc71a91",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 12031,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-webui-rag",
+      "requested_url": "https://docs.openwebui.com/features/chat-conversations/rag/",
+      "capture_origin": "https://docs.openwebui.com/features/chat-conversations/rag/",
+      "retrieved_at": "2026-11-05T08:56:19.594536+00:00",
+      "capture_sha256": "38d493400902576ed79e2a3a02b6ca2a6dda228d653813c79fa38086d94467ce",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 33794,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-webui",
+      "requested_url": "https://docs.openwebui.com/getting-started/quick-start/",
+      "capture_origin": "https://docs.openwebui.com/getting-started/quick-start/",
+      "retrieved_at": "2026-11-05T08:47:28.109799+00:00",
+      "capture_sha256": "43ac9ab630c199074b8bcb826f14eaf7b4955816e9a6b271091f448c12f66c61",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 45503,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-webui-rag",
+      "requested_url": "https://docs.openwebui.com/features/rag/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.357941+00:00"
+}

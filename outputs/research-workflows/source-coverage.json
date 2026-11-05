@@ -1,0 +1,358 @@
+{
+  "topic": "research-workflows",
+  "generated_at": "2026-11-05T10:06:29.355042+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-api-recipes",
+      "requested_url": "https://help.openalex.org/how-to/api-recipes.md",
+      "capture_origin": "https://help.openalex.org/how-to/api-recipes.md",
+      "retrieved_at": "2026-11-05T09:49:05.654498+00:00",
+      "capture_sha256": "24ca0638c1b0ff6e44bd6bcb3721005337e810650bda882dc344fdfa7afe62a6",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4465,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-asreview",
+      "requested_url": "https://raw.githubusercontent.com/asreview/asreview/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/asreview/asreview/main/README.md",
+      "retrieved_at": "2026-11-05T09:39:55.707102+00:00",
+      "capture_sha256": "63d0fd4c8001b83ad1dcfeb928b2de5357990ee6b27df9b9409859ef86d174e3",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 6665,
+      "used_for_confirmed_results": true,
+      "git_commit": "79d568212b2b0a78f9fd7be3c5117dfb890489f9",
+      "git_repository": "asreview/asreview",
+      "pinned_raw_url": "https://raw.githubusercontent.com/asreview/asreview/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md",
+      "pinned_content_sha256": "63d0fd4c8001b83ad1dcfeb928b2de5357990ee6b27df9b9409859ef86d174e3",
+      "pinned_verified_at": "2026-11-05T10:35:53.685Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md"
+    },
+    {
+      "id": "s-citations",
+      "requested_url": "https://help.openalex.org/how-to/following-citations.md",
+      "capture_origin": "https://help.openalex.org/how-to/following-citations.md",
+      "retrieved_at": "2026-11-05T09:49:05.656198+00:00",
+      "capture_sha256": "d2f58a83b88b5e9b680865a7747f39b9c6463f74af248f1a165f0669eb34dbae",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 2858,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-collections",
+      "requested_url": "https://help.openalex.org/how-to/collections.md",
+      "capture_origin": "https://help.openalex.org/how-to/collections.md",
+      "retrieved_at": "2026-11-05T09:49:05.409296+00:00",
+      "capture_sha256": "f63a211346c4a85bbd13b6c156b7fa5234f236a95da9d83209600704583396d1",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 13919,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-crossref",
+      "requested_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "capture_origin": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "retrieved_at": "2026-11-05T09:39:53.815884+00:00",
+      "capture_sha256": "7bcf719c3acff2fff1e79843a4db5878750def7f991b767391ed545716391669",
+      "content_type": "text/html",
+      "captured_text_characters": 13396,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-deep",
+      "requested_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "retrieved_at": "2026-11-05T09:39:55.196232+00:00",
+      "capture_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 10224,
+      "used_for_confirmed_results": true,
+      "git_commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "git_repository": "langchain-ai/open_deep_research",
+      "pinned_raw_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "pinned_content_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "pinned_verified_at": "2026-11-05T10:35:53.380Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md"
+    },
+    {
+      "id": "s-docling",
+      "requested_url": "https://raw.githubusercontent.com/docling-project/docling/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/docling-project/docling/main/README.md",
+      "retrieved_at": "2026-11-05T09:39:54.861416+00:00",
+      "capture_sha256": "8eeca13ac27a4b0bbd8c41992f9e0bfe5f2d96c776c0eba2a89d072760bb9350",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 8695,
+      "used_for_confirmed_results": true,
+      "git_commit": "d59ca4a97fe0c86cdeadb2a17dd86b98461d2517",
+      "git_repository": "docling-project/docling",
+      "pinned_raw_url": "https://raw.githubusercontent.com/docling-project/docling/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md",
+      "pinned_content_sha256": "8eeca13ac27a4b0bbd8c41992f9e0bfe5f2d96c776c0eba2a89d072760bb9350",
+      "pinned_verified_at": "2026-11-05T10:35:53.395Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/docling-project/docling/blob/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md"
+    },
+    {
+      "id": "s-elicit-case",
+      "requested_url": "https://elicit.com/customer-stories",
+      "capture_origin": "https://elicit.com/customer-stories",
+      "retrieved_at": "2026-11-05T09:47:16.145052+00:00",
+      "capture_sha256": "0ae49cf67652bf43809070ce101a0e0d280e5e4e465927b9faa18e6b15c14706",
+      "content_type": "text/html",
+      "captured_text_characters": 7718,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-elicit",
+      "requested_url": "https://elicit.com/solutions/systematic-review",
+      "capture_origin": "https://elicit.com/solutions/systematic-review",
+      "retrieved_at": "2026-11-05T09:39:56.846072+00:00",
+      "capture_sha256": "ce2c6ff2ed3b5a4d7f11e4caba1b0f5fda4a732fb5712aecadef097e337afb4f",
+      "content_type": "text/html",
+      "captured_text_characters": 16612,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-experts",
+      "requested_url": "https://help.openalex.org/how-to/finding-experts.md",
+      "capture_origin": "https://help.openalex.org/how-to/finding-experts.md",
+      "retrieved_at": "2026-11-05T09:49:05.303058+00:00",
+      "capture_sha256": "3f74e6af60d991184da0d4ec26591de7ba6c29a2e46bf5d17fa10915d381d041",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4036,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-openalex-api",
+      "requested_url": "https://developers.openalex.org/",
+      "capture_origin": "https://help.openalex.org/",
+      "retrieved_at": "2026-11-05T09:40:54.475142+00:00",
+      "capture_sha256": "4da0d6bd341a2db9ce877ea6fcd78d15908150f09d83b02fa43c2e8845c37077",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 1327,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-openalex-index",
+      "requested_url": "https://help.openalex.org/llms.txt",
+      "capture_origin": "https://help.openalex.org/llms.txt",
+      "retrieved_at": "2026-11-05T09:47:11.865059+00:00",
+      "capture_sha256": "446103377eb546fafe19168bf5ec180fe1ae48132848f3c6671d5a9f6359d967",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 36999,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-openalex",
+      "requested_url": "https://docs.openalex.org/",
+      "capture_origin": "https://help.openalex.org/",
+      "retrieved_at": "2026-11-05T09:39:53.779871+00:00",
+      "capture_sha256": "4da0d6bd341a2db9ce877ea6fcd78d15908150f09d83b02fa43c2e8845c37077",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 1327,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-openrefine",
+      "requested_url": "https://openrefine.org/docs",
+      "capture_origin": "https://openrefine.org/docs",
+      "retrieved_at": "2026-11-05T09:39:57.797414+00:00",
+      "capture_sha256": "bf257e3ff69d02fb0220b4b929aaefc7bbcb85b42a478c74a4dd48f6307571aa",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 1376,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-osf",
+      "requested_url": "https://www.cos.io/products/osf",
+      "capture_origin": "https://www.cos.io/products/osf",
+      "retrieved_at": "2026-11-05T09:40:53.845494+00:00",
+      "capture_sha256": "8f043b89e1ae0e291025bb13a3d4b912fe451037e0d32c50576fb91413a23822",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 6827,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-paper-search",
+      "requested_url": "https://help.openalex.org/how-to/finding-papers-with-keywords.md",
+      "capture_origin": "https://help.openalex.org/how-to/finding-papers-with-keywords.md",
+      "retrieved_at": "2026-11-05T09:49:05.768367+00:00",
+      "capture_sha256": "9bb0d05817d0d33943986c819541fb4a105ae0cf871d4fe49e61f2e02ae3e4e2",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4498,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-prisma",
+      "requested_url": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
+      "capture_origin": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
+      "retrieved_at": "2026-11-05T09:39:58.282569+00:00",
+      "capture_sha256": "9120bbe8547e3379ecb3926a57e5ca6db93797900ced72a948cecea280a02caa",
+      "content_type": "text/html;charset=utf-8",
+      "captured_text_characters": 1314,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-quarto",
+      "requested_url": "https://quarto.org/docs/computations/r.html",
+      "capture_origin": "https://quarto.org/docs/computations/r.html",
+      "retrieved_at": "2026-11-05T09:49:07.968749+00:00",
+      "capture_sha256": "8659e6e7ee26e24b367d0e8a413ce792cebd8e90c6f55a7935155fd81170196f",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 17603,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-rayyan",
+      "requested_url": "https://www.rayyan.ai/",
+      "capture_origin": "https://www.rayyan.ai/",
+      "retrieved_at": "2026-11-05T09:39:56.992384+00:00",
+      "capture_sha256": "d7ef8372abc12dbb37903b8c2104fad149bfe022be260b0d9ad2886885fb9195",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 8195,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-refine-cluster",
+      "requested_url": "https://openrefine.org/docs/manual/cellediting#clustering",
+      "capture_origin": "https://openrefine.org/docs/manual/cellediting#clustering",
+      "retrieved_at": "2026-11-05T09:49:07.549936+00:00",
+      "capture_sha256": "7d911ef7ebdc4b797e95bb4b24633e05aa7bacceedf8842275040d9b3cc2b7e1",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 20312,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-search-translate",
+      "requested_url": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md",
+      "capture_origin": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md",
+      "retrieved_at": "2026-11-05T09:49:05.351080+00:00",
+      "capture_sha256": "4377d18802aafd24644edb7c44d2b2d13f7d8f3d9adc3269a972fa6cd1490072",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9150,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-semantic",
+      "requested_url": "https://www.semanticscholar.org/product/api",
+      "capture_origin": "https://www.semanticscholar.org/product/api",
+      "retrieved_at": "2026-11-05T09:39:54.156369+00:00",
+      "capture_sha256": "e44e94c49f3dee8af281fddfb7ee132609f55ebed7d97ef574d6ba9a3307fb33",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 5428,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-targets",
+      "requested_url": "https://docs.ropensci.org/targets/",
+      "capture_origin": "https://docs.ropensci.org/targets/",
+      "retrieved_at": "2026-11-05T09:49:07.139709+00:00",
+      "capture_sha256": "06f871775749d3581fe4fbaf081cf791d62a111b081f2c0505a7967748dadc64",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6628,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-unpaywall-api",
+      "requested_url": "https://unpaywall.org/products/api/v2",
+      "capture_origin": "https://unpaywall.org/products/api/v2",
+      "retrieved_at": "2026-11-05T09:40:53.160421+00:00",
+      "capture_sha256": "fae5d116d05e89ac35446ea330f685442896d948ea39eb9a177bd108416721b9",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 9,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-unpaywall",
+      "requested_url": "https://unpaywall.org/products/api",
+      "capture_origin": "https://unpaywall.org/products/api",
+      "retrieved_at": "2026-11-05T09:39:57.354938+00:00",
+      "capture_sha256": "fae5d116d05e89ac35446ea330f685442896d948ea39eb9a177bd108416721b9",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 9,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-vos-case",
+      "requested_url": "https://www.vosviewer.com/examples",
+      "capture_origin": "https://www.vosviewer.com/examples",
+      "retrieved_at": "2026-11-05T09:47:12.778645+00:00",
+      "capture_sha256": "963aeb0ad49879e7f0e61a4c93bfa51299068ca8cf942300440f8ad0797c2e04",
+      "content_type": "text/html",
+      "captured_text_characters": 4408,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-vos",
+      "requested_url": "https://www.vosviewer.com/features",
+      "capture_origin": "https://www.vosviewer.com/features",
+      "retrieved_at": "2026-11-05T09:40:54.103331+00:00",
+      "capture_sha256": "c6dd8cfdce673350d963b25699edb7c503a3bcde1ee18efb11cc781de246b1fe",
+      "content_type": "text/html",
+      "captured_text_characters": 2833,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-zotero-cite",
+      "requested_url": "https://www.zotero.org/support/word_processor_integration",
+      "capture_origin": "https://www.zotero.org/support/word_processor_integration",
+      "retrieved_at": "2026-11-05T09:47:12.257342+00:00",
+      "capture_sha256": "76003bb02b914c1ff983bad686fdbd944e51d28f3d5a1e7c4aacf5bff74a442d",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 2588,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-zotero-duplicate",
+      "requested_url": "https://www.zotero.org/support/duplicate_detection",
+      "capture_origin": "https://www.zotero.org/support/duplicate_detection",
+      "retrieved_at": "2026-11-05T09:47:12.826582+00:00",
+      "capture_sha256": "aaf309ff82879b3730c5c62bc2a4717c32eaf2d4f4697afedfaf783e0514307b",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 3916,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-zotero-pdf",
+      "requested_url": "https://www.zotero.org/support/pdf_reader",
+      "capture_origin": "https://www.zotero.org/support/pdf_reader",
+      "retrieved_at": "2026-11-05T09:49:07.313904+00:00",
+      "capture_sha256": "ab90be423f258eefcb2fffa5415ffef6eede2dbc41e86d986b19dada9a95d65e",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 6657,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-zotero",
+      "requested_url": "https://www.zotero.org/support/quick_start_guide",
+      "capture_origin": "https://www.zotero.org/support/quick_start_guide",
+      "retrieved_at": "2026-11-05T09:39:55.126381+00:00",
+      "capture_sha256": "74b06652277bc1438c5ac89e3a5c62bd44729304eadd185613494f2d30ab66ff",
+      "content_type": "text/html; charset=UTF-8",
+      "captured_text_characters": 9841,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-vos",
+      "requested_url": "https://www.vosviewer.com/features/highlights",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-osf",
+      "requested_url": "https://help.osf.io/article/158-welcome-to-registrations",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-scite",
+      "requested_url": "https://scite.ai/reports",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.525226+00:00"
+}

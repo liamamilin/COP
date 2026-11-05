@@ -1,0 +1,972 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "LangGraph",
+    "scope": "面向 Agent 与业务流程开发者，研究 LangGraph Python 运行时能够交付的任务结果；以 2026-11-05 实际文档为准，明确区分 Python 包、存储适配器、LangChain 示例、独立 UI 与 LangSmith 服务。"
+  },
+  "sources": [
+    {
+      "id": "s-overview",
+      "title": "LangGraph overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview.md",
+      "evidence": "mix deterministic steps with LLM-driven steps",
+      "location": "LangGraph overview；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:35:11.237386+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/overview.md",
+      "capture_sha256": "0af559054d2b9874c795c5f1b188ccff01f17165b15fc133a92d1f4bcb71c464",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-hybrid",
+          "location": "LangGraph overview；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-memory",
+      "title": "Memory",
+      "url": "https://docs.langchain.com/oss/python/langgraph/add-memory.md",
+      "evidence": "enable multi-turn conversations",
+      "location": "Memory；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:31.564355+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/add-memory.md",
+      "capture_sha256": "4490d0c46a26d937196c27663eaee1acdd3a8e45a27b0fd2be3666ebf536f015",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-conversation",
+          "location": "Memory；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/add-memory.md"
+        }
+      ]
+    },
+    {
+      "id": "s-store",
+      "title": "Stores",
+      "url": "https://docs.langchain.com/oss/python/langgraph/stores.md",
+      "evidence": "persist information across threads",
+      "location": "Stores；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:07.188014+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/stores.md",
+      "capture_sha256": "9c2261dad1d2d3f1949add4e7eede7eb679a315be1718a5e12f7218fb19819b4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-remember",
+          "location": "Stores；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/stores.md"
+        }
+      ]
+    },
+    {
+      "id": "s-persistence",
+      "title": "Persistence",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence.md",
+      "evidence": "resume after an interruption",
+      "location": "Persistence；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:30.993535+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/persistence.md",
+      "capture_sha256": "9985e697f3f56c9c703360f75d7e56c0d3040307d46ccff4b0a7d4964ab07932",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-resume",
+          "location": "Persistence；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/persistence.md"
+        }
+      ]
+    },
+    {
+      "id": "s-interrupts",
+      "title": "Interrupts",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts.md",
+      "evidence": "wait for external input before continuing",
+      "location": "Interrupts；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:31.422469+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/interrupts.md",
+      "capture_sha256": "9d3dc74c19236853cfdc8770d443a5da12acb1ea26797a77d0323773494d04c5",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-approval",
+          "location": "Interrupts；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts.md"
+        }
+      ]
+    },
+    {
+      "id": "s-time",
+      "title": "Use time-travel",
+      "url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md",
+      "evidence": "explore an alternative path",
+      "location": "Overview；取回 Markdown第 14–14 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:31.198123+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md",
+      "capture_sha256": "56cea55cfa011f3a4afbe6c28aa93339416e2cccf3ad16d2b22b10c78952b84a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-time-travel",
+          "location": "Overview；取回 Markdown第 14–14 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md"
+        }
+      ]
+    },
+    {
+      "id": "s-streaming",
+      "title": "Streaming",
+      "url": "https://docs.langchain.com/oss/python/langgraph/streaming.md",
+      "evidence": "yield streamed outputs as iterators",
+      "location": "Basic usage；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:31.489682+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/streaming.md",
+      "capture_sha256": "52567184b0f55fde14423e9cea1dcf5ee7b3d1b9b5580f941a25616360527ca0",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-live-progress",
+          "location": "Basic usage；取回 Markdown第 17–17 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/streaming.md"
+        }
+      ]
+    },
+    {
+      "id": "s-faults",
+      "title": "Fault tolerance",
+      "url": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md",
+      "evidence": "automatically re-run failed attempts",
+      "location": "Fault tolerance；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:31.371026+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md",
+      "capture_sha256": "aa54c00cb1a97c0a4afc7dcaaa34f0f7ed1c4aade4e0f94bd083eba1fd477337",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-failure-recovery",
+          "location": "Fault tolerance；取回 Markdown第 11–11 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md"
+        }
+      ]
+    },
+    {
+      "id": "s-patterns",
+      "title": "Workflows and agents",
+      "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md",
+      "evidence": "LLMs work simultaneously\n[…]\ncontext-specific tasks\n[…]\nfeedback is provided\n[…]\ntool usage",
+      "location": "Parallelization；取回 Markdown第 232–232 行；Routing；取回 Markdown第 365–365 行；Evaluator-optimizer；取回 Markdown第 772–772 行；Workflows and agents；取回 Markdown第 10–10 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:32.822133+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md",
+      "capture_sha256": "eeddf8e63761d1c845f644bbf3a0db7c142d678f32fa314264248fadffe6ac0c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-parallel",
+          "location": "Parallelization；取回 Markdown第 232–232 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        },
+        {
+          "possibility_id": "p-route",
+          "location": "Routing；取回 Markdown第 365–365 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        },
+        {
+          "possibility_id": "p-revise",
+          "location": "Evaluator-optimizer；取回 Markdown第 772–772 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        },
+        {
+          "possibility_id": "p-tool-loop",
+          "location": "Workflows and agents；取回 Markdown第 10–10 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        }
+      ]
+    },
+    {
+      "id": "s-subgraphs",
+      "title": "Subgraphs",
+      "url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md",
+      "evidence": "Reusing a set of nodes in multiple graphs",
+      "location": "Subgraphs；取回 Markdown第 12–12 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:32.657537+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md",
+      "capture_sha256": "854d707a7679f0f4a0f31bbfd1b8a437a43b643d6ac7a7fdad094fd841fdfb72",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-modular-team",
+          "location": "Subgraphs；取回 Markdown第 12–12 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md"
+        }
+      ]
+    },
+    {
+      "id": "s-test",
+      "title": "Test",
+      "url": "https://docs.langchain.com/oss/python/langgraph/test.md",
+      "evidence": "test partial execution paths",
+      "location": "Partial execution；取回 Markdown第 92–92 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:32.840420+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/test.md",
+      "capture_sha256": "f52f5a58fdcefa65873037aca4a09358fdac685c355d05832ad6055a2735990b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-targeted-tests",
+          "location": "Partial execution；取回 Markdown第 92–92 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/test.md"
+        }
+      ]
+    },
+    {
+      "id": "s-sql",
+      "title": "Build a custom SQL agent",
+      "url": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md",
+      "evidence": "answer questions about a SQL database",
+      "location": "Build a custom SQL agent；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:33.228551+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md",
+      "capture_sha256": "56c011f918584bcbcd81099f04a69ae2601d4f6fd3923109a5ef407bebc1670b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sql",
+          "location": "Build a custom SQL agent；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md"
+        }
+      ]
+    },
+    {
+      "id": "s-rag",
+      "title": "Build a custom RAG agent with LangGraph",
+      "url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md",
+      "evidence": "when to search a vector store\n[…]\nrewrite the question and try again",
+      "location": "Build a custom RAG agent with LangGraph；取回 Markdown第 7–7 行；Grade documents；取回 Markdown第 245–245 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:33.030974+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md",
+      "capture_sha256": "8a936698ed4adb5b1fdbb0705133bf466d40c06af54b3ccbb939992dd7b03f38",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-rag",
+          "location": "Build a custom RAG agent with LangGraph；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md"
+        },
+        {
+          "possibility_id": "p-retrieve-again",
+          "location": "Grade documents；取回 Markdown第 245–245 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md"
+        }
+      ]
+    },
+    {
+      "id": "s-email",
+      "title": "Thinking in the Graph API",
+      "url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api.md",
+      "evidence": "builds a customer support email agent",
+      "location": "Thinking in the Graph API；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:34.394415+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api.md",
+      "capture_sha256": "42ab024ab2b45671af16ce92589a6adafa8d16bdb1c269a6744f4e98a38ab5f3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-support-email",
+          "location": "Thinking in the Graph API；取回 Markdown第 11–11 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api.md"
+        }
+      ]
+    },
+    {
+      "id": "s-research",
+      "title": "🔬 Open Deep Research",
+      "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "evidence": "fully open source deep research agent",
+      "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:06.363055+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "capture_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-research",
+          "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+          "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md#L5-L5"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "git_commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "git_repository": "langchain-ai/open_deep_research",
+      "pinned_raw_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "pinned_content_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "pinned_verified_at": "2026-11-05T10:35:53.380Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-ui",
+      "title": "Agent Chat UI",
+      "url": "https://docs.langchain.com/oss/python/langgraph/ui.md",
+      "evidence": "real-time chat, tool visualization",
+      "location": "Agent Chat UI；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:34.079182+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langgraph/ui.md",
+      "capture_sha256": "6394406f841c99da2ed61ef39b1bb2170ee2081e5f85dcbf7f2f7ffaf49698ab",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-chat-interface",
+          "location": "Agent Chat UI；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/oss/python/langgraph/ui.md"
+        }
+      ]
+    },
+    {
+      "id": "s-deploy",
+      "title": "LangSmith Deployment",
+      "url": "https://docs.langchain.com/langsmith/deployment.md",
+      "evidence": "real-time streaming, and horizontal scaling",
+      "location": "LangSmith Deployment；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:34.334727+00:00",
+      "capture_origin": "https://docs.langchain.com/langsmith/deployment.md",
+      "capture_sha256": "30508f0806894c9d8faeb121e9622eda1b3823aeb65363048cc4aaab32616ebe",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-managed-service",
+          "location": "LangSmith Deployment；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/langsmith/deployment.md"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-workflows",
+      "name": "编排并推进复杂任务"
+    },
+    {
+      "id": "g-continuity",
+      "name": "保留上下文并从中断继续"
+    },
+    {
+      "id": "g-control",
+      "name": "让人理解和控制执行"
+    },
+    {
+      "id": "g-applications",
+      "name": "交付检索与业务应用"
+    },
+    {
+      "id": "g-delivery",
+      "name": "提供交互界面与生产服务"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-hybrid",
+      "title": "把规则步骤与模型判断串成可执行业务流程",
+      "result": "让固定校验、条件分支和模型决策共用一份任务状态，执行有明确边界的多步业务流程。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "LangGraph Python；节点、路由和外部操作需开发者实现，模型能力来自所接入模型。",
+      "source_ids": [
+        "s-overview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "mix deterministic steps with LLM-driven steps",
+          "location": "LangGraph overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/overview.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-conversation",
+      "title": "接续同一用户的多轮对话",
+      "result": "保存会话状态，使同一线程后续请求能沿用之前消息及任务进展。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "配置 checkpointer 和 thread_id；进程重启后的保留需持久化存储，不能只用内存实现。",
+      "source_ids": [
+        "s-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-memory",
+          "quote": "enable multi-turn conversations",
+          "location": "Memory；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/add-memory.md"
+        }
+      ],
+      "group_ids": [
+        "g-continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-remember",
+      "title": "跨对话记住用户偏好和已知事实",
+      "result": "把偏好与知识存到跨线程的数据空间，后续任务按用户或应用命名空间重新读取。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "生产需要持久化 Store、访问隔离和更新规则；语义检索还需嵌入模型及索引配置。",
+      "source_ids": [
+        "s-store"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-store",
+          "quote": "persist information across threads",
+          "location": "Stores；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/stores.md"
+        }
+      ],
+      "group_ids": [
+        "g-continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-resume",
+      "title": "从保存的任务进度继续中断工作",
+      "result": "恢复已保存状态，继续暂停或失败的任务，而不必让用户从头重新提交全部上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "配置可持久化 checkpointer；外部写入仍须设计幂等和补偿，不承诺所有副作用只执行一次。",
+      "source_ids": [
+        "s-persistence"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-persistence",
+          "quote": "resume after an interruption",
+          "location": "Persistence；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/persistence.md"
+        }
+      ],
+      "group_ids": [
+        "g-continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-approval",
+      "title": "在执行关键动作前等待人工审阅",
+      "result": "暂停运行并向审阅者呈现数据，获得外部输入后继续对应任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需 checkpointer、稳定 thread_id、恢复入口与审阅界面；不得把中断误当作已经执行外部操作。",
+      "source_ids": [
+        "s-interrupts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-interrupts",
+          "quote": "wait for external input before continuing",
+          "location": "Interrupts；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts.md"
+        }
+      ],
+      "group_ids": [
+        "g-control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-time-travel",
+      "title": "回到历史进度比较另一条执行路线",
+      "result": "选取过去检查点重放后续步骤，或修改状态后分叉，比较替代决策产生的结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需保存检查点；检查点后的模型调用、API 请求和中断会重新执行，可能产生费用与不同结果。",
+      "source_ids": [
+        "s-time"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-time",
+          "quote": "explore an alternative path",
+          "location": "Overview；取回 Markdown第 14–14 行",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md"
+        }
+      ],
+      "group_ids": [
+        "g-control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-live-progress",
+      "title": "向用户实时呈现回答和执行进展",
+      "result": "把运行中的文本、状态变化或自定义进展逐步送到调用者，减少等待最终结果时的信息盲区。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "前端需消费流并处理断线；本页 v2 输出格式需 LangGraph 1.1+，v1.2 另有 event streaming。",
+      "source_ids": [
+        "s-streaming"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-streaming",
+          "quote": "yield streamed outputs as iterators",
+          "location": "Basic usage；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/streaming.md"
+        }
+      ],
+      "group_ids": [
+        "g-control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-failure-recovery",
+      "title": "为暂时失败的任务配置自动重试与恢复路线",
+      "result": "根据失败类型重试步骤，限制等待时间，并在重试耗尽后交给恢复逻辑处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "策略需显式配置；逐节点超时与错误处理要求 LangGraph 1.2+，不意味着任意操作可安全重复。",
+      "source_ids": [
+        "s-faults"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faults",
+          "quote": "automatically re-run failed attempts",
+          "location": "Fault tolerance；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/fault-tolerance.md"
+        }
+      ],
+      "group_ids": [
+        "g-continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-parallel",
+      "title": "并行完成互不依赖的子任务",
+      "result": "让多个模型任务同时开展，再收集其结果，用于多角度分析或独立材料处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "开发者定义并行分工、聚合方式、并发和调用预算；提速取决于任务与外部服务。",
+      "source_ids": [
+        "s-patterns"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-patterns",
+          "quote": "LLMs work simultaneously",
+          "location": "Parallelization；取回 Markdown第 232–232 行",
+          "source_line_start": 232,
+          "source_line_end": 232,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-route",
+      "title": "按问题内容分流到不同处理专长",
+      "result": "将用户请求送到适合的业务路线，例如商品咨询、退货或退款处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "分类模型、条件边和业务规则须配置；示例模式不附带真实电商服务接入。",
+      "source_ids": [
+        "s-patterns"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-patterns",
+          "quote": "context-specific tasks",
+          "location": "Routing；取回 Markdown第 365–365 行",
+          "source_line_start": 365,
+          "source_line_end": 365,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-revise",
+      "title": "依据评价反馈反复改进一份结果",
+      "result": "生成初稿后进行评价，把具体反馈交回生成步骤，在达到标准或停止条件后交付。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "定义评价标准、最大循环与终止规则；自动评价不能证明结果正确或取代独立评审。",
+      "source_ids": [
+        "s-patterns"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-patterns",
+          "quote": "feedback is provided",
+          "location": "Evaluator-optimizer；取回 Markdown第 772–772 行",
+          "source_line_start": 772,
+          "source_line_end": 772,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-tool-loop",
+      "title": "让 Agent 在任务中选择工具并继续决策",
+      "result": "在循环中根据模型判断与工具结果确定下一步，而不是只返回一次模型回答。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需能调用工具的模型及工具执行节点；权限、循环上限和输出验证由应用负责。",
+      "source_ids": [
+        "s-patterns"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-patterns",
+          "quote": "tool usage",
+          "location": "Workflows and agents；取回 Markdown第 10–10 行",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-modular-team",
+      "title": "把流程模块复用于不同 Agent",
+      "result": "将一组节点封装成子图供其他图重复调用，减少重复编排，并允许团队分别实现模块。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用子图组织流程；共享状态键或输入输出转换需设计。子图不自动赋予领域专家能力。",
+      "source_ids": [
+        "s-subgraphs"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subgraphs",
+          "quote": "Reusing a set of nodes in multiple graphs",
+          "location": "Subgraphs；取回 Markdown第 12–12 行",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/use-subgraphs.md"
+        }
+      ],
+      "group_ids": [
+        "g-workflows"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-targeted-tests",
+      "title": "独立检查复杂流程中指定的一段行为",
+      "result": "绕过完整长流程，对节点及选定执行片段做自动化测试，定位局部改动的影响。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "另需 pytest 等测试工具；隔离执行可能绕过整体持久化语义，还需真实集成与端到端测试。",
+      "source_ids": [
+        "s-test"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test",
+          "quote": "test partial execution paths",
+          "location": "Partial execution；取回 Markdown第 92–92 行",
+          "source_line_start": 92,
+          "source_line_end": 92,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/test.md"
+        }
+      ],
+      "group_ids": [
+        "g-control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-sql",
+      "title": "用自然语言向数据库提问并得到查询结果",
+      "result": "由自定义 SQL Agent 读取数据库结构、构造查询并使用执行结果回答问题。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 LangChain SQL 工具、模型和数据库连接；最小权限、查询校验及必要人工批准必须单独配置。",
+      "source_ids": [
+        "s-sql"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sql",
+          "quote": "answer questions about a SQL database",
+          "location": "Build a custom SQL agent；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/sql-agent.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-rag",
+      "title": "根据问题决定是否检索私有或选定资料后回答",
+      "result": "在需要资料支撑时检索文档，把结果交给模型；简单交互可直接响应。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需文档导入、切分、嵌入、向量库和模型；来源权限与回答正确性需另验。",
+      "source_ids": [
+        "s-rag"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rag",
+          "quote": "when to search a vector store",
+          "location": "Build a custom RAG agent with LangGraph；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-retrieve-again",
+      "title": "在检索资料不相关时改写问题继续查找",
+      "result": "先判断检索内容是否相关，若不相关则改写问题再检索，避免直接用无关材料作答。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是教程中需自行装配的条件分支与循环，不是所有 LangGraph 应用默认具备的行为。",
+      "source_ids": [
+        "s-rag"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rag",
+          "quote": "rewrite the question and try again",
+          "location": "Grade documents；取回 Markdown第 245–245 行",
+          "source_line_start": 245,
+          "source_line_end": 245,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/agentic-rag.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-support-email",
+      "title": "建立能分类、查资料并提交人工审阅的客服邮件流程",
+      "result": "将来信意图识别、知识检索、回复草稿、问题追踪和必要人工升级连接为一条服务流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "官方设计教程；邮件发送、知识库与工单系统需自行连接，示例业务要求不表示现成 SaaS 成品。",
+      "source_ids": [
+        "s-email"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-email",
+          "quote": "builds a customer support email agent",
+          "location": "Thinking in the Graph API；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/thinking-in-graph-api.md"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-research",
+      "title": "改造开放深度研究项目来交付研究结果",
+      "result": "采用 Open Deep Research 的可配置实现，连接搜索及模型开展多步主题研究。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需另行部署该项目并配置模型与搜索工具；README 中历史排名不作为当前质量或效果保证。",
+      "source_ids": [
+        "s-research"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-research",
+          "quote": "fully open source deep research agent",
+          "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md#L5-L5"
+        }
+      ],
+      "group_ids": [
+        "g-applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-chat-interface",
+      "title": "给 Agent 提供可查看工具动作的对话界面",
+      "result": "使用独立的 Agent Chat UI，让用户在浏览器对话并查看工具调用、中断与调试状态。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需另装 Next.js Agent Chat UI 并连接兼容 Agent Server；不是 langgraph Python 包自带网页。",
+      "source_ids": [
+        "s-ui"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ui",
+          "quote": "real-time chat, tool visualization",
+          "location": "Agent Chat UI；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langgraph/ui.md"
+        }
+      ],
+      "group_ids": [
+        "g-delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-managed-service",
+      "title": "把状态化 Agent 发布为可管理的生产服务",
+      "result": "利用 LangSmith Deployment 运行 Agent，获得部署基础设施、实时交互与横向扩展入口。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "另用 LangSmith Deployment，选择 Cloud、BYOC 或自托管路线；账户、费用、基础设施和服务限制需另核。",
+      "source_ids": [
+        "s-deploy"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deploy",
+          "quote": "real-time streaming, and horizontal scaling",
+          "location": "LangSmith Deployment；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/langsmith/deployment.md"
+        }
+      ],
+      "group_ids": [
+        "g-delivery"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未安装运行全部例子，也未对模型正确率、生产吞吐、故障恢复的外部副作用做实测。",
+    "官方当前文档含 1.1、1.2 新接口；不能推定旧版本支持所有条目，升级需按项目依赖与迁移说明核对。",
+    "未把任意外部 API 的 exactly-once 执行、无限任务时长或自动消除幻觉列为已确认能力。",
+    "生产部署、跨租户权限、各数据库适配器兼容性与费用需在目标环境验证；LangSmith 不能归入开源包内置。"
+  ],
+  "generated_at": "2026-11-05T08:42:05.793166+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "结果视角先提取状态接续、人工介入、容错、流式反馈和控制流结果，没有先套用其他主题的分类。",
+      "示例视角补读邮件客服、自定义 SQL、Agentic RAG 和 Open Deep Research，保留“开发示例”与“已部署产品”的区别。",
+      "扩展视角检查子图、局部测试、独立 Chat UI 与 LangSmith 部署。把多种 checkpointer/数据库适配器合并进结果及条件，没有按包名拆分 P。",
+      "补漏复查 Graph API、Stores 与运行时概述后，新增资料主要落在已识别的状态、控制流和记忆结果；将数据库、UI 和托管服务边界补入条件后停止本轮。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 18,
+    "evidence_revision_at": "2026-11-05T10:56:01.206286+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

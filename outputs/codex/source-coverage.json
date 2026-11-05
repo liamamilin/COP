@@ -1,0 +1,282 @@
+{
+  "topic": "codex",
+  "generated_at": "2026-11-05T10:06:29.324143+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-approvals",
+      "requested_url": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/agent-approvals-security.md",
+      "retrieved_at": "2026-11-05T09:21:26.014773+00:00",
+      "capture_sha256": "595db3a5a3276996071dcc2442e2cfcfef2c11c50cf46fccfd1de4a869a82017",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 35349,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-appserver",
+      "requested_url": "https://learn.chatgpt.com/docs/app-server.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/app-server.md",
+      "retrieved_at": "2026-11-05T09:26:48.509487+00:00",
+      "capture_sha256": "bb74cd23b269d7e5f9d179221a0083850edff4eef76fa8657bacbf85e0db080c",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 105857,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-automations",
+      "requested_url": "https://learn.chatgpt.com/docs/automations.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/automations.md",
+      "retrieved_at": "2026-11-05T09:21:25.850277+00:00",
+      "capture_sha256": "cd6ad46c3c8304a56fa64657492ce2585afda5212ba3fe0562d59cc9be9596db",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 18576,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-cloud",
+      "requested_url": "https://learn.chatgpt.com/docs/cloud.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/cloud.md",
+      "retrieved_at": "2026-11-05T09:21:22.784514+00:00",
+      "capture_sha256": "6d4e5f7c3078e670d85ce5927ffa5a7bf930ecc6e81b90f1b6771271dc49ead6",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4799,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-codex-index",
+      "requested_url": "https://developers.openai.com/codex/llms.txt",
+      "capture_origin": "https://learn.chatgpt.com/docs/llms.txt",
+      "retrieved_at": "2026-11-05T09:06:12.436620+00:00",
+      "capture_sha256": "7badc721e16df762a849b0a574b871b661397af2ee63d49a3c15ee90341c9ecb",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 34512,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-cookbook-index",
+      "requested_url": "https://developers.openai.com/cookbook/llms.txt",
+      "capture_origin": "https://developers.openai.com/cookbook/llms.txt",
+      "retrieved_at": "2026-11-05T09:26:48.137248+00:00",
+      "capture_sha256": "e77cc7023533e4ef1314fe2dc741a1d47cd14f61a9e5a548984b11871175131b",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 15396,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-customization",
+      "requested_url": "https://learn.chatgpt.com/docs/customization/overview.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/customization/overview.md",
+      "retrieved_at": "2026-11-05T09:21:26.669887+00:00",
+      "capture_sha256": "e4f466bb13521bc8d4e193962192c45319d5abc0cb58875d4a7eed2a9f9a20d6",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9474,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-github",
+      "requested_url": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/third-party/github.md",
+      "retrieved_at": "2026-11-05T09:21:24.728708+00:00",
+      "capture_sha256": "1ab502138a121ac571faa37f161bf79224e1e23cdc0e70f7a0be835f2c2d3c9f",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 6905,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-goals",
+      "requested_url": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md",
+      "capture_origin": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex.md",
+      "retrieved_at": "2026-11-05T08:56:24.681142+00:00",
+      "capture_sha256": "1aa0c0e22f11484f526b59e98cacabaa1ffa15227e064591f597cf202df26621",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 21551,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-hooks",
+      "requested_url": "https://learn.chatgpt.com/docs/hooks.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/hooks.md",
+      "retrieved_at": "2026-11-05T09:21:23.194168+00:00",
+      "capture_sha256": "3aacad763bc074bf4f3521dc942ff445fb4ad90032fdb20d379074dc02a02030",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 48643,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-ide",
+      "requested_url": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/codex/ide.md",
+      "retrieved_at": "2026-11-05T09:26:48.124294+00:00",
+      "capture_sha256": "bbecaad17ae60f9e3ca79ef1e1323da89b71d9f46150aeba25fb0fb84ca5fa63",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4404,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-index",
+      "requested_url": "https://developers.openai.com/llms.txt",
+      "capture_origin": "https://developers.openai.com/llms.txt",
+      "retrieved_at": "2026-11-05T08:56:24.619578+00:00",
+      "capture_sha256": "b40e651d5d657741912bbbe1696644c295190d46e6f74c089b93f8c98de53e28",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 6201,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-instructions",
+      "requested_url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/agent-configuration/agents-md.md",
+      "retrieved_at": "2026-11-05T09:21:24.343519+00:00",
+      "capture_sha256": "9d1f87a2d1cb55b4782b95abe710692b35b9659789c2db31a22c7074a3383e8e",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9145,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-mcp",
+      "requested_url": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/extend/mcp.md",
+      "retrieved_at": "2026-11-05T09:21:23.015097+00:00",
+      "capture_sha256": "faf9407740483f7ee27ac4d0db08a9d15510b3d241251edc9d00cf7b35c29e3b",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 31601,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-memories",
+      "requested_url": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/customization/memories.md",
+      "retrieved_at": "2026-11-05T09:26:47.946745+00:00",
+      "capture_sha256": "1776e4e65a523214e7a3c428e57f002348c096f2eec6bf2fe5583d968cdc43a3",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 6550,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-mobile",
+      "requested_url": "https://learn.chatgpt.com/docs/mobile.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/mobile.md",
+      "retrieved_at": "2026-11-05T09:21:24.417442+00:00",
+      "capture_sha256": "18748906f1404a2e6ce1544525a766060739589607d70707331b5dc15780dd5c",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 3291,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-noninteractive",
+      "requested_url": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/non-interactive-mode.md",
+      "retrieved_at": "2026-11-05T09:26:48.125555+00:00",
+      "capture_sha256": "a80f8549209c988749177954b3a295d105d2aa86dae287ba387bc028b4854877",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 15092,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-platform",
+      "requested_url": "https://developers.openai.com/blog/codex-as-a-platform.md",
+      "capture_origin": "https://developers.openai.com/blog/codex-as-a-platform.md",
+      "retrieved_at": "2026-11-05T08:56:24.676632+00:00",
+      "capture_sha256": "d045ab02d574fff3584bc48f11dce8e36e1d55f72b9a31dea5cccee9cacbb0b0",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9937,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-repair",
+      "requested_url": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md",
+      "capture_origin": "https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex.md",
+      "retrieved_at": "2026-11-05T08:56:24.933799+00:00",
+      "capture_sha256": "fe7eab303096479fa593b463ec18e8d3a700490cd3fe79326004ea2d824941e2",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 33254,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-review",
+      "requested_url": "https://learn.chatgpt.com/docs/code-review.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/code-review.md",
+      "retrieved_at": "2026-11-05T09:21:22.814992+00:00",
+      "capture_sha256": "c18b2fe184104facf5d044631ee151b2394baab1c44218be8b9d60c7dbd33020",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 15631,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-sdk",
+      "requested_url": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/codex-sdk.md",
+      "retrieved_at": "2026-11-05T09:21:22.906093+00:00",
+      "capture_sha256": "dc0051f1791cfb05a34e5843ffc9e1a9af7097c52d59c48df0267b8d180e348d",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 7245,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-security-plugin",
+      "requested_url": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/security/plugin.md",
+      "retrieved_at": "2026-11-05T09:21:24.512209+00:00",
+      "capture_sha256": "cd509ffd1f14ae14da274bcee62ee433b93a2e5191486a1a203ed3c418f5a43f",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8365,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-security",
+      "requested_url": "https://learn.chatgpt.com/docs/security.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/security.md",
+      "retrieved_at": "2026-11-05T09:21:24.521264+00:00",
+      "capture_sha256": "17e8fe44f75071a762aac8e60556f76c905c03b38cd2f77c6c7a85b1b96a06eb",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 4794,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-skills",
+      "requested_url": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/skills-and-plugins.md",
+      "retrieved_at": "2026-11-05T09:21:24.350901+00:00",
+      "capture_sha256": "39aa27568d3b43caa874ddb3be384787ad57c83814d87723d3b1b8cde49ae153",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5217,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-subagents",
+      "requested_url": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/agent-configuration/subagents.md",
+      "retrieved_at": "2026-11-05T09:26:48.111329+00:00",
+      "capture_sha256": "e7469d41c5a18a4ee66ee40ca4a9a2617a697e42554a0198ac4481e1e597357f",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 22907,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-worktrees",
+      "requested_url": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "capture_origin": "https://learn.chatgpt.com/docs/environments/git-worktrees.md",
+      "retrieved_at": "2026-11-05T09:21:22.976414+00:00",
+      "capture_sha256": "a40b85b40e9166a59043f62251565500c35c4376e23261f6cb94fdace0824ef6",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 12664,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-modernize",
+      "requested_url": "https://developers.openai.com/cookbook/examples/codex/modernizing_your_codebase_with_codex.md",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-usecases",
+      "requested_url": "https://developers.openai.com/codex/use-cases.md",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.161392+00:00"
+}

@@ -1,0 +1,1049 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "AI 音乐制作",
+    "scope": "从作曲草稿、旋律与歌词、编曲和演唱到分轨、MIDI、母带和 DAW 交付；按 Suno、Lyria、Synthesizer V、MusicGen、Basic Pitch、Demucs 与 LANDR 的具名路线确认。"
+  },
+  "sources": [
+    {
+      "id": "s-simple",
+      "title": "Make a song in Simple Mode",
+      "url": "https://help.suno.com/en/articles/2462273",
+      "evidence": "write a description of what you want to hear",
+      "location": "Make a song in Simple Mode；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.120653+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/2462273",
+      "capture_sha256": "ae361b5107f27aa7c319a3ef5fca24ebc9f6f8938e034fac4e99f4a02d6557bc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-01",
+          "location": "Make a song in Simple Mode；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/2462273"
+        }
+      ]
+    },
+    {
+      "id": "s-lyrics",
+      "title": "Can I use my own lyrics?",
+      "url": "https://help.suno.com/en/articles/2415873",
+      "evidence": "enter your own lyrics",
+      "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.214910+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/2415873",
+      "capture_sha256": "23e44205be709ffd3100a75e9a6fd021dfec078ae16505fff540010049c9c992",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-02",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/2415873"
+        }
+      ]
+    },
+    {
+      "id": "s-lyria-md",
+      "title": "Generate music with Lyria 3.5",
+      "url": "https://aistudio.google.com/docs/music-generation.md",
+      "evidence": "Generate instrumental tracks\n[…]\nGenerate music from images\n[…]\nControl timing and structure",
+      "location": "Generate instrumental tracks  {% id=\"instrumental\" %}；取回 Markdown第 1248–1248 行；Generate music from images  {% id=\"image-to-music\" %}；取回 Markdown第 760–760 行；Control timing and structure  {% id=\"timing\" %}；取回 Markdown第 1116–1116 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:02.640122+00:00",
+      "capture_origin": "https://aistudio.google.com/docs/music-generation.md",
+      "capture_sha256": "02f0ba464de9f3436b95ce3f0be523b0421c6fadb0c8679f576b1777b8ac88dc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-03",
+          "location": "Generate instrumental tracks  {% id=\"instrumental\" %}；取回 Markdown第 1248–1248 行",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        },
+        {
+          "possibility_id": "music-04",
+          "location": "Generate music from images  {% id=\"image-to-music\" %}；取回 Markdown第 760–760 行",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        },
+        {
+          "possibility_id": "music-05",
+          "location": "Control timing and structure  {% id=\"timing\" %}；取回 Markdown第 1116–1116 行",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        }
+      ]
+    },
+    {
+      "id": "s-extend",
+      "title": "How do I make my song longer?",
+      "url": "https://help.suno.com/en/articles/2409601",
+      "evidence": "give it a new ending",
+      "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.236143+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/2409601",
+      "capture_sha256": "c1ece34a8fb3f5bf7828414a069b866f4eb63f868a66d8c9a21a2027153f6f18",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-06",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/2409601"
+        }
+      ]
+    },
+    {
+      "id": "s-upload",
+      "title": "What does Upload Audio do?",
+      "url": "https://help.suno.com/en/articles/2477633",
+      "evidence": "turn any sound into music",
+      "location": "What does Upload Audio do?；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.162243+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/2477633",
+      "capture_sha256": "b6e93aa2ed3bd3b52bda12ae0492a47b0208a579100580a8a57913542bbda970",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-07",
+          "location": "What does Upload Audio do?；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/2477633"
+        }
+      ]
+    },
+    {
+      "id": "s-cover",
+      "title": "What is a Cover?",
+      "url": "https://help.suno.com/en/articles/2872257",
+      "evidence": "while keeping the melody",
+      "location": "页面正文；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.217744+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/2872257",
+      "capture_sha256": "ad2d5f6d0554d9a35b52e109bc9adc5e04f7272df679c846f28ff889fd5c4b31",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-08",
+          "location": "页面正文；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/2872257"
+        }
+      ]
+    },
+    {
+      "id": "s-replace",
+      "title": "Can I replace a section of a song?",
+      "url": "https://help.suno.com/en/articles/3271873",
+      "evidence": "replace a part of your songs",
+      "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:23.126855+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/3271873",
+      "capture_sha256": "21a436604ee9ea27ccffaaa042d85b8ebecac93659de2da1ac3f389c48e4a3e9",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-09",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/3271873"
+        }
+      ]
+    },
+    {
+      "id": "s-stems",
+      "title": "Advanced Stem Separation",
+      "url": "https://help.suno.com/en/articles/12702337",
+      "evidence": "prep a full set of stems",
+      "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:24.967057+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/12702337",
+      "capture_sha256": "5ab2beb5c8676b3f9efa6faf1a08c5256a386a7f5d39a7d75edac43965df2c41",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-10",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/12702337"
+        }
+      ]
+    },
+    {
+      "id": "s-midi",
+      "title": "Basic Pitch — Spotify 音频转 MIDI 项目",
+      "url": "https://github.com/spotify/basic-pitch/blob/fa5997af0a8210982619003269994a1be25eddf3/README.md",
+      "evidence": "generate a MIDI file",
+      "location": "页面概述；取回 Markdown第 14–14 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:47.013065+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/spotify/basic-pitch/main/README.md",
+      "capture_sha256": "308eca019d334104487822197d8fdc81574e9f07a80436d860e044248f26f520",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-11",
+          "location": "页面概述；取回 Markdown第 14–14 行",
+          "url": "https://github.com/spotify/basic-pitch/blob/fa5997af0a8210982619003269994a1be25eddf3/README.md#L14-L14"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/spotify/basic-pitch/main/README.md",
+      "git_commit": "fa5997af0a8210982619003269994a1be25eddf3",
+      "git_repository": "spotify/basic-pitch",
+      "pinned_raw_url": "https://raw.githubusercontent.com/spotify/basic-pitch/fa5997af0a8210982619003269994a1be25eddf3/README.md",
+      "pinned_content_sha256": "308eca019d334104487822197d8fdc81574e9f07a80436d860e044248f26f520",
+      "pinned_verified_at": "2026-11-05T10:35:53.750Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-midi-in",
+      "title": "Using MIDI files in Create",
+      "url": "https://help.suno.com/en/articles/14594177",
+      "evidence": "upload a MIDI file",
+      "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:25.300091+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/14594177",
+      "capture_sha256": "74b1afe80d536d770acbc5b2d719677d628b40c2fb0ec3e1ca1baadfb54173cf",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-12",
+          "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/14594177"
+        }
+      ]
+    },
+    {
+      "id": "s-singing-full",
+      "title": "Synthesizer V Studio 2 Pro - Professional AI Vocal Synthesizer",
+      "url": "https://dreamtonics.com/synthesizerv/",
+      "evidence": "pitch, timbre, expression, and phonemes\n[…]\nharmonies and backing vocals",
+      "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 36–36 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:03.875082+00:00",
+      "capture_origin": "https://dreamtonics.com/synthesizerv/",
+      "capture_sha256": "8ccd4ffc803163c5404b26529c9489cfec03eeb5652ac0d327538198d0509a50",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-13",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://dreamtonics.com/synthesizerv/"
+        },
+        {
+          "possibility_id": "music-14",
+          "location": "页面正文；本次 HTML 提取正文第 36–36 行（不是 HTML 源码行号）",
+          "url": "https://dreamtonics.com/synthesizerv/"
+        }
+      ]
+    },
+    {
+      "id": "s-voice",
+      "title": "Voices: Use Your Voice in Suno",
+      "url": "https://help.suno.com/en/articles/11362369",
+      "evidence": "Voices lets you add your own voice to Suno-generated songs.",
+      "location": "Voices: Use Your Voice in Suno；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:25.185902+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/11362369",
+      "capture_sha256": "309e946a9477150c848133bc9b148e9e29ebb718a03cb65623572bb9836518d4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-15",
+          "location": "Voices: Use Your Voice in Suno；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/11362369"
+        }
+      ]
+    },
+    {
+      "id": "s-custom",
+      "title": "Using Custom Models",
+      "url": "https://help.suno.com/en/articles/11362497",
+      "evidence": "Custom Models based on your songs",
+      "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:25.020961+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/11362497",
+      "capture_sha256": "fdbafb8ad9eac62999a34e90e761ac3eba3fb48f82331568879efdbdefd056b7",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-16",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/11362497"
+        }
+      ]
+    },
+    {
+      "id": "s-mastering",
+      "title": "AI Mastering | Online Audio Mastering - Try Free | LANDR",
+      "url": "https://www.landr.com/online-audio-mastering",
+      "evidence": "preview styles and loudness levels",
+      "location": "页面正文；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:47.506122+00:00",
+      "capture_origin": "https://www.landr.com/online-audio-mastering",
+      "capture_sha256": "2fcaf7045027677cc90298fc81332d5da2436f6ea11eaa891fc32ecd1c8721de",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-17",
+          "location": "页面正文；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+          "url": "https://www.landr.com/online-audio-mastering"
+        }
+      ]
+    },
+    {
+      "id": "s-sounds",
+      "title": "Suno Sounds: Generate Custom Audio Samples",
+      "url": "https://help.suno.com/en/articles/10625537",
+      "evidence": "generate individual sound effects, instrument samples, ambient noises",
+      "location": "Overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:26.838540+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/10625537",
+      "capture_sha256": "5c753a378f4752d53e39d29d76f0a680da3d755af03206646ae6dd6c8ee587bc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-18",
+          "location": "Overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/10625537"
+        }
+      ]
+    },
+    {
+      "id": "s-realtime",
+      "title": "Real-time music generation using Lyria RealTime",
+      "url": "https://aistudio.google.com/docs/realtime-music-generation.md",
+      "evidence": "continuously steer, and perform instrumental",
+      "location": "Real-time music generation using Lyria RealTime；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:28.424461+00:00",
+      "capture_origin": "https://aistudio.google.com/docs/realtime-music-generation.md",
+      "capture_sha256": "fe5cb386ac113bd4afb628b8982a9e4b0f1d81e308b11185ead0de3c3833a892",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-19",
+          "location": "Real-time music generation using Lyria RealTime；取回 Markdown第 17–17 行",
+          "url": "https://aistudio.google.com/docs/realtime-music-generation.md"
+        }
+      ]
+    },
+    {
+      "id": "s-musicgen",
+      "title": "AudioCraft · MusicGen",
+      "url": "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md",
+      "evidence": "text+melody to music",
+      "location": "API；取回 Markdown第 53–53 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:45.725643+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/facebookresearch/audiocraft/main/docs/MUSICGEN.md",
+      "capture_sha256": "e4bbf6a8544a30e9e3cac1ee5bb538e26641cf71098ec57f352c0516d4c70ae5",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-20",
+          "location": "API；取回 Markdown第 53–53 行",
+          "url": "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md#L53-L53"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/facebookresearch/audiocraft/main/docs/MUSICGEN.md",
+      "git_commit": "896ec7c47f5e5d1e5aa1e4b260c4405328bf009d",
+      "git_repository": "facebookresearch/audiocraft",
+      "pinned_raw_url": "https://raw.githubusercontent.com/facebookresearch/audiocraft/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md",
+      "pinned_content_sha256": "e4bbf6a8544a30e9e3cac1ee5bb538e26641cf71098ec57f352c0516d4c70ae5",
+      "pinned_verified_at": "2026-11-05T10:35:53.690Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-export",
+      "title": "Exporting from Studio",
+      "url": "https://help.suno.com/en/articles/13925249",
+      "evidence": "stems for mixing in your DAW",
+      "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:25.158135+00:00",
+      "capture_origin": "https://help.suno.com/en/articles/13925249",
+      "capture_sha256": "b94cea5215f4f2fe6c2b41b06ff9849dba861ac3fd2b844eb597f13a8342fea6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-21",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "url": "https://help.suno.com/en/articles/13925249"
+        }
+      ]
+    },
+    {
+      "id": "s-demucs",
+      "title": "Demucs v4 — 项目说明与维护状态",
+      "url": "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/README.md",
+      "evidence": "separating drums, bass, and vocals",
+      "location": "Demucs Music Source Separation；取回 Markdown第 18–19 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:47.400694+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/facebookresearch/demucs/main/README.md",
+      "capture_sha256": "b2156a62247dae102c6ca3b000022d67f512743bd919523df320780120a329be",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "music-22",
+          "location": "Demucs Music Source Separation；取回 Markdown第 18–19 行",
+          "url": "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/README.md#L18-L19"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/facebookresearch/demucs/main/README.md",
+      "git_commit": "e976d93ecc3865e5757426930257e200846a520a",
+      "git_repository": "facebookresearch/demucs",
+      "pinned_raw_url": "https://raw.githubusercontent.com/facebookresearch/demucs/e976d93ecc3865e5757426930257e200846a520a/README.md",
+      "pinned_content_sha256": "b2156a62247dae102c6ca3b000022d67f512743bd919523df320780120a329be",
+      "pinned_verified_at": "2026-11-05T10:35:53.686Z",
+      "pinned_matches_capture": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "creation",
+      "name": "从创意和素材发展音乐"
+    },
+    {
+      "id": "revision",
+      "name": "延展与重构既有作品"
+    },
+    {
+      "id": "vocals",
+      "name": "制作演唱和声音编排"
+    },
+    {
+      "id": "post",
+      "name": "分离、转写和母带交付"
+    },
+    {
+      "id": "interactive",
+      "name": "制作采样与交互演出"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "music-01",
+      "title": "把音乐想法变成歌曲草稿",
+      "result": "用风格、主题、乐器等文字描述，让 Suno 生成可试听歌曲。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要服务账户及额度；生成时长、下载权和模型依当前计划，不保证按提示精确作曲。",
+      "source_ids": [
+        "s-simple"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-simple",
+          "quote": "write a description of what you want to hear",
+          "location": "Make a song in Simple Mode；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/2462273"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-02",
+      "title": "给自己的歌词谱成歌",
+      "result": "把已有歌词输入 Custom 模式，生成包含这些文字的音乐版本。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Suno；需拥有歌词权利并核对漏词、改词、发音和段落结构。",
+      "source_ids": [
+        "s-lyrics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lyrics",
+          "quote": "enter your own lyrics",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/2415873"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-03",
+      "title": "生成无主唱的伴奏音乐",
+      "result": "使用 Lyria 的器乐生成路线，为内容或创作提供纯器乐素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要兼容模型、账户和 API；不是自动获得任意商用许可。",
+      "source_ids": [
+        "s-lyria-md"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lyria-md",
+          "quote": "Generate instrumental tracks",
+          "location": "Generate instrumental tracks  {% id=\"instrumental\" %}；取回 Markdown第 1248–1248 行",
+          "source_line_start": 1248,
+          "source_line_end": 1248,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-04",
+      "title": "以图片引导音乐氛围",
+      "result": "向 Lyria 提供图像作为音乐创意输入，生成与场景气氛相关的音频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "图像与声响的关系由模型解释，不保证精确同步视觉事件。",
+      "source_ids": [
+        "s-lyria-md"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lyria-md",
+          "quote": "Generate music from images",
+          "location": "Generate music from images  {% id=\"image-to-music\" %}；取回 Markdown第 760–760 行",
+          "source_line_start": 760,
+          "source_line_end": 760,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-05",
+      "title": "让音乐围绕段落和时间要求展开",
+      "result": "以 Lyria 支持的歌词时间和结构描述约束生成，制作更符合编排意图的版本。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要当前模型支持；节拍、时长与结构仍需试听核查。",
+      "source_ids": [
+        "s-lyria-md"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lyria-md",
+          "quote": "Control timing and structure",
+          "location": "Control timing and structure  {% id=\"timing\" %}；取回 Markdown第 1116–1116 行",
+          "source_line_start": 1116,
+          "source_line_end": 1116,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/music-generation.md"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-06",
+      "title": "延长歌曲或重做结尾",
+      "result": "选择保留的片段和续写起点，生成并拼接新段落。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Suno Extend；拼接、和声和声音延续效果需核查，不保证无缝。",
+      "source_ids": [
+        "s-extend"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-extend",
+          "quote": "give it a new ending",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/2409601"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-07",
+      "title": "把录下的旋律或节奏发展成完整素材",
+      "result": "上传原创录音或鼓循环，以它为起点生成新伴奏或歌曲。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Suno 官方示例使用鼓循环续写；需要拥有录音权利和符合当前上传限制。",
+      "source_ids": [
+        "s-upload"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-upload",
+          "quote": "turn any sound into music",
+          "location": "What does Upload Audio do?；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/2477633"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-08",
+      "title": "保持旋律方向而尝试另一种风格",
+      "result": "使用 Covers 为自己的既有作品生成不同风格的版本。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Suno 文档标为 Beta，限自身创建作品及相应付费计划；可能需要多次尝试。",
+      "source_ids": [
+        "s-cover"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-cover",
+          "quote": "while keeping the melody",
+          "location": "页面正文；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/2872257"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-09",
+      "title": "替换歌曲中间的歌词或音乐段落",
+      "result": "通过 Replace Section 对选定区间重生成，再形成更新的整曲。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要支持该功能的付费计划；交界、演唱和歌词应对照检查。",
+      "source_ids": [
+        "s-replace"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-replace",
+          "quote": "replace a part of your songs",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/3271873"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-10",
+      "title": "把混音拆成可独立处理的声部",
+      "result": "使用 Suno Stem Separation 分离人声、鼓、贝斯等，供重混与后期。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "不同分离模式与计划限制适用；残留串音和分离伪影无法排除。",
+      "source_ids": [
+        "s-stems"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stems",
+          "quote": "prep a full set of stems",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/12702337"
+        }
+      ],
+      "group_ids": [
+        "post"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-11",
+      "title": "把录音旋律转成可编辑 MIDI",
+      "result": "用 Basic Pitch 从音频估计音高和音符，生成含弯音信息的 MIDI。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需安装公开项目；一件乐器效果通常更合适，多声部混音和复杂音色可能出错。",
+      "source_ids": [
+        "s-midi"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-midi",
+          "quote": "generate a MIDI file",
+          "location": "页面概述；取回 Markdown第 14–14 行",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/spotify/basic-pitch/blob/fa5997af0a8210982619003269994a1be25eddf3/README.md#L14-L14"
+        }
+      ],
+      "group_ids": [
+        "post"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-12",
+      "title": "把已有 MIDI 想法发展成配器音乐",
+      "result": "将 MIDI 乐段上传 Suno Create，听取更完整的乐器编排或歌曲方案。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "官方当前文档限桌面网页及 Pro / Premier；不能保证每个音符严格照谱演奏。",
+      "source_ids": [
+        "s-midi-in"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-midi-in",
+          "quote": "upload a MIDI file",
+          "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/14594177"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-13",
+      "title": "按谱制作可精细控制的合成人声",
+      "result": "用 Synthesizer V Studio 2 Pro 控制音高、音色、表情和音素，制作演唱或参考 demo。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要软件、歌声数据库与相应授权；可在本机运行，实际硬件表现和发音需试听。",
+      "source_ids": [
+        "s-singing-full"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-singing-full",
+          "quote": "pitch, timbre, expression, and phonemes",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text",
+          "url": "https://dreamtonics.com/synthesizerv/"
+        }
+      ],
+      "group_ids": [
+        "vocals"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-14",
+      "title": "为歌曲制作和声与背景人声编排",
+      "result": "以 Synthesizer V 制作多层和声、伴唱及不同演唱风格，供混音使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要编写旋律与声部、调整混合及音色；不等于自动完成整首歌曲编曲。",
+      "source_ids": [
+        "s-singing-full"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-singing-full",
+          "quote": "harmonies and backing vocals",
+          "location": "页面正文；本次 HTML 提取正文第 36–36 行（不是 HTML 源码行号）",
+          "source_line_start": 36,
+          "source_line_end": 36,
+          "line_basis": "extracted_html_text",
+          "url": "https://dreamtonics.com/synthesizerv/"
+        }
+      ],
+      "group_ids": [
+        "vocals"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-15",
+      "title": "让自己的声音用于生成的歌曲",
+      "result": "先建立个人声音档案，再在 Suno 生成作品时选择该声音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自己的录音、服务验证和功能可用性；不代表可以未经许可复制他人声音。",
+      "source_ids": [
+        "s-voice"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-voice",
+          "quote": "Voices lets you add your own voice to Suno-generated songs.",
+          "location": "Voices: Use Your Voice in Suno；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/11362369"
+        }
+      ],
+      "group_ids": [
+        "vocals"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-16",
+      "title": "以自有歌曲建立风格模型",
+      "result": "上传拥有权利的歌曲，在 Suno 建立私有 Custom Model 用于后续创作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "当前官方说明有歌曲数量、模型数量与付费限制；不是导出通用可下载模型的保证。",
+      "source_ids": [
+        "s-custom"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-custom",
+          "quote": "Custom Models based on your songs",
+          "location": "页面正文；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/11362497"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-17",
+      "title": "为已完成混音制作母带版本",
+      "result": "使用 LANDR 分析上传混音并调整均衡、压缩、响度等，试听后导出母带。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "商业母带服务；需比较不同播放设备，不保证满足所有平台规范或优于人工处理。",
+      "source_ids": [
+        "s-mastering"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mastering",
+          "quote": "preview styles and loudness levels",
+          "location": "页面正文；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+          "source_line_start": 102,
+          "source_line_end": 102,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.landr.com/online-audio-mastering"
+        }
+      ],
+      "group_ids": [
+        "post"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-18",
+      "title": "生成独立乐器采样和环境声音素材",
+      "result": "使用 Suno Sounds 生成短采样、声效或氛围素材，供音乐制作使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "官方标为实验功能；计划、长度与导出条件适用，版权和听感需核查。",
+      "source_ids": [
+        "s-sounds"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sounds",
+          "quote": "generate individual sound effects, instrument samples, ambient noises",
+          "location": "Overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/10625537"
+        }
+      ],
+      "group_ids": [
+        "interactive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-19",
+      "title": "以实时交互持续引导器乐演出",
+      "result": "用 Lyria RealTime 在流式会话中调整音乐方向，构建 Prompt DJ 或 MIDI DJ 类应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "实验模型，需要持久连接、客户端及额度，不保证低延迟或适合现场演出的稳定性。",
+      "source_ids": [
+        "s-realtime"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-realtime",
+          "quote": "continuously steer, and perform instrumental",
+          "location": "Real-time music generation using Lyria RealTime；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/realtime-music-generation.md"
+        }
+      ],
+      "group_ids": [
+        "interactive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-20",
+      "title": "在自有环境尝试旋律条件音乐生成",
+      "result": "使用 MusicGen 代码和对应权重，从文字或旋律条件生成器乐素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要匹配模型、音频预处理与硬件；代码和权重许可证不同，应核对非商用等限制，不保证当前依赖可直接安装。",
+      "source_ids": [
+        "s-musicgen"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-musicgen",
+          "quote": "text+melody to music",
+          "location": "API；取回 Markdown第 53–53 行",
+          "source_line_start": 53,
+          "source_line_end": 53,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md#L53-L53"
+        }
+      ],
+      "group_ids": [
+        "creation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-21",
+      "title": "将生成项目带回 DAW 继续制作",
+      "result": "从 Suno Studio 导出整曲、指定时段、分轨或可用的 MIDI，进入现有混音和配器流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "相应 Studio 权限、导出额度和转 MIDI 费用适用；MIDI 是估计结果，须检查。",
+      "source_ids": [
+        "s-export"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-export",
+          "quote": "stems for mixing in your DAW",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "extracted_html_text",
+          "url": "https://help.suno.com/en/articles/13925249"
+        }
+      ],
+      "group_ids": [
+        "post"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "music-22",
+      "title": "在本地从已有歌曲分离伴奏与人声",
+      "result": "运行 Demucs 公开实现，将音频拆分为鼓、贝斯、人声等分轨。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装和计算资源；原 Meta 仓库明确已停止维护，新 fork 仅处理重要修复；当前 Python / 模型兼容性未实测，不保证分离无伪影。",
+      "source_ids": [
+        "s-demucs"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-demucs",
+          "quote": "separating drums, bass, and vocals",
+          "location": "Demucs Music Source Separation；取回 Markdown第 18–19 行",
+          "source_line_start": 18,
+          "source_line_end": 19,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/README.md#L18-L19"
+        }
+      ],
+      "group_ids": [
+        "post"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未生成或上传音频，未安装 DAW 插件与本地模型，未评价旋律、音乐性、音高和分轨质量。",
+    "未核实所有生成音频的商用、训练素材、表演者和样本权利；需依输入、模型和当前服务条款判断。",
+    "Suno 部分旧文章仍标 Beta，当前页面也出现新模型与下载规则；未假设旧版权益永久有效。",
+    "Eleven Music 当前文档提示 music_v1 将于 2027-01-31 移除；其相似结果在去重时归入已有音乐生成／编辑用途，没有扩写成重复条目。",
+    "Demucs 原仓库明确不再维护，fork 也仅处理重要修复；MusicGen 依赖兼容及真实工作站性能未做安装验证。"
+  ],
+  "generated_at": "2026-11-05T09:47:09.526431+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先发现完整歌曲、歌词、录音和 MIDI 等输入可得到的结果，再阅读鼓循环扩展、实时 DJ 和 DAW 导出的完整流程。",
+      "归一化：将风格与乐器提示归入歌曲生成，分离、转写、模型训练与母带保留为不同交付结果；本地与托管分轨路线因部署条件差异分别说明。",
+      "补漏检索发现新的 MIDI 输入、声音档案与 Custom Model；以当前文章的账户、版本和权利限制收敛结果，不把宣传百分比当作质量保证。",
+      "按实际发现的创作、修订、演唱和后期目的整理，不按模型名预先分类。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_product_page",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 24,
+    "evidence_revision_at": "2026-11-05T10:56:00.956665+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

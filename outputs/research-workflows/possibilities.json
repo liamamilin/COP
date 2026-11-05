@@ -1,0 +1,1225 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "研究工作流",
+    "scope": "文献与资料研究的可追踪任务：检索、收集、阅读、筛选、提取、综合、计量、写作与可复现记录；每项由具名工具、标准或公开项目实现。"
+  },
+  "sources": [
+    {
+      "id": "s-elicit",
+      "title": "Systematic Literature Reviews | Elicit: AI for research & decision-making",
+      "url": "https://elicit.com/solutions/systematic-review",
+      "evidence": "Refine your protocol\n[…]\nEvery extraction is supported\n[…]\nsentence-level citations",
+      "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 80–80 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 84–84 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:56.846072+00:00",
+      "capture_origin": "https://elicit.com/solutions/systematic-review",
+      "capture_sha256": "ce2c6ff2ed3b5a4d7f11e4caba1b0f5fda4a732fb5712aecadef097e337afb4f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-01",
+          "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）",
+          "url": "https://elicit.com/solutions/systematic-review"
+        },
+        {
+          "possibility_id": "research-17",
+          "location": "页面正文；本次 HTML 提取正文第 80–80 行（不是 HTML 源码行号）",
+          "url": "https://elicit.com/solutions/systematic-review"
+        },
+        {
+          "possibility_id": "research-18",
+          "location": "页面正文；本次 HTML 提取正文第 84–84 行（不是 HTML 源码行号）",
+          "url": "https://elicit.com/solutions/systematic-review"
+        }
+      ]
+    },
+    {
+      "id": "s-paper-search",
+      "title": "Finding papers with keywords",
+      "url": "https://help.openalex.org/how-to/finding-papers-with-keywords.md",
+      "evidence": "whatever words their authors used",
+      "location": "Finding papers with keywords；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:05.768367+00:00",
+      "capture_origin": "https://help.openalex.org/how-to/finding-papers-with-keywords.md",
+      "capture_sha256": "9bb0d05817d0d33943986c819541fb4a105ae0cf871d4fe49e61f2e02ae3e4e2",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-02",
+          "location": "Finding papers with keywords；取回 Markdown第 3–3 行",
+          "url": "https://help.openalex.org/how-to/finding-papers-with-keywords.md"
+        }
+      ]
+    },
+    {
+      "id": "s-citations",
+      "title": "Following citations",
+      "url": "https://help.openalex.org/how-to/following-citations.md",
+      "evidence": "Citations run both ways",
+      "location": "Following citations；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:05.656198+00:00",
+      "capture_origin": "https://help.openalex.org/how-to/following-citations.md",
+      "capture_sha256": "d2f58a83b88b5e9b680865a7747f39b9c6463f74af248f1a165f0669eb34dbae",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-03",
+          "location": "Following citations；取回 Markdown第 3–3 行",
+          "url": "https://help.openalex.org/how-to/following-citations.md"
+        }
+      ]
+    },
+    {
+      "id": "s-search-translate",
+      "title": "Searching with a strategy from another database",
+      "url": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md",
+      "evidence": "lists every place OpenAlex reads it differently",
+      "location": "Searching with a strategy from another database；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:05.351080+00:00",
+      "capture_origin": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md",
+      "capture_sha256": "4377d18802aafd24644edb7c44d2b2d13f7d8f3d9adc3269a972fa6cd1490072",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-04",
+          "location": "Searching with a strategy from another database；取回 Markdown第 3–3 行",
+          "url": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md"
+        }
+      ]
+    },
+    {
+      "id": "s-experts",
+      "title": "Finding experts and partners",
+      "url": "https://help.openalex.org/how-to/finding-experts.md",
+      "evidence": "Finding experts and partners",
+      "location": "Finding experts and partners；取回 Markdown第 1–1 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:05.303058+00:00",
+      "capture_origin": "https://help.openalex.org/how-to/finding-experts.md",
+      "capture_sha256": "3f74e6af60d991184da0d4ec26591de7ba6c29a2e46bf5d17fa10915d381d041",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-05",
+          "location": "Finding experts and partners；取回 Markdown第 1–1 行",
+          "url": "https://help.openalex.org/how-to/finding-experts.md"
+        }
+      ]
+    },
+    {
+      "id": "s-collections",
+      "title": "Working with collections",
+      "url": "https://help.openalex.org/how-to/collections.md",
+      "evidence": "named list of OpenAlex entities",
+      "location": "Working with collections；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:05.409296+00:00",
+      "capture_origin": "https://help.openalex.org/how-to/collections.md",
+      "capture_sha256": "f63a211346c4a85bbd13b6c156b7fa5234f236a95da9d83209600704583396d1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-06",
+          "location": "Working with collections；取回 Markdown第 3–3 行",
+          "url": "https://help.openalex.org/how-to/collections.md"
+        }
+      ]
+    },
+    {
+      "id": "s-crossref",
+      "title": "REST API - Crossref",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "evidence": "retrieve the metadata you are looking for",
+      "location": "Endpoints；本次 HTML 提取正文第 310–310 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:53.815884+00:00",
+      "capture_origin": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "capture_sha256": "7bcf719c3acff2fff1e79843a4db5878750def7f991b767391ed545716391669",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-07",
+          "location": "Endpoints；本次 HTML 提取正文第 310–310 行（不是 HTML 源码行号）",
+          "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+        }
+      ]
+    },
+    {
+      "id": "s-zotero",
+      "title": "The Basics | Zotero Documentation",
+      "url": "https://www.zotero.org/support/quick_start_guide",
+      "evidence": "collect, organize, cite, and share\n[…]\nShare your library with others",
+      "location": "页面正文；本次 HTML 提取正文第 60–60 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 118–118 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:55.126381+00:00",
+      "capture_origin": "https://www.zotero.org/support/quick_start_guide",
+      "capture_sha256": "74b06652277bc1438c5ac89e3a5c62bd44729304eadd185613494f2d30ab66ff",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-08",
+          "location": "页面正文；本次 HTML 提取正文第 60–60 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/quick_start_guide"
+        },
+        {
+          "possibility_id": "research-11",
+          "location": "页面正文；本次 HTML 提取正文第 118–118 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/quick_start_guide"
+        }
+      ]
+    },
+    {
+      "id": "s-zotero-duplicate",
+      "title": "Duplicate Detection | Zotero Documentation",
+      "url": "https://www.zotero.org/support/duplicate_detection",
+      "evidence": "allow you to merge them",
+      "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:12.826582+00:00",
+      "capture_origin": "https://www.zotero.org/support/duplicate_detection",
+      "capture_sha256": "aaf309ff82879b3730c5c62bc2a4717c32eaf2d4f4697afedfaf783e0514307b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-09",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/duplicate_detection"
+        }
+      ]
+    },
+    {
+      "id": "s-zotero-pdf",
+      "title": "Zotero PDF Reader and Note Editor | Zotero Documentation",
+      "url": "https://www.zotero.org/support/pdf_reader",
+      "evidence": "You can add annotations to notes in various ways.",
+      "location": "Adding Annotations to Notes；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:07.313904+00:00",
+      "capture_origin": "https://www.zotero.org/support/pdf_reader",
+      "capture_sha256": "ab90be423f258eefcb2fffa5415ffef6eede2dbc41e86d986b19dada9a95d65e",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-10",
+          "location": "Adding Annotations to Notes；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/pdf_reader"
+        }
+      ]
+    },
+    {
+      "id": "s-docling",
+      "title": "Docling",
+      "url": "https://github.com/docling-project/docling/blob/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md",
+      "evidence": "page layout, reading order, table structure",
+      "location": "Features；取回 Markdown第 36–36 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:54.861416+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/docling-project/docling/main/README.md",
+      "capture_sha256": "8eeca13ac27a4b0bbd8c41992f9e0bfe5f2d96c776c0eba2a89d072760bb9350",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-12",
+          "location": "Features；取回 Markdown第 36–36 行",
+          "url": "https://github.com/docling-project/docling/blob/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md#L36-L36"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/docling-project/docling/main/README.md",
+      "git_commit": "d59ca4a97fe0c86cdeadb2a17dd86b98461d2517",
+      "git_repository": "docling-project/docling",
+      "pinned_raw_url": "https://raw.githubusercontent.com/docling-project/docling/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md",
+      "pinned_content_sha256": "8eeca13ac27a4b0bbd8c41992f9e0bfe5f2d96c776c0eba2a89d072760bb9350",
+      "pinned_verified_at": "2026-11-05T10:35:53.395Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-refine-cluster",
+      "title": "OpenRefine · Cell Editing and Clustering",
+      "url": "https://openrefine.org/docs/manual/cellediting#clustering",
+      "evidence": "similar but not exact",
+      "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:07.549936+00:00",
+      "capture_origin": "https://openrefine.org/docs/manual/cellediting#clustering",
+      "capture_sha256": "7d911ef7ebdc4b797e95bb4b24633e05aa7bacceedf8842275040d9b3cc2b7e1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-13",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "url": "https://openrefine.org/docs/manual/cellediting#clustering"
+        }
+      ]
+    },
+    {
+      "id": "s-asreview",
+      "title": "ASReview LAB v3 — 项目说明",
+      "url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md",
+      "evidence": "prioritize records using AI models\n[…]\nAssess model performance on fully labeled datasets.",
+      "location": "ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 33–33 行；ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 40–40 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:55.707102+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/asreview/asreview/main/README.md",
+      "capture_sha256": "63d0fd4c8001b83ad1dcfeb928b2de5357990ee6b27df9b9409859ef86d174e3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-14",
+          "location": "ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 33–33 行",
+          "url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md#L33-L33"
+        },
+        {
+          "possibility_id": "research-15",
+          "location": "ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 40–40 行",
+          "url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md#L40-L40"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/asreview/asreview/main/README.md",
+      "git_commit": "79d568212b2b0a78f9fd7be3c5117dfb890489f9",
+      "git_repository": "asreview/asreview",
+      "pinned_raw_url": "https://raw.githubusercontent.com/asreview/asreview/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md",
+      "pinned_content_sha256": "63d0fd4c8001b83ad1dcfeb928b2de5357990ee6b27df9b9409859ef86d174e3",
+      "pinned_verified_at": "2026-11-05T10:35:53.685Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-rayyan",
+      "title": "AI-Powered Systematic Review & Literature Review Platform",
+      "url": "https://www.rayyan.ai/",
+      "evidence": "Review full articles Confirm eligibility Resolve conflicts",
+      "location": "Full-Text Screening；本次 HTML 提取正文第 123–125 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:56.992384+00:00",
+      "capture_origin": "https://www.rayyan.ai/",
+      "capture_sha256": "d7ef8372abc12dbb37903b8c2104fad149bfe022be260b0d9ad2886885fb9195",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-16",
+          "location": "Full-Text Screening；本次 HTML 提取正文第 123–125 行（不是 HTML 源码行号）",
+          "url": "https://www.rayyan.ai/"
+        }
+      ]
+    },
+    {
+      "id": "s-deep",
+      "title": "🔬 Open Deep Research",
+      "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "evidence": "fully open source deep research agent",
+      "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:55.196232+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "capture_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-19",
+          "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+          "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md#L5-L5"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+      "git_commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "git_repository": "langchain-ai/open_deep_research",
+      "pinned_raw_url": "https://raw.githubusercontent.com/langchain-ai/open_deep_research/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "pinned_content_sha256": "0fc75629079c025b0200e6032a038edf9c91c332d4ce925cbc6165910008267f",
+      "pinned_verified_at": "2026-11-05T10:35:53.380Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-vos-case",
+      "title": "VOSviewer - Features - Examples",
+      "url": "https://www.vosviewer.com/examples",
+      "evidence": "co-authorship relations",
+      "location": "页面正文；本次 HTML 提取正文第 76–76 行（不是 HTML 源码行号）",
+      "source_class": "author_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:12.778645+00:00",
+      "capture_origin": "https://www.vosviewer.com/examples",
+      "capture_sha256": "963aeb0ad49879e7f0e61a4c93bfa51299068ca8cf942300440f8ad0797c2e04",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-20",
+          "location": "页面正文；本次 HTML 提取正文第 76–76 行（不是 HTML 源码行号）",
+          "url": "https://www.vosviewer.com/examples"
+        }
+      ]
+    },
+    {
+      "id": "s-vos",
+      "title": "VOSviewer - Features - Highlights",
+      "url": "https://www.vosviewer.com/features",
+      "evidence": "developments over time",
+      "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:54.103331+00:00",
+      "capture_origin": "https://www.vosviewer.com/features",
+      "capture_sha256": "c6dd8cfdce673350d963b25699edb7c503a3bcde1ee18efb11cc781de246b1fe",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-21",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.vosviewer.com/features"
+        }
+      ]
+    },
+    {
+      "id": "s-zotero-cite",
+      "title": "Word Processor Plugins | Zotero Documentation",
+      "url": "https://www.zotero.org/support/word_processor_integration",
+      "evidence": "create dynamic bibliographies",
+      "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:12.257342+00:00",
+      "capture_origin": "https://www.zotero.org/support/word_processor_integration",
+      "capture_sha256": "76003bb02b914c1ff983bad686fdbd944e51d28f3d5a1e7c4aacf5bff74a442d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-22",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/word_processor_integration"
+        }
+      ]
+    },
+    {
+      "id": "s-prisma",
+      "title": "PRISMA flow diagram",
+      "url": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
+      "evidence": "flow of information",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:58.282569+00:00",
+      "capture_origin": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
+      "capture_sha256": "9120bbe8547e3379ecb3926a57e5ca6db93797900ced72a948cecea280a02caa",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-23",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://www.prisma-statement.org/prisma-2020-flow-diagram"
+        }
+      ]
+    },
+    {
+      "id": "s-osf",
+      "title": "The Open Science Framework",
+      "url": "https://www.cos.io/products/osf",
+      "evidence": "citable record of your research plans",
+      "location": "页面正文；本次 HTML 提取正文第 44–44 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:53.845494+00:00",
+      "capture_origin": "https://www.cos.io/products/osf",
+      "capture_sha256": "8f043b89e1ae0e291025bb13a3d4b912fe451037e0d32c50576fb91413a23822",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-24",
+          "location": "页面正文；本次 HTML 提取正文第 44–44 行（不是 HTML 源码行号）",
+          "url": "https://www.cos.io/products/osf"
+        }
+      ]
+    },
+    {
+      "id": "s-targets",
+      "title": "Dynamic Function-Oriented Make-Like Declarative Pipelines • targets",
+      "url": "https://docs.ropensci.org/targets/",
+      "evidence": "tasks that are already up to date",
+      "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:07.139709+00:00",
+      "capture_origin": "https://docs.ropensci.org/targets/",
+      "capture_sha256": "06f871775749d3581fe4fbaf081cf791d62a111b081f2c0505a7967748dadc64",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-25",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://docs.ropensci.org/targets/"
+        }
+      ]
+    },
+    {
+      "id": "s-quarto",
+      "title": "Quarto · Using R",
+      "url": "https://quarto.org/docs/computations/r.html",
+      "evidence": "execute R code",
+      "location": "Overview；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:49:07.968749+00:00",
+      "capture_origin": "https://quarto.org/docs/computations/r.html",
+      "capture_sha256": "8659e6e7ee26e24b367d0e8a413ce792cebd8e90c6f55a7935155fd81170196f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "research-26",
+          "location": "Overview；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/computations/r.html"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "discovery",
+      "name": "形成问题与发现材料"
+    },
+    {
+      "id": "library",
+      "name": "积累和整理来源资料"
+    },
+    {
+      "id": "evidence",
+      "name": "筛选与提取研究证据"
+    },
+    {
+      "id": "synthesis",
+      "name": "综合与探索研究全貌"
+    },
+    {
+      "id": "writing",
+      "name": "写作与交付研究报告"
+    },
+    {
+      "id": "transparency",
+      "name": "保留可重查的研究记录"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "research-01",
+      "title": "把研究问题整理为可执行的综述方案",
+      "result": "借助 Elicit 对问题、检索策略和筛选标准提出建议，形成待研究者确认的方案。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要服务权限、领域知识与人工确认；工具建议不自动构成方法学合格方案。",
+      "source_ids": [
+        "s-elicit"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-elicit",
+          "quote": "Refine your protocol",
+          "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）",
+          "source_line_start": 66,
+          "source_line_end": 66,
+          "line_basis": "extracted_html_text",
+          "url": "https://elicit.com/solutions/systematic-review"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-02",
+      "title": "找到使用不同表达的相关论文",
+      "result": "用 OpenAlex 的标题、摘要和关键词联合检索，拓展单一字面词检索遗漏的材料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要适合的检索词和数据库访问；覆盖、排序和关键词不保证完整相关性。",
+      "source_ids": [
+        "s-paper-search"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-paper-search",
+          "quote": "whatever words their authors used",
+          "location": "Finding papers with keywords；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://help.openalex.org/how-to/finding-papers-with-keywords.md"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-03",
+      "title": "沿前向与后向引文扩展文献集合",
+      "result": "追踪一篇或一组文章引用及被引用的研究，发现相关工作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "OpenAlex OQL / API 或界面；引文缺失与数据库覆盖会影响结果，引用关系不代表赞同。",
+      "source_ids": [
+        "s-citations"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-citations",
+          "quote": "Citations run both ways",
+          "location": "Following citations；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://help.openalex.org/how-to/following-citations.md"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-04",
+      "title": "迁移其他数据库的检索策略并核查差异",
+      "result": "将受支持的 PubMed、Scopus 等检索式转成 OpenAlex 查询，检查系统列出的语义差别。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "数据库字段和词表并不等价，例如文档提示 MeSH 限制；需用已知文章验证召回。",
+      "source_ids": [
+        "s-search-translate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-search-translate",
+          "quote": "lists every place OpenAlex reads it differently",
+          "location": "Searching with a strategy from another database；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://help.openalex.org/how-to/search-strategies-from-other-databases.md"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-05",
+      "title": "寻找领域研究者、机构与潜在合作者",
+      "result": "从主题发表和合作关系筛选专家或机构，辅助后续联系和审稿人调查。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "OpenAlex 机构、作者消歧和记录可能有误；无共同署名不等于没有利益冲突。",
+      "source_ids": [
+        "s-experts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-experts",
+          "quote": "Finding experts and partners",
+          "location": "Finding experts and partners；取回 Markdown第 1–1 行",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "captured_markdown",
+          "url": "https://help.openalex.org/how-to/finding-experts.md"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-06",
+      "title": "保存与共享有明确成员的研究集合",
+      "result": "把 DOI、作者或检索结果整理为可共享集合，用于后续统计或复用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要账户／API key 及相应访问权；集合是成员清单，动态追踪需单独保存搜索，不能混为自动更新。",
+      "source_ids": [
+        "s-collections"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-collections",
+          "quote": "named list of OpenAlex entities",
+          "location": "Working with collections；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://help.openalex.org/how-to/collections.md"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-07",
+      "title": "批量补齐可追踪的出版物元数据",
+      "result": "使用 Crossref 查询 DOI、出版信息和相关标识，辅助规范参考文献与来源核对。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需处理登记质量、缺字段与重复记录；元数据不等于全文或内容可靠性认证。",
+      "source_ids": [
+        "s-crossref"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-crossref",
+          "quote": "retrieve the metadata you are looking for",
+          "location": "Endpoints；本次 HTML 提取正文第 310–310 行（不是 HTML 源码行号）",
+          "source_line_start": 310,
+          "source_line_end": 310,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+        }
+      ],
+      "group_ids": [
+        "discovery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-08",
+      "title": "建立可整理和查找的来源资料库",
+      "result": "用 Zotero 保存文献条目与附件，按项目或标签整理研究资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Connector 或导入数据和合法附件；PDF 获取、识别与站点访问有条件。",
+      "source_ids": [
+        "s-zotero"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero",
+          "quote": "collect, organize, cite, and share",
+          "location": "页面正文；本次 HTML 提取正文第 60–60 行（不是 HTML 源码行号）",
+          "source_line_start": 60,
+          "source_line_end": 60,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.zotero.org/support/quick_start_guide"
+        }
+      ],
+      "group_ids": [
+        "library"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-09",
+      "title": "合并重复文献而保留有效资料",
+      "result": "利用 Zotero 的重复检测识别可能相同的条目，人工选择并合并。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "按标题、DOI、ISBN 等启发式判断；跨库和不完整元数据可能漏报或误报，合并前需确认。",
+      "source_ids": [
+        "s-zotero-duplicate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero-duplicate",
+          "quote": "allow you to merge them",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.zotero.org/support/duplicate_detection"
+        }
+      ],
+      "group_ids": [
+        "library"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-10",
+      "title": "把阅读标注变成可继续写作的笔记",
+      "result": "在 Zotero PDF 阅读器标注并将引文相关材料加入笔记，连接阅读与写作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要可阅读附件；笔记中的材料与原文解释仍需研究者核对。",
+      "source_ids": [
+        "s-zotero-pdf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero-pdf",
+          "quote": "You can add annotations to notes in various ways.",
+          "location": "Adding Annotations to Notes；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "source_line_start": 67,
+          "source_line_end": 67,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.zotero.org/support/pdf_reader"
+        }
+      ],
+      "group_ids": [
+        "library"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-11",
+      "title": "让团队共享并接续整理文献",
+      "result": "利用 Zotero 群组与同步在成员和设备间共享条目和适用附件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要账户、组权限和文件存储；个人 WebDAV 与群组附件的支持范围不同，不能保证无限附件空间。",
+      "source_ids": [
+        "s-zotero"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero",
+          "quote": "Share your library with others",
+          "location": "页面正文；本次 HTML 提取正文第 118–118 行（不是 HTML 源码行号）",
+          "source_line_start": 118,
+          "source_line_end": 118,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.zotero.org/support/quick_start_guide"
+        }
+      ],
+      "group_ids": [
+        "library"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-12",
+      "title": "从 PDF 等材料提取可处理的结构化内容",
+      "result": "用 Docling 识别版面、阅读顺序和表格，导出 Markdown 或 JSON 进入资料整理流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装代码和模型，扫描件可能需 OCR；复杂表格、公式和阅读顺序必须抽查。",
+      "source_ids": [
+        "s-docling"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-docling",
+          "quote": "page layout, reading order, table structure",
+          "location": "Features；取回 Markdown第 36–36 行",
+          "source_line_start": 36,
+          "source_line_end": 36,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/docling-project/docling/blob/d59ca4a97fe0c86cdeadb2a17dd86b98461d2517/README.md#L36-L36"
+        }
+      ],
+      "group_ids": [
+        "evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-13",
+      "title": "统一资料表中的名称和变体",
+      "result": "使用 OpenRefine 聚类发现近似但不完全相同的文本，确认后合并规范值。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需人工批准建议；同名、缩写和不同实体不能盲目合并。",
+      "source_ids": [
+        "s-refine-cluster"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-refine-cluster",
+          "quote": "similar but not exact",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "extracted_html_text",
+          "url": "https://openrefine.org/docs/manual/cellediting#clustering"
+        }
+      ],
+      "group_ids": [
+        "library"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-14",
+      "title": "让文献筛选优先呈现更可能相关的记录",
+      "result": "使用 ASReview 主动学习，从研究者标签持续调整待筛记录顺序。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要种子与持续人工标注；排序不等于自动纳入／排除正确，不保证找齐所有相关研究。",
+      "source_ids": [
+        "s-asreview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-asreview",
+          "quote": "prioritize records using AI models",
+          "location": "ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 33–33 行",
+          "source_line_start": 33,
+          "source_line_end": 33,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md#L33-L33"
+        }
+      ],
+      "group_ids": [
+        "evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-15",
+      "title": "在已标注文献集上评估筛选策略",
+      "result": "用 ASReview 模拟工具衡量筛选方法表现，比较停止和排序策略。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要可靠全量标签和适合的评估设计；模拟召回不能直接保证新题目效果。",
+      "source_ids": [
+        "s-asreview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-asreview",
+          "quote": "Assess model performance on fully labeled datasets.",
+          "location": "ASReview LAB: Active Learning for Systematic Reviews；取回 Markdown第 40–40 行",
+          "source_line_start": 40,
+          "source_line_end": 40,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/asreview/asreview/blob/79d568212b2b0a78f9fd7be3c5117dfb890489f9/README.md#L40-L40"
+        }
+      ],
+      "group_ids": [
+        "evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-16",
+      "title": "协调多人的标题摘要与全文筛选",
+      "result": "用 Rayyan 邀请协作者、分工，记录纳排和冲突处理，形成可导出的筛选结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要账户、团队权限和相应功能等级；自动建议不能代替方案和人工一致性检查。",
+      "source_ids": [
+        "s-rayyan"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rayyan",
+          "quote": "Review full articles Confirm eligibility Resolve conflicts",
+          "location": "Full-Text Screening；本次 HTML 提取正文第 123–125 行（不是 HTML 源码行号）",
+          "source_line_start": 123,
+          "source_line_end": 125,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.rayyan.ai/"
+        }
+      ],
+      "group_ids": [
+        "evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-17",
+      "title": "从研究材料提取可对照的数据表",
+      "result": "用 Elicit 的提取模板整理定量或定性信息，并回看支持的引文或图表。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要对应服务与资料访问；必须核对单位、群体、时间点和缺失信息，不采信宣传准确率作为本次验证。",
+      "source_ids": [
+        "s-elicit"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-elicit",
+          "quote": "Every extraction is supported",
+          "location": "页面正文；本次 HTML 提取正文第 80–80 行（不是 HTML 源码行号）",
+          "source_line_start": 80,
+          "source_line_end": 80,
+          "line_basis": "extracted_html_text",
+          "url": "https://elicit.com/solutions/systematic-review"
+        }
+      ],
+      "group_ids": [
+        "evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-18",
+      "title": "形成带逐句引用的证据综述草稿",
+      "result": "由 Elicit 将已选研究汇总为报告，保留方法、来源引用与材料摘要供核查。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需适用计划及选定文献范围；有引用不等于推断成立，不能自动替代系统综述质量评估。",
+      "source_ids": [
+        "s-elicit"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-elicit",
+          "quote": "sentence-level citations",
+          "location": "页面正文；本次 HTML 提取正文第 84–84 行（不是 HTML 源码行号）",
+          "source_line_start": 84,
+          "source_line_end": 84,
+          "line_basis": "extracted_html_text",
+          "url": "https://elicit.com/solutions/systematic-review"
+        }
+      ],
+      "group_ids": [
+        "synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-19",
+      "title": "构建可配置的自动化深度研究流程",
+      "result": "运行 Open Deep Research 公开项目，组合搜索、研究、压缩和报告模型生成调研报告。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 LangGraph / LangChain 相关环境、模型与搜索凭据，可选 MCP；示例默认模型及性能榜单不保证当前兼容与事实质量。",
+      "source_ids": [
+        "s-deep"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deep",
+          "quote": "fully open source deep research agent",
+          "location": "🔬 Open Deep Research；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md#L5-L5"
+        }
+      ],
+      "group_ids": [
+        "synthesis"
+      ],
+      "aliases": [],
+      "evidence_note": "README 开篇描述可配置研究 Agent，并明确可组合模型提供方、搜索工具和 MCP；不再以单个模型角色名作为整条流程的证据。"
+    },
+    {
+      "id": "research-20",
+      "title": "从出版与合作关系绘制研究领域地图",
+      "result": "用 VOSviewer 将引文、共同署名或术语数据组织为可探索的网络。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "官方示例包含大学和期刊地图；需数据授权和合理计数，网络位置不直接代表质量或因果。",
+      "source_ids": [
+        "s-vos-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-vos-case",
+          "quote": "co-authorship relations",
+          "location": "页面正文；本次 HTML 提取正文第 76–76 行（不是 HTML 源码行号）",
+          "source_line_start": 76,
+          "source_line_end": 76,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.vosviewer.com/examples"
+        }
+      ],
+      "group_ids": [
+        "synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-21",
+      "title": "检查研究主题的密度与时间变化",
+      "result": "使用 VOSviewer 密度和叠加图查看领域聚集以及随时间的分布。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "受样本和年份字段质量影响；视觉聚类不是领域演化的确定解释。",
+      "source_ids": [
+        "s-vos"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-vos",
+          "quote": "developments over time",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.vosviewer.com/features"
+        }
+      ],
+      "group_ids": [
+        "synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-22",
+      "title": "让写作中的引文与参考文献表同步",
+      "result": "通过 Zotero Word / LibreOffice / Google Docs 集成插入引用，并按选择样式更新书目。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要受支持编辑器和插件；作者、标题、页码与引文适配仍须核查。",
+      "source_ids": [
+        "s-zotero-cite"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero-cite",
+          "quote": "create dynamic bibliographies",
+          "location": "页面正文；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.zotero.org/support/word_processor_integration"
+        }
+      ],
+      "group_ids": [
+        "writing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-23",
+      "title": "记录系统综述各阶段文献去向",
+      "result": "用 PRISMA 流程图模板呈现检索、筛选、排除和纳入数量及理由。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要真实筛选记录和正确模板；图表本身不证明研究遵循全部 PRISMA 要求。",
+      "source_ids": [
+        "s-prisma"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-prisma",
+          "quote": "flow of information",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.prisma-statement.org/prisma-2020-flow-diagram"
+        }
+      ],
+      "group_ids": [
+        "writing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-24",
+      "title": "为研究计划留下可引用的事先记录",
+      "result": "在 OSF 注册研究计划，并连接相关材料、代码、数据或成果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要账户及适用注册规则；注册不是研究质量审查或对结果的背书。",
+      "source_ids": [
+        "s-osf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-osf",
+          "quote": "citable record of your research plans",
+          "location": "页面正文；本次 HTML 提取正文第 44–44 行（不是 HTML 源码行号）",
+          "source_line_start": 44,
+          "source_line_end": 44,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.cos.io/products/osf"
+        }
+      ],
+      "group_ids": [
+        "transparency"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-25",
+      "title": "使分析在输入变化后按依赖重算",
+      "result": "用 targets 将数据准备、分析和结果组织为可更新研究流水线。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要把依赖写入可追踪任务；外部状态、数据版本和随机性仍要自行管理。",
+      "source_ids": [
+        "s-targets"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-targets",
+          "quote": "tasks that are already up to date",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.ropensci.org/targets/"
+        }
+      ],
+      "group_ids": [
+        "transparency"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "research-26",
+      "title": "交付代码、计算和叙述相连的研究报告",
+      "result": "用 Quarto 执行 R 代码并渲染文档，使分析过程和呈现结果共同保存。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要运行环境、数据和输出格式依赖；可渲染不等于任何机器均可复现。",
+      "source_ids": [
+        "s-quarto"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-quarto",
+          "quote": "execute R code",
+          "location": "Overview；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "source_line_start": 246,
+          "source_line_end": 246,
+          "line_basis": "extracted_html_text",
+          "url": "https://quarto.org/docs/computations/r.html"
+        }
+      ],
+      "group_ids": [
+        "writing"
+      ],
+      "aliases": [],
+      "evidence_note": "Quarto 的 Using R 概述直接说明执行 R 代码；Code Blocks 章节提供把说明、代码与图表一起渲染的完整示例。"
+    }
+  ],
+  "coverage_gaps": [
+    "本轮没有执行完整系统综述、真实双人筛选或安装模型，所有内容是来源支持的流程可能性。",
+    "OpenAlex 官方旧文档重定向到新 Help Center，当前 OQL、搜索翻译与集合按新资料描述；账户、收费及 API 限制需实际使用时核实。",
+    "Unpaywall 当前抓取仅取得壳页，scite 返回 403；未把这两条路线的具体效果加入确认清单。",
+    "没有以自动引用、AI 摘要、筛选排序或厂商宣传准确率证明研究结论正确；独立复现和人工方法学评估仍待进行。",
+    "数据库覆盖、付费全文与出版偏倚无法由这些工具消除；本图不包括实验室、现场调查等所有研究方法。"
+  ],
+  "generated_at": "2026-11-05T09:58:53.070916+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先从研究者能取得的资料与报告发现，再读 OpenAlex 引文／跨库检索配方、VOSviewer 实际网络示例和 Open Deep Research 项目，补查筛选、元数据与复现记录。",
+      "归一化：同一工具多个 API 合并为检索或资料库结果；文本抽取与研究数据提取分开，引用格式与证据综合分开。",
+      "补漏发现近似名称清洗、已有标签上的筛选评估、预注册和可重算报告；按实际问题追加候选后才建立导航。",
+      "没有沿用前几轮研究地图的用途分类；从检索到证据交付的分组只用于阅读，不声称唯一线性研究流程。"
+    ],
+    "source_classes": [
+      "author_worked_example",
+      "official_documentation",
+      "official_product_page",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 31,
+    "evidence_revision_at": "2026-11-05T10:56:01.525226+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

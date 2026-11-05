@@ -1,0 +1,900 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Model Context Protocol (MCP)",
+    "scope": "研究 MCP 协议与具体服务器生态支持的用户结果；协议参照实际取回的 2026-07-28 文档，单独标明 MCP Apps、Tasks、官方参考服务器和第三方应用。"
+  },
+  "sources": [
+    {
+      "id": "s-intro",
+      "title": "What is the Model Context Protocol (MCP)?",
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro.md",
+      "evidence": "connecting AI applications to external systems",
+      "location": "What is the Model Context Protocol (MCP)?；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:25.163033+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro.md",
+      "capture_sha256": "17bf734c7cc2b4ce2385199657ef12dda5b0adae07c5aff1fb56499ae1b7d4f1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-connect",
+          "location": "What is the Model Context Protocol (MCP)?；取回 Markdown第 7–7 行",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro.md"
+        }
+      ]
+    },
+    {
+      "id": "s-server",
+      "title": "Understanding MCP servers",
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md",
+      "evidence": "read-only access to information\n[…]\ncall external APIs\n[…]\nPre-built instruction templates",
+      "location": "Core Server Features；取回 Markdown第 18–18 行；Core Server Features；取回 Markdown第 17–17 行；Core Server Features；取回 Markdown第 19–19 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:25.317436+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md",
+      "capture_sha256": "a5d06f7921a49e5f56380d8bc3a408d71748d4d03680c6dc2e7de71bcf10ac18",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-context",
+          "location": "Core Server Features；取回 Markdown第 18–18 行",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        },
+        {
+          "possibility_id": "p-actions",
+          "location": "Core Server Features；取回 Markdown第 17–17 行",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        },
+        {
+          "possibility_id": "p-prompt-reuse",
+          "location": "Core Server Features；取回 Markdown第 19–19 行",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        }
+      ]
+    },
+    {
+      "id": "s-client",
+      "title": "Understanding MCP clients",
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/client-concepts.md",
+      "evidence": "request specific information from users",
+      "location": "Core Client Features；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:25.142981+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/docs/2026-07-28/learn/client-concepts.md",
+      "capture_sha256": "e6c2a5e84393b1fcdbe599890f129a5188d6e9d7798093b71a6b651c91d3ac88",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-ask-user",
+          "location": "Core Client Features；取回 Markdown第 17–17 行",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/client-concepts.md"
+        }
+      ]
+    },
+    {
+      "id": "s-auth",
+      "title": "Authorization",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization.md",
+      "evidence": "on behalf of resource owners",
+      "location": "Purpose and Scope；取回 Markdown第 12–13 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:25.273080+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization.md",
+      "capture_sha256": "59bc8d07ef88538e4d4e539ca1c846c3ae3162e7911dc29453495cddeac18444",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-account-auth",
+          "location": "Purpose and Scope；取回 Markdown第 12–13 行",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization.md"
+        }
+      ]
+    },
+    {
+      "id": "s-registry",
+      "title": "The MCP Registry",
+      "url": "https://modelcontextprotocol.io/registry/about.md",
+      "evidence": "discover available servers",
+      "location": "The MCP Registry；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:26.618025+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/registry/about.md",
+      "capture_sha256": "e4fa7808708658607795e145a98bc01de21b3f71da0d188ce0c2575b6e80dd54",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-discover",
+          "location": "The MCP Registry；取回 Markdown第 17–17 行",
+          "url": "https://modelcontextprotocol.io/registry/about.md"
+        }
+      ]
+    },
+    {
+      "id": "s-apps",
+      "title": "MCP Apps",
+      "url": "https://modelcontextprotocol.io/extensions/apps/overview.md",
+      "evidence": "servers return interactive HTML interfaces",
+      "location": "MCP Apps；取回 Markdown第 14–14 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:25.133398+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/extensions/apps/overview.md",
+      "capture_sha256": "5c1d70733c9e1962ee45825aca76a89ff21b79ceec4260ccde3ce2c99d91743f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-interactive-ui",
+          "location": "MCP Apps；取回 Markdown第 14–14 行",
+          "url": "https://modelcontextprotocol.io/extensions/apps/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-tasks",
+      "title": "Tasks",
+      "url": "https://modelcontextprotocol.io/extensions/tasks/overview.md",
+      "evidence": "servers return a durable handle",
+      "location": "Tasks；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:29.801415+00:00",
+      "capture_origin": "https://modelcontextprotocol.io/extensions/tasks/overview.md",
+      "capture_sha256": "af7048bc5af31f84754b1a0bd0392236088c621bd38d618fba443a122798c692",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-long-task",
+          "location": "Tasks；取回 Markdown第 17–17 行",
+          "url": "https://modelcontextprotocol.io/extensions/tasks/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-files",
+      "title": "Filesystem MCP Server",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/filesystem/README.md",
+      "evidence": "Read/write files",
+      "location": "Features；取回 Markdown第 9–9 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:25.816836+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/README.md",
+      "capture_sha256": "bdd50b140adf452e2ce6e1f6660bd5ff86fbf275996262b61e9ec5153a65286d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-files",
+          "location": "Features；取回 Markdown第 9–9 行",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/filesystem/README.md#L9-L9"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/README.md",
+      "git_commit": "36380287ed3b15d115b55f546617d723072b1296",
+      "git_repository": "modelcontextprotocol/servers",
+      "pinned_raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/36380287ed3b15d115b55f546617d723072b1296/src/filesystem/README.md",
+      "pinned_content_sha256": "bdd50b140adf452e2ce6e1f6660bd5ff86fbf275996262b61e9ec5153a65286d",
+      "pinned_verified_at": "2026-11-05T10:35:53.864Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-git",
+      "title": "mcp-server-git: A git MCP server",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/git/README.md",
+      "evidence": "read, search, and manipulate Git repositories",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:25.048636+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/git/README.md",
+      "capture_sha256": "fe71330140ca28b32ffc09348dda4e7dc99004fd3efee859eb2ad8a18d5a376b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-git",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/git/README.md#L7-L7"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/git/README.md",
+      "git_commit": "36380287ed3b15d115b55f546617d723072b1296",
+      "git_repository": "modelcontextprotocol/servers",
+      "pinned_raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/36380287ed3b15d115b55f546617d723072b1296/src/git/README.md",
+      "pinned_content_sha256": "fe71330140ca28b32ffc09348dda4e7dc99004fd3efee859eb2ad8a18d5a376b",
+      "pinned_verified_at": "2026-11-05T10:35:53.502Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-fetch",
+      "title": "Fetch MCP Server",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/fetch/README.md",
+      "evidence": "converting HTML to markdown",
+      "location": "Fetch MCP Server；取回 Markdown第 5–5 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:25.011410+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/fetch/README.md",
+      "capture_sha256": "fa64fc730155d6b39acd5a852cc8090d3b80e70df3056e42cbbd81d876551a50",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-web-read",
+          "location": "Fetch MCP Server；取回 Markdown第 5–5 行",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/fetch/README.md#L5-L5"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/fetch/README.md",
+      "git_commit": "36380287ed3b15d115b55f546617d723072b1296",
+      "git_repository": "modelcontextprotocol/servers",
+      "pinned_raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/36380287ed3b15d115b55f546617d723072b1296/src/fetch/README.md",
+      "pinned_content_sha256": "fa64fc730155d6b39acd5a852cc8090d3b80e70df3056e42cbbd81d876551a50",
+      "pinned_verified_at": "2026-11-05T10:35:53.512Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-browser",
+      "title": "Microsoft Playwright MCP — 项目说明",
+      "url": "https://github.com/microsoft/playwright-mcp/blob/50b004fb3d3ee17f9710f067ed1b6d59fd16e4a1/README.md",
+      "evidence": "interact with web pages through structured accessibility snapshots",
+      "location": "Playwright MCP；取回 Markdown第 3–3 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:47:25.042238+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/microsoft/playwright-mcp/main/README.md",
+      "capture_sha256": "b3a0d1f804f4db560344ae3ef98e8e8497d9c41d2fc433a95d4060c40a401d4b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-browser",
+          "location": "Playwright MCP；取回 Markdown第 3–3 行",
+          "url": "https://github.com/microsoft/playwright-mcp/blob/50b004fb3d3ee17f9710f067ed1b6d59fd16e4a1/README.md#L3-L3"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/main/README.md",
+      "git_commit": "50b004fb3d3ee17f9710f067ed1b6d59fd16e4a1",
+      "git_repository": "microsoft/playwright-mcp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/50b004fb3d3ee17f9710f067ed1b6d59fd16e4a1/README.md",
+      "pinned_content_sha256": "b3a0d1f804f4db560344ae3ef98e8e8497d9c41d2fc433a95d4060c40a401d4b",
+      "pinned_verified_at": "2026-11-05T10:35:53.918Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-github",
+      "title": "GitHub MCP Server",
+      "url": "https://github.com/github/github-mcp-server/blob/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md",
+      "evidence": "manage issues and PRs\n[…]\nanalyze build failures",
+      "location": "GitHub MCP Server；取回 Markdown第 5–5 行；Use Cases；取回 Markdown第 11–11 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:43:27.011051+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/github/github-mcp-server/main/README.md",
+      "capture_sha256": "371e8c991df6e5e61ca6a864d692141dbf1a728ae0790d376b54c96b91e4ff13",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-github-collaboration",
+          "location": "GitHub MCP Server；取回 Markdown第 5–5 行",
+          "url": "https://github.com/github/github-mcp-server/blob/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md#L5-L5"
+        },
+        {
+          "possibility_id": "p-github-ci",
+          "location": "Use Cases；取回 Markdown第 11–11 行",
+          "url": "https://github.com/github/github-mcp-server/blob/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md#L11-L11"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/github/github-mcp-server/main/README.md",
+      "git_commit": "99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3",
+      "git_repository": "github/github-mcp-server",
+      "pinned_raw_url": "https://raw.githubusercontent.com/github/github-mcp-server/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md",
+      "pinned_content_sha256": "371e8c991df6e5e61ca6a864d692141dbf1a728ae0790d376b54c96b91e4ff13",
+      "pinned_verified_at": "2026-11-05T10:35:54.735Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-memory",
+      "title": "Knowledge Graph Memory Server",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/memory/README.md",
+      "evidence": "persistent memory using a local knowledge graph",
+      "location": "Knowledge Graph Memory Server；取回 Markdown第 3–3 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:59.067761+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md",
+      "capture_sha256": "dff778c3742fbd8ed5b49f6182aac4410d5b6ca518c7cf36244fa679b7d7baa3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-memory",
+          "location": "Knowledge Graph Memory Server；取回 Markdown第 3–3 行",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/memory/README.md#L3-L3"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md",
+      "git_commit": "36380287ed3b15d115b55f546617d723072b1296",
+      "git_repository": "modelcontextprotocol/servers",
+      "pinned_raw_url": "https://raw.githubusercontent.com/modelcontextprotocol/servers/36380287ed3b15d115b55f546617d723072b1296/src/memory/README.md",
+      "pinned_content_sha256": "dff778c3742fbd8ed5b49f6182aac4410d5b6ca518c7cf36244fa679b7d7baa3",
+      "pinned_verified_at": "2026-11-05T10:35:54.319Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-database",
+      "title": "DBHub — database MCP server README",
+      "url": "https://github.com/bytebase/dbhub/blob/280c0ed734864e45515b38a5daa273c5372592d4/README.md",
+      "evidence": "Connect to multiple databases simultaneously",
+      "location": "页面概述；取回 Markdown第 47–47 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:59.836396+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/bytebase/dbhub/main/README.md",
+      "capture_sha256": "1d5125bc6275360d3ca9c6dc1366d8d0549408f279701a7b1b90461d74a18859",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-database",
+          "location": "页面概述；取回 Markdown第 47–47 行",
+          "url": "https://github.com/bytebase/dbhub/blob/280c0ed734864e45515b38a5daa273c5372592d4/README.md#L47-L47"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/bytebase/dbhub/main/README.md",
+      "git_commit": "280c0ed734864e45515b38a5daa273c5372592d4",
+      "git_repository": "bytebase/dbhub",
+      "pinned_raw_url": "https://raw.githubusercontent.com/bytebase/dbhub/280c0ed734864e45515b38a5daa273c5372592d4/README.md",
+      "pinned_content_sha256": "1d5125bc6275360d3ca9c6dc1366d8d0549408f279701a7b1b90461d74a18859",
+      "pinned_verified_at": "2026-11-05T10:35:54.211Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-blender",
+      "title": "MCP for Blender — project README",
+      "url": "https://github.com/ahujasid/mcp-for-blender/blob/2e4b0bc294694b1570d76ed01be657c22e6d02a0/README.md",
+      "evidence": "3D modeling, scene creation, and manipulation",
+      "location": "页面概述；取回 Markdown第 10–10 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:50:00.253814+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/ahujasid/blender-mcp/main/README.md",
+      "capture_sha256": "429ff7c0efdd16e817f2f155e5d8b1e53640ba11202b42bdb02a8b6242c59d31",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-3d",
+          "location": "页面概述；取回 Markdown第 10–10 行",
+          "url": "https://github.com/ahujasid/mcp-for-blender/blob/2e4b0bc294694b1570d76ed01be657c22e6d02a0/README.md#L10-L10"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/ahujasid/blender-mcp/main/README.md",
+      "git_commit": "2e4b0bc294694b1570d76ed01be657c22e6d02a0",
+      "git_repository": "ahujasid/mcp-for-blender",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ahujasid/mcp-for-blender/2e4b0bc294694b1570d76ed01be657c22e6d02a0/README.md",
+      "pinned_content_sha256": "429ff7c0efdd16e817f2f155e5d8b1e53640ba11202b42bdb02a8b6242c59d31",
+      "pinned_verified_at": "2026-11-05T10:35:54.532Z",
+      "pinned_matches_capture": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-connect",
+      "name": "建立可复用的工具与资料连接"
+    },
+    {
+      "id": "g-participate",
+      "name": "让用户参与并控制跨服务任务"
+    },
+    {
+      "id": "g-documents",
+      "name": "处理本地资料、网页和记忆"
+    },
+    {
+      "id": "g-engineering",
+      "name": "支持代码协作与浏览器操作"
+    },
+    {
+      "id": "g-specialized",
+      "name": "接入数据分析与数字创作"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-connect",
+      "title": "让兼容 AI 应用连接同一套外部能力",
+      "result": "为工具、数据和提示建立可被兼容客户端使用的统一连接入口，减少每个应用各做一份集成。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "宿主、客户端与服务器须兼容相应协议版本及能力；协议不会自动提供账号、业务实现或授权。",
+      "source_ids": [
+        "s-intro"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-intro",
+          "quote": "connecting AI applications to external systems",
+          "location": "What is the Model Context Protocol (MCP)?；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro.md"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-context",
+      "title": "把文件、数据库结构或知识资料作为可读上下文提供",
+      "result": "通过 Resources 让应用取回资料并决定怎样提供给模型，而不必把只读数据伪装成执行操作。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需服务器暴露资源，宿主负责选择、读取和使用；是否联网、检索与引用取决于应用实现。",
+      "source_ids": [
+        "s-server"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-server",
+          "quote": "read-only access to information",
+          "location": "Core Server Features；取回 Markdown第 18–18 行",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-actions",
+      "title": "让模型调用外部系统来执行用户请求的动作",
+      "result": "通过具备输入输出定义的 Tools 请求执行操作，并把执行结果回传给应用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "具体动作由服务器实现；宿主需决定允许范围与审批，协议不保证工具调用正确或已经完成用户最终目标。",
+      "source_ids": [
+        "s-server"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-server",
+          "quote": "call external APIs",
+          "location": "Core Server Features；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-prompt-reuse",
+      "title": "在不同交互中复用服务器提供的任务提示",
+      "result": "向用户暴露可选择的提示模板，把常用分析、摘要或写作任务和对应工具资源连接起来。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需宿主支持 Prompts 并由用户选择；提示模板不替代真实数据接入或结果核查。",
+      "source_ids": [
+        "s-server"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-server",
+          "quote": "Pre-built instruction templates",
+          "location": "Core Server Features；取回 Markdown第 19–19 行",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts.md"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-ask-user",
+      "title": "在任务执行过程中向用户补问结构化信息",
+      "result": "由服务器请求所缺信息，让用户补充偏好、参数等内容以继续当前工作。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用 Elicitation；需宿主支持并正确展示请求，不应用普通表单收集密码等不合适的敏感数据。",
+      "source_ids": [
+        "s-client"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-client",
+          "quote": "request specific information from users",
+          "location": "Core Client Features；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/client-concepts.md"
+        }
+      ],
+      "group_ids": [
+        "g-participate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-account-auth",
+      "title": "让远端工具在用户授权身份下访问受限服务",
+      "result": "通过 HTTP 传输层授权流程代表资源所有者发起请求，连接需要身份凭据的服务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "HTTP 授权为可选实现；需相应 OAuth 流程、scope、服务端校验和凭据管理。stdio 不沿用同一授权流程。",
+      "source_ids": [
+        "s-auth"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-auth",
+          "quote": "on behalf of resource owners",
+          "location": "Purpose and Scope；取回 Markdown第 12–13 行",
+          "source_line_start": 12,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization.md"
+        }
+      ],
+      "group_ids": [
+        "g-participate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-discover",
+      "title": "查找和发布可连接服务器的安装元数据",
+      "result": "通过官方 Registry 发布或发现服务器描述、包位置和配置所需信息，为客户端连接做准备。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Registry 当前 preview；它提供元数据，不代表安全审核、托管服务、维护承诺或自动授权安装。",
+      "source_ids": [
+        "s-registry"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-registry",
+          "quote": "discover available servers",
+          "location": "The MCP Registry；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/registry/about.md"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-interactive-ui",
+      "title": "在对话中查看和操作服务器返回的交互界面",
+      "result": "让数据可视化、表单或仪表板出现在支持 MCP Apps 的宿主界面中，并与上下文和工具交互。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "MCP Apps 是扩展，需支持它的宿主和实现 UI 资源的服务器；CSP、iframe 与宿主权限约束依实现而定。",
+      "source_ids": [
+        "s-apps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-apps",
+          "quote": "servers return interactive HTML interfaces",
+          "location": "MCP Apps；取回 Markdown第 14–14 行",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/extensions/apps/overview.md"
+        }
+      ],
+      "group_ids": [
+        "g-participate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-long-task",
+      "title": "跟踪长操作并在重新连接后取回结果",
+      "result": "用持久任务句柄代替一直等待的调用，后续查询进度、提供所需输入或取回最终结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "MCP Tasks 扩展；客户端与服务器都须支持，任务持久性、保留期和取消语义依实现，不是普通 Tools 自动具备。",
+      "source_ids": [
+        "s-tasks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tasks",
+          "quote": "servers return a durable handle",
+          "location": "Tasks；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://modelcontextprotocol.io/extensions/tasks/overview.md"
+        }
+      ],
+      "group_ids": [
+        "g-participate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-files",
+      "title": "让助手在限定目录中整理和修改本地资料",
+      "result": "通过文件服务器读取、搜索、创建或移动资料，把基于对话的文件任务连接到实际目录。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "另运行 Filesystem 参考服务器并配置 allowed directories；只读模式与访问控制需显式设置，参考实现不是生产安全认证。",
+      "source_ids": [
+        "s-files"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-files",
+          "quote": "Read/write files",
+          "location": "Features；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/filesystem/README.md#L9-L9"
+        }
+      ],
+      "group_ids": [
+        "g-documents"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-git",
+      "title": "通过助手检查 Git 历史和待提交改动",
+      "result": "把仓库状态、差异和历史读取操作提供给模型，支持基于真实 Git 数据的代码讨论与操作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Git 参考服务器、仓库路径和对应权限；当前 README 标为 early development，Python SDK 版本要求以该项目为准。",
+      "source_ids": [
+        "s-git"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-git",
+          "quote": "read, search, and manipulate Git repositories",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/git/README.md#L7-L7"
+        }
+      ],
+      "group_ids": [
+        "g-engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-web-read",
+      "title": "把网页正文转成适合助手阅读的材料",
+      "result": "从网页取得内容并转为 Markdown，必要时分块读取较长页面。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Fetch 参考服务器和网络；默认地址保护并非对所有 DNS、代理和内容风险的完整保证，不承诺绕过登录或付费墙。",
+      "source_ids": [
+        "s-fetch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-fetch",
+          "quote": "converting HTML to markdown",
+          "location": "Fetch MCP Server；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/fetch/README.md#L5-L5"
+        }
+      ],
+      "group_ids": [
+        "g-documents"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-browser",
+      "title": "让助手通过网页结构完成浏览器交互",
+      "result": "通过可访问性快照理解网页并操作页面，用于探索网站或完成需要浏览器的任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Microsoft Playwright MCP、浏览器和可用宿主；站点账号、授权与可自动化程度仍受具体环境限制。",
+      "source_ids": [
+        "s-browser"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-browser",
+          "quote": "interact with web pages through structured accessibility snapshots",
+          "location": "Playwright MCP；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/microsoft/playwright-mcp/blob/50b004fb3d3ee17f9710f067ed1b6d59fd16e4a1/README.md#L3-L3"
+        }
+      ],
+      "group_ids": [
+        "g-engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-github-collaboration",
+      "title": "在对话中处理代码库、Issue 和 PR 工作",
+      "result": "使用 GitHub 提供的 MCP Server 读取代码并创建、更新或管理协作对象。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 GitHub MCP Server、账号令牌与相应仓库权限；具体工具由启用的 toolsets 和凭据 scope 决定。",
+      "source_ids": [
+        "s-github"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-github",
+          "quote": "manage issues and PRs",
+          "location": "GitHub MCP Server；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/github/github-mcp-server/blob/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md#L5-L5"
+        }
+      ],
+      "group_ids": [
+        "g-engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-github-ci",
+      "title": "让助手查看构建失败并分析开发流水线",
+      "result": "取得 GitHub Actions 运行和构建失败信息，用于解释流水线问题及推进工程处理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需启用支持的 GitHub MCP toolsets 和仓库权限；读取日志不等于自动完成修复或部署。",
+      "source_ids": [
+        "s-github"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-github",
+          "quote": "analyze build failures",
+          "location": "Use Cases；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/github/github-mcp-server/blob/99d6d6503a7b2a133e2f8a595d6d0ba24b4086d3/README.md#L11-L11"
+        }
+      ],
+      "group_ids": [
+        "g-engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-memory",
+      "title": "为助手保存可检索的实体关系记忆",
+      "result": "通过 Memory 服务器把人物、事实和关系保存成可后续访问的知识图谱资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需另运行 Memory 参考服务器并配置数据文件；保存的记录仍需校正，协议不使模型参数自动学习或保证记忆正确。",
+      "source_ids": [
+        "s-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-memory",
+          "quote": "persistent memory using a local knowledge graph",
+          "location": "Knowledge Graph Memory Server；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/modelcontextprotocol/servers/blob/36380287ed3b15d115b55f546617d723072b1296/src/memory/README.md#L3-L3"
+        }
+      ],
+      "group_ids": [
+        "g-documents"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-database",
+      "title": "让助手跨数据库查询业务数据",
+      "result": "用 DBHub 的统一 MCP 接口连接数据库，为模型提供实际查询数据的途径。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需第三方 DBHub、数据库驱动与连接凭据；必须按部署限制读写权限、查询范围和敏感数据，不能由协议推定只读。",
+      "source_ids": [
+        "s-database"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-database",
+          "quote": "Connect to multiple databases simultaneously",
+          "location": "页面概述；取回 Markdown第 47–47 行",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/bytebase/dbhub/blob/280c0ed734864e45515b38a5daa273c5372592d4/README.md#L47-L47"
+        }
+      ],
+      "group_ids": [
+        "g-specialized"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-3d",
+      "title": "通过对话驱动 Blender 中的场景创作",
+      "result": "让助手借助 BlenderMCP 连接 Blender，创建或修改 3D 场景内容。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "第三方 BlenderMCP 插件和服务器、兼容 Blender 及宿主；外部资产或生成服务另有账号、费用和许可条件。",
+      "source_ids": [
+        "s-blender"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-blender",
+          "quote": "3D modeling, scene creation, and manipulation",
+          "location": "页面概述；取回 Markdown第 10–10 行",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ahujasid/mcp-for-blender/blob/2e4b0bc294694b1570d76ed01be657c22e6d02a0/README.md#L10-L10"
+        }
+      ],
+      "group_ids": [
+        "g-specialized"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "没有逐一安装服务器或实测各宿主兼容矩阵；协商成功不表示所有工具、UI、授权或任务扩展都支持。",
+    "2026-07-28 文档把 Roots 和 Sampling 标为 deprecated；本图没有把旧教程中的这两项当作当前所有客户端的基础能力。",
+    "官方服务器仓库明确称参考实现不等于生产就绪。部分旧示例已归档，目录收录不证明持续维护或安全性。",
+    "未把自动绕过权限、可信网页内容、绝对安全、跨服务事务一致性或任意服务即插即用列为已确认能力。",
+    "除所列代表实现外，行业服务器、私有部署与全部 SDK 的覆盖仍不充分；工具权限与数据治理必须按真实服务验证。"
+  ],
+  "generated_at": "2026-11-05T08:52:41.197639+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "结果视角先提取连接、资料上下文、外部动作、提示复用、补问信息和授权结果；未把每个 JSON-RPC 方法名列成 P。",
+      "示例视角实际读取文件、Git、网页 Fetch、Playwright、GitHub、Memory、DBHub 与 BlenderMCP 的项目说明，将具体业务能力归给服务器而非协议本身。",
+      "扩展视角补读官方 Registry、MCP Apps 与 Tasks，并记录版本迁移及废弃特性。",
+      "去重时合并同一文件服务器的小操作，把同一客户端的安装方式和传输参数写成条件；保留交互 UI、长任务接续、数据库和 3D 创作等不同结果。",
+      "对协议、扩展和代表项目交叉复查后，新增资料主要变为更多同类服务器；本轮停止在可举证的代表结果，并保留兼容、授权与生态长尾缺口。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 18,
+    "evidence_revision_at": "2026-11-05T10:56:01.333655+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

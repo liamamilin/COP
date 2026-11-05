@@ -17,7 +17,7 @@ export interface Possibility {
   conditions?: string;
   group_ids: string[];
   source_ids: string[];
-  evidence_refs?: { source_id: string; quote: string; location?: string }[];
+  evidence_refs?: { source_id: string; quote: string; location?: string; url?: string }[];
   aliases?: string[];
   keywords?: string[];
   capability_layer?: string;

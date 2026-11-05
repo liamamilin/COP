@@ -1,0 +1,933 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Claude Code",
+    "scope": "Claude Code 日常开发结果、当前官方工作流与扩展生态；区分 CLI / 桌面 / 网页、Agent SDK、Chrome、GitHub Actions 和独立 Code Review。"
+  },
+  "sources": [
+    {
+      "id": "s-workflows",
+      "title": "Common workflows",
+      "url": "https://code.claude.com/docs/en/common-workflows.md",
+      "evidence": "Understand new codebases\n[…]\nRefactor code\n[…]\nWork with tests\n[…]\nHandle documentation",
+      "location": "Understand new codebases；取回 Markdown第 24–24 行；Refactor code；取回 Markdown第 138–138 行；Work with tests；取回 Markdown第 178–178 行；Handle documentation；取回 Markdown第 240–240 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:26.070306+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/common-workflows.md",
+      "capture_sha256": "fcd7053b20f22e66dbd7b08c3661f0b678a9fe499e5a24e3acf0be1d7f9f54dc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-01",
+          "location": "Understand new codebases；取回 Markdown第 24–24 行",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        },
+        {
+          "possibility_id": "claude-04",
+          "location": "Refactor code；取回 Markdown第 138–138 行",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        },
+        {
+          "possibility_id": "claude-05",
+          "location": "Work with tests；取回 Markdown第 178–178 行",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        },
+        {
+          "possibility_id": "claude-06",
+          "location": "Handle documentation；取回 Markdown第 240–240 行",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        }
+      ]
+    },
+    {
+      "id": "s-overview",
+      "title": "Overview",
+      "url": "https://code.claude.com/docs/en/overview.md",
+      "evidence": "work across multiple files\n[…]\nfix bugs, and automate development tasks",
+      "location": "Overview；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:24.675810+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/overview.md",
+      "capture_sha256": "966993397d19e6a81a2d36bb562b0a3c99fbc7198ff618b9fe1cfdd99f4f1427",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-02",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/overview.md"
+        },
+        {
+          "possibility_id": "claude-03",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-review",
+      "title": "Code Review",
+      "url": "https://code.claude.com/docs/en/code-review.md",
+      "evidence": "Findings arrive as inline comments",
+      "location": "Code Review；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:49.443361+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/code-review.md",
+      "capture_sha256": "78ff48627f8e08e5551e254a963356b6988160a6b0edc873fc8772e3f301e06a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-07",
+          "location": "Code Review；取回 Markdown第 11–11 行",
+          "url": "https://code.claude.com/docs/en/code-review.md"
+        }
+      ]
+    },
+    {
+      "id": "s-actions",
+      "title": "Claude Code GitHub Actions",
+      "url": "https://code.claude.com/docs/en/github-actions.md",
+      "evidence": "turn issues into pull requests",
+      "location": "Claude Code GitHub Actions；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:27.770168+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/github-actions.md",
+      "capture_sha256": "5d695320e5381dd90cbe88a7c7df35407a75c4ccbd177e26572ac190731e41f4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-08",
+          "location": "Claude Code GitHub Actions；取回 Markdown第 7–7 行",
+          "url": "https://code.claude.com/docs/en/github-actions.md"
+        }
+      ]
+    },
+    {
+      "id": "s-browser",
+      "title": "Use Claude Code with Chrome",
+      "url": "https://code.claude.com/docs/en/chrome.md",
+      "evidence": "test web apps\n[…]\nautomate form filling, and extract data",
+      "location": "Use Claude Code with Chrome；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:26.081715+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/chrome.md",
+      "capture_sha256": "f490542401437f93c6b7d08313afef2766054e8a6c6c228b037b5e5c29165f73",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-09",
+          "location": "Use Claude Code with Chrome；取回 Markdown第 7–7 行",
+          "url": "https://code.claude.com/docs/en/chrome.md"
+        },
+        {
+          "possibility_id": "claude-10",
+          "location": "Use Claude Code with Chrome；取回 Markdown第 7–7 行",
+          "url": "https://code.claude.com/docs/en/chrome.md"
+        }
+      ]
+    },
+    {
+      "id": "s-skills",
+      "title": "Extend Claude with skills",
+      "url": "https://code.claude.com/docs/en/skills.md",
+      "evidence": "Create a `SKILL.md` file with instructions",
+      "location": "Extend Claude with skills；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:26.759214+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/skills.md",
+      "capture_sha256": "977bb9f8d6a004c37e6731afd94bc3ad7bba1e64a2b2d7e7f22df910d4b06287",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-11",
+          "location": "Extend Claude with skills；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/skills.md"
+        }
+      ]
+    },
+    {
+      "id": "s-subagents",
+      "title": "Create custom subagents",
+      "url": "https://code.claude.com/docs/en/sub-agents.md",
+      "evidence": "returns only the summary",
+      "location": "Create custom subagents；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:26.842453+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/sub-agents.md",
+      "capture_sha256": "db8a532d4c04d8cec27622b3afd68f86f8d96efa121f4b498dcb430e2bc543b8",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-12",
+          "location": "Create custom subagents；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/sub-agents.md"
+        }
+      ]
+    },
+    {
+      "id": "s-mcp",
+      "title": "Connect Claude Code to tools via MCP",
+      "url": "https://code.claude.com/docs/en/mcp.md",
+      "evidence": "tools, databases, and APIs",
+      "location": "Connect Claude Code to tools via MCP；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:27.021505+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/mcp.md",
+      "capture_sha256": "4b3c2237229b454601119d2fd5d44228089ec3436b78edb395d357fc2bfe44d1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-13",
+          "location": "Connect Claude Code to tools via MCP；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/mcp.md"
+        }
+      ]
+    },
+    {
+      "id": "s-hooks",
+      "title": "Automate actions with hooks",
+      "url": "https://code.claude.com/docs/en/hooks-guide.md",
+      "evidence": "enforce project rules, automate repetitive tasks\n[…]\nGet notified when Claude needs input",
+      "location": "Automate actions with hooks；取回 Markdown第 9–9 行；Get notified when Claude needs input；取回 Markdown第 84–84 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:26.540013+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/hooks-guide.md",
+      "capture_sha256": "22d4e4c5e593dd4d14f78f785691e9917d4eee811308c7197fa3aa8a18664fc4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-14",
+          "location": "Automate actions with hooks；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/hooks-guide.md"
+        },
+        {
+          "possibility_id": "claude-15",
+          "location": "Get notified when Claude needs input；取回 Markdown第 84–84 行",
+          "url": "https://code.claude.com/docs/en/hooks-guide.md"
+        }
+      ]
+    },
+    {
+      "id": "s-checkpoints",
+      "title": "Checkpointing",
+      "url": "https://code.claude.com/docs/en/checkpointing.md",
+      "evidence": "rewind to previous states",
+      "location": "Checkpointing；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:27.622062+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/checkpointing.md",
+      "capture_sha256": "e12d88404a36511c0fac5e9aaf1def707e4465b559aacbe258f854749dcffc32",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-16",
+          "location": "Checkpointing；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/checkpointing.md"
+        }
+      ]
+    },
+    {
+      "id": "s-headless",
+      "title": "Run Claude Code programmatically",
+      "url": "https://code.claude.com/docs/en/headless.md",
+      "evidence": "CLI for scripts and CI/CD",
+      "location": "Run Claude Code programmatically；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:56:28.174933+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/headless.md",
+      "capture_sha256": "62359e4f8585a4044b217fb56416cbc3d27fdf9bc0c9963410b04fb0a416c886",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-17",
+          "location": "Run Claude Code programmatically；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/headless.md"
+        }
+      ]
+    },
+    {
+      "id": "s-memory",
+      "title": "How Claude remembers your project",
+      "url": "https://code.claude.com/docs/en/memory.md",
+      "evidence": "carry knowledge across sessions",
+      "location": "How Claude remembers your project；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:49.771125+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/memory.md",
+      "capture_sha256": "275fe39e8501741ad308ab8ecd4552327cf34e53654841d7a121de80fbe6b595",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-18",
+          "location": "How Claude remembers your project；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/memory.md"
+        }
+      ]
+    },
+    {
+      "id": "s-remote",
+      "title": "Continue local sessions from any device with Remote Control",
+      "url": "https://code.claude.com/docs/en/remote-control.md",
+      "evidence": "Continue a local Claude Code session",
+      "location": "Continue local sessions from any device with Remote Control；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:49.775954+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/remote-control.md",
+      "capture_sha256": "1625e58d7b546703314ce50ad32df13fadc34996ffa487ff4e02ab4b52cfa9de",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-19",
+          "location": "Continue local sessions from any device with Remote Control；取回 Markdown第 7–7 行",
+          "url": "https://code.claude.com/docs/en/remote-control.md"
+        }
+      ]
+    },
+    {
+      "id": "s-scheduled",
+      "title": "Run prompts on a schedule",
+      "url": "https://code.claude.com/docs/en/scheduled-tasks.md",
+      "evidence": "re-run a prompt automatically on an interval",
+      "location": "Run prompts on a schedule；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:49.557719+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/scheduled-tasks.md",
+      "capture_sha256": "f44fdf60df04074d869d0792b1b7c012d5c9b00307763e4d7434340c4e0da903",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-20",
+          "location": "Run prompts on a schedule；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/scheduled-tasks.md"
+        }
+      ]
+    },
+    {
+      "id": "s-plugins",
+      "title": "Plugins overview",
+      "url": "https://code.claude.com/docs/en/plugins.md",
+      "evidence": "installs and loads as one unit",
+      "location": "Plugins overview；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:50.049060+00:00",
+      "capture_origin": "https://code.claude.com/docs/en/plugins.md",
+      "capture_sha256": "9124d73faba1ae251d9f4229d03e19bd9fc0cd811a43aefc014c75a9d34e64ad",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "claude-21",
+          "location": "Plugins overview；取回 Markdown第 9–9 行",
+          "url": "https://code.claude.com/docs/en/plugins.md"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "development",
+      "name": "理解、修改和说明软件"
+    },
+    {
+      "id": "verification",
+      "name": "审查变更与浏览器验证"
+    },
+    {
+      "id": "reuse",
+      "name": "复用知识、流程与外部信息"
+    },
+    {
+      "id": "control",
+      "name": "委托、接续和调整工作"
+    },
+    {
+      "id": "automation",
+      "name": "事件与批量自动化"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "claude-01",
+      "title": "理解陌生代码库并定位相关实现",
+      "result": "通过阅读、搜索和解释了解仓库结构，为具体开发问题找到入口。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要仓库访问权；生成的架构解释应与代码对照。",
+      "source_ids": [
+        "s-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-workflows",
+          "quote": "Understand new codebases",
+          "location": "Understand new codebases；取回 Markdown第 24–24 行",
+          "source_line_start": 24,
+          "source_line_end": 24,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-02",
+      "title": "实现跨文件功能并运行验证",
+      "result": "按自然语言要求修改多个文件、执行工具，形成可运行功能改动。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "依赖模型、账户和工程环境，结果需测试和审查。",
+      "source_ids": [
+        "s-overview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "work across multiple files",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/overview.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-03",
+      "title": "排查与修复程序错误",
+      "result": "沿故障上下文调查、修改并验证修复，处理日常开发失败。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "测试和复现信息影响结果；不保证自动定位所有原因。",
+      "source_ids": [
+        "s-overview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "fix bugs, and automate development tasks",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/overview.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-04",
+      "title": "重构现有实现",
+      "result": "在已有行为约束下调整代码组织和实现，配合现有验证检查回归。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需明确兼容要求与测试；重构结果不自动保持全部语义。",
+      "source_ids": [
+        "s-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-workflows",
+          "quote": "Refactor code",
+          "location": "Refactor code；取回 Markdown第 138–138 行",
+          "source_line_start": 138,
+          "source_line_end": 138,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-05",
+      "title": "编写与维护项目测试",
+      "result": "围绕目标行为创建或改进测试，并执行验证。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可执行测试环境与可靠断言。",
+      "source_ids": [
+        "s-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-workflows",
+          "quote": "Work with tests",
+          "location": "Work with tests；取回 Markdown第 178–178 行",
+          "source_line_start": 178,
+          "source_line_end": 178,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-06",
+      "title": "准备和更新项目文档",
+      "result": "读取现有代码与文档，形成说明、注释或维护文档的改动。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要核对运行行为，避免把生成说明当作权威。",
+      "source_ids": [
+        "s-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-workflows",
+          "quote": "Handle documentation",
+          "location": "Handle documentation；取回 Markdown第 240–240 行",
+          "source_line_start": 240,
+          "source_line_end": 240,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/common-workflows.md"
+        }
+      ],
+      "group_ids": [
+        "development"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-07",
+      "title": "审查 GitHub PR 并定位反馈",
+      "result": "使用 Code Review 对变更及周边代码审查，验证发现并以内联评论返回。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "独立托管审查能力，官方标明 Team / Enterprise；具体授权及收费另核实。",
+      "source_ids": [
+        "s-review"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-review",
+          "quote": "Findings arrive as inline comments",
+          "location": "Code Review；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/code-review.md"
+        }
+      ],
+      "group_ids": [
+        "verification"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-08",
+      "title": "通过仓库自动化处理 Issue 和 PR",
+      "result": "配置 GitHub Actions，让事件或 @claude 指令触发分析、修改及 PR 工作流。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要工作流、凭据与权限；这是 GitHub Action 集成，不等于托管 Code Review。",
+      "source_ids": [
+        "s-actions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-actions",
+          "quote": "turn issues into pull requests",
+          "location": "Claude Code GitHub Actions；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/github-actions.md"
+        }
+      ],
+      "group_ids": [
+        "verification"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-09",
+      "title": "用真实浏览器验证和调试网页",
+      "result": "连接 Chrome 扩展后测试本地 Web 应用、查看控制台并检查交互。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要受支持 Claude in Chrome 扩展、账户及可见浏览器；登录或 CAPTCHA 需人工处理。",
+      "source_ids": [
+        "s-browser"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-browser",
+          "quote": "test web apps",
+          "location": "Use Claude Code with Chrome；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/chrome.md"
+        }
+      ],
+      "group_ids": [
+        "verification"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-10",
+      "title": "自动填写表单并提取网页资料",
+      "result": "在获准访问的浏览器页面执行表单流程或把页面数据提取到任务中。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "与网页测试共享扩展依赖；需有对应网站访问权，动态网页未必兼容。",
+      "source_ids": [
+        "s-browser"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-browser",
+          "quote": "automate form filling, and extract data",
+          "location": "Use Claude Code with Chrome；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/chrome.md"
+        }
+      ],
+      "group_ids": [
+        "verification"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-11",
+      "title": "将重复的专业流程做成可共享 Skill",
+      "result": "以说明和资源定义多步骤工作，在相关任务中按需加载或显式调用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自己编写或安装可信技能；自定义命令已并入 Skill，不视为另一类用户结果。",
+      "source_ids": [
+        "s-skills"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-skills",
+          "quote": "Create a `SKILL.md` file with instructions",
+          "location": "Extend Claude with skills；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/skills.md"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-12",
+      "title": "把高噪声调查委托给专门子代理",
+      "result": "让独立上下文中的专门助手调查或执行子任务，向主会话返回摘要。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "可单独设置工具及权限；请求计入共同用量，不能把上下文隔离当作系统沙箱。",
+      "source_ids": [
+        "s-subagents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subagents",
+          "quote": "returns only the summary",
+          "location": "Create custom subagents；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/sub-agents.md"
+        }
+      ],
+      "group_ids": [
+        "control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-13",
+      "title": "利用外部业务资料完成工程任务",
+      "result": "通过 MCP 连接问题追踪、监控、数据库等系统，读取和执行已授权工具。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "依赖独立服务器、认证和具体工具；外部写操作仍需符合授权。",
+      "source_ids": [
+        "s-mcp"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mcp",
+          "quote": "tools, databases, and APIs",
+          "location": "Connect Claude Code to tools via MCP；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/mcp.md"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-14",
+      "title": "在生命周期事件执行确定性项目检查",
+      "result": "通过用户编写的 Hook 脚本做格式化、命令校验或项目规则检查。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "命令 Hook 需脚本与运行权限；提示词或代理 Hook 的判断不能当作确定性规则。",
+      "source_ids": [
+        "s-hooks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-hooks",
+          "quote": "enforce project rules, automate repetitive tasks",
+          "location": "Automate actions with hooks；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/hooks-guide.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-15",
+      "title": "在需要输入时接收任务提醒",
+      "result": "通过 Hook 向自选通知系统提示等待输入或任务完成。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "通知集成由用户配置，并受运行环境限制。",
+      "source_ids": [
+        "s-hooks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-hooks",
+          "quote": "Get notified when Claude needs input",
+          "location": "Get notified when Claude needs input；取回 Markdown第 84–84 行",
+          "source_line_start": 84,
+          "source_line_end": 84,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/hooks-guide.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-16",
+      "title": "撤回近期 AI 编辑并调整任务方向",
+      "result": "利用检查点回退对话和受跟踪文件改动，再从先前状态继续。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "主要覆盖编辑工具修改；不回滚 shell 产生的全部外部副作用或数据库，不替代 Git 和备份。",
+      "source_ids": [
+        "s-checkpoints"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-checkpoints",
+          "quote": "rewind to previous states",
+          "location": "Checkpointing；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/checkpointing.md"
+        }
+      ],
+      "group_ids": [
+        "control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-17",
+      "title": "把开发分析放入脚本或 CI 批处理",
+      "result": "通过非交互 CLI 处理输入并返回结构化结果，或用 Python / TypeScript Agent SDK 构建集成。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "SDK 包和 CLI 是不同接入方式；需要认证、权限、失败处理和内容核验。",
+      "source_ids": [
+        "s-headless"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-headless",
+          "quote": "CLI for scripts and CI/CD",
+          "location": "Run Claude Code programmatically；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/headless.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-18",
+      "title": "跨会话复用团队规范和个人项目经验",
+      "result": "以 CLAUDE.md / AGENTS.md 提供持续指导，并使用 auto memory 保留纠正与偏好。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "文件规范与自动记忆有不同加载范围；不是每次都准确回忆的保证。",
+      "source_ids": [
+        "s-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-memory",
+          "quote": "carry knowledge across sessions",
+          "location": "How Claude remembers your project；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/memory.md"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-19",
+      "title": "从另一设备继续本机正在运行的任务",
+      "result": "通过 Remote Control 在浏览器或手机查看和指导本机 Claude Code 会话。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要本机任务与连接持续可用，以及受支持账户；不是将文件和执行迁移到手机。",
+      "source_ids": [
+        "s-remote"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-remote",
+          "quote": "Continue a local Claude Code session",
+          "location": "Continue local sessions from any device with Remote Control；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/remote-control.md"
+        }
+      ],
+      "group_ids": [
+        "control"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-20",
+      "title": "在当前会话中定期跟进长任务",
+      "result": "安排循环提示或一次性提醒，检查构建、PR 或部署状态。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "/loop 依赖打开会话和本机在线；持久桌面任务及云 Routines 是另外的运行方式，不能混同。",
+      "source_ids": [
+        "s-scheduled"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-scheduled",
+          "quote": "re-run a prompt automatically on an interval",
+          "location": "Run prompts on a schedule；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/scheduled-tasks.md"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "claude-21",
+      "title": "将团队扩展打包分发",
+      "result": "用 Plugin 组合 Skill、代理、Hook 和 MCP 等扩展供团队复用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "插件需要可信来源与各自依赖，安装不等于所有工具可用。",
+      "source_ids": [
+        "s-plugins"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-plugins",
+          "quote": "installs and loads as one unit",
+          "location": "Plugins overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://code.claude.com/docs/en/plugins.md"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未登录安装客户端或实测各付费、托管和第三方连接能力。",
+    "当前公开资料未支持把检查点称为完整备份，也未支持把模型审查当作安全认证。",
+    "未穷尽企业托管、云 Routines、Channels 与每个平台的独占功能；这些路线的账户、组织和版本限制需专项验证。",
+    "完整任务示例以官方 common-workflows、Chrome 和 GitHub Action 配方为主；未把示例可行性升级为独立用户成功率统计。"
+  ],
+  "generated_at": "2026-11-05T09:37:22.382635+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "从日常开发结果逐项发现，再检查浏览器和事件自动化完整示例、MCP 与 Skill 等扩展。",
+      "归一化：把单次读写、命令、会话恢复合并入用户任务；保留可撤回修改、跨设备接续和外部系统协作等独立结果。",
+      "补漏区分受管理 Code Review 与 GitHub Actions、session loop 与持久任务、命令 Hook 与模型判断 Hook；避免把集成和模型效果混成内置保证。"
+    ],
+    "source_classes": [
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 15,
+    "evidence_revision_at": "2026-11-05T10:56:01.128285+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

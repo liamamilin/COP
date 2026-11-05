@@ -1,0 +1,272 @@
+{
+  "topic": "ai-music-production",
+  "generated_at": "2026-11-05T10:06:29.307167+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-cover",
+      "requested_url": "https://help.suno.com/en/articles/2872257",
+      "capture_origin": "https://help.suno.com/en/articles/2872257",
+      "retrieved_at": "2026-11-05T09:40:23.217744+00:00",
+      "capture_sha256": "ad2d5f6d0554d9a35b52e109bc9adc5e04f7272df679c846f28ff889fd5c4b31",
+      "content_type": "text/html",
+      "captured_text_characters": 1591,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-custom",
+      "requested_url": "https://help.suno.com/en/articles/11362497",
+      "capture_origin": "https://help.suno.com/en/articles/11362497",
+      "retrieved_at": "2026-11-05T09:40:25.020961+00:00",
+      "capture_sha256": "fdbafb8ad9eac62999a34e90e761ac3eba3fb48f82331568879efdbdefd056b7",
+      "content_type": "text/html",
+      "captured_text_characters": 1110,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-demucs",
+      "requested_url": "https://raw.githubusercontent.com/facebookresearch/demucs/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/facebookresearch/demucs/main/README.md",
+      "retrieved_at": "2026-11-05T09:26:47.400694+00:00",
+      "capture_sha256": "b2156a62247dae102c6ca3b000022d67f512743bd919523df320780120a329be",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 18462,
+      "used_for_confirmed_results": true,
+      "git_commit": "e976d93ecc3865e5757426930257e200846a520a",
+      "git_repository": "facebookresearch/demucs",
+      "pinned_raw_url": "https://raw.githubusercontent.com/facebookresearch/demucs/e976d93ecc3865e5757426930257e200846a520a/README.md",
+      "pinned_content_sha256": "b2156a62247dae102c6ca3b000022d67f512743bd919523df320780120a329be",
+      "pinned_verified_at": "2026-11-05T10:35:53.686Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/facebookresearch/demucs/blob/e976d93ecc3865e5757426930257e200846a520a/README.md"
+    },
+    {
+      "id": "s-export",
+      "requested_url": "https://help.suno.com/en/articles/13925249",
+      "capture_origin": "https://help.suno.com/en/articles/13925249",
+      "retrieved_at": "2026-11-05T09:40:25.158135+00:00",
+      "capture_sha256": "b94cea5215f4f2fe6c2b41b06ff9849dba861ac3fd2b844eb597f13a8342fea6",
+      "content_type": "text/html",
+      "captured_text_characters": 1207,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-extend",
+      "requested_url": "https://help.suno.com/en/articles/2409601",
+      "capture_origin": "https://help.suno.com/en/articles/2409601",
+      "retrieved_at": "2026-11-05T09:40:23.236143+00:00",
+      "capture_sha256": "c1ece34a8fb3f5bf7828414a069b866f4eb63f868a66d8c9a21a2027153f6f18",
+      "content_type": "text/html",
+      "captured_text_characters": 1159,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-lyria-md",
+      "requested_url": "https://aistudio.google.com/docs/music-generation.md",
+      "capture_origin": "https://aistudio.google.com/docs/music-generation.md",
+      "retrieved_at": "2026-11-05T09:36:02.640122+00:00",
+      "capture_sha256": "02f0ba464de9f3436b95ce3f0be523b0421c6fadb0c8679f576b1777b8ac88dc",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 47310,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-lyria",
+      "requested_url": "https://ai.google.dev/gemini-api/docs/music-generation",
+      "capture_origin": "https://aistudio.google.com/docs/music-generation",
+      "retrieved_at": "2026-11-05T09:26:47.440345+00:00",
+      "capture_sha256": "85274dd12fa200e8b3d6ab9f3e06af5692367eab8b88d9917932b3a6524eaa6b",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 61,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-lyrics",
+      "requested_url": "https://help.suno.com/en/articles/2415873",
+      "capture_origin": "https://help.suno.com/en/articles/2415873",
+      "retrieved_at": "2026-11-05T09:40:23.214910+00:00",
+      "capture_sha256": "23e44205be709ffd3100a75e9a6fd021dfec078ae16505fff540010049c9c992",
+      "content_type": "text/html",
+      "captured_text_characters": 895,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-mastering",
+      "requested_url": "https://www.landr.com/online-audio-mastering",
+      "capture_origin": "https://www.landr.com/online-audio-mastering",
+      "retrieved_at": "2026-11-05T09:26:47.506122+00:00",
+      "capture_sha256": "2fcaf7045027677cc90298fc81332d5da2436f6ea11eaa891fc32ecd1c8721de",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 8653,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-midi-in",
+      "requested_url": "https://help.suno.com/en/articles/14594177",
+      "capture_origin": "https://help.suno.com/en/articles/14594177",
+      "retrieved_at": "2026-11-05T09:40:25.300091+00:00",
+      "capture_sha256": "74b1afe80d536d770acbc5b2d719677d628b40c2fb0ec3e1ca1baadfb54173cf",
+      "content_type": "text/html",
+      "captured_text_characters": 2411,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-midi",
+      "requested_url": "https://raw.githubusercontent.com/spotify/basic-pitch/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/spotify/basic-pitch/main/README.md",
+      "retrieved_at": "2026-11-05T09:26:47.013065+00:00",
+      "capture_sha256": "308eca019d334104487822197d8fdc81574e9f07a80436d860e044248f26f520",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 10297,
+      "used_for_confirmed_results": true,
+      "git_commit": "fa5997af0a8210982619003269994a1be25eddf3",
+      "git_repository": "spotify/basic-pitch",
+      "pinned_raw_url": "https://raw.githubusercontent.com/spotify/basic-pitch/fa5997af0a8210982619003269994a1be25eddf3/README.md",
+      "pinned_content_sha256": "308eca019d334104487822197d8fdc81574e9f07a80436d860e044248f26f520",
+      "pinned_verified_at": "2026-11-05T10:35:53.750Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/spotify/basic-pitch/blob/fa5997af0a8210982619003269994a1be25eddf3/README.md"
+    },
+    {
+      "id": "s-music",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/music.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/music.md",
+      "retrieved_at": "2026-11-05T09:32:37.389127+00:00",
+      "capture_sha256": "f058dfaf5d141ca672c8c94e56feed1b9b9b262b35cf83cf27dbc72734832b66",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8901,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-musicgen",
+      "requested_url": "https://raw.githubusercontent.com/facebookresearch/audiocraft/main/docs/MUSICGEN.md",
+      "capture_origin": "https://raw.githubusercontent.com/facebookresearch/audiocraft/main/docs/MUSICGEN.md",
+      "retrieved_at": "2026-11-05T09:26:45.725643+00:00",
+      "capture_sha256": "e4bbf6a8544a30e9e3cac1ee5bb538e26641cf71098ec57f352c0516d4c70ae5",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 19337,
+      "used_for_confirmed_results": true,
+      "git_commit": "896ec7c47f5e5d1e5aa1e4b260c4405328bf009d",
+      "git_repository": "facebookresearch/audiocraft",
+      "pinned_raw_url": "https://raw.githubusercontent.com/facebookresearch/audiocraft/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md",
+      "pinned_content_sha256": "e4bbf6a8544a30e9e3cac1ee5bb538e26641cf71098ec57f352c0516d4c70ae5",
+      "pinned_verified_at": "2026-11-05T10:35:53.690Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/facebookresearch/audiocraft/blob/896ec7c47f5e5d1e5aa1e4b260c4405328bf009d/docs/MUSICGEN.md"
+    },
+    {
+      "id": "s-realtime",
+      "requested_url": "https://aistudio.google.com/docs/realtime-music-generation.md",
+      "capture_origin": "https://aistudio.google.com/docs/realtime-music-generation.md",
+      "retrieved_at": "2026-11-05T09:40:28.424461+00:00",
+      "capture_sha256": "fe5cb386ac113bd4afb628b8982a9e4b0f1d81e308b11185ead0de3c3833a892",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 14658,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-replace",
+      "requested_url": "https://help.suno.com/en/articles/3271873",
+      "capture_origin": "https://help.suno.com/en/articles/3271873",
+      "retrieved_at": "2026-11-05T09:40:23.126855+00:00",
+      "capture_sha256": "21a436604ee9ea27ccffaaa042d85b8ebecac93659de2da1ac3f389c48e4a3e9",
+      "content_type": "text/html",
+      "captured_text_characters": 1523,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-simple",
+      "requested_url": "https://help.suno.com/en/articles/2462273",
+      "capture_origin": "https://help.suno.com/en/articles/2462273",
+      "retrieved_at": "2026-11-05T09:40:23.120653+00:00",
+      "capture_sha256": "ae361b5107f27aa7c319a3ef5fca24ebc9f6f8938e034fac4e99f4a02d6557bc",
+      "content_type": "text/html",
+      "captured_text_characters": 859,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-singing-full",
+      "requested_url": "https://dreamtonics.com/synthesizerv/",
+      "capture_origin": "https://dreamtonics.com/synthesizerv/",
+      "retrieved_at": "2026-11-05T09:36:03.875082+00:00",
+      "capture_sha256": "8ccd4ffc803163c5404b26529c9489cfec03eeb5652ac0d327538198d0509a50",
+      "content_type": "text/html",
+      "captured_text_characters": 19981,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-singing",
+      "requested_url": "https://dreamtonics.com/synthesizerv/",
+      "capture_origin": "https://dreamtonics.com/synthesizerv/",
+      "retrieved_at": "2026-11-05T09:26:47.674371+00:00",
+      "capture_sha256": "4fa99718558a81e505c43dccfd91676945d3d49411f4cb6a1e9ab8df99015270",
+      "content_type": "text/html",
+      "captured_text_characters": 57,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-sounds",
+      "requested_url": "https://help.suno.com/en/articles/10625537",
+      "capture_origin": "https://help.suno.com/en/articles/10625537",
+      "retrieved_at": "2026-11-05T09:40:26.838540+00:00",
+      "capture_sha256": "5c753a378f4752d53e39d29d76f0a680da3d755af03206646ae6dd6c8ee587bc",
+      "content_type": "text/html",
+      "captured_text_characters": 3368,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-stems",
+      "requested_url": "https://help.suno.com/en/articles/12702337",
+      "capture_origin": "https://help.suno.com/en/articles/12702337",
+      "retrieved_at": "2026-11-05T09:40:24.967057+00:00",
+      "capture_sha256": "5ab2beb5c8676b3f9efa6faf1a08c5256a386a7f5d39a7d75edac43965df2c41",
+      "content_type": "text/html",
+      "captured_text_characters": 3231,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-suno-index",
+      "requested_url": "https://help.suno.com/en/",
+      "capture_origin": "https://help.suno.com/en",
+      "retrieved_at": "2026-11-05T09:26:45.208383+00:00",
+      "capture_sha256": "3941c3356311eba54927641ce4f42b5876893891efe65e43765c45111d8f15cc",
+      "content_type": "text/html",
+      "captured_text_characters": 573,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-upload",
+      "requested_url": "https://help.suno.com/en/articles/2477633",
+      "capture_origin": "https://help.suno.com/en/articles/2477633",
+      "retrieved_at": "2026-11-05T09:40:23.162243+00:00",
+      "capture_sha256": "b6e93aa2ed3bd3b52bda12ae0492a47b0208a579100580a8a57913542bbda970",
+      "content_type": "text/html",
+      "captured_text_characters": 1755,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-vocals",
+      "requested_url": "https://help.suno.com/en/articles/6882817",
+      "capture_origin": "https://help.suno.com/en/articles/6882817",
+      "retrieved_at": "2026-11-05T09:40:25.154226+00:00",
+      "capture_sha256": "4f2a2276316728521215e45ed2193faf6cc611132600c8be7bf482b72dcceeed",
+      "content_type": "text/html",
+      "captured_text_characters": 1481,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-voice",
+      "requested_url": "https://help.suno.com/en/articles/11362369",
+      "capture_origin": "https://help.suno.com/en/articles/11362369",
+      "retrieved_at": "2026-11-05T09:40:25.185902+00:00",
+      "capture_sha256": "309e946a9477150c848133bc9b148e9e29ebb718a03cb65623572bb9836518d4",
+      "content_type": "text/html",
+      "captured_text_characters": 4197,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:00.956665+00:00"
+}

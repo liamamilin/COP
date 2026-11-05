@@ -1,0 +1,198 @@
+{
+  "topic": "paperless-ngx",
+  "generated_at": "2026-11-05T10:06:29.345376+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-admin",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/administration.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/administration.md",
+      "retrieved_at": "2026-11-05T09:40:51.443893+00:00",
+      "capture_sha256": "3042701e501e0fdf8253079b15a140fe0844c6cd0eef1c9a94d8c342c5fd8f0b",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 28375,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md",
+      "pinned_content_sha256": "3042701e501e0fdf8253079b15a140fe0844c6cd0eef1c9a94d8c342c5fd8f0b",
+      "pinned_verified_at": "2026-11-05T10:35:54.812Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md"
+    },
+    {
+      "id": "s-advanced",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/advanced_usage.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/advanced_usage.md",
+      "retrieved_at": "2026-11-05T09:40:49.918785+00:00",
+      "capture_sha256": "cc0f908f780a2c4957771027dd8e1111af713b8be6903ed568467ad6ba47fe18",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 50897,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md",
+      "pinned_content_sha256": "cc0f908f780a2c4957771027dd8e1111af713b8be6903ed568467ad6ba47fe18",
+      "pinned_verified_at": "2026-11-05T10:35:54.999Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md"
+    },
+    {
+      "id": "s-api",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/api.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/api.md",
+      "retrieved_at": "2026-11-05T09:40:49.665194+00:00",
+      "capture_sha256": "33ac06d53b1610b7e20b9a9c4c32318cfb1af82c2c5f22cce017ca89ab601bbc",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 17843,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md",
+      "pinned_content_sha256": "33ac06d53b1610b7e20b9a9c4c32318cfb1af82c2c5f22cce017ca89ab601bbc",
+      "pinned_verified_at": "2026-11-05T10:35:54.811Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md"
+    },
+    {
+      "id": "s-configuration",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/configuration.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/configuration.md",
+      "retrieved_at": "2026-11-05T09:40:51.569098+00:00",
+      "capture_sha256": "95e1c8b6d455333085c35f5362681adf575f68b75017f416a77821fd6960aa12",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 99503,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md",
+      "pinned_content_sha256": "95e1c8b6d455333085c35f5362681adf575f68b75017f416a77821fd6960aa12",
+      "pinned_verified_at": "2026-11-05T10:35:55.342Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md"
+    },
+    {
+      "id": "s-faq",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/faq.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/faq.md",
+      "retrieved_at": "2026-11-05T09:40:51.456285+00:00",
+      "capture_sha256": "2952a746652e0e2447d2a0719782d1ed9c0464a9959e7641ea08037ac5b5ec91",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 6728,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md",
+      "pinned_content_sha256": "2952a746652e0e2447d2a0719782d1ed9c0464a9959e7641ea08037ac5b5ec91",
+      "pinned_verified_at": "2026-11-05T10:35:54.811Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md"
+    },
+    {
+      "id": "s-index",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/index.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/index.md",
+      "retrieved_at": "2026-11-05T09:40:49.477115+00:00",
+      "capture_sha256": "fb1e9e42b3d4b0b8abed13e4cbabf5b0a7076820110a95bdb38c4e9444de8f63",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 9846,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md",
+      "pinned_content_sha256": "fb1e9e42b3d4b0b8abed13e4cbabf5b0a7076820110a95bdb38c4e9444de8f63",
+      "pinned_verified_at": "2026-11-05T10:35:54.470Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md"
+    },
+    {
+      "id": "s-readme",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/README.md",
+      "retrieved_at": "2026-11-05T09:39:48.833398+00:00",
+      "capture_sha256": "57aadae7f68c77d36a3ed5b2954129e8675b7e63c2453bf16c93bce774cdb7ec",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 6607,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-usage",
+      "requested_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/usage.md",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/usage.md",
+      "retrieved_at": "2026-11-05T09:40:49.941972+00:00",
+      "capture_sha256": "39cc898bfac49abeb735d3a8b27c96f32e9a6fe86c28857283d91871c29b1aba",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 74764,
+      "used_for_confirmed_results": true,
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md",
+      "pinned_content_sha256": "39cc898bfac49abeb735d3a8b27c96f32e9a6fe86c28857283d91871c29b1aba",
+      "pinned_verified_at": "2026-11-05T10:35:55.145Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md"
+    },
+    {
+      "requested_url": "https://api.github.com/repos/paperless-ngx/paperless-ngx/pulls/5121",
+      "capture_origin": "https://github.com/paperless-ngx/paperless-ngx/pull/5121",
+      "retrieved_at": "2026-11-05T10:44:04.887Z",
+      "capture_sha256": "4c9143ad5ceed30f836d35af0669251ef63fc4cac1c64e1634cf99ed88ba7525",
+      "content_type": "text/markdown; GitHub PR body",
+      "hash_basis": "GitHub API body field, UTF-8",
+      "id": "s-workflows-pr",
+      "captured_text_characters": 5090,
+      "used_for_confirmed_results": true
+    },
+    {
+      "requested_url": "https://api.github.com/repos/paperless-ngx/paperless-ngx/pulls/12061",
+      "capture_origin": "https://github.com/paperless-ngx/paperless-ngx/pull/12061",
+      "retrieved_at": "2026-11-05T10:44:04.929Z",
+      "capture_sha256": "5d57bd896dd9af4824b07d865455c3f697890cc7d9f34184749c03c9361d454b",
+      "content_type": "text/markdown; GitHub PR body",
+      "hash_basis": "GitHub API body field, UTF-8",
+      "id": "s-versions-pr",
+      "captured_text_characters": 3063,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-index",
+      "requested_url": "https://docs.paperless-ngx.com/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-usage",
+      "requested_url": "https://docs.paperless-ngx.com/usage/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-advanced",
+      "requested_url": "https://docs.paperless-ngx.com/advanced_usage/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-api",
+      "requested_url": "https://docs.paperless-ngx.com/api/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-configuration",
+      "requested_url": "https://docs.paperless-ngx.com/configuration/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-admin",
+      "requested_url": "https://docs.paperless-ngx.com/administration/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-faq",
+      "requested_url": "https://docs.paperless-ngx.com/faq/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.460671+00:00"
+}

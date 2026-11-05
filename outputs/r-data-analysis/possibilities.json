@@ -1,0 +1,1259 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "R 数据分析",
+    "scope": "R 核心统计与图形，以及数据导入、整理、建模、专门领域、交互和可复现交付的具名扩展；不重做 ggplot2 专题清单。"
+  },
+  "sources": [
+    {
+      "id": "s-import",
+      "title": "readr · Read Rectangular Text Data",
+      "url": "https://readr.tidyverse.org/",
+      "evidence": "read rectangular data from delimited files",
+      "location": "Overview；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:40.206806+00:00",
+      "capture_origin": "https://readr.tidyverse.org/",
+      "capture_sha256": "3973537b33dd73e00efcd99fddec2c54f85c5d1a0babb13de5533a5feee59882",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-01",
+          "location": "Overview；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://readr.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-excel",
+      "title": "Read Excel Files • readxl",
+      "url": "https://readxl.tidyverse.org/",
+      "evidence": "get data out of Excel",
+      "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:11.798622+00:00",
+      "capture_origin": "https://readxl.tidyverse.org/",
+      "capture_sha256": "4b7074ca1b83b469779b8b5304a57aea455ab02f2d1c77a653647933580452cb",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-02",
+          "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://readxl.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-haven",
+      "title": "haven · Import and Export SPSS, Stata and SAS Files",
+      "url": "https://haven.tidyverse.org/",
+      "evidence": "read and write various data formats",
+      "location": "页面正文；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:11.681844+00:00",
+      "capture_origin": "https://haven.tidyverse.org/",
+      "capture_sha256": "eaa84ba72331a708102af29a617414797aec1e05bcb0b8d4edf42f4ff23bb577",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-03",
+          "location": "页面正文；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://haven.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-transform",
+      "title": "dplyr · A Grammar of Data Manipulation",
+      "url": "https://dplyr.tidyverse.org/",
+      "evidence": "perform any operation “by group”",
+      "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:40.123754+00:00",
+      "capture_origin": "https://dplyr.tidyverse.org/",
+      "capture_sha256": "f0add6631cf399c6a7a8bf51eb861cafe488f962c1ca8a22a3517d871a28b8a3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-04",
+          "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://dplyr.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-reshape",
+      "title": "tidyr · Tidy Messy Data",
+      "url": "https://tidyr.tidyverse.org/",
+      "evidence": "converts between long and wide forms",
+      "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:40.115575+00:00",
+      "capture_origin": "https://tidyr.tidyverse.org/",
+      "capture_sha256": "ee813b6b695ddf17c2732ff2357a6383c7bc29c8458eddcd0e775eba95c686f9",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-05",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "url": "https://tidyr.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-database",
+      "title": "dbplyr · Database Backend",
+      "url": "https://dbplyr.tidyverse.org/",
+      "evidence": "database backend for dplyr",
+      "location": "页面正文；本次 HTML 提取正文第 28–28 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:40.162826+00:00",
+      "capture_origin": "https://dbplyr.tidyverse.org/",
+      "capture_sha256": "6a18c89ce0cf57490ac6a8fd51affa1cb3c77efd8cdc09e44a4f09747d44aab4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-06",
+          "location": "页面正文；本次 HTML 提取正文第 28–28 行（不是 HTML 源码行号）",
+          "url": "https://dbplyr.tidyverse.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-arrow",
+      "title": "Arrow R Package • Arrow R Package",
+      "url": "https://arrow.apache.org/docs/r/",
+      "evidence": "larger-than-memory datasets",
+      "location": "页面正文；本次 HTML 提取正文第 46–46 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:40.694149+00:00",
+      "capture_origin": "https://arrow.apache.org/docs/r/",
+      "capture_sha256": "5b822cbd0f359c543b981959be2cac2baa4885e67bb7bd5f27cab255251c8bb5",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-07",
+          "location": "页面正文；本次 HTML 提取正文第 46–46 行（不是 HTML 源码行号）",
+          "url": "https://arrow.apache.org/docs/r/"
+        }
+      ]
+    },
+    {
+      "id": "s-test",
+      "title": "R: Student's t-Test",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html",
+      "evidence": "one and two sample t-tests",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.015598+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html",
+      "capture_sha256": "0542a39f016054cfa8e0ada1873d923e9eee9f1fea8ec87afa0a7fa5ee5b72d4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-08",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html"
+        }
+      ]
+    },
+    {
+      "id": "s-lm",
+      "title": "R: Fitting Linear Models",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html",
+      "evidence": "fit linear models",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.488382+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html",
+      "capture_sha256": "9d15d4437d064d80d89c90d6a0df05083a5024324172a8ea902861562702c749",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-09",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html"
+        }
+      ]
+    },
+    {
+      "id": "s-glm",
+      "title": "R stats · Fitting Generalized Linear Models",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+      "evidence": "fit generalized linear models",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.741029+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+      "capture_sha256": "6b9a6fad58fad62386050ceba47abe28e40241544dd71d20df000fc40563d6c3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-10",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html"
+        }
+      ]
+    },
+    {
+      "id": "s-cluster",
+      "title": "R: Hierarchical Clustering",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html",
+      "evidence": "Hierarchical cluster analysis",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.276044+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html",
+      "capture_sha256": "328952439ed3b589585f167660963e8541969526986dce52e95d1b661585cec4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-11",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html"
+        }
+      ]
+    },
+    {
+      "id": "s-model-case",
+      "title": "tidymodels · A Predictive Modeling Case Study",
+      "url": "https://www.tidymodels.org/start/case-study/",
+      "evidence": "build a predictive model from beginning to end",
+      "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+      "source_class": "author_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:51.972966+00:00",
+      "capture_origin": "https://www.tidymodels.org/start/case-study/",
+      "capture_sha256": "68dc7fd8aedbb08aa4b184fbfa20e3807c05d791d9dcf174d3de8268a42d8796",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-12",
+          "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://www.tidymodels.org/start/case-study/"
+        }
+      ]
+    },
+    {
+      "id": "s-fable",
+      "title": "fable · Forecasting Models for Tidy Time Series",
+      "url": "https://fable.tidyverts.org/",
+      "evidence": "time series forecasting models",
+      "location": "页面正文；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:51.463529+00:00",
+      "capture_origin": "https://fable.tidyverts.org/",
+      "capture_sha256": "269c09565333573314564f270ba38592479e5e8aadc8248558f3fc71f358a0a6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-13",
+          "location": "页面正文；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "url": "https://fable.tidyverts.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-spatial",
+      "title": "Simple Features for R • sf",
+      "url": "https://r-spatial.github.io/sf/",
+      "evidence": "geometrical operations",
+      "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:42.041153+00:00",
+      "capture_origin": "https://r-spatial.github.io/sf/",
+      "capture_sha256": "5dc7b8b6dd99b9cbd147e85d21f7d7dc967f84b179db36e436f3d6be7fade67f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-14",
+          "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://r-spatial.github.io/sf/"
+        }
+      ]
+    },
+    {
+      "id": "s-network",
+      "title": "Network Analysis and Visualization • igraph",
+      "url": "https://r.igraph.org/",
+      "evidence": "Network Analysis and Visualization",
+      "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:42.586643+00:00",
+      "capture_origin": "https://r.igraph.org/",
+      "capture_sha256": "bb04b7cec5bf82917a80998d42bf6041c735ac804feb06797072dd5a498ff641",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-15",
+          "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "url": "https://r.igraph.org/"
+        }
+      ]
+    },
+    {
+      "id": "s-text-case",
+      "title": "7 Case study: comparing Twitter archives | Text Mining with R",
+      "url": "https://www.tidytextmining.com/twitter",
+      "evidence": "compare the entire Twitter archives",
+      "location": "页面正文；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+      "source_class": "author_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:52.454124+00:00",
+      "capture_origin": "https://www.tidytextmining.com/twitter",
+      "capture_sha256": "b2e45dde68720a6dd33fe1d4a33b8a8720ca9288b594eb64fda4a9e6426c9bdf",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-16",
+          "location": "页面正文；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.tidytextmining.com/twitter"
+        }
+      ]
+    },
+    {
+      "id": "s-survival",
+      "title": "CRAN: Package survival",
+      "url": "https://cran.r-project.org/web/packages/survival/index.html",
+      "evidence": "Kaplan-Meier and Aalen-Johansen",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:52.816468+00:00",
+      "capture_origin": "https://cran.r-project.org/web/packages/survival/index.html",
+      "capture_sha256": "7e976fb3ad609f443b04ff4339064d6c6bdd77ddc269b6bbc791f51ed94ddd5b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-17",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://cran.r-project.org/web/packages/survival/index.html"
+        }
+      ]
+    },
+    {
+      "id": "s-survey",
+      "title": "Survey analysis in R",
+      "url": "https://r-survey.r-forge.r-project.org/survey/",
+      "evidence": "data from complex surveys",
+      "location": "页面正文；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:46.618380+00:00",
+      "capture_origin": "https://r-survey.r-forge.r-project.org/survey/",
+      "capture_sha256": "ee26d9f5fcf915cd82d374fd4efd920bca0149c8f6eadde0c11f269a965a9492",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-18",
+          "location": "页面正文；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+          "url": "https://r-survey.r-forge.r-project.org/survey/"
+        }
+      ]
+    },
+    {
+      "id": "s-rnaseq",
+      "title": "Bioconductor · RNA-seq Gene-level Workflow",
+      "url": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html",
+      "evidence": "end-to-end gene-level RNA-seq differential",
+      "location": "页面正文；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+      "source_class": "author_worked_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:34.646513+00:00",
+      "capture_origin": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html",
+      "capture_sha256": "793a23312f8a91e5eeb8d00065865dd78278825a0620a6454e3a330fdee2eb99",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-19",
+          "location": "页面正文；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html"
+        }
+      ]
+    },
+    {
+      "id": "s-shiny",
+      "title": "Shiny for R Gallery",
+      "url": "https://shiny.posit.co/r/gallery/",
+      "evidence": "Shiny is designed for fully interactive visualization",
+      "location": "Interactive visualizations；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:44.058393+00:00",
+      "capture_origin": "https://shiny.posit.co/r/gallery/",
+      "capture_sha256": "2b551ad8b8216672ff0822544655e567df255c1e1c715267b7603906ac28d6b1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-20",
+          "location": "Interactive visualizations；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://shiny.posit.co/r/gallery/"
+        }
+      ]
+    },
+    {
+      "id": "s-quarto",
+      "title": "Quarto · Using R",
+      "url": "https://quarto.org/docs/computations/r.html",
+      "evidence": "Quarto uses Knitr to execute R code",
+      "location": "页面正文；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:44.317306+00:00",
+      "capture_origin": "https://quarto.org/docs/computations/r.html",
+      "capture_sha256": "8659e6e7ee26e24b367d0e8a413ce792cebd8e90c6f55a7935155fd81170196f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-21",
+          "location": "页面正文；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/computations/r.html"
+        }
+      ]
+    },
+    {
+      "id": "s-targets",
+      "title": "Dynamic Function-Oriented Make-Like Declarative Pipelines • targets",
+      "url": "https://docs.ropensci.org/targets/",
+      "evidence": "skips costly runtime",
+      "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:44.323347+00:00",
+      "capture_origin": "https://docs.ropensci.org/targets/",
+      "capture_sha256": "06f871775749d3581fe4fbaf081cf791d62a111b081f2c0505a7967748dadc64",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-22",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://docs.ropensci.org/targets/"
+        }
+      ]
+    },
+    {
+      "id": "s-renv",
+      "title": "Project Environments • renv",
+      "url": "https://rstudio.github.io/renv/",
+      "evidence": "records the exact package versions",
+      "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:44.265832+00:00",
+      "capture_origin": "https://rstudio.github.io/renv/",
+      "capture_sha256": "bd0968ea659fcad19e03ba14e2b991f82cb0217cd1de5d8d81fae1e34b7ee889",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-23",
+          "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）",
+          "url": "https://rstudio.github.io/renv/"
+        }
+      ]
+    },
+    {
+      "id": "s-simulate",
+      "title": "R: Distributions in the 'stats' Package",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html",
+      "evidence": "random variate generation are named",
+      "location": "Details；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.021763+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html",
+      "capture_sha256": "094a82620e1d353202315d9057d1835aee45f0f503da52701de7ab3cf1688c89",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-24",
+          "location": "Details；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html"
+        }
+      ]
+    },
+    {
+      "id": "s-graphics",
+      "title": "R graphics · Default Scatterplot Function",
+      "url": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html",
+      "evidence": "Default Scatterplot Function",
+      "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:10.028195+00:00",
+      "capture_origin": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html",
+      "capture_sha256": "5e75f6313a250bafc3b0fcf033771d28e4de207717f0c02f507e0c7af84b3c98",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-25",
+          "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html"
+        }
+      ]
+    },
+    {
+      "id": "s-joins",
+      "title": "Drop unimportant variables so it's easier to understand the join results.",
+      "url": "https://dplyr.tidyverse.org/articles/two-table.html",
+      "evidence": "combine variables from multiple tables",
+      "location": "页面正文；本次 HTML 提取正文第 50–50 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T10:01:26.534258+00:00",
+      "capture_origin": "https://dplyr.tidyverse.org/articles/two-table.html",
+      "capture_sha256": "01fdf8a3ff2b3c33345cfc5eb38b0b3651709361d5d33f3f8678115c02dc7a01",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "r-26",
+          "location": "页面正文；本次 HTML 提取正文第 50–50 行（不是 HTML 源码行号）",
+          "url": "https://dplyr.tidyverse.org/articles/two-table.html"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "acquire",
+      "name": "获取和连接数据"
+    },
+    {
+      "id": "prepare",
+      "name": "整理与探索数据结构"
+    },
+    {
+      "id": "inference",
+      "name": "估计效应与不确定性"
+    },
+    {
+      "id": "specialist",
+      "name": "预测与专门领域研究"
+    },
+    {
+      "id": "delivery",
+      "name": "交互探索与报告交付"
+    },
+    {
+      "id": "reproduction",
+      "name": "维护可更新和可恢复的分析"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "r-01",
+      "title": "把文本表格读成可分析数据",
+      "result": "通过 readr 导入 CSV、TSV 等分隔文件，并获得解析问题提示。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 readr；编码、地区格式、列类型和缺失值需确认。",
+      "source_ids": [
+        "s-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-import",
+          "quote": "read rectangular data from delimited files",
+          "location": "Overview；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text",
+          "url": "https://readr.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "acquire"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-02",
+      "title": "分析 Excel 工作表中的表格",
+      "result": "通过 readxl 读取 xls / xlsx 工作表，获得 R 中可处理的数据。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 readxl；公式、版式和不规则表头不等于直接可分析表格，需检查范围和类型。",
+      "source_ids": [
+        "s-excel"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-excel",
+          "quote": "get data out of Excel",
+          "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text",
+          "url": "https://readxl.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "acquire"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-03",
+      "title": "与其他统计软件交换数据",
+      "result": "用 haven 读写 SAS、SPSS、Stata 的受支持格式，将已有研究数据带入 R 流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 haven，具体文件版本有边界；值标签、日期和缺失值语义需核验。",
+      "source_ids": [
+        "s-haven"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-haven",
+          "quote": "read and write various data formats",
+          "location": "页面正文；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text",
+          "url": "https://haven.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "acquire"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-04",
+      "title": "清洗记录并计算分组汇总",
+      "result": "使用 dplyr 筛选、生成变量、排序和按组汇总，得到问题所需的分析表。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 dplyr；分组、重复值、缺失值和指标定义由分析者负责。",
+      "source_ids": [
+        "s-transform"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-transform",
+          "quote": "perform any operation “by group”",
+          "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "extracted_html_text",
+          "url": "https://dplyr.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "prepare"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-05",
+      "title": "把宽表、嵌套数据和混合字段整理成规则表",
+      "result": "用 tidyr 转换长宽结构、展开嵌套对象和拆合字段，使数据适合建模。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 tidyr；必须保留变量含义、键和观测粒度，不能把重排当作纠错。",
+      "source_ids": [
+        "s-reshape"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-reshape",
+          "quote": "converts between long and wide forms",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "extracted_html_text",
+          "url": "https://tidyr.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "prepare"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-06",
+      "title": "直接分析数据库中的数据",
+      "result": "用 dbplyr 将数据处理表达式翻译为 SQL，把计算交给数据库后端。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要数据库驱动、连接与权限；不同数据库的函数和类型支持不同。",
+      "source_ids": [
+        "s-database"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-database",
+          "quote": "database backend for dplyr",
+          "location": "页面正文；本次 HTML 提取正文第 28–28 行（不是 HTML 源码行号）",
+          "source_line_start": 28,
+          "source_line_end": 28,
+          "line_basis": "extracted_html_text",
+          "url": "https://dbplyr.tidyverse.org/"
+        }
+      ],
+      "group_ids": [
+        "acquire"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-07",
+      "title": "处理多文件或超出内存的数据集",
+      "result": "通过 Arrow 读取列式数据及多文件数据集，按支持的表达式进行分析。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Arrow 及合适存储布局；并非所有 R 函数都能下推，云后端与系统支持有差异。",
+      "source_ids": [
+        "s-arrow"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-arrow",
+          "quote": "larger-than-memory datasets",
+          "location": "页面正文；本次 HTML 提取正文第 46–46 行（不是 HTML 源码行号）",
+          "source_line_start": 46,
+          "source_line_end": 46,
+          "line_basis": "extracted_html_text",
+          "url": "https://arrow.apache.org/docs/r/"
+        }
+      ],
+      "group_ids": [
+        "acquire"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-08",
+      "title": "比较样本均值及其不确定性",
+      "result": "以合适的 t 检验比较单样本、两样本或配对均值，并报告区间与检验结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "stats 随 R 提供；设计、分布和独立性等假设需核查，显著性不等于实际意义。",
+      "source_ids": [
+        "s-test"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test",
+          "quote": "one and two sample t-tests",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/t.test.html"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-09",
+      "title": "用回归解释连续结果与变量关系",
+      "result": "拟合线性模型，完成回归、方差分析或协方差分析的相应任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "stats 核心；需检查模型假设、混杂和诊断，相关回归不自动支持因果结论。",
+      "source_ids": [
+        "s-lm"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lm",
+          "quote": "fit linear models",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-10",
+      "title": "对不同分布的结果建立统计模型",
+      "result": "使用广义线性模型选择相应误差分布和连接函数，分析二元或计数等结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "stats 核心；需明确 family、数据分布和模型诊断，不保证拟合或预测可靠。",
+      "source_ids": [
+        "s-glm"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-glm",
+          "quote": "fit generalized linear models",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-11",
+      "title": "从对象相似性中寻找层次结构",
+      "result": "基于距离进行层次聚类，并以树状结果探索样本或变量之间的关系。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "stats 核心；距离、标准化与聚类方法会改变结果，不自动证明存在真实类别。",
+      "source_ids": [
+        "s-cluster"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-cluster",
+          "quote": "Hierarchical cluster analysis",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html"
+        }
+      ],
+      "group_ids": [
+        "prepare"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-12",
+      "title": "开发并评估可用于新数据的预测模型",
+      "result": "按 tidymodels 完整案例切分数据、重采样、比较模型并做最终评估。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 tidymodels 及具体引擎包；酒店案例展示流程，不保证新业务性能；防止数据泄漏。",
+      "source_ids": [
+        "s-model-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-model-case",
+          "quote": "build a predictive model from beginning to end",
+          "location": "页面正文；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.tidymodels.org/start/case-study/"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-13",
+      "title": "对时间序列形成未来预测",
+      "result": "用 fable 建模、评估和组合预测方法，为未来期间提供估计。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 fable / tsibble 等依赖和合适时间序列；趋势变化会影响准确率，预测不构成保证。",
+      "source_ids": [
+        "s-fable"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-fable",
+          "quote": "time series forecasting models",
+          "location": "页面正文；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "extracted_html_text",
+          "url": "https://fable.tidyverts.org/"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-14",
+      "title": "分析地理空间对象与几何关系",
+      "result": "用 sf 读写地理对象并调用相应几何运算，将位置数据纳入分析。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 sf、GDAL / GEOS / PROJ 或 s2；坐标系、平面／球面语义及驱动支持需核实。",
+      "source_ids": [
+        "s-spatial"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-spatial",
+          "quote": "geometrical operations",
+          "location": "页面正文；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text",
+          "url": "https://r-spatial.github.io/sf/"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-15",
+      "title": "探索和展示网络关系",
+      "result": "用 igraph 将关系数据作为图结构分析和可视化，检查连接组织。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 igraph 和合理的节点／边定义；网页可能展示开发版，安装版本另核查。",
+      "source_ids": [
+        "s-network"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-network",
+          "quote": "Network Analysis and Visualization",
+          "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "extracted_html_text",
+          "url": "https://r.igraph.org/"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-16",
+      "title": "比较文本语料的词汇、情绪和主题特征",
+      "result": "按 tidytext 作者的公开案例处理文本、比较词频和表达模式。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 tidytext 及语料清洗、词典和语言适配；该旧 Twitter 案例不保证当前平台数据获取方法可用。",
+      "source_ids": [
+        "s-text-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-text-case",
+          "quote": "compare the entire Twitter archives",
+          "location": "页面正文；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.tidytextmining.com/twitter"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-17",
+      "title": "分析事件发生时间及删失数据",
+      "result": "以 survival 包估计生存曲线、Cox 或其他适用事件时间模型。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "推荐包 survival 仍属独立包；设计、删失机制和比例风险等假设必须评估。",
+      "source_ids": [
+        "s-survival"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-survival",
+          "quote": "Kaplan-Meier and Aalen-Johansen",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://cran.r-project.org/web/packages/survival/index.html"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-18",
+      "title": "根据复杂抽样设计估计总体指标",
+      "result": "用 survey 的权重、分层和多阶段设计估计统计量及方差。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 survey 和真实设计信息；原作者主页版本信息较旧，当前安装兼容性未验证，不直接套用简单随机抽样方法。",
+      "source_ids": [
+        "s-survey"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-survey",
+          "quote": "data from complex surveys",
+          "location": "页面正文；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://r-survey.r-forge.r-project.org/survey/"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-19",
+      "title": "完成基因表达探索与差异分析",
+      "result": "参考 Bioconductor rnaseqGene 从定量数据准备到探索、质量评估和差异表达结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要对应 Bioconductor 版本、参考数据和分析包；该流程文档日期较早，命令兼容性未实测，不作为临床判断。",
+      "source_ids": [
+        "s-rnaseq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rnaseq",
+          "quote": "end-to-end gene-level RNA-seq differential",
+          "location": "页面正文；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text",
+          "url": "https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html"
+        }
+      ],
+      "group_ids": [
+        "specialist"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-20",
+      "title": "制作可交互的数据探索应用",
+      "result": "用 Shiny 将分析结果与筛选控件、图表或表格组成浏览器应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Shiny、相关前端组件及运行 R 的服务器／本机；不等于可直接脱离 R 运行的纯静态网页。",
+      "source_ids": [
+        "s-shiny"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-shiny",
+          "quote": "Shiny is designed for fully interactive visualization",
+          "location": "Interactive visualizations；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "extracted_html_text",
+          "url": "https://shiny.posit.co/r/gallery/"
+        }
+      ],
+      "group_ids": [
+        "delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-21",
+      "title": "把计算、图表和说明交付为研究报告",
+      "result": "在 Quarto 中执行 R 代码，将结果和解释一起渲染为文档。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Quarto、knitr 和对应输出格式依赖；PDF、Word 等额外工具与排版需检查。",
+      "source_ids": [
+        "s-quarto"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-quarto",
+          "quote": "Quarto uses Knitr to execute R code",
+          "location": "页面正文；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "source_line_start": 246,
+          "source_line_end": 246,
+          "line_basis": "extracted_html_text",
+          "url": "https://quarto.org/docs/computations/r.html"
+        }
+      ],
+      "group_ids": [
+        "delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-22",
+      "title": "在数据变化后更新必要分析结果",
+      "result": "用 targets 管理数据准备、模型和汇总依赖，只重算过期任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要把任务写为 R 函数并正确声明依赖；不能发现所有隐藏外部状态。",
+      "source_ids": [
+        "s-targets"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-targets",
+          "quote": "skips costly runtime",
+          "location": "页面正文；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.ropensci.org/targets/"
+        }
+      ],
+      "group_ids": [
+        "reproduction"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-23",
+      "title": "在另一环境恢复分析所用包版本",
+      "result": "用 renv 记录项目依赖和私有库，帮助复现分析环境。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要可获取的软件包与兼容 R／系统依赖；锁文件不是完整操作系统或数据快照。",
+      "source_ids": [
+        "s-renv"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-renv",
+          "quote": "records the exact package versions",
+          "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）",
+          "source_line_start": 27,
+          "source_line_end": 27,
+          "line_basis": "extracted_html_text",
+          "url": "https://rstudio.github.io/renv/"
+        }
+      ],
+      "group_ids": [
+        "reproduction"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-24",
+      "title": "用随机模拟研究假设与不确定性",
+      "result": "从统计分布生成随机样本，用于模拟研究或检查方法行为。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "stats 核心；需定义生成机制、种子、重复次数和统计指标，模拟结果不能自动推广现实。",
+      "source_ids": [
+        "s-simulate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-simulate",
+          "quote": "random variate generation are named",
+          "location": "Details；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-25",
+      "title": "用散点图检查变量关系",
+      "result": "调用 R 自带图形系统绘制数据关系，辅助发现结构、异常和模型问题。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "graphics 核心；需合适的尺度、坐标和解释，不以图形外观证明统计结论。",
+      "source_ids": [
+        "s-graphics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-graphics",
+          "quote": "Default Scatterplot Function",
+          "location": "页面正文；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "extracted_html_text",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/plot.default.html"
+        }
+      ],
+      "group_ids": [
+        "prepare"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "r-26",
+      "title": "将多个来源的数据按键关联或比较",
+      "result": "通过 dplyr 的连接和集合操作合并补充变量、筛选匹配记录或比较数据集合。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要明确关联键、键的唯一性和缺失值语义；多对多关联可能放大记录数，需核对行数。",
+      "source_ids": [
+        "s-joins"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-joins",
+          "quote": "combine variables from multiple tables",
+          "location": "页面正文；本次 HTML 提取正文第 50–50 行（不是 HTML 源码行号）",
+          "source_line_start": 50,
+          "source_line_end": 50,
+          "line_basis": "extracted_html_text",
+          "url": "https://dplyr.tidyverse.org/articles/two-table.html"
+        }
+      ],
+      "group_ids": [
+        "prepare"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未安装执行这些 R 项目；包版本、操作系统、编译器和数据规模的实际适配仍需验证。",
+    "部分官方站点显示开发版或较旧示例；R-devel 参考、survey 作者主页与旧生物信息流程不等于当前稳定环境测试。",
+    "未穷尽 CRAN / Bioconductor；贝叶斯、因果推断、优化、金融和并行计算等专门主题仍需独立证据研究。",
+    "readr / haven 的读写格式边界与 Arrow / sf 的外部依赖均不能从“R 能分析”推导为无条件支持。"
+  ],
+  "generated_at": "2026-11-05T10:02:05.391498+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先从输入、处理和可交付分析结果发现，再读酒店预测、Twitter 语料和 RNA-seq 的完整案例，最后补查部署、流水线与依赖复现。",
+      "归一化：把筛选、变量计算、排序和聚合合并为分析表整理；将统计模型按实际问题保留，而非罗列函数参数。",
+      "补漏发现 Excel、统计软件格式、复杂抽样与删失数据；最终挑战又补查航班与航空公司关联的完整示例，追加多来源表关联后再更新导航。",
+      "原三个主题的数据与分类未被读取作为本次候选来源；这里只引用当前取回的 R 官方及包作者资料。"
+    ],
+    "source_classes": [
+      "author_worked_example",
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 30,
+    "evidence_revision_at": "2026-11-05T10:56:01.505835+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}
