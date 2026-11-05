@@ -55,7 +55,8 @@ def test_capability_map_finds_invalid_relation_types_for_endpoints() -> None:
 def test_capability_map_requires_both_c_and_o_for_each_p() -> None:
     doc = deepcopy(read_fixture(FIXTURE_NAMES[0]))
     doc["relations"] = [
-        r for r in doc["relations"]
+        r
+        for r in doc["relations"]
         if not (r["from_id"] == "p_groups" and r["type"] == "enabled_by")
     ]
     assert "P_MISSING_OPERATION: p_groups" in graph_issues(doc)

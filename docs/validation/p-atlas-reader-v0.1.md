@@ -51,7 +51,7 @@
 
 ## 仓库总 CI 的既有失败
 
-Atlas 的独立工作流通过；全仓库旧 CI 仍有失败，未将其报告为通过。对照 [Atlas 实现前的 `d1d8041` 运行](https://github.com/liamamilin/COP/actions/runs/41984808225) 与 [当前应用提交的运行](https://github.com/liamamilin/COP/actions/runs/41987801603)，相同失败均已存在：
+以下为 Atlas 首次发布时的记录；后续修复与回归结果见 [仓库总 CI 修复记录](ci-repair-2026-11-05.md)。当时 Atlas 的独立工作流通过，全仓库旧 CI 有失败，未将其报告为通过。对照 [Atlas 实现前的 `d1d8041` 运行](https://github.com/liamamilin/COP/actions/runs/41984808225) 与 [应用提交的运行](https://github.com/liamamilin/COP/actions/runs/41987801603)，相同失败均已存在：
 
 1. Schema consistency：`fixtures/reference-langchain-cop.json` 与 packaged reference artifact 漂移。
 2. Backend：`app/domain/capability_map_v0.py`、`tests/test_capability_map_v0.py` 未满足 Ruff 格式检查。

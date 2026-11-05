@@ -53,6 +53,10 @@ jobs:
   backend:
     name: Backend
     runs-on: ubuntu-latest
+    env:
+      # POSTGRES_PASSWORD configures the server container, not the host client.
+      # This is the disposable service's test password, used by psql/createdb.
+      PGPASSWORD: cop
     # A service container rather than a Compose stack: the suite needs a real
     # PostgreSQL and nothing else. Job claiming, stale-run recovery, and the
     # unique (run_id, sequence) constraint are PostgreSQL behaviour, and the V1
@@ -118,6 +122,10 @@ jobs:
   e2e:
     name: End-to-end
     runs-on: ubuntu-latest
+    env:
+      PGPASSWORD: cop
+      # The service creates the cop superuser; the runner has no milin role.
+      DB_ADMIN: cop
     # The suite drives the real stack: a Worker to turn a topic into a candidate,
     # an API that re-validates every draft write, and a browser to prove the
     # buttons are actually wired up. Unit tests cannot see that, and SSR HTML

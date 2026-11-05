@@ -35,9 +35,7 @@ def graph_issues(document: dict[str, Any]) -> list[str]:
         for item in document.get(key, []):
             entity_id = str(item["id"])
             if entity_id in ids:
-                issues.append(
-                    f"DUPLICATE_ID: {entity_id} used as both {ids[entity_id]} and {kind}"
-                )
+                issues.append(f"DUPLICATE_ID: {entity_id} used as both {ids[entity_id]} and {kind}")
             ids[entity_id] = kind
 
     if len(sources) != len(document.get("sources", [])):
@@ -53,9 +51,7 @@ def graph_issues(document: dict[str, Any]) -> list[str]:
                 if ref["source_id"] not in sources:
                     issues.append(f"UNKNOWN_SOURCE: {location} -> {ref['source_id']}")
 
-    coverage: dict[str, set[str]] = {
-        p["id"]: set() for p in document.get("possibilities", [])
-    }
+    coverage: dict[str, set[str]] = {p["id"]: set() for p in document.get("possibilities", [])}
     for index, relation in enumerate(document.get("relations", [])):
         kind = relation["type"]
         source_id, target_id = relation["from_id"], relation["to_id"]
