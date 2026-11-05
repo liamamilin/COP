@@ -201,6 +201,9 @@ async function errorFrom(response: Response, path: string): Promise<ApiError> {
 }
 
 function baseUrl(): string {
+  // Browser reads use the same public proxy as writes, including production
+  // builds without NEXT_PUBLIC_API_BASE_URL. Internal URLs belong to Node.
+  if (typeof window !== "undefined") return publicApiBaseUrl();
   const configured =
     process.env.INTERNAL_API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL;
 

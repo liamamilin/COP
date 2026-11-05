@@ -191,6 +191,12 @@ test("the golden case closes the whole loop with no dead ends", async ({ page })
       }[];
     }>(`/projects/${project.id}/learning-progress?version_id=${published.id}`);
 
+    // Pin the chosen goal in the URL. The new default resumes the first
+    // unfinished goal, so reloading an unpinned route after completion would
+    // correctly show the next goal rather than this goal's saved practice.
+    await page.getByRole("navigation", { name: "Choose a goal" }).getByRole("link").first().click();
+    await waitForHydration(page, ".learn-view");
+
     // Foundation first: every Main Process starts there, so a Goal cannot be
     // complete while the shared setup is open. The count is asserted against the
     // API rather than hard-coded, because a COP with no Shared Foundation is a
