@@ -214,7 +214,8 @@ def _mock_processes(payload: dict[str, Any]) -> dict[str, Any]:
                     "stage_key": stage["key"],
                     "learning_question": f"What does {stage['title']} establish?",
                     "why_now": "The preceding planned result supplies this action's starting point."
-                    if index else "The first action establishes the workflow's starting point.",
+                    if index
+                    else "The first action establishes the workflow's starting point.",
                     "builds_on": [stages[index - 1]["key"]] if index else [],
                     "reasoning_moves": [
                         "Compare the observed result with the declared expectation.",

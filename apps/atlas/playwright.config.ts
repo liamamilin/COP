@@ -12,6 +12,9 @@ export default defineConfig({
     baseURL: remote || "http://127.0.0.1:4174/COP/",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    // Share Studio's system Chrome policy and keep the renderer sandbox enabled.
+    channel: "chrome",
+    launchOptions: { chromiumSandbox: true },
   },
   webServer: remote
     ? undefined

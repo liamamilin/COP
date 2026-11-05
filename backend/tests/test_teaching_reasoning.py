@@ -24,20 +24,26 @@ def example():
         "case_facts": ["The script has a construction-only mode."],
         "case_unknowns": ["Whether a real provider will return a relevant answer."],
         "route": [
-            {"stage_ref": ref, "question": f"What does {ref} establish?",
-             "builds_on": refs[max(0, index - 1):index], "why_now": "Use the prior result.",
-             "next_gap": "Execution and understanding still need separate evidence."}
+            {
+                "stage_ref": ref,
+                "question": f"What does {ref} establish?",
+                "builds_on": refs[max(0, index - 1) : index],
+                "why_now": "Use the prior result.",
+                "next_gap": "Execution and understanding still need separate evidence.",
+            }
             for index, ref in enumerate(refs)
         ],
     }
     for step in unit["steps"]:
-        step["reasoning"] = [{
-            "observation": "The observed output has a mode field.",
-            "inference": "That mode limits what the output can establish.",
-            "warrant": "Constructing and invoking are different operations.",
-            "limitation": "This does not judge answer relevance.",
-            "source_ids": [unit["sources"][0]["id"]],
-        }]
+        step["reasoning"] = [
+            {
+                "observation": "The observed output has a mode field.",
+                "inference": "That mode limits what the output can establish.",
+                "warrant": "Constructing and invoking are different operations.",
+                "limitation": "This does not judge answer relevance.",
+                "source_ids": [unit["sources"][0]["id"]],
+            }
+        ]
     return unit, artifact
 
 
@@ -96,8 +102,13 @@ def test_communication_sample_is_a_complete_non_code_reasoning_path():
     assert unit_manifest(unit, artifact) == load("communication-basics-learning-unit.manifest.json")
     assert unit["orientation"]["case_unknowns"]
     assert all(step["reasoning"] for step in unit["steps"])
-    assert all(not detail.get("command") for stage in artifact["stages"]
-               for detail in stage["implementation_details"])
+    assert all(
+        not detail.get("command")
+        for stage in artifact["stages"]
+        for detail in stage["implementation_details"]
+    )
     assert {question["kind"] for question in unit["assessment"]} >= {
-        "explain", "diagnose", "transfer",
+        "explain",
+        "diagnose",
+        "transfer",
     }

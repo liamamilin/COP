@@ -195,7 +195,11 @@ class LearningUnit(UnitModel):
 def content_hash(value: Any) -> str:
     """sha256(canonical-json-v1): sorted ASCII field keys; array order retained."""
     encoded = json.dumps(
-        value, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False,
+        value,
+        sort_keys=True,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        allow_nan=False,
     )
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
@@ -210,14 +214,22 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
     try:
         unit = LearningUnit.model_validate(raw)
     except ValidationError as error:
-        return [{"code": "UNIT_SCHEMA", "ref": "/".join(map(str, item["loc"])),
-                 "message": item["msg"]} for item in error.errors()]
+        return [
+            {"code": "UNIT_SCHEMA", "ref": "/".join(map(str, item["loc"])), "message": item["msg"]}
+            for item in error.errors()
+        ]
 
     try:
         COPArtifact.model_validate(artifact)
     except ValidationError as error:
-        return [{"code": "ARTIFACT_SCHEMA", "ref": "/".join(map(str, item["loc"])),
-                 "message": item["msg"]} for item in error.errors()]
+        return [
+            {
+                "code": "ARTIFACT_SCHEMA",
+                "ref": "/".join(map(str, item["loc"])),
+                "message": item["msg"],
+            }
+            for item in error.errors()
+        ]
 
     if unit.binding.artifact_sha256 != content_hash(artifact):
         issue("STALE_ARTIFACT", "binding", "Teaching belongs to a different artifact revision.")
@@ -226,8 +238,14 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
     if not process or process.get("goal_ref") != unit.binding.goal_ref:
         issue("UNIT_TARGET", "binding", "Goal/process binding does not resolve.")
         return issues
-    foundation = next((item for item in artifact.get("shared_foundations", [])
-                       if item["id"] == process.get("start", {}).get("ref")), None)
+    foundation = next(
+        (
+            item
+            for item in artifact.get("shared_foundations", [])
+            if item["id"] == process.get("start", {}).get("ref")
+        ),
+        None,
+    )
     expected_order = [*(foundation or {}).get("stage_refs", []), *process.get("stage_refs", [])]
     order = [step.stage_ref for step in unit.steps]
     if order != expected_order:
@@ -265,16 +283,23 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
     if unit.orientation:
         route = unit.orientation.route
         if [item.stage_ref for item in route] != order:
-            issue("TEACHING_ROUTE", "orientation",
-                  "Explanations must cover the same ordered route.")
+            issue(
+                "TEACHING_ROUTE", "orientation", "Explanations must cover the same ordered route."
+            )
         for item in route:
             if len(set(item.builds_on)) != len(item.builds_on):
                 issue("TEACHING_PREREQUISITE", item.stage_ref, "A prerequisite is repeated.")
             for ref in item.builds_on:
-                if (ref not in positions or item.stage_ref not in positions
-                        or positions[ref] >= positions[item.stage_ref]):
-                    issue("TEACHING_PREREQUISITE", item.stage_ref,
-                          "Teaching prerequisites must name earlier steps in this route.")
+                if (
+                    ref not in positions
+                    or item.stage_ref not in positions
+                    or positions[ref] >= positions[item.stage_ref]
+                ):
+                    issue(
+                        "TEACHING_PREREQUISITE",
+                        item.stage_ref,
+                        "Teaching prerequisites must name earlier steps in this route.",
+                    )
         if not all(step.reasoning for step in unit.steps):
             issue("MISSING_REASONING", "steps", "An oriented unit needs reasoning for every step.")
     for resource in resources.values():
@@ -301,14 +326,23 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
                 try:
                     ast.parse(content) if output.format == "python" else json.loads(content)
                 except (SyntaxError, ValueError, TypeError):
-                    issue("INVALID_FILE_CONTENT", output.id,
-                          "The referenced text is not a complete parseable file of this format.")
-            matching = [method for method in (producer.methods if producer else [])
-                        if method.detail_index == ref.detail_index and not method.optional]
+                    issue(
+                        "INVALID_FILE_CONTENT",
+                        output.id,
+                        "The referenced text is not a complete parseable file of this format.",
+                    )
+            matching = [
+                method
+                for method in (producer.methods if producer else [])
+                if method.detail_index == ref.detail_index and not method.optional
+            ]
             coverage = set().union(*(paths(method.path_ids, output.id) for method in matching))
             if not paths(output.path_ids, output.id) <= coverage:
-                issue("UNREACHABLE_FILE_METHOD", output.id,
-                      "Some paths do not provide the mandatory method that supplies this file.")
+                issue(
+                    "UNREACHABLE_FILE_METHOD",
+                    output.id,
+                    "Some paths do not provide the mandatory method that supplies this file.",
+                )
 
     question_ids: set[str] = set()
 
@@ -329,8 +363,11 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
             continue
         for move in step.reasoning:
             if set(move.source_ids) - source_ids:
-                issue("REASONING_SOURCE", step.stage_ref,
-                      "Reasoning points to an undeclared source; citations do not verify facts.")
+                issue(
+                    "REASONING_SOURCE",
+                    step.stage_ref,
+                    "Reasoning points to an undeclared source; citations do not verify facts.",
+                )
         for input_item in step.inputs:
             active = paths(input_item.path_ids, step.stage_ref)
             source = (resources if input_item.kind == "entry" else outputs).get(input_item.ref)
@@ -342,11 +379,17 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
             if input_item.kind == "output":
                 producer_position = positions.get(source.producer_stage_ref, len(order))
                 if producer_position >= positions[step.stage_ref]:
-                    issue("FORWARD_INPUT", step.stage_ref,
-                          "Input must be produced by an earlier step.")
+                    issue(
+                        "FORWARD_INPUT",
+                        step.stage_ref,
+                        "Input must be produced by an earlier step.",
+                    )
                 if source.persistence == "process":
-                    issue("EPHEMERAL_HANDOFF", input_item.ref,
-                          "An in-memory object cannot be handed to a different process/step.")
+                    issue(
+                        "EPHEMERAL_HANDOFF",
+                        input_item.ref,
+                        "An in-memory object cannot be handed to a different process/step.",
+                    )
         explained = {item.concept_ref for item in step.concepts}
         if len(explained) != len(step.concepts):
             issue("DUPLICATE_CONCEPT", step.stage_ref, "A concept explanation is repeated.")
@@ -354,21 +397,26 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
         if canonical - explained:
             issue("UNEXPLAINED_CONCEPT", step.stage_ref, "A load-bearing concept has no teaching.")
         if explained - canonical:
-            issue("CONCEPT_REF", step.stage_ref,
-                  "Concept explanation does not belong to this step.")
+            issue(
+                "CONCEPT_REF", step.stage_ref, "Concept explanation does not belong to this step."
+            )
         for link in step.causal_chain:
             acted_on = operations.get(link.operation_ref, {}).get("acts_on_concept_refs", [])
-            if (link.concept_ref not in explained
-                    or link.operation_ref not in stage.get("operation_refs", [])
-                    or link.concept_ref not in acted_on):
-                issue("CAUSAL_REF", step.stage_ref,
-                      "Concept/operation causal link does not resolve.")
+            if (
+                link.concept_ref not in explained
+                or link.operation_ref not in stage.get("operation_refs", [])
+                or link.concept_ref not in acted_on
+            ):
+                issue(
+                    "CAUSAL_REF", step.stage_ref, "Concept/operation causal link does not resolve."
+                )
         linked_operations = {link.operation_ref for link in step.causal_chain}
         if set(stage.get("operation_refs", [])) - linked_operations:
             issue("UNEXPLAINED_OPERATION", step.stage_ref, "An operation lacks its causal role.")
         if explained - {link.concept_ref for link in step.causal_chain}:
-            issue("UNLINKED_CONCEPT", step.stage_ref,
-                  "A concept has no causal link to an operation.")
+            issue(
+                "UNLINKED_CONCEPT", step.stage_ref, "A concept has no causal link to an operation."
+            )
         methods = stage.get("implementation_details", [])
         if set(range(len(methods))) - {method.detail_index for method in step.methods}:
             issue("UNCOVERED_METHOD", step.stage_ref, "A saved instruction has no path mapping.")
@@ -376,13 +424,16 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
             paths(method.path_ids, step.stage_ref)
             if method.detail_index >= len(methods):
                 issue("METHOD_REF", step.stage_ref, "Method index is outside the source stage.")
-            elif not (methods[method.detail_index].get("action", "").strip()
-                      or methods[method.detail_index].get("command", "").strip()):
+            elif not (
+                methods[method.detail_index].get("action", "").strip()
+                or methods[method.detail_index].get("command", "").strip()
+            ):
                 issue("EMPTY_METHOD", step.stage_ref, "A title alone is not a method.")
         for ref in step.output_refs:
             if ref not in outputs or outputs[ref].producer_stage_ref != step.stage_ref:
-                issue("OUTPUT_REF", step.stage_ref,
-                      "Output belongs to a different or missing step.")
+                issue(
+                    "OUTPUT_REF", step.stage_ref, "Output belongs to a different or missing step."
+                )
         if len(set(step.output_refs)) != len(step.output_refs):
             issue("DUPLICATE_OUTPUT", step.stage_ref, "An output is declared twice by this step.")
         input_refs = {item.ref for item in step.inputs}
@@ -396,10 +447,14 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
                 issue("CHECK_REF", step.stage_ref, "Check points outside this step's outputs.")
             check_paths = paths(check.path_ids, step.stage_ref)
             if check.output_ref in outputs and not check_paths <= paths(
-                outputs[check.output_ref].path_ids, check.output_ref,
+                outputs[check.output_ref].path_ids,
+                check.output_ref,
             ):
-                issue("CHECK_PATH_GAP", step.stage_ref,
-                      "A check requires an output unavailable on this path.")
+                issue(
+                    "CHECK_PATH_GAP",
+                    step.stage_ref,
+                    "A check requires an output unavailable on this path.",
+                )
             checked.setdefault(check.output_ref, set()).update(check_paths)
         for ref in step.output_refs:
             if ref in outputs and not paths(outputs[ref].path_ids, ref) <= checked.get(ref, set()):
@@ -410,19 +465,22 @@ def check_learning_unit(raw: dict[str, Any], artifact: dict[str, Any]) -> list[d
         for path_id in path_ids:
             if not any(path_id in paths(item.path_ids, step.stage_ref) for item in step.inputs):
                 issue("STEP_INPUT_GAP", step.stage_ref, "A path has no declared starting input.")
-            if not any(not item.optional and path_id in paths(item.path_ids, step.stage_ref)
-                       for item in step.methods):
+            if not any(
+                not item.optional and path_id in paths(item.path_ids, step.stage_ref)
+                for item in step.methods
+            ):
                 issue("STEP_METHOD_GAP", step.stage_ref, "A path has no mandatory method.")
-            if not any(ref in outputs and path_id in paths(outputs[ref].path_ids, ref)
-                       for ref in step.output_refs):
+            if not any(
+                ref in outputs and path_id in paths(outputs[ref].path_ids, ref)
+                for ref in step.output_refs
+            ):
                 issue("STEP_OUTPUT_GAP", step.stage_ref, "A path produces no declared output.")
             if path_id not in paths(step.practice.path_ids, step.practice.id):
                 issue("PRACTICE_PATH_GAP", step.stage_ref, "A path has no practice for this step.")
     for item in unit.assessment:
         question(item)
     for path_id in path_ids:
-        kinds = {item.kind for item in unit.assessment
-                 if path_id in paths(item.path_ids, item.id)}
+        kinds = {item.kind for item in unit.assessment if path_id in paths(item.path_ids, item.id)}
         if not {"explain", "diagnose", "transfer"} <= kinds:
             issue("ASSESSMENT_GAP", path_id, "Explain, diagnose and transfer must all be assessed.")
     return issues
@@ -436,6 +494,11 @@ def unit_manifest(unit: dict[str, Any], artifact: dict[str, Any]) -> dict[str, A
         "unit_sha256": content_hash(unit),
         "artifact_sha256": content_hash(artifact),
         "issues": check_learning_unit(unit, artifact),
-        "not_verified": ["semantic correctness", "live execution", "learner understanding",
-                         "transfer performance", "automatic generation stability"],
+        "not_verified": [
+            "semantic correctness",
+            "live execution",
+            "learner understanding",
+            "transfer performance",
+            "automatic generation stability",
+        ],
     }

@@ -2,7 +2,7 @@ name: P Atlas · Check and deploy
 
 on:
   push:
-    branches: [proposal/cop-capability-map-v0]
+    branches: [main]
     paths:
       - "apps/atlas/**"
       - "catalog/p-atlas-topics.v0.1.json"
@@ -51,7 +51,8 @@ jobs:
         run: pnpm --filter @cop-studio/atlas build
         env:
           ATLAS_BASE: /${{ github.event.repository.name }}/
-      - run: pnpm --filter @cop-studio/atlas exec playwright install --with-deps chromium
+      - name: Verify system Chrome for browser acceptance
+        run: google-chrome --version
       - name: Desktop and mobile reading acceptance
         run: pnpm --filter @cop-studio/atlas test:e2e
       - uses: actions/upload-artifact@v4
@@ -61,12 +62,12 @@ jobs:
           path: apps/atlas/test-results/
           retention-days: 7
       - uses: actions/upload-pages-artifact@v4
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/proposal/cop-capability-map-v0'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         with:
           path: apps/atlas/dist
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/proposal/cop-capability-map-v0'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: check-build
     runs-on: ubuntu-latest
     permissions:

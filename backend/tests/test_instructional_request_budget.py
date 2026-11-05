@@ -13,7 +13,9 @@ def test_canonicalization_sends_each_projected_stage_once():
 def test_source_context_is_not_repeated_in_pretty_and_machine_payloads():
     context = {"source_material": [{"id": "source", "excerpt": "unique_source_marker"}]}
     _, user = build_stage_prompt(
-        process={"key": "p", "stages": []}, stages=[], language="en",
+        process={"key": "p", "stages": []},
+        stages=[],
+        language="en",
         teaching_context=context,
     )
     assert decode_payload(user)["teaching_context"] == context

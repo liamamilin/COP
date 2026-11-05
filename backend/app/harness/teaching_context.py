@@ -77,16 +77,17 @@ def teaching_context(ctx: HarnessContext, process: dict[str, Any]) -> dict[str, 
     excerpts = []
     for source in ctx.source_bundle[:4]:
         text = str(source.get("excerpt") or "")
-        excerpts.append({
-            "id": source.get("id"),
-            "title": source.get("title"),
-            "excerpt": text[:1800],
-            "excerpt_truncated": len(text) > 1800,
-        })
+        excerpts.append(
+            {
+                "id": source.get("id"),
+                "title": source.get("title"),
+                "excerpt": text[:1800],
+                "excerpt_truncated": len(text) > 1800,
+            }
+        )
     return {
         "scope": ctx.scope_result or {},
-        "learner_level": ctx.settings.get("learner_level")
-        or ctx.input.get("learner_level", "new"),
+        "learner_level": ctx.settings.get("learner_level") or ctx.input.get("learner_level", "new"),
         "goal": goal,
         "teaching_plan": process.get("teaching_plan"),
         "teaching_plan_status": teaching_plan_status(process.get("teaching_plan")),

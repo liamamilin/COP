@@ -81,7 +81,8 @@ def test_merging_batches_rewrites_every_reference_to_its_global_key():
                     "b": {"concept_keys": ["concept"], "operation_keys": ["op"]},
                 },
             },
-        ], warnings=notices,
+        ],
+        warnings=notices,
     )
 
     assert [item["name"] for item in merged["concepts"]] == ["Noise", "Feedback"]
@@ -104,7 +105,8 @@ def test_merging_deduplicates_the_same_entity_across_batches():
                 "operations": [],
                 "stage_bindings": {},
             },
-        ], warnings=notices,
+        ],
+        warnings=notices,
     )
 
     assert len(merged["concepts"]) == 1
@@ -128,11 +130,11 @@ class RecordingServices:
 def canonical_context(stage_count: int) -> HarnessContext:
     stages = [stage(index) for index in range(stage_count)]
     return HarnessContext(
-        run_id="r", project_id="p", settings={"language": "en"},
+        run_id="r",
+        project_id="p",
+        settings={"language": "en"},
         process_drafts=[{"key": "p", "stages": stages}],
-        stage_drafts=[
-            {**item, "why_it_exists": "", "process_key": "p"} for item in stages
-        ],
+        stage_drafts=[{**item, "why_it_exists": "", "process_key": "p"} for item in stages],
     )
 
 
@@ -142,11 +144,14 @@ async def test_canonicalization_splits_a_large_run_into_bounded_calls():
     context = canonical_context(count)
     payloads = [
         {
-            "concepts": [{"key": f"c{index}", "name": f"Concept {index}",
-                          "definition": "d", "role": "r"}
-                         for index in indices],
-            "operations": [{"key": f"o{index}", "name": f"Operation {index}", "definition": "d"}
-                           for index in indices],
+            "concepts": [
+                {"key": f"c{index}", "name": f"Concept {index}", "definition": "d", "role": "r"}
+                for index in indices
+            ],
+            "operations": [
+                {"key": f"o{index}", "name": f"Operation {index}", "definition": "d"}
+                for index in indices
+            ],
             "stage_bindings": {
                 f"s{index}": {"concept_keys": [f"c{index}"], "operation_keys": [f"o{index}"]}
                 for index in indices
@@ -199,22 +204,34 @@ async def test_stage_enrichment_caps_concurrency_without_dropping_stages():
             await asyncio.sleep(0.01)
             running -= 1
             stages = decode_payload(request["user_prompt"])["stages"]
-            return {"stages": [
-                {
-                    "key": item["key"], "local_goal": "g", "local_outcome": "o",
-                    "example_candidate": {"summary": "s"},
-                    "implementation_detail_candidates": [{"title": "t", "action": "a"}],
-                }
-                for item in stages
-            ]}
+            return {
+                "stages": [
+                    {
+                        "key": item["key"],
+                        "local_goal": "g",
+                        "local_outcome": "o",
+                        "example_candidate": {"summary": "s"},
+                        "implementation_detail_candidates": [{"title": "t", "action": "a"}],
+                    }
+                    for item in stages
+                ]
+            }
 
     processes = [
-        {"key": f"p{index}", "goal_key": "g", "title": "P", "outcome": "O",
-         "stages": [{**stage(index), "local_outcome": "x"}]}
+        {
+            "key": f"p{index}",
+            "goal_key": "g",
+            "title": "P",
+            "outcome": "O",
+            "stages": [{**stage(index), "local_outcome": "x"}],
+        }
         for index in range(6)
     ]
     context = HarnessContext(
-        run_id="r", project_id="p", settings={"language": "en"}, process_drafts=processes,
+        run_id="r",
+        project_id="p",
+        settings={"language": "en"},
+        process_drafts=processes,
     )
     result = await StageEnrichmentStep().execute(context, Services([]))
 
@@ -223,8 +240,14 @@ async def test_stage_enrichment_caps_concurrency_without_dropping_stages():
 
 
 def test_projection_still_drops_code_bodies_before_batching():
-    projected = canonicalization_input([{
-        **stage(0),
-        "implementation_details": [{"title": "Write", "action": "a", "command": "x" * 5000}],
-    }])[0]
+    projected = canonicalization_input(
+        [
+            {
+                **stage(0),
+                "implementation_details": [
+                    {"title": "Write", "action": "a", "command": "x" * 5000}
+                ],
+            }
+        ]
+    )[0]
     assert "command" not in str(projected)

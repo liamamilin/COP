@@ -65,7 +65,7 @@ test("the frozen V1 loop reaches a portable Markdown export", async ({ page }) =
     await post(`/drafts/${draft.id}/publish`, { change_summary: "Frozen V1 acceptance" });
 
     await page.goto(`/projects/${project.id}`);
-    await page.getByRole("link", { name: /Learn/ }).click();
+    await page.getByRole("navigation", { name: "Project navigation" }).getByRole("link", { name: /Learn/ }).click();
     await expect(page).toHaveURL(`/projects/${project.id}/learn`);
     await waitForHydration(page, ".learn-view");
     const firstStage = page.locator(".learn-stage").first();
@@ -107,11 +107,11 @@ test("appearance settings apply and the mock connection button is live", async (
     });
 
     await page.goto("/settings");
-    await waitForHydration(page, ".settings-form");
+    await waitForHydration(page, 'form[aria-label="Application settings"]');
     await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
     await expect(page.locator("html")).toHaveAttribute("data-density", "compact");
 
-    await page.getByRole("button", { name: /Test saved connection/i }).click();
+    await page.getByRole("button", { name: "Test connection", exact: true }).click();
     await expect(page.getByRole("status")).toContainText("connection succeeded");
 
     await page.locator('select[name="theme"]').selectOption("light");

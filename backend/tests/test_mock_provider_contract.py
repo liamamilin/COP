@@ -182,10 +182,15 @@ def test_the_payload_block_is_still_machine_readable() -> None:
 async def test_mock_process_plan_obeys_the_same_schema_as_live_generation():
     system, user = build_process_prompt(
         goal={"key": "g", "title": "Observe", "outcome": "A checked result"},
-        scope={"domain": "A synthetic task"}, brief={}, siblings=[], language="en",
+        scope={"domain": "A synthetic task"},
+        brief={},
+        siblings=[],
+        language="en",
     )
     result = await MockProvider().generate_structured(
-        system_prompt=system, user_prompt=user, schema=PROCESSES_SCHEMA,
+        system_prompt=system,
+        user_prompt=user,
+        schema=PROCESSES_SCHEMA,
     )
     Draft202012Validator(PROCESSES_SCHEMA).validate(result)
     assert [entry["stage_key"] for entry in result["teaching_plan"]["stages"]] == [

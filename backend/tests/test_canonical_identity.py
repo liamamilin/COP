@@ -19,35 +19,49 @@ from app.harness.steps.h60_canonicalize import (
 
 
 def concept(key: str, name: str, **fields: Any) -> dict[str, Any]:
-    return {"key": key, "name": name, "definition": f"Definition of {name}",
-            "role": "r", **fields}
+    return {"key": key, "name": name, "definition": f"Definition of {name}", "role": "r", **fields}
 
 
 def operation(key: str, name: str, **fields: Any) -> dict[str, Any]:
-    return {"key": key, "name": name, "definition": f"Definition of {name}",
-            "purpose": "p", **fields}
+    return {
+        "key": key,
+        "name": name,
+        "definition": f"Definition of {name}",
+        "purpose": "p",
+        **fields,
+    }
 
 
 def payload(
-    concepts: list[dict[str, Any]], operations: list[dict[str, Any]],
+    concepts: list[dict[str, Any]],
+    operations: list[dict[str, Any]],
     stage_key: str | None = None,
 ) -> dict[str, Any]:
     return {
-        "concepts": concepts, "operations": operations,
+        "concepts": concepts,
+        "operations": operations,
         "stage_bindings": {
-            stage_key: {"concept_keys": [item["key"] for item in concepts],
-                        "operation_keys": [item["key"] for item in operations]}
-        } if stage_key is not None else {},
+            stage_key: {
+                "concept_keys": [item["key"] for item in concepts],
+                "operation_keys": [item["key"] for item in operations],
+            }
+        }
+        if stage_key is not None
+        else {},
     }
 
 
 def test_multiple_concept_and_operation_maps_survive_two_colliding_batches():
     batches = [
         payload(
-            [concept("a", first, related_concept_keys=["b"], key_operation_keys=["x", "y"]),
-             concept("b", second, related_concept_keys=["a"], key_operation_keys=["y"])],
-            [operation("x", do_first, acts_on_concept_keys=["a", "b"]),
-             operation("y", do_second, acts_on_concept_keys=["b"])],
+            [
+                concept("a", first, related_concept_keys=["b"], key_operation_keys=["x", "y"]),
+                concept("b", second, related_concept_keys=["a"], key_operation_keys=["y"]),
+            ],
+            [
+                operation("x", do_first, acts_on_concept_keys=["a", "b"]),
+                operation("y", do_second, acts_on_concept_keys=["b"]),
+            ],
             stage_key,
         )
         for first, second, do_first, do_second, stage_key in (
@@ -57,8 +71,8 @@ def test_multiple_concept_and_operation_maps_survive_two_colliding_batches():
     ]
     merged = merge_canonicalization_payloads(batches, warnings=[])
     for offset, stage_key in ((0, "s1"), (2, "s2")):
-        first, second = merged["concepts"][offset:offset + 2]
-        op1, op2 = merged["operations"][offset:offset + 2]
+        first, second = merged["concepts"][offset : offset + 2]
+        op1, op2 = merged["operations"][offset : offset + 2]
         assert first["related_concept_keys"] == [second["key"]]
         assert second["related_concept_keys"] == [first["key"]]
         assert first["key_operation_keys"] == [op1["key"], op2["key"]]
@@ -75,13 +89,25 @@ def test_same_names_with_different_keys_preserve_all_entities_and_references():
     batches = [
         payload(
             [concept("vm", "Runtime", definition="Host virtual machine")],
-            [operation("vm_run", "Run", acts_on_concept_keys=["vm"])], "s1",
+            [operation("vm_run", "Run", acts_on_concept_keys=["vm"])],
+            "s1",
         ),
         payload(
-            [concept("loop", "Runtime", definition="Execution loop",
-                     related_concept_keys=["vm"], key_operation_keys=["loop_run"])],
-            [operation("loop_run", "Run", definition="Start loop",
-                       acts_on_concept_keys=["loop", "vm"])], "s2",
+            [
+                concept(
+                    "loop",
+                    "Runtime",
+                    definition="Execution loop",
+                    related_concept_keys=["vm"],
+                    key_operation_keys=["loop_run"],
+                )
+            ],
+            [
+                operation(
+                    "loop_run", "Run", definition="Start loop", acts_on_concept_keys=["loop", "vm"]
+                )
+            ],
+            "s2",
         ),
     ]
     before = deepcopy(batches)
@@ -103,10 +129,19 @@ def test_reused_identity_accumulates_relations_from_every_batch():
     batches = [
         payload([shared], [op], "s1"),
         payload(
-            [{**shared, "related_concept_keys": ["memory"], "key_operation_keys": ["run", "free"]},
-             concept("memory", "Memory", key_operation_keys=["free"])],
-            [{**op, "acts_on_concept_keys": ["runtime", "memory"]},
-             operation("free", "Free", acts_on_concept_keys=["memory"])], "s2",
+            [
+                {
+                    **shared,
+                    "related_concept_keys": ["memory"],
+                    "key_operation_keys": ["run", "free"],
+                },
+                concept("memory", "Memory", key_operation_keys=["free"]),
+            ],
+            [
+                {**op, "acts_on_concept_keys": ["runtime", "memory"]},
+                operation("free", "Free", acts_on_concept_keys=["memory"]),
+            ],
+            "s2",
         ),
     ]
     merged = merge_canonicalization_payloads(batches, warnings=[])
@@ -119,13 +154,17 @@ def test_reused_identity_accumulates_relations_from_every_batch():
 
 def test_matching_names_and_definitions_are_not_enough_without_reused_keys():
     notices: list[str] = []
-    merged = merge_canonicalization_payloads([
-        payload([concept("first", "Runtime")], [operation("first_op", "Run")], "s1"),
-        payload([concept("second", "Runtime")], [operation("second_op", "Run")], "s2"),
-    ], warnings=notices)
+    merged = merge_canonicalization_payloads(
+        [
+            payload([concept("first", "Runtime")], [operation("first_op", "Run")], "s1"),
+            payload([concept("second", "Runtime")], [operation("second_op", "Run")], "s2"),
+        ],
+        warnings=notices,
+    )
     assert len(merged["concepts"]) == len(merged["operations"]) == 2
     assert merged["stage_bindings"]["s2"] == {
-        "concept_keys": ["second"], "operation_keys": ["second_op"],
+        "concept_keys": ["second"],
+        "operation_keys": ["second_op"],
     }
     assert any("matching name alone" in notice for notice in notices)
 
@@ -158,21 +197,28 @@ def test_same_key_and_name_with_conflicting_definitions_stay_separate(kind: str)
 def test_prefix_and_substring_names_never_trigger_semantic_merges():
     batches = [
         payload([concept("agent", "Agent")], [operation("run", "Run")], "s1"),
-        payload([concept("executor", "Agent Executor")],
-                [operation("run_agent", "Run Agent")], "s2"),
+        payload(
+            [concept("executor", "Agent Executor")], [operation("run_agent", "Run Agent")], "s2"
+        ),
     ]
     merged = merge_canonicalization_payloads(batches, warnings=[])
     assert len(merged["concepts"]) == len(merged["operations"]) == 2
     assert merged["stage_bindings"]["s2"] == {
-        "concept_keys": ["executor"], "operation_keys": ["run_agent"],
+        "concept_keys": ["executor"],
+        "operation_keys": ["run_agent"],
     }
 
 
-@pytest.mark.parametrize("owner,field", [
-    ("concepts", "related_concept_keys"), ("concepts", "key_operation_keys"),
-    ("operations", "acts_on_concept_keys"), ("stage_bindings", "concept_keys"),
-    ("stage_bindings", "operation_keys"),
-])
+@pytest.mark.parametrize(
+    "owner,field",
+    [
+        ("concepts", "related_concept_keys"),
+        ("concepts", "key_operation_keys"),
+        ("operations", "acts_on_concept_keys"),
+        ("stage_bindings", "concept_keys"),
+        ("stage_bindings", "operation_keys"),
+    ],
+)
 def test_unresolved_refs_fail_instead_of_being_silently_lost(owner: str, field: str):
     answer = payload([concept("c", "Concept")], [operation("o", "Operation")], "s1")
     target = answer[owner]["s1"] if owner == "stage_bindings" else answer[owner][0]
@@ -191,7 +237,8 @@ def test_duplicate_display_names_must_be_referenced_by_key():
         merge_canonicalization_payloads([answer], warnings=[])
     answer["stage_bindings"]["s"]["concept_keys"] = ["a", "b"]
     assert merge_canonicalization_payloads([answer], warnings=[])["stage_bindings"]["s"] == {
-        "concept_keys": ["a", "b"], "operation_keys": [],
+        "concept_keys": ["a", "b"],
+        "operation_keys": [],
     }
 
 
@@ -219,13 +266,21 @@ class RecordingServices:
 
 def context(count: int) -> HarnessContext:
     return HarnessContext(
-        run_id="r", project_id="p", settings={"language": "en"},
-        stage_drafts=[{
-            "key": f"s{index}", "title": f"Stage {index}", "local_goal": "g",
-            "local_outcome": "o", "concept_candidates": [f"Concept {index}"],
-            "operation_candidates": [f"Operation {index}"],
-            "implementation_details": [{"title": "Teaching", "action": "full body " * 200}],
-        } for index in range(count)],
+        run_id="r",
+        project_id="p",
+        settings={"language": "en"},
+        stage_drafts=[
+            {
+                "key": f"s{index}",
+                "title": f"Stage {index}",
+                "local_goal": "g",
+                "local_outcome": "o",
+                "concept_candidates": [f"Concept {index}"],
+                "operation_candidates": [f"Operation {index}"],
+                "implementation_details": [{"title": "Teaching", "action": "full body " * 200}],
+            }
+            for index in range(count)
+        ],
     )
 
 
@@ -253,14 +308,18 @@ async def test_next_batch_sees_registry_and_whole_run_names_without_extra_calls(
     assert len(result.checkpoint_patch["concepts"]) == 1
     assert len(result.checkpoint_patch["operations"]) == 1
     assert f'"Concept {CANONICALIZE_BATCH_SIZE}"' in services.calls[0]["user_prompt"]
-    assert '"key":"runtime","name":"Runtime","definition":"Definition of Runtime"' in (
-        services.calls[1]["user_prompt"]
+    assert (
+        '"key":"runtime","name":"Runtime","definition":"Definition of Runtime"'
+        in (services.calls[1]["user_prompt"])
     )
-    assert '"key":"run","name":"Run","definition":"Definition of Run"' in (
-        services.calls[1]["user_prompt"]
+    assert (
+        '"key":"run","name":"Run","definition":"Definition of Run"'
+        in (services.calls[1]["user_prompt"])
     )
-    assert all(len(decode_payload(call["user_prompt"])["stages"]) <= CANONICALIZE_BATCH_SIZE
-               for call in services.calls)
+    assert all(
+        len(decode_payload(call["user_prompt"])["stages"]) <= CANONICALIZE_BATCH_SIZE
+        for call in services.calls
+    )
     assert ctx.stage_drafts == before, "the registry projection must not truncate teaching bodies"
 
 
@@ -268,9 +327,11 @@ async def test_next_batch_sees_registry_and_whole_run_names_without_extra_calls(
 async def test_same_name_entities_are_not_merged_by_the_final_h60_pass():
     ctx = context(CANONICALIZE_BATCH_SIZE + 1)
     first = answer_for([f"s{i}" for i in range(CANONICALIZE_BATCH_SIZE)])
-    second = payload([concept("vm", "Runtime", definition="Virtual machine")],
-                     [operation("vm_run", "Run", definition="Start VM")],
-                     f"s{CANONICALIZE_BATCH_SIZE}")
+    second = payload(
+        [concept("vm", "Runtime", definition="Virtual machine")],
+        [operation("vm_run", "Run", definition="Start VM")],
+        f"s{CANONICALIZE_BATCH_SIZE}",
+    )
     result = await CanonicalizeStep().execute(ctx, RecordingServices([first, second]))
     assert [item["key"] for item in result.checkpoint_patch["concepts"]] == ["runtime", "vm"]
     assert [item["key"] for item in result.checkpoint_patch["operations"]] == ["run", "vm_run"]
@@ -293,7 +354,8 @@ async def test_invalid_stage_binding_fails_without_unrelated_first_entity(fault:
     with pytest.raises(HarnessError) as error:
         await CanonicalizeStep().execute(ctx, services)
     assert error.value.code in {
-        "HARNESS_INVALID_STAGE_BINDING", "HARNESS_INVALID_CANONICAL_REFERENCE",
+        "HARNESS_INVALID_STAGE_BINDING",
+        "HARNESS_INVALID_CANONICAL_REFERENCE",
     }
     assert "s0" in error.value.message
     assert len(services.calls) == 1
@@ -351,8 +413,9 @@ async def test_registry_has_short_definitions_without_truncating_final_content()
     second["operations"] = []
     services = RecordingServices([first, second])
     result = await CanonicalizeStep().execute(ctx, services)
-    assert '"definition":"' + "x" * REGISTRY_DEFINITION_LENGTH + '"' in (
-        services.calls[1]["user_prompt"]
+    assert (
+        '"definition":"' + "x" * REGISTRY_DEFINITION_LENGTH + '"'
+        in (services.calls[1]["user_prompt"])
     )
     assert definition not in services.calls[1]["user_prompt"]
     assert result.checkpoint_patch["concepts"][0]["definition"] == definition

@@ -8,6 +8,7 @@ on:
       - ".github/workflows/p-discovery-quality.yml"
   push:
     branches:
+      - main
       - "proposal/**"
     paths:
       - ".agents/skills/p-discovery/**"

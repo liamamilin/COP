@@ -17,7 +17,8 @@ def load(path):
 
 def generator():
     spec = importlib.util.spec_from_file_location(
-        "generate_types", ROOT / "scripts/generate-types.py",
+        "generate_types",
+        ROOT / "scripts/generate-types.py",
     )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

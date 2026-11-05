@@ -199,18 +199,40 @@ CONCEPT_MIN_DEFINITION_CHARS = 20
 #: these plus the Concept's name is a label, not an explanation.
 _LABEL_FILLER = frozenset(
     {
-        "a", "an", "the", "is", "are", "it", "this", "that", "of", "for", "to",
-        "concept", "thing", "object", "term", "idea", "stuff", "something",
-        "的", "是", "一个", "一种", "东西", "概念", "术语", "这个", "那个",
+        "a",
+        "an",
+        "the",
+        "is",
+        "are",
+        "it",
+        "this",
+        "that",
+        "of",
+        "for",
+        "to",
+        "concept",
+        "thing",
+        "object",
+        "term",
+        "idea",
+        "stuff",
+        "something",
+        "的",
+        "是",
+        "一个",
+        "一种",
+        "东西",
+        "概念",
+        "术语",
+        "这个",
+        "那个",
     }
 )
 
 
 def _meaningful(text: str) -> str:
     """Lowercase alphanumerics/CJK only, so punctuation cannot pad a definition."""
-    return "".join(
-        char for char in text.lower() if char.isalnum() or "\u4e00" <= char <= "\u9fff"
-    )
+    return "".join(char for char in text.lower() if char.isalnum() or "\u4e00" <= char <= "\u9fff")
 
 
 def _is_circular(definition: str, name: str) -> bool:

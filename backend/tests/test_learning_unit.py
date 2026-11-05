@@ -16,47 +16,109 @@ def artifact():
     return {
         "schema_version": "0.1",
         "artifact_id": "artifact.offer",
-        "domain": {"name": "Offers", "scope": "Compare two offers", "target_user": "A beginner",
-                   "non_goals": []},
+        "domain": {
+            "name": "Offers",
+            "scope": "Compare two offers",
+            "target_user": "A beginner",
+            "non_goals": [],
+        },
         "mental_model": {"summary": "Compare total cost.", "flow": ["Compute", "Compare"]},
-        "goals": [{"id": "goal.offer", "title": "Compare offers", "outcome": "A choice",
-                   "why_it_matters": "", "prerequisite_goal_refs": [], "evidence_refs": []}],
+        "goals": [
+            {
+                "id": "goal.offer",
+                "title": "Compare offers",
+                "outcome": "A choice",
+                "why_it_matters": "",
+                "prerequisite_goal_refs": [],
+                "evidence_refs": [],
+            }
+        ],
         "shared_foundations": [],
-        "main_processes": [{"id": "process.offer", "goal_ref": "goal.offer",
-                            "title": "Compare", "start": {"type": "zero", "ref": None},
-                            "stage_refs": ["stage.compare"], "outcome": "A reasoned choice",
-                            "practice_ref": "practice.offer"}],
-        "stages": [{
-            "id": "stage.compare", "title": "Compare total cost", "local_goal": "Choose",
-            "why_it_exists": "Unit price alone hides fees.", "local_outcome": "A choice",
-            "concept_refs": ["concept.total"], "operation_refs": ["operation.compare"],
-            "branch_refs": [], "evidence_refs": [],
-            "implementation_details": [
-                {"title": "Add the fee", "action": "Add each fixed fee to its subtotal.",
-                 "command": "", "expected_result": "Two totals", "caution": "Use one currency."},
-            ],
-            "example": {"summary": "Two offers", "input": "A: 10+2, B: 11+0",
-                        "output": "B", "note": "Illustration"},
-        }],
-        "concepts": [{"id": "concept.total", "name": "Total cost",
-                      "definition": "Price plus fees.", "role": "Basis for comparison",
-                      "related_concept_refs": [], "key_operation_refs": ["operation.compare"]}],
-        "operations": [{"id": "operation.compare", "name": "Compare totals",
-                        "definition": "Add and compare.", "purpose": "",
-                        "acts_on_concept_refs": ["concept.total"], "common_failures": []}],
+        "main_processes": [
+            {
+                "id": "process.offer",
+                "goal_ref": "goal.offer",
+                "title": "Compare",
+                "start": {"type": "zero", "ref": None},
+                "stage_refs": ["stage.compare"],
+                "outcome": "A reasoned choice",
+                "practice_ref": "practice.offer",
+            }
+        ],
+        "stages": [
+            {
+                "id": "stage.compare",
+                "title": "Compare total cost",
+                "local_goal": "Choose",
+                "why_it_exists": "Unit price alone hides fees.",
+                "local_outcome": "A choice",
+                "concept_refs": ["concept.total"],
+                "operation_refs": ["operation.compare"],
+                "branch_refs": [],
+                "evidence_refs": [],
+                "implementation_details": [
+                    {
+                        "title": "Add the fee",
+                        "action": "Add each fixed fee to its subtotal.",
+                        "command": "",
+                        "expected_result": "Two totals",
+                        "caution": "Use one currency.",
+                    },
+                ],
+                "example": {
+                    "summary": "Two offers",
+                    "input": "A: 10+2, B: 11+0",
+                    "output": "B",
+                    "note": "Illustration",
+                },
+            }
+        ],
+        "concepts": [
+            {
+                "id": "concept.total",
+                "name": "Total cost",
+                "definition": "Price plus fees.",
+                "role": "Basis for comparison",
+                "related_concept_refs": [],
+                "key_operation_refs": ["operation.compare"],
+            }
+        ],
+        "operations": [
+            {
+                "id": "operation.compare",
+                "name": "Compare totals",
+                "definition": "Add and compare.",
+                "purpose": "",
+                "acts_on_concept_refs": ["concept.total"],
+                "common_failures": [],
+            }
+        ],
         "branches": [],
-        "practices": [{"id": "practice.offer", "title": "Practice", "goal_ref": "goal.offer",
-                       "instructions": ["Compare"], "expected_outcome": "A choice",
-                       "checkpoint_questions": []}],
+        "practices": [
+            {
+                "id": "practice.offer",
+                "title": "Practice",
+                "goal_ref": "goal.offer",
+                "instructions": ["Compare"],
+                "expected_outcome": "A choice",
+                "checkpoint_questions": [],
+            }
+        ],
         "expansion_map": [],
         "metadata": {"language": "en", "generated_at": "", "generator": "", "source_ids": []},
     }
 
 
 def question(identifier, kind, stages=None):
-    return {"id": identifier, "kind": kind, "prompt": f"{kind} prompt", "hints": ["hint"],
-            "criteria": ["criterion"], "stage_refs": stages or ["stage.compare"],
-            "path_ids": []}
+    return {
+        "id": identifier,
+        "kind": kind,
+        "prompt": f"{kind} prompt",
+        "hints": ["hint"],
+        "criteria": ["criterion"],
+        "stage_refs": stages or ["stage.compare"],
+        "path_ids": [],
+    }
 
 
 def lesson(source):
@@ -66,47 +128,124 @@ def lesson(source):
         "title": "Compare two offers",
         "outcome": "Choose and explain",
         "task_brief": "Compute both totals, then choose.",
-        "binding": {"artifact_sha256": content_hash(source), "goal_ref": "goal.offer",
-                    "process_ref": "process.offer"},
-        "profile": {
-            "audience": "A beginner", "prior_knowledge": ["Addition"],
-            "environment": ["Paper"], "exclusions": ["No credit"],
-            "resources": [{"id": "entry.numbers", "name": "Two offers",
-                           "provenance": "Your own quotes", "readiness_check": "Read both",
-                           "path_ids": []}],
+        "binding": {
+            "artifact_sha256": content_hash(source),
+            "goal_ref": "goal.offer",
+            "process_ref": "process.offer",
         },
-        "paths": [{"id": "main", "label": "Main", "description": "The whole task",
-                   "goal_scope": "full", "needs_network": False, "may_cost": False}],
-        "outputs": [{"id": "out.choice", "name": "Choice", "description": "A reasoned choice",
-                     "producer_stage_ref": "stage.compare", "kind": "value",
-                     "persistence": "durable", "format": "text", "content_ref": None,
-                     "path_ids": []}],
-        "steps": [{
-            "stage_ref": "stage.compare", "purpose": "Choose the lower total",
-            "inputs": [{"kind": "entry", "ref": "entry.numbers", "why_needed": "Inputs",
-                        "readiness_check": "Both readable", "path_ids": []}],
-            "concepts": [{"concept_ref": "concept.total", "plain_language": "Price plus fee",
-                          "concrete_example": "10 + 2", "contrast": "Not list price",
-                          "why_here": "Totals decide"}],
-            "causal_chain": [{"concept_ref": "concept.total",
-                              "operation_ref": "operation.compare", "before": "Two prices",
-                              "action": "Add fees", "because": "Fees change rank",
-                              "after": "A lower total"}],
-            "methods": [{"detail_index": 0, "teaching_note": "Add once",
-                         "optional": False, "path_ids": []}],
-            "output_refs": ["out.choice"],
-            "worked_case": {"kind": "illustration", "input_refs": ["entry.numbers"],
-                            "output_refs": ["out.choice"],
-                            "walkthrough": ["10+2=12", "11+0=11"], "observation": "B is lower"},
-            "checks": [{"output_ref": "out.choice", "instruction": "Re-add",
-                        "expected": "B", "why": "Fees matter", "limitation": "One example",
-                        "on_failure": "Recheck arithmetic", "path_ids": []}],
-            "practice": question("q.practice", "predict"),
-        }],
-        "assessment": [question("q.explain", "explain"), question("q.diagnose", "diagnose"),
-                       question("q.transfer", "transfer")],
-        "sources": [{"id": "src", "title": "Quotes", "url": "https://example.com",
-                     "scope": "Illustration only"}],
+        "profile": {
+            "audience": "A beginner",
+            "prior_knowledge": ["Addition"],
+            "environment": ["Paper"],
+            "exclusions": ["No credit"],
+            "resources": [
+                {
+                    "id": "entry.numbers",
+                    "name": "Two offers",
+                    "provenance": "Your own quotes",
+                    "readiness_check": "Read both",
+                    "path_ids": [],
+                }
+            ],
+        },
+        "paths": [
+            {
+                "id": "main",
+                "label": "Main",
+                "description": "The whole task",
+                "goal_scope": "full",
+                "needs_network": False,
+                "may_cost": False,
+            }
+        ],
+        "outputs": [
+            {
+                "id": "out.choice",
+                "name": "Choice",
+                "description": "A reasoned choice",
+                "producer_stage_ref": "stage.compare",
+                "kind": "value",
+                "persistence": "durable",
+                "format": "text",
+                "content_ref": None,
+                "path_ids": [],
+            }
+        ],
+        "steps": [
+            {
+                "stage_ref": "stage.compare",
+                "purpose": "Choose the lower total",
+                "inputs": [
+                    {
+                        "kind": "entry",
+                        "ref": "entry.numbers",
+                        "why_needed": "Inputs",
+                        "readiness_check": "Both readable",
+                        "path_ids": [],
+                    }
+                ],
+                "concepts": [
+                    {
+                        "concept_ref": "concept.total",
+                        "plain_language": "Price plus fee",
+                        "concrete_example": "10 + 2",
+                        "contrast": "Not list price",
+                        "why_here": "Totals decide",
+                    }
+                ],
+                "causal_chain": [
+                    {
+                        "concept_ref": "concept.total",
+                        "operation_ref": "operation.compare",
+                        "before": "Two prices",
+                        "action": "Add fees",
+                        "because": "Fees change rank",
+                        "after": "A lower total",
+                    }
+                ],
+                "methods": [
+                    {
+                        "detail_index": 0,
+                        "teaching_note": "Add once",
+                        "optional": False,
+                        "path_ids": [],
+                    }
+                ],
+                "output_refs": ["out.choice"],
+                "worked_case": {
+                    "kind": "illustration",
+                    "input_refs": ["entry.numbers"],
+                    "output_refs": ["out.choice"],
+                    "walkthrough": ["10+2=12", "11+0=11"],
+                    "observation": "B is lower",
+                },
+                "checks": [
+                    {
+                        "output_ref": "out.choice",
+                        "instruction": "Re-add",
+                        "expected": "B",
+                        "why": "Fees matter",
+                        "limitation": "One example",
+                        "on_failure": "Recheck arithmetic",
+                        "path_ids": [],
+                    }
+                ],
+                "practice": question("q.practice", "predict"),
+            }
+        ],
+        "assessment": [
+            question("q.explain", "explain"),
+            question("q.diagnose", "diagnose"),
+            question("q.transfer", "transfer"),
+        ],
+        "sources": [
+            {
+                "id": "src",
+                "title": "Quotes",
+                "url": "https://example.com",
+                "scope": "Illustration only",
+            }
+        ],
         "limitations": ["Only two offers."],
     }
 
@@ -126,8 +265,12 @@ def test_valid_non_code_unit_round_trips_and_manifest_is_honest():
     assert manifest["unit_sha256"] == content_hash(raw)
     assert manifest["artifact_sha256"] == content_hash(source)
     assert manifest["issues"] == []
-    assert set(manifest["not_verified"]) >= {"semantic correctness", "live execution",
-                                             "learner understanding", "transfer performance"}
+    assert set(manifest["not_verified"]) >= {
+        "semantic correctness",
+        "live execution",
+        "learner understanding",
+        "transfer performance",
+    }
 
 
 def test_hash_is_stable_across_key_order_but_not_array_order_or_content():
@@ -171,44 +314,78 @@ def test_unresolved_target_route_order_and_duplicates_are_rejected():
 def test_missing_forward_and_ephemeral_handoffs_are_rejected():
     source = artifact()
     source["main_processes"][0]["stage_refs"] = ["stage.compare", "stage.second"]
-    source["stages"].append({
-        "id": "stage.second", "title": "Second", "local_goal": "Continue",
-        "why_it_exists": "", "local_outcome": "Done", "concept_refs": ["concept.total"],
-        "operation_refs": ["operation.compare"], "branch_refs": [], "evidence_refs": [],
-        "implementation_details": [{"title": "Write", "action": "Use the result"}],
-        "example": None,
-    })
+    source["stages"].append(
+        {
+            "id": "stage.second",
+            "title": "Second",
+            "local_goal": "Continue",
+            "why_it_exists": "",
+            "local_outcome": "Done",
+            "concept_refs": ["concept.total"],
+            "operation_refs": ["operation.compare"],
+            "branch_refs": [],
+            "evidence_refs": [],
+            "implementation_details": [{"title": "Write", "action": "Use the result"}],
+            "example": None,
+        }
+    )
     raw = lesson(source)
     second = copy.deepcopy(raw["steps"][0])
     second["stage_ref"] = "stage.second"
     second["practice"]["id"] = "q.second"
     second["practice"]["stage_refs"] = ["stage.second"]
-    second["inputs"] = [{"kind": "output", "ref": "out.choice", "why_needed": "Next",
-                         "readiness_check": "Exists", "path_ids": []}]
+    second["inputs"] = [
+        {
+            "kind": "output",
+            "ref": "out.choice",
+            "why_needed": "Next",
+            "readiness_check": "Exists",
+            "path_ids": [],
+        }
+    ]
     second["worked_case"]["input_refs"] = ["out.choice"]
     second["output_refs"] = []
     second["worked_case"]["output_refs"] = []
     second["checks"] = []
-    raw["outputs"].append({
-        "id": "out.second", "name": "Second choice", "description": "The next result",
-        "producer_stage_ref": "stage.second", "kind": "value", "persistence": "durable",
-        "format": "text", "content_ref": None, "path_ids": [],
-    })
+    raw["outputs"].append(
+        {
+            "id": "out.second",
+            "name": "Second choice",
+            "description": "The next result",
+            "producer_stage_ref": "stage.second",
+            "kind": "value",
+            "persistence": "durable",
+            "format": "text",
+            "content_ref": None,
+            "path_ids": [],
+        }
+    )
     second["output_refs"] = ["out.second"]
     second["worked_case"]["output_refs"] = ["out.second"]
-    second["checks"] = [{
-        "output_ref": "out.second", "instruction": "Check", "expected": "Done",
-        "why": "Result", "limitation": "Not semantics", "on_failure": "Retry",
-        "path_ids": [],
-    }]
+    second["checks"] = [
+        {
+            "output_ref": "out.second",
+            "instruction": "Check",
+            "expected": "Done",
+            "why": "Result",
+            "limitation": "Not semantics",
+            "on_failure": "Retry",
+            "path_ids": [],
+        }
+    ]
     raw["steps"].append(second)
     assert check_learning_unit(raw, source) == []
 
     forward = copy.deepcopy(raw)
-    forward["steps"][0]["inputs"].append({
-        "kind": "output", "ref": "out.choice", "why_needed": "Uses a later result",
-        "readiness_check": "Exists", "path_ids": [],
-    })
+    forward["steps"][0]["inputs"].append(
+        {
+            "kind": "output",
+            "ref": "out.choice",
+            "why_needed": "Uses a later result",
+            "readiness_check": "Exists",
+            "path_ids": [],
+        }
+    )
     forward["steps"][0]["worked_case"]["input_refs"].append("out.choice")
     assert "FORWARD_INPUT" in codes(forward, source)
 
@@ -225,26 +402,48 @@ def test_missing_forward_and_ephemeral_handoffs_are_rejected():
 def test_files_need_resolvable_parseable_content_without_execution(tmp_path):
     source = artifact()
     stage = source["stages"][0]
-    stage["implementation_details"].append({
-        "title": "Save data", "action": "Save it", "command": "",
-    })
+    stage["implementation_details"].append(
+        {
+            "title": "Save data",
+            "action": "Save it",
+            "command": "",
+        }
+    )
     raw = lesson(source)
-    raw["outputs"].append({
-        "id": "out.file", "name": "data.json", "description": "A file",
-        "producer_stage_ref": "stage.compare", "kind": "file", "persistence": "durable",
-        "format": "json", "content_ref": {"stage_ref": "stage.compare", "detail_index": 1},
-        "path_ids": [],
-    })
+    raw["outputs"].append(
+        {
+            "id": "out.file",
+            "name": "data.json",
+            "description": "A file",
+            "producer_stage_ref": "stage.compare",
+            "kind": "file",
+            "persistence": "durable",
+            "format": "json",
+            "content_ref": {"stage_ref": "stage.compare", "detail_index": 1},
+            "path_ids": [],
+        }
+    )
     raw["steps"][0]["output_refs"].append("out.file")
-    raw["steps"][0]["methods"].append({
-        "detail_index": 1, "teaching_note": "Save", "optional": False, "path_ids": [],
-    })
+    raw["steps"][0]["methods"].append(
+        {
+            "detail_index": 1,
+            "teaching_note": "Save",
+            "optional": False,
+            "path_ids": [],
+        }
+    )
     raw["steps"][0]["worked_case"]["output_refs"].append("out.file")
-    raw["steps"][0]["checks"].append({
-        "output_ref": "out.file", "instruction": "Parse", "expected": "JSON",
-        "why": "Structure", "limitation": "Not semantics", "on_failure": "Rewrite",
-        "path_ids": [],
-    })
+    raw["steps"][0]["checks"].append(
+        {
+            "output_ref": "out.file",
+            "instruction": "Parse",
+            "expected": "JSON",
+            "why": "Structure",
+            "limitation": "Not semantics",
+            "on_failure": "Rewrite",
+            "path_ids": [],
+        }
+    )
     assert "MISSING_FILE_CONTENT" in codes(raw, source)
 
     stage["implementation_details"][1]["command"] = '{"ok": true}'
@@ -270,8 +469,16 @@ def test_files_need_resolvable_parseable_content_without_execution(tmp_path):
 def test_paths_inputs_methods_checks_and_practice_are_covered():
     source = artifact()
     raw = lesson(source)
-    raw["paths"].append({"id": "extra", "label": "Extra", "description": "Another route",
-                         "goal_scope": "partial", "needs_network": False, "may_cost": False})
+    raw["paths"].append(
+        {
+            "id": "extra",
+            "label": "Extra",
+            "description": "Another route",
+            "goal_scope": "partial",
+            "needs_network": False,
+            "may_cost": False,
+        }
+    )
     raw["steps"][0]["inputs"][0]["path_ids"] = ["main"]
     raw["steps"][0]["methods"][0]["path_ids"] = ["main"]
     raw["outputs"][0]["path_ids"] = ["main"]
@@ -296,10 +503,17 @@ def test_paths_inputs_methods_checks_and_practice_are_covered():
     assert "EMPTY_METHOD" in codes(raw, source)
 
     raw = lesson(artifact())
-    raw["steps"][0]["checks"] = [{
-        "output_ref": "out.unknown", "instruction": "Wrong target", "expected": "x",
-        "why": "x", "limitation": "x", "on_failure": "x", "path_ids": [],
-    }]
+    raw["steps"][0]["checks"] = [
+        {
+            "output_ref": "out.unknown",
+            "instruction": "Wrong target",
+            "expected": "x",
+            "why": "x",
+            "limitation": "x",
+            "on_failure": "x",
+            "path_ids": [],
+        }
+    ]
     assert "UNCHECKED_OUTPUT" in codes(raw)
 
 
@@ -328,11 +542,17 @@ def test_concept_operation_and_example_links_are_checked():
 def test_assessment_requires_explain_diagnose_transfer_on_every_path():
     source = artifact()
     raw = lesson(source)
-    raw["assessment"] = [question("a", "predict"), question("b", "explain"),
-                         question("c", "transfer")]
+    raw["assessment"] = [
+        question("a", "predict"),
+        question("b", "explain"),
+        question("c", "transfer"),
+    ]
     assert "ASSESSMENT_GAP" in codes(raw, source)
-    raw["assessment"] = [question("a", "explain"), question("b", "diagnose"),
-                         question("c", "transfer")]
+    raw["assessment"] = [
+        question("a", "explain"),
+        question("b", "diagnose"),
+        question("c", "transfer"),
+    ]
     assert check_learning_unit(raw, source) == []
     raw["assessment"][2]["path_ids"] = []
     raw["assessment"][2]["stage_refs"] = ["stage.missing"]

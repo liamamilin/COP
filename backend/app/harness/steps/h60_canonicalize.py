@@ -52,8 +52,10 @@ def canonicalization_input(stages: list[dict[str, Any]]) -> list[dict[str, Any]]
             # Explain why a Concept is used without replaying code/config files
             # for every Stage in this globally batched call.
             "action_context": [
-                {"title": detail.get("title", ""),
-                 "action_excerpt": str(detail.get("action") or "")[:350]}
+                {
+                    "title": detail.get("title", ""),
+                    "action_excerpt": str(detail.get("action") or "")[:350],
+                }
                 for detail in (stage.get("implementation_details") or [])[:2]
                 if isinstance(detail, dict)
             ],
@@ -94,7 +96,8 @@ def canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
             python_warnings.warn(
                 f"Legacy canonicalize merged Concepts named '{name}' by name alone; "
                 "identity is uncertain. H60 uses strict key/name/definition matching.",
-                RuntimeWarning, stacklevel=2,
+                RuntimeWarning,
+                stacklevel=2,
             )
             existing = concepts[concept_index[dedupe_key]]
             if not existing["definition"] and raw.get("definition"):
@@ -125,7 +128,8 @@ def canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
             python_warnings.warn(
                 f"Legacy canonicalize merged Operations named '{name}' by name alone; "
                 "identity is uncertain. H60 uses strict key/name/definition matching.",
-                RuntimeWarning, stacklevel=2,
+                RuntimeWarning,
+                stacklevel=2,
             )
             continue
         operation_index[dedupe_key] = len(operations)
@@ -163,7 +167,9 @@ def canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
             elif not key:
                 python_warnings.warn(
                     f"Unresolved legacy canonical reference '{ref}' was dropped; "
-                    "H60 rejects unresolved references.", RuntimeWarning, stacklevel=2,
+                    "H60 rejects unresolved references.",
+                    RuntimeWarning,
+                    stacklevel=2,
                 )
         operation["acts_on_concept_keys"] = resolved
 
@@ -178,7 +184,9 @@ def canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
             elif not key:
                 python_warnings.warn(
                     f"Unresolved legacy canonical reference '{text}' was dropped; "
-                    "H60 rejects unresolved references.", RuntimeWarning, stacklevel=2,
+                    "H60 rejects unresolved references.",
+                    RuntimeWarning,
+                    stacklevel=2,
                 )
         return resolved
 
@@ -197,7 +205,9 @@ def canonicalize(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def merge_canonicalization_payloads(
-    payloads: list[dict[str, Any]], *, warnings: list[str] | None = None,
+    payloads: list[dict[str, Any]],
+    *,
+    warnings: list[str] | None = None,
 ) -> dict[str, Any]:
     """Resolve all batch-local aliases without guessing semantic equivalence."""
     return merge_payloads(payloads, warnings=warnings)
@@ -235,8 +245,11 @@ def _candidate_names(stages: list[dict[str, Any]]) -> dict[str, list[str]]:
 def _registry(result: dict[str, Any]) -> dict[str, list[dict[str, str]]]:
     return {
         kind: [
-            {"key": row["key"], "name": row["name"],
-             "definition": row["definition"][:REGISTRY_DEFINITION_LENGTH]}
+            {
+                "key": row["key"],
+                "name": row["name"],
+                "definition": row["definition"][:REGISTRY_DEFINITION_LENGTH],
+            }
             for row in result[kind]
         ]
         for kind in ("concepts", "operations")
@@ -249,9 +262,7 @@ class CanonicalizeStep:
     async def execute(self, ctx: HarnessContext, services: Any) -> StepResult:
         stage_drafts = ctx.require("stage_drafts")
         language = ctx.settings.get("language", "auto")
-        learner_level = (
-            ctx.settings.get("learner_level") or ctx.input.get("learner_level", "new")
-        )
+        learner_level = ctx.settings.get("learner_level") or ctx.input.get("learner_level", "new")
         projected = canonicalization_input(stage_drafts)
         batches = chunked(projected, CANONICALIZE_BATCH_SIZE)
         if len(batches) > MAX_CANONICALIZE_BATCHES:
@@ -270,11 +281,11 @@ class CanonicalizeStep:
 
         async def canonicalize_batch(batch: list[dict[str, Any]]) -> dict[str, Any]:
             if services.is_cancelled():
-                raise HarnessError(
-                    "GENERATION_CANCELLED", "Run cancelled before canonicalization"
-                )
+                raise HarnessError("GENERATION_CANCELLED", "Run cancelled before canonicalization")
             system, user = build_canonicalize_prompt(
-                stages=batch, language=language, learner_level=learner_level,
+                stages=batch,
+                language=language,
+                learner_level=learner_level,
             )
             # Keep this augmentation local: H60 need not depend on changes to
             # unrelated prompt builders or on a second reconciliation call.
@@ -321,7 +332,8 @@ class CanonicalizeStep:
                 rows = payload.get(kind) or []
                 if len(rows) > limit or any(
                     len(str(row.get(field) or "")) > MAX_CANDIDATE_NAME_LENGTH
-                    for row in rows for field in ("key", "name")
+                    for row in rows
+                    for field in ("key", "name")
                     if isinstance(row, dict)
                 ):
                     raise HarnessError(

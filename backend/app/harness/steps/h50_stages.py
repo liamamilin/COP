@@ -149,11 +149,13 @@ class StageEnrichmentStep:
         # checkpoints receive absence metadata only, never a synthesized plan.
         for process in ctx.require("process_drafts"):
             plan = normalize_teaching_plan(process.get("teaching_plan"), process["stages"])
-            processes.append({
-                **process,
-                "teaching_plan": plan,
-                "teaching_plan_status": teaching_plan_status(plan),
-            })
+            processes.append(
+                {
+                    **process,
+                    "teaching_plan": plan,
+                    "teaching_plan_status": teaching_plan_status(plan),
+                }
+            )
         language = ctx.settings.get("language", "auto")
         detail_density = ctx.settings.get("detail_density", "balanced")
         evidence_density = ctx.settings.get("evidence_density", "key_claims")
@@ -170,14 +172,13 @@ class StageEnrichmentStep:
             # The full process object is passed each time: splitting the output
             # must not split the route context the Stage is written for.
             context_payload = teaching_context(ctx, process)
-            source_ids = [
-                str(item.get("id")) for item in ctx.source_bundle if item.get("id")
-            ]
+            source_ids = [str(item.get("id")) for item in ctx.source_bundle if item.get("id")]
             enriched: list[dict[str, Any]] = []
             for batch in chunked(process["stages"], MAX_STAGES_PER_ENRICH_CALL):
                 if services.is_cancelled():
                     raise HarnessError(
-                        "GENERATION_CANCELLED", "Run cancelled before the next enrichment batch",
+                        "GENERATION_CANCELLED",
+                        "Run cancelled before the next enrichment batch",
                     )
                 system, user = build_stage_prompt(
                     process=process,
@@ -193,9 +194,16 @@ class StageEnrichmentStep:
                     # Authored examples/outcomes are context for continuity, not
                     # evidence that the learner has performed the earlier work.
                     prior_stage_context=[
-                        {field: stage[field] for field in (
-                            "key", "local_goal", "local_outcome", "why_it_exists", "example",
-                        )}
+                        {
+                            field: stage[field]
+                            for field in (
+                                "key",
+                                "local_goal",
+                                "local_outcome",
+                                "why_it_exists",
+                                "example",
+                            )
+                        }
                         for stage in enriched
                     ],
                 )
@@ -232,7 +240,9 @@ class StageEnrichmentStep:
             return enriched
 
         grouped = await bounded_map(
-            processes, enrich, concurrency=MAX_ENRICH_CONCURRENCY,
+            processes,
+            enrich,
+            concurrency=MAX_ENRICH_CONCURRENCY,
         )
         stage_drafts = [stage for group in grouped for stage in group]
         if not stage_drafts:

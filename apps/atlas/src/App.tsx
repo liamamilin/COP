@@ -1135,7 +1135,7 @@ export function App() {
           <a href="#/" aria-current={!route.slug ? "page" : undefined}>
             主题图书馆
           </a>
-          <External url="https://github.com/liamamilin/COP/tree/proposal/cop-capability-map-v0">
+          <External url="https://github.com/liamamilin/COP/tree/main">
             GitHub
           </External>
         </nav>

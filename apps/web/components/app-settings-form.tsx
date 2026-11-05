@@ -122,7 +122,7 @@ export function AppSettingsForm({ initial }: { initial: AppSettings }) {
     setMessage(available.length ? `Loaded ${available.length} model(s). Choose one in Model.` : "No models were returned by the provider.");
   }
 
-  return <form className={styles.form} onSubmit={save} ref={formRef}>
+  return <form aria-label="Application settings" className={styles.form} onSubmit={save} ref={formRef}>
     <section id="settings-provider" className={styles.section} aria-labelledby="settings-provider-heading">
       <div className={styles.sectionHeader}>
         <div><h2 id="settings-provider-heading">Model provider</h2><p>Choose the connection used for generation. Mock mode needs no API key.</p></div>

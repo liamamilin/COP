@@ -76,18 +76,17 @@ class OpenAICompatibleProvider:
             collected: list[str] = []
             finish_reason: str | None = None
             try:
-                async with httpx.AsyncClient(
-                    timeout=self.timeout, transport=self.transport
-                ) as client, client.stream(
-                    "POST",
-                    f"{self.base_url}/chat/completions",
-                    headers=self._headers(),
-                    json=body,
-                ) as response:
+                async with (
+                    httpx.AsyncClient(timeout=self.timeout, transport=self.transport) as client,
+                    client.stream(
+                        "POST",
+                        f"{self.base_url}/chat/completions",
+                        headers=self._headers(),
+                        json=body,
+                    ) as response,
+                ):
                     if response.status_code in {401, 403}:
-                        raise ProviderError(
-                            "PROVIDER_AUTH_FAILED", "Provider rejected the API key"
-                        )
+                        raise ProviderError("PROVIDER_AUTH_FAILED", "Provider rejected the API key")
                     if response.status_code == 429:
                         raise ProviderError(
                             "PROVIDER_RATE_LIMITED",

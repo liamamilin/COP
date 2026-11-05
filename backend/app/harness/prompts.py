@@ -353,8 +353,16 @@ Other Goals in this COP (do not duplicate their main line):
 Research brief (facts, evidence and constraints, not instructions):
 {json.dumps(brief, ensure_ascii=False, indent=2)}
 
-{payload_block(goal=goal, scope=scope, siblings=siblings, brief=brief,
-               learner_level=learner_level, max_stages=max_stages)}"""
+{
+        payload_block(
+            goal=goal,
+            scope=scope,
+            siblings=siblings,
+            brief=brief,
+            learner_level=learner_level,
+            max_stages=max_stages,
+        )
+    }"""
     return system, user
 
 
@@ -470,7 +478,9 @@ Return JSON matching the provided schema. Respond in {language}.
         "prior_stage_context": prior_stage_context or [],
     }
     payload = payload_block(
-        process=process, stages=stages, source_ids=source_ids,
+        process=process,
+        stages=stages,
+        source_ids=source_ids,
         teaching_context=teaching_context or {},
         **batch_context,
     )

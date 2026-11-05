@@ -143,7 +143,7 @@ export async function collectContent(repoRoot, validateWithSkill = true) {
       stdio: ["ignore", "pipe", "ignore"],
     }).trim();
   } catch {
-    revision = "proposal/cop-capability-map-v0";
+    revision = "main";
   }
   for (const topic of catalog.topics.filter((t) => t.status === "ready")) {
     const dir = resolve(repoRoot, "outputs", topic.slug);

@@ -33,12 +33,17 @@ GOAL = {"key": "explain", "title": "Compare explanations", "outcome": "A justifi
 
 def raw_process(count: int = 4) -> dict[str, Any]:
     stages = [
-        {"key": f"draft_{i}", "title": f"Compare explanation {i}",
-         "local_outcome": f"An evidence-based comparison {i}"}
+        {
+            "key": f"draft_{i}",
+            "title": f"Compare explanation {i}",
+            "local_outcome": f"An evidence-based comparison {i}",
+        }
         for i in range(count)
     ]
     return {
-        "key": "draft_process", "title": "Compare explanations", "outcome": GOAL["outcome"],
+        "key": "draft_process",
+        "title": "Compare explanations",
+        "outcome": GOAL["outcome"],
         "stages": stages,
         "teaching_plan": {
             "central_question": "What can these observations actually tell us?",
@@ -56,8 +61,10 @@ def raw_process(count: int = 4) -> dict[str, Any]:
                     "learning_question": f"Which explanation survives comparison {i}?",
                     "why_now": f"Comparison {i} needs the previous evidence, not a copied label.",
                     "builds_on": [stages[i - 1]["key"]] if i else [],
-                    "reasoning_moves": ["Separate observations from explanations.",
-                                        "Compare an alternative explanation."],
+                    "reasoning_moves": [
+                        "Separate observations from explanations.",
+                        "Compare an alternative explanation.",
+                    ],
                     "check_focus": "Explain which observation could disconfirm the inference.",
                     "next_gap": "What does this comparison leave unexplained?",
                 }
@@ -81,36 +88,48 @@ class RecordingServices:
             assert self.process_payload is not None
             return copy.deepcopy(self.process_payload)
         payload = decode_payload(request["user_prompt"])
-        return {"stages": [
-            {
-                "key": stage["key"], "local_goal": "Compare the two explanations",
-                "why_it_exists": (
-                    "Wet soil challenges the lack-of-water explanation, not all causes."
-                ),
-                "local_outcome": stage["local_outcome"],
-                "concept_candidates": ["Observation", "Inference"],
-                "operation_candidates": ["Compare explanations"],
-                "implementation_detail_candidates": [{
-                    "title": "Challenge the inference",
-                    "action": "Compare the two plants and explain an alternative cause.",
-                    "expected_result": "Wet soil limits the claim; a new observation is needed.",
-                    "caution": "A label is not an explanation; consider another cause of wilting.",
-                }],
-                "example_candidate": {
-                    "summary": "The hypothetical wet-soil plant is also wilted.",
-                    "input": "Given wet soil and wilted leaves",
-                    "output": "Lack of water alone does not explain both plants.",
-                    "note": "This does not establish a cause; next compare other observations.",
-                },
-            }
-            for stage in payload["stages"]
-        ]}
+        return {
+            "stages": [
+                {
+                    "key": stage["key"],
+                    "local_goal": "Compare the two explanations",
+                    "why_it_exists": (
+                        "Wet soil challenges the lack-of-water explanation, not all causes."
+                    ),
+                    "local_outcome": stage["local_outcome"],
+                    "concept_candidates": ["Observation", "Inference"],
+                    "operation_candidates": ["Compare explanations"],
+                    "implementation_detail_candidates": [
+                        {
+                            "title": "Challenge the inference",
+                            "action": "Compare the two plants and explain an alternative cause.",
+                            "expected_result": (
+                                "Wet soil limits the claim; a new observation is needed."
+                            ),
+                            "caution": (
+                                "A label is not an explanation; consider another cause of wilting."
+                            ),
+                        }
+                    ],
+                    "example_candidate": {
+                        "summary": "The hypothetical wet-soil plant is also wilted.",
+                        "input": "Given wet soil and wilted leaves",
+                        "output": "Lack of water alone does not explain both plants.",
+                        "note": "This does not establish a cause; next compare other observations.",
+                    },
+                }
+                for stage in payload["stages"]
+            ]
+        }
 
 
 def context(process: dict[str, Any] | None = None) -> HarnessContext:
     return HarnessContext(
-        run_id="offline", project_id="offline", settings={"language": "en"},
-        goals=[copy.deepcopy(GOAL)], scope_result={"domain": "Reasoning from observations"},
+        run_id="offline",
+        project_id="offline",
+        settings={"language": "en"},
+        goals=[copy.deepcopy(GOAL)],
+        scope_result={"domain": "Reasoning from observations"},
         research_brief={"constraints": ["Do not infer causes from correlation alone."]},
         process_drafts=[process] if process else [],
     )
@@ -152,7 +171,8 @@ def test_unknown_forward_and_self_dependencies_are_errors(ref):
     with pytest.raises(HarnessError) as error:
         normalize_process(raw, GOAL)
     assert error.value.code in {
-        "HARNESS_TEACHING_PLAN_REFERENCE", "HARNESS_TEACHING_PLAN_FORWARD_REFERENCE",
+        "HARNESS_TEACHING_PLAN_REFERENCE",
+        "HARNESS_TEACHING_PLAN_FORWARD_REFERENCE",
     }
 
 
@@ -234,14 +254,15 @@ async def test_h50_batches_share_the_exact_plan_and_receive_precise_prior_contex
     for i, request in enumerate(services.calls):
         payload = decode_payload(request["user_prompt"])
         start = i * MAX_STAGES_PER_ENRICH_CALL
-        expected_batch = process["stages"][start:start + MAX_STAGES_PER_ENRICH_CALL]
+        expected_batch = process["stages"][start : start + MAX_STAGES_PER_ENRICH_CALL]
         assert payload["teaching_plan"] == process["teaching_plan"]
         assert payload["process"]["teaching_plan"] == process["teaching_plan"]
         assert payload["teaching_context"]["teaching_plan"] == process["teaching_plan"]
         assert payload["current_batch_stage_keys"] == [s["key"] for s in expected_batch]
-        assert payload["current_batch_plan"] == process["teaching_plan"]["stages"][
-            start:start + MAX_STAGES_PER_ENRICH_CALL
-        ]
+        assert (
+            payload["current_batch_plan"]
+            == process["teaching_plan"]["stages"][start : start + MAX_STAGES_PER_ENRICH_CALL]
+        )
         assert payload["prior_planned_outputs"] == [
             {"stage_key": s["key"], "planned_outcome": s["local_outcome"]}
             for s in process["stages"][:start]
@@ -302,7 +323,8 @@ async def test_h50_cannot_fill_missing_planned_stages_with_generic_fallbacks(kin
     services = IncompleteServices()
     with pytest.raises(HarnessError) as error:
         await StageEnrichmentStep().execute(
-            context(normalize_process(raw_process(), GOAL)), services,
+            context(normalize_process(raw_process(), GOAL)),
+            services,
         )
     assert error.value.code == "HARNESS_TEACHING_PLAN_COVERAGE"
     assert len(services.calls) == 1
@@ -376,16 +398,21 @@ async def test_h80_receives_the_plan_and_assembly_preserves_public_teaching_verb
                     "summary": plan["central_question"] + " " + plan["why_this_order"],
                     "flow": [entry["why_now"] for entry in plan["stages"]],
                 },
-                "practices": [{
-                    "key": "practice", "process_key": process["key"],
-                    "title": "Compare explanations in the same garden",
-                    "instructions": [plan["running_case"]["scenario"],
-                                     *plan["stages"][0]["reasoning_moves"]],
-                    "expected_outcome": (
-                        "A justified inference with stated limits, not a cause claim."
-                    ),
-                    "checkpoint_questions": [plan["stages"][0]["check_focus"]],
-                }],
+                "practices": [
+                    {
+                        "key": "practice",
+                        "process_key": process["key"],
+                        "title": "Compare explanations in the same garden",
+                        "instructions": [
+                            plan["running_case"]["scenario"],
+                            *plan["stages"][0]["reasoning_moves"],
+                        ],
+                        "expected_outcome": (
+                            "A justified inference with stated limits, not a cause claim."
+                        ),
+                        "checkpoint_questions": [plan["stages"][0]["check_focus"]],
+                    }
+                ],
                 "expansion_map": [],
             }
 
@@ -396,8 +423,9 @@ async def test_h80_receives_the_plan_and_assembly_preserves_public_teaching_verb
     ctx.apply((await LearningLayerStep().execute(ctx, services)).checkpoint_patch)
     h80_request = services.calls[-1]
     assert h80_request["schema"]["title"] == "H80LearningLayer"
-    assert decode_payload(h80_request["user_prompt"])["processes"][0]["teaching_plan"] == (
-        process["teaching_plan"]
+    assert (
+        decode_payload(h80_request["user_prompt"])["processes"][0]["teaching_plan"]
+        == (process["teaching_plan"])
     )
     system = h80_request["system_prompt"]
     assert "why_this_order" in system
@@ -419,7 +447,10 @@ async def test_h80_receives_the_plan_and_assembly_preserves_public_teaching_verb
 def test_h80_keeps_public_order_rationale_when_practices_are_disabled():
     process = normalize_process(raw_process(), GOAL)
     system, user = build_learning_layer_prompt(
-        scope={}, processes=[process], practices_enabled=False, language="en",
+        scope={},
+        processes=[process],
+        practices_enabled=False,
+        language="en",
     )
     assert "Do not generate any Practice" in system
     assert "Retain the order rationale even when Practices are disabled" in system

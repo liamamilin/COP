@@ -424,7 +424,7 @@ export function publishDraft(draftId: string, changeSummary: string): Promise<Ve
 }
 
 export function discardDraft(draftId: string): Promise<void> {
-  return request<void>(`/drafts/${encodeURIComponent(draftId)}`, { method: "DELETE" });
+  return send<void>(`/drafts/${encodeURIComponent(draftId)}`, { method: "DELETE" });
 }
 
 export function patchDraftEntity(

@@ -40,7 +40,7 @@ Markdown 使用 react-markdown + GFM，不启用原始 HTML；仅转换严格匹
 
 ## 部署
 
-`.github/workflows/atlas-pages.yml` 在指定 proposal 分支相关内容更新时执行质量检查、构建、桌面/移动浏览器验收，成功后发布到 GitHub Pages；PR 只检查。Pages 应选择 GitHub Actions 作为发布来源，`github-pages` 环境须允许此分支部署。不会更改默认分支或旧 Studio 部署。
+`.github/workflows/atlas-pages.yml` 在 `main` 分支相关内容更新时执行质量检查、构建、桌面/移动浏览器验收，成功后发布到 GitHub Pages；PR 只检查。Pages 应选择 GitHub Actions 作为发布来源，`github-pages` 环境须允许 `main` 分支部署。旧 Studio 的部署方式保持不变。
 
 目标地址为 `https://liamamilin.github.io/COP/`；是否已成功发布必须以工作流和线上访问检查为准，不能仅凭此配置认定部署完成。
 

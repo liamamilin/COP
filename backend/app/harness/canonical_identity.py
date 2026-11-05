@@ -17,7 +17,9 @@ def _text(value: Any) -> str:
 
 
 def merge_payloads(
-    payloads: list[dict[str, Any]], *, warnings: list[str] | None = None,
+    payloads: list[dict[str, Any]],
+    *,
+    warnings: list[str] | None = None,
 ) -> dict[str, Any]:
     """Retain every local alias and rewrite relations before combining entities.
 
@@ -66,8 +68,11 @@ def merge_payloads(
                 compatible = (
                     existing is not None
                     and _text(existing["name"]) == _text(name)
-                    and (not existing["definition"] or not definition
-                         or _text(existing["definition"]) == _text(definition))
+                    and (
+                        not existing["definition"]
+                        or not definition
+                        or _text(existing["definition"]) == _text(definition)
+                    )
                 )
                 if compatible:
                     target = existing
@@ -98,12 +103,14 @@ def merge_payloads(
                     if kind == "concepts":
                         target.update(
                             role=str(raw.get("role") or "").strip(),
-                            related_concept_keys=[], key_operation_keys=[],
+                            related_concept_keys=[],
+                            key_operation_keys=[],
                         )
                     else:
                         target.update(
                             purpose=str(raw.get("purpose") or "").strip(),
-                            acts_on_concept_keys=[], common_failures=[],
+                            acts_on_concept_keys=[],
+                            common_failures=[],
                         )
                     entities[kind].append(target)
                     by_key[kind][key] = target
@@ -113,8 +120,14 @@ def merge_payloads(
                 rows.append((kind, raw, target))
 
         def resolve(
-            values: Any, kind: str, owner: str, *, batch_index=batch_index,
-            local=local, accepted=accepted, names=names,
+            values: Any,
+            kind: str,
+            owner: str,
+            *,
+            batch_index=batch_index,
+            local=local,
+            accepted=accepted,
+            names=names,
         ) -> list[str]:
             resolved: list[str] = []
             if not isinstance(values, (list, tuple)):
@@ -138,7 +151,8 @@ def merge_payloads(
                     matches = names[kind].get(_text(text), set())
                     if not matches:
                         matches = {
-                            item["key"] for item in accepted[kind].values()
+                            item["key"]
+                            for item in accepted[kind].values()
                             if _text(item["name"]) == _text(text)
                         }
                     if len(matches) == 1:
@@ -159,7 +173,8 @@ def merge_payloads(
         for kind, raw, target in rows:
             relations = (
                 (("related_concept_keys", "concepts"), ("key_operation_keys", "operations"))
-                if kind == "concepts" else (("acts_on_concept_keys", "concepts"),)
+                if kind == "concepts"
+                else (("acts_on_concept_keys", "concepts"),)
             )
             for field, ref_kind in relations:
                 for key in resolve(raw.get(field) or [], ref_kind, f"{target['key']}.{field}"):

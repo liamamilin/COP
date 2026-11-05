@@ -20,8 +20,12 @@ from app.harness.reader_contract import (
 
 def test_scope_explains_result_approach_and_unconfirmed_assumptions():
     system, user = build_scope_prompt(
-        topic="A personal tool", scope_hint="", target_outcomes=[],
-        learner_level="new", language="zh-CN", sources=[],
+        topic="A personal tool",
+        scope_hint="",
+        target_outcomes=[],
+        learner_level="new",
+        language="zh-CN",
+        sources=[],
     )
     assert SCOPE_GUIDANCE in system
     assert "not a paragraph" in system
@@ -31,7 +35,11 @@ def test_scope_explains_result_approach_and_unconfirmed_assumptions():
 
 def test_goals_do_not_turn_every_request_into_project_documentation():
     system, user = build_goals_prompt(
-        scope={}, brief={}, requested_outcomes=[], depth="standard", language="auto",
+        scope={},
+        brief={},
+        requested_outcomes=[],
+        depth="standard",
+        language="auto",
     )
     assert GOAL_GUIDANCE in system
     assert "planning document is a legitimate result" in system
@@ -42,7 +50,11 @@ def test_goals_do_not_turn_every_request_into_project_documentation():
 def test_process_keeps_one_continuous_default_route_without_repeated_ceremony():
     goal = {"key": "tool", "title": "Build a tool"}
     system, user = build_process_prompt(
-        goal=goal, scope={}, brief={}, siblings=[], language="auto",
+        goal=goal,
+        scope={},
+        brief={},
+        siblings=[],
+        language="auto",
     )
     assert PROCESS_GUIDANCE in system
     assert "one default route" in system
@@ -53,7 +65,10 @@ def test_enrichment_and_refinement_share_action_check_and_honesty_guidance():
     stages = [{"key": "run", "title": "Run a task"}]
     stage_system, user = build_stage_prompt(process={}, stages=stages, language="auto")
     refine_system, _ = build_refine_prompt(
-        artifact={}, issues=[], locked_paths=["stages/run/title"], language="auto",
+        artifact={},
+        issues=[],
+        locked_paths=["stages/run/title"],
+        language="auto",
     )
     assert STAGE_GUIDANCE in stage_system
     assert STAGE_GUIDANCE in refine_system
