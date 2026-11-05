@@ -101,7 +101,7 @@ describe("Basic COP navigation and content", () => {
     expect(html).toContain("Open foundation: 显式配置 key、endpoint、model");
     expect(html).toContain("def load_settings(");
     expect(html).toContain("LC_BASE_URL");
-    expect(html).toContain("Outcome:");
+    expect(html).toContain("Expected outcome");
     expect(html).toContain("version=old-published-version");
     // Read-only disclosure, not a navigation to the latest Stage/Workspace.
     expect(html).not.toContain("/stages/stage.foundation.model");

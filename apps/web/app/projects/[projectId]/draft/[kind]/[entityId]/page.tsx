@@ -29,17 +29,15 @@ export default async function DraftEntityPage({
 
   const label = ENTITY_LABELS[kind];
   const body = (
-    <div className="content-wrap narrow-content">
-      <header className="page-header detail-header">
+    <div className="content-wrap narrow-content draft-editor-page">
+      <nav className="draft-breadcrumb" aria-label="Breadcrumb"><Link href={`/projects/${projectId}/draft`}>← Draft review</Link><span>/</span><span>Edit {label.toLowerCase()}</span></nav>
+      <header className="draft-page-header">
         <p className="eyebrow">DRAFT EDITOR · {label.toUpperCase()}</p>
         <h1>{fields.find((field) => field.name === "title" || field.name === "name")?.value ?? decodedId}</h1>
-        <p className="lead-copy">
-          Changes apply to the draft only. {label} references are structural and are not editable
-          here, so the main line cannot be broken from this screen.
+        <p>
+          Edit this {label.toLowerCase()}, then save and return to your draft. Your published version is unchanged.
         </p>
       </header>
-
-      <p className="draft-entity-id standalone">{decodedId}</p>
 
       <DraftEditor
         artifact={draft.artifact}
@@ -63,7 +61,7 @@ export default async function DraftEntityPage({
   );
 
   if (!version) {
-    return <div className="workspace standalone-workspace">{body}</div>;
+    return <main className="workspace standalone-workspace draft-workspace">{body}</main>;
   }
   return (
     <ProjectShell

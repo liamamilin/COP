@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "ggplot2",
+    "scope": "R 静态数据可视化，额外标注 patchwork 扩展"
+  },
+  "sources": [
+    {
+      "id": "src-geom-point",
+      "title": "ggplot2: geom_point reference",
+      "url": "https://ggplot2.tidyverse.org/reference/geom_point.html",
+      "evidence": "The point geom is used to create scatterplots."
+    },
+    {
+      "id": "src-patchwork",
+      "title": "patchwork: Assembly",
+      "url": "https://patchwork.data-imaginist.com/articles/guides/assembly.html",
+      "evidence": "| will place plots next to each other while / will place them on top of each other."
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp-relationships",
+      "name": "表达变量关系"
+    },
+    {
+      "id": "grp-layout",
+      "name": "图形组合与布局"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-scatter",
+      "title": "绘制散点图",
+      "result": "以点的位置呈现两个变量的对应关系",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "有可映射到 x 与 y 的变量",
+      "source_ids": [
+        "src-geom-point"
+      ],
+      "group_ids": [
+        "grp-relationships"
+      ],
+      "aliases": [
+        "散点关系图"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-geom-point",
+          "quote": "The point geom is used to create scatterplots."
+        }
+      ]
+    },
+    {
+      "id": "p-combine",
+      "title": "将两幅独立统计图并排组合",
+      "result": "得到同一版面中左右排列的两幅 ggplot 图形",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装并加载 patchwork 扩展包；输入是两幅独立 ggplot 图",
+      "source_ids": [
+        "src-patchwork"
+      ],
+      "group_ids": [
+        "grp-layout"
+      ],
+      "aliases": [
+        "多图拼接"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-patchwork",
+          "quote": "| will place plots next to each other while / will place them on top of each other."
+        }
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "仅演示两项能力，尚未覆盖 ggplot2 的完整用途。"
+  ]
+}

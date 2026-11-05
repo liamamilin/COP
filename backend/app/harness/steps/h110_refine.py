@@ -4,15 +4,17 @@ Runs only for `minor` or `major` critic severity. Enforces three rules the model
 cannot be trusted with on its own:
 
 - locked (user-authored) paths are never rewritten,
-- only whitelisted text fields may change,
+- only whitelisted leaf-content fields may change,
 - corrections are local, never whole-entity rewrites.
 """
 
 from typing import Any
 
+from jsonschema import Draft202012Validator
+
 from app.harness.context import HarnessContext, HarnessEvent, StepResult
 from app.harness.prompts import build_refine_prompt
-from app.harness.schemas import REFINABLE_FIELDS, REFINE_SCHEMA
+from app.harness.schemas import REFINABLE_FIELDS, REFINE_SCHEMA, revision_value_schema
 
 COLLECTIONS = {
     "goal": "goals",
@@ -134,6 +136,11 @@ def apply_revisions(
 
         if replacement is None:
             rejected.append({**revision, "reason": "replacement value is empty"})
+            continue
+        if not Draft202012Validator(revision_value_schema(entity_type, field)).is_valid(
+            replacement
+        ):
+            rejected.append({**revision, "reason": "replacement value has an invalid shape"})
             continue
         entity[field] = replacement
         applied.append(f"{entity_type}.{entity_key}.{field}")

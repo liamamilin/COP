@@ -21,6 +21,7 @@ export default function BasicPrototypePage() {
         <p>{artifact.domain.scope}</p>
         <p className="muted-note">这里不会创建项目、保存学习进度或运行代码。代码需在你自己的独立环境执行；真实调用可能收费。</p>
         <p><Link href="/">← All projects</Link></p>
+        <p><Link href="/prototypes/learning-unit">Open the guided learning-unit experiment →</Link></p>
       </header>
       <section className="reading-section">
         <p className="eyebrow">MENTAL MODEL</p>

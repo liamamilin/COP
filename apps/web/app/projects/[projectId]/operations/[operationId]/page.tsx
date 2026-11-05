@@ -15,7 +15,7 @@ export default async function OperationPage({ params }: { params: Promise<{ proj
     <ProjectShell project={project} version={version} artifact={artifact} active="operation">
       <article className="content-wrap entity-detail-page operation-detail">
         <header><span className="entity-glyph">O</span><p className="eyebrow">OPERATION</p><h1>{operation.name}</h1><p className="lead-copy">{operation.definition}</p></header>
-        {operation.purpose && <section><p className="eyebrow">PURPOSE</p><h2>{operation.purpose}</h2></section>}
+        {operation.purpose && <section><p className="eyebrow">PURPOSE</p><p className="lead-copy">{operation.purpose}</p></section>}
         {/* The failure modes are the part a beginner needs, and this page is
             where they belong. They were previously stored on every Operation and
             rendered nowhere at all. */}
@@ -35,4 +35,3 @@ export default async function OperationPage({ params }: { params: Promise<{ proj
     </ProjectShell>
   );
 }
-

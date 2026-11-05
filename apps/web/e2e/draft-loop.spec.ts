@@ -63,6 +63,7 @@ test.describe("draft lifecycle", () => {
   async function openGoalEditor(page: Page, project: VersionedProject) {
     await page.goto(`/projects/${project.projectId}/draft`);
     await waitForHydration(page, ".draft-toolbar");
+    await page.locator(".draft-advanced > summary").click();
     await page
       .locator(".draft-entity-list a", { hasText: project.firstGoal.title })
       .first()
@@ -80,7 +81,7 @@ test.describe("draft lifecycle", () => {
   }) => {
     const project = await versioned();
     await openDraft(page, project.projectId);
-    await expect(page.getByRole("heading", { name: /Goals ·/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Your learning path", exact: true })).toBeVisible();
 
     const { outcome } = await openGoalEditor(page, project);
     await outcome.fill("Edited outcome that must survive a reload.");
@@ -198,6 +199,7 @@ test.describe("draft lifecycle", () => {
     const before = await getVersion(project.versionId);
 
     await openDraft(page, project.projectId);
+    await page.locator(".draft-more-actions > summary").click();
     await page.getByRole("button", { name: /Discard draft/i }).click();
     await expect(page.locator(".draft-confirm")).toBeVisible();
     // Nothing is gone yet.

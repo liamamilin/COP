@@ -1,0 +1,3384 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "LangChain Agent",
+    "scope": "LangChain Python 1.x 在 Agent 开发中的用户任务、可获得的结果、可复用控制能力及明确标注的 LangGraph、Deep Agents、外部集成与平台扩展。",
+    "audience": "希望识别可提出的 Agent 需求并理解实现边界的开发者、产品设计者和技术决策者。",
+    "version_basis": "2026-11-05（Asia/Shanghai）读取的官方 Python 文档；LangChain 1.4.9；Deep Agents 源码 manifest 显示 0.7.32。",
+    "python_basis": "langchain 1.4.9: Python >=3.10,<4；所读 deepagents 0.7.32: Python >=3.11,<4。某些应用可要求更高版本。",
+    "included": [
+      "标准工具型 Agent",
+      "上下文、记忆和结构化结果",
+      "人工协作、故障恢复与边界控制",
+      "有原始依据的业务和开发者应用",
+      "明确组件归属的编排、Deep Agents 与运营扩展"
+    ],
+    "excluded": [
+      "JavaScript/TypeScript Agent API 的直接能力声明",
+      "把 classic 旧 API 当作 1.x 核心",
+      "纯函数清单和逐步编码教程",
+      "无来源的全自动成功、可靠性或性能保证"
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-repo-lc-version",
+      "title": "LangChain Python package manifest",
+      "url": "https://github.com/langchain-ai/langchain/blob/master/libs/langchain_v1/pyproject.toml",
+      "evidence": "version = \"1.4.9\"\nlanggraph>=1.2.12,<1.3.0",
+      "location": "project.version; dependencies",
+      "source_type": "official_source_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "6b97a44d3b778a6a37a360ea0f8100cc638184e8cace45088ee502e22919dfb9",
+        "source_blob_sha": "9b916cc5520a23d10acdf004d312d23aec2b40ee",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "version_observed": "1.4.9",
+      "evidence_role": "scope_or_component_boundary"
+    },
+    {
+      "id": "src-repo-deep-version",
+      "title": "Deep Agents Python package manifest",
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/libs/deepagents/pyproject.toml",
+      "evidence": "version = \"0.7.32\"\nlangchain>=1.4.8,<2.0.0",
+      "location": "project.version; dependencies",
+      "source_type": "official_source_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "96d999e2f364d0e138ad35b4ef591e7169aafe1f28a7b9f4cbfce4245aa07eb9",
+        "source_blob_sha": "66f3aa07e8c1ce21d062698241bf4f4d1c8ec507",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "version_observed": "0.7.32",
+      "evidence_role": "scope_or_component_boundary"
+    },
+    {
+      "id": "src-lc-version",
+      "title": "LangChain v1 release and migration boundary",
+      "url": "https://docs.langchain.com/oss/python/releases/langchain-v1",
+      "evidence": "legacy functionality moved to langchain-classic",
+      "location": "Simplified package / namespace",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "892ec232940ec721b2fae759077a10f41762752578947fe66909080b93e8703e",
+        "retrieved_url": "https://docs.langchain.com/oss/python/releases/langchain-v1.md",
+        "response_bytes_sha256": "892ec232940ec721b2fae759077a10f41762752578947fe66909080b93e8703e"
+      },
+      "version_observed": "Python 1.x",
+      "evidence_role": "scope_or_component_boundary"
+    },
+    {
+      "id": "src-agents",
+      "title": "LangChain agents",
+      "url": "https://docs.langchain.com/oss/python/langchain/agents",
+      "evidence": "a model calling tools in a loop until a task is complete",
+      "location": "Introduction",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "ab0c989fa2e7fb6804480b5eea88b317709d136e557e192436b18c9db62f645a",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/agents.md",
+        "response_bytes_sha256": "ab0c989fa2e7fb6804480b5eea88b317709d136e557e192436b18c9db62f645a"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-structured",
+      "title": "LangChain structured output",
+      "url": "https://docs.langchain.com/oss/python/langchain/structured-output",
+      "evidence": "return data in a specific, predictable format.",
+      "location": "Introduction; ContactInfo example; error handling",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f18d99f9bf1a64f910b2c9305b4b2fa9b07f9dd91b71ae73cb866a3c2648820e",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/structured-output.md",
+        "response_bytes_sha256": "f18d99f9bf1a64f910b2c9305b4b2fa9b07f9dd91b71ae73cb866a3c2648820e"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-tools",
+      "title": "LangChain tools",
+      "url": "https://docs.langchain.com/oss/python/langchain/tools",
+      "evidence": "take actions in the world\navailable toolset based on authentication state",
+      "location": "Introduction; Dynamic tool selection",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "c331a6e054a85079d92c42817bb7c1e6009c977a89809fd8c347a50105018c20",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/tools.md",
+        "response_bytes_sha256": "c331a6e054a85079d92c42817bb7c1e6009c977a89809fd8c347a50105018c20"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-context",
+      "title": "Context engineering in LangChain agents",
+      "url": "https://docs.langchain.com/oss/python/langchain/context-engineering",
+      "evidence": "Read from Runtime Context: user role and environment",
+      "location": "System prompt / Runtime Context example",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "d2d7cca2f0c8540653e479ec7db0bbc9707bb36433e7f1f145324504ba4c29df",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/context-engineering.md",
+        "response_bytes_sha256": "d2d7cca2f0c8540653e479ec7db0bbc9707bb36433e7f1f145324504ba4c29df"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-models",
+      "title": "LangChain model capabilities and selection",
+      "url": "https://docs.langchain.com/oss/python/langchain/models",
+      "evidence": "switch between models\nsophisticated routing logic and cost optimization.\nmultimodal inputs",
+      "location": "Overview; Dynamic model selection; Multimodal",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "9d0550deccd70d1cc58ea2232b48648045f4d6c7090a69eb6b0c0db63a45968e",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/models.md",
+        "response_bytes_sha256": "9d0550deccd70d1cc58ea2232b48648045f4d6c7090a69eb6b0c0db63a45968e"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-short-memory",
+      "title": "LangChain conversation memory",
+      "url": "https://docs.langchain.com/oss/python/langchain/short-term-memory",
+      "evidence": "remember previous interactions within a single thread or conversation.",
+      "location": "Overview; Usage",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "579e32af9a604bb19cbba2820168ca5ab4f959aa98510237ef1249c5ec26b93a",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/short-term-memory.md",
+        "response_bytes_sha256": "579e32af9a604bb19cbba2820168ca5ab4f959aa98510237ef1249c5ec26b93a"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-long-memory",
+      "title": "LangChain memory using LangGraph stores",
+      "url": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+      "evidence": "store and recall information across different conversations and sessions.",
+      "location": "Introduction; Usage; Memory storage",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "4aa8ad952f93cc55ee8625d44978c9992add7fbc2080bdd8ada3779484f879da",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/long-term-memory.md",
+        "response_bytes_sha256": "4aa8ad952f93cc55ee8625d44978c9992add7fbc2080bdd8ada3779484f879da"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-summarize-class",
+      "title": "SummarizationMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/summarization/SummarizationMiddleware",
+      "evidence": "Summarizes conversation history when token limits are approached.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "11bc7930ed10ec0f95d680e8a7b8abe573869cfea95becf1b0a425da5783a443",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/summarization/SummarizationMiddleware",
+        "response_bytes_sha256": "11bc7930ed10ec0f95d680e8a7b8abe573869cfea95becf1b0a425da5783a443"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-streaming",
+      "title": "LangChain streaming",
+      "url": "https://docs.langchain.com/oss/python/langchain/streaming",
+      "evidence": "state updates after each agent step.\ntokens as they're generated.",
+      "location": "Capabilities; agent progress; LLM tokens",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f075d58b9338601c1a90a67e032bfa933097d3754844a2306e5f516e0f7f65da",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/streaming.md",
+        "response_bytes_sha256": "f075d58b9338601c1a90a67e032bfa933097d3754844a2306e5f516e0f7f65da"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-hitl",
+      "title": "LangChain human review and user responses",
+      "url": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop",
+      "evidence": "Modify the tool arguments before execution.\n\"ask user\" style tools.",
+      "location": "Interrupt decision types; approval, edit, reject, respond",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "9ab6cf660b92e791827c2c4467f6362015278deb24685976099788800e7c4ecd",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop.md",
+        "response_bytes_sha256": "9ab6cf660b92e791827c2c4467f6362015278deb24685976099788800e7c4ecd"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-guardrails",
+      "title": "LangChain guardrails",
+      "url": "https://docs.langchain.com/oss/python/langchain/guardrails",
+      "evidence": "detecting and handling Personally Identifiable Information\nbuilding custom guardrails using either approach.",
+      "location": "Built-in PII; deterministic and model-based guardrails",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f455edbdbdd60bc40a4de1f6fb3a508731b6146425fb0e285d928d79272cc6df",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/guardrails.md",
+        "response_bytes_sha256": "f455edbdbdd60bc40a4de1f6fb3a508731b6146425fb0e285d928d79272cc6df"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-modelretry-class",
+      "title": "ModelRetryMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/model_retry/ModelRetryMiddleware",
+      "evidence": "automatically retries failed model calls with configurable backoff.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "9954ad6e7a034ec5a2bbd3b86c17fe774b3ae368033fafee3dfa50467501250f",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/model_retry/ModelRetryMiddleware",
+        "response_bytes_sha256": "9954ad6e7a034ec5a2bbd3b86c17fe774b3ae368033fafee3dfa50467501250f"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-toolretry-class",
+      "title": "ToolRetryMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_retry/ToolRetryMiddleware",
+      "evidence": "automatically retries failed tool calls with configurable backoff.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "03138663f5174057a5b63da05be7dc2109386d1643ec7c938b530d273e595cc9",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_retry/ToolRetryMiddleware",
+        "response_bytes_sha256": "03138663f5174057a5b63da05be7dc2109386d1643ec7c938b530d273e595cc9"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-toolerror-class",
+      "title": "ToolErrorMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_error/ToolErrorMiddleware",
+      "evidence": "Return selected tool-execution exceptions to the model",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "fc865f41188a43f07ae090d307e9529fd5005933cc291423187f0169a2d563e6",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_error/ToolErrorMiddleware",
+        "response_bytes_sha256": "fc865f41188a43f07ae090d307e9529fd5005933cc291423187f0169a2d563e6"
+      },
+      "version_observed": "Guide explicitly requires langchain>=1.3.14",
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-fallback-class",
+      "title": "ModelFallbackMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/model_fallback/ModelFallbackMiddleware",
+      "evidence": "Automatic fallback to alternative models on errors.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "40957930ddc51f87cbcdc23af8e3112f791ca67a307849f477b5f9e91182d7ab",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/model_fallback/ModelFallbackMiddleware",
+        "response_bytes_sha256": "40957930ddc51f87cbcdc23af8e3112f791ca67a307849f477b5f9e91182d7ab"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-modellimit-class",
+      "title": "ModelCallLimitMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/model_call_limit/ModelCallLimitMiddleware",
+      "evidence": "Tracks model call counts and enforces limits.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "74187848ef91c51ac524811787f4971b959da5236ea6771ef098f6660f740b19",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/model_call_limit/ModelCallLimitMiddleware",
+        "response_bytes_sha256": "74187848ef91c51ac524811787f4971b959da5236ea6771ef098f6660f740b19"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-toollimit-class",
+      "title": "ToolCallLimitMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_call_limit/ToolCallLimitMiddleware",
+      "evidence": "Track tool call counts and enforces limits during agent execution.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "02aade291b374efd696a14686a8403df7d647d5c27122374390f6eb1abe6524d",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_call_limit/ToolCallLimitMiddleware",
+        "response_bytes_sha256": "02aade291b374efd696a14686a8403df7d647d5c27122374390f6eb1abe6524d"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-selector-class",
+      "title": "LLMToolSelectorMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_selection/LLMToolSelectorMiddleware",
+      "evidence": "select relevant tools before calling the main model.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "0c0a0eedf70a0cc56585a65f06dec7b5f0275f6a100cd03b0009865273d6df67",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_selection/LLMToolSelectorMiddleware",
+        "response_bytes_sha256": "0c0a0eedf70a0cc56585a65f06dec7b5f0275f6a100cd03b0009865273d6df67"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-todo-class",
+      "title": "TodoListMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/todo/TodoListMiddleware",
+      "evidence": "structured task lists for complex multi-step operations.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "48500e8f2a9dc1bae338e1d13cf25696279bd8c43d7d2a0216eac52a4447f228",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/todo/TodoListMiddleware",
+        "response_bytes_sha256": "48500e8f2a9dc1bae338e1d13cf25696279bd8c43d7d2a0216eac52a4447f228"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-file-search-class",
+      "title": "FilesystemFileSearchMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/file_search/FilesystemFileSearchMiddleware",
+      "evidence": "Provides Glob and Grep search over filesystem files.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "711ba27cf14eecc18e56993cac8bf687645668cc7f510f1c05dd42f3c943d25b",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/file_search/FilesystemFileSearchMiddleware",
+        "response_bytes_sha256": "711ba27cf14eecc18e56993cac8bf687645668cc7f510f1c05dd42f3c943d25b"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-shell-class",
+      "title": "ShellToolMiddleware API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/shell_tool/ShellToolMiddleware",
+      "evidence": "registers a persistent shell tool for agents.",
+      "location": "Introduction; execution policies",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "6996d9fd7c6cbf165ea037c36dc9a277418cfcf578944b236a9697ced1a72f24",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/shell_tool/ShellToolMiddleware",
+        "response_bytes_sha256": "6996d9fd7c6cbf165ea037c36dc9a277418cfcf578944b236a9697ced1a72f24"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-subagents-pattern",
+      "title": "LangChain specialist-agent composition pattern",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents",
+      "evidence": "coordinates subagents by calling them as tools.",
+      "location": "Introduction; Basic implementation",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "d1cfabed53d0e6edcf89589c2c332001e423d585256255da1d0d9d0730aa3a32",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents.md",
+        "response_bytes_sha256": "d1cfabed53d0e6edcf89589c2c332001e423d585256255da1d0d9d0730aa3a32"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-lc-skills",
+      "title": "LangChain custom skills pattern",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills",
+      "evidence": "Skills are primarily prompt-driven specializations",
+      "location": "Introduction; Basic implementation; built-in support boundary",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "11ca6bf4be4e6ac6ee2467b569baaeafba27ce8c2135a5f51c0139a1ab8b7835",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/skills.md",
+        "response_bytes_sha256": "11ca6bf4be4e6ac6ee2467b569baaeafba27ce8c2135a5f51c0139a1ab8b7835"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-skills",
+      "title": "Deep Agents packaged skill loading",
+      "url": "https://docs.langchain.com/oss/python/deepagents/skills",
+      "evidence": "discovers and reads the contained files only when relevant.",
+      "location": "Introduction; Usage",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "81760adc9632811793a55bdb65e9852ef3b1f02030a3803af10289cb6cb650d7",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/skills.md",
+        "response_bytes_sha256": "81760adc9632811793a55bdb65e9852ef3b1f02030a3803af10289cb6cb650d7"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-unit-testing",
+      "title": "LangChain unit testing with fake models",
+      "url": "https://docs.langchain.com/oss/python/langchain/test/unit-testing",
+      "evidence": "Test agent logic without API calls",
+      "location": "Introduction; Mock chat model",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "43376fc446e0aa41bea7d5f624b1eaf9d5ab0f2fe90c8f7510066b2c7f04ed9f",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/test/unit-testing.md",
+        "response_bytes_sha256": "43376fc446e0aa41bea7d5f624b1eaf9d5ab0f2fe90c8f7510066b2c7f04ed9f"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-emulator-class",
+      "title": "LLMToolEmulator API",
+      "url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_emulator/LLMToolEmulator",
+      "evidence": "Emulates specified tools using an LLM instead of executing them.",
+      "location": "Overview / introductory paragraph",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "0154c9b81b5c83836915ee57413ff7a64ce742ee3e45cc0080edc48b0b70ebb6",
+        "retrieved_url": "https://reference.langchain.com/python/langchain/agents/middleware/tool_emulator/LLMToolEmulator",
+        "response_bytes_sha256": "0154c9b81b5c83836915ee57413ff7a64ce742ee3e45cc0080edc48b0b70ebb6"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-middleware",
+      "title": "Prebuilt middleware package ownership",
+      "url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "evidence": "from deepagents.middleware.filesystem import FilesystemMiddleware\nfrom deepagents.middleware.subagents import SubAgentMiddleware",
+      "location": "Filesystem middleware and Subagent Python imports",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "b15fd27f3adb0d959dba2577f0b01637ddb7860763b5c1587ddd63ebd5143fc3",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in.md",
+        "response_bytes_sha256": "b15fd27f3adb0d959dba2577f0b01637ddb7860763b5c1587ddd63ebd5143fc3"
+      },
+      "evidence_role": "scope_or_component_boundary"
+    },
+    {
+      "id": "src-handoffs",
+      "title": "LangChain handoffs using LangGraph state commands",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs",
+      "evidence": "collecting a warranty ID before processing a refund.",
+      "location": "When to use; Basic implementation",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "6fef4ebf57083eedc81af9798b22deb28054a72087196a6aa3bc36c401ff960d",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs.md",
+        "response_bytes_sha256": "6fef4ebf57083eedc81af9798b22deb28054a72087196a6aa3bc36c401ff960d"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-router-kb",
+      "title": "Multi-source knowledge base routing example",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router-knowledge-base",
+      "evidence": "routes them to the relevant agents in parallel",
+      "location": "Overview; mock source agents; Send routing",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "14080b04c2e1593202d9c988b68bc88fec804a14c965807a5ca70e2b4684b890",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/router-knowledge-base.md",
+        "response_bytes_sha256": "14080b04c2e1593202d9c988b68bc88fec804a14c965807a5ca70e2b4684b890"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-lg-workflows",
+      "title": "LangGraph workflow patterns",
+      "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents",
+      "evidence": "predetermined code paths\nSynthesizes worker outputs into a final result",
+      "location": "Introduction; Orchestrator-worker",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "eeddf8e63761d1c845f644bbf3a0db7c142d678f32fa314264248fadffe6ac0c",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents.md",
+        "response_bytes_sha256": "eeddf8e63761d1c845f644bbf3a0db7c142d678f32fa314264248fadffe6ac0c"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-lg-checkpoints",
+      "title": "LangGraph checkpoint recovery",
+      "url": "https://docs.langchain.com/oss/python/langgraph/checkpointers",
+      "evidence": "restart your graph from the last successful step.",
+      "location": "Fault-tolerance; durability modes",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "045218cfe684518502ab9eb5e3f62f5579e9c5c1cd4a22df0deebefbbf78a76b",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langgraph/checkpointers.md",
+        "response_bytes_sha256": "045218cfe684518502ab9eb5e3f62f5579e9c5c1cd4a22df0deebefbbf78a76b"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-lg-time-travel",
+      "title": "LangGraph replay and branching",
+      "url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel",
+      "evidence": "Replay past executions and fork to explore alternative paths in LangGraph",
+      "location": "Introduction; replay; fork",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "56cea55cfa011f3a4afbe6c28aa93339416e2cccf3ad16d2b22b10c78952b84a",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langgraph/use-time-travel.md",
+        "response_bytes_sha256": "56cea55cfa011f3a4afbe6c28aa93339416e2cccf3ad16d2b22b10c78952b84a"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-mcp",
+      "title": "LangChain MCPAdapter and MCP service integration",
+      "url": "https://docs.langchain.com/oss/python/langchain/mcp",
+      "evidence": "discovers a server's tools",
+      "location": "Introduction; Quickstart; docs MCP example",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "d6af4351b236673d7e02d445d439c720f72d5ae831315bd52e7b88d9275a03dd",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/mcp.md",
+        "response_bytes_sha256": "d6af4351b236673d7e02d445d439c720f72d5ae831315bd52e7b88d9275a03dd"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-tavily",
+      "title": "Tavily search tool integration",
+      "url": "https://docs.langchain.com/oss/python/integrations/tools/tavily_search",
+      "evidence": "search engine built specifically for AI agents",
+      "location": "Introduction; TavilySearch setup and usage",
+      "source_type": "official_integration_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "b873106e9e7388cd8f715e7bc72df847a2e790ed4300139f783305d299c60a93",
+        "retrieved_url": "https://docs.langchain.com/oss/python/integrations/tools/tavily_search.md",
+        "response_bytes_sha256": "b873106e9e7388cd8f715e7bc72df847a2e790ed4300139f783305d299c60a93"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-knowledge-base",
+      "title": "PDF semantic search with LangChain",
+      "url": "https://docs.langchain.com/oss/python/langchain/knowledge-base",
+      "evidence": "retrieve passages similar to a query",
+      "location": "Overview; PDF loading, embeddings, vector stores",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "22326514af8d83d05f3263ff009fc196be6ea585ace88a066e3dfc6c477f60f4",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/knowledge-base.md",
+        "response_bytes_sha256": "22326514af8d83d05f3263ff009fc196be6ea585ace88a066e3dfc6c477f60f4"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-rag",
+      "title": "Evidence-based RAG application with Deep Agents",
+      "url": "https://docs.langchain.com/oss/python/deepagents/rag",
+      "evidence": "answers a question with citations to the docs.",
+      "location": "View example trace; What you will build",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "9785ee61a789ca4cd734bbfa4f2149602fcb354fef0ce85546f9d0637c0446b6",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/rag.md",
+        "response_bytes_sha256": "9785ee61a789ca4cd734bbfa4f2149602fcb354fef0ce85546f9d0637c0446b6"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-sql",
+      "title": "SQL question-answering agent",
+      "url": "https://docs.langchain.com/oss/python/langchain/sql-agent",
+      "evidence": "Correct mistakes surfaced by the database engine until the query is successful",
+      "location": "Overview; Build your SQL agent; Chinook example",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "5bb9ea91d5851a53a66ca78cbb842d76655ba9f2d5d194b924e851775e4eb3bf",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/sql-agent.md",
+        "response_bytes_sha256": "5bb9ea91d5851a53a66ca78cbb842d76655ba9f2d5d194b924e851775e4eb3bf"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-personal",
+      "title": "Calendar and email assistant tutorial",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents-personal-assistant",
+      "evidence": "scheduling, availability checking, and event management.\ndrafts messages, and sends notifications.",
+      "location": "Overview; mock calendar and email tools",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f5ef95cc91ae872fc1149040310cf3c755758a30b456fc996b3a81efeb215072",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/subagents-personal-assistant.md",
+        "response_bytes_sha256": "f5ef95cc91ae872fc1149040310cf3c755758a30b456fc996b3a81efeb215072"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-handoff-support",
+      "title": "Stateful customer-support tutorial",
+      "url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs-customer-support",
+      "evidence": "customer support",
+      "location": "Overview; support states; tools",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "ad14120d18606de7aa4a8bd126a33a54048f18122e77903f18cdfea208e13524",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs-customer-support.md",
+        "response_bytes_sha256": "ad14120d18606de7aa4a8bd126a33a54048f18122e77903f18cdfea208e13524"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ollama",
+      "title": "Ollama local model integration",
+      "url": "https://docs.langchain.com/oss/python/integrations/chat/ollama",
+      "evidence": "run open-weight large language models\nlocally.",
+      "location": "Overview; tool calling example",
+      "source_type": "official_integration_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "a709b4ed6bd31ca95cf85f508c341a9b8397b04d37b4b934e115153d67197857",
+        "retrieved_url": "https://docs.langchain.com/oss/python/integrations/chat/ollama.md",
+        "response_bytes_sha256": "a709b4ed6bd31ca95cf85f508c341a9b8397b04d37b4b934e115153d67197857"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-voice",
+      "title": "LangChain voice-agent application",
+      "url": "https://docs.langchain.com/oss/python/langchain/voice-agent",
+      "evidence": "engage in natural spoken conversations with users.",
+      "location": "Overview; Sandwich architecture; AssemblyAI and Cartesia example",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "b9566e5e577ffc577900ca966707c34717ff8009499db1b8e66d6da262d36bbf",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/voice-agent.md",
+        "response_bytes_sha256": "b9566e5e577ffc577900ca966707c34717ff8009499db1b8e66d6da262d36bbf"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-backends",
+      "title": "Deep Agents filesystem backends",
+      "url": "https://docs.langchain.com/oss/python/deepagents/backends",
+      "evidence": "reads and writes real files under a configurable root directory.",
+      "location": "FilesystemBackend; StateBackend; CompositeBackend",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "16afd42c5121d29bce0eb2ee26f61268921955881cd6d2af21fe19a7d86e0bc6",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/backends.md",
+        "response_bytes_sha256": "16afd42c5121d29bce0eb2ee26f61268921955881cd6d2af21fe19a7d86e0bc6"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-context",
+      "title": "Deep Agents context offloading",
+      "url": "https://docs.langchain.com/oss/python/deepagents/context-engineering",
+      "evidence": "substitutes it with a file path reference and a preview",
+      "location": "Context compression / Offloading",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "151367d739dbe728bd6c76b5439b58bc28b1395347d8353aab838823a5b7ec27",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/context-engineering.md",
+        "response_bytes_sha256": "151367d739dbe728bd6c76b5439b58bc28b1395347d8353aab838823a5b7ec27"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-memory",
+      "title": "Deep Agents durable instruction files",
+      "url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "evidence": "use its built-in edit_file tool to update memory files.",
+      "location": "How memory works; Scoped memory",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f9ec0c8ce57fee8bc13a265393d4b8740b33056e4e405a7eba3adb70df57d6c4",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/memory.md",
+        "response_bytes_sha256": "f9ec0c8ce57fee8bc13a265393d4b8740b33056e4e405a7eba3adb70df57d6c4"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-subagents",
+      "title": "Deep Agents built-in subagent support",
+      "url": "https://docs.langchain.com/oss/python/deepagents/subagents",
+      "evidence": "A deep agent can create subagents to delegate work.",
+      "location": "Introduction; configuration; context isolation",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "56e56b250a51d9c5a220a3d15326d338d7c79439f5b7a40004a9a0fad5cd8612",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/subagents.md",
+        "response_bytes_sha256": "56e56b250a51d9c5a220a3d15326d338d7c79439f5b7a40004a9a0fad5cd8612"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-async",
+      "title": "Deep Agents background subagents",
+      "url": "https://docs.langchain.com/oss/python/deepagents/async-subagents",
+      "evidence": "continue interacting with the user while subagents work concurrently.",
+      "location": "Introduction; prerequisites; task control",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "b669008e1a73a565949dd8dc8f394adf96c5b5345c0a290967c28f4624adcdd0",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md",
+        "response_bytes_sha256": "b669008e1a73a565949dd8dc8f394adf96c5b5345c0a290967c28f4624adcdd0"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-da-sandboxes",
+      "title": "Deep Agents isolated execution backends",
+      "url": "https://docs.langchain.com/oss/python/deepagents/sandboxes",
+      "evidence": "Execute code in isolated environments with sandbox backends",
+      "location": "Introduction; provider configuration",
+      "source_type": "official_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "f28298d796b78fd7814e21b503ea72909192dd968958c360dc46b2965c9c7c9f",
+        "retrieved_url": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md",
+        "response_bytes_sha256": "f28298d796b78fd7814e21b503ea72909192dd968958c360dc46b2965c9c7c9f"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-ref-rubric-class",
+      "title": "Deep Agents RubricMiddleware API",
+      "url": "https://reference.langchain.com/python/deepagents/middleware/rubric/RubricMiddleware",
+      "evidence": "drives self-evaluated iteration against a rubric.",
+      "location": "Introduction; termination states",
+      "source_type": "official_python_reference",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "3f3331339761fb986ad656cd32b08dc8c84ff34de12724f8871b7ae5e73512d0",
+        "retrieved_url": "https://reference.langchain.com/python/deepagents/middleware/rubric/RubricMiddleware",
+        "response_bytes_sha256": "3f3331339761fb986ad656cd32b08dc8c84ff34de12724f8871b7ae5e73512d0"
+      },
+      "version_observed": "Beta; guide requires deepagents>=0.6.5",
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-research",
+      "title": "Deep Agents research example",
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/examples/deep_research/README.md",
+      "evidence": "The deep research agent uses custom instructions",
+      "location": "Custom Instructions; usage",
+      "source_type": "official_example_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "a6da8b47ba2c064cb8eca5ffb8c46a7ac906f01d418aa0361a82816fef4c9dc4",
+        "source_blob_sha": "4e95ab1d1275842cb855ee4415d24f90924ff82d",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-research-deps",
+      "title": "Deep research example dependencies",
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/examples/deep_research/pyproject.toml",
+      "evidence": "deepagents>=0.6.12",
+      "location": "project.dependencies",
+      "source_type": "official_example_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "d24536af609df0e6ac91ebd53e8228361b10fda45957a1e09060be08562385e7",
+        "source_blob_sha": "ca97936874f3f3b2cc2e6bc51ee5a27a1fea8e2c",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-gpt",
+      "title": "GPT Researcher project",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/main/README.md",
+      "evidence": "research reports with citations.\nPDF, Word, and other formats.",
+      "location": "Introduction; Features",
+      "source_type": "independent_developer_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "e181f3b4ecdf25a1523587b59e62121502d1be59b5c2100c70c9b59cb1e9aaa6",
+        "source_blob_sha": "97b88b50419d8eec6933aff2985dcb618c509fa3",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-gpt-deps",
+      "title": "GPT Researcher declared Python dependencies",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/main/requirements.txt",
+      "evidence": "langchain>=1.0.0\nlangchain-classic>=1.0.0",
+      "location": "LangChain v1 requirements",
+      "source_type": "independent_developer_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "6d11deb240ef10a18f2d2ad1f51c0e3c273d65d8f988d3e51e7c85da2cb3259d",
+        "source_blob_sha": "f50d76f16c8e1f674e4be4145772f2867b4352af",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-content",
+      "title": "Deep Agents content-builder example",
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/examples/content-builder-agent/README.md",
+      "evidence": "writing blog posts, LinkedIn posts, and tweets with cover images included.",
+      "location": "Introduction; architecture; output",
+      "source_type": "official_example_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "51d494db0079badedda1cd966f7920baa5b7ee19b282211b8e90d876e75e0fe2",
+        "source_blob_sha": "b013a4cf04893691fc2ac7e48c7197f2325377f4",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-content-deps",
+      "title": "Content-builder example dependencies",
+      "url": "https://github.com/langchain-ai/deepagents/blob/main/examples/content-builder-agent/pyproject.toml",
+      "evidence": "deepagents>=0.6.12\ngoogle-genai>=2.10.0",
+      "location": "project.dependencies",
+      "source_type": "official_example_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "8050f0aa4b426d1498f8645d8f7538d9c0bf8a1f1c4f497505cd58f8262be2ef",
+        "source_blob_sha": "0d428319bb4a72fd21b30916dbbd6f31e2770284",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-open-swe",
+      "title": "Open SWE engineering agent",
+      "url": "https://github.com/langchain-ai/open-swe/blob/main/README.md",
+      "evidence": "implement changes, validate them, and deliver a pull request.",
+      "location": "Introduction; How it works; deployment note",
+      "source_type": "official_application_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "cca393edec65af64d7cd48473efc8c36c29e08aae0169bdfe7b12295d22646d2",
+        "source_blob_sha": "eb24b33545a2a1b097768fdf3c4c19e33347817c",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-open-swe-deps",
+      "title": "Open SWE component dependencies",
+      "url": "https://github.com/langchain-ai/open-swe/blob/main/pyproject.toml",
+      "evidence": "deepagents==0.7.32\nlangchain[mcp]>=1.4.8\nrequires-python = \">=3.14\"",
+      "location": "project.dependencies; requires-python",
+      "source_type": "official_application_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "1a09e9e325b0a5db48f1cd904a647c0a2595ccb76e56958d293e14ffb1472212",
+        "source_blob_sha": "80a7c7413f70845133794e22770ea3a38ba24678",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-chat",
+      "title": "Chat LangChain deployed documentation assistant",
+      "url": "https://github.com/langchain-ai/chat-langchain/blob/master/README.md",
+      "evidence": "Searches official LangChain docs via managed MCP",
+      "location": "Overview; Features",
+      "source_type": "official_application_repository",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "24bb2f6b5b5560f26855249da84f1f67c3369e575935e1fd45db8cf0a73fce0e",
+        "source_blob_sha": "2657d48a60d57028f0f785831d8d15a4915bce8f",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-repo-chat-deps",
+      "title": "Chat LangChain Python dependencies",
+      "url": "https://github.com/langchain-ai/chat-langchain/blob/master/pyproject.toml",
+      "evidence": "langchain[mcp]>=1.0.2\nmanaged-deepagents==0.9.2",
+      "location": "project.dependencies",
+      "source_type": "official_application_manifest",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "9e86609d5da8f9ab445101203cb68c64c87f47ba95f000484ee5cade3cd46da3",
+        "source_blob_sha": "ca4ff5b0c8f2c93433a12bcfdf9382710bf681d1",
+        "capture_method": "GitHub connector fetch_file; retrieved line range"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-langsmith-observe",
+      "title": "LangSmith tracing and observability",
+      "url": "https://docs.langchain.com/langsmith/observability",
+      "evidence": "Use them to debug failures, monitor quality",
+      "location": "Overview; investigate and monitor",
+      "source_type": "external_platform_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "cad110088a260df089a66b62a332e871f4380ea344339298b3fe21e5a2273571",
+        "retrieved_url": "https://docs.langchain.com/langsmith/observability.md",
+        "response_bytes_sha256": "cad110088a260df089a66b62a332e871f4380ea344339298b3fe21e5a2273571"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-langsmith-eval",
+      "title": "LangSmith evaluation",
+      "url": "https://docs.langchain.com/langsmith/evaluation",
+      "evidence": "compare versions, benchmark performance, and catch regressions.\nuser interactions in real-time",
+      "location": "Offline and online evaluation",
+      "source_type": "external_platform_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "fd9c061c93d0b9e05145c1ebd46e76c185fb563456520d3a50d534483294f635",
+        "retrieved_url": "https://docs.langchain.com/langsmith/evaluation.md",
+        "response_bytes_sha256": "fd9c061c93d0b9e05145c1ebd46e76c185fb563456520d3a50d534483294f635"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-langsmith-deployment",
+      "title": "LangSmith managed deployment",
+      "url": "https://docs.langchain.com/langsmith/deployments",
+      "evidence": "durable execution, real-time streaming, and horizontal scaling.",
+      "location": "Introduction; environments; licensing",
+      "source_type": "external_platform_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "30508f0806894c9d8faeb121e9622eda1b3823aeb65363048cc4aaab32616ebe",
+        "retrieved_url": "https://docs.langchain.com/langsmith/deployment.md",
+        "response_bytes_sha256": "30508f0806894c9d8faeb121e9622eda1b3823aeb65363048cc4aaab32616ebe"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-cron",
+      "title": "Scheduled Agent Server runs",
+      "url": "https://docs.langchain.com/langsmith/cron-jobs",
+      "evidence": "which run on a user-defined schedule.",
+      "location": "Introduction; cron runs",
+      "source_type": "external_platform_documentation",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "a4bbdc2b6c8136a404aa1b20c41261ac07012b25c946c8360841e9678348f681",
+        "retrieved_url": "https://docs.langchain.com/langsmith/cron-jobs.md",
+        "response_bytes_sha256": "a4bbdc2b6c8136a404aa1b20c41261ac07012b25c946c8360841e9678348f681"
+      },
+      "evidence_role": "claim_evidence"
+    },
+    {
+      "id": "src-front-generative",
+      "title": "Declarative generative UI integration pattern",
+      "url": "https://docs.langchain.com/oss/python/langchain/frontend/generative-ui",
+      "evidence": "forms, cards, dashboards, and more.",
+      "location": "Overview; TypeScript frontend integration",
+      "source_type": "official_frontend_guide",
+      "retrieved_on": "2026-11-05",
+      "retrieval_timezone": "Asia/Shanghai",
+      "capture_note": "Verbatim readable-text excerpts; Markdown formatting removed, wording retained. Newline-separated fragments may be discontinuous.",
+      "retrieval_check": {
+        "excerpt_match": true,
+        "checked_against": "Actual retrieved official Markdown / reference text or GitHub fetch_file content; HTML entities and Unicode/whitespace normalised.",
+        "captured_text_sha256": "17ec41b116e9b8a44962d4519a238333ddaa2f5e2b6b8f5ba76a68248e9faab1",
+        "retrieved_url": "https://docs.langchain.com/oss/python/langchain/frontend/declarative-generative-ui.md",
+        "response_bytes_sha256": "17ec41b116e9b8a44962d4519a238333ddaa2f5e2b6b8f5ba76a68248e9faab1"
+      },
+      "evidence_role": "claim_evidence"
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp-business",
+      "name": "完成业务任务并与人协作"
+    },
+    {
+      "id": "grp-knowledge",
+      "name": "查询数据与研究资料"
+    },
+    {
+      "id": "grp-deliverables",
+      "name": "生成并交付工作成果"
+    },
+    {
+      "id": "grp-continuity",
+      "name": "保存上下文并持续工作"
+    },
+    {
+      "id": "grp-coordination",
+      "name": "组织专家与复杂任务"
+    },
+    {
+      "id": "grp-interaction",
+      "name": "适配模型与交互方式"
+    },
+    {
+      "id": "grp-control",
+      "name": "限制风险并应对失败"
+    },
+    {
+      "id": "grp-operations",
+      "name": "验证质量并投入运行"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-tool-loop",
+      "title": "让助手查询数据、调用业务工具并完成多步任务",
+      "result": "Agent 根据任务选择工具、读取结果并继续行动，直到给出最终答复或达到停止条件。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要支持工具调用的模型，以及开发者实际实现和授权的工具；LangChain 不会自动获得业务系统权限或凭空实现工具。",
+      "source_ids": [
+        "src-agents",
+        "src-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-agents",
+          "quote": "a model calling tools in a loop until a task is complete",
+          "location": "Introduction"
+        },
+        {
+          "source_id": "src-tools",
+          "quote": "take actions in the world",
+          "location": "Introduction; Dynamic tool selection"
+        }
+      ],
+      "aliases": [
+        "工具型助手",
+        "多步任务代理"
+      ],
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-structured",
+      "title": "把任务结果提取为应用可直接使用的结构化记录",
+      "result": "得到符合指定字段和类型的联系人、分类或其他结构化结果，便于校验、入库或交给后续流程。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要适合的 schema 及模型能力；格式与字段校验不证明内容事实正确。原生结构输出和工具调用同时使用还受模型限制。",
+      "source_ids": [
+        "src-structured"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-structured",
+          "quote": "return data in a specific, predictable format.",
+          "location": "Introduction; ContactInfo example; error handling"
+        }
+      ],
+      "aliases": [
+        "结构化提取",
+        "JSON 结果"
+      ],
+      "version_requirements": "以 1.4.9 文档为基准；模型 profile 自动识别需 >=1.1，ProviderStrategy.strict 需 >=1.2。",
+      "group_ids": [
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-personalize",
+      "title": "按用户身份、偏好和当前场景调整助手行为",
+      "result": "同一 Agent 可根据应用提供的用户角色、环境和资料改变指令、语气及业务上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "身份和凭据来自可信应用上下文；提示词中的角色说明不是权限系统，服务端工具仍需独立鉴权。",
+      "source_ids": [
+        "src-context"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-context",
+          "quote": "Read from Runtime Context: user role and environment",
+          "location": "System prompt / Runtime Context example"
+        }
+      ],
+      "aliases": [
+        "上下文个性化"
+      ],
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-tool-policy",
+      "title": "在不同阶段只向 Agent 提供适用的工具",
+      "result": "依据认证状态、权限、功能开关或任务阶段调整可见工具集，减少误选和无关工具干扰。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需编写中间件策略；隐藏模型可见工具不等于完成服务端访问控制，动态加入的工具还需提供执行处理。",
+      "source_ids": [
+        "src-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-tools",
+          "quote": "available toolset based on authentication state",
+          "location": "Introduction; Dynamic tool selection"
+        }
+      ],
+      "aliases": [
+        "动态工具集",
+        "阶段工具解锁"
+      ],
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-model-routing",
+      "title": "为不同请求或任务阶段选择合适的模型",
+      "result": "可替换模型提供方，或按当前状态与复杂度选择不同模型，平衡能力、成本和时延。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要相应提供方集成和可用凭据；切换接口统一不代表模型行为、工具能力或价格相同。路由策略由应用实现。",
+      "source_ids": [
+        "src-models"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-models",
+          "quote": "switch between models",
+          "location": "Overview; Dynamic model selection; Multimodal"
+        },
+        {
+          "source_id": "src-models",
+          "quote": "sophisticated routing logic and cost optimization.",
+          "location": "Overview; Dynamic model selection; Multimodal"
+        }
+      ],
+      "aliases": [
+        "动态选模",
+        "多提供方模型路由"
+      ],
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-conversation-memory",
+      "title": "让助手在同一会话中记住前文并继续任务",
+      "result": "后续问题可以引用同一线程的已有消息和状态，而无需每次重新解释背景。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api_with_langgraph_runtime",
+      "conditions": "通过 create_agent 的 checkpointer 接口启用，底层是 LangGraph。需稳定 thread_id；内存型示例不会跨进程持久保存，生产需数据库后端及用户隔离。",
+      "source_ids": [
+        "src-short-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-short-memory",
+          "quote": "remember previous interactions within a single thread or conversation.",
+          "location": "Overview; Usage"
+        }
+      ],
+      "aliases": [
+        "会话记忆",
+        "线程状态"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "LangChain create_agent interface",
+        "LangGraph runtime/checkpointer",
+        "Persistence backend for restart survival"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-summarize",
+      "title": "让长对话在上下文接近上限时继续进行",
+      "result": "按阈值压缩较早消息并保留近期上下文，降低整段历史塞满模型窗口的风险。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要摘要模型或自定义摘要器；摘要可能遗漏信息，不是无限或无损记忆。",
+      "source_ids": [
+        "src-ref-summarize-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-summarize-class",
+          "quote": "Summarizes conversation history when token limits are approached.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "对话压缩",
+        "历史摘要"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-stream",
+      "title": "边执行边向用户展示答复和任务进展",
+      "result": "应用可连续展示生成中的文本、Agent 步骤状态和工具自定义进度，避免只能等待最终答案。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api_with_langgraph_runtime",
+      "conditions": "需应用消费流并构建界面；底层模型决定 token 流式能力，进度显示不等于任务成功。",
+      "source_ids": [
+        "src-streaming"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-streaming",
+          "quote": "state updates after each agent step.",
+          "location": "Capabilities; agent progress; LLM tokens"
+        },
+        {
+          "source_id": "src-streaming",
+          "quote": "tokens as they're generated.",
+          "location": "Capabilities; agent progress; LLM tokens"
+        }
+      ],
+      "aliases": [
+        "流式答复",
+        "执行进度"
+      ],
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "LangChain create_agent interface",
+        "LangGraph runtime/checkpointer",
+        "Persistence backend for restart survival"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-approve",
+      "title": "让人审核、修改或拒绝即将执行的业务动作",
+      "result": "工具调用可暂停等待用户决定，审核者可改参数后继续，或拒绝该动作并把反馈交给 Agent。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api_with_langgraph_runtime",
+      "conditions": "需要 HumanInTheLoopMiddleware、checkpointer、线程标识及审核交互；持久暂停依赖 LangGraph 存储。只对已配置的调用生效。",
+      "source_ids": [
+        "src-hitl"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-hitl",
+          "quote": "Modify the tool arguments before execution.",
+          "location": "Interrupt decision types; approval, edit, reject, respond"
+        }
+      ],
+      "aliases": [
+        "人工审核",
+        "动作审批"
+      ],
+      "group_ids": [
+        "grp-business",
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain create_agent interface",
+        "LangGraph runtime/checkpointer",
+        "Persistence backend for restart survival"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-ask-user",
+      "title": "遇到缺失信息时暂停并取得人的回答",
+      "result": "Agent 可提出需要人补充的问题，把回答作为工具结果再继续任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api_with_langgraph_runtime",
+      "conditions": "需配置适合 ask_user 的 respond 决策及应用交互。respond 不是拒绝副作用动作的替代方式；文档基准为当前 1.4.9，未声称 1.0 已具备全部决策类型。",
+      "source_ids": [
+        "src-hitl"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-hitl",
+          "quote": "\"ask user\" style tools.",
+          "location": "Interrupt decision types; approval, edit, reject, respond"
+        }
+      ],
+      "aliases": [
+        "用户澄清",
+        "人类补充信息"
+      ],
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain create_agent interface",
+        "LangGraph runtime/checkpointer",
+        "Persistence backend for restart survival"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-pii",
+      "title": "对特定个人信息进行检测、遮蔽或阻断处理",
+      "result": "可在配置的位置识别邮箱、信用卡等 PII，并按策略脱敏或阻止相应内容流转。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需配置检测类型、策略和覆盖输入/输出/工具结果的位置；不保证发现全部敏感信息，也不自动完成合规。",
+      "source_ids": [
+        "src-guardrails"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-guardrails",
+          "quote": "detecting and handling Personally Identifiable Information",
+          "location": "Built-in PII; deterministic and model-based guardrails"
+        }
+      ],
+      "aliases": [
+        "PII 脱敏"
+      ],
+      "version_requirements": "流式 wire output 随 apply_to_output 脱敏的文档要求 langchain>=1.3.2。",
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-guardrails",
+      "title": "按业务规则检查输入、输出与工具行为",
+      "result": "在 Agent 生命周期中加入确定性规则或模型审核，对不合适的输入、结果或动作进行拦截和反馈。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要实现判定规则、处理动作与测试；模型审核可能误判，不能据此宣称免疫提示注入或保证输出正确。",
+      "source_ids": [
+        "src-guardrails"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-guardrails",
+          "quote": "building custom guardrails using either approach.",
+          "location": "Built-in PII; deterministic and model-based guardrails"
+        }
+      ],
+      "aliases": [
+        "自定义业务护栏"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-retry",
+      "title": "在模型或外部工具短暂失败后重试任务步骤",
+      "result": "对选定异常采用可配置退避重试，提高临时网络或服务故障下继续完成请求的机会。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需配置异常范围、重试次数与终止行为；带副作用的工具必须处理幂等，重试不保证一定成功。",
+      "source_ids": [
+        "src-ref-modelretry-class",
+        "src-ref-toolretry-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-modelretry-class",
+          "quote": "automatically retries failed model calls with configurable backoff.",
+          "location": "Overview / introductory paragraph"
+        },
+        {
+          "source_id": "src-ref-toolretry-class",
+          "quote": "automatically retries failed tool calls with configurable backoff.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "暂时故障恢复"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-tool-repair",
+      "title": "把工具错误反馈给模型以修正后续调用",
+      "result": "将可处理的执行异常转换为模型能读取的错误结果，让 Agent 有机会改参数或改计划继续。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需选择可披露的错误及处理策略；这与自动重试不同，不应将原始异常中的秘密直接反馈给模型。",
+      "source_ids": [
+        "src-ref-toolerror-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-toolerror-class",
+          "quote": "Return selected tool-execution exceptions to the model",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "工具错误恢复"
+      ],
+      "version_requirements": "ToolErrorMiddleware 文档要求 langchain>=1.3.14。",
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-fallback",
+      "title": "在主模型不可用时尝试其他模型完成请求",
+      "result": "主模型调用出错后按顺序尝试备用模型，避免服务完全依赖单一提供方。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需准备备用模型及凭据，并确认工具、结构输出和模型参数兼容；不会自动保证质量与成本等价。",
+      "source_ids": [
+        "src-ref-fallback-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-fallback-class",
+          "quote": "Automatic fallback to alternative models on errors.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "备用模型",
+        "模型容错"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-budgets",
+      "title": "限制 Agent 无限调用带来的开销与循环",
+      "result": "为单次运行或线程设置模型和工具调用次数上限，达到阈值后终止或限制继续执行。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "调用次数上限不是精确金额或 token 账单上限；跨运行计数需相应持久状态，并定义终止后的用户体验。",
+      "source_ids": [
+        "src-ref-modellimit-class",
+        "src-ref-toollimit-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-modellimit-class",
+          "quote": "Tracks model call counts and enforces limits.",
+          "location": "Overview / introductory paragraph"
+        },
+        {
+          "source_id": "src-ref-toollimit-class",
+          "quote": "Track tool call counts and enforces limits during agent execution.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "调用预算",
+        "循环限制"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-tool-selection",
+      "title": "从大量工具中选出当前问题相关的一小组",
+      "result": "在主模型决策前用选择器缩小候选工具范围，减少无关工具描述占用上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需要选择器模型及工具描述；增加一次选择成本，且可能漏选关键工具，不是权限检查。",
+      "source_ids": [
+        "src-ref-selector-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-selector-class",
+          "quote": "select relevant tools before calling the main model.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "工具筛选"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-plan",
+      "title": "把复杂工作整理为可更新的任务清单",
+      "result": "Agent 可创建和更新结构化待办，让用户看到计划、进度和待完成事项。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "使用 LangChain 的 TodoListMiddleware 即可；清单是模型维护的计划记录，不证明每项已真正完成，Deep Agents 也可按配置复用。",
+      "source_ids": [
+        "src-ref-todo-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-todo-class",
+          "quote": "structured task lists for complex multi-step operations.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "任务规划",
+        "待办追踪"
+      ],
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-local-search",
+      "title": "让 Agent 在指定目录中定位文件与文本内容",
+      "result": "通过文件名模式和内容检索找到相关本地文件，为代码或资料任务提供上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需配置 FilesystemFileSearchMiddleware 的根路径和可访问文件；这是 Glob/Grep 检索，不是语义向量检索，也不是完整文件编辑器。",
+      "source_ids": [
+        "src-ref-file-search-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-file-search-class",
+          "quote": "Provides Glob and Grep search over filesystem files.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "文件搜索",
+        "目录内容检索"
+      ],
+      "group_ids": [
+        "grp-knowledge"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-shell",
+      "title": "让 Agent 在持续会话中执行命令并读取结果",
+      "result": "Agent 可使用同一个 shell 会话运行项目命令、检查文件或调用已有程序。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "需显式配置执行环境与策略。默认 HostExecutionPolicy 是宿主执行，不会自动隔离；Docker 等策略另需对应设施，输出遮蔽也不是防泄露边界。",
+      "source_ids": [
+        "src-ref-shell-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-shell-class",
+          "quote": "registers a persistent shell tool for agents.",
+          "location": "Introduction; execution policies"
+        }
+      ],
+      "aliases": [
+        "命令执行",
+        "终端工具"
+      ],
+      "group_ids": [
+        "grp-deliverables",
+        "grp-control"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-specialists",
+      "title": "把不同领域的工作交给专家助手并汇总",
+      "result": "主 Agent 可把专长不同的子 Agent 当作工具调用，让每个专家只处理其领域任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_custom_pattern",
+      "conditions": "LangChain 示例通过开发者自行封装工具实现；需要设计输入输出与上下文传递，不是调用 create_agent 就自动生成团队。Deep Agents 提供另一条内置实现路径。",
+      "source_ids": [
+        "src-subagents-pattern",
+        "src-da-subagents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-subagents-pattern",
+          "quote": "coordinates subagents by calling them as tools.",
+          "location": "Introduction; Basic implementation"
+        },
+        {
+          "source_id": "src-da-subagents",
+          "quote": "A deep agent can create subagents to delegate work.",
+          "location": "Introduction; configuration; context isolation"
+        }
+      ],
+      "aliases": [
+        "专家委派",
+        "监督者模式"
+      ],
+      "implementation_notes": "核心路径：create_agent + 自定义工具包装；成品子代理中间件属于 deepagents，不能把两个路径混为一个内置功能。",
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "required_components": [
+        "LangChain Python 1.x",
+        "Developer-written wrappers or middleware"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-skills",
+      "title": "在需要时才加载某项专业知识或操作流程",
+      "result": "一个助手可以按任务加载领域指令、模板或参考资料，避免把全部知识预先放入上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_custom_pattern",
+      "conditions": "LangChain 文档展示自定义 load_skill 工具模式；目录式 SKILL.md 发现与加载是 Deep Agents 的内置能力。脚本是否能执行还取决于额外工具和权限。",
+      "source_ids": [
+        "src-lc-skills",
+        "src-da-skills"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-lc-skills",
+          "quote": "Skills are primarily prompt-driven specializations",
+          "location": "Introduction; Basic implementation; built-in support boundary"
+        },
+        {
+          "source_id": "src-da-skills",
+          "quote": "discovers and reads the contained files only when relevant.",
+          "location": "Introduction; Usage"
+        }
+      ],
+      "aliases": [
+        "按需技能",
+        "渐进式知识加载"
+      ],
+      "implementation_notes": "手工工具模式不等于自动支持 Agent Skills 目录规范；后者需 deepagents 或自行开发。",
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "required_components": [
+        "LangChain Python 1.x",
+        "Developer-written wrappers or middleware"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-test-without-actions",
+      "title": "测试 Agent 流程而不触发真实业务操作",
+      "result": "可用固定模型响应或工具仿真覆盖工具选择、错误和流程分支，减少测试对真实服务副作用的依赖。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api",
+      "conditions": "固定 fake 模型可不调用 API；LLMToolEmulator 仍会调用模型并可能收费。仿真结果不是实际业务成功证据，也不替代真实集成测试。",
+      "source_ids": [
+        "src-unit-testing",
+        "src-ref-emulator-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-unit-testing",
+          "quote": "Test agent logic without API calls",
+          "location": "Introduction; Mock chat model"
+        },
+        {
+          "source_id": "src-ref-emulator-class",
+          "quote": "Emulates specified tools using an LLM instead of executing them.",
+          "location": "Overview / introductory paragraph"
+        }
+      ],
+      "aliases": [
+        "离线流程测试",
+        "工具仿真"
+      ],
+      "group_ids": [
+        "grp-operations"
+      ],
+      "required_components": [
+        "LangChain Python 1.x public API",
+        "Model provider / application resources as applicable"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-sql",
+      "title": "用自然语言询问数据库并取得查询结果",
+      "result": "Agent 可查表结构、生成 SQL、读取执行结果，并根据数据库错误修正查询后作答。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "tool_integration",
+      "conditions": "官方实现需要 langchain-community 的 SQLDatabase / SQLDatabaseToolkit、数据库驱动与访问权限，使用 Chinook SQLite 示例。必须限制数据库权限、资源与允许的查询；并非核心包自带数据库或保证查询正确。",
+      "source_ids": [
+        "src-sql"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-sql",
+          "quote": "Correct mistakes surfaced by the database engine until the query is successful",
+          "location": "Overview; Build your SQL agent; Chinook example"
+        }
+      ],
+      "aliases": [
+        "数据库问答",
+        "自然语言转 SQL"
+      ],
+      "example": {
+        "description": "官方 Python 1.x SQL agent 教程使用 create_agent 和 Chinook 数据库；本轮只核对文档和代码，未执行查询。",
+        "evidence_kind": "official_runnable_tutorial_not_executed"
+      },
+      "group_ids": [
+        "grp-knowledge"
+      ],
+      "required_components": [
+        "LangChain Python 1.x",
+        "langchain-community SQL tools",
+        "Database driver and database"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-meetings",
+      "title": "构建协调排期、日历事项和邮件沟通的助手",
+      "result": "通过日历与邮件两个专家，形成查空闲时间、安排事件及起草通知的联合流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langchain_pattern_with_business_integrations",
+      "conditions": "官方个人助理教程的业务工具是示例或模拟实现；实际接入日历和邮件必须另写或选用连接器并授权。人工审批需要配置，教程不证明已连接用户真实账户。",
+      "source_ids": [
+        "src-personal"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-personal",
+          "quote": "scheduling, availability checking, and event management.",
+          "location": "Overview; mock calendar and email tools"
+        },
+        {
+          "source_id": "src-personal",
+          "quote": "drafts messages, and sends notifications.",
+          "location": "Overview; mock calendar and email tools"
+        }
+      ],
+      "aliases": [
+        "会议协调",
+        "日历邮件助理"
+      ],
+      "example": {
+        "description": "官方 supervisor 教程把日历与邮件子 Agent 封装为工具，并加入发送前的人工审核。",
+        "evidence_kind": "official_mock_business_tutorial"
+      },
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain agent composition",
+        "Real calendar/email adapters and authorisation"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-docs-qa",
+      "title": "用文档和检索证据回答问题并提供出处",
+      "result": "Agent 可以查询 PDF、私有知识库或文档服务，将相关材料作为回答依据并输出来源链接。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "retrieval_integrations_or_deepagents_application",
+      "conditions": "需要加载器、嵌入模型、向量库或已有知识库接口。当前官方 RAG 教程使用 Deep Agents；Chat LangChain 还需要 Managed Deep Agents、MCP 和支持库等应用组件。带引文不保证结论被来源支持。",
+      "source_ids": [
+        "src-knowledge-base",
+        "src-da-rag",
+        "src-repo-chat",
+        "src-repo-chat-deps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-knowledge-base",
+          "quote": "retrieve passages similar to a query",
+          "location": "Overview; PDF loading, embeddings, vector stores"
+        },
+        {
+          "source_id": "src-da-rag",
+          "quote": "answers a question with citations to the docs.",
+          "location": "View example trace; What you will build"
+        },
+        {
+          "source_id": "src-repo-chat",
+          "quote": "Searches official LangChain docs via managed MCP",
+          "location": "Overview; Features"
+        },
+        {
+          "source_id": "src-repo-chat-deps",
+          "quote": "langchain[mcp]>=1.0.2",
+          "location": "project.dependencies"
+        },
+        {
+          "source_id": "src-repo-chat-deps",
+          "quote": "managed-deepagents==0.9.2",
+          "location": "project.dependencies"
+        }
+      ],
+      "aliases": [
+        "知识库问答",
+        "有出处的文档助手",
+        "Agentic RAG"
+      ],
+      "example": {
+        "description": "当前 Chat LangChain 项目将文档问答部署为 Managed Deep Agent；另有官方 PDF 检索与带引用 RAG 教程。",
+        "evidence_kind": "deployed_application_described_by_maintainer_plus_tutorials"
+      },
+      "implementation_notes": "可自行用 create_agent 包装检索工具；本文所核对的现成 RAG/部署案例包含额外组件，不能把全部应用归给 LangChain 核心。",
+      "group_ids": [
+        "grp-knowledge",
+        "grp-business"
+      ],
+      "required_components": [
+        "Loaders/retriever or existing knowledge service",
+        "Embedding/vector store where used",
+        "Deep Agents or Managed Deep Agents for the cited ready-made examples"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-research",
+      "title": "围绕主题进行多轮资料研究并生成引用报告",
+      "result": "围绕问题拆解检索、整理材料并综合成带引用的研究报告，而不是只返回一次搜索结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_or_independent_application",
+      "conditions": "需要搜索服务、模型及应用的研究逻辑。Deep Agents research 示例需 deepagents 和 Tavily 等；独立 GPT Researcher 虽声明 LangChain >=1.0，也同时依赖 langchain-classic，不能当作纯 create_agent 方案或保证报告无误。",
+      "source_ids": [
+        "src-repo-research",
+        "src-repo-research-deps",
+        "src-repo-gpt",
+        "src-repo-gpt-deps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-repo-research",
+          "quote": "The deep research agent uses custom instructions",
+          "location": "Custom Instructions; usage"
+        },
+        {
+          "source_id": "src-repo-research-deps",
+          "quote": "deepagents>=0.6.12",
+          "location": "project.dependencies"
+        },
+        {
+          "source_id": "src-repo-gpt",
+          "quote": "research reports with citations.",
+          "location": "Introduction; Features"
+        },
+        {
+          "source_id": "src-repo-gpt-deps",
+          "quote": "langchain>=1.0.0",
+          "location": "LangChain v1 requirements"
+        },
+        {
+          "source_id": "src-repo-gpt-deps",
+          "quote": "langchain-classic>=1.0.0",
+          "location": "LangChain v1 requirements"
+        }
+      ],
+      "aliases": [
+        "深度研究",
+        "研究报告"
+      ],
+      "example": {
+        "description": "Deep Agents 官方 deep_research 示例与独立开发者 GPT Researcher 项目都提供研究应用；后者依赖清单明确列出 LangChain v1 和 classic。",
+        "evidence_kind": "official_example_and_independent_project_not_executed"
+      },
+      "group_ids": [
+        "grp-knowledge",
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "Deep Agents research application OR GPT Researcher",
+        "Model and search providers",
+        "langchain-classic is additionally required by the cited GPT Researcher requirements"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-report-export",
+      "title": "把研究报告导出为可交付的文档文件",
+      "result": "使用现成研究应用的导出流程，得到 PDF、Word 等格式的报告成品。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "independent_application",
+      "conditions": "所引实现来自 GPT Researcher，并需要其文档转换依赖和模板；LangChain 返回文本或结构化结果不等于原生生成排版完善的 Word / PDF。",
+      "source_ids": [
+        "src-repo-gpt"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-repo-gpt",
+          "quote": "PDF, Word, and other formats.",
+          "location": "Introduction; Features"
+        }
+      ],
+      "aliases": [
+        "研究文档导出"
+      ],
+      "example": {
+        "description": "GPT Researcher README 的 Features 列出报告格式导出，requirements 包括 python-docx、md2pdf 等。",
+        "evidence_kind": "independent_project_feature"
+      },
+      "group_ids": [
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "GPT Researcher application",
+        "Document conversion packages"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-content",
+      "title": "按品牌风格制作文章、社交内容和配图",
+      "result": "把品牌规范、按需写作技能、研究委派和图像工具组合，生成文章或社交文案及封面素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_example_with_external_image_model",
+      "conditions": "需要 deepagents、写作技能与品牌资料，图像生成另需 Google 模型工具和凭据；研究可选 Tavily。示例以保存素材为结果，不自动获得社交平台发布权限。",
+      "source_ids": [
+        "src-repo-content",
+        "src-repo-content-deps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-repo-content",
+          "quote": "writing blog posts, LinkedIn posts, and tweets with cover images included.",
+          "location": "Introduction; architecture; output"
+        },
+        {
+          "source_id": "src-repo-content-deps",
+          "quote": "deepagents>=0.6.12",
+          "location": "project.dependencies"
+        },
+        {
+          "source_id": "src-repo-content-deps",
+          "quote": "google-genai>=2.10.0",
+          "location": "project.dependencies"
+        }
+      ],
+      "aliases": [
+        "品牌写作助手",
+        "图文内容制作"
+      ],
+      "example": {
+        "description": "官方 Content Builder 示例将 AGENTS.md、skills 和子代理配置结合，输出 post.md 与图片文件。",
+        "evidence_kind": "official_application_example_not_executed"
+      },
+      "group_ids": [
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "deepagents",
+        "Author-provided memory/skills/tools",
+        "External image generation provider"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-coding-pr",
+      "title": "从工程任务出发修改代码、验证并交付 PR",
+      "result": "通过完整工程 Agent 应用调查代码库、实现修改、运行检查，并把变更交付为拉取请求。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "open_swe_application_on_deepagents_and_langgraph",
+      "conditions": "所引 Open SWE 需要 Deep Agents、LangGraph、代码工具、沙箱、GitHub 授权和应用 UI；当前原样部署还依赖 Managed Deep Agents。项目声明仍在活跃开发且不保证稳定，不能视为 LangChain 核心自动编程能力。",
+      "source_ids": [
+        "src-repo-open-swe",
+        "src-repo-open-swe-deps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-repo-open-swe",
+          "quote": "implement changes, validate them, and deliver a pull request.",
+          "location": "Introduction; How it works; deployment note"
+        },
+        {
+          "source_id": "src-repo-open-swe-deps",
+          "quote": "deepagents==0.7.32",
+          "location": "project.dependencies; requires-python"
+        },
+        {
+          "source_id": "src-repo-open-swe-deps",
+          "quote": "langchain[mcp]>=1.4.8",
+          "location": "project.dependencies; requires-python"
+        },
+        {
+          "source_id": "src-repo-open-swe-deps",
+          "quote": "requires-python = \">=3.14\"",
+          "location": "project.dependencies; requires-python"
+        }
+      ],
+      "aliases": [
+        "软件工程 Agent",
+        "代码修改交付"
+      ],
+      "version_requirements": "所读 Open SWE manifest 要求 Python >=3.14、deepagents==0.7.32、langchain[mcp]>=1.4.8；不是 LangChain 本身的最低 Python 版本。",
+      "example": {
+        "description": "Open SWE README 和 Python 依赖清单明确区分 Deep Agents、LangGraph 以及应用自有工程工具。",
+        "evidence_kind": "maintainer_described_application_not_deployed_here"
+      },
+      "group_ids": [
+        "grp-deliverables",
+        "grp-coordination"
+      ],
+      "required_components": [
+        "Open SWE",
+        "Deep Agents",
+        "LangGraph",
+        "Managed Deep Agents in the cited as-is deployment",
+        "Sandbox/GitHub/application infrastructure"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-voice",
+      "title": "通过语音与能调用工具的助手对话",
+      "result": "将说话输入转换为文本，交给 Agent 处理业务工具，再把答复转换为可播放语音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "speech_services_and_application_transport",
+      "conditions": "需要 STT、TTS、音频客户端及实时传输。官方 Python 示例使用 AssemblyAI、Cartesia 与 WebSocket；语音识别和合成不是 LangChain 模型循环自身完成的。",
+      "source_ids": [
+        "src-voice"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-voice",
+          "quote": "engage in natural spoken conversations with users.",
+          "location": "Overview; Sandwich architecture; AssemblyAI and Cartesia example"
+        }
+      ],
+      "aliases": [
+        "语音业务助手",
+        "语音点单"
+      ],
+      "example": {
+        "description": "官方 voice-sandwich-demo 让三明治店订单 Agent 连接语音识别与合成流程。",
+        "evidence_kind": "official_end_to_end_reference_application"
+      },
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "LangChain text agent",
+        "AssemblyAI STT / Cartesia TTS or alternatives",
+        "WebSocket/audio application"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-long-memory",
+      "title": "跨会话记住用户资料、偏好和已保存的知识",
+      "result": "在新对话中查回以前保存的信息，而不只依赖当前聊天历史。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "langchain_api_with_langgraph_store",
+      "conditions": "create_agent 提供 store 接口，实际存储由 LangGraph Store 承担；需设计用户命名空间、读写工具和持久后端。内存型 Store 不能跨进程保存，存储记录不等于模型被重新训练。",
+      "source_ids": [
+        "src-long-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-long-memory",
+          "quote": "store and recall information across different conversations and sessions.",
+          "location": "Introduction; Usage; Memory storage"
+        }
+      ],
+      "aliases": [
+        "长期记忆",
+        "跨线程资料"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "LangChain create_agent store interface",
+        "LangGraph Store",
+        "Durable store backend for cross-process persistence"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-staged-support",
+      "title": "让多阶段业务在满足前置条件后才进入下一步",
+      "result": "构建持续对话流程，例如先确认保修资格，再收集问题，最后提供解决方案或转交处理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langchain_pattern_with_langgraph_commands",
+      "conditions": "所引 handoff 实现使用 LangChain 中间件和 LangGraph Command 状态更新；需要定义业务状态、合法迁移和真实工具。客服教程中的模拟操作不证明真实退款或转人工已接通。",
+      "source_ids": [
+        "src-handoffs",
+        "src-handoff-support"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-handoffs",
+          "quote": "collecting a warranty ID before processing a refund.",
+          "location": "When to use; Basic implementation"
+        },
+        {
+          "source_id": "src-handoff-support",
+          "quote": "customer support",
+          "location": "Overview; support states; tools"
+        }
+      ],
+      "aliases": [
+        "阶段业务助手",
+        "状态驱动客服"
+      ],
+      "example": {
+        "description": "官方 customer-support 示例展示保修状态与问题类型收集，再进入解决阶段。",
+        "evidence_kind": "official_mock_business_tutorial"
+      },
+      "group_ids": [
+        "grp-business"
+      ],
+      "required_components": [
+        "LangChain middleware",
+        "LangGraph Command/state",
+        "Application business tools"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-multi-source",
+      "title": "并行咨询不同资料系统后综合回答",
+      "result": "把一个问题分配给不同领域或数据源的专家，并把相关结果合成为统一答案。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langgraph_routing_with_langchain_agents",
+      "conditions": "所引 router 使用 LangGraph Command / Send、状态图和 LangChain 专家；GitHub、Notion、Slack 教程工具是模拟接口，真实使用需连接器、鉴权及数据权限。",
+      "source_ids": [
+        "src-router-kb"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-router-kb",
+          "quote": "routes them to the relevant agents in parallel",
+          "location": "Overview; mock source agents; Send routing"
+        }
+      ],
+      "aliases": [
+        "多源知识路由",
+        "并行知识问答"
+      ],
+      "example": {
+        "description": "官方多源知识库路由教程演示 GitHub、Notion 与 Slack 三类资料的并行分发。",
+        "evidence_kind": "official_mock_data_source_tutorial"
+      },
+      "group_ids": [
+        "grp-coordination",
+        "grp-knowledge"
+      ],
+      "required_components": [
+        "LangGraph routing/Send",
+        "LangChain specialist agents",
+        "Actual source connectors and authorisation"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-hybrid-workflow",
+      "title": "把固定业务步骤与 Agent 自主决策放入同一流程",
+      "result": "对必须按顺序执行的步骤保留代码控制，同时让部分步骤自主决定调用哪些工具。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langgraph_orchestration",
+      "conditions": "需要直接使用 LangGraph 的图或 Functional API 编排状态、分支和停止条件；这比 create_agent 的标准循环更底层，不会自动理解业务规则。",
+      "source_ids": [
+        "src-lg-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-lg-workflows",
+          "quote": "predetermined code paths",
+          "location": "Introduction; Orchestrator-worker"
+        }
+      ],
+      "aliases": [
+        "确定性与 Agent 混合流程"
+      ],
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "required_components": [
+        "LangGraph direct graph or Functional API",
+        "Models/tools and user-defined workflow"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-fanout",
+      "title": "动态拆分复杂任务并汇总多个工作结果",
+      "result": "编排器可按当前输入生成子任务，分配给多个 worker，再综合它们的输出。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langgraph_orchestration",
+      "conditions": "需要 LangGraph 的 orchestrator-worker 模式、Send 分发、结果汇聚与并发预算；并行不保证更快或更准确，需管理冲突和重复工作。",
+      "source_ids": [
+        "src-lg-workflows"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-lg-workflows",
+          "quote": "Synthesizes worker outputs into a final result",
+          "location": "Introduction; Orchestrator-worker"
+        }
+      ],
+      "aliases": [
+        "动态工作分解",
+        "并行工作流"
+      ],
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "required_components": [
+        "LangGraph direct graph or Functional API",
+        "Models/tools and user-defined workflow"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-recover",
+      "title": "在流程失败或服务重启后从持久状态恢复",
+      "result": "通过检查点保存已完成步骤，让长任务在条件满足时继续，而不是总从头开始。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langgraph_checkpoint_runtime",
+      "conditions": "需 LangGraph checkpointer、持久存储和正确线程身份；恢复受 durability 模式影响。未完成步骤和外部副作用仍可能重做，需幂等设计，不能宣称恰好执行一次。",
+      "source_ids": [
+        "src-lg-checkpoints"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-lg-checkpoints",
+          "quote": "restart your graph from the last successful step.",
+          "location": "Fault-tolerance; durability modes"
+        }
+      ],
+      "aliases": [
+        "持久执行",
+        "中断恢复"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "LangGraph checkpointer",
+        "Durable database",
+        "Thread identity and idempotent tasks"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-replay",
+      "title": "从历史检查点重放或分支探索另一条方案",
+      "result": "可查看历史状态，修改某一步的状态后继续，比较不同路径的任务结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langgraph_time_travel",
+      "conditions": "需要保留检查点及相关应用交互；重放会重新执行后续模型和 API 调用，可能产生费用或副作用，不是只读回看缓存。",
+      "source_ids": [
+        "src-lg-time-travel"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-lg-time-travel",
+          "quote": "Replay past executions and fork to explore alternative paths in LangGraph",
+          "location": "Introduction; replay; fork"
+        }
+      ],
+      "aliases": [
+        "历史重放",
+        "状态分支"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "LangGraph checkpoints/history APIs",
+        "Retained state and application UI if needed"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-mcp",
+      "title": "复用 MCP 服务提供的查询与动作工具",
+      "result": "发现远端 MCP 服务的工具并交给 Agent 调用，复用文档搜索或其他服务能力。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langchain_mcp_interface_with_external_servers",
+      "conditions": "当前 1.4.9 文档使用 langchain.mcp.MCPAdapter、langchain[mcp] 和 FastMCP，另需真实 MCP 服务及授权。其他旧项目可能使用 langchain-mcp-adapters，二者不能不加区分。具体能力由服务提供，不是核心包自带所有连接器。",
+      "source_ids": [
+        "src-mcp"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-mcp",
+          "quote": "discovers a server's tools",
+          "location": "Introduction; Quickstart; docs MCP example"
+        }
+      ],
+      "aliases": [
+        "MCP 工具接入"
+      ],
+      "version_requirements": "按当前 1.4.9 接口核对；未把 MCPAdapter 路径宣称为所有 1.x 均支持。",
+      "group_ids": [
+        "grp-knowledge"
+      ],
+      "required_components": [
+        "langchain[mcp] / MCPAdapter in current docs",
+        "FastMCP",
+        "External MCP server and credentials"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-web-search",
+      "title": "让 Agent 查询当前网页资料再作答",
+      "result": "通过搜索工具取得当前网页结果及相关材料，支持时效性问题和研究任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "external_search_tool",
+      "conditions": "所引实现需 langchain-tavily、Tavily 服务与 API 凭据；搜索质量、页面访问和费用由服务决定，搜索结果本身不保证真实性。",
+      "source_ids": [
+        "src-tavily"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-tavily",
+          "quote": "search engine built specifically for AI agents",
+          "location": "Introduction; TavilySearch setup and usage"
+        }
+      ],
+      "aliases": [
+        "联网搜索助手"
+      ],
+      "group_ids": [
+        "grp-knowledge"
+      ],
+      "required_components": [
+        "langchain-tavily",
+        "Tavily account/API",
+        "Tool-capable model"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-multimodal",
+      "title": "让 Agent 使用图片等多模态资料处理任务",
+      "result": "向有相应能力的模型提供图片、音频或其他支持的内容，并结合工具处理结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "provider_model_capability_via_langchain",
+      "conditions": "LangChain 提供消息与模型接口，识图、语音或视频能力来自具体模型及集成；格式和支持范围必须逐提供方确认，不能把文本模型自动变成视觉模型。",
+      "source_ids": [
+        "src-models"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-models",
+          "quote": "multimodal inputs",
+          "location": "Overview; Dynamic model selection; Multimodal"
+        }
+      ],
+      "aliases": [
+        "多模态 Agent"
+      ],
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "LangChain model/message interface",
+        "Model/provider supporting the specific media type"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-local-model",
+      "title": "用本地开放权重模型驱动工具型助手",
+      "result": "通过 Ollama 模型集成运行 Agent，减少对远端模型 API 的依赖。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "ollama_runtime_and_model_integration",
+      "conditions": "需要 Ollama、langchain-ollama、适合工具调用的模型及本地算力；模型支持程度不同，外部工具、搜索和遥测仍可能联网，不能等同于整个系统离线。",
+      "source_ids": [
+        "src-ollama"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ollama",
+          "quote": "run open-weight large language models",
+          "location": "Overview; tool calling example"
+        },
+        {
+          "source_id": "src-ollama",
+          "quote": "locally.",
+          "location": "Overview; tool calling example"
+        }
+      ],
+      "aliases": [
+        "本地模型 Agent"
+      ],
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "langchain-ollama",
+        "Ollama runtime",
+        "Compatible local model and hardware"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-files",
+      "title": "以文件形式保存、修改和复用任务成果",
+      "result": "Agent 可把中间材料和最终成果组织为文件，并在后续步骤继续读取或编辑。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_filesystem",
+      "conditions": "需 Deep Agents 的 FilesystemMiddleware 和合适 backend。StateBackend 是线程内虚拟文件，FilesystemBackend 写真实磁盘，跨线程持久化需 StoreBackend 等；核心 create_agent 不默认附送这整套文件系统。",
+      "source_ids": [
+        "src-da-backends"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-da-backends",
+          "quote": "reads and writes real files under a configurable root directory.",
+          "location": "FilesystemBackend; StateBackend; CompositeBackend"
+        }
+      ],
+      "aliases": [
+        "文件工作空间",
+        "任务文件成果"
+      ],
+      "group_ids": [
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "deepagents FilesystemMiddleware",
+        "Selected filesystem backend"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-offload",
+      "title": "把过大的工具内容移出上下文并按需取回",
+      "result": "长任务中可把大段结果存到 backend，用路径和预览替代，然后按需读取或搜索细节。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_context_management",
+      "conditions": "需 Deep Agents 的上下文管理和文件 backend；不代表模型能同时理解任意大资料。自动 offload、摘要和文件保留有各自阈值与存储策略。",
+      "source_ids": [
+        "src-da-context"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-da-context",
+          "quote": "substitutes it with a file path reference and a preview",
+          "location": "Context compression / Offloading"
+        }
+      ],
+      "aliases": [
+        "上下文卸载",
+        "大工具结果管理"
+      ],
+      "group_ids": [
+        "grp-continuity"
+      ],
+      "required_components": [
+        "deepagents context-management stack",
+        "Configured backend"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-instruction-memory",
+      "title": "把反馈保存为后续会话可使用的指令文件",
+      "result": "允许 Agent 读取已配置的记忆文件，并在获准时更新偏好或经验供下一次任务使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_filesystem_memory",
+      "conditions": "需 deepagents 的 memory 配置和持久 backend；应划分用户/组织命名空间及可写权限。更新文件不是模型权重学习，也不保证反馈正确或能力持续提高。",
+      "source_ids": [
+        "src-da-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-da-memory",
+          "quote": "use its built-in edit_file tool to update memory files.",
+          "location": "How memory works; Scoped memory"
+        }
+      ],
+      "aliases": [
+        "AGENTS.md 记忆",
+        "指令文件更新"
+      ],
+      "group_ids": [
+        "grp-continuity",
+        "grp-business"
+      ],
+      "required_components": [
+        "deepagents memory configuration",
+        "Writable/persistent backend and namespace rules"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-background-workers",
+      "title": "后台运行长任务并让主助手继续响应",
+      "result": "主 Agent 可启动后台子任务，同时继续与用户交互，并查询进展、补充指令或取消任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_async_subagents",
+      "conditions": "需要 Deep Agents 异步子代理及相应工作端配置；Agent Server 的完成通知等能力取决于运行环境。这与 Python async/await 同步等待模式不同。",
+      "source_ids": [
+        "src-da-async"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-da-async",
+          "quote": "continue interacting with the user while subagents work concurrently.",
+          "location": "Introduction; prerequisites; task control"
+        }
+      ],
+      "aliases": [
+        "后台子代理",
+        "长任务委派"
+      ],
+      "group_ids": [
+        "grp-coordination"
+      ],
+      "version_requirements": "所读文档的任务通知需 deepagents>=0.7.26；update_strategy、webhook 和 notify_parent 等部分选项需 >=0.7.30，其中多项标为 Beta。",
+      "required_components": [
+        "deepagents asynchronous subagent support",
+        "Configured worker agents / Agent Server transport"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-sandbox",
+      "title": "把代码和文件操作放到隔离执行环境",
+      "result": "为 Agent 配置独立的运行空间，用于运行代码、命令和处理任务文件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_with_sandbox_provider",
+      "conditions": "需 Deep Agents sandbox backend 和具体沙箱运行时或服务；网络、凭据、配额与持久生命周期仍需配置。不能把本地 FilesystemBackend 或宿主 shell 误当沙箱。",
+      "source_ids": [
+        "src-da-sandboxes"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-da-sandboxes",
+          "quote": "Execute code in isolated environments with sandbox backends",
+          "location": "Introduction; provider configuration"
+        }
+      ],
+      "aliases": [
+        "隔离代码执行",
+        "沙箱工作空间"
+      ],
+      "group_ids": [
+        "grp-control"
+      ],
+      "required_components": [
+        "deepagents sandbox backend",
+        "Sandbox provider/runtime and permissions"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-rubric",
+      "title": "按明确标准反复检查和修订草稿",
+      "result": "用评分规则和 grader 模型反馈驱动多轮改写，直到规则满足或达到迭代终止条件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "deepagents_rubric_middleware",
+      "conditions": "需要 Deep Agents RubricMiddleware、调用时的 rubric 和迭代上限；它是模型自评，不等于独立评审或事实证明。必须检查终止状态，不能把最后一次草稿自动当作通过。",
+      "source_ids": [
+        "src-ref-rubric-class"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-ref-rubric-class",
+          "quote": "drives self-evaluated iteration against a rubric.",
+          "location": "Introduction; termination states"
+        }
+      ],
+      "aliases": [
+        "标准驱动修订",
+        "反馈迭代"
+      ],
+      "version_requirements": "deepagents>=0.6.5；文档标为 Beta。",
+      "group_ids": [
+        "grp-coordination",
+        "grp-deliverables"
+      ],
+      "required_components": [
+        "deepagents RubricMiddleware",
+        "Grader model",
+        "Rubric and termination checks"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-trace",
+      "title": "追查 Agent 为什么选错工具、失败或变慢",
+      "result": "记录模型、工具和步骤轨迹，从调用细节及运行指标中定位问题。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langsmith_platform",
+      "conditions": "需 LangSmith SDK/集成与对应平台或自托管配置；外发内容、采样和保留策略由应用配置。它是外部观测能力，不是核心循环自动提供完整运营平台。",
+      "source_ids": [
+        "src-langsmith-observe"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-langsmith-observe",
+          "quote": "Use them to debug failures, monitor quality",
+          "location": "Overview; investigate and monitor"
+        }
+      ],
+      "aliases": [
+        "执行追踪",
+        "运行调试"
+      ],
+      "group_ids": [
+        "grp-operations"
+      ],
+      "required_components": [
+        "LangSmith SDK/integration",
+        "Cloud or self-hosted LangSmith service"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-evaluate",
+      "title": "比较 Agent 版本并把失败案例变为回归测试",
+      "result": "基于数据集、规则或评审器比较版本表现，也可在生产交互上运行在线评估。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langsmith_platform",
+      "conditions": "需 LangSmith 评估工具、测试数据、评审标准及运行预算；自动分数的有效性取决于评审器，不能当作人工验收。",
+      "source_ids": [
+        "src-langsmith-eval"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-langsmith-eval",
+          "quote": "compare versions, benchmark performance, and catch regressions.",
+          "location": "Offline and online evaluation"
+        },
+        {
+          "source_id": "src-langsmith-eval",
+          "quote": "user interactions in real-time",
+          "location": "Offline and online evaluation"
+        }
+      ],
+      "aliases": [
+        "Agent 评估",
+        "质量回归"
+      ],
+      "group_ids": [
+        "grp-operations"
+      ],
+      "required_components": [
+        "LangSmith SDK/integration",
+        "Cloud or self-hosted LangSmith service"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-deploy",
+      "title": "把 Agent 部署为可供应用调用和扩展的服务",
+      "result": "利用部署运行时提供线程、运行管理、实时流式与横向扩展等服务能力。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langsmith_deployment_and_agent_server",
+      "conditions": "需要 LangSmith Deployment / Agent Server 及配套基础设施；云、自托管和混合部署各有许可、账户及资源要求，不是安装 langchain 即获得托管服务。",
+      "source_ids": [
+        "src-langsmith-deployment"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-langsmith-deployment",
+          "quote": "durable execution, real-time streaming, and horizontal scaling.",
+          "location": "Introduction; environments; licensing"
+        }
+      ],
+      "aliases": [
+        "Agent 服务部署"
+      ],
+      "group_ids": [
+        "grp-operations"
+      ],
+      "required_components": [
+        "LangSmith Deployment / Agent Server",
+        "Infrastructure and applicable licensing"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-schedule",
+      "title": "按固定时间自动运行重复的 Agent 工作",
+      "result": "部署后的助手可按计划执行报告、提醒或其他周期工作，而不依赖用户每次发消息。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "langsmith_deployment_scheduler",
+      "conditions": "所引 cron 能力来自 LangSmith Deployment / Agent Server；需要部署、输入和调度策略，并正确换算 UTC 时间，实际动作依赖已授权工具。LangChain 核心没有自动附带调度服务。",
+      "source_ids": [
+        "src-cron"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-cron",
+          "quote": "which run on a user-defined schedule.",
+          "location": "Introduction; cron runs"
+        }
+      ],
+      "aliases": [
+        "周期 Agent 任务",
+        "定时运行"
+      ],
+      "group_ids": [
+        "grp-operations"
+      ],
+      "required_components": [
+        "LangSmith Deployment cron API",
+        "Deployed assistant and authorised tools"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    },
+    {
+      "id": "p-generative-ui",
+      "title": "让 Python Agent 的结果组成可交互业务界面",
+      "result": "待验证方向：用结构化结果连接前端组件目录，生成表单、卡片或看板式交互。",
+      "status": "proposed",
+      "availability": "unknown",
+      "capability_layer": "unverified_python_frontend_integration",
+      "conditions": "已找到官方 json-render / A2UI 前端方案，但所读具体接入示例是 TypeScript。尚未核对 Python 1.x 到该前端的完整运行链路，因此不列为已确认 Python 成果。",
+      "source_ids": [
+        "src-front-generative"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "src-front-generative",
+          "quote": "forms, cards, dashboards, and more.",
+          "location": "Overview; TypeScript frontend integration"
+        }
+      ],
+      "aliases": [
+        "生成式界面"
+      ],
+      "group_ids": [
+        "grp-interaction"
+      ],
+      "required_components": [
+        "Python backend integration not verified",
+        "json-render/A2UI frontend components"
+      ],
+      "version_basis": "Current Python 1.x documentation and API reference, checked against LangChain 1.4.9 where static package inspection applies; earliest supported release is not inferred."
+    }
+  ],
+  "coverage_gaps": [
+    "52 项来源支持与 1 项待验证方向描述本轮保留结果，不是完整性指标；没有独立人工基准或跨任务覆盖率。",
+    "未运行真实模型、付费搜索、数据库、邮件、日历、沙箱或 GitHub 写操作来复现这些应用；来源支持不等于本机运行成功。",
+    "只对 LangChain 1.4.9 wheel 做静态源码存在性检查，没有安装或执行第三方代码。未对全部集成、LangGraph、Deep Agents 与平台版本建立完整兼容矩阵。",
+    "官方文档和 API 参考会持续更新。没有明确写出的首次支持版本不作推断；当前可用不表示任意 1.0 环境都可用。",
+    "部分原 LangChain 检索/RAG 路径已重定向到 Deep Agents 教程；本文按实际实现标注，不因为 URL 或导航栏出现 LangChain 就归为核心。",
+    "LangChain 的长期记忆与会话记忆都有公开入口，但引擎、checkpointer、store 属于 LangGraph；核心标签指公开入口，不表示底层由 LangChain 独立实现。",
+    "官方日历邮件、客服与多源路由教程包含模拟工具；没有把它们当作真实账户、退款或三方企业系统已打通的证据。",
+    "GPT Researcher 是含 LangChain v1、langchain-classic 及多种独立组件的应用；它的报告与导出能力不能整体归给 LangChain 1.x。",
+    "没有对每一个第三方工具进行调查。浏览器/桌面控制、复杂文档生成、机器人、金融或临床领域专用 Agent 不在已确认覆盖范围。",
+    "生成式 UI 的官方材料已读取，但所核对的具体前端示例是 TypeScript；Python 端完整接入未复核，保留为 proposed。",
+    "引用链接、schema 验证、护栏、评分与持久化都不构成事实正确、权限安全、精确一次执行或任务成功的保证。",
+    "没有独立人工语义审查或用户验收；所有 confirmed 条目仍为 source_supported，任何条目均未自行授予 reviewed。"
+  ],
+  "generated_at": "2026-11-04T18:04:40Z",
+  "component_boundary_policy": {
+    "core": "LangChain Python 公共 API 或明确标注的手工组合模式。模型提供方和应用资源仍是前提。",
+    "core_runtime": "短期/长期记忆、流式和 HITL 可通过 LangChain 入口配置，但运行与存储由 LangGraph 提供；逐项写明。",
+    "extension": "该项采用的有据实现直接依赖 LangGraph 编排、Deep Agents、服务连接器、独立应用或 LangSmith。不是宣称只能用这一种实现。",
+    "custom_pattern": "框架提供原语，开发者要自行组装；不冒称为 create_agent 默认附带的成品功能。",
+    "unknown": "已发现方向但目标 Python 端实现尚未核对。"
+  },
+  "research_method": {
+    "collection_date_local": "2026-11-05",
+    "timezone": "Asia/Shanghai",
+    "sequence": [
+      "先核对 Python 1.x 官方概览、release、包 manifest 与文档索引，设定范围；未预设用途分类。",
+      "结果视角：从 Agent、工具、模型、记忆、结构输出、流式和中间件资料提取可观察结果。",
+      "案例视角：检查 SQL、客服、排期邮件、语音教程，以及 Chat LangChain、Open SWE、Deep Research、Content Builder、GPT Researcher 的说明与依赖。",
+      "扩展视角：检查 LangGraph、Deep Agents、MCP、Ollama、Tavily、LangSmith 等组件的新增结果与前提。",
+      "缺口复查：补查异步任务、历史分支、恢复语义、调度、测试与界面；生成式 UI 的 Python 链路证据不足，保留 proposed。",
+      "规范化、去重：合并模型/工具重试、合并 token/进度流、合并 PDF 检索与知识库问答，将手工专家/技能模式与 Deep Agents 成品路径写在同一结果里。",
+      "候选稳定后按用户目的分为八组并加少量交叉标签，再逐项核对引文、依赖归属和版本限定。"
+    ],
+    "boundary_findings": [
+      "libs/langchain/pyproject.toml 对应 langchain-classic；目标包在 libs/langchain_v1。两者未混用。",
+      "中间件汇总页包含 deepagents 的 FilesystemMiddleware、SubAgentMiddleware 和 RubricMiddleware；以实际导入包判归属。",
+      "LangChain 手写子 Agent 和技能模式不必安装 Deep Agents；Deep Agents 的内置封装不因此变成 LangChain 自带。"
+    ],
+    "excluded_or_limited_cases": [
+      {
+        "project": "langchain-ai/open_deep_research",
+        "reason": "所读依赖是较旧 LangGraph/集成组合，未直接声明 LangChain 1.x；不以它单独证明目标版本。使用当前 Deep Agents research 与另行核对的 GPT Researcher 补证。"
+      },
+      {
+        "project": "langchain-ai/local-deep-researcher",
+        "reason": "旧依赖与分支状态不足以确认 Python 1.x 组合，未纳入确认案例。"
+      },
+      {
+        "project": "virattt/ai-hedge-fund",
+        "reason": "所读 manifest 主要声明 0.x 提供方集成，没有目标 LangChain v1 依据；未因名称相关就计入。"
+      },
+      {
+        "project": "Playwright integration URL",
+        "reason": "指定旧文档 URL 返回 404；未将猜测的浏览器能力列为已确认。"
+      }
+    ],
+    "stop_reason": "主要用途已有多类来源支持，后续资料多为同类实现、内部细节或未确认版本的旧项目；不为扩充数量提升弱证据。",
+    "evidence_policy": "所有 source_supported 项具备逐项引用与原文位置；摘录匹配实际抓取的官方文本或 GitHub 内容。此匹配不验证推论、运行结果或独立人类审核。"
+  },
+  "package_static_inspection": {
+    "package": "langchain",
+    "version": "1.4.9",
+    "requires_python": "<4.0.0,>=3.10.0",
+    "metadata_url": "https://pypi.org/pypi/langchain/1.4.9/json",
+    "wheel_url": "https://files.pythonhosted.org/packages/39/35/d7af5ed4e82f8bb43b36460e72b6d43f4ac16626d79e31d25c49e6bee697/langchain-1.4.9-py3-none-any.whl",
+    "filename": "langchain-1.4.9-py3-none-any.whl",
+    "wheel_sha256": "87cf3c15dfddaebd0e421d253e3b4abf70b70d6e18e56c45b9eb1873cc46f154",
+    "static_checks": [
+      {
+        "path": "langchain/agents/factory.py",
+        "expected_symbols": [
+          "create_agent"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/structured_output.py",
+        "expected_symbols": [
+          "ProviderStrategy",
+          "ToolStrategy"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/human_in_the_loop.py",
+        "expected_symbols": [
+          "HumanInTheLoopMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/pii.py",
+        "expected_symbols": [
+          "PIIMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/todo.py",
+        "expected_symbols": [
+          "TodoListMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/tool_selection.py",
+        "expected_symbols": [
+          "LLMToolSelectorMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/file_search.py",
+        "expected_symbols": [
+          "FilesystemFileSearchMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/shell_tool.py",
+        "expected_symbols": [
+          "ShellToolMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/model_retry.py",
+        "expected_symbols": [
+          "ModelRetryMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/tool_retry.py",
+        "expected_symbols": [
+          "ToolRetryMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/tool_error.py",
+        "expected_symbols": [
+          "ToolErrorMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/model_fallback.py",
+        "expected_symbols": [
+          "ModelFallbackMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/model_call_limit.py",
+        "expected_symbols": [
+          "ModelCallLimitMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/tool_call_limit.py",
+        "expected_symbols": [
+          "ToolCallLimitMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/summarization.py",
+        "expected_symbols": [
+          "SummarizationMiddleware"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/agents/middleware/tool_emulator.py",
+        "expected_symbols": [
+          "LLMToolEmulator"
+        ],
+        "present": true
+      },
+      {
+        "path": "langchain/mcp/adapter.py",
+        "expected_symbols": [
+          "MCPAdapter"
+        ],
+        "present": true
+      }
+    ],
+    "scope": "Read wheel ZIP and parse Python AST only. No installation, imports, models, tools or agent workflows executed."
+  },
+  "verification": {
+    "checked_at": "2026-11-04T18:04:40Z",
+    "captured_sources_matched": 66,
+    "captured_fragments_matched": 85,
+    "source_supported": 52,
+    "proposed": 1,
+    "human_reviewed": 0,
+    "claim_evidence_references": 78,
+    "static_wheel_modules_checked": 17,
+    "static_wheel_modules_passed": 17,
+    "checks": [
+      "JSON schema-shape, IDs, references and source-specific excerpts",
+      "Excerpts matched against actually retrieved source text",
+      "Markdown/JSON entry consistency and distinct titles",
+      "Core/extension layer metadata and required components",
+      "Static API presence in the published langchain 1.4.9 wheel"
+    ],
+    "not_performed": [
+      "Real model/tool/application execution",
+      "Full dependency-resolution or runtime compatibility tests",
+      "Independent human semantic review",
+      "Application deployment or paid provider calls"
+    ]
+  }
+}

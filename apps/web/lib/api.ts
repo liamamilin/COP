@@ -201,6 +201,9 @@ async function errorFrom(response: Response, path: string): Promise<ApiError> {
 }
 
 function baseUrl(): string {
+  // Browser reads use the same public proxy as writes, including production
+  // builds without NEXT_PUBLIC_API_BASE_URL. Internal URLs belong to Node.
+  if (typeof window !== "undefined") return publicApiBaseUrl();
   const configured =
     process.env.INTERNAL_API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -265,6 +268,18 @@ export function restoreProject(projectId: string): Promise<ProjectSummary> {
   return send<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}/restore`, {
     method: "POST",
   });
+}
+
+/** Lifecycle transport is shared by entry points; confirmation belongs to UI. */
+export function archiveProject(projectId: string): Promise<ProjectSummary> {
+  return send<ProjectSummary>(`/projects/${encodeURIComponent(projectId)}`, {
+    method: "PATCH", body: JSON.stringify({ status: "archived" }),
+  });
+}
+
+/** Existing backend semantics: hide from the app, not a physical data purge. */
+export function deleteProject(projectId: string): Promise<void> {
+  return send<void>(`/projects/${encodeURIComponent(projectId)}`, { method: "DELETE" });
 }
 
 export function getProject(projectId: string): Promise<ProjectSummary> {
@@ -412,7 +427,7 @@ export function publishDraft(draftId: string, changeSummary: string): Promise<Ve
 }
 
 export function discardDraft(draftId: string): Promise<void> {
-  return request<void>(`/drafts/${encodeURIComponent(draftId)}`, { method: "DELETE" });
+  return send<void>(`/drafts/${encodeURIComponent(draftId)}`, { method: "DELETE" });
 }
 
 export function patchDraftEntity(
@@ -471,8 +486,29 @@ export async function getRunProgress(runId: string): Promise<RunProgress> {
   );
 }
 
+/**
+ * Most recent runs for a project, newest first.
+ *
+ * The panel used to hold its run id only in component state, so leaving the page
+ * and coming back showed the "start a new run" form while a run was still
+ * running or had already finished. The server knows; the browser has to ask.
+ */
+export async function listGenerationRuns(projectId: string): Promise<GenerationRun[]> {
+  return request<GenerationRun[]>(
+    `/projects/${encodeURIComponent(projectId)}/generation-runs`,
+  );
+}
+
 export async function cancelGenerationRun(runId: string): Promise<GenerationRun> {
   return post<GenerationRun>(`/generation-runs/${encodeURIComponent(runId)}/cancel`);
+}
+
+export async function resumeGenerationRun(
+  runId: string, expectedAttempt: number, timeoutSeconds?: number,
+): Promise<GenerationRun> {
+  return post<GenerationRun>(`/generation-runs/${encodeURIComponent(runId)}/resume`, {
+    expected_attempt: expectedAttempt, timeout_seconds: timeoutSeconds,
+  });
 }
 
 /**

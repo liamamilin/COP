@@ -44,6 +44,7 @@ test.describe("partial AI refinement", () => {
   async function openGoalEditor(page: Page, project: VersionedProject) {
     await page.goto(`/projects/${project.projectId}/draft`);
     await waitForHydration(page, ".draft-toolbar");
+    await page.locator(".draft-advanced > summary").click();
     await page
       .locator(".draft-entity-list a", { hasText: project.firstGoal.title })
       .first()
@@ -103,7 +104,9 @@ test.describe("partial AI refinement", () => {
     const proposed = await page.locator(".refine-diff-after").first().textContent();
 
     await page.getByRole("button", { name: /Accept into draft/i }).click();
-    await expect(page.getByText(/published version is unchanged/i)).toBeVisible();
+    await expect(page.locator(".refine-panel").getByRole("status")).toContainText(
+      /Applied .* to the draft\. The published version is unchanged\./i,
+    );
 
     const draft = await getDraft(project.projectId);
     const goals = (draft as unknown as { artifact: { goals: { why_it_matters: string }[] } })

@@ -41,7 +41,7 @@ if TEST_DATABASE_URL:
         os.path.join(tempfile.gettempdir(), "cop-studio-test-data"),
     )
 
-DEVELOPMENT_DATABASE_NAMES = {"cop", "postgres", "template1"}
+DEVELOPMENT_DATABASE_NAMES = {"cop", "cop_studio", "postgres", "template0", "template1"}
 
 
 def _is_development_database() -> bool:

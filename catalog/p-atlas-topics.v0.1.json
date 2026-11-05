@@ -1,0 +1,198 @@
+{
+  "schema_version": "0.1",
+  "description": "P Atlas topic editorial catalog. Ready items have evidence-backed maps in outputs/<slug>/; planned entries are research directions only, not claims that content exists.",
+  "domains": [
+    {
+      "id": "agents",
+      "title": "Agent 与智能体系统",
+      "description": "发现能交付哪些智能体任务、组织方式和应用"
+    },
+    {
+      "id": "model-engineering",
+      "title": "大模型工程",
+      "description": "模型推理、微调、部署与本地化"
+    },
+    {
+      "id": "coding",
+      "title": "AI 编程与自动化",
+      "description": "编程代理、开发工作流与自动化执行"
+    },
+    {
+      "id": "creation",
+      "title": "AI 内容创作",
+      "description": "视频、音乐、配音及内容生产"
+    },
+    {
+      "id": "data",
+      "title": "数据分析与可视化",
+      "description": "探索数据、表达结果、进行统计分析"
+    },
+    {
+      "id": "knowledge",
+      "title": "知识与个人数字工作",
+      "description": "资料组织、知识管理、个人事务与信息雷达"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "ggplot2",
+      "title": "ggplot2",
+      "domain_id": "data",
+      "status": "ready",
+      "priority": 0,
+      "description": "用 R 进行统计可视化、图形表达和多图组合。"
+    },
+    {
+      "slug": "langchain-agent",
+      "title": "LangChain Agent",
+      "domain_id": "agents",
+      "status": "ready",
+      "priority": 0,
+      "description": "用 LangChain Python 构建能够调用工具并完成任务的 Agent。"
+    },
+    {
+      "slug": "obsidian",
+      "title": "Obsidian",
+      "domain_id": "knowledge",
+      "status": "ready",
+      "priority": 0,
+      "description": "构建知识库，支持研究、阅读、写作和个人工作流。"
+    },
+    {
+      "slug": "agent-harness",
+      "title": "Agent Harness",
+      "domain_id": "agents",
+      "status": "planned",
+      "priority": 1,
+      "description": "如何组织代理的工具、上下文、权限、状态和执行环境。"
+    },
+    {
+      "slug": "langgraph",
+      "title": "LangGraph",
+      "domain_id": "agents",
+      "status": "planned",
+      "priority": 1,
+      "description": "状态化流程、多代理编排、暂停恢复及长期任务。"
+    },
+    {
+      "slug": "mcp",
+      "title": "Model Context Protocol (MCP)",
+      "domain_id": "agents",
+      "status": "planned",
+      "priority": 1,
+      "description": "通过协议让 AI 应用连接工具、数据源及服务。"
+    },
+    {
+      "slug": "llm-inference",
+      "title": "大模型推理（Inference）",
+      "domain_id": "model-engineering",
+      "status": "planned",
+      "priority": 1,
+      "description": "模型加载、推理优化、量化、服务及部署路线。"
+    },
+    {
+      "slug": "llm-finetuning",
+      "title": "大模型微调",
+      "domain_id": "model-engineering",
+      "status": "planned",
+      "priority": 1,
+      "description": "数据构造、参数高效微调、评估和模型适配。"
+    },
+    {
+      "slug": "ollama",
+      "title": "Ollama",
+      "domain_id": "model-engineering",
+      "status": "planned",
+      "priority": 1,
+      "description": "在本地运行、管理和提供模型接口。"
+    },
+    {
+      "slug": "codex",
+      "title": "Codex",
+      "domain_id": "coding",
+      "status": "planned",
+      "priority": 1,
+      "description": "将工程任务交给编程代理完成、检查和交付。"
+    },
+    {
+      "slug": "claude-code",
+      "title": "Claude Code",
+      "domain_id": "coding",
+      "status": "planned",
+      "priority": 1,
+      "description": "编程代理在代码库、桌面和终端中的能力边界与用途。"
+    },
+    {
+      "slug": "opencode",
+      "title": "OpenCode",
+      "domain_id": "coding",
+      "status": "planned",
+      "priority": 2,
+      "description": "可组合模型、工具与本地工程工作流的编程代理。"
+    },
+    {
+      "slug": "playwright",
+      "title": "Playwright",
+      "domain_id": "coding",
+      "status": "planned",
+      "priority": 1,
+      "description": "浏览器操作、自动化测试和网页任务。"
+    },
+    {
+      "slug": "ai-video-generation",
+      "title": "AI 视频生成",
+      "domain_id": "creation",
+      "status": "planned",
+      "priority": 1,
+      "description": "文本、图片、音频与镜头驱动的视频创作可能性。"
+    },
+    {
+      "slug": "ai-music-production",
+      "title": "AI 音乐创作",
+      "domain_id": "creation",
+      "status": "planned",
+      "priority": 2,
+      "description": "作曲、配器、人声、混音、音乐视频等用途。"
+    },
+    {
+      "slug": "ai-voice",
+      "title": "AI 语音与配音",
+      "domain_id": "creation",
+      "status": "planned",
+      "priority": 2,
+      "description": "文字转语音、配音、声音编辑及多语言音频制作。"
+    },
+    {
+      "slug": "r-data-analysis",
+      "title": "R 数据分析",
+      "domain_id": "data",
+      "status": "planned",
+      "priority": 2,
+      "description": "数据整理、统计分析、探索和报告生成。"
+    },
+    {
+      "slug": "paperless-ngx",
+      "title": "Paperless-ngx",
+      "domain_id": "knowledge",
+      "status": "planned",
+      "priority": 2,
+      "description": "数字文档归档、检索、标签、结构化信息及资料处理。"
+    },
+    {
+      "slug": "changedetection",
+      "title": "changedetection.io",
+      "domain_id": "knowledge",
+      "status": "planned",
+      "priority": 2,
+      "description": "网页与信息源变化跟踪、比较和提醒。"
+    },
+    {
+      "slug": "research-workflows",
+      "title": "AI 辅助研究工作流",
+      "domain_id": "knowledge",
+      "status": "planned",
+      "priority": 2,
+      "description": "资料搜索、整理、引用核查和研究成果交付。"
+    }
+  ]
+}

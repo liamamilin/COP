@@ -1,0 +1,83 @@
+name: P Atlas · Check and deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/atlas/**"
+      - "catalog/p-atlas-topics.v0.1.json"
+      - "outputs/**"
+      - ".agents/skills/p-discovery/scripts/validate.py"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - "package.json"
+      - ".github/workflows/atlas-pages.yml"
+  pull_request:
+    paths:
+      - "apps/atlas/**"
+      - "catalog/p-atlas-topics.v0.1.json"
+      - "outputs/**"
+      - ".agents/skills/p-discovery/scripts/validate.py"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/atlas-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: atlas-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @cop-studio/atlas lint
+      - run: pnpm --filter @cop-studio/atlas test
+      - name: Build from catalog and outputs (includes existing evidence validator)
+        run: pnpm --filter @cop-studio/atlas build
+        env:
+          ATLAS_BASE: /${{ github.event.repository.name }}/
+      - name: Verify system Chrome for browser acceptance
+        run: google-chrome --version
+      - name: Desktop and mobile reading acceptance
+        run: pnpm --filter @cop-studio/atlas test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: atlas-browser-failures
+          path: apps/atlas/test-results/
+          retention-days: 7
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: apps/atlas/dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: check-build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy static reader
+        id: deployment
+        uses: actions/deploy-pages@v4

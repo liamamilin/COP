@@ -53,6 +53,10 @@ jobs:
   backend:
     name: Backend
     runs-on: ubuntu-latest
+    env:
+      # POSTGRES_PASSWORD configures the server container, not the host client.
+      # This is the disposable service's test password, used by psql/createdb.
+      PGPASSWORD: cop
     # A service container rather than a Compose stack: the suite needs a real
     # PostgreSQL and nothing else. Job claiming, stale-run recovery, and the
     # unique (run_id, sequence) constraint are PostgreSQL behaviour, and the V1
@@ -118,6 +122,10 @@ jobs:
   e2e:
     name: End-to-end
     runs-on: ubuntu-latest
+    env:
+      PGPASSWORD: cop
+      # The service creates the cop superuser; the runner has no milin role.
+      DB_ADMIN: cop
     # The suite drives the real stack: a Worker to turn a topic into a candidate,
     # an API that re-validates every draft write, and a browser to prove the
     # buttons are actually wired up. Unit tests cannot see that, and SSR HTML
@@ -151,7 +159,16 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @cop-studio/web exec playwright install --with-deps chromium
+      # Do NOT run `playwright install chromium`. @playwright/test 1.64.1 pins
+      # Chromium 156.0.8078.4, below the 156.0.8078.73 fix for
+      # CVE-2026-118306/118331/118344/118348, and Playwright leaves the sandbox
+      # off by default. The e2e config uses `channel: "chrome"` with
+      # `chromiumSandbox: true`, so the runner provides Chrome and the bundled
+      # engine never enters the trust path.
+      - name: Provide Chrome without Playwright's bundled browser
+        run: |
+          google-chrome --version || chromium --version \
+            || { echo "::error::A local Chrome/Chromium is required; bundled Playwright Chromium is disallowed."; exit 1; }
       - name: Install the PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
       - name: Start the stack

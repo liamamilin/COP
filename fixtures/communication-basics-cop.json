@@ -1,0 +1,377 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "cop.communication-basics.authored",
+  "domain": {
+    "name": "沟通基础：同一条排期消息，为何两个人理解不同？",
+    "scope": "一条虚构排期消息的证据分析、模型取景、反馈与近迁移；不是完整传播学教材。",
+    "target_user": "能读日常中文、遇到过排期分歧的初学者；不要求编程或术语基础。",
+    "non_goals": [
+      "不诊断真实个人心理或组织文化。",
+      "不保证话术有效，不替代资源与利益协商。",
+      "不自动生成、执行、评分、入库或发布。"
+    ]
+  },
+  "mental_model": {
+    "summary": "先保留记录和未知，再用转换与语境提出解释，通过可比较的反馈修订；若理解已一致，转向目标、资源与关系条件，不把一切当编码故障。",
+    "flow": [
+      "一句‘好的’，足以说明两人理解相同吗？",
+      "差异可能出在哪个转换处，模型又漏掉了什么？",
+      "怎样回问才能比较理解？什么新材料会推翻原来的诊断？",
+      "当措辞清楚而目标冲突，下一步为什么不再是润色一句话？"
+    ]
+  },
+  "goals": [
+    {
+      "id": "goal.communication-understanding",
+      "title": "有依据地解释排期理解差异，并在新条件下选择下一步",
+      "outcome": "用纸上材料区分观察与推断，解释模型为何有用又不等于现实；设计能改变判断的反馈，并在清晰表达仍有冲突时转向协商。",
+      "why_it_matters": "避免把‘好的’当共同理解、把模型当现实边界、把利益冲突误判成措辞问题。",
+      "prerequisite_goal_refs": [],
+      "evidence_refs": [
+        {
+          "source_id": "src.communication-process"
+        }
+      ]
+    }
+  ],
+  "shared_foundations": [],
+  "main_processes": [
+    {
+      "id": "process.communication-inquiry",
+      "goal_ref": "goal.communication-understanding",
+      "title": "围绕同一案例逐步解释与修订",
+      "start": {
+        "type": "zero",
+        "ref": null
+      },
+      "stage_refs": [
+        "stage.communication.evidence",
+        "stage.communication.mapping",
+        "stage.communication.feedback",
+        "stage.communication.transfer"
+      ],
+      "outcome": "留下四份相互承接的纸上记录，以及一个有限度、可被新证据改写的行动判断。",
+      "practice_ref": "practice.communication.inquiry"
+    }
+  ],
+  "stages": [
+    {
+      "id": "stage.communication.evidence",
+      "title": "先看到了什么，再问它说明什么",
+      "local_goal": "从同一条消息和不同自述出发，把可见记录、解释与未知分开；否则一上来就说‘他不会沟通’，会把需要检验的判断当成原因。",
+      "why_it_exists": "我们首先需要一个值得解释的差异，而不是先背模型名称。先保存原话，后面的概念才有可对照的对象。",
+      "local_outcome": "留下能回查原话的证据页，清楚区分材料支持什么、还不能支持什么。",
+      "concept_refs": [
+        "concept.communication.observation",
+        "concept.communication.message"
+      ],
+      "operation_refs": [
+        "operation.communication.evidence"
+      ],
+      "branch_refs": [],
+      "implementation_details": [
+        {
+          "title": "纸上证据页：记录、解释与未知",
+          "action": "在纸上写下原消息、‘好的’及两段回访，分别注明聊天记录或回访。旁边写两种对‘好的’的解释，例如理解一致或礼貌应答；每种解释后写还需问什么。最后保留‘原消息的日期、时刻和初稿标准尚未共同确认’这一未知，不用自己的习惯填空。",
+          "command": "",
+          "expected_result": "原话、回访、解释分得开；保留至少两种解释和未知；不把‘周五前’私自定成某个客观截止。"
+        }
+      ],
+      "example": {
+        "summary": "给定材料显示文字消息相同、回访自述不同。它使‘可能有理解差异’成为需要调查的问题，而不是已确定原因或责任。",
+        "input": "entry.case-and-paper",
+        "output": "证据页第一行抄录 10:00 的‘周五前给我初稿’，第二行抄录‘好的’；第三、四行写明 11:00 两人的自述。没有写‘周岚已明确要求周五十点’，因为原消息没说。\n我先猜‘两人对截止与初稿标准的理解不同’。依据是回访说法不同；限制是回访可能反映事后解释，不能直接还原 10:00 的想法。\n我再猜‘林宁只是先应答，尚未展开排期’。‘好的’与此相容，却不独有地支持它；要追问当时怎样安排工作，而不是把礼貌当成已证事实。\n纸上保留‘是否有共同约定，未知’。即使我本人习惯把‘周五前’理解为周四，也不把习惯写进案例事实。",
+        "note": "作者虚构的教学演示，不是真实观测、已执行行动或因果实验。"
+      },
+      "evidence_refs": [
+        {
+          "source_id": "src.communication-process",
+          "quote_hint": "仅支持一般概念；虚构案例及其诊断不是来源事实。"
+        }
+      ]
+    },
+    {
+      "id": "stage.communication.mapping",
+      "title": "沿着想法、文字和语境找可能的岔路",
+      "local_goal": "用编码、解码和语境解释一条具体的可能路径，再比较模型各自照见什么；不把模型里少一条箭头误判成人在现实中不能做某件事。",
+      "why_it_exists": "上一页已把差异和未知留住。现在需要能定位差异的语言，而不只是重复‘沟通不畅’。",
+      "local_outcome": "形成可用于下一轮问话的假设：词义未对齐，或理解虽接近但顾虑、能力与安排另有问题；各有待取证处。",
+      "concept_refs": [
+        "concept.communication.encoding",
+        "concept.communication.context",
+        "concept.communication.model"
+      ],
+      "operation_refs": [
+        "operation.communication.mapping"
+      ],
+      "branch_refs": [],
+      "implementation_details": [
+        {
+          "title": "纸上解释草图与竞争假设",
+          "action": "在证据页旁画‘周岚回访自述—原消息—林宁回访自述’，在两段转换处写编码、解码，并注明这不是原先思想的实测。用圈注标出‘周五前’和‘初稿’。写假设一：词义或标准不同；假设二：原本理解接近，但因安排或顾虑未表达。分别写一个会令它减弱的新证据。不要为未知环境编故事，不要求补齐任何固定数量的框。",
+          "command": "",
+          "expected_result": "能用自己的话解释编码与解码，区分词义问题和无证据的语境猜测；反证针对假设，不是只把七个部件填满；承认模型省略不等于现实不存在。"
+        }
+      ],
+      "example": {
+        "summary": "两种假设都还只是解释候选。模型帮助提出‘你说的初稿是什么？’等问题，不能单凭部件齐缺确定原因。",
+        "input": "out.communication.evidence",
+        "output": "承接证据页，我画出三段，并用虚线连接回访自述与原话，提醒自己没有看到发送前的思想。编码和解码只是描述转换的词，不是已经抓到的故障。\n假设一：‘初稿’和时间的理解不同。若能找到发送前已共享且双方沿用的明确标准，‘原消息措辞差异是主因’就会减弱，但仍需核对双方是否实际采用。\n假设二：林宁理解了安排，却因忙碌或顾虑先应答。若他能在安全的问话中给出当时不同的具体安排，支持单纯‘理解一致’的证据会减弱；这也不能直接证明没有压力。两种因素可共存。\n我没有给‘环境噪声’填一个想象的吵闹办公室。用互动视角补一段回问，理由是需要看见对方怎样理解，不是因为现实中突然获得了一个原先不存在的反馈通道。",
+        "note": "作者虚构的教学演示，不是真实观测、已执行行动或因果实验。"
+      },
+      "evidence_refs": [
+        {
+          "source_id": "src.communication-process",
+          "quote_hint": "仅支持一般概念；虚构案例及其诊断不是来源事实。"
+        }
+      ]
+    },
+    {
+      "id": "stage.communication.feedback",
+      "title": "让反馈带来证据，而不只再收到一个‘好的’",
+      "local_goal": "把笼统确认变成能暴露日期、时刻、交付标准与可行性的复述；在反馈出现前写预测与反例，再根据回应修订，而非把复述当保证。",
+      "why_it_exists": "上一页的假设已经指出想查的词和其他可能。现在可以设计一轮有区分力的反馈，而不是无目的地多说一次。",
+      "local_outcome": "得到一段能被比较的回应和有限度的修订，不声称因一次反馈就已保证理解、认同或交付。",
+      "concept_refs": [
+        "concept.communication.feedback",
+        "concept.communication.hypothesis"
+      ],
+      "operation_refs": [
+        "operation.communication.feedback"
+      ],
+      "branch_refs": [],
+      "implementation_details": [
+        {
+          "title": "纸上回问、回应与假设修订",
+          "action": "在纸上先写两种预测：复述仍不同会怎样改问，复述一致却做不到会查什么。再写明确标为‘新提议’的回问，包含日历日期、时刻、时区、初稿内容，并邀请对方复述和表达可行性。阅读示例续段后，用它修订假设，最后写一句‘这次反馈仍不能证明……’。不联系真实同事，也不冒充实际发送过消息。",
+          "command": "",
+          "expected_result": "回问能比较具体条件且允许不同意；有先写的预测和反例；修订没有把复述等同于承诺，没有用新提议倒填原先意图。"
+        }
+      ],
+      "example": {
+        "summary": "续段中林宁能复述新提议，却拒绝承诺。这个作者设定的反例说明‘表达理解一致’与‘能完成且同意’需要分开，不是关于现实因果效应的数据。",
+        "input": "out.communication.map",
+        "output": "我先写：若仍复述成排版稿，继续问‘提纲和排版稿的差别在哪里’；若复述准确却说做不到，追问时间与资源约束，而非再要求说一遍。\n写下概念段中的新提议，并邀请复述及拒绝。它把双方尚未共同确认的内容摆到桌面上，不是在解释‘周五前’唯一正确的意思。\n以下是作者编写的虚构续段，不是已进行的问话结果：林宁回‘按你现在的提议，是 11 月 6 日北京时间十点，三条思路和问题，不排版。这个时间我还不能答应，我周五下午才拿到测试意见。’\n我据此写：对新提议的表达理解已有较强证据；‘只是词义不同’已不足以解释当前障碍。测试意见何时到达、可否提前、双方是否接受新标准，仍需核对。原来是否存在误解，并没有因此被证明或推翻。\n如果另一虚构分支里准确复述后准时交付，也只能说与‘明确提议有帮助’相容；问话改变了多项条件，不能据此证明措辞是唯一原因。",
+        "note": "作者虚构的教学演示，不是真实观测、已执行行动或因果实验。"
+      },
+      "evidence_refs": [
+        {
+          "source_id": "src.communication-process",
+          "quote_hint": "仅支持一般概念；虚构案例及其诊断不是来源事实。"
+        }
+      ]
+    },
+    {
+      "id": "stage.communication.transfer",
+      "title": "已经听明白，为什么仍谈不拢？",
+      "local_goal": "在同一案例的近迁移续段中，把理解问题与优先级、依赖和利益冲突分开，说明关系语境怎样影响能否提出异议，并选择能推进问题的下一步。",
+      "why_it_exists": "复述已经让新提议的理解可比较。现在引入一个措辞清楚却依然冲突的情况，检验我们是否把所有问题都硬套成编码失败。",
+      "local_outcome": "给出一个可检查但未必可接受的协商方案，写明需要谁确认什么；没有把理解一致伪装成冲突消失。",
+      "concept_refs": [
+        "concept.communication.agreement",
+        "concept.communication.transaction"
+      ],
+      "operation_refs": [
+        "operation.communication.transfer"
+      ],
+      "branch_refs": [],
+      "implementation_details": [
+        {
+          "title": "纸上近迁移决策与理由",
+          "action": "阅读本阶段虚构近迁移续段。在纸上先写双方已经共同复述的要求，再分别写周岚和林宁要保护的目标与仍待核实的条件。提出一个有条件的选项，例如上午给注明未测试的可讨论提纲、下午补测试结论；同时写若客户不接受未测试材料，应由谁在推迟评审、减范围或加资源中作决定。最后写下一条要问的话和判断方案可行所需的新材料，不宣布已经谈妥。",
+          "command": "",
+          "expected_result": "指出复述证据和目标冲突；提出有条件的选项、所需确认者与可令方案失效的条件；不把复述当接受，不强行制造圆满结局。"
+        }
+      ],
+      "example": {
+        "summary": "这个近迁移由作者特意设定为措辞清楚且表达理解一致，仍存在目标冲突；它用作概念边界的反例，不能当作对某组织关系或任何话术效果的实证。",
+        "input": "out.communication.feedback",
+        "output": "作者给定的近迁移续段：双方明确重复‘11 月 6 日北京时间十点，三条思路与待确认问题，不排版’。周岚说客户上午评审必须有材料；林宁说下午才有测试意见，担心上午草案被当作定案。两人都表示听懂对方，但还未接受安排。\n我在纸上写：已经有表达理解一致的材料；冲突点是评审时点与未测试方案的风险。测试能否提前、客户是否接受风险标注、谁有权改评审，尚未核实。\n我提出而非宣布：‘如果客户接受不作为定案依据，上午是否可以给标明未测试的三条思路，下午再补结论？如果不接受，我们请有权改评审的人决定时间或范围。’这是一项待双方和客户确认的取舍，不是措辞能自动实现的结果。\n我再问：‘刚才的复述只确认我们听到相同安排，不算承诺。你还需要什么条件才能接受？如果不能拆分，也请直接说。’负责人是否真容许异议，要看接下来怎样回应，不能由一句邀请自证安全。\n反例保留在纸上：若法规或客户流程禁止未测试提纲，分阶段交付就不可行；若测试实际可提前，原方案也可能不再必要。新材料应能改变我们的行动。",
+        "note": "作者虚构的教学演示，不是真实观测、已执行行动或因果实验。"
+      },
+      "evidence_refs": [
+        {
+          "source_id": "src.communication-process",
+          "quote_hint": "仅支持一般概念；虚构案例及其诊断不是来源事实。"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept.communication.observation",
+      "name": "观察与推断",
+      "definition": "观察是你能指回某条材料的内容；推断是你据此提出的解释。‘记录里有好的’和‘他已经完全理解’不是同一件事。自述也是一种材料，但它首先证明‘他这样说过’，不直接证明最初的想法。",
+      "role": "先区分证据与解释，才能避免后面借模型替人读心。来源给出沟通部件；这套证据记法是本课的作者教学方法，不是来源验证过的诊断工具。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.evidence"
+      ]
+    },
+    {
+      "id": "concept.communication.message",
+      "name": "人、消息与理解不是一个东西",
+      "definition": "参与者是沟通中的人；消息是传出的语言或非语言内容；理解是人由此想到的意思。消息相同，不自动带来相同理解。",
+      "role": "我们要解释的恰好是：一份文字为何没锁定一个意思。先把消息和理解分开，下一步才看得见中间的转换。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.evidence"
+      ]
+    },
+    {
+      "id": "concept.communication.encoding",
+      "name": "把想法说出来，再由话形成理解",
+      "definition": "编码就是把想到的事变成可传出的表达；解码就是接到表达后形成自己的理解。它们不是计算机密码，也不是把一份意思原封不动搬过去。",
+      "role": "我们刚发现一份消息对应两种自述，转换过程能把含混的‘没沟通好’拆成可追问的具体环节。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.mapping"
+      ]
+    },
+    {
+      "id": "concept.communication.context",
+      "name": "词义与当时情境",
+      "definition": "语境就是人理解这句话时带着的条件：在哪儿、是否忙乱、已有关系和工作约定等。环境噪声是物理干扰；语义噪声是表达中的符号或词义让理解受阻。同一个词不必陌生，也可能被赋予不同意思。",
+      "role": "只看文字会遗漏人依靠的背景；但加入语境后更容易读心，所以必须带着上一页的‘已知与未知’进入。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.mapping"
+      ]
+    },
+    {
+      "id": "concept.communication.model",
+      "name": "模型是一张取景图，不是现实的边界",
+      "definition": "传递模型把一条消息从发送者到接收者的路画清楚，包含编码与解码，也讨论噪声；互动模型把往返反馈及物理、心理语境放进来；交互共构模型（transaction）还看人如何在社会、关系、文化语境里同时发送和接收，形成关系和共同现实。它们各自省略一些复杂性。",
+      "role": "下一步将主动索取反馈。现在先交代为何换取景范围，免得把换模型说成换了现实机制，或把模型当成一张七格故障清单。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.mapping"
+      ]
+    },
+    {
+      "id": "concept.communication.feedback",
+      "name": "反馈是对方怎样回应的材料",
+      "definition": "反馈是对消息的回应。问‘懂了吗？’常只再得到‘懂了’；请对方用自己的话说要在何时交什么，更容易比较双方理解。你还得回应他的复述，协商后再确认，不是把复述当服从测试。",
+      "role": "上一页要查时间和初稿含义，这种问法直接生成可比较的回应，同时给能力或关系顾虑留下表达入口。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.feedback"
+      ]
+    },
+    {
+      "id": "concept.communication.hypothesis",
+      "name": "用预测与反例约束诊断",
+      "definition": "假设是有待核对的解释；先写它预期看到什么，再写看到什么会让你改变想法。反例让你知道一种解释何时不够用，而不是要求一次问话选出唯一原因。",
+      "role": "反馈容易让人急着宣布修复成功。先设反例，能迫使我们在出现不同回应时改换解释，而不把任何结果都算作支持自己。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.feedback"
+      ]
+    },
+    {
+      "id": "concept.communication.agreement",
+      "name": "理解一致不等于目标一致",
+      "definition": "听明白要求，是能说明对方要什么；同意要求，是愿意接受；能够完成，则要有时间、资源与条件。三者可能一起出现，也可能分开。措辞能帮助呈现分歧，不能凭空制造资源或消除利益冲突。",
+      "role": "上一页出现‘准确复述却不能承诺’，现在必须拆开理解、认同与能力，才能提出不是重复澄清的行动。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.transfer"
+      ]
+    },
+    {
+      "id": "concept.communication.transaction",
+      "name": "关系与规则也在沟通中形成",
+      "definition": "交互共构视角不仅看消息来回，还看人如何在社会规则、关系历史和文化背景中同时表达与接收，并形成‘谁能提异议、什么算承诺’这样的共同规则。关系会影响说话，但不能只凭职位或身份替人断定心理。",
+      "role": "现在的难点关乎能否拒绝、如何定义承诺，超出单条文字的传递。引入这个视角，是为解释为何需要协商规则，不是再往图上堆术语。",
+      "related_concept_refs": [],
+      "key_operation_refs": [
+        "operation.communication.transfer"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation.communication.evidence",
+      "name": "纸上证据页：记录、解释与未知",
+      "definition": "把给定原话与时间写在纸上，逐条标明材料来源；把自己的解释写在旁边，并为每条解释补一个尚不知道的条件。",
+      "purpose": "从同一条消息和不同自述出发，把可见记录、解释与未知分开；否则一上来就说‘他不会沟通’，会把需要检验的判断当成原因。",
+      "acts_on_concept_refs": [
+        "concept.communication.observation",
+        "concept.communication.message"
+      ],
+      "common_failures": [
+        "若写了‘林宁敷衍’，先改成‘可能在礼貌应答’，补上依据与待问的问题；若把回访当原话，重新标注时间与来源。"
+      ]
+    },
+    {
+      "id": "operation.communication.mapping",
+      "name": "纸上解释草图与竞争假设",
+      "definition": "沿着两端自述和中间原话画解释草图，逐一标出材料与假设；为措辞差异和其他解释分别提出可反驳的预测。",
+      "purpose": "用编码、解码和语境解释一条具体的可能路径，再比较模型各自照见什么；不把模型里少一条箭头误判成人在现实中不能做某件事。",
+      "acts_on_concept_refs": [
+        "concept.communication.encoding",
+        "concept.communication.context",
+        "concept.communication.model"
+      ],
+      "common_failures": [
+        "若每个问题都归为‘编码失败’，补写一个‘复述一致但做不到’的情况；若说线性模型不许解码，回到本课模型段落并重画接收者形成理解的一段。"
+      ]
+    },
+    {
+      "id": "operation.communication.feedback",
+      "name": "纸上回问、回应与假设修订",
+      "definition": "针对假设先写两种可区分的回应预测，再设计具体复述和可行性回问；把反馈与原假设比较，写出保留、削弱与仍未知。",
+      "purpose": "把笼统确认变成能暴露日期、时刻、交付标准与可行性的复述；在反馈出现前写预测与反例，再根据回应修订，而非把复述当保证。",
+      "acts_on_concept_refs": [
+        "concept.communication.feedback",
+        "concept.communication.hypothesis"
+      ],
+      "common_failures": [
+        "若只问‘听懂了吗’，改为邀请具体复述与说明可行性；若写‘证明只是编码问题’，补上准确复述却做不到的反例，并降低结论强度。"
+      ]
+    },
+    {
+      "id": "operation.communication.transfer",
+      "name": "纸上近迁移决策与理由",
+      "definition": "以准确复述为已给证据，分别写出双方要保护的目标和待核实依赖，提出一个有条件的协商选项及失败时转向的决策；保留未获同意和未执行的状态。",
+      "purpose": "在同一案例的近迁移续段中，把理解问题与优先级、依赖和利益冲突分开，说明关系语境怎样影响能否提出异议，并选择能推进问题的下一步。",
+      "acts_on_concept_refs": [
+        "concept.communication.agreement",
+        "concept.communication.transaction"
+      ],
+      "common_failures": [
+        "若只改写截止句，先指出双方哪一项理解仍不一致；若找不到，就转去核对依赖与决策权限。若写‘已达成共识’，改为‘提议，待确认’，并补失败条件。"
+      ]
+    }
+  ],
+  "branches": [],
+  "practices": [
+    {
+      "id": "practice.communication.inquiry",
+      "goal_ref": "goal.communication-understanding",
+      "title": "从原消息到近迁移的纸上证据链",
+      "instructions": [
+        "在纸上写下原消息、‘好的’及两段回访，分别注明聊天记录或回访。旁边写两种对‘好的’的解释，例如理解一致或礼貌应答；每种解释后写还需问什么。最后保留‘原消息的日期、时刻和初稿标准尚未共同确认’这一未知，不用自己的习惯填空。",
+        "在证据页旁画‘周岚回访自述—原消息—林宁回访自述’，在两段转换处写编码、解码，并注明这不是原先思想的实测。用圈注标出‘周五前’和‘初稿’。写假设一：词义或标准不同；假设二：原本理解接近，但因安排或顾虑未表达。分别写一个会令它减弱的新证据。不要为未知环境编故事，不要求补齐任何固定数量的框。",
+        "在纸上先写两种预测：复述仍不同会怎样改问，复述一致却做不到会查什么。再写明确标为‘新提议’的回问，包含日历日期、时刻、时区、初稿内容，并邀请对方复述和表达可行性。阅读示例续段后，用它修订假设，最后写一句‘这次反馈仍不能证明……’。不联系真实同事，也不冒充实际发送过消息。",
+        "阅读本阶段虚构近迁移续段。在纸上先写双方已经共同复述的要求，再分别写周岚和林宁要保护的目标与仍待核实的条件。提出一个有条件的选项，例如上午给注明未测试的可讨论提纲、下午补测试结论；同时写若客户不接受未测试材料，应由谁在推迟评审、减范围或加资源中作决定。最后写下一条要问的话和判断方案可行所需的新材料，不宣布已经谈妥。"
+      ],
+      "expected_outcome": "四份持久纸上记录有依据、反例、修订与未验证项，不以术语齐全或勾选完成代替理解。",
+      "checkpoint_questions": [
+        "一句‘好的’，足以说明两人理解相同吗？",
+        "差异可能出在哪个转换处，模型又漏掉了什么？",
+        "怎样回问才能比较理解？什么新材料会推翻原来的诊断？",
+        "当措辞清楚而目标冲突，下一步为什么不再是润色一句话？"
+      ]
+    }
+  ],
+  "expansion_map": [],
+  "metadata": {
+    "language": "zh-CN",
+    "generated_at": "2026-11-03T00:00:00Z",
+    "generator": "authored-communication-prototype/1 (fixed revision label, not a runtime timestamp)",
+    "source_ids": [
+      "src.communication-process"
+    ]
+  }
+}

@@ -24,6 +24,13 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = ROOT / "fixtures" / "reference-langchain-cop.json"
+PACKAGED_REFERENCE = (
+    ROOT
+    / "cop-studio-development-spec-v1.0"
+    / "examples"
+    / "reference-langchain"
+    / "reference-langchain-cop.json"
+)
 SOURCES_OUT = ROOT / "fixtures" / "reference-langchain-sources.json"
 SCHEMA = ROOT / "schemas" / "cop-artifact.schema.json"
 
@@ -958,9 +965,12 @@ def main() -> None:
     SOURCES_OUT.write_text(
         json.dumps(sources(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    with FIXTURE.open("w", encoding="utf-8") as handle:
-        json.dump(enriched, handle, ensure_ascii=False, indent=2)
-        handle.write("\n")
+    # The seed and the packaged quality reference describe the same artifact.
+    # Serialize once so regenerating operational details cannot leave the
+    # packaged copy behind or create a byte-level mismatch in CI.
+    serialized = json.dumps(enriched, ensure_ascii=False, indent=2) + "\n"
+    for path in (FIXTURE, PACKAGED_REFERENCE):
+        path.write_text(serialized, encoding="utf-8")
     print(
         f"Wrote {len(DETAILS)} Stages with content, {len(COMMON_FAILURES)} Operations with "
         f"failures, and {len(SOURCES)} sources"

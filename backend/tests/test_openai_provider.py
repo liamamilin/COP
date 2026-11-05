@@ -61,3 +61,15 @@ def test_structured_generation_rejects_json_that_misses_required_fields() -> Non
         )
 
     assert error.value.code == "PROVIDER_INVALID_OUTPUT"
+
+
+def test_list_models_returns_sorted_model_ids() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.path == "/v1/models"
+        return httpx.Response(
+            200,
+            json={"data": [{"id": "model-z"}, {"id": "model-a"}, {"id": "model-z"}]},
+        )
+
+    models = asyncio.run(provider_for(handler).list_models())
+    assert models == ["model-a", "model-z"]

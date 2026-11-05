@@ -160,20 +160,23 @@ test("the golden case closes the whole loop with no dead ends", async ({ page })
     await page.goto(`/projects/${project.id}/stages/${encodeURIComponent(stageId)}`);
     await waitForHydration(page, ".stage-content");
     await expect(page.locator(".detail-list .detail-item").first()).toBeVisible();
+    await page.locator(".step-example > summary").click();
     await expect(page.locator(".stage-example")).toBeVisible();
 
     // --- Expansion Map is visible -------------------------------------------
     await page.goto(`/projects/${project.id}`);
+    await page.locator(".learning-background > summary").click();
     await waitForHydration(page, ".expansion-map");
     const expansions = page.locator(".expansion-map li");
     expect(await expansions.count()).toBeGreaterThanOrEqual(2);
     await expect(expansions.first()).not.toBeEmpty();
 
     // --- non-goals are visible ----------------------------------------------
-    await expect(page.locator(".non-goals li").first()).toBeVisible();
+    await page.locator(".workspace-context > summary").click();
+    await expect(page.locator(".learning-exclusions li").first()).toBeVisible();
 
     // --- Learn Mode: foundation, stages, practice, checkpoints ---------------
-    await page.getByRole("link", { name: /Learn/ }).click();
+    await page.getByRole("navigation", { name: "Project navigation" }).getByRole("link", { name: /Learn/ }).click();
     await expect(page).toHaveURL(`/projects/${project.id}/learn`);
     await waitForHydration(page, ".learn-view");
 
@@ -187,6 +190,12 @@ test("the golden case closes the whole loop with no dead ends", async ({ page })
         completed: boolean;
       }[];
     }>(`/projects/${project.id}/learning-progress?version_id=${published.id}`);
+
+    // Pin the chosen goal in the URL. The new default resumes the first
+    // unfinished goal, so reloading an unpinned route after completion would
+    // correctly show the next goal rather than this goal's saved practice.
+    await page.getByRole("navigation", { name: "Choose a goal" }).getByRole("link").first().click();
+    await waitForHydration(page, ".learn-view");
 
     // Foundation first: every Main Process starts there, so a Goal cannot be
     // complete while the shared setup is open. The count is asserted against the
@@ -238,6 +247,10 @@ test("the golden case closes the whole loop with no dead ends", async ({ page })
     // The intermediate `in_progress` is asserted because it is derived from the
     // answers rather than stored: a learner who has answered a question but not
     // ticked the box has demonstrably started, and the app must say so.
+    const practiceDisclosure = page.locator(".learn-practice-disclosure");
+    if ((await practiceDisclosure.getAttribute("open")) === null) {
+      await practiceDisclosure.locator("summary").click();
+    }
     const practice = page.locator(".practice-card");
     await expect(practice).toHaveAttribute("data-practice-status", "not_started");
     const completeButton = practice.getByRole("button", { name: /Mark practice complete/i });
@@ -322,7 +335,9 @@ test("the golden case closes the whole loop with no dead ends", async ({ page })
     // The archived section is collapsed by default. Counted after opening it,
     // and asserted on this project's own row rather than on a total, because the
     // development database is shared with whatever else is running.
-    const archivedSection = page.locator(".archived-projects");
+    const archivedSection = page.locator("details").filter({
+      has: page.locator("summary", { hasText: "Archived projects" }),
+    });
     await expect(archivedSection).toBeVisible();
     await archivedSection.locator("summary").click();
     await expect(archivedSection.locator("li", { hasText: title })).toHaveCount(1);

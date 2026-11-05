@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 
 import type { ProjectSummary, VersionDetail } from "../lib/api";
 
+import "./workspace.css";
+
 interface ProjectShellProps {
   project: ProjectSummary;
   version: VersionDetail;
@@ -35,7 +37,7 @@ export function ProjectShell({
 }: ProjectShellProps) {
   const projectPath = `/projects/${project.id}`;
   return (
-    <div className="workspace">
+    <div className="workspace published-workspace">
       <aside className="project-sidebar">
         <div className="project-identity">
           <span className="sidebar-kicker">CURRENT COP</span>
@@ -55,11 +57,13 @@ export function ProjectShell({
           <p className="nav-label">GOALS</p>
           {artifact.goals.map((goal, index) => (
             <Link
-              className={active === "goal" ? "subtle-active" : ""}
+              className={`sidebar-goal-link${active === "goal" ? " subtle-active" : ""}`}
               href={`${projectPath}/goals/${encodeURIComponent(goal.id)}`}
               key={goal.id}
+              title={goal.title}
             >
-              <span>{String(index + 1).padStart(2, "0")}</span> {goal.title}
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="sidebar-goal-title">{goal.title}</span>
             </Link>
           ))}
           <p className="nav-label">EXPLORE</p>
@@ -96,9 +100,9 @@ export function ProjectShell({
         <div className="workspace-topbar">
           <Link href="/">All projects</Link>
           <div>
-            <span>{artifact.domain.name}</span>
-            <span className="topbar-separator">/</span>
-            <strong>{version.created_by}</strong>
+            <span className="workspace-project-name" title={project.title}>{project.title}</span>
+            <span className="topbar-separator" aria-hidden="true">/</span>
+            <strong>v{version.version_number}</strong>
           </div>
         </div>
         {children}

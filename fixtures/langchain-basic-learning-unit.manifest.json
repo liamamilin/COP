@@ -1,0 +1,15 @@
+{
+  "checker_version": "learning-unit-contract/0.1",
+  "scope": "structure-and-bindings-only",
+  "hash_algorithm": "sha256-canonical-json-v1",
+  "unit_sha256": "6ab15290cd89fc251168ac82d3536a41b14c1ae057fcbac403a3a7182a6050e8",
+  "artifact_sha256": "d5a6641c80309d6e1f60d53e4832d95c2a96b6e766b39d6b931aedb8a266be90",
+  "issues": [],
+  "not_verified": [
+    "semantic correctness",
+    "live execution",
+    "learner understanding",
+    "transfer performance",
+    "automatic generation stability"
+  ]
+}

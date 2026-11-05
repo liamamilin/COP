@@ -40,6 +40,15 @@ LEVELS = (L1, L2, L3)
 DANGLING_REF = "DANGLING_REF"
 ORPHAN_EVIDENCE_REF = "ORPHAN_EVIDENCE_REF"
 DUPLICATE_ENTITY_ID = "DUPLICATE_ENTITY_ID"
+# The concept frame is the load-bearing structure of a COP: if a definition is a
+# label, restates its own name, or the concept is never used, the reader cannot
+# reason with it. These are mechanical facts about the artifact, not judgments
+# about whether the explanation is *correct* -- a model grading its own prose
+# would agree with itself.
+CONCEPT_MISSING_EXPLANATION = "CONCEPT_MISSING_EXPLANATION"
+CONCEPT_MISSING_ROLE = "CONCEPT_MISSING_ROLE"
+CONCEPT_CIRCULAR_DEFINITION = "CONCEPT_CIRCULAR_DEFINITION"
+CONCEPT_UNUSED = "CONCEPT_UNUSED"
 
 # --- L2 codes ---------------------------------------------------------------
 MISSING_STAGE_EXAMPLE = "MISSING_STAGE_EXAMPLE"
@@ -54,7 +63,7 @@ WEAK_PRACTICE = "WEAK_PRACTICE"
 PRACTICE_WITHOUT_CHECKPOINT = "PRACTICE_WITHOUT_CHECKPOINT"
 EMPTY_EXPANSION_MAP = "EMPTY_EXPANSION_MAP"
 
-#: L2 codes that must be resolved before a new candidate may be published.
+#: L1 codes that must be resolved before a new candidate may be published.
 #: A Stage the learner cannot act on is not a smaller defect than a missing
 #: one, so the gate is on presence, not on wording.
 BLOCKING_CODES = frozenset(
@@ -64,6 +73,18 @@ BLOCKING_CODES = frozenset(
         IMPLEMENTATION_DETAIL_NOT_ACTIONABLE,
         SETUP_NOT_ACTIONABLE,
         MISSING_VALIDATION_STEP,
+    }
+)
+#: Concept-frame defects that make the artifact structurally dishonest rather
+#: than merely unfinished. These are kept separate from `BLOCKING_CODES` so a
+#: candidate can still be produced and repaired, but a *publish* is reported
+#: with them rather than silently accepting a glossary of empty labels.
+CONCEPT_FRAME_CODES = frozenset(
+    {
+        CONCEPT_MISSING_EXPLANATION,
+        CONCEPT_MISSING_ROLE,
+        CONCEPT_CIRCULAR_DEFINITION,
+        CONCEPT_UNUSED,
     }
 )
 
@@ -168,6 +189,97 @@ class QualityIssue:
 
 def _text(value: Any) -> str:
     return str(value).strip() if isinstance(value, (str, int, float)) else ""
+
+
+#: A definition shorter than this has no room for an object, an action, and the
+#: boundary that makes it usable. `"d"` and `"a thing"` both fail; a genuine one
+#: sentence explanation passes.
+CONCEPT_MIN_DEFINITION_CHARS = 20
+#: Words that carry no explanatory weight on their own. A definition made only of
+#: these plus the Concept's name is a label, not an explanation.
+_LABEL_FILLER = frozenset(
+    {
+        "a",
+        "an",
+        "the",
+        "is",
+        "are",
+        "it",
+        "this",
+        "that",
+        "of",
+        "for",
+        "to",
+        "concept",
+        "thing",
+        "object",
+        "term",
+        "idea",
+        "stuff",
+        "something",
+        "的",
+        "是",
+        "一个",
+        "一种",
+        "东西",
+        "概念",
+        "术语",
+        "这个",
+        "那个",
+    }
+)
+
+
+def _meaningful(text: str) -> str:
+    """Lowercase alphanumerics/CJK only, so punctuation cannot pad a definition."""
+    return "".join(char for char in text.lower() if char.isalnum() or "\u4e00" <= char <= "\u9fff")
+
+
+def _is_circular(definition: str, name: str) -> bool:
+    """True when the definition is the name, optionally with filler around it.
+
+    A definition may legitimately *mention* its own name ("Encoding turns
+    thoughts into communication") -- that is an explanation. It is circular only
+    when removing the name leaves nothing but filler behind.
+    """
+    core = _meaningful(definition)
+    label = _meaningful(name)
+    if not core or not label:
+        return False
+    if label not in core:
+        return False
+    if core == label:
+        return True
+    remainder = core.replace(label, "")
+    # English filler is separated by word boundaries; CJK filler is a substring
+    # because Chinese has no spaces. Remove both, then require real content left.
+    for word in ("concept", "thing", "object", "term", "idea", "something", "stuff"):
+        remainder = remainder.replace(word, "")
+    for word in ("一个", "一种", "东西", "概念", "术语", "这个", "那个"):
+        remainder = remainder.replace(word, "")
+    tokens = [token for token in _tokens(remainder) if token not in _LABEL_FILLER]
+    return not tokens
+
+
+def _tokens(value: str) -> list[str]:
+    """Split on script boundaries so English and Chinese both tokenize usefully."""
+    tokens: list[str] = []
+    current = ""
+    for char in value:
+        if "\u4e00" <= char <= "\u9fff":
+            if current:
+                tokens.append(current)
+                current = ""
+            tokens.append(char)
+        elif char.isalnum():
+            current += char
+        else:
+            if current:
+                tokens.append(current)
+                current = ""
+    if current:
+        tokens.append(current)
+    return tokens
 
 
 def _nonempty(value: Any) -> bool:
@@ -347,6 +459,103 @@ def _check_references(
     return issues
 
 
+def _check_concepts(artifact: Mapping[str, Any]) -> list[QualityIssue]:
+    """Mechanical checks on the concept frame, not on whether prose is correct.
+
+    A Concept is load-bearing: a Stage says "do X because of C", so a reader who
+    cannot state C cannot follow the route. Three defects are objectively
+    detectable, and each one has been shipped by real models:
+
+    - a definition that is a placeholder or only a label,
+    - a definition that restates the name (or is the name plus a stop word),
+    - a Concept that no Stage and no Operation actually uses.
+
+    Deliberately no semantic scoring here. "Is this definition *right*" needs a
+    source check, which no string comparison can perform; pretending otherwise
+    would recreate the failure this check exists to catch.
+    """
+    issues: list[QualityIssue] = []
+    concepts = [c for c in artifact.get("concepts") or [] if isinstance(c, Mapping)]
+    if not concepts:
+        return issues
+
+    used: set[str] = set()
+    for stage in artifact.get("stages") or []:
+        if isinstance(stage, Mapping):
+            used.update(str(ref) for ref in stage.get("concept_refs") or [])
+    for operation in artifact.get("operations") or []:
+        if isinstance(operation, Mapping):
+            used.update(str(ref) for ref in operation.get("acts_on_concept_refs") or [])
+    # `related_concept_refs` deliberately does NOT count as use. A cluster of
+    # Concepts that only point at each other is still a glossary nobody acts on,
+    # and accepting it would let the exact failure this check exists for pass.
+
+    for concept in concepts:
+        concept_id = str(concept.get("id", ""))
+        name = _text(concept.get("name")) or concept_id
+        definition = _text(concept.get("definition"))
+        role = _text(concept.get("role"))
+
+        # Circular first: it is the more specific diagnosis, and a short
+        # label-style definition ("Runtime") is both short and circular. Telling
+        # the repairer "add more words" would produce padding; "explain it" is
+        # the correction that actually helps.
+        if definition and _is_circular(definition, name):
+            issues.append(
+                _issue(
+                    CONCEPT_CIRCULAR_DEFINITION,
+                    L1,
+                    "concept",
+                    concept_id,
+                    f"Concept '{name}' is defined by its own name, so the definition adds "
+                    f"nothing a reader did not already see in the title.",
+                    "Replace the label with an explanation: what it is, what it is not, or "
+                    "what becomes possible when it is present.",
+                )
+            )
+        elif not definition or len(_meaningful(definition)) < CONCEPT_MIN_DEFINITION_CHARS:
+            issues.append(
+                _issue(
+                    CONCEPT_MISSING_EXPLANATION,
+                    L1,
+                    "concept",
+                    concept_id,
+                    f"Concept '{name}' has no usable definition; its definition is empty, "
+                    f"a placeholder, or shorter than {CONCEPT_MIN_DEFINITION_CHARS} characters.",
+                    "Explain in plain language what this thing is and what it does, so a "
+                    "reader can use it before seeing the name again.",
+                )
+            )
+        if not role:
+            issues.append(
+                _issue(
+                    CONCEPT_MISSING_ROLE,
+                    L1,
+                    "concept",
+                    concept_id,
+                    f"Concept '{name}' states no role, so the reader cannot tell which "
+                    f"part of the route depends on it.",
+                    "Say where this Concept is needed and what a later action would get "
+                    "wrong without it.",
+                )
+            )
+
+        if concept_id and concept_id not in used:
+            issues.append(
+                _issue(
+                    CONCEPT_UNUSED,
+                    L1,
+                    "concept",
+                    concept_id,
+                    f"Concept '{name}' is declared but no Stage, Operation or related "
+                    f"Concept uses it.",
+                    "Bind it to the Stage that depends on it, or remove it rather than "
+                    "leaving glossary-only entries.",
+                )
+            )
+    return issues
+
+
 def _check_stages(artifact: Mapping[str, Any]) -> list[QualityIssue]:
     issues: list[QualityIssue] = []
     for stage in artifact.get("stages") or []:
@@ -504,6 +713,7 @@ def check_artifact(
         found.extend(
             _check_references(artifact, None if known_source_ids is None else set(known_source_ids))
         )
+        found.extend(_check_concepts(artifact))
     if L2 in wanted:
         found.extend(_check_stages(artifact))
         found.extend(_check_operations(artifact))

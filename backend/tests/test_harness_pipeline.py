@@ -152,6 +152,8 @@ def test_canonicalization_input_drops_large_stage_details() -> None:
         "title",
         "local_goal",
         "local_outcome",
+        "why_it_exists",
+        "action_context",
         "concept_candidates",
         "operation_candidates",
     }

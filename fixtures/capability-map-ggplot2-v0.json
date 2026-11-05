@@ -1,0 +1,380 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "ggplot2-capability-map-v0",
+  "topic": {
+    "name": "ggplot2 数据可视化",
+    "scope": "ggplot2 的常见数据展示用途以及 patchwork 图形组合扩展；不包含所有扩展包",
+    "purpose": "让初学者知道能制作哪些数据图形，以及每种用途涉及的核心概念和操作",
+    "exclusions": [
+      "不提供所有绘图函数的百科大全",
+      "不编排强制逐步教程"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ggplot-home",
+      "title": "ggplot2 官方网站 — Overview",
+      "url": "https://ggplot2.tidyverse.org/",
+      "version": "4.0.3",
+      "excerpt": "Start with ggplot(), data, aes(), add layers, scales, facets and coordinates."
+    },
+    {
+      "id": "patchwork-guide",
+      "title": "patchwork — Getting Started",
+      "url": "https://patchwork.data-imaginist.com/articles/patchwork.html",
+      "excerpt": "Combine independently created ggplots with +; | places plots beside each other; / stacks plots."
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p_relation",
+      "title": "展示两个变量之间的关系",
+      "outcome": "得到用点图表示两个连续变量关系的图形",
+      "value": "帮助观察关联、离群值与分布模式",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "p_groups",
+      "title": "比较不同类别中的数据",
+      "outcome": "得到按类别拆分面板的可比较图形",
+      "value": "让不同群体更容易对照",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "p_composition",
+      "title": "将多幅独立图组合到同一版面",
+      "outcome": "得到包含两幅独立 ggplot 图形的组合版面",
+      "value": "无需把两图数据硬塞进同一坐标系",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "c_data",
+      "term": "数据集 / 变量",
+      "definition": "绘图所引用的数据和被映射的字段",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "c_aes",
+      "term": "美学映射",
+      "definition": "数据变量与 x、y、颜色等视觉属性之间的映射",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "c_layer",
+      "term": "图层",
+      "definition": "由几何对象等组成的图形层，可添加至绘图对象",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "c_facet",
+      "term": "分面",
+      "definition": "基于分类变量将数据在多个面板中呈现的布局机制",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "c_ggplot",
+      "term": "独立 ggplot 图形对象",
+      "definition": "已完成定义、可单独显示的 ggplot 图形对象",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    },
+    {
+      "id": "c_composition",
+      "term": "图形组合版面",
+      "definition": "多个独立图形在同一布局中形成的复合图",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "o_mapping",
+      "title": "映射数据到图形属性",
+      "action": "把变量映射为位置、颜色等属性",
+      "conditions": "已有可访问的数据与合适的变量",
+      "effect": "使数据字段具备对应的视觉编码",
+      "implementation_hints": [
+        "aes(x=..., y=...)"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "o_add_points",
+      "title": "添加点图层",
+      "action": "在现有图形中添加显示观测值的点层",
+      "conditions": "适用于表达两个数值变量的观察关系",
+      "effect": "生成散点可视元素",
+      "implementation_hints": [
+        "geom_point()"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "o_facet",
+      "title": "按类别拆分面板",
+      "action": "按分类变量将图形拆分成多个可比较面板",
+      "conditions": "数据中存在适合分组的变量",
+      "effect": "得到分面图形",
+      "implementation_hints": [
+        "facet_wrap()"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "id": "o_combine",
+      "title": "组合独立图形",
+      "action": "把多幅独立 ggplot 图拼接为一个版面",
+      "conditions": "需要已经构造好的多个 ggplot 对象，并加载 patchwork",
+      "effect": "得到横向或纵向的组合图",
+      "implementation_hints": [
+        "p1 | p2",
+        "p1 / p2",
+        "p1 + p2"
+      ],
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "requires_concept",
+      "from_id": "p_relation",
+      "to_id": "c_data",
+      "rationale": "必须存在数据变量",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_relation",
+      "to_id": "c_aes",
+      "rationale": "需要建立变量到视觉通道的映射",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_relation",
+      "to_id": "o_add_points",
+      "rationale": "可用点图层呈现变量关系",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_relation",
+      "to_id": "o_mapping",
+      "rationale": "先定义 x/y 等视觉映射",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_groups",
+      "to_id": "c_facet",
+      "rationale": "按组比较可以通过分面实现",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_groups",
+      "to_id": "o_facet",
+      "rationale": "按分类变量拆分多个面板",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_composition",
+      "to_id": "c_ggplot",
+      "rationale": "组合基于独立图形对象",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    },
+    {
+      "type": "requires_concept",
+      "from_id": "p_composition",
+      "to_id": "c_composition",
+      "rationale": "组合结果是一个复合版面",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    },
+    {
+      "type": "enabled_by",
+      "from_id": "p_composition",
+      "to_id": "o_combine",
+      "rationale": "patchwork 提供独立图形组合",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_mapping",
+      "to_id": "c_aes",
+      "rationale": "作用于美学映射",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_add_points",
+      "to_id": "c_layer",
+      "rationale": "为图形增加点图层",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_facet",
+      "to_id": "c_facet",
+      "rationale": "设置分面机制",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "ggplot-home"
+        }
+      ]
+    },
+    {
+      "type": "acts_on",
+      "from_id": "o_combine",
+      "to_id": "c_ggplot",
+      "rationale": "对多个独立图形对象执行组合",
+      "status": "source_supported",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_pair",
+      "title": "把两张图并排展示",
+      "possibility_id": "p_composition",
+      "concept_ids": [
+        "c_ggplot",
+        "c_composition"
+      ],
+      "operation_ids": [
+        "o_combine"
+      ],
+      "summary": "准备两个 ggplot 绘图对象 p1 和 p2；加载 patchwork 后使用 p1 | p2 横向组合。这是示例，不是唯一实现路线。",
+      "evidence_refs": [
+        {
+          "source_id": "patchwork-guide"
+        }
+      ]
+    }
+  ]
+}

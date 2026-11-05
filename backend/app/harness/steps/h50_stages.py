@@ -4,16 +4,31 @@ Runs once per Main Process. Each Stage becomes "Complete X to obtain Y" with
 Concept/Operation candidates attached.
 """
 
-import asyncio
 from typing import Any
 
 from app.core.errors import HarnessError
+from app.harness.batching import bounded_map, chunked
 from app.harness.context import HarnessContext, HarnessEvent, StepResult
 from app.harness.prompts import build_stage_prompt, detail_limit, trim_evidence
 from app.harness.schemas import STAGES_SCHEMA
+from app.harness.teaching_context import (
+    normalize_teaching_plan,
+    teaching_context,
+    teaching_plan_status,
+)
 
-MAX_CONCEPT_CANDIDATES = 12
-MAX_OPERATION_CANDIDATES = 8
+#: Concurrent per-process enrichment calls. Six processes used to fan out at
+#: once, which pushed a slow provider into timeouts under sustained load. Three
+#: keeps a 35-Stage run near its previous wall time now that each call carries
+#: fewer Stages.
+MAX_ENRICH_CONCURRENCY = 3
+
+#: Stages per enrichment call. A whole process of six or seven Stages with
+#: full methods, examples and cautions does not fit in one provider response:
+#: the answer is cut off at the output limit, which reaches the user as an
+#: unexplained invalid-JSON failure. The process context is still passed to
+#: every call, so a Stage does not lose the route it belongs to.
+MAX_STAGES_PER_ENRICH_CALL = 3
 
 #: A detail's fields, in the order the contract reads. Only `title` is
 #: mandatory; a Stage that needs no command should not be handed a fake one.
@@ -104,7 +119,6 @@ def normalize_stage(
     details = [
         normalize_detail(item) for item in _as_details(raw.get("implementation_detail_candidates"))
     ]
-    detail_max = detail_limit(detail_density)["max_details"]
     return {
         "key": source["key"],
         "title": str(raw.get("title") or source["title"]).strip(),
@@ -112,14 +126,14 @@ def normalize_stage(
         "why_it_exists": str(raw.get("why_it_exists", "")).strip(),
         "local_outcome": str(raw.get("local_outcome") or source["local_outcome"]).strip(),
         "dependency_notes": [str(item) for item in raw.get("dependency_notes") or []],
-        "concept_candidates": list(dict.fromkeys(concepts))[:MAX_CONCEPT_CANDIDATES],
-        "operation_candidates": list(dict.fromkeys(operations))[:MAX_OPERATION_CANDIDATES],
-        "implementation_details": details[:detail_max],
+        "concept_candidates": list(dict.fromkeys(concepts)),
+        "operation_candidates": list(dict.fromkeys(operations)),
+        # Density is an authoring target, not a lossy serialization rule. Dropping
+        # the tail can remove the write, validation, or recovery half of a task.
+        "implementation_details": [detail for detail in details if detail],
         "example": normalize_example(raw.get("example_candidate")),
-        # Trimmed here rather than only asked for in the prompt. `detail_density`
-        # and `evidence_density` are settings the user can change between runs,
-        # so the code has to be what enforces the ceiling; a model asked politely
-        # to "keep citations focused" still returns fifteen of them.
+        # Citations may be capped without deleting execution steps. Instruction
+        # density above is deliberately lossless; these are separate policies.
         "evidence_refs": trim_evidence(list(raw.get("evidence_refs") or []), evidence_density),
         "process_key": source["process_key"],
         "goal_key": goal_key,
@@ -130,7 +144,18 @@ class StageEnrichmentStep:
     name = "H50"
 
     async def execute(self, ctx: HarnessContext, services: Any) -> StepResult:
-        processes = ctx.require("process_drafts")
+        processes = []
+        # Validate all frozen plans before starting any enrichment request. Old
+        # checkpoints receive absence metadata only, never a synthesized plan.
+        for process in ctx.require("process_drafts"):
+            plan = normalize_teaching_plan(process.get("teaching_plan"), process["stages"])
+            processes.append(
+                {
+                    **process,
+                    "teaching_plan": plan,
+                    "teaching_plan_status": teaching_plan_status(plan),
+                }
+            )
         language = ctx.settings.get("language", "auto")
         detail_density = ctx.settings.get("detail_density", "balanced")
         evidence_density = ctx.settings.get("evidence_density", "key_claims")
@@ -143,41 +168,82 @@ class StageEnrichmentStep:
         async def enrich(process: dict[str, Any]) -> list[dict[str, Any]]:
             if services.is_cancelled():
                 raise HarnessError("GENERATION_CANCELLED", "Run cancelled before stage enrichment")
-            system, user = build_stage_prompt(
-                process=process,
-                stages=process["stages"],
-                language=language,
-                detail_density=detail_density,
-                evidence_density=evidence_density,
-                # Only the ids this run actually read, so a Stage cannot cite a
-                # source the Harness never saw and an unresolvable reference is
-                # impossible by construction rather than by filtering.
-                source_ids=[str(item.get("id")) for item in ctx.source_bundle if item.get("id")],
-            )
-            payload = await services.complete_structured(
-                system_prompt=system, user_prompt=user, schema=STAGES_SCHEMA
-            )
-            by_key = {str(item.get("key")): item for item in payload.get("stages") or []}
+            plan = process["teaching_plan"]
+            # The full process object is passed each time: splitting the output
+            # must not split the route context the Stage is written for.
+            context_payload = teaching_context(ctx, process)
+            source_ids = [str(item.get("id")) for item in ctx.source_bundle if item.get("id")]
             enriched: list[dict[str, Any]] = []
-            for stage in process["stages"]:
-                raw = by_key.get(stage["key"], {})
-                normalized = normalize_stage(
-                    raw,
-                    stage_index[stage["key"]],
-                    process["goal_key"],
+            for batch in chunked(process["stages"], MAX_STAGES_PER_ENRICH_CALL):
+                if services.is_cancelled():
+                    raise HarnessError(
+                        "GENERATION_CANCELLED",
+                        "Run cancelled before the next enrichment batch",
+                    )
+                system, user = build_stage_prompt(
+                    process=process,
+                    stages=batch,
+                    language=language,
                     detail_density=detail_density,
                     evidence_density=evidence_density,
+                    # Only the ids this run actually read, so a Stage cannot cite
+                    # a source the Harness never saw and an unresolvable reference
+                    # is impossible by construction rather than by filtering.
+                    source_ids=source_ids,
+                    teaching_context=context_payload,
+                    # Authored examples/outcomes are context for continuity, not
+                    # evidence that the learner has performed the earlier work.
+                    prior_stage_context=[
+                        {
+                            field: stage[field]
+                            for field in (
+                                "key",
+                                "local_goal",
+                                "local_outcome",
+                                "why_it_exists",
+                                "example",
+                            )
+                        }
+                        for stage in enriched
+                    ],
                 )
-                if not normalized["local_goal"]:
-                    normalized["local_goal"] = normalized["local_outcome"] or (
-                        f"Complete {normalized['title'].lower()}"
+                payload = await services.complete_structured(
+                    system_prompt=system, user_prompt=user, schema=STAGES_SCHEMA
+                )
+                response_stages = payload.get("stages") or []
+                response_keys = [str(item.get("key")) for item in response_stages]
+                if plan is not None and (
+                    len(response_keys) != len(batch)
+                    or set(response_keys) != {stage["key"] for stage in batch}
+                ):
+                    raise HarnessError(
+                        "HARNESS_TEACHING_PLAN_COVERAGE",
+                        "H50 must return each current-batch planned Stage exactly once",
                     )
-                if not normalized["local_outcome"]:
-                    normalized["local_outcome"] = normalized["local_goal"]
-                enriched.append(normalized)
+                by_key = {str(item.get("key")): item for item in response_stages}
+                for stage in batch:
+                    raw = by_key.get(stage["key"], {})
+                    normalized = normalize_stage(
+                        raw,
+                        stage_index[stage["key"]],
+                        process["goal_key"],
+                        detail_density=detail_density,
+                        evidence_density=evidence_density,
+                    )
+                    if not normalized["local_goal"]:
+                        normalized["local_goal"] = normalized["local_outcome"] or (
+                            f"Complete {normalized['title'].lower()}"
+                        )
+                    if not normalized["local_outcome"]:
+                        normalized["local_outcome"] = normalized["local_goal"]
+                    enriched.append(normalized)
             return enriched
 
-        grouped = await asyncio.gather(*(enrich(process) for process in processes))
+        grouped = await bounded_map(
+            processes,
+            enrich,
+            concurrency=MAX_ENRICH_CONCURRENCY,
+        )
         stage_drafts = [stage for group in grouped for stage in group]
         if not stage_drafts:
             raise HarnessError("HARNESS_NO_STAGES", "No Stage could be enriched")
@@ -187,8 +253,21 @@ class StageEnrichmentStep:
             for stage in stage_drafts
             if not stage["local_outcome"]
         ]
+        warnings.extend(
+            f"Process '{process['key']}' has no teaching plan (legacy); "
+            "instructional coherence is not verified."
+            for process in processes
+            if process.get("teaching_plan") is None
+        )
+        target = detail_limit(detail_density)["max_details"]
+        warnings.extend(
+            f"Stage '{stage['key']}' has {len(stage['implementation_details'])} details, "
+            f"above the {detail_density} target of {target}; all were preserved."
+            for stage in stage_drafts
+            if len(stage["implementation_details"]) > target
+        )
         return StepResult.success(
-            {"stage_drafts": stage_drafts},
+            {"stage_drafts": stage_drafts, "process_drafts": processes},
             events=[
                 HarnessEvent(
                     "step.completed",

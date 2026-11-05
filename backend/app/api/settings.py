@@ -2,7 +2,7 @@ import uuid
 from typing import Annotated, Any, Literal
 
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SecretStr
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
@@ -52,6 +52,38 @@ class SettingsUpdate(BaseModel):
     appearance: dict[str, Any] | None = None
 
 
+class ProviderModelsRequest(BaseModel):
+    base_url: str | None = None
+    api_key: SecretStr | None = None
+
+
+class ProviderConnectionRequest(ProviderModelsRequest):
+    """Connection details as currently typed in the settings form.
+
+    Both the model list and the connection test accept the same body: a user who
+    has typed a key but not saved it expects "test" to test what they typed.
+    """
+
+    model: str | None = None
+
+
+def connection_from_request(
+    request: ProviderConnectionRequest | None, saved: dict[str, Any]
+) -> dict[str, Any]:
+    """Merge form values over saved provider settings, one place, both endpoints."""
+    entered = request or ProviderConnectionRequest()
+    entered_key = entered.api_key.get_secret_value() if entered.api_key else ""
+    return {
+        "type": saved.get("type"),
+        "base_url": (entered.base_url or saved.get("base_url") or "").strip(),
+        "api_key": entered_key or saved.get("api_key") or "",
+        "model": (entered.model or saved.get("model") or "").strip(),
+        "timeout": saved.get("timeout") or 60,
+        "max_retries": saved.get("max_retries", 2),
+        "mock_scenario": saved.get("mock_scenario", "success"),
+    }
+
+
 def deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
     result = dict(base)
     for key, value in override.items():
@@ -82,6 +114,21 @@ def settings_with_defaults(data: dict[str, Any]) -> dict[str, Any]:
             "base_url": config.openai_compatible_base_url,
             "model": config.openai_compatible_model,
         }
+    elif config.cop_provider_mode == "openai_compatible":
+        # A stored row from an earlier mock run must not hide the endpoint that
+        # `.env` names. Empty stored fields fall back to the configured ones, so
+        # switching the form to OpenAI Compatible shows the real Base URL instead
+        # of an empty box the user has no way to fill correctly.
+        provider = dict(merged["provider"])
+        if provider.get("type") == "mock" and not str(provider.get("base_url") or "").strip():
+            # Never configured: an empty mock row left over from the defaults.
+            # The environment asked for a live endpoint, so show that choice.
+            provider["type"] = "openai_compatible"
+        if not str(provider.get("base_url") or "").strip():
+            provider["base_url"] = config.openai_compatible_base_url
+        if not str(provider.get("model") or "").strip():
+            provider["model"] = config.openai_compatible_model
+        merged["provider"] = provider
     return merged
 
 
@@ -152,22 +199,57 @@ def update_app_settings(body: SettingsUpdate, db: DbSession) -> dict[str, Any]:
 
 
 @router.post("/settings/provider/test")
-async def test_provider(db: DbSession) -> dict[str, Any]:
-    provider = resolved_private_settings(app_record(db).settings_json)["provider"]
+async def test_provider(
+    db: DbSession, body: ProviderConnectionRequest | None = None
+) -> dict[str, Any]:
+    saved = resolved_private_settings(app_record(db).settings_json)["provider"]
+    provider = connection_from_request(body, saved)
     if provider["type"] == "mock":
-        adapter = MockProvider(provider.get("mock_scenario", "success"))
+        adapter = MockProvider(provider["mock_scenario"])
     else:
-        if not provider.get("base_url") or not provider.get("api_key") or not provider.get("model"):
-            raise HTTPException(status_code=422, detail="Base URL, API key, and model are required")
+        missing = [f for f in ("base_url", "api_key") if not provider[f]]
+        if missing:
+            raise HTTPException(
+                status_code=422, detail=f"{' and '.join(missing)} required to test the provider"
+            )
         adapter = OpenAICompatibleProvider(
             base_url=provider["base_url"],
             api_key=provider["api_key"],
             model=provider["model"],
-            timeout=provider["timeout"],
-            max_retries=provider["max_retries"],
+            timeout=float(provider["timeout"]),
+            max_retries=int(provider["max_retries"]),
         )
     try:
         return await adapter.health_check()
+    except ProviderError as exc:
+        raise HTTPException(
+            status_code=400, detail={"code": exc.code, "message": str(exc)}
+        ) from exc
+
+
+@router.post("/settings/provider/models")
+async def list_provider_models(
+    db: DbSession, body: ProviderConnectionRequest | None = None
+) -> dict[str, Any]:
+    """Fetch model IDs using the form values, falling back to saved settings."""
+    saved = resolved_private_settings(app_record(db).settings_json)["provider"]
+    if saved.get("type") != "openai_compatible":
+        raise HTTPException(status_code=422, detail="Select an OpenAI-compatible provider first")
+    provider = connection_from_request(body, saved)
+    missing = [f for f in ("base_url", "api_key") if not provider[f]]
+    if missing:
+        raise HTTPException(
+            status_code=422, detail=f"{' and '.join(missing)} required to load models"
+        )
+    adapter = OpenAICompatibleProvider(
+        base_url=provider["base_url"],
+        api_key=provider["api_key"],
+        model=provider["model"],
+        timeout=float(provider["timeout"]),
+        max_retries=int(provider["max_retries"]),
+    )
+    try:
+        return {"models": await adapter.list_models()}
     except ProviderError as exc:
         raise HTTPException(
             status_code=400, detail={"code": exc.code, "message": str(exc)}

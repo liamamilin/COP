@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { DuplicateButton } from "../../../components/duplicate-button";
 import { GenerationSection } from "../../../components/generation-section";
+import { LearningOverview } from "../../../components/learning-overview";
 import type { EffectiveGeneration } from "../../../components/generation-panel";
 import { ProjectSetupShell } from "../../../components/project-setup-shell";
 import { ProjectShell } from "../../../components/project-shell";
@@ -10,7 +11,6 @@ import {
   getProjectSources,
   getProjectWorkspace,
 } from "../../../lib/api";
-import { artifactSelectors } from "../../../lib/artifact-selectors";
 
 /**
  * Fallback used only if the settings endpoint is unreachable.
@@ -49,15 +49,27 @@ export default async function ProjectOverviewPage({
   if (!version) {
     const sources = await getProjectSources(projectId);
     return (
-      <ProjectSetupShell project={project} active="overview">
+      <ProjectSetupShell project={project} active="overview" hasDraft={draft !== null}>
         <div className="content-wrap setup-overview">
           <header className="page-header detail-header">
-            <p className="eyebrow">PROJECT READY · NO COP YET</p>
+            <p className="eyebrow">{draft ? "DRAFT READY · NOT PUBLISHED" : "PROJECT READY · NO COP YET"}</p>
             <h1>{project.title}</h1>
             <p className="lead-copy">
               {project.scope || "Define the source material and scope for this COP."}
             </p>
           </header>
+
+          {draft && (
+            <section className="setup-next-step">
+              <span className="step-orbit" aria-hidden="true">✓</span>
+              <div>
+                <p className="eyebrow">READY FOR REVIEW</p>
+                <h2>Your draft is ready.</h2>
+                <p>Review and edit your COP. Publishing stays your decision.</p>
+              </div>
+              <Link className="primary-link" href={`/projects/${projectId}/draft`}>Review draft ↗</Link>
+            </section>
+          )}
 
           <section className="setup-next-step">
             <span className="step-orbit">{sources.length}</span>
@@ -97,109 +109,7 @@ export default async function ProjectOverviewPage({
       hasDraft={draft !== null}
     >
       <div className="content-wrap">
-        <header className="page-header overview-header">
-          <div>
-            <p className="eyebrow">DOMAIN OVERVIEW</p>
-            <h1>{artifact.domain.name}</h1>
-            <p>{artifact.domain.scope}</p>
-          </div>
-          <div className="artifact-metrics">
-            <span><b>{artifact.goals.length}</b> Goals</span>
-            <span><b>{artifact.main_processes.length}</b> Processes</span>
-            <span><b>{artifact.stages.length}</b> Stages</span>
-          </div>
-        </header>
-
-        <section className="mental-model-card">
-          <div className="section-number">01</div>
-          <div>
-            <p className="eyebrow">MENTAL MODEL</p>
-            <h2>How the system moves</h2>
-            <p className="lead-copy">{artifact.mental_model.summary}</p>
-            <div className="flow-strip">
-              {(artifact.mental_model.flow ?? []).map((item, index) => (
-                <div className="flow-item" key={`${item}-${index}`}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{item}</strong>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Non-goals were generated and stored, and never displayed. Without
-            them a domain reads as an encyclopedia rather than a boundary. */}
-        {(artifact.domain.non_goals ?? []).length > 0 && (
-          <section className="reading-section non-goals">
-            <p className="eyebrow">NOT IN SCOPE</p>
-            <ul>
-              {(artifact.domain.non_goals ?? []).map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-            {/* The Expansion Map. Three entries existed in the artifact and were
-            rendered nowhere, so a learner who finished the COP had no idea what
-            to do next -- which is the one thing spec 19's Learn loop requires at
-            its end. */}
-        {(artifact.expansion_map ?? []).length > 0 && (
-          <section className="reading-section expansion-map">
-            <p className="eyebrow">WHERE TO GO NEXT</p>
-            <h2>Beyond this COP</h2>
-            <ul>
-              {(artifact.expansion_map ?? []).map((item, index) => {
-                const from = item.from_goal_ref
-                  ? artifact.goals.find((goal) => goal.id === item.from_goal_ref)
-                  : undefined;
-                return (
-                  <li key={`${item.title}-${index}`}>
-                    <div>
-                      <h3>{item.title}</h3>
-                      {item.description && <p>{item.description}</p>}
-                    </div>
-                    {from && (
-                      <a href={`/projects/${projectId}/goals/${encodeURIComponent(from.id)}`}>
-                        Builds on {from.title} ↗
-                      </a>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        )}
-
-        <section className="goal-map">
-          <div className="section-title-row">
-            <div>
-              <p className="eyebrow">GOAL MAP</p>
-              <h2>Capabilities worth building</h2>
-            </div>
-            <p>从可验证结果进入主流程，而不是从术语列表开始。</p>
-          </div>
-          <div className="goal-list">
-            {artifact.goals.map((goal, index) => {
-              const process = artifactSelectors.getProcessForGoal(artifact, goal.id);
-              return (
-                <Link
-                  className="goal-row"
-                  href={`/projects/${projectId}/goals/${encodeURIComponent(goal.id)}`}
-                  key={goal.id}
-                >
-                  <span className="goal-number">{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <small>{process.stage_refs.length} STAGES</small>
-                    <h3>{goal.title}</h3>
-                    <p>{goal.outcome}</p>
-                  </div>
-                  <span className="goal-enter">Enter process <b>↗</b></span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+        <LearningOverview artifact={artifact} projectId={projectId} versionId={version.id} title={project.title} />
 
         <section className="manage-section">
           <div>
@@ -234,25 +144,6 @@ export default async function ProjectOverviewPage({
           </div>
         </section>
 
-        {artifact.shared_foundations.map((foundation) => (
-          <section className="foundation-card" key={foundation.id}>
-            <div>
-              <p className="eyebrow">SHARED FOUNDATION</p>
-              <h2>{foundation.title}</h2>
-              <p>Repeated setup appears once, while every Main Process remains traceable to zero.</p>
-            </div>
-            <div className="foundation-stages">
-              {foundation.stage_refs.map((stageId, index) => {
-                const stage = artifactSelectors.getStage(artifact, stageId);
-                return (
-                  <Link href={`/projects/${projectId}/stages/${encodeURIComponent(stage.id)}`} key={stage.id}>
-                    <span>{index + 1}</span>{stage.title}
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        ))}
       </div>
     </ProjectShell>
   );
