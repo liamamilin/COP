@@ -1,0 +1,567 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "n8n",
+    "scope": "个人与小团队使用 n8n 跨应用自动化、整理数据、通知协作和交付业务流程；以本次取回的 n8n 官方文档及模板案例为准。核心节点与依赖外部应用/模型的扩展路线分别标示；不是安装/运行认证。"
+  },
+  "sources": [
+    {
+      "id": "s-data-join",
+      "title": "Build your first workflow | n8n Docs",
+      "url": "https://docs.n8n.io/build-your-first-workflow",
+      "original_url": "https://docs.n8n.io/try-it-out/",
+      "evidence": "weather log over time",
+      "location": "Build your first workflow | n8n Docs；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:51.000932+00:00",
+      "capture_origin": "https://docs.n8n.io/build-your-first-workflow",
+      "capture_sha256": "bf71119626eda54bcbf879cd441d208550711619f58048efcc528a0470f1e8a9",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-01",
+          "location": "Build your first workflow | n8n Docs；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "url": "https://docs.n8n.io/build-your-first-workflow"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-webhook",
+      "title": "Webhook | Nodes | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+      "original_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/",
+      "evidence": "receive data from apps and services when an event occurs",
+      "location": "Webhook | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:14:06.683189+00:00",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+      "capture_sha256": "bac7f1d573cc1378d9bf2bbe2152949c01fe69399be8566945a974f2556c3e76",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-02",
+          "location": "Webhook | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-data-tables",
+      "title": "Data Table | Nodes | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+      "original_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/",
+      "evidence": "store structured data directly inside n8n and use it across workflows",
+      "location": "Data Table | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:14:35.053393+00:00",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+      "capture_sha256": "80c5ff18250947d1ebe6591556978125b903ded483f4ecb26e52cbcdab39a0c0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-03",
+          "location": "Data Table | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-lead-case",
+      "title": "Capture and route real estate leads with Google Sheets, Gmail, and Slack | n8n workflow template",
+      "url": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+      "original_url": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+      "evidence": "auto-reply through Gmail, and notifies your team in Slack",
+      "location": "Capture and route real estate leads with Google Sheets, Gmail, and Slack | n8n workflow template；本次 HTML 提取正文第 32–32 行（不是 HTML 源码行号）",
+      "source_class": "official_workflow_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:15:08.504428+00:00",
+      "capture_origin": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+      "capture_sha256": "8acc56a529149d57902a021d1a441facd836a711987b1a248a9cd15e2dd26561",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-04",
+          "location": "Capture and route real estate leads with Google Sheets, Gmail, and Slack | n8n workflow template；本次 HTML 提取正文第 32–32 行（不是 HTML 源码行号）",
+          "url": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "id": "s-support-case",
+      "title": "Triage support emails and schedule SLA tasks with Gmail, Gemini, Google Calendar, Sheets and Discord | n8n workflow template",
+      "url": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+      "original_url": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+      "evidence": "calculates an SLA deadline, creates a Google Calendar follow-up event",
+      "location": "Triage support emails and schedule SLA tasks with Gmail, Gemini, Google Calendar, Sheets and Discord | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+      "source_class": "community_workflow_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:15:18.563165+00:00",
+      "capture_origin": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+      "capture_sha256": "7502d24aa8a73a45b1947168cab0642150819a84b649ba528e0c466a69a60aa7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-05",
+          "location": "Triage support emails and schedule SLA tasks with Gmail, Gemini, Google Calendar, Sheets and Discord | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+          "url": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "id": "s-invoice-example",
+      "title": "Process, validate, and approve invoices with OpenAI GPT-4o and Google Sheets | n8n workflow template",
+      "url": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+      "original_url": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+      "evidence": "routes invoices for automatic or manual approval",
+      "location": "Process, validate, and approve invoices with OpenAI GPT-4o and Google Sheets | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+      "source_class": "community_workflow_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:14:23.675003+00:00",
+      "capture_origin": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+      "capture_sha256": "523a0fe405f4cd3141030106fd174c79b069c89e6de6a080f1806bb22fbfda98",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-06",
+          "location": "Process, validate, and approve invoices with OpenAI GPT-4o and Google Sheets | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+          "url": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "id": "s-pdf-clean",
+      "title": "Turn any PDF into a clean Google Doc with Mistral OCR | n8n workflow template",
+      "url": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+      "original_url": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+      "evidence": "Creates a new Google Doc in your chosen Drive folder",
+      "location": "Turn any PDF into a clean Google Doc with Mistral OCR | n8n workflow template；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）",
+      "source_class": "community_workflow_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:19:49.290538+00:00",
+      "capture_origin": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+      "capture_sha256": "af11eb474ee8890e6a4f6fd91bc61d93bb388f0b8d7a5a6d7eeb1f356d22c483",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-07",
+          "location": "Turn any PDF into a clean Google Doc with Mistral OCR | n8n workflow template；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）",
+          "url": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "id": "s-sheet-postgres",
+      "title": "Query Google Sheets/CSV data through an AI agent using PostgreSQL | n8n workflow template",
+      "url": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+      "original_url": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+      "evidence": "Uses an AI agent to translate natural language questions into SQL queries",
+      "location": "Query Google Sheets/CSV data through an AI agent using PostgreSQL | n8n workflow template；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+      "source_class": "community_workflow_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:20:07.987936+00:00",
+      "capture_origin": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+      "capture_sha256": "72d29754a4f8910ca0bf6b72128f572399362bb7f0e431af6360677aa3bfa243",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-08",
+          "location": "Query Google Sheets/CSV data through an AI agent using PostgreSQL | n8n workflow template；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+          "url": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "id": "s-error-trigger",
+      "title": "Error Trigger | Nodes | n8n Docs",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger",
+      "original_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger/",
+      "evidence": "create error workflows. When another linked workflow fails",
+      "location": "Error Trigger | Nodes | n8n Docs；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:20:46.391904+00:00",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger",
+      "capture_sha256": "af76169d43b0b31c251c1d0f3d9f1494d5a04e2ba2b2326e95388595df751163",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-09",
+          "location": "Error Trigger | Nodes | n8n Docs；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-deploy",
+      "title": "Host n8n | Deploy | n8n Docs",
+      "url": "https://docs.n8n.io/deploy/host-n8n",
+      "original_url": "https://docs.n8n.io/hosting/",
+      "evidence": "runs as the free Community edition",
+      "location": "Host n8n | Deploy | n8n Docs；本次 HTML 提取正文第 34–34 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:15:34.167008+00:00",
+      "capture_origin": "https://docs.n8n.io/deploy/host-n8n",
+      "capture_sha256": "d487d7bc96ed8c5b98c265a15278a1fcde8dd979861ed633d39c626025cff9af",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "n8n-10",
+          "location": "Host n8n | Deploy | n8n Docs；本次 HTML 提取正文第 34–34 行（不是 HTML 源码行号）",
+          "url": "https://docs.n8n.io/deploy/host-n8n"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-reporting",
+      "name": "周期报告与复盘"
+    },
+    {
+      "id": "g-integrations",
+      "name": "接入与触发"
+    },
+    {
+      "id": "g-data",
+      "name": "跨系统数据"
+    },
+    {
+      "id": "g-business",
+      "name": "业务交付与协作"
+    },
+    {
+      "id": "g-resilience",
+      "name": "失败处理"
+    },
+    {
+      "id": "g-extensions",
+      "name": "部署与扩展"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "n8n-01",
+      "title": "定时生成简报并累积可查记录",
+      "result": "按固定时间拉取数据、整理成易读短报并追加保存，形成随时间增长的运行日志。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "官方入门示例使用每日天气 API 和 n8n Data Table；示例数据来自教程用 Mockingbird。接入真实数据需相应 API/账户凭据。",
+      "source_ids": [
+        "s-data-join"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-data-join",
+          "quote": "weather log over time",
+          "url": "https://docs.n8n.io/build-your-first-workflow",
+          "location": "Build your first workflow | n8n Docs；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "source_line_start": 25,
+          "source_line_end": 25,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-reporting"
+      ],
+      "aliases": [
+        "周期性报告与日志"
+      ]
+    },
+    {
+      "id": "n8n-02",
+      "title": "让外部事件启动工作流",
+      "result": "接收外部应用或服务发来的事件数据，并据此启动后续自动化；适合没有专用触发节点的服务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用内置 Webhook；需将外部系统配置为调用该端点，并按部署方式提供可达的 HTTPS 地址。",
+      "source_ids": [
+        "s-webhook"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-webhook",
+          "quote": "receive data from apps and services when an event occurs",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+          "location": "Webhook | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "source_line_start": 104,
+          "source_line_end": 104,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-integrations"
+      ],
+      "aliases": [
+        "Webhook 事件接入"
+      ]
+    },
+    {
+      "id": "n8n-03",
+      "title": "在工作流之间保存和复用结构化数据",
+      "result": "将结构化记录存放在 n8n 内部数据表，并在多个工作流中读取或维护。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用内置 Data Table。此条只确认内部表格和跨工作流使用；不据此推断它适合队列、查重或特定负载。应按官方数据表容量限制判断是否适用。",
+      "source_ids": [
+        "s-data-tables"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-data-tables",
+          "quote": "store structured data directly inside n8n and use it across workflows",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+          "location": "Data Table | Nodes | n8n Docs；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "source_line_start": 104,
+          "source_line_end": 104,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": [
+        "跨流程共享结构化记录"
+      ]
+    },
+    {
+      "id": "n8n-04",
+      "title": "自动回复网站询盘并通知团队",
+      "result": "作者模板展示网站线索经 Webhook 进入后自动回信并通知团队；流程还校验字段、去重并按优先级分流。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "此端到端模板组合 Webhook、Google Sheets、Gmail 与 Slack。节点由 n8n 提供，但结果依赖这些外部服务账户、OAuth 授权、表格字段和可用配额；模板页不是运行证明。",
+      "source_ids": [
+        "s-lead-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lead-case",
+          "quote": "auto-reply through Gmail, and notifies your team in Slack",
+          "url": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+          "location": "Capture and route real estate leads with Google Sheets, Gmail, and Slack | n8n workflow template；本次 HTML 提取正文第 32–32 行（不是 HTML 源码行号）",
+          "source_line_start": 32,
+          "source_line_end": 32,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-business"
+      ],
+      "aliases": [
+        "轻量线索接待"
+      ]
+    },
+    {
+      "id": "n8n-05",
+      "title": "把支持邮件变成带时限的跟进任务",
+      "result": "作者模板展示支持邮件分类、SLA 截止时间、日历跟进事件、工单记录、回复草稿和高优先级提醒。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "流程依赖 Gmail、Google Gemini、Calendar、Sheets 与 Discord 账户/授权和模型 API；模型分类与摘要是外部 Gemini 服务。模板说明不是运行或客户成效认证。",
+      "source_ids": [
+        "s-support-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-support-case",
+          "quote": "calculates an SLA deadline, creates a Google Calendar follow-up event",
+          "url": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+          "location": "Triage support emails and schedule SLA tasks with Gmail, Gemini, Google Calendar, Sheets and Discord | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+          "source_line_start": 33,
+          "source_line_end": 33,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-business"
+      ],
+      "aliases": [
+        "邮件工单分流"
+      ]
+    },
+    {
+      "id": "n8n-06",
+      "title": "把发票自动批准或转交人工审批",
+      "result": "作者模板展示从 PDF 取数、校验和查重，到按条件自动批准或等待人工决定，再记录审批状态并通知相关人员。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "此案例依赖 OpenAI、Google Sheets、Gmail 与 Webhook 及各服务账户/凭据；抽取/分类是外部 OpenAI 服务。人工审批步骤由模板配置，结果未经运行验证。",
+      "source_ids": [
+        "s-invoice-example"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-invoice-example",
+          "quote": "routes invoices for automatic or manual approval",
+          "url": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+          "location": "Process, validate, and approve invoices with OpenAI GPT-4o and Google Sheets | n8n workflow template；本次 HTML 提取正文第 33–33 行（不是 HTML 源码行号）",
+          "source_line_start": 33,
+          "source_line_end": 33,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-business"
+      ],
+      "aliases": [
+        "发票入账与审批"
+      ]
+    },
+    {
+      "id": "n8n-07",
+      "title": "把扫描 PDF 转成可编辑的整洁文档",
+      "result": "作者模板展示通过公开表单收取 PDF，调用 OCR 提取并整理文本，再将结果写入 Google Docs。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "模板要求 Mistral Cloud OCR API key、Google Docs/Drive OAuth 凭据和目标文件夹 ID；页面说明的最大文件为 100 MB。OCR、云盘和文档能力来自外部服务。仅确认模板页面描述。",
+      "source_ids": [
+        "s-pdf-clean"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pdf-clean",
+          "quote": "Creates a new Google Doc in your chosen Drive folder",
+          "url": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+          "location": "Turn any PDF into a clean Google Doc with Mistral OCR | n8n workflow template；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）",
+          "source_line_start": 38,
+          "source_line_end": 38,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-business"
+      ],
+      "aliases": [
+        "PDF OCR 与文档整理"
+      ]
+    },
+    {
+      "id": "n8n-08",
+      "title": "把表格数据同步到数据库并用自然语言查询",
+      "result": "作者模板展示将 Google Sheets/CSV 结构导入 PostgreSQL，再把自然语言财务问题转为 SQL 并返回数值结果；可选定期同步。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 PostgreSQL 实例、Google Drive/Sheets 访问及模板所需模型连接；自然语言转 SQL 由外部模型执行。同步频率是可选的 Schedule Trigger 设置。模板页面未证明查询准确率或实际运行结果。",
+      "source_ids": [
+        "s-sheet-postgres"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sheet-postgres",
+          "quote": "Uses an AI agent to translate natural language questions into SQL queries",
+          "url": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+          "location": "Query Google Sheets/CSV data through an AI agent using PostgreSQL | n8n workflow template；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+          "source_line_start": 39,
+          "source_line_end": 39,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": [
+        "表格到 SQL 查询"
+      ]
+    },
+    {
+      "id": "n8n-09",
+      "title": "在关联工作流失败时启动错误处理流程",
+      "result": "为工作流配置独立 Error Trigger；关联工作流自动失败时，错误流程会取得失败详情并运行，可在其中追加告警或记录步骤。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用 n8n 内置 Error Trigger。仅自动工作流发生错误时触发，手动执行失败不能用它测试；触发器节点自身失败时可用错误信息更少。通知渠道要另接相应服务。",
+      "source_ids": [
+        "s-error-trigger"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-error-trigger",
+          "quote": "create error workflows. When another linked workflow fails",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger",
+          "location": "Error Trigger | Nodes | n8n Docs；本次 HTML 提取正文第 102–102 行（不是 HTML 源码行号）",
+          "source_line_start": 102,
+          "source_line_end": 102,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-resilience"
+      ],
+      "aliases": [
+        "集中错误处理"
+      ]
+    },
+    {
+      "id": "n8n-10",
+      "title": "自托管自动化服务并选择许可版本",
+      "result": "在自有服务器、私有云或本地环境运行 n8n；无许可密钥时运行 Community edition，添加 Business 或 Enterprise 密钥可启用相应版本。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要自行负责部署、维护、升级和安全；商业版/企业版需要许可密钥。Cloud 与 self-host 的功能、价格和限额依当期方案。",
+      "source_ids": [
+        "s-deploy"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deploy",
+          "quote": "runs as the free Community edition",
+          "url": "https://docs.n8n.io/deploy/host-n8n",
+          "location": "Host n8n | Deploy | n8n Docs；本次 HTML 提取正文第 34–34 行（不是 HTML 源码行号）",
+          "source_line_start": 34,
+          "source_line_end": 34,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-extensions"
+      ],
+      "aliases": [
+        "私有化部署"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "本轮未安装或实际运行 n8n；模板示例不构成对凭据、权限、错误处理或业务收益的实测保证。",
+    "未逐项测完所有官方节点、社区包、API 限额、云方案/许可价格和版本兼容矩阵；这些会随版本及供应商方案变化。",
+    "社区模板案例是作者发布的模板说明，不是已运行客户案例，不独立验证生产表现。",
+    "未纳入的作者自动重试模板使用 n8n API 登录并在 Set 节点配置实例 URL/用户名/密码；未核实当前版本的可用认证方式与安全配置，故不作为确认能力。",
+    "社区节点文档仅证明扩展机制及 Cloud 限制，不把“安装扩展”本身当作用户结果。",
+    "没有为缺乏充分原文支撑的 CRM 同步、自动社媒运营、网站监控抓取、个人知识库同步等方向做能力承诺。"
+  ],
+  "generated_at": "2026-11-05T12:22:37Z",
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  }
+}

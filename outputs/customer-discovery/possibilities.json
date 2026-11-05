@@ -1,0 +1,631 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "客户发现与需求验证",
+    "scope": "研究可观察的客户发现与需求验证任务：提出研究问题、招募与访谈、检查原型、分析反馈并选择下一步；区分用户研究信号、实际购买承诺、因果证据和商业成功。引用 NSF I-Corps 仅说明其为有资格边界的培训项目，不把其资格、资助或结果推广到普通个人。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "stop_reason": "完成结果、完整案例和方法扩展三轮发现；逐读 GOV.UK 研究手册、GOV.UK 服务案例、YC 作者课程逐字稿与 NSF I-Corps 项目资格正文。案例与方法视角趋于重复；本轮不把访谈反馈转成总体需求/增长结论。余下缺口见 coverage_gaps。",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-gov-plan",
+      "title": "Plan user research for your service",
+      "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "evidence": "turn any unfounded assumptions and opinions into research questions",
+      "location": "Plan user research for your service；本次 HTML 提取正文第 72–72 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:00.938388+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "capture_sha256": "e95990c7839e940f89264a7465141f7c5af3ce0153ebf89a3738532fa85655e7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-01",
+          "location": "Plan user research for your service；本次 HTML 提取正文第 72–72 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-gov-method-example",
+      "title": "Choosing the best methods to answer user research questions",
+      "url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "requested_url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "evidence": "mapping research questions to methods",
+      "location": "Choosing the best methods to answer user research questions；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:28:04.486448+00:00",
+      "capture_origin": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "capture_sha256": "cd33368e6797dbef4b1013dbd5a3f3894be33106dfea56c4507830a32bebf83e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-01",
+          "location": "Choosing the best methods to answer user research questions；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-gov-interviews",
+      "title": "Using in-depth interviews",
+      "url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "evidence": "current or likely users of the service you’re researching",
+      "location": "Using in-depth interviews；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:02.579631+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "capture_sha256": "4f11006216fe47228a6af0c55a3f966a55557438c921de9a7aaa6376bcd7a00c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-02",
+          "location": "Using in-depth interviews；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-gov-ethics",
+      "title": "Managing user research data and participant privacy",
+      "url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "evidence": "get informed consent from all participants",
+      "location": "Managing user research data and participant privacy；本次 HTML 提取正文第 92–92 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:02.667188+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "capture_sha256": "c87e6bc20a14352d425a71fe5033ef1024629cb04999fd9899739d21aafb68a4",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-02",
+          "location": "Managing user research data and participant privacy；本次 HTML 提取正文第 92–92 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-yc-startup-school",
+      "title": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky",
+      "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "requested_url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "evidence": "context around the circumstances\n[…]\nproblem cost\n[…]\nvery frequently\n[…]\npay more even before",
+      "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 52–52 行（不是 HTML 源码行号）；Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）；Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）；Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+      "source_class": "official_course_transcript",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:01.953010+00:00",
+      "capture_origin": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "capture_sha256": "efa2d4566390d0301e47f323fbafd9f55a57c94671e59dc44211f738c7b573eb",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-03",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 52–52 行（不是 HTML 源码行号）",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/"
+        },
+        {
+          "possibility_id": "cd-04",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/"
+        },
+        {
+          "possibility_id": "cd-04",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/"
+        },
+        {
+          "possibility_id": "cd-10",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-gov-usability",
+      "title": "Using moderated usability testing",
+      "url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "evidence": "see if users understand what they need to do",
+      "location": "Using moderated usability testing；本次 HTML 提取正文第 71–71 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:03.060884+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "capture_sha256": "8906842c186859785c361e25b91a9a2874f490b368f949eac6e85ae96768be83",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-05",
+          "location": "Using moderated usability testing；本次 HTML 提取正文第 71–71 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-gov-verify-case",
+      "title": "What you won’t learn from a prototype",
+      "url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "evidence": "more demanding of their time and attention",
+      "location": "What you won’t learn from a prototype；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:28:06.922109+00:00",
+      "capture_origin": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "capture_sha256": "7b09ea14d503c32f10b84146b7ebad2230280c7ff10eb10e3dd7e51a4d495676",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-06",
+          "location": "What you won’t learn from a prototype；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）",
+          "url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-gov-analysis",
+      "title": "Analyse a research session",
+      "url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "evidence": "write exactly what they saw or heard",
+      "location": "Analyse a research session；本次 HTML 提取正文第 82–82 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:02.008133+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "capture_sha256": "2f2b989158e08dbc23531f804bede64498710f1d977596af037ee9b10bb9c669",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-07",
+          "location": "Analyse a research session；本次 HTML 提取正文第 82–82 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-gov-six-cases",
+      "title": "6 case studies: using research and data to improve a live service",
+      "url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "evidence": "we discuss the outcome and agree what to do next",
+      "location": "6 case studies: using research and data to improve a live service；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:28:07.364529+00:00",
+      "capture_origin": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "capture_sha256": "6d25996065c77ca50528d3a210da4e119a5ce3022d453123f0c7987cecd7fff6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-08",
+          "location": "6 case studies: using research and data to improve a live service；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-gov-navigation-case",
+      "title": "How we researched the new navigation on GOV.UK",
+      "url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "requested_url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "evidence": "round-by-round, we implemented feedback we received",
+      "location": "How we researched the new navigation on GOV.UK；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:28:07.429161+00:00",
+      "capture_origin": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "capture_sha256": "85d8ec023e7d0bccaf0812dbd86b5f8b19e92a92c3a8bebf472ebcf116cf822e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-08",
+          "location": "How we researched the new navigation on GOV.UK；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-gov-sharing",
+      "title": "Sharing user research findings",
+      "url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "evidence": "share your findings with your team",
+      "location": "Sharing user research findings；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:27:01.122261+00:00",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "capture_sha256": "140fb7289284d07e4930bd63fea8dc76323bfce67fc129eeea504d9abdb20d24",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "cd-09",
+          "location": "Sharing user research findings；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-plan",
+      "name": "明确研究对象与计划"
+    },
+    {
+      "id": "g-interviews",
+      "name": "发现问题经历与用户信号"
+    },
+    {
+      "id": "g-prototype",
+      "name": "测试体验与真实情境"
+    },
+    {
+      "id": "g-synthesis",
+      "name": "形成结论并采取下一步"
+    },
+    {
+      "id": "g-commitment",
+      "name": "观察实际承诺"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "cd-01",
+      "title": "把假设转成可回答的研究问题",
+      "result": "明确要了解什么、哪些想法只是未经验证的假设，并为每个问题挑选能回答它的研究活动。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "先定决策问题和要影响的产品决定；方法与研究对象应匹配，别把研究活动与需求已证实混为一谈。",
+      "source_ids": [
+        "s-gov-plan",
+        "s-gov-method-example"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-plan",
+          "quote": "turn any unfounded assumptions and opinions into research questions",
+          "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+          "location": "Plan user research for your service；本次 HTML 提取正文第 72–72 行（不是 HTML 源码行号）",
+          "source_line_start": 72,
+          "source_line_end": 72,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-gov-method-example",
+          "quote": "mapping research questions to methods",
+          "url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+          "location": "Choosing the best methods to answer user research questions；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-plan"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-02",
+      "title": "招募相关用户并取得知情同意",
+      "result": "为研究找到当前或潜在服务用户，安排访谈/测试并说明数据采集用途、取得同意。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "筛选标准、招募时间、可访问性和研究预算会限制样本；妥善保管录音、笔记和个人资料，并按参与者同意的用途使用。",
+      "source_ids": [
+        "s-gov-interviews",
+        "s-gov-ethics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-interviews",
+          "quote": "current or likely users of the service you’re researching",
+          "url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+          "location": "Using in-depth interviews；本次 HTML 提取正文第 77–77 行（不是 HTML 源码行号）",
+          "source_line_start": 77,
+          "source_line_end": 77,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-gov-ethics",
+          "quote": "get informed consent from all participants",
+          "url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+          "location": "Managing user research data and participant privacy；本次 HTML 提取正文第 92–92 行（不是 HTML 源码行号）",
+          "source_line_start": 92,
+          "source_line_end": 92,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-plan"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-03",
+      "title": "回溯用户最近一次具体问题经历",
+      "result": "询问用户最近一次遇到问题的情境、困难和已尝试的解决方式，而不是先推销想法或询问假设性兴趣。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "以开放、中立的问题追问真实经历；访谈叙述是自报材料，不能独自证明普遍需求或购买意愿。",
+      "source_ids": [
+        "s-yc-startup-school"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-yc-startup-school",
+          "quote": "context around the circumstances",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 52–52 行（不是 HTML 源码行号）",
+          "source_line_start": 52,
+          "source_line_end": 52,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-interviews"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-04",
+      "title": "比较问题的成本与发生频率",
+      "result": "在候选用户访谈中记录问题当前造成的成本和出现频率，比较哪些细分人群值得继续研究。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "YC 课程也建议了解谁有解决问题的预算/决策权；成本、频率、预算均为访谈信号，不能直接换算市场规模或商业成功。",
+      "source_ids": [
+        "s-yc-startup-school"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-yc-startup-school",
+          "quote": "problem cost",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）",
+          "source_line_start": 58,
+          "source_line_end": 58,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-yc-startup-school",
+          "quote": "very frequently",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）",
+          "source_line_start": 59,
+          "source_line_end": 59,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-interviews"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-05",
+      "title": "用具体任务检查原型可用性",
+      "result": "让目标用户尝试完成真实感强且不暗示答案的任务，观察其能否理解下一步以及在哪里遇到可用性问题。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需有可用原型或现有服务、清楚的研究问题和中立任务；任务完成情况回答可用性问题，不足以证实市场需求。",
+      "source_ids": [
+        "s-gov-usability"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-usability",
+          "quote": "see if users understand what they need to do",
+          "url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+          "location": "Using moderated usability testing；本次 HTML 提取正文第 71–71 行（不是 HTML 源码行号）",
+          "source_line_start": 71,
+          "source_line_end": 71,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-prototype"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-06",
+      "title": "把原型观察与真实使用情境对照",
+      "result": "将受控环境中的原型观察与实际服务用户的反馈结合，发现时间、注意力、信任等现场条件如何影响行为。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "真实服务数据/参与者访问权限与研究情境不同；GOV.UK Verify 案例说明不同方法互补，不能把单一政府服务案例普遍化。",
+      "source_ids": [
+        "s-gov-verify-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-verify-case",
+          "quote": "more demanding of their time and attention",
+          "url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+          "location": "What you won’t learn from a prototype；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）",
+          "source_line_start": 30,
+          "source_line_end": 30,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-prototype"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-07",
+      "title": "将观察笔记与解释分开记录",
+      "result": "把访谈或测试中看到/听到的行为和原话记为观察，再另行形成解释，减少把研究者猜测误写为用户事实。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要及时整理原始笔记/录音并保护参与者隐私；质性观察用于提出理解和后续假设，不是总体比例估计。",
+      "source_ids": [
+        "s-gov-analysis"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-analysis",
+          "quote": "write exactly what they saw or heard",
+          "url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+          "location": "Analyse a research session；本次 HTML 提取正文第 82–82 行（不是 HTML 源码行号）",
+          "source_line_start": 82,
+          "source_line_end": 82,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-08",
+      "title": "根据研究和使用结果选择下一次改动",
+      "result": "记录改动预期，结合用户研究和关键指标复盘结果，再决定继续、调整、移除功能或增加一轮研究。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "政府案例展示迭代和前后指标观察；未随机化的前后变化不自动证明该改动造成结果，也不保证指标会改善。",
+      "source_ids": [
+        "s-gov-six-cases",
+        "s-gov-navigation-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-six-cases",
+          "quote": "we discuss the outcome and agree what to do next",
+          "url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+          "location": "6 case studies: using research and data to improve a live service；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "source_line_start": 25,
+          "source_line_end": 25,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-gov-navigation-case",
+          "quote": "round-by-round, we implemented feedback we received",
+          "url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+          "location": "How we researched the new navigation on GOV.UK；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-09",
+      "title": "把研究发现分享给产品决策者",
+      "result": "把发现整理成团队可用于设计取舍、排优先级、更新用户需求和产品路线图的材料。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "结论需说明研究对象、观察事实、限制与下一步，避免将未验证推断包装成已证实需求。",
+      "source_ids": [
+        "s-gov-sharing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-gov-sharing",
+          "quote": "share your findings with your team",
+          "url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+          "location": "Sharing user research findings；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "source_line_start": 67,
+          "source_line_end": 67,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-synthesis"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "cd-10",
+      "title": "将付费意向转成可观察的行动信号",
+      "result": "对尚未开发的功能，清楚说明状态后邀请目标用户采取明确的提前付费步骤，观察其是否愿意留下支付信息或支付，而不是只依赖口头赞许。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "YC 课程举例讨论未开发功能的提前付费信号；预售/收款可能涉及支付平台、退款与本地规则，具体义务需自行核查。采取行动的用户也不保证后续采用、留存或收入。",
+      "source_ids": [
+        "s-yc-startup-school"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-yc-startup-school",
+          "quote": "pay more even before",
+          "url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+          "location": "Startup School Week 1 Recap: Kevin Hale and Eric Migicovsky；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "source_line_start": 62,
+          "source_line_end": 62,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-commitment"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "访谈自述和质性原型测试不能估计整体市场比例，也不能独自证明购买、留存、市场规模或商业成功。",
+    "YC 对先付费/刷卡意向的建议是课程示例；真实收款、预购履约、退款和当地支付要求未研究或测试。",
+    "政府服务案例能展示研究循环与不同方法互补，但不能代表所有行业或个人创业者。",
+    "本轮未独立收集任何人的访谈、订单或产品数据，也没有执行用户研究。",
+    "NSF I-Corps National Teams 具有特定科研团队构成与申请/资格路径，不是任何个人都能获得的通用课程、资助或商业验证结果。"
+  ],
+  "generated_at": "2026-11-05T12:33:26Z"
+}

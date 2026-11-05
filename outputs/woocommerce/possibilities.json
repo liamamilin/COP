@@ -1,0 +1,1086 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "WooCommerce",
+    "scope": "个人开发者/经营者使用 WooCommerce 建立和运行商品店铺：商品、变体、数字交付、订单、优惠、经营分析、税务配置、标签和支付。明确核心插件、WordPress/托管、扩展与外部支付依赖。观察报表不是因果证明；不承诺收入或增长。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "stop_reason": "完成不分类的结果视角、完整案例视角、扩展视角三轮；实际读取核心商品、订单、数字交付、优惠券、分析文档，税务/物流/支付文档、Landyachtz 商家案例，以及 WooCommerce Subscriptions、Memberships、Bookings 的具名扩展手册与完整订阅/预约示例。经扩展补漏后保留有直接用户结果且依赖写清楚的订阅、会员内容和人员预约任务；不将商品目录或扩展API名当作能力。批量营销触达、客户评论/反馈、托管和替代支付商覆盖仍不完整。",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:27:01.127161+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-products",
+      "title": "Adding and Managing Products",
+      "url": "https://woocommerce.com/document/managing-products/",
+      "requested_url": "https://woocommerce.com/document/managing-products/",
+      "evidence": "adjust prices, update stock levels",
+      "location": "Adding and Managing Products；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:17.407707+00:00",
+      "capture_origin": "https://woocommerce.com/document/managing-products/",
+      "capture_sha256": "e8148034cc5dc2635c290bddc6874a74102ea1468beb588472f24fde612744f4",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-01",
+          "location": "Adding and Managing Products；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/managing-products/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-variable",
+      "title": "Variable Products",
+      "url": "https://woocommerce.com/document/variable-product/",
+      "requested_url": "https://woocommerce.com/document/variable-product/",
+      "evidence": "control over prices, stock, image",
+      "location": "Variable Products；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.478017+00:00",
+      "capture_origin": "https://woocommerce.com/document/variable-product/",
+      "capture_sha256": "8f72a081fa3dee63ca00a003747cab5d830f0ea763f0f49b8fb210fdaf976646",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-02",
+          "location": "Variable Products；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/variable-product/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-digital",
+      "title": "Digital/Downloadable Product Guide",
+      "url": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+      "requested_url": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+      "evidence": "email containing a download link\n[…]\navailable under My Account > Downloads",
+      "location": "Digital/Downloadable Product Guide；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:35.006027+00:00",
+      "capture_origin": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+      "capture_sha256": "18d5576e526cacdfbf520c2dc4cbceab1b3e6056bd8db76b5e9eaf45f6f0b2c2",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-03",
+          "location": "Digital/Downloadable Product Guide；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/digital-downloadable-product-handling/"
+        },
+        {
+          "possibility_id": "wc-03",
+          "location": "Digital/Downloadable Product Guide；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/digital-downloadable-product-handling/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-orders",
+      "title": "Managing orders",
+      "url": "https://woocommerce.com/document/managing-orders/",
+      "requested_url": "https://woocommerce.com/document/managing-orders/",
+      "evidence": "update order details\n[…]\norder notes to communicate with customers",
+      "location": "Managing orders；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:35.435962+00:00",
+      "capture_origin": "https://woocommerce.com/document/managing-orders/",
+      "capture_sha256": "40808e7752cb7917fa4c1bc1ed3b7b121b79d2992ab033e799ce5bca9c8e84a3",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-04",
+          "location": "Managing orders；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/managing-orders/"
+        },
+        {
+          "possibility_id": "wc-04",
+          "location": "Managing orders；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/managing-orders/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-coupons",
+      "title": "Managing Coupons in WooCommerce",
+      "url": "https://woocommerce.com/document/coupon-management/",
+      "requested_url": "https://woocommerce.com/document/coupon-management/",
+      "evidence": "fixed-cart, fixed-product, and percentage-based coupons\n[…]\nUsage Restrictions” and “Usage Limits",
+      "location": "Managing Coupons in WooCommerce；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）；Managing Coupons in WooCommerce；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:35.554432+00:00",
+      "capture_origin": "https://woocommerce.com/document/coupon-management/",
+      "capture_sha256": "7e0c0a428d873ca4d115a12cd6e7b821ffe714d6962d70165ae8dd6aafcd8e82",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-05",
+          "location": "Managing Coupons in WooCommerce；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/coupon-management/"
+        },
+        {
+          "possibility_id": "wc-05",
+          "location": "Managing Coupons in WooCommerce；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/coupon-management/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-analytics",
+      "title": "Analytics and Sales Reports",
+      "url": "https://woocommerce.com/document/woocommerce-analytics/",
+      "requested_url": "https://woocommerce.com/document/woocommerce-analytics/",
+      "evidence": "dashboard for monitoring key store metrics\n[…]\ndownload a CSV copy",
+      "location": "Analytics and Sales Reports；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）；Analytics and Sales Reports；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.551837+00:00",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-analytics/",
+      "capture_sha256": "f97cd858ff67cee9b256237b2a8b3f5a16b99eae924f0269b3d9173c76653a90",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-06",
+          "location": "Analytics and Sales Reports；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woocommerce-analytics/"
+        },
+        {
+          "possibility_id": "wc-06",
+          "location": "Analytics and Sales Reports；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woocommerce-analytics/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-taxes",
+      "title": "Setting up taxes in WooCommerce",
+      "url": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+      "requested_url": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+      "evidence": "configure taxes in WooCommerce",
+      "location": "Setting up taxes in WooCommerce；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:35.471159+00:00",
+      "capture_origin": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+      "capture_sha256": "082aeb591cf3d766ee15202570d7633aa4ec2021b6246bf5125a84e2f60fd94e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-07",
+          "location": "Setting up taxes in WooCommerce；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-shipping",
+      "title": "WooCommerce Shipping & Tax: legacy shipping labels",
+      "url": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+      "requested_url": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+      "evidence": "limited to USPS and DHL Express",
+      "location": "WooCommerce Shipping & Tax: legacy shipping labels；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.047272+00:00",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+      "capture_sha256": "9fca2eb13c61eec371ec23ea60e6200e38999a4aa25cd415c317f2be69fffcac",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-08",
+          "location": "WooCommerce Shipping & Tax: legacy shipping labels；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woocommerce-shipping-and-tax/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-countries",
+      "title": "WooPayments in Your Country",
+      "url": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+      "requested_url": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+      "evidence": "based in one of our supported countries",
+      "location": "WooPayments in Your Country；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.455127+00:00",
+      "capture_origin": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+      "capture_sha256": "6c272684ae3ef0ede6aa648e7bbe6a0f17d6beb3aeb7b8fa50e75379d954b50c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-09",
+          "location": "WooPayments in Your Country；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woopayments/compatibility/countries/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-payments",
+      "title": "WooPayments: Startup Guide",
+      "url": "https://woocommerce.com/document/woopayments/startup-guide/",
+      "requested_url": "https://woocommerce.com/document/woopayments/startup-guide/",
+      "evidence": "refunds, disputes, and payouts",
+      "location": "WooPayments: Startup Guide；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.701834+00:00",
+      "capture_origin": "https://woocommerce.com/document/woopayments/startup-guide/",
+      "capture_sha256": "9be8967d846d2f00396869e2a48211d7870ab0cbcf3e26eeb7307b8e7da408b3",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-09",
+          "location": "WooPayments: Startup Guide；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woopayments/startup-guide/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-payment-fees",
+      "title": "WooPayments: Fees",
+      "url": "https://woocommerce.com/document/woopayments/fees/",
+      "requested_url": "https://woocommerce.com/document/woopayments/fees-and-debits/",
+      "evidence": "fees are deducted directly from each payment",
+      "location": "WooPayments: Fees；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:38.977482+00:00",
+      "capture_origin": "https://woocommerce.com/document/woopayments/fees/",
+      "capture_sha256": "7da802d86cbafeb2c3d54c0a0da84c6034fe6167ca25d25563c7af10c87cd5f8",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-09",
+          "location": "WooPayments: Fees；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woopayments/fees/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-case",
+      "title": "How Landyachtz cut ecommerce costs by more than 75% and gained full control with WooCommerce",
+      "url": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+      "requested_url": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+      "evidence": "manage both USD and CAD transactions seamlessly through Braintree and Aelia",
+      "location": "How Landyachtz cut ecommerce costs by more than 75% and gained full control with WooCommerce；本次 HTML 提取正文第 98–98 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:36.126258+00:00",
+      "capture_origin": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+      "capture_sha256": "f454eba36137e9391d175994974a0f5cfcd7f3966ba86769c191d5eadacaa737",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-10",
+          "location": "How Landyachtz cut ecommerce costs by more than 75% and gained full control with WooCommerce；本次 HTML 提取正文第 98–98 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-subscriptions",
+      "title": "Creating a Subscription Product",
+      "url": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+      "requested_url": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+      "evidence": "custom frequency, free trial, signup fee, expiration",
+      "location": "Creating a Subscription Product；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:45.795483+00:00",
+      "capture_origin": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+      "capture_sha256": "2c0d63f48643715989ee561848fb51f9d71bc53b3fdf4d5ca84ae4b0420ec442",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-11",
+          "location": "Creating a Subscription Product；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/subscriptions/creating-subscription-products/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-sub-renewals",
+      "title": "Subscription Renewal Process",
+      "url": "https://woocommerce.com/document/subscriptions/renewal-process/",
+      "requested_url": "https://woocommerce.com/document/subscriptions/renewal-process/",
+      "evidence": "integrate their extension with Subscriptions",
+      "location": "Subscription Renewal Process；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:44.452270+00:00",
+      "capture_origin": "https://woocommerce.com/document/subscriptions/renewal-process/",
+      "capture_sha256": "0b081d4cf3529114714f49f4d3270e444d44be2b2c98cbb218309026aae2a4f5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-11",
+          "location": "Subscription Renewal Process；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/subscriptions/renewal-process/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-coffee-case",
+      "title": "Use Case: Monthly Coffee Subscription",
+      "url": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+      "requested_url": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+      "evidence": "ground coffee or whole beans",
+      "location": "Use Case: Monthly Coffee Subscription；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:41.535530+00:00",
+      "capture_origin": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+      "capture_sha256": "32bbce801970b8caab4d664702766dc34f8adf2cbc728cb8d101e5f3344ce7b0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-11",
+          "location": "Use Case: Monthly Coffee Subscription；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/subscriptions-use-case-coffee/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-membership",
+      "title": "WooCommerce Memberships",
+      "url": "https://woocommerce.com/document/woocommerce-memberships/",
+      "requested_url": "https://woocommerce.com/document/woocommerce-memberships/",
+      "evidence": "only accessible to members\n[…]\ncontent dripping",
+      "location": "WooCommerce Memberships；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）；WooCommerce Memberships；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:45.498170+00:00",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-memberships/",
+      "capture_sha256": "a34cbfc9c738e0b36b83b5d479dcbcad757f4d299da4a5d3e5ddbc3b21800bfb",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-12",
+          "location": "WooCommerce Memberships；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woocommerce-memberships/"
+        },
+        {
+          "possibility_id": "wc-12",
+          "location": "WooCommerce Memberships；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/woocommerce-memberships/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-bookings-intro",
+      "title": "Introduction to WooCommerce Bookings",
+      "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+      "requested_url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+      "evidence": "appointment-based bookings, rentals/hires, reservations",
+      "location": "Introduction to WooCommerce Bookings；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:44.796943+00:00",
+      "capture_origin": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+      "capture_sha256": "6fca6365f8c3c85b6d7737f03129d1f82303b1bb345b80a214dccfcd17967732",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-13",
+          "location": "Introduction to WooCommerce Bookings；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-booking-case",
+      "title": "Bookings Use Case: Hair Salon (Using Resources and Availability)",
+      "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+      "requested_url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+      "evidence": "book appointments with a specific person",
+      "location": "Bookings Use Case: Hair Salon (Using Resources and Availability)；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:44.782633+00:00",
+      "capture_origin": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+      "capture_sha256": "6fdd4b9f7d4a16892659fdace37d33a6b559d9aa6bfbce375875e186edad40ec",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-13",
+          "location": "Bookings Use Case: Hair Salon (Using Resources and Availability)；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-ext-price-subscriptions",
+      "title": "WooCommerce Subscriptions product page",
+      "url": "https://woocommerce.com/products/woocommerce-subscriptions/",
+      "requested_url": "https://woocommerce.com/products/woocommerce-subscriptions/",
+      "evidence": "paid annual extension\n[…]\n$279",
+      "location": "WooCommerce Subscriptions product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）；WooCommerce Subscriptions product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:12.387462+00:00",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-subscriptions/",
+      "capture_sha256": "c33c86313ccf7abd69d1e98f8e6d15ebc6d8bca177afeab562a786288c866f23",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-11",
+          "location": "WooCommerce Subscriptions product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-subscriptions/"
+        },
+        {
+          "possibility_id": "wc-11",
+          "location": "WooCommerce Subscriptions product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-subscriptions/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-ext-price-memberships",
+      "title": "WooCommerce Memberships product page",
+      "url": "https://woocommerce.com/products/woocommerce-memberships/",
+      "requested_url": "https://woocommerce.com/products/woocommerce-memberships/",
+      "evidence": "content/products and member discounts\n[…]\n$199",
+      "location": "WooCommerce Memberships product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）；WooCommerce Memberships product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:13.138775+00:00",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-memberships/",
+      "capture_sha256": "1d1e3b70cfb72aca1a520846a8b5737cc6a21c9ea217fd884d99a8e3a9b2c23e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-12",
+          "location": "WooCommerce Memberships product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-memberships/"
+        },
+        {
+          "possibility_id": "wc-12",
+          "location": "WooCommerce Memberships product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-memberships/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-ext-price-bookings",
+      "title": "WooCommerce Bookings product page",
+      "url": "https://woocommerce.com/products/woocommerce-bookings/",
+      "requested_url": "https://woocommerce.com/products/woocommerce-bookings/",
+      "evidence": "paid annual extension\n[…]\n$249",
+      "location": "WooCommerce Bookings product page；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）；WooCommerce Bookings product page；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:12.215448+00:00",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-bookings/",
+      "capture_sha256": "d9a93d7b2713942e3b78112cad4e526b9fc64071e1192391329084f39b18e33f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "wc-13",
+          "location": "WooCommerce Bookings product page；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-bookings/"
+        },
+        {
+          "possibility_id": "wc-13",
+          "location": "WooCommerce Bookings product page；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://woocommerce.com/products/woocommerce-bookings/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-catalog",
+      "name": "商品展示与管理"
+    },
+    {
+      "id": "g-fulfillment",
+      "name": "订单与交付"
+    },
+    {
+      "id": "g-sales-ops",
+      "name": "销售运营"
+    },
+    {
+      "id": "g-measure",
+      "name": "经营观察"
+    },
+    {
+      "id": "g-recurring",
+      "name": "持续销售与服务预约"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "wc-01",
+      "title": "批量调整商品价格与库存",
+      "result": "一次调整多件商品的价格和库存，减少逐件维护。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要在 WordPress 管理后台拥有商品编辑权限。",
+      "source_ids": [
+        "s-products"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-products",
+          "quote": "adjust prices, update stock levels",
+          "url": "https://woocommerce.com/document/managing-products/",
+          "location": "Adding and Managing Products；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-catalog"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-02",
+      "title": "展示可选规格并分别管理库存",
+      "result": "让顾客选择商品规格，并为各变体设置价格、库存和图片。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需配置商品属性及变体；物流相关规格可另填重量、尺寸和运输类别。",
+      "source_ids": [
+        "s-variable"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-variable",
+          "quote": "control over prices, stock, image",
+          "url": "https://woocommerce.com/document/variable-product/",
+          "location": "Variable Products；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-catalog"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-03",
+      "title": "售卖并交付数字商品",
+      "result": "付款后向购买者发送下载链接，并在订单或账户页提供下载入口。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "服务器下载模式、文件存放位置和订单付款状态会影响交付；需要检查主机文件大小/传输限制。",
+      "source_ids": [
+        "s-digital"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-digital",
+          "quote": "email containing a download link",
+          "url": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+          "location": "Digital/Downloadable Product Guide；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-digital",
+          "quote": "available under My Account > Downloads",
+          "url": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+          "location": "Digital/Downloadable Product Guide；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-fulfillment"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-04",
+      "title": "更新订单并与客户沟通",
+      "result": "在店铺后台查看和更新订单，并通过订单备注向客户沟通。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "订单后台面向管理员或 Shop Manager；收款、履约、退款仍需实际支付及物流流程配合。",
+      "source_ids": [
+        "s-orders"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-orders",
+          "quote": "update order details",
+          "url": "https://woocommerce.com/document/managing-orders/",
+          "location": "Managing orders；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-orders",
+          "quote": "order notes to communicate with customers",
+          "url": "https://woocommerce.com/document/managing-orders/",
+          "location": "Managing orders；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-fulfillment"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-05",
+      "title": "按限制发放购物优惠券",
+      "result": "创建固定购物车、固定商品或百分比折扣，并设置适用条件和使用次数限制。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需启用优惠券并具备管理员或 Shop Manager 权限；自动化促销、礼卡等属于插件扩展范围。",
+      "source_ids": [
+        "s-coupons"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-coupons",
+          "quote": "fixed-cart, fixed-product, and percentage-based coupons",
+          "url": "https://woocommerce.com/document/coupon-management/",
+          "location": "Managing Coupons in WooCommerce；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-coupons",
+          "quote": "Usage Restrictions” and “Usage Limits",
+          "url": "https://woocommerce.com/document/coupon-management/",
+          "location": "Managing Coupons in WooCommerce；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sales-ops"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-06",
+      "title": "检查销售指标并导出报表",
+      "result": "按日期和可用筛选器查看店铺关键指标，将报表表格导出为 CSV 继续分析。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "WooCommerce Analytics 根据订单数据生成指标；导出大表可能通过邮件发送。描述的是观察/汇总，不证明某项营销动作导致了变化。",
+      "source_ids": [
+        "s-analytics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-analytics",
+          "quote": "dashboard for monitoring key store metrics",
+          "url": "https://woocommerce.com/document/woocommerce-analytics/",
+          "location": "Analytics and Sales Reports；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-analytics",
+          "quote": "download a CSV copy",
+          "url": "https://woocommerce.com/document/woocommerce-analytics/",
+          "location": "Analytics and Sales Reports；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "source_line_start": 69,
+          "source_line_end": 69,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-measure"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-07",
+      "title": "在结账中配置税率",
+      "result": "在 WooCommerce 中录入和配置适用的税率，让软件按设置处理结账税额。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "只描述软件设置能力；税率是否适用、何时以及向谁收税须由经营者按司法辖区向合格税务专业人士确认。",
+      "source_ids": [
+        "s-taxes"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-taxes",
+          "quote": "configure taxes in WooCommerce",
+          "url": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+          "location": "Setting up taxes in WooCommerce；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sales-ops"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-08",
+      "title": "从旧版独立扩展打印 USPS/DHL 标签",
+      "result": "使用单独运行的旧版 WooCommerce Shipping & Tax 扩展购买并打印 USPS 和 DHL Express 标签。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "文档说明 3.0.2 及以上新安装将该扩展改名为 WooCommerce Tax；旧标签界面仅在该扩展单独运行时保留，范围限 USPS 与 DHL Express。若启用新的 WooCommerce Shipping，标签界面会由后者接管；本项不据旧文档推断新扩展的承运商范围。",
+      "source_ids": [
+        "s-shipping"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-shipping",
+          "quote": "limited to USPS and DHL Express",
+          "url": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+          "location": "WooCommerce Shipping & Tax: legacy shipping labels；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-fulfillment"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-09",
+      "title": "为符合资格的商家启用线上收款",
+      "result": "符合国家资格时安装 WooPayments，在店铺后台处理付款、退款、争议和打款。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "WooPayments 是额外插件/支付服务，商家所在地必须在支持国家；需更新的 WordPress、WooCommerce、HTTPS 与 Stripe 合作伙伴核验。交易费按商家国、顾客国、币种及支付方式变化。",
+      "source_ids": [
+        "s-countries",
+        "s-payments",
+        "s-payment-fees"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-countries",
+          "quote": "based in one of our supported countries",
+          "url": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+          "location": "WooPayments in Your Country；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-payments",
+          "quote": "refunds, disputes, and payouts",
+          "url": "https://woocommerce.com/document/woopayments/startup-guide/",
+          "location": "WooPayments: Startup Guide；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-payment-fees",
+          "quote": "fees are deducted directly from each payment",
+          "url": "https://woocommerce.com/document/woopayments/fees/",
+          "location": "WooPayments: Fees；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sales-ops"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-10",
+      "title": "用单一店铺经营多币种地区销售",
+      "result": "把不同地区的标价和币种结算组织在一个商店中。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "真实案例使用 Braintree 与 Aelia、分开的 USD/CAD 银行账户；这些外部支付与多币种组件并非 WooCommerce 核心功能。案例只证明该商家的配置，不保证同样成本或结果。",
+      "source_ids": [
+        "s-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-case",
+          "quote": "manage both USD and CAD transactions seamlessly through Braintree and Aelia",
+          "url": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+          "location": "How Landyachtz cut ecommerce costs by more than 75% and gained full control with WooCommerce；本次 HTML 提取正文第 98–98 行（不是 HTML 源码行号）",
+          "source_line_start": 98,
+          "source_line_end": 98,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sales-ops"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-11",
+      "title": "销售具有重复计费周期的商品订阅",
+      "result": "为商品建立定期收费方案，设置计费频率、试用、费用和到期条件；同一商品可提供不同规格订阅选项。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要另购 WooCommerce Subscriptions 扩展；官方商品页在 2026-11-05 抓取时显示一年期 $279。自动续费还需支持该模式的支付网关，也可配置手动续费。价格/税费会随时间和地区变化。月度咖啡订阅是官方配置示例，不是经营成效承诺。",
+      "source_ids": [
+        "s-subscriptions",
+        "s-sub-renewals",
+        "s-coffee-case",
+        "s-ext-price-subscriptions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subscriptions",
+          "quote": "custom frequency, free trial, signup fee, expiration",
+          "url": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+          "location": "Creating a Subscription Product；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-sub-renewals",
+          "quote": "integrate their extension with Subscriptions",
+          "url": "https://woocommerce.com/document/subscriptions/renewal-process/",
+          "location": "Subscription Renewal Process；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-coffee-case",
+          "quote": "ground coffee or whole beans",
+          "url": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+          "location": "Use Case: Monthly Coffee Subscription；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-subscriptions",
+          "quote": "paid annual extension",
+          "url": "https://woocommerce.com/products/woocommerce-subscriptions/",
+          "location": "WooCommerce Subscriptions product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-subscriptions",
+          "quote": "$279",
+          "url": "https://woocommerce.com/products/woocommerce-subscriptions/",
+          "location": "WooCommerce Subscriptions product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-recurring"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-12",
+      "title": "向会员开放内容并逐步解锁",
+      "result": "设定会员才能阅读的内容，并按会员加入后的时间分批开放内容。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要另购 WooCommerce Memberships 扩展；官方商品页在 2026-11-05 抓取时显示一年期 $199。若销售周期性会员费，还需要单独的订阅扩展和兼容支付服务。公开内容的限制规则需要仔细配置；价格/税费可能变化。",
+      "source_ids": [
+        "s-membership",
+        "s-ext-price-memberships"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-membership",
+          "quote": "only accessible to members",
+          "url": "https://woocommerce.com/document/woocommerce-memberships/",
+          "location": "WooCommerce Memberships；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-membership",
+          "quote": "content dripping",
+          "url": "https://woocommerce.com/document/woocommerce-memberships/",
+          "location": "WooCommerce Memberships；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-memberships",
+          "quote": "content/products and member discounts",
+          "url": "https://woocommerce.com/products/woocommerce-memberships/",
+          "location": "WooCommerce Memberships product page；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-memberships",
+          "quote": "$199",
+          "url": "https://woocommerce.com/products/woocommerce-memberships/",
+          "location": "WooCommerce Memberships product page；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-recurring"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "wc-13",
+      "title": "接受按人员与可用时段预约的服务",
+      "result": "让顾客为预约选择具体服务人员和时段，经营者按资源/人员设置各自的可用时间。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要另购 WooCommerce Bookings 扩展；官方商品页在 2026-11-05 抓取时显示一年期 $249，并需配置产品、时段与资源。要求兼容的 WordPress/WooCommerce/PHP 版本及可工作的 WP Cron。Salon 模板案例只是一个可行配置示例，价格可能变化。",
+      "source_ids": [
+        "s-bookings-intro",
+        "s-booking-case",
+        "s-ext-price-bookings"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-bookings-intro",
+          "quote": "appointment-based bookings, rentals/hires, reservations",
+          "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+          "location": "Introduction to WooCommerce Bookings；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-booking-case",
+          "quote": "book appointments with a specific person",
+          "url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+          "location": "Bookings Use Case: Hair Salon (Using Resources and Availability)；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-bookings",
+          "quote": "paid annual extension",
+          "url": "https://woocommerce.com/products/woocommerce-bookings/",
+          "location": "WooCommerce Bookings product page；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ext-price-bookings",
+          "quote": "$249",
+          "url": "https://woocommerce.com/products/woocommerce-bookings/",
+          "location": "WooCommerce Bookings product page；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-recurring"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "订阅、会员和预约功能依赖不同的付费扩展与支付网关；本研究未按具体商户所在地核对最新价格、收款资格、退款费率或当地履约规则。",
+    "未覆盖客户评论收集、邮件营销、弃购触达等相关扩展及其同意、地区和发送服务要求。",
+    "运输标签项严格限于旧版WooCommerce Shipping & Tax单独运行时的USPS/DHL Express路线；新WooCommerce Shipping的承运商、实时报价与追踪需另查其当前官方指南。",
+    "支付只详细核实 WooPayments 与一个多币种案例，未比较其他网关国家资格、争议处理或费率。",
+    "核心 WooCommerce 插件免费不等于开店无成本；域名、托管、主题、扩展、支付处理与维护成本依具体选择而异。"
+  ]
+}

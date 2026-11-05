@@ -1,0 +1,349 @@
+{
+  "topic": "Cloudflare Workers",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (used without modification)",
+  "retrieved": [
+    {
+      "id": "s-agents-sdk",
+      "requested_url": "https://developers.cloudflare.com/agents/index.md",
+      "capture_origin": "https://developers.cloudflare.com/agents/index.md",
+      "retrieved_at": "2026-11-05T12:50:08.216565+00:00",
+      "capture_sha256": "8165271df66216a5b79ca1f24cb941e65c197cf860d8116e38970543991f9353",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-chat-app",
+      "requested_url": "https://developers.cloudflare.com/workers/tutorials/deploy-a-realtime-chat-app/index.md",
+      "capture_origin": "https://developers.cloudflare.com/workers/tutorials/deploy-a-realtime-chat-app/index.md",
+      "retrieved_at": "2026-11-05T12:50:00.656335+00:00",
+      "capture_sha256": "6410c0b37f9de20d30a819be0071049b05c12620ce1329d0558c09a892b3f243",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-d1-examples",
+      "requested_url": "https://developers.cloudflare.com/d1/examples/",
+      "capture_origin": "https://developers.cloudflare.com/d1/examples/",
+      "retrieved_at": "2026-11-05T12:49:19.501418+00:00",
+      "capture_sha256": "9e380fa0399c9a4d059bd49520c146fd58d9c0f2db42025cfe918bd4c762005f",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-d1-guide",
+      "requested_url": "https://developers.cloudflare.com/d1/get-started/",
+      "capture_origin": "https://developers.cloudflare.com/d1/get-started/",
+      "retrieved_at": "2026-11-05T12:48:48.813999+00:00",
+      "capture_sha256": "9d5020892a809b8966bed686b6cf03f7e4dacd5282d3e12ef3e25605e78b43e1",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-d1",
+      "requested_url": "https://developers.cloudflare.com/d1/",
+      "capture_origin": "https://developers.cloudflare.com/d1/",
+      "retrieved_at": "2026-11-05T12:47:43.035455+00:00",
+      "capture_sha256": "14e3ee5e6476cfb06db394756809e8a22b5d378a2dd08e1cc1c9dd20540357dd",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-do-chat",
+      "requested_url": "https://developers.cloudflare.com/durable-objects/examples/",
+      "capture_origin": "https://developers.cloudflare.com/durable-objects/examples/",
+      "retrieved_at": "2026-11-05T12:49:17.412766+00:00",
+      "capture_sha256": "7df88cdd20066cba8cceaef07fb0bf53232c311e72fc72fdaf8cb2795b1c54bc",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-do",
+      "requested_url": "https://developers.cloudflare.com/durable-objects/",
+      "capture_origin": "https://developers.cloudflare.com/durable-objects/",
+      "retrieved_at": "2026-11-05T12:47:49.970741+00:00",
+      "capture_sha256": "93b0895fbaeea5e29b2c4073e304fefe5aa4e728aac02b2e6c9783f147d2fd1e",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-docindex",
+      "requested_url": "https://developers.cloudflare.com/workers/llms.txt",
+      "capture_origin": "https://developers.cloudflare.com/workers/llms.txt",
+      "retrieved_at": "2026-11-05T12:48:46.557341+00:00",
+      "capture_sha256": "8a0a0ac4191d1d8179b0074e50edb3559dc80b723870424fd2ec6056bab2cfc0",
+      "content_type": "text/plain; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-docs-blog",
+      "requested_url": "https://developers.cloudflare.com/workers/framework-guides/web-apps/",
+      "capture_origin": "https://developers.cloudflare.com/workers/framework-guides/web-apps/",
+      "retrieved_at": "2026-11-05T12:48:57.504616+00:00",
+      "capture_sha256": "523326d0526402c3302a2ae11b326686c38a8d7ba001b121893f5793dcb0cffe",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-form-app",
+      "requested_url": "https://developers.cloudflare.com/workers/tutorials/handle-form-submissions-with-airtable/index.md",
+      "capture_origin": "https://developers.cloudflare.com/workers/tutorials/handle-form-submissions-with-airtable/index.md",
+      "retrieved_at": "2026-11-05T12:50:02.236914+00:00",
+      "capture_sha256": "6ad0b73a6c3cc373a5ba5b4d7cc3be780505d884f8d2f51d575ce72ca29f16f5",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-framework-guides",
+      "requested_url": "https://developers.cloudflare.com/workers/framework-guides/",
+      "capture_origin": "https://developers.cloudflare.com/workers/framework-guides/",
+      "retrieved_at": "2026-11-05T12:48:23.107172+00:00",
+      "capture_sha256": "a2e89659892b565daa82feb95babe24416a6cf63c42f010b5948c6e858c4f987",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-hono",
+      "requested_url": "https://hono.dev/docs/",
+      "capture_origin": "https://hono.dev/docs",
+      "retrieved_at": "2026-11-05T12:48:28.959570+00:00",
+      "capture_sha256": "34dcca41b6d057f5a9041095aed6afcf3615dfbcf2c892aabc5ad425dd2d39e4",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-kv",
+      "requested_url": "https://developers.cloudflare.com/kv/",
+      "capture_origin": "https://developers.cloudflare.com/kv/",
+      "retrieved_at": "2026-11-05T12:47:47.784497+00:00",
+      "capture_sha256": "fe107178106cdbf7f69fc932ae9589b8d0220464e887f73df9318497d2cd65b3",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://developers.cloudflare.com/workers/",
+      "capture_origin": "https://developers.cloudflare.com/workers/",
+      "retrieved_at": "2026-11-05T12:47:38.481195+00:00",
+      "capture_sha256": "3a8f084cd90f4e31d7f59c634d3c83d6afcd36ea48eafa6b7b71eefcf04f02ff",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "capture_origin": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "retrieved_at": "2026-11-05T12:48:25.535482+00:00",
+      "capture_sha256": "1521a692a2b9d1682a9976562bc8a93a1723ef3129ec84da597116e90c3816a1",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-queue-examples",
+      "requested_url": "https://developers.cloudflare.com/queues/examples/",
+      "capture_origin": "https://developers.cloudflare.com/queues/examples/",
+      "retrieved_at": "2026-11-05T12:49:25.873384+00:00",
+      "capture_sha256": "97f3ce7f4b34f84571021a0cbb1623edb8e1307e5bb4a0925b10f5bf7b976445",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-queues",
+      "requested_url": "https://developers.cloudflare.com/queues/",
+      "capture_origin": "https://developers.cloudflare.com/queues/",
+      "retrieved_at": "2026-11-05T12:47:52.677203+00:00",
+      "capture_sha256": "00f13e0a797d6a4b3fa3b2937b1ce7e47b8cd9ff59f1f5ae0531095e8c00490d",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-r2-uploads",
+      "requested_url": "https://developers.cloudflare.com/r2/examples/demo-worker/",
+      "capture_origin": "https://developers.cloudflare.com/r2/api/workers/workers-api-usage/",
+      "retrieved_at": "2026-11-05T12:49:29.592612+00:00",
+      "capture_sha256": "ccd9ed49e8607d831b5668d77d9801de633e4f8c9e50847eee56e7cf22d04400",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-r2-workers",
+      "requested_url": "https://developers.cloudflare.com/r2/examples/",
+      "capture_origin": "https://developers.cloudflare.com/r2/examples/",
+      "retrieved_at": "2026-11-05T12:49:23.034515+00:00",
+      "capture_sha256": "e92039ac71b5d2b36424133a31e762639616dcbbd2239ff69df74045fa647c26",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-r2",
+      "requested_url": "https://developers.cloudflare.com/r2/",
+      "capture_origin": "https://developers.cloudflare.com/r2/",
+      "retrieved_at": "2026-11-05T12:47:45.774544+00:00",
+      "capture_sha256": "249cfe34d07e3f898b07e0ba29154ffa0f0ad284133e65ee1aaa3cfc48791200",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-static-assets",
+      "requested_url": "https://developers.cloudflare.com/workers/static-assets/",
+      "capture_origin": "https://developers.cloudflare.com/workers/static-assets/",
+      "retrieved_at": "2026-11-05T12:47:40.928659+00:00",
+      "capture_sha256": "13da8ebadc53f3e441c359f206084cbb3eb6e5735c99a3c35c95865c1ca17867",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-static-fullstack",
+      "requested_url": "https://developers.cloudflare.com/workers/static-assets/routing/full-stack-application/index.md",
+      "capture_origin": "https://developers.cloudflare.com/workers/static-assets/routing/full-stack-application/index.md",
+      "retrieved_at": "2026-11-05T12:50:09.702787+00:00",
+      "capture_sha256": "fb58295b47c988e744d1fd084745943fc5d76671b45e560daed5d34c00a8c09a",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-template",
+      "requested_url": "https://developers.cloudflare.com/workers/get-started/guide/",
+      "capture_origin": "https://developers.cloudflare.com/workers/get-started/guide/",
+      "retrieved_at": "2026-11-05T12:48:59.685305+00:00",
+      "capture_sha256": "f7790f9c15741e24ef34ffd1ef8475195257e68e75169e0eb2723ec6da8ee210",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-todo-app",
+      "requested_url": "https://developers.cloudflare.com/workers/tutorials/build-a-jamstack-app/index.md",
+      "capture_origin": "https://developers.cloudflare.com/workers/tutorials/build-a-jamstack-app/index.md",
+      "retrieved_at": "2026-11-05T12:50:04.459758+00:00",
+      "capture_sha256": "68c2dba2448dc53e310175856a5cf0bde5a27e620689d3ed77b3ef1aa855adb6",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-vite-react",
+      "requested_url": "https://developers.cloudflare.com/workers/vite-plugin/tutorial/index.md",
+      "capture_origin": "https://developers.cloudflare.com/workers/vite-plugin/tutorial/index.md",
+      "retrieved_at": "2026-11-05T12:50:06.178896+00:00",
+      "capture_sha256": "233f23d5ff3cba5af436d77933a7212bff5c6906164cd90deca888646e3d1304",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-workers-ai",
+      "requested_url": "https://developers.cloudflare.com/workers-ai/",
+      "capture_origin": "https://developers.cloudflare.com/workers-ai/",
+      "retrieved_at": "2026-11-05T12:48:14.293191+00:00",
+      "capture_sha256": "986aa3b53ae3e6e16ef6005f9bdd9f786760b45ba3cec3e1a1994de98b4192f6",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-workers-examples",
+      "requested_url": "https://developers.cloudflare.com/workers/examples/",
+      "capture_origin": "https://developers.cloudflare.com/workers/examples/",
+      "retrieved_at": "2026-11-05T12:48:20.862399+00:00",
+      "capture_sha256": "3a890181edfc9f96b3e7ac953b062dc933280ca9b563e0209981767c94924ec3",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-workflows-examples",
+      "requested_url": "https://developers.cloudflare.com/workflows/examples/",
+      "capture_origin": "https://developers.cloudflare.com/workflows/examples/",
+      "retrieved_at": "2026-11-05T12:48:32.003286+00:00",
+      "capture_sha256": "17fe51825bbb818bd742984b045c0624fddaebbdca44b740ba6657b527ed76d8",
+      "content_type": "text/html",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-workflows",
+      "requested_url": "https://developers.cloudflare.com/workflows/",
+      "capture_origin": "https://developers.cloudflare.com/workflows/",
+      "retrieved_at": "2026-11-05T12:47:55.043233+00:00",
+      "capture_sha256": "ac5dc8dc8f295e5be538622e4d1b92709a45945fec7d5d7d999613e4921bf585",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-ai-chat",
+      "requested_url": "https://developers.cloudflare.com/workers-ai/guides/tutorials/build-a-chatbot/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-d1-todo",
+      "requested_url": "https://developers.cloudflare.com/d1/tutorials/build-a-todo-app/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "a-chatgpt-root-path",
+      "requested_url": "https://developers.cloudflare.com/workers/tutorials/build-an-interactive-chatgpt-app/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-workers-ai-chat",
+      "requested_url": "https://developers.cloudflare.com/workers-ai/guides/tutorials/build-a-chatbot/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-d1-todo-alt",
+      "requested_url": "https://developers.cloudflare.com/d1/tutorials/build-a-todo-app-with-d1/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-browser-render",
+      "requested_url": "https://developers.cloudflare.com/browser-render/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-docs-blog",
+      "requested_url": "https://developers.cloudflare.com/workers/framework-guides/web-apps/",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-static-fullstack-wrong",
+      "requested_url": "https://developers.cloudflare.com/workers/static-assets/full-stack-application/index.md",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-ai-chat-app",
+      "requested_url": "https://developers.cloudflare.com/workers/tutorials/build-an-interactive-chatgpt-app/index.md",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-blog-workers",
+      "requested_url": "https://blog.cloudflare.com/what-is-cloudflare-workers/",
+      "failure": "HTTP 404 Not Found"
+    }
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

@@ -1,0 +1,276 @@
+{
+  "topic": "Next.js",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (read-only use)",
+  "retrieved": [
+    {
+      "id": "s-ai-architecture",
+      "requested_url": "https://chatbot.ai-sdk.dev/docs/architecture",
+      "capture_origin": "https://chatbot.ai-sdk.dev/docs/architecture",
+      "retrieved_at": "2026-11-05T12:18:48.932288+00:00",
+      "capture_sha256": "324130131b2eb8ef869345eb46070b8b41dd2df5e28c0f0a82341bf669ade2bd",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ai-chatbot",
+      "requested_url": "https://chatbot.ai-sdk.dev/docs",
+      "capture_origin": "https://chatbot.ai-sdk.dev/docs",
+      "retrieved_at": "2026-11-05T12:18:48.260808+00:00",
+      "capture_sha256": "2f19909cac4df76138b62d56e9aae631ad2a1e17b8ea514534ba5171d72ec47e",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-auth",
+      "requested_url": "https://nextjs.org/docs/app/guides/authentication",
+      "capture_origin": "https://nextjs.org/docs/app/guides/authentication",
+      "retrieved_at": "2026-11-05T12:13:07.480632+00:00",
+      "capture_sha256": "96c25720d84caed16c677b6cdd1d73be60c4a1513b319eef973bc9e33219a07c",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-backend",
+      "requested_url": "https://nextjs.org/docs/app/guides/backend-for-frontend",
+      "capture_origin": "https://nextjs.org/docs/app/guides/backend-for-frontend",
+      "retrieved_at": "2026-11-05T12:13:09.656329+00:00",
+      "capture_sha256": "57114b56faa15dc14476b5ee990388bb194edb6b983d8ed783711af0cd8d09b4",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-commerce",
+      "requested_url": "https://vercel.com/templates/next.js/nextjs-commerce",
+      "capture_origin": "https://vercel.com/templates/next.js/vercel-shop",
+      "retrieved_at": "2026-11-05T12:13:11.835619+00:00",
+      "capture_sha256": "30125bbcacf1f69ebc5ffe6c147c9ab60a97d22351839c0b10e5793ff394c0f7",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-dashboard",
+      "requested_url": "https://nextjs.org/learn/dashboard-app",
+      "capture_origin": "https://nextjs.org/learn/dashboard-app",
+      "retrieved_at": "2026-11-05T12:18:47.959214+00:00",
+      "capture_sha256": "a853d94b87eb2ec2fff63104a196ca5a1dab0ce4e6ae9860e9f05df5d8714a91",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data",
+      "requested_url": "https://nextjs.org/docs/app/getting-started/fetching-data",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/fetching-data",
+      "retrieved_at": "2026-11-05T12:13:39.130992+00:00",
+      "capture_sha256": "6af6346cb4d1ff453a064cad2acec99c412f50d07780639d7e57a5fd83a3206f",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-deploy",
+      "requested_url": "https://nextjs.org/docs/app/getting-started/deploying",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/deploying",
+      "retrieved_at": "2026-11-05T12:13:09.548792+00:00",
+      "capture_sha256": "38b9000ee4eab745b65eae53e83d87551f42bce9c3f53b0192e815c6ddcf01e8",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-docs",
+      "requested_url": "https://nextjs.org/docs",
+      "capture_origin": "https://nextjs.org/docs",
+      "retrieved_at": "2026-11-05T12:12:52.623314+00:00",
+      "capture_sha256": "d0733671c3be9153505f0568968138b8bb14d874d1d9689ac0b237175b715d89",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-examples",
+      "requested_url": "https://github.com/vercel/next.js/tree/canary/examples",
+      "capture_origin": "https://github.com/vercel/next.js/tree/canary/examples",
+      "retrieved_at": "2026-11-05T12:13:11.106151+00:00",
+      "capture_sha256": "df204f0ab012e1b6fc701ad633b23ffab7631c03b57dc01e07f20eb35347b6b9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-forms",
+      "requested_url": "https://nextjs.org/docs/app/guides/forms",
+      "capture_origin": "https://nextjs.org/docs/app/guides/forms",
+      "retrieved_at": "2026-11-05T12:13:09.841222+00:00",
+      "capture_sha256": "5ad8b19d5570f5f237c541c4af73c2ac2abc3dff5dcf3e8f159701b30335ee0f",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-getting-started",
+      "requested_url": "https://nextjs.org/docs/app/getting-started",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started",
+      "retrieved_at": "2026-11-05T12:13:09.498002+00:00",
+      "capture_sha256": "ac7e84d23afa1fca61f5d8550447cc4e20ab2740195c21aa219451050f23bbfa",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-i18n",
+      "requested_url": "https://nextjs.org/docs/app/guides/internationalization",
+      "capture_origin": "https://nextjs.org/docs/app/guides/internationalization",
+      "retrieved_at": "2026-11-05T12:18:47.655239+00:00",
+      "capture_sha256": "7958239fc96df6b3d51aef878938b6f0388169dc61ed0f4c3093b918411126bb",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-mdx",
+      "requested_url": "https://nextjs.org/docs/app/guides/mdx",
+      "capture_origin": "https://nextjs.org/docs/app/guides/mdx",
+      "retrieved_at": "2026-11-05T12:18:48.578431+00:00",
+      "capture_sha256": "ed108a65302c4ae941135e5fa102332ead27f9dd6374e69873d51c6ca4f95b00",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-metadata",
+      "requested_url": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images",
+      "retrieved_at": "2026-11-05T12:13:41.476605+00:00",
+      "capture_sha256": "78106fe6aff6e3181b79afde1b4c75e130a9d3df1d56d2975f846a2b8fe35e39",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pwa",
+      "requested_url": "https://nextjs.org/docs/app/guides/progressive-web-apps",
+      "capture_origin": "https://nextjs.org/docs/app/guides/progressive-web-apps",
+      "retrieved_at": "2026-11-05T12:18:46.126204+00:00",
+      "capture_sha256": "5fd27f26e090871daf1b488d41f0064df5ca72013f36666539e56c1fd59f0ed6",
+      "content_type": "text/markdown",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sanity",
+      "requested_url": "https://www.sanity.io/docs/nextjs/introduction",
+      "capture_origin": "https://www.sanity.io/docs/nextjs/introduction",
+      "retrieved_at": "2026-11-05T12:18:48.119823+00:00",
+      "capture_sha256": "c0aeba0b1a07889ccf3f769c3b80fa8859a8f099a88b25301f57eeabfaf9f166",
+      "content_type": "text/html",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-stripe-example",
+      "requested_url": "https://github.com/vercel/next.js/blob/canary/examples/with-stripe-typescript/README.md",
+      "capture_origin": "https://github.com/vercel/next.js/blob/canary/examples/with-stripe-typescript/README.md",
+      "retrieved_at": "2026-11-05T12:18:52.396712+00:00",
+      "capture_sha256": "f5266045aca551f7828d47237264ec4f0c6576445cb80bbca3211731bebdf586",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-stripe-readme-d768085563d520882e200a244a90e068f71a6571",
+      "requested_url": "https://raw.githubusercontent.com/vercel/next.js/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/vercel/next.js/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "retrieved_at": "2026-11-05T12:25:32.389710+00:00",
+      "capture_sha256": "662fa7e8d0f3ae9ff35b49bb0ca032301773c9ff51515daeeb3e68a26be7d6f6",
+      "content_type": "text/plain; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "git_commit": "d768085563d520882e200a244a90e068f71a6571",
+      "git_repository": "vercel/next.js",
+      "pinned_raw_url": "https://raw.githubusercontent.com/vercel/next.js/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "pinned_content_sha256": "662fa7e8d0f3ae9ff35b49bb0ca032301773c9ff51515daeeb3e68a26be7d6f6",
+      "immutable_url": "https://github.com/vercel/next.js/blob/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md"
+    },
+    {
+      "id": "s-stripe-saas-template",
+      "requested_url": "https://vercel.com/templates/next.js/next-js-saas-starter",
+      "capture_origin": "https://vercel.com/templates/next.js/next-js-saas-starter",
+      "retrieved_at": "2026-11-05T12:19:36.091189+00:00",
+      "capture_sha256": "6f9550da616d75485344f758b09463c9c5dec3ced28f1e81491bada1fbe9d6b0",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-stripe-vercel-guide",
+      "requested_url": "https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe",
+      "capture_origin": "https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe",
+      "retrieved_at": "2026-11-05T12:19:42.070860+00:00",
+      "capture_sha256": "ae779f24f8d0be2b62f5f7f9fae5e62ce22f4d19c6252ea219cb0fa738b722cb",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-stripe",
+      "requested_url": "https://docs.stripe.com/checkout/quickstart?client=next",
+      "capture_origin": "https://docs.stripe.com/checkout/quickstart?client=next",
+      "retrieved_at": "2026-11-05T12:13:42.325033+00:00",
+      "capture_sha256": "194b7909807a3a3f991950fdf520c34b241a0aa8b6fb4dae6cb4bb8ff85d768a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-supabase",
+      "requested_url": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs",
+      "retrieved_at": "2026-11-05T12:13:10.791941+00:00",
+      "capture_sha256": "ee7baf9f3d1719eb7e96a1c24a93fd69caa19af3c2cdc444faadea56efc9636c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-v0-template",
+      "requested_url": "https://vercel.com/templates/next.js/nextjs-boilerplate",
+      "capture_origin": "https://vercel.com/templates/next.js/nextjs-boilerplate",
+      "retrieved_at": "2026-11-05T12:13:42.516024+00:00",
+      "capture_sha256": "e0e338b4fc87ed603bd9d6f464e2e1915aeb4b6e02a36bc61e4b163dcf6a9552",
+      "content_type": "text/markdown; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "a-docs-sandbox-dns",
+      "requested_url": "https://nextjs.org/docs",
+      "attempt_date": "2026-11-05",
+      "outcome": "URLError: sandbox DNS resolution blocked. Same URL was later successfully captured once; that successful response appears only once under retrieved.",
+      "adopted": false
+    },
+    {
+      "id": "a-sanity-short-url",
+      "requested_url": "https://www.sanity.io/nextjs",
+      "attempt_date": "2026-11-05",
+      "outcome": "HTTP 404; no body/hash claimed. A separate current Sanity docs introduction path was later successfully retrieved under s-sanity.",
+      "adopted": false
+    },
+    {
+      "id": "a-vercel-sanity-template",
+      "requested_url": "https://vercel.com/templates/next.js/sanity",
+      "attempt_date": "2026-11-05",
+      "outcome": "HTTP 404; no body/hash claimed. Sanity CMS capability is supported instead by its current integration guide.",
+      "adopted": false
+    }
+  ],
+  "notes": "Each successful HTTP response cache is listed once by capture ID. The canary GitHub HTML README capture s-stripe-example is retained but unused for the payment P; the pinned raw Markdown capture at commit d768085563d520882e200a244a90e068f71a6571 is the cited evidence. The original commerce request redirected to the canonical Vercel Shop capture_origin; the one HTTP response is not counted twice.",
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}
