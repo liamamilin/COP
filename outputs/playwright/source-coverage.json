@@ -1,0 +1,207 @@
+{
+  "topic": "playwright",
+  "generated_at": "2026-11-05T10:06:29.347607+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-accessibility-testing",
+      "requested_url": "https://playwright.dev/docs/accessibility-testing",
+      "capture_origin": "https://playwright.dev/docs/accessibility-testing",
+      "retrieved_at": "2026-11-05T09:09:46.113621+00:00",
+      "capture_sha256": "b97a5f18055fc72015b2096d2745aea7b05f367c88a98ad00dd8f0db7b2d4ef4",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 12608,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-api-testing",
+      "requested_url": "https://playwright.dev/docs/api-testing",
+      "capture_origin": "https://playwright.dev/docs/api-testing",
+      "retrieved_at": "2026-11-05T09:09:44.516520+00:00",
+      "capture_sha256": "3fd87c551146bd90005bb683fb0818b7756f5d198d8ba715c0d48b6759a10ae4",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 12024,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-auth",
+      "requested_url": "https://playwright.dev/docs/auth",
+      "capture_origin": "https://playwright.dev/docs/auth",
+      "retrieved_at": "2026-11-05T09:09:44.496080+00:00",
+      "capture_sha256": "dac89a341e9a518fa9e74947262221f64398aacb75befa9b92c8682797b07424",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 17323,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-codegen-intro",
+      "requested_url": "https://playwright.dev/docs/codegen-intro",
+      "capture_origin": "https://playwright.dev/docs/codegen-intro",
+      "retrieved_at": "2026-11-05T09:09:47.629950+00:00",
+      "capture_sha256": "e828298ba38eeee1639ff038c2f71045af13e7254d4ac4221bccb413164a7403",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 2692,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-downloads",
+      "requested_url": "https://playwright.dev/docs/downloads",
+      "capture_origin": "https://playwright.dev/docs/downloads",
+      "retrieved_at": "2026-11-05T09:09:47.895092+00:00",
+      "capture_sha256": "215f86ba9bb56b8c724a5558e7cc99729e2cddf8db7eb75ef938321c9d09366a",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 1359,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-emulation",
+      "requested_url": "https://playwright.dev/docs/emulation",
+      "capture_origin": "https://playwright.dev/docs/emulation",
+      "retrieved_at": "2026-11-05T09:09:44.478736+00:00",
+      "capture_sha256": "56eb434487ea3b9f8c9d422ac3add9d413d373ee384b997742f1c6bbc20fc16e",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 9164,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-evaluating",
+      "requested_url": "https://playwright.dev/docs/evaluating",
+      "capture_origin": "https://playwright.dev/docs/evaluating",
+      "retrieved_at": "2026-11-05T09:09:49.069038+00:00",
+      "capture_sha256": "0ce3c78202ddfbbbe95c1461a61c77bf640d7e7084196bea882b638e89b24c61",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 4303,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-input",
+      "requested_url": "https://playwright.dev/docs/input",
+      "capture_origin": "https://playwright.dev/docs/input",
+      "retrieved_at": "2026-11-05T09:09:49.083782+00:00",
+      "capture_sha256": "145cd83cedfea31c327406c1412b7b23badfc85c405bd524b2a39aa5ad819b60",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 9271,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-intro",
+      "requested_url": "https://playwright.dev/docs/intro",
+      "capture_origin": "https://playwright.dev/docs/intro",
+      "retrieved_at": "2026-11-05T09:09:43.733730+00:00",
+      "capture_sha256": "8b1236e7b01a2fe3d28c373338a96acada851bd329ae2ea1daf074655e86a2b9",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 3787,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-network",
+      "requested_url": "https://playwright.dev/docs/network",
+      "capture_origin": "https://playwright.dev/docs/network",
+      "retrieved_at": "2026-11-05T09:09:44.113738+00:00",
+      "capture_sha256": "696845ca05c9c785c7600202a3171da6df556f3f91d2a21f676d3c648a5bd981",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10459,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-page",
+      "requested_url": "https://playwright.dev/docs/api/class-page",
+      "capture_origin": "https://playwright.dev/docs/api/class-page",
+      "retrieved_at": "2026-11-05T09:36:04.748664+00:00",
+      "capture_sha256": "0135a20e14e880a0a2fd7b439bc3e030efcc7970d2c2df88ba779b5b5332979d",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 153539,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test-agents",
+      "requested_url": "https://playwright.dev/docs/test-agents",
+      "capture_origin": "https://playwright.dev/docs/test-agents",
+      "retrieved_at": "2026-11-05T09:09:48.876425+00:00",
+      "capture_sha256": "a2d2e9346b5cb524aa942771637bebe2a66cf4aad6e13423986452a372b6e6d6",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 550,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test-parallel",
+      "requested_url": "https://playwright.dev/docs/test-parallel",
+      "capture_origin": "https://playwright.dev/docs/test-parallel",
+      "retrieved_at": "2026-11-05T09:09:47.208772+00:00",
+      "capture_sha256": "a5aea7f5ac61f8474793336ca9ed18f2b126f56b90ed26eab4184515ecf2f5fc",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 12737,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-test-projects",
+      "requested_url": "https://playwright.dev/docs/test-projects",
+      "capture_origin": "https://playwright.dev/docs/test-projects",
+      "retrieved_at": "2026-11-05T09:09:47.069114+00:00",
+      "capture_sha256": "22592c15c67615fbfc523fcf93af5cce0593d7f957546d1a8d6d078334d57c26",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6971,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test-reporters",
+      "requested_url": "https://playwright.dev/docs/test-reporters",
+      "capture_origin": "https://playwright.dev/docs/test-reporters",
+      "retrieved_at": "2026-11-05T09:09:47.820148+00:00",
+      "capture_sha256": "5ab4a8d8253a8fa9874b677376a5d8a4cbf3b55c685a1f635850a9b80c95c518",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 19448,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test-sharding",
+      "requested_url": "https://playwright.dev/docs/test-sharding",
+      "capture_origin": "https://playwright.dev/docs/test-sharding",
+      "retrieved_at": "2026-11-05T09:09:47.036114+00:00",
+      "capture_sha256": "9d1ba4a3d78da3088cfe8fe29143dc863b93ac9df942674712b915b6cfa9e8cc",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 9017,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-test-snapshots",
+      "requested_url": "https://playwright.dev/docs/test-snapshots",
+      "capture_origin": "https://playwright.dev/docs/test-snapshots",
+      "retrieved_at": "2026-11-05T09:09:45.942529+00:00",
+      "capture_sha256": "0b789d5fa223995c8f5e38dff3c11e7c8c57ac42206caf20a4a98f40688f9b7d",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6041,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-trace-viewer",
+      "requested_url": "https://playwright.dev/docs/trace-viewer",
+      "capture_origin": "https://playwright.dev/docs/trace-viewer",
+      "retrieved_at": "2026-11-05T09:09:45.680819+00:00",
+      "capture_sha256": "2e53ce948fb233e9192a9c0554d7b9b3eef00454054f27aa99575315748110a3",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 315,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-writing-tests",
+      "requested_url": "https://playwright.dev/docs/writing-tests",
+      "capture_origin": "https://playwright.dev/docs/writing-tests",
+      "retrieved_at": "2026-11-05T09:09:43.998147+00:00",
+      "capture_sha256": "53ce655afca3bb754ab53b4781f968853a9d2fa7a45e70febbc24f13e6c64079",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 5561,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-pdf-generation",
+      "requested_url": "https://playwright.dev/docs/pdf-generation",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.481259+00:00"
+}

@@ -90,11 +90,24 @@ describe("reading behavior", () => {
       map.sources.find((s) => s.id === p.source_ids[0])!.url,
     );
   });
+  it("copies precise evidence links and falls back when a locator URL is unsafe", () => {
+    const base = map.possibilities[0];
+    const source = map.sources.find((s) => s.id === base.source_ids[0])!;
+    const url = "https://github.com/example/repo/blob/abc/docs/usage.md#L10-L14";
+    const p = {
+      ...base,
+      evidence_refs: [{ source_id: source.id, quote: source.evidence, url }],
+    };
+    expect(goalText(map.topic.name, p, map.sources)).toContain(url);
+    const unsafe = { ...p, evidence_refs: [{ ...p.evidence_refs[0], url: "javascript:alert(1)" }] };
+    expect(goalText(map.topic.name, unsafe, map.sources)).toContain(source.url);
+    expect(goalText(map.topic.name, unsafe, map.sources)).not.toContain("javascript:");
+  });
   it("renders Markdown without executable HTML, unsafe links or external image requests", () => {
     const html = renderToStaticMarkup(
       <SafeMarkdown slug="obsidian" revision="test">
         {
-          '<script>alert(1)</script>\n\n<img src=x onerror=alert(2)>\n\n[bad](javascript:alert%281%29)\n\n[good](https://example.com)\n\n![external](https://evil.test/track.png)\n\n<a id="g-test"></a>\n\n## Heading\n\n[local](#g-test)\n\n[JSON](possibilities.json)'
+          '<script>alert(1)</script>\n\n<img src=x onerror=alert(2)>\n\n[bad](javascript:alert%281%29)\n\n[good](https://example.com)\n\n![external](https://evil.test/track.png)\n\n<a id="g-test"></a>\n\n## Heading\n\n[local](#g-test)\n\n[JSON](possibilities.json)\n\n[Discovery](discovery-log.md)\n\n[Coverage](source-coverage.json)\n\n[Unknown](untrusted.html)'
         }
       </SafeMarkdown>,
     );
@@ -104,6 +117,11 @@ describe("reading behavior", () => {
     expect(html).toContain(
       "github.com/liamamilin/COP/blob/test/outputs/obsidian/possibilities.json",
     );
+    for (const file of ["discovery-log.md", "source-coverage.json"])
+      expect(html).toContain(
+        `github.com/liamamilin/COP/blob/test/outputs/obsidian/${file}`,
+      );
+    expect(html).not.toContain('href="untrusted.html"');
     expect(safeHttp("data:text/html,bad")).toBeUndefined();
     expect(safeHttp("//evil.test")).toBeUndefined();
   });

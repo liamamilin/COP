@@ -1,0 +1,178 @@
+{
+  "topic": "ai-voice",
+  "generated_at": "2026-11-05T10:06:29.314708+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-agent",
+      "requested_url": "https://elevenlabs.io/docs/eleven-agents/overview.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-agents/overview.md",
+      "retrieved_at": "2026-11-05T09:32:36.961430+00:00",
+      "capture_sha256": "a0da8d6ce710ecbe79a3953fbccb8e90e496223a17df6f309d6eab2f2117983b",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 11175,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-align",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md",
+      "retrieved_at": "2026-11-05T09:32:34.486814+00:00",
+      "capture_sha256": "e0ffc3ccd8dfca84bd2f94faff6e466b7a9b428706dbe1b9b1439375689d7306",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 1898,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-books",
+      "requested_url": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md",
+      "retrieved_at": "2026-11-05T09:32:36.834957+00:00",
+      "capture_sha256": "ca16ab8f30f99cfb26cc24bf4722e8295d2de810de372e483617665d9ef2ca5b",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 20539,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-changer",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md",
+      "retrieved_at": "2026-11-05T09:32:33.909756+00:00",
+      "capture_sha256": "792c8a51dfb17c18dfcf1b0c93f67bf40ca9e9a33212bbdf927d64e20d611208",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 2325,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-clone",
+      "requested_url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md",
+      "retrieved_at": "2026-11-05T09:32:35.858143+00:00",
+      "capture_sha256": "1a2675df4883538c3af03d13141427b90974d4376f997ee2ec30ae36ac417544",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 28670,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-design",
+      "requested_url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md",
+      "retrieved_at": "2026-11-05T09:32:35.795869+00:00",
+      "capture_sha256": "c440e69f34e4f2e392e8d19db847f6250a396a39d7dfed83aef209db6d15e9df",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 29970,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-dialogue",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md",
+      "retrieved_at": "2026-11-05T09:32:33.070531+00:00",
+      "capture_sha256": "66587ed125569f1a26ecdd285b29e01854054f3f98d01043f2226d5b4e323630",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8852,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-dubbing",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md",
+      "retrieved_at": "2026-11-05T09:32:34.857937+00:00",
+      "capture_sha256": "c421dedbf6cc0b2ab0b89c1ea2354e89ea5bcc2729c166ec3b70e8ec7f55f0f0",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 16288,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-index",
+      "requested_url": "https://elevenlabs.io/docs/llms.txt",
+      "capture_origin": "https://elevenlabs.io/docs/llms.txt",
+      "retrieved_at": "2026-11-05T09:26:48.333195+00:00",
+      "capture_sha256": "e6dce97fa39978f392cdb8613530f5a154929327b5a2d2304240383e3f701d0e",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 243391,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-isolation",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md",
+      "retrieved_at": "2026-11-05T09:32:33.835025+00:00",
+      "capture_sha256": "b9b2d69716ffe47b645b27f30af89cbb758202f405943d65761ed5e1510b63e7",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 1826,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-local",
+      "requested_url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md",
+      "capture_origin": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md",
+      "retrieved_at": "2026-11-05T09:26:48.524334+00:00",
+      "capture_sha256": "91dcabced89db6f109b8786642f50402d3ee87450e8189589b6f85520e7f4d78",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 6303,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-native",
+      "requested_url": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md",
+      "retrieved_at": "2026-11-05T09:32:36.940041+00:00",
+      "capture_sha256": "b5b7b2c92bdf63d72a1e6e0fcaf12cd9a5c7e1021b5140ac9621dde08d295182",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 7261,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-pronounce",
+      "requested_url": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md",
+      "retrieved_at": "2026-11-05T09:32:37.392999+00:00",
+      "capture_sha256": "124af6dac2a948cea8de47b0b6166ed860526e2c098ab6e3ea64dfc7efb80616",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 5593,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-stt",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md",
+      "retrieved_at": "2026-11-05T09:32:32.652022+00:00",
+      "capture_sha256": "053f8ffff681db9a3260aa06e3a64df6b8bf23d474281d403cf0feb7e66e8f8a",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 20367,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-tts",
+      "requested_url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md",
+      "retrieved_at": "2026-11-05T09:32:32.898712+00:00",
+      "capture_sha256": "74d730cdfdddbc8f22964e23a5224a6a319c2ca4d7bee4aad0a80ed0efe8d4d8",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 10538,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-whisper",
+      "requested_url": "https://raw.githubusercontent.com/openai/whisper/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/openai/whisper/main/README.md",
+      "retrieved_at": "2026-11-05T09:40:28.170650+00:00",
+      "capture_sha256": "38c180c2a8d8ba628a3e131ad42bf06c8a51bb681efb30fbe28d5a0f4b65f288",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 8243,
+      "used_for_confirmed_results": true,
+      "git_commit": "86098128c0b4f24f0e2aa2994de830614b474227",
+      "git_repository": "openai/whisper",
+      "pinned_raw_url": "https://raw.githubusercontent.com/openai/whisper/86098128c0b4f24f0e2aa2994de830614b474227/README.md",
+      "pinned_content_sha256": "38c180c2a8d8ba628a3e131ad42bf06c8a51bb681efb30fbe28d5a0f4b65f288",
+      "pinned_verified_at": "2026-11-05T10:35:53.339Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md"
+    }
+  ],
+  "attempted_without_capture": [],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.042355+00:00"
+}

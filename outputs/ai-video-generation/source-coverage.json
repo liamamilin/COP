@@ -1,0 +1,304 @@
+{
+  "topic": "ai-video-generation",
+  "generated_at": "2026-11-05T10:06:29.311960+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-agent",
+      "requested_url": "https://developers.heygen.com/docs/video-agent.md",
+      "capture_origin": "https://developers.heygen.com/docs/video-agent.md",
+      "retrieved_at": "2026-11-05T09:36:00.338622+00:00",
+      "capture_sha256": "3f23bb087194e6f9ced69f923ce63c713f095181913dc0027d717e886ec7f27c",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 13624,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-api",
+      "requested_url": "https://docs.dev.runwayml.com/api",
+      "capture_origin": "https://docs.dev.runwayml.com/api/",
+      "retrieved_at": "2026-11-05T09:32:35.951324+00:00",
+      "capture_sha256": "6baf1d455e232e27e4c9a438e473ebffa0f8b8a7e7ef95ebd771b2a23b13f648",
+      "content_type": "text/html",
+      "captured_text_characters": 1929,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-audio",
+      "requested_url": "https://developers.heygen.com/audio-to-video.md",
+      "capture_origin": "https://developers.heygen.com/audio-to-video.md",
+      "retrieved_at": "2026-11-05T09:35:59.725031+00:00",
+      "capture_sha256": "9c906cc532036d5897627d3db968154fef89701a72daf5215f034d8d12ac2c1d",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9019,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-avatar",
+      "requested_url": "https://developers.heygen.com/generate-avatar-video.md",
+      "capture_origin": "https://developers.heygen.com/generate-avatar-video.md",
+      "retrieved_at": "2026-11-05T09:35:59.479059+00:00",
+      "capture_sha256": "f2161927a6d901814515eb1ab7c856abc701c2ace3bbfcfc6fa3ac02f1ec22d2",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9740,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-batch",
+      "requested_url": "https://developers.heygen.com/batch-videos.md",
+      "capture_origin": "https://developers.heygen.com/batch-videos.md",
+      "retrieved_at": "2026-11-05T09:36:00.695622+00:00",
+      "capture_sha256": "a3a136f32337193f7dc51e2df6f6a851f0f219024cb39f5923c19d36e51ee1f8",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 7262,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-characters2",
+      "requested_url": "https://docs.dev.runwayml.com/_llms-txt/characters.txt",
+      "capture_origin": "https://docs.dev.runwayml.com/_llms-txt/characters.txt",
+      "retrieved_at": "2026-11-05T09:35:58.639603+00:00",
+      "capture_sha256": "b1d7eb7b9ab6059034b9c85cc0a5d91bf0f5dc9df577250e6f88a8f4a269f81a",
+      "content_type": "text/plain",
+      "captured_text_characters": 89666,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-context",
+      "requested_url": "https://docs.dev.runwayml.com/ai-context.md",
+      "capture_origin": "https://docs.dev.runwayml.com/ai-context.md",
+      "retrieved_at": "2026-11-05T09:35:59.052724+00:00",
+      "capture_sha256": "b0082f993bda9e53adc47920f9ea9bce432abe172f12cae9fa0a9da12737fb06",
+      "content_type": "text/markdown",
+      "captured_text_characters": 13518,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-core",
+      "requested_url": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt",
+      "capture_origin": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt",
+      "retrieved_at": "2026-11-05T09:40:27.839142+00:00",
+      "capture_sha256": "8660974040f588d8a45a5a8471dc00bb354e6311ede8b1352fe604bf49cb7046",
+      "content_type": "text/plain",
+      "captured_text_characters": 262100,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-edit",
+      "requested_url": "https://developers.heygen.com/docs/edit-scenes.md",
+      "capture_origin": "https://developers.heygen.com/docs/edit-scenes.md",
+      "retrieved_at": "2026-11-05T09:36:00.903316+00:00",
+      "capture_sha256": "6b5602db8d07a11f64747d960b1645909cc7a5289e4bec19459c758b50f0f7d3",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 6957,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-google-md",
+      "requested_url": "https://aistudio.google.com/docs/video.md",
+      "capture_origin": "https://aistudio.google.com/docs/video.md",
+      "retrieved_at": "2026-11-05T09:36:01.692080+00:00",
+      "capture_sha256": "884f41d1f98f329b9e084c945544d37975a0a53f092f6a6bbcec75b0b74285de",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 1827,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-google",
+      "requested_url": "https://ai.google.dev/gemini-api/docs/video",
+      "capture_origin": "https://aistudio.google.com/docs/video",
+      "retrieved_at": "2026-11-05T09:26:45.550558+00:00",
+      "capture_sha256": "32d43071591c0fab53f844006a6fb8c0aed07313a8017b308f04a4fdbe9ec71c",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 66,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-heygen-index",
+      "requested_url": "https://docs.heygen.com/llms.txt",
+      "capture_origin": "https://developers.heygen.com/llms.txt",
+      "retrieved_at": "2026-11-05T09:26:46.107112+00:00",
+      "capture_sha256": "285a1f097f8bb3b59278448e088b22d686acf1149dd3be5bc338343e763414bc",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 50857,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-lipsync",
+      "requested_url": "https://developers.heygen.com/lipsync-precision.md",
+      "capture_origin": "https://developers.heygen.com/lipsync-precision.md",
+      "retrieved_at": "2026-11-05T09:40:49.821958+00:00",
+      "capture_sha256": "21f26b4c327762e5ff0a7399b5d46c31cad648e2d95cae1ca5154fada5555c0a",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 8767,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-local",
+      "requested_url": "https://raw.githubusercontent.com/Lightricks/LTX-2/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/Lightricks/LTX-2/main/README.md",
+      "retrieved_at": "2026-11-05T09:40:28.370646+00:00",
+      "capture_sha256": "523236c990efd133a9e70ef7fe0c97e0d5ced5995c22f1e67453134491f0328d",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 20821,
+      "used_for_confirmed_results": true,
+      "git_commit": "4f521619ae0029e8fbb64d555030c2b121a33b4f",
+      "git_repository": "Lightricks/LTX-2",
+      "pinned_raw_url": "https://raw.githubusercontent.com/Lightricks/LTX-2/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md",
+      "pinned_content_sha256": "523236c990efd133a9e70ef7fe0c97e0d5ced5995c22f1e67453134491f0328d",
+      "pinned_verified_at": "2026-11-05T10:35:54.609Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/Lightricks/LTX-2/blob/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md"
+    },
+    {
+      "id": "s-ltx",
+      "requested_url": "https://ltx.studio/platform/ai-storyboard-generator",
+      "capture_origin": "https://ltx.io/studio/platform/ai-storyboard-generator",
+      "retrieved_at": "2026-11-05T09:26:45.462659+00:00",
+      "capture_sha256": "78b8abc669332ef2630e8f3dca715fa8837ce1462623cdfb961a9e1dd46eaf69",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10543,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-luma",
+      "requested_url": "https://docs.lumalabs.ai/docs/video-generation",
+      "capture_origin": "https://docs.lumalabs.ai/docs/video-generation",
+      "retrieved_at": "2026-11-05T09:26:44.163788+00:00",
+      "capture_sha256": "e6dc9236f7b010b6f19fd025b7d7924587d781f1ead279bb59b86cb44d08e8ca",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10774,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-multishot",
+      "requested_url": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md",
+      "retrieved_at": "2026-11-05T09:40:26.734923+00:00",
+      "capture_sha256": "cd3a4a1111d5dfba9f3aae49db674bfb7294498a3af0c55f16827a4ee9d8ea4b",
+      "content_type": "text/markdown",
+      "captured_text_characters": 6214,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-omni",
+      "requested_url": "https://aistudio.google.com/docs/omni.md",
+      "capture_origin": "https://aistudio.google.com/docs/omni.md",
+      "retrieved_at": "2026-11-05T09:36:02.179015+00:00",
+      "capture_sha256": "2919117663a60d876eced45bb7b932498b8bc8fa8952a1a80f298d035a4e495f",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 94039,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-photo",
+      "requested_url": "https://developers.heygen.com/photo-avatar.md",
+      "capture_origin": "https://developers.heygen.com/photo-avatar.md",
+      "retrieved_at": "2026-11-05T09:35:59.715954+00:00",
+      "capture_sha256": "92dcc8ad49495d333dc05f08de207d2fe3387f455034e9b670fa9bde57298cf7",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 6185,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-product",
+      "requested_url": "https://docs.dev.runwayml.com/recipes/product-ad.md",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-ad.md",
+      "retrieved_at": "2026-11-05T09:40:26.729647+00:00",
+      "capture_sha256": "6625fb166de214921ced787830f5b7bedbf3d5e52d993982640d3906591569b9",
+      "content_type": "text/markdown",
+      "captured_text_characters": 4935,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-recipes",
+      "requested_url": "https://docs.dev.runwayml.com/_llms-txt/recipes.txt",
+      "capture_origin": "https://docs.dev.runwayml.com/_llms-txt/recipes.txt",
+      "retrieved_at": "2026-11-05T09:35:58.646119+00:00",
+      "capture_sha256": "a47ce084719d0f911053b82a0c120e2e7440dc9d734ace0afaa9977a038dc389",
+      "content_type": "text/plain",
+      "captured_text_characters": 44248,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-runway-index",
+      "requested_url": "https://docs.dev.runwayml.com/llms.txt",
+      "capture_origin": "https://docs.dev.runwayml.com/llms.txt",
+      "retrieved_at": "2026-11-05T09:26:43.463040+00:00",
+      "capture_sha256": "2625d2604568ba5bd78210d860634875cc1b567419dc59d911c400d69a4cb405",
+      "content_type": "text/plain",
+      "captured_text_characters": 3351,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-swap",
+      "requested_url": "https://docs.dev.runwayml.com/recipes/product-swap.md",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-swap.md",
+      "retrieved_at": "2026-11-05T09:40:26.733373+00:00",
+      "capture_sha256": "4f81631972132a62f11b08e5dadccfdffe85acabe4e3212ab16c218d03880611",
+      "content_type": "text/markdown",
+      "captured_text_characters": 5260,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-translate",
+      "requested_url": "https://developers.heygen.com/docs/video-translate.md",
+      "capture_origin": "https://developers.heygen.com/docs/video-translate.md",
+      "retrieved_at": "2026-11-05T09:40:49.858774+00:00",
+      "capture_sha256": "b80a310def7f1ad06b0cad50c63658f646ade454cf3e6e6642ad18ec7a261041",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 14439,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-transparent",
+      "requested_url": "https://developers.heygen.com/transparent-background-videos.md",
+      "capture_origin": "https://developers.heygen.com/transparent-background-videos.md",
+      "retrieved_at": "2026-11-05T09:36:01.380839+00:00",
+      "capture_sha256": "dedf5b7aed293a880e0800cdb4d800f1ecca14a6d30873f1f6e27df16318a3ba",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 7858,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-ugc",
+      "requested_url": "https://docs.dev.runwayml.com/recipes/product-ugc.md",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-ugc.md",
+      "retrieved_at": "2026-11-05T09:40:26.668160+00:00",
+      "capture_sha256": "6631b05c3646277c5418aa551412451157a92ab7cb8f45e0f378f94992c84233",
+      "content_type": "text/markdown",
+      "captured_text_characters": 4654,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-translation",
+      "requested_url": "https://developers.heygen.com/video-translation.md",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-generation",
+      "requested_url": "https://docs.dev.runwayml.com/guides/video",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-edit",
+      "requested_url": "https://docs.dev.runwayml.com/guides/video-to-video",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-audio",
+      "requested_url": "https://docs.dev.runwayml.com/guides/audio",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-characters",
+      "requested_url": "https://docs.dev.runwayml.com/guides/characters",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.023768+00:00"
+}

@@ -1,0 +1,1019 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "AI 视频生成",
+    "scope": "跨产品的生成、编辑、讲述、翻译、后期和制作交付可能性；每项只确认具名厂商或公开项目支持的路线。"
+  },
+  "sources": [
+    {
+      "id": "s-google-md",
+      "title": "Video generation in the Gemini API",
+      "url": "https://aistudio.google.com/docs/video.md",
+      "evidence": "turning text prompts and images",
+      "location": "Gemini Omni Flash  {% id=\"omni-flash\" %}；取回 Markdown第 19–20 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:01.692080+00:00",
+      "capture_origin": "https://aistudio.google.com/docs/video.md",
+      "capture_sha256": "884f41d1f98f329b9e084c945544d37975a0a53f092f6a6bbcec75b0b74285de",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-01",
+          "location": "Gemini Omni Flash  {% id=\"omni-flash\" %}；取回 Markdown第 19–20 行",
+          "url": "https://aistudio.google.com/docs/video.md"
+        }
+      ]
+    },
+    {
+      "id": "s-omni",
+      "title": "Generate and edit videos with Gemini Omni Flash",
+      "url": "https://aistudio.google.com/docs/omni.md",
+      "evidence": "First and last frame interpolation\n[…]\nSubject reference\n[…]\nStateful video editing\n[…]\nVideo extension",
+      "location": "First and last frame interpolation  {% id=\"first-and-last-frame-interpolation\" %}；取回 Markdown第 734–734 行；Subject reference  {% id=\"subject-reference\" %}；取回 Markdown第 945–945 行；Stateful video editing  {% id=\"stateful-video-editing\" %}；取回 Markdown第 1386–1386 行；Video extension  {% id=\"video-extension\" %}；取回 Markdown第 2153–2153 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:02.179015+00:00",
+      "capture_origin": "https://aistudio.google.com/docs/omni.md",
+      "capture_sha256": "2919117663a60d876eced45bb7b932498b8bc8fa8952a1a80f298d035a4e495f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-02",
+          "location": "First and last frame interpolation  {% id=\"first-and-last-frame-interpolation\" %}；取回 Markdown第 734–734 行",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        },
+        {
+          "possibility_id": "video-03",
+          "location": "Subject reference  {% id=\"subject-reference\" %}；取回 Markdown第 945–945 行",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        },
+        {
+          "possibility_id": "video-04",
+          "location": "Stateful video editing  {% id=\"stateful-video-editing\" %}；取回 Markdown第 1386–1386 行",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        },
+        {
+          "possibility_id": "video-05",
+          "location": "Video extension  {% id=\"video-extension\" %}；取回 Markdown第 2153–2153 行",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        }
+      ]
+    },
+    {
+      "id": "s-ltx",
+      "title": "AI Storyboard Generator: Create Storyboards With AI | LTX Studio",
+      "url": "https://ltx.io/studio/platform/ai-storyboard-generator",
+      "evidence": "visual blueprint that clients and teams can review\n[…]\nexported as MP4 files",
+      "location": "Transform concepts into visuals with AI storyboarding；本次 HTML 提取正文第 105–105 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 116–116 行（不是 HTML 源码行号）",
+      "source_class": "official_product_page",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:45.462659+00:00",
+      "capture_origin": "https://ltx.io/studio/platform/ai-storyboard-generator",
+      "capture_sha256": "78b8abc669332ef2630e8f3dca715fa8837ce1462623cdfb961a9e1dd46eaf69",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-06",
+          "location": "Transform concepts into visuals with AI storyboarding；本次 HTML 提取正文第 105–105 行（不是 HTML 源码行号）",
+          "url": "https://ltx.io/studio/platform/ai-storyboard-generator"
+        },
+        {
+          "possibility_id": "video-07",
+          "location": "页面正文；本次 HTML 提取正文第 116–116 行（不是 HTML 源码行号）",
+          "url": "https://ltx.io/studio/platform/ai-storyboard-generator"
+        }
+      ]
+    },
+    {
+      "id": "s-product",
+      "title": "Runway · Product Ad Recipe",
+      "url": "https://docs.dev.runwayml.com/recipes/product-ad.md",
+      "evidence": "cinematic product ad videos",
+      "location": "页面概述；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:26.729647+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-ad.md",
+      "capture_sha256": "6625fb166de214921ced787830f5b7bedbf3d5e52d993982640d3906591569b9",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-08",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "url": "https://docs.dev.runwayml.com/recipes/product-ad.md"
+        }
+      ]
+    },
+    {
+      "id": "s-swap",
+      "title": "Runway · Product Swap Recipe",
+      "url": "https://docs.dev.runwayml.com/recipes/product-swap.md",
+      "evidence": "replaces the product featured in it with a new product",
+      "location": "页面概述；取回 Markdown第 6–6 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:26.733373+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-swap.md",
+      "capture_sha256": "4f81631972132a62f11b08e5dadccfdffe85acabe4e3212ab16c218d03880611",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-09",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "url": "https://docs.dev.runwayml.com/recipes/product-swap.md"
+        }
+      ]
+    },
+    {
+      "id": "s-ugc",
+      "title": "Runway · Product UGC Recipe",
+      "url": "https://docs.dev.runwayml.com/recipes/product-ugc.md",
+      "evidence": "generates UGC-style promo videos from a reference image",
+      "location": "页面概述；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:26.668160+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/product-ugc.md",
+      "capture_sha256": "6631b05c3646277c5418aa551412451157a92ab7cb8f45e0f378f94992c84233",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-10",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "url": "https://docs.dev.runwayml.com/recipes/product-ugc.md"
+        }
+      ]
+    },
+    {
+      "id": "s-multishot",
+      "title": "Runway · Multi-Shot Video Recipe",
+      "url": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md",
+      "evidence": "generates videos composed of multiple shots that cut between scenes",
+      "location": "页面概述；取回 Markdown第 6–6 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:26.734923+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md",
+      "capture_sha256": "cd3a4a1111d5dfba9f3aae49db674bfb7294498a3af0c55f16827a4ee9d8ea4b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-11",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "url": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md"
+        }
+      ]
+    },
+    {
+      "id": "s-avatar",
+      "title": "Digital Twin",
+      "url": "https://developers.heygen.com/generate-avatar-video.md",
+      "evidence": "avatar video from a script",
+      "location": "Digital Twin；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:59.479059+00:00",
+      "capture_origin": "https://developers.heygen.com/generate-avatar-video.md",
+      "capture_sha256": "f2161927a6d901814515eb1ab7c856abc701c2ace3bbfcfc6fa3ac02f1ec22d2",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-12",
+          "location": "Digital Twin；取回 Markdown第 7–7 行",
+          "url": "https://developers.heygen.com/generate-avatar-video.md"
+        }
+      ]
+    },
+    {
+      "id": "s-photo",
+      "title": "Photo Avatar",
+      "url": "https://developers.heygen.com/photo-avatar.md",
+      "evidence": "single photo into a talking AI avatar",
+      "location": "Photo Avatar；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:59.715954+00:00",
+      "capture_origin": "https://developers.heygen.com/photo-avatar.md",
+      "capture_sha256": "92dcc8ad49495d333dc05f08de207d2fe3387f455034e9b670fa9bde57298cf7",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-13",
+          "location": "Photo Avatar；取回 Markdown第 7–7 行",
+          "url": "https://developers.heygen.com/photo-avatar.md"
+        }
+      ]
+    },
+    {
+      "id": "s-audio",
+      "title": "Audio to Video",
+      "url": "https://developers.heygen.com/audio-to-video.md",
+      "evidence": "recorded audio track into a talking video",
+      "location": "Overview；取回 Markdown第 13–13 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:59.725031+00:00",
+      "capture_origin": "https://developers.heygen.com/audio-to-video.md",
+      "capture_sha256": "9c906cc532036d5897627d3db968154fef89701a72daf5215f034d8d12ac2c1d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-14",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "url": "https://developers.heygen.com/audio-to-video.md"
+        }
+      ]
+    },
+    {
+      "id": "s-translate",
+      "title": "Video Translation - Speed",
+      "url": "https://developers.heygen.com/docs/video-translate.md",
+      "evidence": "applies lipsync to the target language",
+      "location": "Video Translation - Speed；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.858774+00:00",
+      "capture_origin": "https://developers.heygen.com/docs/video-translate.md",
+      "capture_sha256": "b80a310def7f1ad06b0cad50c63658f646ade454cf3e6e6642ad18ec7a261041",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-15",
+          "location": "Video Translation - Speed；取回 Markdown第 7–7 行",
+          "url": "https://developers.heygen.com/docs/video-translate.md"
+        }
+      ]
+    },
+    {
+      "id": "s-lipsync",
+      "title": "Lipsync - Precision",
+      "url": "https://developers.heygen.com/lipsync-precision.md",
+      "evidence": "replace audio on a video",
+      "location": "Lipsync - Precision；取回 Markdown第 12–12 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.821958+00:00",
+      "capture_origin": "https://developers.heygen.com/lipsync-precision.md",
+      "capture_sha256": "21f26b4c327762e5ff0a7399b5d46c31cad648e2d95cae1ca5154fada5555c0a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-16",
+          "location": "Lipsync - Precision；取回 Markdown第 12–12 行",
+          "url": "https://developers.heygen.com/lipsync-precision.md"
+        }
+      ]
+    },
+    {
+      "id": "s-edit",
+      "title": "Edit Scenes",
+      "url": "https://developers.heygen.com/docs/edit-scenes.md",
+      "evidence": "changes only the scenes you name",
+      "location": "Edit Scenes；取回 Markdown第 15–15 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:00.903316+00:00",
+      "capture_origin": "https://developers.heygen.com/docs/edit-scenes.md",
+      "capture_sha256": "6b5602db8d07a11f64747d960b1645909cc7a5289e4bec19459c758b50f0f7d3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-17",
+          "location": "Edit Scenes；取回 Markdown第 15–15 行",
+          "url": "https://developers.heygen.com/docs/edit-scenes.md"
+        }
+      ]
+    },
+    {
+      "id": "s-batch",
+      "title": "HeyGen · Batch Videos",
+      "url": "https://developers.heygen.com/batch-videos.md",
+      "evidence": "many videos in one request",
+      "location": "Overview；取回 Markdown第 13–13 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:00.695622+00:00",
+      "capture_origin": "https://developers.heygen.com/batch-videos.md",
+      "capture_sha256": "a3a136f32337193f7dc51e2df6f6a851f0f219024cb39f5923c19d36e51ee1f8",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-18",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "url": "https://developers.heygen.com/batch-videos.md"
+        }
+      ]
+    },
+    {
+      "id": "s-transparent",
+      "title": "Transparent Background Videos",
+      "url": "https://developers.heygen.com/transparent-background-videos.md",
+      "evidence": "transparent background (alpha channel)",
+      "location": "Transparent Background Videos；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:01.380839+00:00",
+      "capture_origin": "https://developers.heygen.com/transparent-background-videos.md",
+      "capture_sha256": "dedf5b7aed293a880e0800cdb4d800f1ecca14a6d30873f1f6e27df16318a3ba",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-19",
+          "location": "Transparent Background Videos；取回 Markdown第 7–7 行",
+          "url": "https://developers.heygen.com/transparent-background-videos.md"
+        }
+      ]
+    },
+    {
+      "id": "s-core",
+      "title": "Runway Dev · Core API 与专业输出文档合集",
+      "url": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt",
+      "evidence": "Upscale resolution and frame rate",
+      "location": "Upscale resolution and frame rate；取回 Markdown第 1800–1800 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:27.839142+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt",
+      "capture_sha256": "8660974040f588d8a45a5a8471dc00bb354e6311ede8b1352fe604bf49cb7046",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-20",
+          "location": "Upscale resolution and frame rate；取回 Markdown第 1800–1800 行",
+          "url": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt"
+        }
+      ]
+    },
+    {
+      "id": "s-local",
+      "title": "LTX-2",
+      "url": "https://github.com/Lightricks/LTX-2/blob/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md",
+      "evidence": "synchronized audio and video",
+      "location": "LTX-2；取回 Markdown第 9–9 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:28.370646+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/Lightricks/LTX-2/main/README.md",
+      "capture_sha256": "523236c990efd133a9e70ef7fe0c97e0d5ced5995c22f1e67453134491f0328d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-21",
+          "location": "LTX-2；取回 Markdown第 9–9 行",
+          "url": "https://github.com/Lightricks/LTX-2/blob/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md#L9-L9"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/Lightricks/LTX-2/main/README.md",
+      "git_commit": "4f521619ae0029e8fbb64d555030c2b121a33b4f",
+      "git_repository": "Lightricks/LTX-2",
+      "pinned_raw_url": "https://raw.githubusercontent.com/Lightricks/LTX-2/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md",
+      "pinned_content_sha256": "523236c990efd133a9e70ef7fe0c97e0d5ced5995c22f1e67453134491f0328d",
+      "pinned_verified_at": "2026-11-05T10:35:54.609Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-characters2",
+      "title": "Runway Characters",
+      "url": "https://docs.dev.runwayml.com/_llms-txt/characters.txt",
+      "evidence": "Build real-time conversational avatars",
+      "location": "Runway Characters；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:58.639603+00:00",
+      "capture_origin": "https://docs.dev.runwayml.com/_llms-txt/characters.txt",
+      "capture_sha256": "b1d7eb7b9ab6059034b9c85cc0a5d91bf0f5dc9df577250e6f88a8f4a269f81a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "video-22",
+          "location": "Runway Characters；取回 Markdown第 7–7 行",
+          "url": "https://docs.dev.runwayml.com/_llms-txt/characters.txt"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "shots",
+      "name": "构思与生成镜头"
+    },
+    {
+      "id": "revision",
+      "name": "编辑、配音和规格调整"
+    },
+    {
+      "id": "marketing",
+      "name": "制作商业叙事素材"
+    },
+    {
+      "id": "presenter",
+      "name": "制作讲述与角色体验"
+    },
+    {
+      "id": "delivery",
+      "name": "批量、本地与合成交付"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "video-01",
+      "title": "从文字或图片生成有声短片",
+      "result": "以 Gemini Omni Flash 等具名模型，将场景描述或图像发展为短视频素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要当前支持的模型、账户和 API；Veo 3.1 Preview 已于 2026-10-22 在 Gemini API 关闭，不能沿用旧示例。",
+      "source_ids": [
+        "s-google-md"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-google-md",
+          "quote": "turning text prompts and images",
+          "location": "Gemini Omni Flash  {% id=\"omni-flash\" %}；取回 Markdown第 19–20 行",
+          "source_line_start": 19,
+          "source_line_end": 20,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/video.md"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-02",
+      "title": "用首尾画面约束镜头变化",
+      "result": "提供开始与结束画面，让模型生成中间视频过渡。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Gemini Omni 的输入限制和生成时长适用；两帧之间的动作和细节需人工核查。",
+      "source_ids": [
+        "s-omni"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-omni",
+          "quote": "First and last frame interpolation",
+          "location": "First and last frame interpolation  {% id=\"first-and-last-frame-interpolation\" %}；取回 Markdown第 734–734 行",
+          "source_line_start": 734,
+          "source_line_end": 734,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-03",
+      "title": "用参考主体引导人物或物体形象",
+      "result": "向模型提供主体参考，使新镜头向指定外观靠拢。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "参考图、模型和提示共同影响结果，不保证跨镜头身份或商品细节完全一致。",
+      "source_ids": [
+        "s-omni"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-omni",
+          "quote": "Subject reference",
+          "location": "Subject reference  {% id=\"subject-reference\" %}；取回 Markdown第 945–945 行",
+          "source_line_start": 945,
+          "source_line_end": 945,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-04",
+      "title": "通过对话修订已有视频",
+      "result": "在多轮上下文中描述需要改变的元素或视角，迭代编辑视频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Interactions API 的状态和正确视频输入；保留区域与动作的效果须审核。",
+      "source_ids": [
+        "s-omni"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-omni",
+          "quote": "Stateful video editing",
+          "location": "Stateful video editing  {% id=\"stateful-video-editing\" %}；取回 Markdown第 1386–1386 行",
+          "source_line_start": 1386,
+          "source_line_end": 1386,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-05",
+      "title": "延展已有镜头的后续内容",
+      "result": "让模型为已有片段继续生成后续画面和声音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "受原视频来源、长度和扩展次数等当前约束限制，不等于任意长片无缝续写。",
+      "source_ids": [
+        "s-omni"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-omni",
+          "quote": "Video extension",
+          "location": "Video extension  {% id=\"video-extension\" %}；取回 Markdown第 2153–2153 行",
+          "source_line_start": 2153,
+          "source_line_end": 2153,
+          "line_basis": "captured_markdown",
+          "url": "https://aistudio.google.com/docs/omni.md"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-06",
+      "title": "把剧本或创意转成可评审分镜",
+      "result": "通过 LTX Studio 将简报或剧本拆成场景、镜头和参考画面，形成团队讨论材料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "LTX Studio 商业服务；镜头和角色提取是辅助结果，需要人工修改。",
+      "source_ids": [
+        "s-ltx"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ltx",
+          "quote": "visual blueprint that clients and teams can review",
+          "location": "Transform concepts into visuals with AI storyboarding；本次 HTML 提取正文第 105–105 行（不是 HTML 源码行号）",
+          "source_line_start": 105,
+          "source_line_end": 105,
+          "line_basis": "extracted_html_text",
+          "url": "https://ltx.io/studio/platform/ai-storyboard-generator"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-07",
+      "title": "交付动态分镜与提案文件",
+      "result": "把 LTX 分镜预览导出为视频或 PDF pitch deck，用于项目沟通。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要对应导出权限；分镜交付不等于成片制作完成。",
+      "source_ids": [
+        "s-ltx"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ltx",
+          "quote": "exported as MP4 files",
+          "location": "页面正文；本次 HTML 提取正文第 116–116 行（不是 HTML 源码行号）",
+          "source_line_start": 116,
+          "source_line_end": 116,
+          "line_basis": "extracted_html_text",
+          "url": "https://ltx.io/studio/platform/ai-storyboard-generator"
+        }
+      ],
+      "group_ids": [
+        "shots"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-08",
+      "title": "从产品照片制作广告镜头",
+      "result": "使用 Runway Product Ad 完整配方，把参考商品图转成广告式视频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Runway Dev、参考图和额度；商品文字和结构应对照原图。",
+      "source_ids": [
+        "s-product"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-product",
+          "quote": "cinematic product ad videos",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/recipes/product-ad.md"
+        }
+      ],
+      "group_ids": [
+        "marketing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-09",
+      "title": "把新商品替换进参考视频",
+      "result": "使用 Product Swap 配方以新商品图替换原视频中的商品。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要兼容参考媒体；遮挡、接触与外观不一定精确，不能代替成品审核。",
+      "source_ids": [
+        "s-swap"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-swap",
+          "quote": "replaces the product featured in it with a new product",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/recipes/product-swap.md"
+        }
+      ],
+      "group_ids": [
+        "marketing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-10",
+      "title": "制作有人物参考的 UGC 风格推广片",
+      "result": "使用 Product UGC 配方结合人物与商品参考生成推广素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要有权使用的参考图和服务权限；生成表演不构成真实使用体验或用户证言。",
+      "source_ids": [
+        "s-ugc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ugc",
+          "quote": "generates UGC-style promo videos from a reference image",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/recipes/product-ugc.md"
+        }
+      ],
+      "group_ids": [
+        "marketing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-11",
+      "title": "生成相互切换的多镜头叙事素材",
+      "result": "使用 Multi-Shot Video 配方在多个场景间切换，表达产品或品牌故事。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "镜头顺序、角色连续性和商品准确性仍需检查；需要参考媒体和付费服务。",
+      "source_ids": [
+        "s-multishot"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-multishot",
+          "quote": "generates videos composed of multiple shots that cut between scenes",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/recipes/multi-shot-video.md"
+        }
+      ],
+      "group_ids": [
+        "marketing"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-12",
+      "title": "从脚本制作数字人讲解视频",
+      "result": "选择现有 Digital Twin、声音与背景，将脚本渲染为带字幕的讲解片。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "HeyGen v3 API；需要已创建并可用的头像与声音及相应授权，创建数字分身另有素材和同意要求。",
+      "source_ids": [
+        "s-avatar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-avatar",
+          "quote": "avatar video from a script",
+          "location": "Digital Twin；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/generate-avatar-video.md"
+        }
+      ],
+      "group_ids": [
+        "presenter"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-13",
+      "title": "让单张人像讲述指定内容",
+      "result": "使用 Photo Avatar 将人像照片和脚本变成口型同步的说话视频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要清晰人像、声音、服务权限和素材使用权；不保证任意照片或姿态效果。",
+      "source_ids": [
+        "s-photo"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-photo",
+          "quote": "single photo into a talking AI avatar",
+          "location": "Photo Avatar；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/photo-avatar.md"
+        }
+      ],
+      "group_ids": [
+        "presenter"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-14",
+      "title": "把已有录音配到虚拟讲述者上",
+      "result": "提供语音、播客片段或配音轨，让头像或单人图像演绎已有音频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "HeyGen Audio to Video；需要合适主体和可访问音频，遵守当前时长与格式限制。",
+      "source_ids": [
+        "s-audio"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-audio",
+          "quote": "recorded audio track into a talking video",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/audio-to-video.md"
+        }
+      ],
+      "group_ids": [
+        "presenter"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-15",
+      "title": "将视频翻译并同步新语言口型",
+      "result": "使用视频翻译服务生成目标语言声音及相应唇形，面向不同语言受众。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "HeyGen Video Translation；目标语言、说话人和翻译模式有条件，必须核对译文、名字和口型。",
+      "source_ids": [
+        "s-translate"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-translate",
+          "quote": "applies lipsync to the target language",
+          "location": "Video Translation - Speed；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/docs/video-translate.md"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-16",
+      "title": "用新音轨重配已有视频的口型",
+      "result": "用 Lipsync Precision 将已有画面的嘴部动作与替换音频对齐。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要兼容的人脸视频和音频；身份、画面和时序质量不保证，对应服务可能另计额度。",
+      "source_ids": [
+        "s-lipsync"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lipsync",
+          "quote": "replace audio on a video",
+          "location": "Lipsync - Precision；取回 Markdown第 12–12 行",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/lipsync-precision.md"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-17",
+      "title": "只修订成片中指定的场景",
+      "result": "读取 Video Agent 场景清单后针对选定场景发出编辑要求，生成新的草稿。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "仅适用于 Video Agent 会话流程；官方示例展示两处修改，不保证各种素材都保持未编辑区域完全相同。",
+      "source_ids": [
+        "s-edit"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-edit",
+          "quote": "changes only the scenes you name",
+          "location": "Edit Scenes；取回 Markdown第 15–15 行",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/docs/edit-scenes.md"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-18",
+      "title": "批量生产多条脚本和头像视频",
+      "result": "将多个视频请求作为一批提交，追踪每个素材的成功或失败结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "HeyGen 批处理是异步任务；额度、并发和每条素材的依赖仍适用，不保证整批成功。",
+      "source_ids": [
+        "s-batch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-batch",
+          "quote": "many videos in one request",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/batch-videos.md"
+        }
+      ],
+      "group_ids": [
+        "delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-19",
+      "title": "获得可合成到其他画面的透明数字人素材",
+      "result": "输出带 alpha 的 WebM 头像视频，供后续视频编辑和网页播放器使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "头像必须支持 matting；默认 MP4 不含透明度，输出格式和后期工具需匹配。",
+      "source_ids": [
+        "s-transparent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-transparent",
+          "quote": "transparent background (alpha channel)",
+          "location": "Transparent Background Videos；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://developers.heygen.com/transparent-background-videos.md"
+        }
+      ],
+      "group_ids": [
+        "delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-20",
+      "title": "提升已有片段的输出规格",
+      "result": "通过 Runway 对应模型提升分辨率或重定帧率，以适配后期时间线。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "具体模型的输入长度、容器和额外费用适用；不能恢复真实缺失细节或保证广播级质量。",
+      "source_ids": [
+        "s-core"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-core",
+          "quote": "Upscale resolution and frame rate",
+          "location": "Upscale resolution and frame rate；取回 Markdown第 1800–1800 行",
+          "source_line_start": 1800,
+          "source_line_end": 1800,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/_llms-txt/core-api.txt"
+        }
+      ],
+      "group_ids": [
+        "revision"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-21",
+      "title": "在自己环境中运行有声视频生成",
+      "result": "下载 LTX-2 系列权重和实现，使用本地推理管线或 ComfyUI 集成生产视频素材。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要满足模型许可证、下载权重和足够硬件；仓库当前指向 LTX-2.5，不保证普通电脑可流畅运行。",
+      "source_ids": [
+        "s-local"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local",
+          "quote": "synchronized audio and video",
+          "location": "LTX-2；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/Lightricks/LTX-2/blob/4f521619ae0029e8fbb64d555030c2b121a33b4f/README.md#L9-L9"
+        }
+      ],
+      "group_ids": [
+        "delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "video-22",
+      "title": "制作可实时对话的虚拟人物界面",
+      "result": "使用 Runway Characters 的头像、声音、资料与工具调用，构建可交互的视频角色。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是实时 Characters 与客户端集成路线，需开发、运行会话和配置资料；不是离线视频自动变成交互应用。",
+      "source_ids": [
+        "s-characters2"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-characters2",
+          "quote": "Build real-time conversational avatars",
+          "location": "Runway Characters；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.dev.runwayml.com/_llms-txt/characters.txt"
+        }
+      ],
+      "group_ids": [
+        "presenter"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未调用付费生成接口，未下载模型或评价样片质量；未声称图像、口型、文字、物理或身份一致性可保证。",
+    "Luma 旧 Ray 2 文档提示转向新 Agents API，本轮未完成新路线核对；旧文档的循环和反向延展未当作当前通用能力。",
+    "未对训练素材、音乐、人像和输出的各法域版权作判断；商业使用需按具体素材、模型和服务条款确认。",
+    "真实案例以官方产品配方、场景编辑前后示例与 LTX 本地推理项目为主，缺少独立质量对照和完整长片交付评测。"
+  ],
+  "generated_at": "2026-11-05T09:44:29.716575+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "从文字、图像和视频输入的结果遍历开始，随后阅读广告配方、数字人讲述与场景修订完整案例，补查本地项目和实时角色。",
+      "归一化：把分辨率、帧率、比例等设置合并为交付规格；把照片与分身说话按素材路线保留，未拆每个 API。",
+      "补漏发现 Google 预览模型关闭、Runway 旧模型退役及 HeyGen v3 引擎差异；未以旧教程承诺可用。",
+      "按候选的制作目的整理导航，而非按厂商或模型名分组；AI 生成服务的效果宣传已收敛为可尝试的具体结果。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_product_page",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 26,
+    "evidence_revision_at": "2026-11-05T10:56:01.023768+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

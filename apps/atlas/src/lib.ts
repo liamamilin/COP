@@ -128,7 +128,15 @@ export function goalText(topic: string, p: Possibility, sources: Source[]) {
     "来源：",
     ...sources
       .filter((s) => p.source_ids.includes(s.id) && safeHttp(s.url))
-      .map((s) => `${s.title}\n${s.url}`),
+      .flatMap((s) => {
+        const located = [...new Set(
+          (p.evidence_refs || [])
+            .filter((e) => e.source_id === s.id)
+            .map((e) => safeHttp(e.url))
+            .filter((url): url is string => !!url),
+        )];
+        return (located.length ? located : [s.url]).map((url) => `${s.title}\n${url}`);
+      }),
   ].join("\n\n");
 }
 export function sourceUsage(map: AtlasMap, id: string) {

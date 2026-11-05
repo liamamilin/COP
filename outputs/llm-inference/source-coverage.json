@@ -1,0 +1,250 @@
+{
+  "topic": "llm-inference",
+  "generated_at": "2026-11-05T10:06:29.333334+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-batch",
+      "requested_url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "retrieved_at": "2026-11-05T09:11:35.945477+00:00",
+      "capture_sha256": "e17dc17d5bd6e22d2cd0ddd8c2ff53a4e857d9c3ab5319cffe75380d61865832",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 12430,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-benchmark",
+      "requested_url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "retrieved_at": "2026-11-05T09:11:36.127162+00:00",
+      "capture_sha256": "c86c6dd9dc5fc3ab98ac9a12ff229e801d108b205d1b2100c1341515c1271b67",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 50534,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-local-server",
+      "requested_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+      "retrieved_at": "2026-11-05T08:49:54.613337+00:00",
+      "capture_sha256": "eafc1b53abd787613d13d1fb9a86a1fc9f90b59f1240b3eeb88c85ea08d9a137",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 136364,
+      "used_for_confirmed_results": true,
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md",
+      "pinned_content_sha256": "eafc1b53abd787613d13d1fb9a86a1fc9f90b59f1240b3eeb88c85ea08d9a137",
+      "pinned_verified_at": "2026-11-05T10:35:54.281Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md"
+    },
+    {
+      "id": "s-local",
+      "requested_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md",
+      "retrieved_at": "2026-11-05T08:49:53.120884+00:00",
+      "capture_sha256": "404287f3e07f32aeaa5b951cfe7e43277a6444b2cf921c9f70894c1f7e89dd80",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 7676,
+      "used_for_confirmed_results": true,
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md",
+      "pinned_content_sha256": "404287f3e07f32aeaa5b951cfe7e43277a6444b2cf921c9f70894c1f7e89dd80",
+      "pinned_verified_at": "2026-11-05T10:35:53.483Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md"
+    },
+    {
+      "id": "s-lora",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/lora/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/lora/",
+      "retrieved_at": "2026-11-05T08:49:51.376721+00:00",
+      "capture_sha256": "180174de17aab4c6e2b8f913b41c35afc9b574cdceb5ece2b013bc06003b828c",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 27188,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-metrics",
+      "requested_url": "https://docs.vllm.ai/en/stable/usage/metrics/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/usage/metrics/",
+      "retrieved_at": "2026-11-05T08:49:53.861441+00:00",
+      "capture_sha256": "6c541cacfc8b84a4232bbe00f1bde99d2767672fbf3be8c74e38759bfa8ba4c2",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 22727,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-multimodal",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/",
+      "retrieved_at": "2026-11-05T08:49:53.633783+00:00",
+      "capture_sha256": "9d1f1db45adf1f5687e1d9a2ee5fa9b9b0909a4b1276c9c73ee10435d52b1983",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 48743,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-omni",
+      "requested_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/main/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/vllm-project/vllm-omni/main/README.md",
+      "retrieved_at": "2026-11-05T09:11:35.266234+00:00",
+      "capture_sha256": "29dd9006458e7b56c99b301bb9d57a6ee1d0a73083a643f34b7194bdd994cd5c",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 9908,
+      "used_for_confirmed_results": true,
+      "git_commit": "fd82f6c84a464566e1c2b3780833706208084fce",
+      "git_repository": "vllm-project/vllm-omni",
+      "pinned_raw_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/fd82f6c84a464566e1c2b3780833706208084fce/README.md",
+      "pinned_content_sha256": "29dd9006458e7b56c99b301bb9d57a6ee1d0a73083a643f34b7194bdd994cd5c",
+      "pinned_verified_at": "2026-11-05T10:35:53.418Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/vllm-project/vllm-omni/blob/fd82f6c84a464566e1c2b3780833706208084fce/README.md"
+    },
+    {
+      "id": "s-online",
+      "requested_url": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+      "retrieved_at": "2026-11-05T09:06:13.352374+00:00",
+      "capture_sha256": "89eb1f1247af6f2507402857428c2440972fa76adcfcf763853bc42eff2b7a14",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10536,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://docs.vllm.ai/en/stable/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/",
+      "retrieved_at": "2026-11-05T08:49:51.246874+00:00",
+      "capture_sha256": "1d576c57de2c045d3a1297cb2c1bea587eed5958edf99ecf54da65e6eb5f2f8f",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10692,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-parallel",
+      "requested_url": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/",
+      "retrieved_at": "2026-11-05T09:11:35.874645+00:00",
+      "capture_sha256": "4be48950646a849b947a914d0f8730ddbb63996040f499a4dd0c3b33a70a47c4",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 10838,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-pooling",
+      "requested_url": "https://docs.vllm.ai/en/stable/models/pooling_models/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/models/pooling_models/",
+      "retrieved_at": "2026-11-05T08:49:53.658450+00:00",
+      "capture_sha256": "cde3e467548cd483e7b674a56a7f128f48d7502d8b45a959af7b71be0bdd631d",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 23603,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-prefix",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/",
+      "retrieved_at": "2026-11-05T08:49:51.432952+00:00",
+      "capture_sha256": "ebe3ebfa52c2b8315d9a7f30cd61618a614258d02c4eb210ecf2c23987575d9a",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 11489,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-quant",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "retrieved_at": "2026-11-05T08:49:52.742526+00:00",
+      "capture_sha256": "8775a643f8804023e9a573132df244dca9a88e27fbaff5c0e5164cc64d1371a1",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 15455,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-replicas",
+      "requested_url": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/",
+      "retrieved_at": "2026-11-05T09:19:52.879324+00:00",
+      "capture_sha256": "e7d96106699b68ef884c2de47b4601d1cf1cbc0326f29d76d54259e61e51b036",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 9839,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-server",
+      "requested_url": "https://docs.vllm.ai/en/stable/serving/openai_compatible_server/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/openai_compatible_server/",
+      "retrieved_at": "2026-11-05T08:49:50.979167+00:00",
+      "capture_sha256": "c60c672dba57819a5c13ef74d2104a0ada81ed03e7643515d004aa503cdbf6ee",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 60,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-speculate",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/spec_decode/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/spec_decode/",
+      "retrieved_at": "2026-11-05T08:49:50.601775+00:00",
+      "capture_sha256": "23bed1c99bc0c19369b2b82d3f5618b0f9d2f4c847d77675f4de4c9df0dae290",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 60,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-speculative",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",
+      "retrieved_at": "2026-11-05T09:06:13.230774+00:00",
+      "capture_sha256": "7a596b0ca56341e8d591dbbaa2b8be1652104eae2ddbd7fae15eb4f7ad9c4112",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 11811,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-structured",
+      "requested_url": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "retrieved_at": "2026-11-05T08:49:51.545868+00:00",
+      "capture_sha256": "9c83f7a3c329ff6e585962bd0860712e398a89204652da9e9757965fdbc385ca",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 22758,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-tools",
+      "requested_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/docs/function-calling.md",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/docs/function-calling.md",
+      "retrieved_at": "2026-11-05T09:11:35.255844+00:00",
+      "capture_sha256": "cde9ab32612b7764a99535924795817aa5661fb5a75f1a8bd68e31cb4d4d5f62",
+      "content_type": "text/plain; charset=utf-8",
+      "captured_text_characters": 21081,
+      "used_for_confirmed_results": true,
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md",
+      "pinned_content_sha256": "cde9ab32612b7764a99535924795817aa5661fb5a75f1a8bd68e31cb4d4d5f62",
+      "pinned_verified_at": "2026-11-05T10:35:53.689Z",
+      "pinned_matches_capture": true,
+      "immutable_url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-autoscale",
+      "requested_url": "https://docs.ray.io/en/latest/serve/llm/overview.html",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-parallel",
+      "requested_url": "https://docs.vllm.ai/en/stable/serving/distributed_serving/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.290795+00:00"
+}

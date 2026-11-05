@@ -1,0 +1,848 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "AI 语音",
+    "scope": "文本合成、音色与表演、转写对齐、译配、长内容和语音应用；以 ElevenLabs 当前官方文档及 Kokoro、Whisper 公开实现确认具体路线。"
+  },
+  "sources": [
+    {
+      "id": "s-tts",
+      "title": "Text to Speech",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md",
+      "evidence": "turns text into lifelike audio",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:32.898712+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md",
+      "capture_sha256": "74d730cdfdddbc8f22964e23a5224a6a319c2ca4d7bee4aad0a80ed0efe8d4d8",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-01",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md"
+        }
+      ]
+    },
+    {
+      "id": "s-dialogue",
+      "title": "Text to Dialogue",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md",
+      "evidence": "expressive dialogue from text",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:33.070531+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md",
+      "capture_sha256": "66587ed125569f1a26ecdd285b29e01854054f3f98d01043f2226d5b4e323630",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-02",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md"
+        }
+      ]
+    },
+    {
+      "id": "s-design",
+      "title": "Voice Design",
+      "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md",
+      "evidence": "generate three voice options",
+      "location": "Overview；取回 Markdown第 13–13 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:35.795869+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md",
+      "capture_sha256": "c440e69f34e4f2e392e8d19db847f6250a396a39d7dfed83aef209db6d15e9df",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-03",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md"
+        }
+      ]
+    },
+    {
+      "id": "s-clone",
+      "title": "Voice Cloning",
+      "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md",
+      "evidence": "Instant Voice Cloning and Professional Voice Cloning",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:35.858143+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md",
+      "capture_sha256": "1a2675df4883538c3af03d13141427b90974d4376f997ee2ec30ae36ac417544",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-04",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md"
+        }
+      ]
+    },
+    {
+      "id": "s-changer",
+      "title": "Voice changer",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md",
+      "evidence": "preserving emotional delivery and nuance\n[…]\nreplace specific words and phrases",
+      "location": "Overview；取回 Markdown第 9–9 行；Overview；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:33.909756+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md",
+      "capture_sha256": "792c8a51dfb17c18dfcf1b0c93f67bf40ca9e9a33212bbdf927d64e20d611208",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-05",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md"
+        },
+        {
+          "possibility_id": "voice-06",
+          "location": "Overview；取回 Markdown第 11–11 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md"
+        }
+      ]
+    },
+    {
+      "id": "s-isolation",
+      "title": "Voice isolator",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md",
+      "evidence": "extracts speech from background noise",
+      "location": "Usage；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:33.835025+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md",
+      "capture_sha256": "b9b2d69716ffe47b645b27f30af89cbb758202f405943d65761ed5e1510b63e7",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-07",
+          "location": "Usage；取回 Markdown第 17–17 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md"
+        }
+      ]
+    },
+    {
+      "id": "s-dubbing",
+      "title": "Dubbing",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md",
+      "evidence": "translates audio and video",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:34.857937+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md",
+      "capture_sha256": "c421dedbf6cc0b2ab0b89c1ea2354e89ea5bcc2729c166ec3b70e8ec7f55f0f0",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-08",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md"
+        }
+      ]
+    },
+    {
+      "id": "s-align",
+      "title": "Forced Alignment",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md",
+      "evidence": "turns spoken audio and text into a time-aligned transcript",
+      "location": "Overview；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:34.486814+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md",
+      "capture_sha256": "e0ffc3ccd8dfca84bd2f94faff6e466b7a9b428706dbe1b9b1439375689d7306",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-09",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md"
+        }
+      ]
+    },
+    {
+      "id": "s-stt",
+      "title": "Transcription",
+      "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md",
+      "evidence": "turns spoken audio into text\n[…]\nSpeaker diarization\n[…]\nReal-time transcription",
+      "location": "Overview；取回 Markdown第 7–7 行；[Scribe v2](/docs/overview/models#scribe-v2)；取回 Markdown第 47–47 行；[Scribe v2 Realtime](/docs/overview/models#scribe-v2-realtime)；取回 Markdown第 59–59 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:32.652022+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md",
+      "capture_sha256": "053f8ffff681db9a3260aa06e3a64df6b8bf23d474281d403cf0feb7e66e8f8a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-10",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        },
+        {
+          "possibility_id": "voice-11",
+          "location": "[Scribe v2](/docs/overview/models#scribe-v2)；取回 Markdown第 47–47 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        },
+        {
+          "possibility_id": "voice-12",
+          "location": "[Scribe v2 Realtime](/docs/overview/models#scribe-v2-realtime)；取回 Markdown第 59–59 行",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        }
+      ]
+    },
+    {
+      "id": "s-books",
+      "title": "Audiobooks",
+      "url": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md",
+      "evidence": "structure your project with chapters",
+      "location": "Overview；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:36.834957+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md",
+      "capture_sha256": "ca16ab8f30f99cfb26cc24bf4722e8295d2de810de372e483617665d9ef2ca5b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-13",
+          "location": "Overview；取回 Markdown第 11–11 行",
+          "url": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md"
+        }
+      ]
+    },
+    {
+      "id": "s-native",
+      "title": "Audio Native",
+      "url": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md",
+      "evidence": "automatically voices content of a web page",
+      "location": "Overview；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:36.940041+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md",
+      "capture_sha256": "b5b7b2c92bdf63d72a1e6e0fcaf12cd9a5c7e1021b5140ac9621dde08d295182",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-14",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "url": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md"
+        }
+      ]
+    },
+    {
+      "id": "s-agent",
+      "title": "ElevenAgents",
+      "url": "https://elevenlabs.io/docs/eleven-agents/overview.md",
+      "evidence": "Integrate multimodal agents across telephony systems",
+      "location": "Deploy；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:36.961430+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-agents/overview.md",
+      "capture_sha256": "a0da8d6ce710ecbe79a3953fbccb8e90e496223a17df6f309d6eab2f2117983b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-15",
+          "location": "Deploy；取回 Markdown第 17–17 行",
+          "url": "https://elevenlabs.io/docs/eleven-agents/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-pronounce",
+      "title": "Pronunciation dictionaries",
+      "url": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md",
+      "evidence": "Correcting pronunciation of names",
+      "location": "Overview；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:37.392999+00:00",
+      "capture_origin": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md",
+      "capture_sha256": "124af6dac2a948cea8de47b0b6166ed860526e2c098ab6e3ea64dfc7efb80616",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-16",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "url": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md"
+        }
+      ]
+    },
+    {
+      "id": "s-local",
+      "title": "Kokoro-82M — 模型卡",
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md",
+      "evidence": "Kokoro can be deployed anywhere from production environments to personal projects.",
+      "location": "页面概述；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:26:48.524334+00:00",
+      "capture_origin": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md",
+      "capture_sha256": "91dcabced89db6f109b8786642f50402d3ee87450e8189589b6f85520e7f4d78",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-17",
+          "location": "页面概述；取回 Markdown第 9–9 行",
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md"
+        }
+      ]
+    },
+    {
+      "id": "s-whisper",
+      "title": "OpenAI Whisper — 项目说明",
+      "url": "https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md",
+      "evidence": "multilingual speech recognition, speech translation, and language identification",
+      "location": "Whisper；取回 Markdown第 8–8 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:28.170650+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/openai/whisper/main/README.md",
+      "capture_sha256": "38c180c2a8d8ba628a3e131ad42bf06c8a51bb681efb30fbe28d5a0f4b65f288",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "voice-18",
+          "location": "Whisper；取回 Markdown第 8–8 行",
+          "url": "https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md#L8-L8"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/openai/whisper/main/README.md",
+      "git_commit": "86098128c0b4f24f0e2aa2994de830614b474227",
+      "git_repository": "openai/whisper",
+      "pinned_raw_url": "https://raw.githubusercontent.com/openai/whisper/86098128c0b4f24f0e2aa2994de830614b474227/README.md",
+      "pinned_content_sha256": "38c180c2a8d8ba628a3e131ad42bf06c8a51bb681efb30fbe28d5a0f4b65f288",
+      "pinned_verified_at": "2026-11-05T10:35:53.339Z",
+      "pinned_matches_capture": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "production",
+      "name": "制作朗读、对话和有声书"
+    },
+    {
+      "id": "performance",
+      "name": "设计和调整声音表演"
+    },
+    {
+      "id": "understanding",
+      "name": "转写与对齐语音资料"
+    },
+    {
+      "id": "adaptation",
+      "name": "清理和译配已有内容"
+    },
+    {
+      "id": "applications",
+      "name": "把语音带入网站和自有应用"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "voice-01",
+      "title": "将文案制作成旁白与朗读音频",
+      "result": "通过 ElevenLabs TTS 将文本转为可导出的语音，用于说明、广告或学习资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要服务账户、额度与适用声音；支持语言和音质随模型而异，不能保证情感、读音与事实正确。",
+      "source_ids": [
+        "s-tts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tts",
+          "quote": "turns text into lifelike audio",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-speech.md"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-02",
+      "title": "制作多角色有声对话",
+      "result": "根据带角色的文本生成不同声音的游戏、播客或故事对话。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Eleven Text to Dialogue；需要选定兼容模型和声音，通常需多次生成挑选，不能假定自然节奏一次成功。",
+      "source_ids": [
+        "s-dialogue"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-dialogue",
+          "quote": "expressive dialogue from text",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/text-to-dialogue.md"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-03",
+      "title": "从文字描述设计角色声音",
+      "result": "当现有音库不合适时，用年龄、口音和风格等描述探索并保存新声音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Eleven Voice Design；预览和声音槽有账户限制，生成结果可能偏离描述。",
+      "source_ids": [
+        "s-design"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-design",
+          "quote": "generate three voice options",
+          "location": "Overview；取回 Markdown第 13–13 行",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-design.md"
+        }
+      ],
+      "group_ids": [
+        "performance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-04",
+      "title": "为自己的声音建立可复用合成版本",
+      "result": "利用录音制作即时克隆或训练专业克隆，再用于授权内容的配音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自己或有权使用的声音和相应验证；IVC 与 PVC 的样本、训练和付费条件不同，不保证完全复现。",
+      "source_ids": [
+        "s-clone"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-clone",
+          "quote": "Instant Voice Cloning and Professional Voice Cloning",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning.md"
+        }
+      ],
+      "group_ids": [
+        "performance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-05",
+      "title": "保持表演意图而替换录音音色",
+      "result": "用 Voice Changer 将现有录音转成另一个声音，尝试保留情感和表达细节。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要兼容语言、录音与已获授权声音；转换效果应试听。",
+      "source_ids": [
+        "s-changer"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-changer",
+          "quote": "preserving emotional delivery and nuance",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md"
+        }
+      ],
+      "group_ids": [
+        "performance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-06",
+      "title": "补录或替换现有录音中的局部词句",
+      "result": "通过 Voice Changer 等流程制作替换的词句，用于后期修订录音。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需剪辑和时序匹配，不能据此认为服务会自动无缝修复整段音频。",
+      "source_ids": [
+        "s-changer"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-changer",
+          "quote": "replace specific words and phrases",
+          "location": "Overview；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-changer.md"
+        }
+      ],
+      "group_ids": [
+        "performance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-07",
+      "title": "从嘈杂音视频中分离人声",
+      "result": "使用 Voice Isolator 提取语音，减少背景音乐、环境声等干扰。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "服务支持特定音视频格式；失真、串音或缺失语音仍可能存在，不保证恢复不可辨识内容。",
+      "source_ids": [
+        "s-isolation"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-isolation",
+          "quote": "extracts speech from background noise",
+          "location": "Usage；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/voice-isolator.md"
+        }
+      ],
+      "group_ids": [
+        "adaptation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-08",
+      "title": "将已有节目译配为其他语言",
+      "result": "使用 ElevenLabs Dubbing 翻译音视频，生成目标语言配音并尽量保留说话人特征。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "不同语言、v2 Alpha 自动配音与 v1 Dubbing Studio 的可编辑能力有差别；需审核译文和声音。",
+      "source_ids": [
+        "s-dubbing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-dubbing",
+          "quote": "translates audio and video",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/dubbing.md"
+        }
+      ],
+      "group_ids": [
+        "adaptation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-09",
+      "title": "把已知稿件与录音对齐到词句时间",
+      "result": "在已有文本和音频时生成时间对齐稿，用于字幕或电子书有声同步。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Forced Alignment 不是从无文本转写；需要稿件与实际录音基本对应，时间戳仍需检查。",
+      "source_ids": [
+        "s-align"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-align",
+          "quote": "turns spoken audio and text into a time-aligned transcript",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/forced-alignment.md"
+        }
+      ],
+      "group_ids": [
+        "understanding"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-10",
+      "title": "将会议、采访或视频语音转成文本",
+      "result": "通过语音识别生成可搜索和编辑的文字稿。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Eleven Scribe；支持格式、语言和时长有条件，噪声、专名和口音会影响准确率。",
+      "source_ids": [
+        "s-stt"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stt",
+          "quote": "turns spoken audio into text",
+          "location": "Overview；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        }
+      ],
+      "group_ids": [
+        "understanding"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-11",
+      "title": "获得带说话人及词级时间的信息稿",
+      "result": "为多人录音添加说话人区分和时间标记，辅助编辑与检索。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Scribe 对人数和模型有上限；speaker 标签不等于可靠的实名身份识别。",
+      "source_ids": [
+        "s-stt"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stt",
+          "quote": "Speaker diarization",
+          "location": "[Scribe v2](/docs/overview/models#scribe-v2)；取回 Markdown第 47–47 行",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        }
+      ],
+      "group_ids": [
+        "understanding"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-12",
+      "title": "为实时语音输入持续显示文字",
+      "result": "通过实时 STT 连接在说话过程中返回转写，用于实时界面。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要实时模型与 WebSocket 等接入；延迟和准确率不能据宣传值保证。",
+      "source_ids": [
+        "s-stt"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stt",
+          "quote": "Real-time transcription",
+          "location": "[Scribe v2 Realtime](/docs/overview/models#scribe-v2-realtime)；取回 Markdown第 59–59 行",
+          "source_line_start": 59,
+          "source_line_end": 59,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text.md"
+        }
+      ],
+      "group_ids": [
+        "understanding"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-13",
+      "title": "把整部稿件制作成可编辑有声书",
+      "result": "上传稿件、组织章节与角色声音、编辑旁白并导出或使用支持的发布路线。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Eleven Audiobooks 项目工作流；需要内容权利、额度和完整质量审核，平台分发条件另计。",
+      "source_ids": [
+        "s-books"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-books",
+          "quote": "structure your project with chapters",
+          "location": "Overview；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-creative/products/audiobooks.md"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-14",
+      "title": "为网站文章提供嵌入式朗读",
+      "result": "通过 Audio Native 在自己的网页加入播放器，让读者收听正文或预生成音频。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需服务、HTML 接入和域名白名单；不代表所有网页访问者或浏览器均兼容。",
+      "source_ids": [
+        "s-native"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-native",
+          "quote": "automatically voices content of a web page",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-creative/audio-tools/audio-native.md"
+        }
+      ],
+      "group_ids": [
+        "applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-15",
+      "title": "构建可以听说并执行任务的语音助手",
+      "result": "结合 ElevenAgents 的模型、工具、知识和会话连接，制作电话、网页或移动语音交互。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "独立代理产品与外部工具／电话服务共同实现；需开发与评估，语音生成本身没有业务执行能力。",
+      "source_ids": [
+        "s-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-agent",
+          "quote": "Integrate multimodal agents across telephony systems",
+          "location": "Deploy；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-agents/overview.md"
+        }
+      ],
+      "group_ids": [
+        "applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-16",
+      "title": "统一专名和技术词的播读方式",
+      "result": "使用发音字典让语音代理按指定读法表达名字、地点或技术术语。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "ElevenAgents 模型支持有差异；部分模型忽略 phoneme 标签，须用别名或兼容模型并试听。",
+      "source_ids": [
+        "s-pronounce"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pronounce",
+          "quote": "Correcting pronunciation of names",
+          "location": "Overview；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://elevenlabs.io/docs/eleven-agents/customization/voice/pronunciation-dictionary.md"
+        }
+      ],
+      "group_ids": [
+        "performance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-17",
+      "title": "在自有环境部署轻量语音合成",
+      "result": "使用 Kokoro 开放权重和代码制作自己的朗读服务或本地项目。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装运行栈、权重和适用语言／声音；许可需核对具体组件，本轮不承诺资源消耗或实时速度。",
+      "source_ids": [
+        "s-local"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local",
+          "quote": "Kokoro can be deployed anywhere from production environments to personal projects.",
+          "location": "页面概述；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://huggingface.co/hexgrad/Kokoro-82M/raw/main/README.md"
+        }
+      ],
+      "group_ids": [
+        "applications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "voice-18",
+      "title": "在本地生成多语种录音的转写或英语译稿",
+      "result": "使用 Whisper 公开项目识别语音、做语言识别或按支持方向翻译为英文。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Python、ffmpeg 和模型资源；语言质量不同，翻译为英文不等于任意语言双向翻译。",
+      "source_ids": [
+        "s-whisper"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-whisper",
+          "quote": "multilingual speech recognition, speech translation, and language identification",
+          "location": "Whisper；取回 Markdown第 8–8 行",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md#L8-L8"
+        }
+      ],
+      "group_ids": [
+        "understanding"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未生成音频、上传录音或调用任何克隆、转写和电话服务；没有评测听感、方言准确率或延迟。",
+    "ElevenLabs 文档部分总览与各模型的语言数表述不一致；因此不写统一支持语言数量，按模型页及部署时状态核对。",
+    "付费等级、声音权利、身份验证和分发条款因功能不同；本轮不作可商用、授权充分或合规保证。",
+    "官方 Audio Native 与 Audiobooks 提供完整任务流程；没有获取独立用户音频工程的可重复评价。"
+  ],
+  "generated_at": "2026-11-05T09:47:09.399150+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先从合成、转写和译配可交付结果提取候选，再阅读整书和网页朗读完整流程，补查本地模型与实时代理。",
+      "归一化：音频格式、语速、情感等控制并入成品语音；转写、已有文本对齐、说话人标签和实时字幕分别对应不同输入和结果。",
+      "补漏区分 voice cloning、speech-to-speech、自动配音和口型视频，后者由视频主题覆盖；不把语音模型称为完整业务代理。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 16,
+    "evidence_revision_at": "2026-11-05T10:56:01.042355+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

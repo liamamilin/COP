@@ -1,0 +1,201 @@
+{
+  "topic": "llm-finetuning",
+  "generated_at": "2026-11-05T10:06:29.329734+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-adapters",
+      "requested_url": "https://huggingface.co/docs/peft/en/developer_guides/model_merging",
+      "capture_origin": "https://huggingface.co/docs/peft/en/developer_guides/model_merging",
+      "retrieved_at": "2026-11-05T08:49:57.558140+00:00",
+      "capture_sha256": "72deeec84281122822a3b3dffdd3eb4074ec5d9faf4d23cd8b7ed0fbfb6257a1",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 7492,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-causal",
+      "requested_url": "https://huggingface.co/docs/transformers/en/tasks/language_modeling",
+      "capture_origin": "https://huggingface.co/docs/transformers/en/tasks/language_modeling",
+      "retrieved_at": "2026-11-05T08:49:58.346165+00:00",
+      "capture_sha256": "3eefe9ebfd71b7db470459632aea9e29fdcf583fd25179b6d31de60cb684cf0e",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 14619,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-checkpoints",
+      "requested_url": "https://huggingface.co/docs/peft/en/developer_guides/checkpoint",
+      "capture_origin": "https://huggingface.co/docs/peft/en/developer_guides/checkpoint",
+      "retrieved_at": "2026-11-05T09:09:38.240922+00:00",
+      "capture_sha256": "a941f1cc0e1ed4fb872f92ee13a045f6c59f95f1895a91bcb010e80035e15ef8",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 14504,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-code-example",
+      "requested_url": "https://huggingface.co/learn/cookbook/fine_tuning_code_llm_on_single_gpu",
+      "capture_origin": "https://huggingface.co/learn/cookbook/fine_tuning_code_llm_on_single_gpu",
+      "retrieved_at": "2026-11-05T09:09:38.517876+00:00",
+      "capture_sha256": "6d6dba8388bdeeda7265d8b31778b8a1c1bea4af42619d1497d881900b78d4ec",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 24345,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-distill",
+      "requested_url": "https://huggingface.co/docs/trl/en/distillation_trainer",
+      "capture_origin": "https://huggingface.co/docs/trl/en/distillation_trainer",
+      "retrieved_at": "2026-11-05T08:49:58.924140+00:00",
+      "capture_sha256": "86b96de06b265e89dd17d7ea06cfdb935ecd7d15bbeaa78adb941077fb0dcb54",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 35700,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-dpo",
+      "requested_url": "https://huggingface.co/docs/trl/en/dpo_trainer",
+      "capture_origin": "https://huggingface.co/docs/trl/en/dpo_trainer",
+      "retrieved_at": "2026-11-05T08:49:55.398731+00:00",
+      "capture_sha256": "db3f21a1f56e4d7529503637b3dffadbedf7e5266bc8f4ed86c3f7aa8af13f39",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 40071,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-evaluate",
+      "requested_url": "https://huggingface.co/docs/evaluate/en/a_quick_tour",
+      "capture_origin": "https://huggingface.co/docs/evaluate/en/a_quick_tour",
+      "retrieved_at": "2026-11-05T09:09:38.575257+00:00",
+      "capture_sha256": "059e27215c3c7f9a9ec7ffefc82389eb4863ff2dc2f14a4e40d5d837696e5cce",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 18666,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-example",
+      "requested_url": "https://huggingface.co/learn/cookbook/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format",
+      "capture_origin": "https://huggingface.co/learn/cookbook/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format",
+      "retrieved_at": "2026-11-05T08:49:59.067100+00:00",
+      "capture_sha256": "1bc1aa965f5badf6c41e774916b019749c7b2c58cc5204d43b78ed2fd7e3ea7c",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 19141,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-grpo",
+      "requested_url": "https://huggingface.co/docs/trl/en/grpo_trainer",
+      "capture_origin": "https://huggingface.co/docs/trl/en/grpo_trainer",
+      "retrieved_at": "2026-11-05T08:49:56.544256+00:00",
+      "capture_sha256": "4e956855aa0f65b07cc0e636c493b363aac1ae019d3367da0803e05ad0f3cb9e",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 104247,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-inference",
+      "requested_url": "https://huggingface.co/docs/peft/en/developer_guides/peft_inference",
+      "capture_origin": "https://huggingface.co/docs/peft/en/developer_guides/peft_inference",
+      "retrieved_at": "2026-11-05T09:09:37.639292+00:00",
+      "capture_sha256": "f079415327e9c3250b4d9beea8c3cb8f819acc8ab2ca83886772e030f1019964",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 177,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-lora",
+      "requested_url": "https://huggingface.co/docs/peft/en/developer_guides/lora",
+      "capture_origin": "https://huggingface.co/docs/peft/v0.21.0/package_reference/lora",
+      "retrieved_at": "2026-11-05T08:49:59.261035+00:00",
+      "capture_sha256": "912954c4700aa92e57636edaaf549306f5a0b5af64310a902f95a45f30d63c28",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 91615,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-multigpu",
+      "requested_url": "https://huggingface.co/docs/accelerate/en/concept_guides/fsdp_and_deepspeed",
+      "capture_origin": "https://huggingface.co/docs/accelerate/en/concept_guides/fsdp_and_deepspeed",
+      "retrieved_at": "2026-11-05T09:09:38.328569+00:00",
+      "capture_sha256": "55dfefbde249fcb374fb7045135706f4322f7fc46c8e69e6a2e510bd2fda30ab",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 11401,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-peft",
+      "requested_url": "https://huggingface.co/docs/peft/en/index",
+      "capture_origin": "https://huggingface.co/docs/peft/en/index",
+      "retrieved_at": "2026-11-05T08:49:55.910388+00:00",
+      "capture_sha256": "b18f4da0788ac5a692b1394ecca4ca7f54192b400a8a27a43ebe51d731d26387",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 3286,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-quant",
+      "requested_url": "https://huggingface.co/docs/peft/en/developer_guides/quantization",
+      "capture_origin": "https://huggingface.co/docs/peft/en/developer_guides/quantization",
+      "retrieved_at": "2026-11-05T08:49:56.811314+00:00",
+      "capture_sha256": "b8a0f8ef9c8fb77e2877199ae929ee83379d9d04f7b210f35ef102a11c1ebd08",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 17365,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-resume",
+      "requested_url": "https://huggingface.co/docs/accelerate/en/usage_guides/checkpoint",
+      "capture_origin": "https://huggingface.co/docs/accelerate/en/usage_guides/checkpoint",
+      "retrieved_at": "2026-11-05T09:15:34.945468+00:00",
+      "capture_sha256": "f355474d788ecc94c6bb04e7724f7709d3ad4d4922e9153e5609828515a49cc6",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 5691,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-reward",
+      "requested_url": "https://huggingface.co/docs/trl/en/reward_trainer",
+      "capture_origin": "https://huggingface.co/docs/trl/en/reward_trainer",
+      "retrieved_at": "2026-11-05T08:49:56.070025+00:00",
+      "capture_sha256": "53faa42c978444129704e01195d1f674f455f0bf8617a92617d569fa5e4f62f3",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 27503,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-sft",
+      "requested_url": "https://huggingface.co/docs/trl/en/sft_trainer",
+      "capture_origin": "https://huggingface.co/docs/trl/en/sft_trainer",
+      "retrieved_at": "2026-11-05T08:49:55.276726+00:00",
+      "capture_sha256": "4172dc930e0e7c485c5019eab82d885560292a3b920af194c95a023f1418c731",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 37261,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-trainer",
+      "requested_url": "https://huggingface.co/docs/transformers/en/trainer",
+      "capture_origin": "https://huggingface.co/docs/transformers/en/trainer",
+      "retrieved_at": "2026-11-05T08:49:58.529491+00:00",
+      "capture_sha256": "3f8ea81bd86bdcdd1f2b3615d05a3b36d1da05a3a90661eec6f068738a1c37f3",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 3074,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-training",
+      "requested_url": "https://huggingface.co/docs/transformers/en/training",
+      "capture_origin": "https://huggingface.co/docs/transformers/en/training",
+      "retrieved_at": "2026-11-05T09:09:38.437194+00:00",
+      "capture_sha256": "bb19cfae0d9694fd4b40e89ceaabf329bee31ec1218bb81ac48041221934db53",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 6946,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.243198+00:00"
+}

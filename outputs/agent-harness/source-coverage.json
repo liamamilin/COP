@@ -1,0 +1,147 @@
+{
+  "topic": "agent-harness",
+  "generated_at": "2026-11-05T10:06:29.304159+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-async",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md",
+      "retrieved_at": "2026-11-05T08:39:06.600727+00:00",
+      "capture_sha256": "b669008e1a73a565949dd8dc8f394adf96c5b5345c0a290967c28f4624adcdd0",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 23639,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-backends",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/backends.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/backends.md",
+      "retrieved_at": "2026-11-05T08:36:35.847104+00:00",
+      "capture_sha256": "16afd42c5121d29bce0eb2ee26f61268921955881cd6d2af21fe19a7d86e0bc6",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 53831,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-context",
+      "requested_url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "capture_origin": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "retrieved_at": "2026-11-05T08:39:04.861027+00:00",
+      "capture_sha256": "aa7aee383674c5187781d6e95833960e39972e7f67b1d2d58a0aa544c034b259",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 21773,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-deep",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/overview.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/overview.md",
+      "retrieved_at": "2026-11-05T08:36:34.853800+00:00",
+      "capture_sha256": "05ccbb112e01da8358714c8f3272d7b21a7d92eba9a4c5b901b5d00f9ad3e1c5",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 30522,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-harness-design",
+      "requested_url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "capture_origin": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "retrieved_at": "2026-11-05T08:39:06.144927+00:00",
+      "capture_sha256": "ea05a7ecba38c818efbb2b2d75ba320e598fca05a4c9279f7079447d13ae552f",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 33644,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-human",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md",
+      "retrieved_at": "2026-11-05T08:36:35.874856+00:00",
+      "capture_sha256": "d6fa9981eb6be3dc8c6377a2ca61077a8bc35d4bb5e11724e3969010a2db432d",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 35271,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-long",
+      "requested_url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "capture_origin": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "retrieved_at": "2026-11-05T08:39:05.275447+00:00",
+      "capture_sha256": "78aa4966f840162c2eef60cfe9c4d04213f56e75d7d0a516cb47327c2f952cb0",
+      "content_type": "text/html; charset=utf-8",
+      "captured_text_characters": 13757,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-mcp",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/mcp.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/langchain/mcp.md",
+      "retrieved_at": "2026-11-05T08:39:05.670170+00:00",
+      "capture_sha256": "d6af4351b236673d7e02d445d439c720f72d5ae831315bd52e7b88d9275a03dd",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 7138,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-memory",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/long-term-memory.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/memory.md",
+      "retrieved_at": "2026-11-05T08:39:05.674102+00:00",
+      "capture_sha256": "f9ec0c8ce57fee8bc13a265393d4b8740b33056e4e405a7eba3adb70df57d6c4",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 25841,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-sandbox",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md",
+      "retrieved_at": "2026-11-05T08:36:36.187113+00:00",
+      "capture_sha256": "f28298d796b78fd7814e21b503ea72909192dd968958c360dc46b2965c9c7c9f",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 59638,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-skills",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/skills.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/skills.md",
+      "retrieved_at": "2026-11-05T08:39:04.766007+00:00",
+      "capture_sha256": "81760adc9632811793a55bdb65e9852ef3b1f02030a3803af10289cb6cb650d7",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 92528,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-subagents",
+      "requested_url": "https://docs.langchain.com/oss/python/deepagents/subagents.md",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/subagents.md",
+      "retrieved_at": "2026-11-05T08:36:36.232496+00:00",
+      "capture_sha256": "56e56b250a51d9c5a220a3d15326d338d7c79439f5b7a40004a9a0fad5cd8612",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 105087,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-long",
+      "requested_url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-context",
+      "requested_url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-harness-design",
+      "requested_url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:00.933221+00:00"
+}

@@ -1,0 +1,847 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "changedetection.io",
+    "scope": "开源 changedetection.io 及官方托管路线的网页、文件和 JSON 变化监控；区分核心比较、浏览器取回、消息服务与可选 LLM。"
+  },
+  "sources": [
+    {
+      "id": "s-readme",
+      "title": "Detect Website Changes Automatically — Monitor Web Page Changes in Real Time",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md",
+      "evidence": "examine by word\n[…]\nsecurity advisories\n[…]\ncareers page\n[…]\nPDF file changes\n[…]\nRSS feeds",
+      "location": "Easily see what changed, examine by word, line, or individual character.；取回 Markdown第 45–45 行；Example use cases；取回 Markdown第 87–87 行；Example use cases；取回 Markdown第 103–103 行；Example use cases；取回 Markdown第 85–85 行；Example use cases；取回 Markdown第 99–99 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:49.418200+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/README.md",
+      "capture_sha256": "c803db49b4b0fb2519798b26a863cdde4b7a9bf375f77d64e164913f80dae043",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-01",
+          "location": "Easily see what changed, examine by word, line, or individual character.；取回 Markdown第 45–45 行",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L45-L45"
+        },
+        {
+          "possibility_id": "change-03",
+          "location": "Example use cases；取回 Markdown第 87–87 行",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L87-L87"
+        },
+        {
+          "possibility_id": "change-04",
+          "location": "Example use cases；取回 Markdown第 103–103 行",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L103-L103"
+        },
+        {
+          "possibility_id": "change-05",
+          "location": "Example use cases；取回 Markdown第 85–85 行",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L85-L85"
+        },
+        {
+          "possibility_id": "change-19",
+          "location": "Example use cases；取回 Markdown第 99–99 行",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L99-L99"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/README.md",
+      "git_commit": "38e0668c1cd6b773b9f9efb50c17281974d0ba21",
+      "git_repository": "dgtlmoon/changedetection.io",
+      "pinned_raw_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md",
+      "pinned_content_sha256": "c803db49b4b0fb2519798b26a863cdde4b7a9bf375f77d64e164913f80dae043",
+      "pinned_verified_at": "2026-11-05T10:35:54.610Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-home",
+      "title": "Web Page Change Detection & Monitoring – Instant Alerts | changedetection.io",
+      "url": "https://changedetection.io/",
+      "evidence": "Re-stock alerts and price tracking",
+      "location": "页面正文；本次 HTML 提取正文第 42–42 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:47:15.076823+00:00",
+      "capture_origin": "https://changedetection.io/",
+      "capture_sha256": "c9e3116808b6cb470f95ce22401fb5937f9bc73188fc7c1495d32a0fd73024da",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-02",
+          "location": "页面正文；本次 HTML 提取正文第 42–42 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/"
+        }
+      ]
+    },
+    {
+      "id": "s-selectors",
+      "title": "changedetection.io Wiki · CSS Selector help",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md",
+      "evidence": "Select/extract just the HREF",
+      "location": "Select/extract just the HREF from `<A>` tag using xpath；取回 Markdown第 30–30 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:31.368005+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md",
+      "capture_sha256": "61bb20fa6e8cfb58b5954e62d00f5dd7e7d86ba1aecf2d9abc651f5a0130525d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-06",
+          "location": "Select/extract just the HREF from `<A>` tag using xpath；取回 Markdown第 30–30 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md"
+        }
+      ]
+    },
+    {
+      "id": "s-keywords",
+      "title": "How To Monitor Keywords On Any Website | changedetection.io",
+      "url": "https://changedetection.io/tutorial/how-monitor-keywords-any-website",
+      "evidence": "get notifications of specific keywords",
+      "location": "How to Use Changedetection.io to Monitor Specific Keywords；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:33.263899+00:00",
+      "capture_origin": "https://changedetection.io/tutorial/how-monitor-keywords-any-website",
+      "capture_sha256": "16cfb9720226374b92f5bfb27b3e083fb0df0390814db8f6c212ba8288ca7637",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-07",
+          "location": "How to Use Changedetection.io to Monitor Specific Keywords；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/tutorial/how-monitor-keywords-any-website"
+        }
+      ]
+    },
+    {
+      "id": "s-conditions",
+      "title": "Conditional actions on web page changes! | changedetection.io",
+      "url": "https://changedetection.io/tutorial/conditional-actions-web-page-changes",
+      "evidence": "less than -20c or greater than +38c",
+      "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:31.877933+00:00",
+      "capture_origin": "https://changedetection.io/tutorial/conditional-actions-web-page-changes",
+      "capture_sha256": "9c3b11fed4b1ec6d5ba2d71ac7b876c81ac9109bf296add11e62aba14f2db3c1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-08",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/tutorial/conditional-actions-web-page-changes"
+        }
+      ]
+    },
+    {
+      "id": "s-steps",
+      "title": "changedetection.io Wiki · Browser Steps",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md",
+      "evidence": "steps are replayed each time",
+      "location": "页面概述；取回 Markdown第 9–9 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:29.845944+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md",
+      "capture_sha256": "3e30cc44d73446a5aa2f3ce630f95ce560f3abdb04aac273c2132eabbc10d303",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-09",
+          "location": "页面概述；取回 Markdown第 9–9 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md"
+        }
+      ]
+    },
+    {
+      "id": "s-json",
+      "title": "changedetection.io Wiki · JSON Selector Filter help",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md",
+      "evidence": "particular part of a JSON feed changes",
+      "location": "页面概述；取回 Markdown第 1–1 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:29.866505+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md",
+      "capture_sha256": "f9eb8ca63ad9af05d2909c241b401a01819f26ae1c1c5a10ed81753c1e2e13f4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-10",
+          "location": "页面概述；取回 Markdown第 1–1 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md"
+        }
+      ]
+    },
+    {
+      "id": "s-html",
+      "title": "changedetection.io Wiki · Detecting changes in HTML page sources",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md",
+      "evidence": "check when campuspoint.de adds new models",
+      "location": "Approach；取回 Markdown第 10–10 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:31.365795+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md",
+      "capture_sha256": "0d25052fd1016b4f4a94131701c7c5693a1a7a8ddb920d5bfeb187f789184b52",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-11",
+          "location": "Approach；取回 Markdown第 10–10 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md"
+        }
+      ]
+    },
+    {
+      "id": "s-images",
+      "title": "changedetection.io Wiki · Detecting changes in images",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md",
+      "evidence": "detect when the HTML now references a different image source",
+      "location": "页面概述；取回 Markdown第 6–6 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:29.839520+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md",
+      "capture_sha256": "9a498023df3254993b9818048e8e6d81b14f12802ad9cc44de89db32d022a6f1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-12",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md"
+        }
+      ]
+    },
+    {
+      "id": "s-notifications",
+      "title": "changedetection.io Wiki · Notification configuration notes",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md",
+      "evidence": "Discord and Telegram notifications\n[…]\narbitrary HTTP POST notifications",
+      "location": "ARMv7 (RaspberryPi 3 etc)；取回 Markdown第 5–5 行；POST/POSTS；取回 Markdown第 37–37 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:29.975005+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md",
+      "capture_sha256": "cc9ad8be7d0b7762bb1baf043f14e0046344765a2987fd94e008c9e150baf27f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-13",
+          "location": "ARMv7 (RaspberryPi 3 etc)；取回 Markdown第 5–5 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md"
+        },
+        {
+          "possibility_id": "change-14",
+          "location": "POST/POSTS；取回 Markdown第 37–37 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md"
+        }
+      ]
+    },
+    {
+      "id": "s-ai",
+      "title": "AI Summary and Change Detection - Bring your own key! | changedetection.io",
+      "url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key",
+      "evidence": "short plain-English description of what changed\n[…]\nAI checks every change against that",
+      "location": "AI Change Summary；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）；AI Intent；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:31.964687+00:00",
+      "capture_origin": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key",
+      "capture_sha256": "6a5697c910222cc881d0a2e6abf6802212b7f42a858d60c552152b58f94a22aa",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-15",
+          "location": "AI Change Summary；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key"
+        },
+        {
+          "possibility_id": "change-16",
+          "location": "AI Intent；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key"
+        }
+      ]
+    },
+    {
+      "id": "s-sharing",
+      "title": "changedetection.io Wiki · Sharing a Watch",
+      "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md",
+      "evidence": "all the metadata associated",
+      "location": "页面概述；取回 Markdown第 3–3 行",
+      "source_class": "maintainer_wiki",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:48:31.754190+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md",
+      "capture_sha256": "c9c673f2c3780db01aa4a3ac8b372d3e041eddf7aa6ee8c1258e256950ff0285",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-17",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md"
+        }
+      ]
+    },
+    {
+      "id": "s-api",
+      "title": "changedetection.io REST API reference",
+      "url": "https://changedetection.io/docs/api_v1/index.html",
+      "evidence": "Create a new watch",
+      "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:39:51.766240+00:00",
+      "capture_origin": "https://changedetection.io/docs/api_v1/index.html",
+      "capture_sha256": "b4c14bfb5e09863cbf4cf3ee0e8e08f0302cbeba2ef26a87fa5dccc8852d4f2c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "change-18",
+          "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://changedetection.io/docs/api_v1/index.html"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "updates",
+      "name": "跟进关键内容更新"
+    },
+    {
+      "id": "relevance",
+      "name": "筛选真正关心的变化"
+    },
+    {
+      "id": "access",
+      "name": "处理不同页面和数据来源"
+    },
+    {
+      "id": "integration",
+      "name": "协作、通知和后续处理"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "change-01",
+      "title": "持续比较网页内容并查看具体改动",
+      "result": "定期取回网页，保留变化并按词、行或字符检查前后差异。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可取回网页和适当检查间隔；轮询可能遗漏两次检查之间的短暂变化。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "examine by word",
+          "location": "Easily see what changed, examine by word, line, or individual character.；取回 Markdown第 45–45 行",
+          "source_line_start": 45,
+          "source_line_end": 45,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L45-L45"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-02",
+      "title": "收到商品降价或补货提示",
+      "result": "监控商品价格与库存状态，在满足条件时获取通知并查看价格趋势。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "网页结构、地区、登录和抓取方式影响结果；不能保证及时通知、成功购买或始终识别价格。",
+      "source_ids": [
+        "s-home"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-home",
+          "quote": "Re-stock alerts and price tracking",
+          "location": "页面正文；本次 HTML 提取正文第 42–42 行（不是 HTML 源码行号）",
+          "source_line_start": 42,
+          "source_line_end": 42,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-03",
+      "title": "跟进公告、软件发布和规则更新",
+      "result": "监控相关发布页、机构网站或文件，发现新的公告与内容变化。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要自行选择可靠页面；监控通知不能代替订阅官方紧急通报或法律信息核验。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "security advisories",
+          "location": "Example use cases；取回 Markdown第 87–87 行",
+          "source_line_start": 87,
+          "source_line_end": 87,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L87-L87"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-04",
+      "title": "发现招聘页面的新机会",
+      "result": "监控公司职位页或职位列表，在目标内容出现或更新时提醒。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要页面可访问、正确筛选和合适关键词；不能保证覆盖所有职位。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "careers page",
+          "location": "Example use cases；取回 Markdown第 103–103 行",
+          "source_line_start": 103,
+          "source_line_end": 103,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L103-L103"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-05",
+      "title": "检查在线 PDF 的内容变化",
+      "result": "跟踪 PDF 的文字或文件特征，判断发布文件是否更新。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "文本变化、大小或校验和监测各有边界；不是所有扫描 PDF 的视觉差异检测。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "PDF file changes",
+          "location": "Example use cases；取回 Markdown第 85–85 行",
+          "source_line_start": 85,
+          "source_line_end": 85,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L85-L85"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-06",
+      "title": "减少无关区域变化造成的噪声",
+      "result": "使用 CSS / XPath 或可视选择器只监控目标区域。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "依赖网页结构与选择器维护；元素消失、动态布局或空选择结果需排查。",
+      "source_ids": [
+        "s-selectors"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-selectors",
+          "quote": "Select/extract just the HREF",
+          "location": "Select/extract just the HREF from `<A>` tag using xpath；取回 Markdown第 30–30 行",
+          "source_line_start": 30,
+          "source_line_end": 30,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/CSS-Selector-help.md"
+        }
+      ],
+      "group_ids": [
+        "relevance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-07",
+      "title": "在目标词出现时获得提示",
+      "result": "为新闻、报告等页面设置关键词触发，关注指定实体或事件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要页面发生变化且命中相应规则；旧有词或未取回内容不一定触发。",
+      "source_ids": [
+        "s-keywords"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-keywords",
+          "quote": "get notifications of specific keywords",
+          "location": "How to Use Changedetection.io to Monitor Specific Keywords；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/tutorial/how-monitor-keywords-any-website"
+        }
+      ],
+      "group_ids": [
+        "relevance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-08",
+      "title": "只在数值或逻辑条件满足时通知",
+      "result": "将抽取值与上下界或包含条件比较，过滤普通变化，例如官方极端温度示例。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要正确抽取目标数字和配置逻辑；这是规则判断，不是预测或安全预警系统。",
+      "source_ids": [
+        "s-conditions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-conditions",
+          "quote": "less than -20c or greater than +38c",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/tutorial/conditional-actions-web-page-changes"
+        }
+      ],
+      "group_ids": [
+        "relevance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-09",
+      "title": "监控登录或交互之后才出现的内容",
+      "result": "通过 Browser Steps 重放登录、搜索或接受提示等动作，再取回目标页。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要连接 Playwright 和可自动化页面；登录状态、双重验证、CAPTCHA 与网站改版可能中断。",
+      "source_ids": [
+        "s-steps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-steps",
+          "quote": "steps are replayed each time",
+          "location": "页面概述；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Browser-Steps.md"
+        }
+      ],
+      "group_ids": [
+        "access"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-10",
+      "title": "只监测 JSON 接口中相关字段",
+      "result": "用 JSONPath 或 jq 抽取需要的数据，对特定字段或记录集变化提醒。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "JSONPath 语法与其他库可能不同；复杂 jq 需独立依赖，系统与平台支持要核对。",
+      "source_ids": [
+        "s-json"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-json",
+          "quote": "particular part of a JSON feed changes",
+          "location": "页面概述；取回 Markdown第 1–1 行",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/JSON-Selector-Filter-help.md"
+        }
+      ],
+      "group_ids": [
+        "access"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-11",
+      "title": "发现藏在 HTML 源码中的库存或元数据变化",
+      "result": "监测源码内嵌 JSON 或指定字段，例如官方示例中的商品数量。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要选择源码取回和提取规则；源码结构变化会影响结果，引用示例不保证商店当前仍适用。",
+      "source_ids": [
+        "s-html"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-html",
+          "quote": "check when campuspoint.de adds new models",
+          "location": "Approach；取回 Markdown第 10–10 行",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-HTML-page-sources.md"
+        }
+      ],
+      "group_ids": [
+        "access"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-12",
+      "title": "在页面引用另一张图片时提醒",
+      "result": "比较 HTML 中图片地址变化，例如月历图片从一个文件名换成另一个。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这是图片引用的文本变化，不是图片像素相似度检测；同一 URL 图像内容改变未必可见。",
+      "source_ids": [
+        "s-images"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-images",
+          "quote": "detect when the HTML now references a different image source",
+          "location": "页面概述；取回 Markdown第 6–6 行",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Detecting-changes-in-images.md"
+        }
+      ],
+      "group_ids": [
+        "access"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-13",
+      "title": "把变化通知发送到常用消息渠道",
+      "result": "配置 Apprise 支持的邮件、聊天等通知目标，收到变化内容和链接。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要外部服务凭据与目标配置；长度、设备和服务错误可能导致漏发，不能保证送达。",
+      "source_ids": [
+        "s-notifications"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-notifications",
+          "quote": "Discord and Telegram notifications",
+          "location": "ARMv7 (RaspberryPi 3 etc)；取回 Markdown第 5–5 行",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md"
+        }
+      ],
+      "group_ids": [
+        "integration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-14",
+      "title": "在发现变化后触发自定义系统",
+      "result": "使用 HTTP POST 通知把结果发往 webhook 或后续业务流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自建接收端及相应鉴权；外部业务效果与幂等、重试另行实现。",
+      "source_ids": [
+        "s-notifications"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-notifications",
+          "quote": "arbitrary HTTP POST notifications",
+          "location": "POST/POSTS；取回 Markdown第 37–37 行",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Notification-configuration-notes.md"
+        }
+      ],
+      "group_ids": [
+        "integration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-15",
+      "title": "把原始差异变成简明变化摘要",
+      "result": "连接自己的模型服务，让通知附上自然语言变化说明。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "功能入口在软件中，但需要 LLM 后端和可能的费用；摘要可能遗漏或误解，应可回看原始差异。",
+      "source_ids": [
+        "s-ai"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ai",
+          "quote": "short plain-English description of what changed",
+          "location": "AI Change Summary；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key"
+        }
+      ],
+      "group_ids": [
+        "relevance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-16",
+      "title": "让变化提醒匹配自然语言关注意图",
+      "result": "描述自己关心的变化，由模型对检测到的差异作通知筛选。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要独立模型与 API 配置；模型筛选可能误报或漏报，不把“zero noise”宣传当成保证。",
+      "source_ids": [
+        "s-ai"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ai",
+          "quote": "AI checks every change against that",
+          "location": "AI Intent；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/tutorial/ai-summary-and-change-detection-bring-your-own-key"
+        }
+      ],
+      "group_ids": [
+        "relevance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-17",
+      "title": "与他人复用已经调好的监控规则",
+      "result": "生成 shared watch 链接，让另一实例导入 URL、过滤和触发配置。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需评估链接暴露的信息和实例可访问性，导入后仍需配置私人凭据及通知目标。",
+      "source_ids": [
+        "s-sharing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sharing",
+          "quote": "all the metadata associated",
+          "location": "页面概述；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://raw.githubusercontent.com/wiki/dgtlmoon/changedetection.io/Sharing-a-Watch.md"
+        }
+      ],
+      "group_ids": [
+        "integration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-18",
+      "title": "从程序批量管理监控与读取历史",
+      "result": "通过 REST API 创建、更新监控并读取快照或变化，接入自有系统。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要开发调用方、正确 URL 和 API key；版本契约与授权需核查。",
+      "source_ids": [
+        "s-api"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-api",
+          "quote": "Create a new watch",
+          "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text",
+          "url": "https://changedetection.io/docs/api_v1/index.html"
+        }
+      ],
+      "group_ids": [
+        "integration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "change-19",
+      "title": "把网页更新转成订阅源",
+      "result": "根据监控产生的内容变化创建 RSS，以订阅工具跟进。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要实例和订阅客户端；RSS 内容受监控范围、访问与更新节奏限制。",
+      "source_ids": [
+        "s-readme"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readme",
+          "quote": "RSS feeds",
+          "location": "Example use cases；取回 Markdown第 99–99 行",
+          "source_line_start": 99,
+          "source_line_end": 99,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/dgtlmoon/changedetection.io/blob/38e0668c1cd6b773b9f9efb50c17281974d0ba21/README.md#L99-L99"
+        }
+      ],
+      "group_ids": [
+        "updates"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "官方 docs 入口部分返回 403，改读维护者 README、Wiki、API 和教程；Case Studies Wiki 只有 Coming soon，未作为真实成功案例。",
+    "未部署监控或运行定时、登录、通知和模型；没有通知时延、准确率或反爬兼容的实测。",
+    "图片 Wiki 只支持以源码引用变化实现特定监测，不能泛化为像素视觉回归。",
+    "Twitter、网页商店及第三方代理示例年代不同，当前网站规则、凭据和服务维护状态未验证。"
+  ],
+  "generated_at": "2026-11-05T09:58:53.184888+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先从维护者实际列出的监控结果发现，再读关键词、极端温度、HTML 商品数量等完整教程，补查 JSON、通知和 AI。",
+      "归一化：将各平台的通知渠道合为一个结果，价格和库存合并为购物监控；源码数据与图片引用保留清楚边界。",
+      "补漏发现当前新增的自带模型 Key 的 AI 摘要与意图筛选；不把宣传的零噪声和即时检测当作保证。",
+      "观察到 Case Studies 页为空、旧教程网址失效；改沿官方 Wiki 和当前教程导航追溯，不以首页列举的用途冒充独立用户验证。"
+    ],
+    "source_classes": [
+      "maintainer_wiki",
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 17,
+    "evidence_revision_at": "2026-11-05T10:56:01.060945+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

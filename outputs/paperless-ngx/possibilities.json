@@ -1,0 +1,1091 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Paperless-ngx",
+    "scope": "以研究时实际取回的官方主干文档的固定提交快照及已合入功能 PR为范围；涵盖个人文档收集、OCR、归档、检索与自动化，区分内置非 LLM、可选模型和外部解析服务。"
+  },
+  "sources": [
+    {
+      "id": "s-index",
+      "title": "Paperless-ngx · 官方 主干快照（固定提交）功能总览",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md",
+      "evidence": "adding searchable and selectable text\n[…]\nPDF/A\n[…]\ntags, correspondents, types\n[…]\nFull text search",
+      "location": "Features；取回 Markdown第 33–33 行；Features；取回 Markdown第 36–36 行；Features；取回 Markdown第 31–31 行；Features；取回 Markdown第 50–50 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.477115+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/index.md",
+      "capture_sha256": "fb1e9e42b3d4b0b8abed13e4cbabf5b0a7076820110a95bdb38c4e9444de8f63",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-01",
+          "location": "Features；取回 Markdown第 33–33 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L33-L33"
+        },
+        {
+          "possibility_id": "paper-02",
+          "location": "Features；取回 Markdown第 36–36 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L36-L36"
+        },
+        {
+          "possibility_id": "paper-03",
+          "location": "Features；取回 Markdown第 31–31 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L31-L31"
+        },
+        {
+          "possibility_id": "paper-04",
+          "location": "Features；取回 Markdown第 50–50 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L50-L50"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/index.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md",
+      "pinned_content_sha256": "fb1e9e42b3d4b0b8abed13e4cbabf5b0a7076820110a95bdb38c4e9444de8f63",
+      "pinned_verified_at": "2026-11-05T10:35:54.470Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-usage",
+      "title": "Paperless-ngx · Usage（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md",
+      "evidence": "Incoming Email\n[…]\nShare Links\n[…]\nDefault permissions\n[…]\nCustom Fields\n[…]\nPDF Actions\n[…]\nDocument Trash",
+      "location": "Incoming Email；取回 Markdown第 195–195 行；Share Links；取回 Markdown第 353–353 行；Default permissions；取回 Markdown第 391–391 行；Custom Fields；取回 Markdown第 765–765 行；PDF Actions；取回 Markdown第 798–798 行；Document Trash；取回 Markdown第 819–819 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.941972+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/usage.md",
+      "capture_sha256": "39cc898bfac49abeb735d3a8b27c96f32e9a6fe86c28857283d91871c29b1aba",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-06",
+          "location": "Incoming Email；取回 Markdown第 195–195 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L195-L195"
+        },
+        {
+          "possibility_id": "paper-08",
+          "location": "Share Links；取回 Markdown第 353–353 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L353-L353"
+        },
+        {
+          "possibility_id": "paper-09",
+          "location": "Default permissions；取回 Markdown第 391–391 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L391-L391"
+        },
+        {
+          "possibility_id": "paper-10",
+          "location": "Custom Fields；取回 Markdown第 765–765 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L765-L765"
+        },
+        {
+          "possibility_id": "paper-11",
+          "location": "PDF Actions；取回 Markdown第 798–798 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L798-L798"
+        },
+        {
+          "possibility_id": "paper-25",
+          "location": "Document Trash；取回 Markdown第 819–819 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L819-L819"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/usage.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md",
+      "pinned_content_sha256": "39cc898bfac49abeb735d3a8b27c96f32e9a6fe86c28857283d91871c29b1aba",
+      "pinned_verified_at": "2026-11-05T10:35:55.145Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-advanced",
+      "title": "Paperless-ngx · Advanced Topics（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md",
+      "evidence": "Automatic matching\n[…]\nAI-assisted suggestions\n[…]\nsimilar documents\n[…]\nDocument chat\n[…]\nDocument Splitting\n[…]\ndouble-sided documents",
+      "location": "Automatic matching；取回 Markdown第 55–55 行；AI features；取回 Markdown第 103–103 行；The LLM index (RAG) and similar documents；取回 Markdown第 150–150 行；Document chat；取回 Markdown第 175–175 行；Document Splitting；取回 Markdown第 959–959 行；Automatic collation of double-sided documents；取回 Markdown第 1026–1026 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.918785+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/advanced_usage.md",
+      "capture_sha256": "cc0f908f780a2c4957771027dd8e1111af713b8be6903ed568467ad6ba47fe18",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-12",
+          "location": "Automatic matching；取回 Markdown第 55–55 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L55-L55"
+        },
+        {
+          "possibility_id": "paper-13",
+          "location": "AI features；取回 Markdown第 103–103 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L103-L103"
+        },
+        {
+          "possibility_id": "paper-14",
+          "location": "The LLM index (RAG) and similar documents；取回 Markdown第 150–150 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L150-L150"
+        },
+        {
+          "possibility_id": "paper-15",
+          "location": "Document chat；取回 Markdown第 175–175 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L175-L175"
+        },
+        {
+          "possibility_id": "paper-16",
+          "location": "Document Splitting；取回 Markdown第 959–959 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L959-L959"
+        },
+        {
+          "possibility_id": "paper-17",
+          "location": "Automatic collation of double-sided documents；取回 Markdown第 1026–1026 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L1026-L1026"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/advanced_usage.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md",
+      "pinned_content_sha256": "cc0f908f780a2c4957771027dd8e1111af713b8be6903ed568467ad6ba47fe18",
+      "pinned_verified_at": "2026-11-05T10:35:54.999Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-api",
+      "title": "Paperless-ngx · REST API（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md",
+      "evidence": "custom field id:value pairs to add\n[…]\nfully-documented REST API",
+      "location": "Documents；取回 Markdown第 327–327 行；REST API；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:49.665194+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/api.md",
+      "capture_sha256": "33ac06d53b1610b7e20b9a9c4c32318cfb1af82c2c5f22cce017ca89ab601bbc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-10",
+          "location": "Documents；取回 Markdown第 327–327 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md#L327-L327"
+        },
+        {
+          "possibility_id": "paper-18",
+          "location": "REST API；取回 Markdown第 3–3 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md#L3-L3"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/api.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md",
+      "pinned_content_sha256": "33ac06d53b1610b7e20b9a9c4c32318cfb1af82c2c5f22cce017ca89ab601bbc",
+      "pinned_verified_at": "2026-11-05T10:35:54.811Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-admin",
+      "title": "Paperless-ngx · Administration（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md",
+      "evidence": "documents, thumbnails, metadata, and database contents",
+      "location": "Making backups；取回 Markdown第 13–14 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:51.443893+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/administration.md",
+      "capture_sha256": "3042701e501e0fdf8253079b15a140fe0844c6cd0eef1c9a94d8c342c5fd8f0b",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-19",
+          "location": "Making backups；取回 Markdown第 13–14 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md#L13-L14"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/administration.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md",
+      "pinned_content_sha256": "3042701e501e0fdf8253079b15a140fe0844c6cd0eef1c9a94d8c342c5fd8f0b",
+      "pinned_verified_at": "2026-11-05T10:35:54.812Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-configuration",
+      "title": "Paperless-ngx · Configuration（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md",
+      "evidence": "Currently only Azure AI is supported\n[…]\narchive serial number\n[…]\nChanges the filenames",
+      "location": "[`PAPERLESS_REMOTE_OCR_ENGINE=<str>`](#PAPERLESS_REMOTE_OCR_ENGINE)；取回 Markdown第 2096–2096 行；[`PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE=<bool>`](#PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE)；取回 Markdown第 1691–1691 行；[`PAPERLESS_FILENAME_FORMAT=<format>`](#PAPERLESS_FILENAME_FORMAT)；取回 Markdown第 404–404 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:51.569098+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/configuration.md",
+      "capture_sha256": "95e1c8b6d455333085c35f5362681adf575f68b75017f416a77821fd6960aa12",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-20",
+          "location": "[`PAPERLESS_REMOTE_OCR_ENGINE=<str>`](#PAPERLESS_REMOTE_OCR_ENGINE)；取回 Markdown第 2096–2096 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L2096-L2096"
+        },
+        {
+          "possibility_id": "paper-21",
+          "location": "[`PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE=<bool>`](#PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE)；取回 Markdown第 1691–1691 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L1691-L1691"
+        },
+        {
+          "possibility_id": "paper-22",
+          "location": "[`PAPERLESS_FILENAME_FORMAT=<format>`](#PAPERLESS_FILENAME_FORMAT)；取回 Markdown第 404–404 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L404-L404"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/configuration.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md",
+      "pinned_content_sha256": "95e1c8b6d455333085c35f5362681adf575f68b75017f416a77821fd6960aa12",
+      "pinned_verified_at": "2026-11-05T10:35:55.342Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-faq",
+      "title": "Paperless-ngx · FAQ（固定提交）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md",
+      "evidence": "never modifies your original documents\n[…]\nOffice documents\n[…]\nduplicate is flagged",
+      "location": "Let's say I want to switch tools in a year. Can I easily move to other systems?；取回 Markdown第 47–47 行；_What file types does paperless-ngx support?_；取回 Markdown第 67–67 行；_Are duplicate documents rejected?_；取回 Markdown第 78–78 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:40:51.456285+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/faq.md",
+      "capture_sha256": "2952a746652e0e2447d2a0719782d1ed9c0464a9959e7641ea08037ac5b5ec91",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-02",
+          "location": "Let's say I want to switch tools in a year. Can I easily move to other systems?；取回 Markdown第 47–47 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L47-L47"
+        },
+        {
+          "possibility_id": "paper-23",
+          "location": "_What file types does paperless-ngx support?_；取回 Markdown第 67–67 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L67-L67"
+        },
+        {
+          "possibility_id": "paper-24",
+          "location": "_Are duplicate documents rejected?_；取回 Markdown第 78–78 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L78-L78"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docs/faq.md",
+      "git_commit": "fc29f3511f427e365a7d6fe19b232c13445b9343",
+      "git_repository": "paperless-ngx/paperless-ngx",
+      "pinned_raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md",
+      "pinned_content_sha256": "2952a746652e0e2447d2a0719782d1ed9c0464a9959e7641ea08037ac5b5ec91",
+      "pinned_verified_at": "2026-11-05T10:35:54.811Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-workflows-pr",
+      "title": "Paperless-ngx · Feature: Workflows（已合入 PR）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/pull/5121",
+      "evidence": "triggered by 3 distinct events\n[…]\nWorkflows can have multiple \"actions\"",
+      "location": "Proposed change；取回 Markdown第 16–16 行；Proposed change；取回 Markdown第 19–19 行",
+      "source_class": "maintainer_merged_feature_pr",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T10:44:04.887Z",
+      "capture_origin": "https://github.com/paperless-ngx/paperless-ngx/pull/5121",
+      "capture_sha256": "4c9143ad5ceed30f836d35af0669251ef63fc4cac1c64e1634cf99ed88ba7525",
+      "hash_basis": "GitHub API body field, UTF-8",
+      "implementation_commit": "3b6ce16f1c3103675efdac1404ec6e361d813ed3",
+      "implementation_url": "https://github.com/paperless-ngx/paperless-ngx/commit/3b6ce16f1c3103675efdac1404ec6e361d813ed3",
+      "merged_at": "2024-01-03T08:19:19Z",
+      "capture_method": "通过 GitHub 连接器取回 PR JSON；摘录为 body 原文；哈希针对 body 的 UTF-8 字节，不是整个 HTTP 响应。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-07",
+          "location": "Proposed change；取回 Markdown第 16–16 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/5121"
+        },
+        {
+          "possibility_id": "paper-07",
+          "location": "Proposed change；取回 Markdown第 19–19 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/5121"
+        }
+      ]
+    },
+    {
+      "id": "s-versions-pr",
+      "title": "Paperless-ngx · Feature: document file versions（已合入 PR）",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/pull/12061",
+      "evidence": "Content travels with the version\n[…]\nUI / API allows adding new versions",
+      "location": "Proposed change；取回 Markdown第 11–11 行；Proposed change；取回 Markdown第 14–14 行",
+      "source_class": "maintainer_merged_feature_pr",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T10:44:04.929Z",
+      "capture_origin": "https://github.com/paperless-ngx/paperless-ngx/pull/12061",
+      "capture_sha256": "5d57bd896dd9af4824b07d865455c3f697890cc7d9f34184749c03c9361d454b",
+      "hash_basis": "GitHub API body field, UTF-8",
+      "implementation_commit": "ceee769e2603568f32113b6943a4dd045f913f8c",
+      "implementation_url": "https://github.com/paperless-ngx/paperless-ngx/commit/ceee769e2603568f32113b6943a4dd045f913f8c",
+      "merged_at": "2026-02-26T16:46:55Z",
+      "capture_method": "通过 GitHub 连接器取回 PR JSON；摘录为 body 原文；哈希针对 body 的 UTF-8 字节，不是整个 HTTP 响应。",
+      "evidence_locations": [
+        {
+          "possibility_id": "paper-05",
+          "location": "Proposed change；取回 Markdown第 11–11 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/12061"
+        },
+        {
+          "possibility_id": "paper-05",
+          "location": "Proposed change；取回 Markdown第 14–14 行",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/12061"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "capture",
+      "name": "收集和识别文档"
+    },
+    {
+      "id": "archive",
+      "name": "整理和保存档案"
+    },
+    {
+      "id": "retrieval",
+      "name": "查找和理解内容"
+    },
+    {
+      "id": "automation",
+      "name": "减少重复整理工作"
+    },
+    {
+      "id": "collaboration",
+      "name": "共享与访问协作"
+    },
+    {
+      "id": "maintenance",
+      "name": "集成与迁移维护"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "paper-01",
+      "title": "把扫描件变成能搜索和选中文字的文档",
+      "result": "使用 OCR 提取扫描图像中的文字，为检索和后续处理提供文本。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Tesseract 与相应语言数据，清晰度和版面影响结果；识别后仍需检查。",
+      "source_ids": [
+        "s-index"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-index",
+          "quote": "adding searchable and selectable text",
+          "location": "Features；取回 Markdown第 33–33 行",
+          "source_line_start": 33,
+          "source_line_end": 33,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L33-L33"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-02",
+      "title": "保留原件并建立长期归档副本",
+      "result": "保留原始文件，同时生成适合归档的 PDF/A 副本。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "受输入格式、解析和归档配置影响；不等于法律效力或无限期保存保证。",
+      "source_ids": [
+        "s-index",
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-index",
+          "quote": "PDF/A",
+          "location": "Features；取回 Markdown第 36–36 行",
+          "source_line_start": 36,
+          "source_line_end": 36,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L36-L36"
+        },
+        {
+          "source_id": "s-faq",
+          "quote": "never modifies your original documents",
+          "location": "Let's say I want to switch tools in a year. Can I easily move to other systems?；取回 Markdown第 47–47 行",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L47-L47"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-03",
+      "title": "按来源和文档用途建立个人档案库",
+      "result": "用标签、往来方和文档类型整理文件，便于按真实业务线索定位。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要设计适合自己的元数据；自动建议不能代替校对。",
+      "source_ids": [
+        "s-index"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-index",
+          "quote": "tags, correspondents, types",
+          "location": "Features；取回 Markdown第 31–31 行",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L31-L31"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-04",
+      "title": "在文档内容中检索所需信息",
+      "result": "用全文查询、相关度、匹配高亮等找到归档资料。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "文本必须成功提取并索引；检索结果取决于 OCR、语言与查询。",
+      "source_ids": [
+        "s-index"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-index",
+          "quote": "Full text search",
+          "location": "Features；取回 Markdown第 50–50 行",
+          "source_line_start": 50,
+          "source_line_end": 50,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/index.md#L50-L50"
+        }
+      ],
+      "group_ids": [
+        "retrieval"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-05",
+      "title": "在单一条目下管理文件的多个版本",
+      "result": "把文件修订保留为同一文档的版本历史，共享根条目的元数据。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "主干文档包含该能力；版本主要跟踪文件及文本，不是每一项元数据的完整版本控制。",
+      "source_ids": [
+        "s-versions-pr"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-versions-pr",
+          "quote": "Content travels with the version",
+          "location": "Proposed change；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/12061"
+        },
+        {
+          "source_id": "s-versions-pr",
+          "quote": "UI / API allows adding new versions",
+          "location": "Proposed change；取回 Markdown第 14–14 行",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/12061"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": [],
+      "evidence_note": "合入的功能 PR 说明版本保存独立内容并允许新增版本；当前固定文档说明元数据仍属于根文档。"
+    },
+    {
+      "id": "paper-06",
+      "title": "自动从邮件收集附件文档",
+      "result": "根据邮件账户和规则把附件送入文档消费流程。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要邮件访问、规则和可用认证；邮箱副作用如标记或删除需明确配置。",
+      "source_ids": [
+        "s-usage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "Incoming Email",
+          "location": "Incoming Email；取回 Markdown第 195–195 行",
+          "source_line_start": 195,
+          "source_line_end": 195,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L195-L195"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-07",
+      "title": "按事件自动分配元数据和后续动作",
+      "result": "在文档消费、添加或更新时，按规则触发标签、类型或权限等整理动作，减少重复处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要匹配触发条件与权限；外部 webhook、邮件或模型调用还需要各自服务。",
+      "source_ids": [
+        "s-workflows-pr"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-workflows-pr",
+          "quote": "triggered by 3 distinct events",
+          "location": "Proposed change；取回 Markdown第 16–16 行",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/5121"
+        },
+        {
+          "source_id": "s-workflows-pr",
+          "quote": "Workflows can have multiple \"actions\"",
+          "location": "Proposed change；取回 Markdown第 19–19 行",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/pull/5121"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": [],
+      "evidence_note": "引用已合入的功能 PR 说明事件与动作机制；外部通知与 webhook 不是本条结果的确认范围。"
+    },
+    {
+      "id": "paper-08",
+      "title": "通过有期限的链接分享文件",
+      "result": "创建单文档或多文档分享链接，让有链接的人访问相应下载内容。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "链接持有者可访问；需设置合适期限和撤销策略，不能把公开链接当成身份权限隔离。",
+      "source_ids": [
+        "s-usage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "Share Links",
+          "location": "Share Links；取回 Markdown第 353–353 行",
+          "source_line_start": 353,
+          "source_line_end": 353,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L353-L353"
+        }
+      ],
+      "group_ids": [
+        "collaboration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-09",
+      "title": "为不同用户控制文档可见性和编辑权",
+      "result": "结合全局与对象权限安排用户、组和文档的访问。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需正确设置 owner、view / edit 与默认权限；超级用户等特殊角色需单独理解。",
+      "source_ids": [
+        "s-usage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "Default permissions",
+          "location": "Default permissions；取回 Markdown第 391–391 行",
+          "source_line_start": 391,
+          "source_line_end": 391,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L391-L391"
+        }
+      ],
+      "group_ids": [
+        "collaboration"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-10",
+      "title": "记录发票号、付款日期等业务字段",
+      "result": "为文档附加自定义类型字段，保存软件默认元数据之外的信息。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需定义字段类型和录入／导入规则，系统不会自动保证金额和日期准确。",
+      "source_ids": [
+        "s-usage",
+        "s-api"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "Custom Fields",
+          "location": "Custom Fields；取回 Markdown第 765–765 行",
+          "source_line_start": 765,
+          "source_line_end": 765,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L765-L765"
+        },
+        {
+          "source_id": "s-api",
+          "quote": "custom field id:value pairs to add",
+          "location": "Documents；取回 Markdown第 327–327 行",
+          "source_line_start": 327,
+          "source_line_end": 327,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md#L327-L327"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": [],
+      "evidence_note": "Usage 的自定义字段章节举例发票号和付款日期；API 的 bulk_edit 说明将字段 ID 与值添加到文档的操作。"
+    },
+    {
+      "id": "paper-11",
+      "title": "在文档界面整理 PDF 页面",
+      "result": "合并或拆分 PDF、旋转、删除和重新排列页面，得到合适归档文件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "仅适用支持的 PDF 操作；部分修改会改变归档文件，需保留原件并检查页序。",
+      "source_ids": [
+        "s-usage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "PDF Actions",
+          "location": "PDF Actions；取回 Markdown第 798–798 行",
+          "source_line_start": 798,
+          "source_line_end": 798,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L798-L798"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-12",
+      "title": "从既有标注学习自动归类文档",
+      "result": "利用 Auto 匹配从已标注资料学习标签、往来方、类型和存储路径建议。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这是内置非 LLM 分类路线；需要足够正确样本和更新训练，建议并不总正确。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "Automatic matching",
+          "location": "Automatic matching；取回 Markdown第 55–55 行",
+          "source_line_start": 55,
+          "source_line_end": 55,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L55-L55"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-13",
+      "title": "利用模型辅助填写文档元数据",
+      "result": "启用 AI 后请求标题、标签、日期等建议，再确认或通过已配置流程应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "入口在主干内置；需启用并配置本地或远程 LLM，远程路线会发送文档内容并可能计费。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "AI-assisted suggestions",
+          "location": "AI features；取回 Markdown第 103–103 行",
+          "source_line_start": 103,
+          "source_line_end": 103,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L103-L103"
+        }
+      ],
+      "group_ids": [
+        "automation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-14",
+      "title": "找到与当前文档相关的既有档案",
+      "result": "启用嵌入与 LLM 索引，用相似文档检索为阅读和建议补充背景。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要向量索引及本地或远程 embedding 后端；不是无需配置的普通全文搜索。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "similar documents",
+          "location": "The LLM index (RAG) and similar documents；取回 Markdown第 150–150 行",
+          "source_line_start": 150,
+          "source_line_end": 150,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L150-L150"
+        }
+      ],
+      "group_ids": [
+        "retrieval"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-15",
+      "title": "对单份或一组档案提问并查看引用文档",
+      "result": "使用文档聊天检索相关上下文，获得附有来源文档链接的回答。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 LLM 索引和生成后端；引用链接不证明回答正确，必须对照文件。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "Document chat",
+          "location": "Document chat；取回 Markdown第 175–175 行",
+          "source_line_start": 175,
+          "source_line_end": 175,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L175-L175"
+        }
+      ],
+      "group_ids": [
+        "retrieval"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-16",
+      "title": "批量扫描时自动按分隔条码拆件",
+      "result": "使用适用条码分隔页把扫描批次拆成独立文档。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要启用条码检测和支持的 PDF / TIFF；分隔页保留与起始页语义依配置，不保证识别所有打印条码。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "Document Splitting",
+          "location": "Document Splitting；取回 Markdown第 959–959 行",
+          "source_line_start": 959,
+          "source_line_end": 959,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L959-L959"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-17",
+      "title": "用单面扫描器整理双面文件",
+      "result": "先分别扫描奇偶页，再由自动 collation 合并并调整页序。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "功能默认关闭；需要按官方扫描顺序和目录流程操作，并核对缺页与颠倒。",
+      "source_ids": [
+        "s-advanced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-advanced",
+          "quote": "double-sided documents",
+          "location": "Automatic collation of double-sided documents；取回 Markdown第 1026–1026 行",
+          "source_line_start": 1026,
+          "source_line_end": 1026,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/advanced_usage.md#L1026-L1026"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-18",
+      "title": "由外部程序导入和管理档案",
+      "result": "通过 REST API 上传、查询或处理受支持文档数据，连接扫描和业务流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自行开发调用方并配置认证；使用当前 schema 和版本，不保证旧客户端兼容。",
+      "source_ids": [
+        "s-api"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-api",
+          "quote": "fully-documented REST API",
+          "location": "REST API；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/api.md#L3-L3"
+        }
+      ],
+      "group_ids": [
+        "maintenance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-19",
+      "title": "导出可用于恢复或迁移的档案资料",
+      "result": "导出文档、缩略图、元数据和数据库内容，形成可另存或导入的资料集。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需按官方版本限制恢复并重新生成 API token；异版本数据库导出不能直接导入，备份须实际演练。",
+      "source_ids": [
+        "s-admin"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-admin",
+          "quote": "documents, thumbnails, metadata, and database contents",
+          "location": "Making backups；取回 Markdown第 13–14 行",
+          "source_line_start": 13,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/administration.md#L13-L14"
+        }
+      ],
+      "group_ids": [
+        "maintenance"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-20",
+      "title": "将指定文档送交远程 OCR 服务",
+      "result": "配置 Azure AI 后，通过全局策略或工作流选择适合的文件远程识别。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "主干内置入口，但需要外部 Azure AI、凭据及费用；文档离开本地服务器，格式不支持时可回退本地。",
+      "source_ids": [
+        "s-configuration"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-configuration",
+          "quote": "Currently only Azure AI is supported",
+          "location": "[`PAPERLESS_REMOTE_OCR_ENGINE=<str>`](#PAPERLESS_REMOTE_OCR_ENGINE)；取回 Markdown第 2096–2096 行",
+          "source_line_start": 2096,
+          "source_line_end": 2096,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L2096-L2096"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-21",
+      "title": "把电子档案关联到纸质原件编号",
+      "result": "使用 ASN 条码或档案序号，将电子记录关联到物理文件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要编号规则和可识别条码；编号不自动确保实物存放正确。",
+      "source_ids": [
+        "s-configuration"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-configuration",
+          "quote": "archive serial number",
+          "location": "[`PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE=<bool>`](#PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE)；取回 Markdown第 1691–1691 行",
+          "source_line_start": 1691,
+          "source_line_end": 1691,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L1691-L1691"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-22",
+      "title": "按元数据组织可识别的文件路径",
+      "result": "配置文件名与存储路径模板，让磁盘档案反映日期、来源或类型。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "文件由系统管理；需校验模板和字符替换，不能绕过系统直接随意重命名。",
+      "source_ids": [
+        "s-configuration"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-configuration",
+          "quote": "Changes the filenames",
+          "location": "[`PAPERLESS_FILENAME_FORMAT=<format>`](#PAPERLESS_FILENAME_FORMAT)；取回 Markdown第 404–404 行",
+          "source_line_start": 404,
+          "source_line_end": 404,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/configuration.md#L404-L404"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-23",
+      "title": "将办公文档纳入同一检索档案库",
+      "result": "对支持的 Word、表格和幻灯片等文件使用相应解析路线归档与提取内容。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Apache Tika、Gotenberg 等额外解析组件及支持格式；不是完整 Office 在线编辑器。",
+      "source_ids": [
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faq",
+          "quote": "Office documents",
+          "location": "_What file types does paperless-ngx support?_；取回 Markdown第 67–67 行",
+          "source_line_start": 67,
+          "source_line_end": 67,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L67-L67"
+        }
+      ],
+      "group_ids": [
+        "capture"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-24",
+      "title": "在消费后识别和处理重复文件",
+      "result": "利用重复标记检查内容相同的文件，人工决定保留、合并或删除。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "主干 FAQ 指明 v3 默认仍消费并标记重复；不能沿用旧说法声称所有重复上传必然拒绝。",
+      "source_ids": [
+        "s-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-faq",
+          "quote": "duplicate is flagged",
+          "location": "_Are duplicate documents rejected?_；取回 Markdown第 78–78 行",
+          "source_line_start": 78,
+          "source_line_end": 78,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/faq.md#L78-L78"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "paper-25",
+      "title": "从回收站恢复尚未清除的误删文档",
+      "result": "在文件最终清除前恢复文档及其数据库内容，纠正近期误删。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "仅限尚未手动或按保留期限彻底清除的文件；回收站不替代独立备份。",
+      "source_ids": [
+        "s-usage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-usage",
+          "quote": "Document Trash",
+          "location": "Document Trash；取回 Markdown第 819–819 行",
+          "source_line_start": 819,
+          "source_line_end": 819,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/paperless-ngx/paperless-ngx/blob/fc29f3511f427e365a7d6fe19b232c13445b9343/docs/usage.md#L819-L819"
+        }
+      ],
+      "group_ids": [
+        "archive"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "官网文档请求返回 403，改从官方 GitHub 同源 Markdown 取回；main 包含 v3 描述，不保证你的已安装稳定版／2.x 具备全部功能。",
+    "未部署系统、扫描实物或运行邮件、OCR、备份恢复、API 与模型；OCR 和问答准确性未实测。",
+    "没有把旧社区 AI 插件当成当前必需组件；当前主干自带 AI 功能入口，但本地／远程模型依赖仍要配置。",
+    "第三方手机应用、parser 插件和身份服务生态未逐一验证维护与兼容性，未列为无条件支持。"
+  ],
+  "generated_at": "2026-11-05T10:03:28.835052+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "从官方功能总览发现纸张到可检索档案的结果，接着读取推荐扫描流程、双面扫描例子和 API，再核对新 AI 与 v3 行为。",
+      "归一化：多个入口合并为收集结果；PDF 页面动作合并为整理，标签和字段按实际档案用途解释。",
+      "补漏发现文件版本、嵌套标签、远程 OCR、向量检索和重复文档默认行为变化；版本未验证处保留条件；最终挑战另补入误删文件的回收站恢复。",
+      "先保留无分类候选，再按收集、查找、整理、协作和维护的实际结果建立导航。"
+    ],
+    "source_classes": [
+      "maintainer_merged_feature_pr",
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 8,
+    "evidence_revision_at": "2026-11-05T10:56:01.460671+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

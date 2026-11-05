@@ -494,7 +494,7 @@ function SourceCard({
   quotes,
 }: {
   source: Source;
-  quotes?: { quote: string; location?: string }[];
+  quotes?: { quote: string; location?: string; url?: string }[];
 }) {
   return (
     <article className="source-card" id={"source-" + source.id}>
@@ -511,7 +511,9 @@ function SourceCard({
           <div key={i}>
             <blockquote>{q.quote}</blockquote>
             {q.location && (
-              <p className="source-location">原文位置：{q.location}</p>
+              <p className="source-location">
+                原文位置：{q.url ? <External url={q.url}>{q.location}</External> : q.location}
+              </p>
             )}
           </div>
         ))

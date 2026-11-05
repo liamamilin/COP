@@ -1,0 +1,885 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Playwright",
+    "scope": "Playwright 浏览器自动化和 Playwright Test 的可交付结果；官方 Node.js 测试文档为主，另标 axe 与 AI Test Agents 的扩展依赖。"
+  },
+  "sources": [
+    {
+      "id": "s-writing-tests",
+      "title": "Playwright · Writing tests",
+      "url": "https://playwright.dev/docs/writing-tests",
+      "evidence": "perform actions and assert",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:43.998147+00:00",
+      "capture_origin": "https://playwright.dev/docs/writing-tests",
+      "capture_sha256": "53ce655afca3bb754ab53b4781f968853a9d2fa7a45e70febbc24f13e6c64079",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-01",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/writing-tests"
+        }
+      ]
+    },
+    {
+      "id": "s-intro",
+      "title": "Playwright · Installation",
+      "url": "https://playwright.dev/docs/intro",
+      "evidence": "Chromium, WebKit and Firefox",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:43.733730+00:00",
+      "capture_origin": "https://playwright.dev/docs/intro",
+      "capture_sha256": "8b1236e7b01a2fe3d28c373338a96acada851bd329ae2ea1daf074655e86a2b9",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-02",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/intro"
+        }
+      ]
+    },
+    {
+      "id": "s-emulation",
+      "title": "Playwright · Emulation",
+      "url": "https://playwright.dev/docs/emulation",
+      "evidence": "emulate a real device",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:44.478736+00:00",
+      "capture_origin": "https://playwright.dev/docs/emulation",
+      "capture_sha256": "56eb434487ea3b9f8c9d422ac3add9d413d373ee384b997742f1c6bbc20fc16e",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-03",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/emulation"
+        }
+      ]
+    },
+    {
+      "id": "s-auth",
+      "title": "Playwright · Authentication",
+      "url": "https://playwright.dev/docs/auth",
+      "evidence": "load existing authenticated state",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:44.496080+00:00",
+      "capture_origin": "https://playwright.dev/docs/auth",
+      "capture_sha256": "dac89a341e9a518fa9e74947262221f64398aacb75befa9b92c8682797b07424",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-04",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ]
+    },
+    {
+      "id": "s-network",
+      "title": "Playwright · Network",
+      "url": "https://playwright.dev/docs/network",
+      "evidence": "use HAR files to mock network requests",
+      "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:44.113738+00:00",
+      "capture_origin": "https://playwright.dev/docs/network",
+      "capture_sha256": "696845ca05c9c785c7600202a3171da6df556f3f91d2a21f676d3c648a5bd981",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-05",
+          "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/network"
+        }
+      ]
+    },
+    {
+      "id": "s-api-testing",
+      "title": "Playwright · API testing",
+      "url": "https://playwright.dev/docs/api-testing",
+      "evidence": "Test your server API",
+      "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:44.516520+00:00",
+      "capture_origin": "https://playwright.dev/docs/api-testing",
+      "capture_sha256": "3fd87c551146bd90005bb683fb0818b7756f5d198d8ba715c0d48b6759a10ae4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-06",
+          "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ]
+    },
+    {
+      "id": "s-trace-viewer",
+      "title": "Playwright · Trace viewer",
+      "url": "https://playwright.dev/docs/trace-viewer",
+      "evidence": "debugging your tests when they fail on CI",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:45.680819+00:00",
+      "capture_origin": "https://playwright.dev/docs/trace-viewer",
+      "capture_sha256": "2e53ce948fb233e9192a9c0554d7b9b3eef00454054f27aa99575315748110a3",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-07",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ]
+    },
+    {
+      "id": "s-test-snapshots",
+      "title": "Playwright · Visual comparisons",
+      "url": "https://playwright.dev/docs/test-snapshots",
+      "evidence": "visually compare screenshots",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:45.942529+00:00",
+      "capture_origin": "https://playwright.dev/docs/test-snapshots",
+      "capture_sha256": "0b789d5fa223995c8f5e38dff3c11e7c8c57ac42206caf20a4a98f40688f9b7d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-08",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/test-snapshots"
+        }
+      ]
+    },
+    {
+      "id": "s-accessibility-testing",
+      "title": "Playwright · Accessibility testing",
+      "url": "https://playwright.dev/docs/accessibility-testing",
+      "evidence": "running the axe accessibility testing engine",
+      "location": "Introduction；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:46.113621+00:00",
+      "capture_origin": "https://playwright.dev/docs/accessibility-testing",
+      "capture_sha256": "b97a5f18055fc72015b2096d2745aea7b05f367c88a98ad00dd8f0db7b2d4ef4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-09",
+          "location": "Introduction；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/accessibility-testing"
+        }
+      ]
+    },
+    {
+      "id": "s-test-projects",
+      "title": "Playwright · Projects",
+      "url": "https://playwright.dev/docs/test-projects",
+      "evidence": "run the same tests in different configurations",
+      "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:47.069114+00:00",
+      "capture_origin": "https://playwright.dev/docs/test-projects",
+      "capture_sha256": "22592c15c67615fbfc523fcf93af5cce0593d7f957546d1a8d6d078334d57c26",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-10",
+          "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ]
+    },
+    {
+      "id": "s-test-sharding",
+      "title": "Playwright · Sharding",
+      "url": "https://playwright.dev/docs/test-sharding",
+      "evidence": "divide your tests to speed up test runtime",
+      "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:47.036114+00:00",
+      "capture_origin": "https://playwright.dev/docs/test-sharding",
+      "capture_sha256": "9d1ba4a3d78da3088cfe8fe29143dc863b93ac9df942674712b915b6cfa9e8cc",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-11",
+          "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ]
+    },
+    {
+      "id": "s-test-reporters",
+      "title": "Playwright · Reporters",
+      "url": "https://playwright.dev/docs/test-reporters",
+      "evidence": "contains report for the test run",
+      "location": "HTML reporter；本次 HTML 提取正文第 130–130 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:47.820148+00:00",
+      "capture_origin": "https://playwright.dev/docs/test-reporters",
+      "capture_sha256": "5ab4a8d8253a8fa9874b677376a5d8a4cbf3b55c685a1f635850a9b80c95c518",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-12",
+          "location": "HTML reporter；本次 HTML 提取正文第 130–130 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/test-reporters"
+        }
+      ]
+    },
+    {
+      "id": "s-codegen-intro",
+      "title": "Playwright · Generating tests",
+      "url": "https://playwright.dev/docs/codegen-intro",
+      "evidence": "recording, copying, and managing",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:47.629950+00:00",
+      "capture_origin": "https://playwright.dev/docs/codegen-intro",
+      "capture_sha256": "e828298ba38eeee1639ff038c2f71045af13e7254d4ac4221bccb413164a7403",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-13",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/codegen-intro"
+        }
+      ]
+    },
+    {
+      "id": "s-downloads",
+      "title": "Playwright · Downloads",
+      "url": "https://playwright.dev/docs/downloads",
+      "evidence": "persist downloaded files",
+      "location": "页面正文；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:47.895092+00:00",
+      "capture_origin": "https://playwright.dev/docs/downloads",
+      "capture_sha256": "215f86ba9bb56b8c724a5558e7cc99729e2cddf8db7eb75ef938321c9d09366a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-14",
+          "location": "页面正文；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/downloads"
+        }
+      ]
+    },
+    {
+      "id": "s-input",
+      "title": "Playwright · Actions",
+      "url": "https://playwright.dev/docs/input",
+      "evidence": "select input files for upload",
+      "location": "Upload files；本次 HTML 提取正文第 91–91 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:49.083782+00:00",
+      "capture_origin": "https://playwright.dev/docs/input",
+      "capture_sha256": "145cd83cedfea31c327406c1412b7b23badfc85c405bd524b2a39aa5ad819b60",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-15",
+          "location": "Upload files；本次 HTML 提取正文第 91–91 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ]
+    },
+    {
+      "id": "s-evaluating",
+      "title": "Playwright · Evaluating JavaScript",
+      "url": "https://playwright.dev/docs/evaluating",
+      "evidence": "run a JavaScript function in the context of the web page",
+      "location": "Introduction；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:49.069038+00:00",
+      "capture_origin": "https://playwright.dev/docs/evaluating",
+      "capture_sha256": "0ce3c78202ddfbbbe95c1461a61c77bf640d7e7084196bea882b638e89b24c61",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-16",
+          "location": "Introduction；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/evaluating"
+        }
+      ]
+    },
+    {
+      "id": "s-test-agents",
+      "title": "Playwright · Playwright Test Agents",
+      "url": "https://playwright.dev/docs/test-agents",
+      "evidence": "planner, 🎭 generator and 🎭 healer",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:09:48.876425+00:00",
+      "capture_origin": "https://playwright.dev/docs/test-agents",
+      "capture_sha256": "a2d2e9346b5cb524aa942771637bebe2a66cf4aad6e13423986452a372b6e6d6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-17",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/test-agents"
+        }
+      ]
+    },
+    {
+      "id": "s-page",
+      "title": "Playwright · Page",
+      "url": "https://playwright.dev/docs/api/class-page",
+      "evidence": "generates a pdf of the page",
+      "location": "页面正文；本次 HTML 提取正文第 893–893 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:36:04.748664+00:00",
+      "capture_origin": "https://playwright.dev/docs/api/class-page",
+      "capture_sha256": "0135a20e14e880a0a2fd7b439bc3e030efcc7970d2c2df88ba779b5b5332979d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "pw-18",
+          "location": "页面正文；本次 HTML 提取正文第 893–893 行（不是 HTML 源码行号）",
+          "url": "https://playwright.dev/docs/api/class-page"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "behavior",
+      "name": "验证用户与接口行为"
+    },
+    {
+      "id": "coverage",
+      "name": "覆盖浏览器、环境与可访问性"
+    },
+    {
+      "id": "debugging",
+      "name": "发现与调查回归"
+    },
+    {
+      "id": "production",
+      "name": "生产和运行测试集"
+    },
+    {
+      "id": "artifacts",
+      "name": "提取页面内容与交付文档"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "pw-01",
+      "title": "自动验证用户的网页操作流程",
+      "result": "将导航、点击、填写和页面断言组织成可重复的端到端测试。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要测试数据和明确断言；自动等待减少时序问题，不保证没有不稳定测试。",
+      "source_ids": [
+        "s-writing-tests"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-writing-tests",
+          "quote": "perform actions and assert",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/writing-tests"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-02",
+      "title": "检查同一应用在不同浏览器中的表现",
+      "result": "在 Chromium、WebKit、Firefox 上重复运行流程，发现引擎兼容问题。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要安装相应浏览器和系统依赖；WebKit 不等于所有真实 Safari 设备。",
+      "source_ids": [
+        "s-intro"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-intro",
+          "quote": "Chromium, WebKit and Firefox",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/intro"
+        }
+      ],
+      "group_ids": [
+        "coverage"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-03",
+      "title": "验证移动布局与地区环境差异",
+      "result": "模拟视口、触摸、位置、语言、时区等条件，检查响应式和本地化行为。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "模拟设备参数不是完整真机认证；需选取与产品目标相符的配置。",
+      "source_ids": [
+        "s-emulation"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-emulation",
+          "quote": "emulate a real device",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/emulation"
+        }
+      ],
+      "group_ids": [
+        "coverage"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-04",
+      "title": "在已登录状态下稳定验证业务流程",
+      "result": "保存与复用认证状态，配合隔离上下文测试用户身份相关功能。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "状态文件含敏感凭据；会修改服务端共享数据的并行测试应使用不同账户。",
+      "source_ids": [
+        "s-auth"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-auth",
+          "quote": "load existing authenticated state",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/auth"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-05",
+      "title": "脱离真实后端测试前端异常和边界",
+      "result": "拦截请求、返回预设响应或重放 HAR，构造慢响应、错误与特定数据场景。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要自定义模拟数据；Service Worker 等场景需参考文档限制，不证明真实后端可用。",
+      "source_ids": [
+        "s-network"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-network",
+          "quote": "use HAR files to mock network requests",
+          "location": "页面正文；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/network"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-06",
+      "title": "验证 REST API 并准备端到端测试数据",
+      "result": "直接发送 HTTP 请求验证接口，建立前置状态并检查 UI 操作后的服务端结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "APIRequestContext 与浏览器 UI 分层使用；需要可访问接口和授权。",
+      "source_ids": [
+        "s-api-testing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-api-testing",
+          "quote": "Test your server API",
+          "location": "页面正文；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/api-testing"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-07",
+      "title": "从 CI 失败记录还原网页操作过程",
+      "result": "打开记录的 Trace，沿操作、页面状态和相关信息排查失败。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "必须在运行中启用并保留 trace；查看器不自动提供根因。",
+      "source_ids": [
+        "s-trace-viewer"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-trace-viewer",
+          "quote": "debugging your tests when they fail on CI",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/trace-viewer"
+        }
+      ],
+      "group_ids": [
+        "debugging"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-08",
+      "title": "发现界面截图的视觉回归",
+      "result": "建立基准图并比较后续截图，检测布局、样式和渲染改变。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "基准和测试环境应一致；系统、字体和浏览器差异可能造成噪声。",
+      "source_ids": [
+        "s-test-snapshots"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test-snapshots",
+          "quote": "visually compare screenshots",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/test-snapshots"
+        }
+      ],
+      "group_ids": [
+        "debugging"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-09",
+      "title": "把常见无障碍问题纳入自动回归",
+      "result": "用 axe 扩展扫描页面，把缺少标签、颜色对比等可自动检测问题变成测试结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "依赖额外 axe 包；自动检测不能替代人工无障碍评估和用户测试。",
+      "source_ids": [
+        "s-accessibility-testing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-accessibility-testing",
+          "quote": "running the axe accessibility testing engine",
+          "location": "Introduction；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/accessibility-testing"
+        }
+      ],
+      "group_ids": [
+        "coverage"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-10",
+      "title": "检查多环境与多身份的同一业务行为",
+      "result": "以测试项目矩阵对已登录／未登录、staging／production 等运行同组用例。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要隔离账号、数据和有副作用的生产测试；项目配置本身不提供环境。",
+      "source_ids": [
+        "s-test-projects"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test-projects",
+          "quote": "run the same tests in different configurations",
+          "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/test-projects"
+        }
+      ],
+      "group_ids": [
+        "coverage"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-11",
+      "title": "缩短大型测试集的执行等待",
+      "result": "在可用 CPU 上并行测试，并按需要将测试分片到多台机器。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 CI 资源、隔离数据及适当分片策略；不保证线性加速。",
+      "source_ids": [
+        "s-test-sharding"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test-sharding",
+          "quote": "divide your tests to speed up test runtime",
+          "location": "Introduction；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/test-sharding"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-12",
+      "title": "生成适合人工和 CI 消费的测试报告",
+      "result": "将测试结果输出为 HTML、JSON 或其他报告，供排查和流水线处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要保留构建产物；报告格式与自定义集成依具体版本而定。",
+      "source_ids": [
+        "s-test-reporters"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test-reporters",
+          "quote": "contains report for the test run",
+          "location": "HTML reporter；本次 HTML 提取正文第 130–130 行（不是 HTML 源码行号）",
+          "source_line_start": 130,
+          "source_line_end": 130,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/test-reporters"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-13",
+      "title": "把手工操作记录为可维护测试起点",
+      "result": "通过 Codegen 在真实网页交互中生成脚本与定位器，再补充断言和测试设计。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "录制结果需要审查和维护，不自动成为完整覆盖。",
+      "source_ids": [
+        "s-codegen-intro"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-codegen-intro",
+          "quote": "recording, copying, and managing",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/codegen-intro"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-14",
+      "title": "验证文件下载并保存生成的交付物",
+      "result": "监听网页下载，将文件保存后检查其内容或用于后续处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需等待下载完成并明确保存路径；默认临时下载随上下文关闭删除。",
+      "source_ids": [
+        "s-downloads"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-downloads",
+          "quote": "persist downloaded files",
+          "location": "页面正文；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/downloads"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-15",
+      "title": "验证用户上传与复杂表单输入",
+      "result": "自动选择上传文件、填写控件并测试相关交互结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要受支持 DOM 控件、测试文件和后续断言。",
+      "source_ids": [
+        "s-input"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-input",
+          "quote": "select input files for upload",
+          "location": "Upload files；本次 HTML 提取正文第 91–91 行（不是 HTML 源码行号）",
+          "source_line_start": 91,
+          "source_line_end": 91,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/input"
+        }
+      ],
+      "group_ids": [
+        "behavior"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-16",
+      "title": "从已渲染页面提取任务所需数据",
+      "result": "在页面环境运行 JavaScript，读取 DOM 或应用状态并把可序列化结果带回程序。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这是浏览器自动化路线，需自行实现页面选择、访问和数据校验；不是开箱即用全站爬虫。",
+      "source_ids": [
+        "s-evaluating"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-evaluating",
+          "quote": "run a JavaScript function in the context of the web page",
+          "location": "Introduction；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/evaluating"
+        }
+      ],
+      "group_ids": [
+        "artifacts"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-17",
+      "title": "借助 AI 工具形成并维护网页测试",
+      "result": "使用官方 planner、generator、healer 工作流，从探索计划到生成和修复测试。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要相应 AI 代理环境、初始化和模型；应核实修复没有掩盖产品错误，不是确定性测试库自动保证正确。",
+      "source_ids": [
+        "s-test-agents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-test-agents",
+          "quote": "planner, 🎭 generator and 🎭 healer",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/test-agents"
+        }
+      ],
+      "group_ids": [
+        "production"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "pw-18",
+      "title": "把网页输出为可分享的 PDF",
+      "result": "使用页面打印布局生成 PDF，供报告、归档或文档交付。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需支持该方法的浏览器环境；打印 CSS、字体、分页与颜色需另检查。",
+      "source_ids": [
+        "s-page"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-page",
+          "quote": "generates a pdf of the page",
+          "location": "页面正文；本次 HTML 提取正文第 893–893 行（不是 HTML 源码行号）",
+          "source_line_start": 893,
+          "source_line_end": 893,
+          "line_basis": "extracted_html_text",
+          "url": "https://playwright.dev/docs/api/class-page"
+        }
+      ],
+      "group_ids": [
+        "artifacts"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "没有在本次研究中实测全部浏览器、设备参数和第三方测试集成。",
+    "无障碍、性能与安全的完整审计不能从端到端测试通过推导。",
+    "Electron、真实手机和通用全站采集没有足够的本轮证据，未作为确认能力扩写；PDF 仅依据已取回的 Page API，不代表所有浏览器均支持。",
+    "真实任务证据以官方 API 测试、认证、网络与 Codegen 完整示例为主，未以项目流行度代替任务效果证据。"
+  ],
+  "generated_at": "2026-11-05T09:37:51.454945+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先遍历实际测试结果，再阅读认证、网络、文件、报告与完整示例，最后补查可选 AI 和无障碍扩展。",
+      "归一化：将定位、等待和具体输入动作并入端到端结果；并行和分片合并为缩短大型测试等待。",
+      "发现后才按验证对象、失败调查和测试生产维护整理；跨浏览器、仿真与真实设备的边界独立记录。"
+    ],
+    "source_classes": [
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 19,
+    "evidence_revision_at": "2026-11-05T10:56:01.481259+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

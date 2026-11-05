@@ -1,0 +1,322 @@
+{
+  "topic": "opencode",
+  "generated_at": "2026-11-05T10:06:29.343109+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-agents",
+      "requested_url": "https://opencode.ai/docs/agents/",
+      "capture_origin": "https://opencode.ai/docs/agents/",
+      "retrieved_at": "2026-11-05T08:56:29.105713+00:00",
+      "capture_sha256": "e01b27bf885b5754fae90e7c77cbf85fe78e8ba7cd1901e348e52bde9c956d1d",
+      "content_type": "text/html",
+      "captured_text_characters": 18705,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-github",
+      "requested_url": "https://opencode.ai/docs/github/",
+      "capture_origin": "https://opencode.ai/docs/github/",
+      "retrieved_at": "2026-11-05T08:56:30.732676+00:00",
+      "capture_sha256": "0f6b23750b17e7a652def8f1aa4833048b6e0678489d9cb66181f545024eb4e0",
+      "content_type": "text/html",
+      "captured_text_characters": 10894,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-mcp",
+      "requested_url": "https://opencode.ai/docs/mcp-servers/",
+      "capture_origin": "https://opencode.ai/docs/mcp-servers/",
+      "retrieved_at": "2026-11-05T08:56:29.780946+00:00",
+      "capture_sha256": "8f92c192419cdb26b0e07a4f0d5d2143973d3be4c8d23e5733b40e1106d31d95",
+      "content_type": "text/html",
+      "captured_text_characters": 11941,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://opencode.ai/docs/",
+      "capture_origin": "https://opencode.ai/docs/",
+      "retrieved_at": "2026-11-05T08:56:28.818175+00:00",
+      "capture_sha256": "376902e6827bc4a0ec4a72d15dca8ea7f58b5137a66ecf9237be58aa22127415",
+      "content_type": "text/html",
+      "captured_text_characters": 7519,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-permissions",
+      "requested_url": "https://opencode.ai/docs/permissions/",
+      "capture_origin": "https://opencode.ai/docs/permissions/",
+      "retrieved_at": "2026-11-05T08:56:30.914668+00:00",
+      "capture_sha256": "29c6098f19ebd5f2cbd30c3fdeab7b78ba759b11cddcf3a88c2a240cefb0e12f",
+      "content_type": "text/html",
+      "captured_text_characters": 7853,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-plugins",
+      "requested_url": "https://opencode.ai/docs/plugins/",
+      "capture_origin": "https://opencode.ai/docs/plugins/",
+      "retrieved_at": "2026-11-05T08:56:31.749716+00:00",
+      "capture_sha256": "e09cb01c74b071e2f7922340ec579e9f75c56d363184a90218418ad9308dbb82",
+      "content_type": "text/html",
+      "captured_text_characters": 9589,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-providers",
+      "requested_url": "https://opencode.ai/docs/providers/",
+      "capture_origin": "https://opencode.ai/docs/providers/",
+      "retrieved_at": "2026-11-05T08:56:29.722356+00:00",
+      "capture_sha256": "d35df843dfbb2702b4b1847d6296221f87c9f9c814d10bb84c9e520283cca500",
+      "content_type": "text/html",
+      "captured_text_characters": 52913,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-sdk",
+      "requested_url": "https://opencode.ai/docs/sdk/",
+      "capture_origin": "https://opencode.ai/docs/sdk/",
+      "retrieved_at": "2026-11-05T08:56:31.253009+00:00",
+      "capture_sha256": "4c444f01c3bd2b337aed4197c57b68449a04cd2fb4f314ab4775a9b3fa53ac00",
+      "content_type": "text/html",
+      "captured_text_characters": 11725,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-skills",
+      "requested_url": "https://opencode.ai/docs/skills/",
+      "capture_origin": "https://opencode.ai/docs/skills/",
+      "retrieved_at": "2026-11-05T08:56:30.211144+00:00",
+      "capture_sha256": "bc2b024e8572e0dd179ddad4a0e8fd06ed2ddd6f9086a9b6e70506071e47e69f",
+      "content_type": "text/html",
+      "captured_text_characters": 5350,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-tools",
+      "requested_url": "https://opencode.ai/docs/tools/",
+      "capture_origin": "https://opencode.ai/docs/tools/",
+      "retrieved_at": "2026-11-05T08:56:29.458665+00:00",
+      "capture_sha256": "dba3620f7379106469db2788e3ec1875c4e18fa47bd8d146f96d8d177d285b9c",
+      "content_type": "text/html",
+      "captured_text_characters": 8603,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-v2-agents",
+      "requested_url": "https://opencode.ai/v2/docs/agents/",
+      "capture_origin": "https://opencode.ai/v2/docs/agents/",
+      "retrieved_at": "2026-11-05T09:06:11.112158+00:00",
+      "capture_sha256": "ec97403a901c11f9c6cd5f66e294eef8e2624e1e5f2963ee215d5141330c99ff",
+      "content_type": "text/html",
+      "captured_text_characters": 7497,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-attachments",
+      "requested_url": "https://opencode.ai/v2/docs/attachments/",
+      "capture_origin": "https://opencode.ai/v2/docs/attachments/",
+      "retrieved_at": "2026-11-05T09:35:56.307188+00:00",
+      "capture_sha256": "c47df7af16f9350a1fe19d462477dec3b776e99a429673e553c4a6880d5d189c",
+      "content_type": "text/html",
+      "captured_text_characters": 4907,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-commands",
+      "requested_url": "https://opencode.ai/v2/docs/commands/",
+      "capture_origin": "https://opencode.ai/v2/docs/commands/",
+      "retrieved_at": "2026-11-05T09:35:56.807058+00:00",
+      "capture_sha256": "17b0a40642e07931c911528dcf486d524fcf07bffc1cee1fccb58857ed2e548e",
+      "content_type": "text/html",
+      "captured_text_characters": 6380,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-compaction",
+      "requested_url": "https://opencode.ai/v2/docs/compaction/",
+      "capture_origin": "https://opencode.ai/v2/docs/compaction/",
+      "retrieved_at": "2026-11-05T09:35:58.028393+00:00",
+      "capture_sha256": "dbb7c1551013da3ff2f6478e4d9586514685f7bb3f5f2489bf62dc123f56e4f9",
+      "content_type": "text/html",
+      "captured_text_characters": 7982,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-format",
+      "requested_url": "https://opencode.ai/v2/docs/formatters/",
+      "capture_origin": "https://opencode.ai/v2/docs/formatters/",
+      "retrieved_at": "2026-11-05T09:35:58.003842+00:00",
+      "capture_sha256": "ee31669092a2e52bd4a674853ac0ce93e73b0bb30f3430173c50324e64012ff7",
+      "content_type": "text/html",
+      "captured_text_characters": 4914,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-instructions",
+      "requested_url": "https://opencode.ai/v2/docs/instructions/",
+      "capture_origin": "https://opencode.ai/v2/docs/instructions/",
+      "retrieved_at": "2026-11-05T09:35:56.889213+00:00",
+      "capture_sha256": "31df1cf8b9c077e9b6e671755c11711cc5fa5dc1d0917f91ae4b123befb59bba",
+      "content_type": "text/html",
+      "captured_text_characters": 4948,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-mcp",
+      "requested_url": "https://opencode.ai/v2/docs/mcp-servers/",
+      "capture_origin": "https://opencode.ai/v2/docs/mcp-servers/",
+      "retrieved_at": "2026-11-05T09:06:12.677679+00:00",
+      "capture_sha256": "dab4276c15f605d5a6dd55ce4028fb2df58a2227138caf0a2a6b612ee3616939",
+      "content_type": "text/html",
+      "captured_text_characters": 15126,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-migration",
+      "requested_url": "https://opencode.ai/v2/docs/migrate-v1/",
+      "capture_origin": "https://opencode.ai/v2/docs/migrate-v1/",
+      "retrieved_at": "2026-11-05T09:35:57.136185+00:00",
+      "capture_sha256": "05b5e00e0de91920ea2b6c59d303fa29ce5ed4756f6153e5a13efb94acf4de5e",
+      "content_type": "text/html",
+      "captured_text_characters": 18949,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-v2-models",
+      "requested_url": "https://opencode.ai/v2/docs/models/",
+      "capture_origin": "https://opencode.ai/v2/docs/models/",
+      "retrieved_at": "2026-11-05T09:32:29.155321+00:00",
+      "capture_sha256": "b2cf12653577d4fb1f9c715724b6a8b7e3cdee6cca07b204b037adfbf45e238a",
+      "content_type": "text/html",
+      "captured_text_characters": 16289,
+      "used_for_confirmed_results": false
+    },
+    {
+      "id": "s-v2-permissions",
+      "requested_url": "https://opencode.ai/v2/docs/permissions/",
+      "capture_origin": "https://opencode.ai/v2/docs/permissions/",
+      "retrieved_at": "2026-11-05T09:06:11.174974+00:00",
+      "capture_sha256": "13221b2f43845f08744428e06f59ef2a589f95d1cc2bee5886c1e30c1df941ed",
+      "content_type": "text/html",
+      "captured_text_characters": 8980,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-plugins",
+      "requested_url": "https://opencode.ai/v2/docs/plugins/",
+      "capture_origin": "https://opencode.ai/v2/docs/plugins/",
+      "retrieved_at": "2026-11-05T09:32:28.999640+00:00",
+      "capture_sha256": "bb2abb87913e6454f499bc909e0ce6359bad66d6ec5533e1194f72e28b462453",
+      "content_type": "text/html",
+      "captured_text_characters": 4503,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-providers",
+      "requested_url": "https://opencode.ai/v2/docs/providers/",
+      "capture_origin": "https://opencode.ai/v2/docs/providers/",
+      "retrieved_at": "2026-11-05T09:32:30.392762+00:00",
+      "capture_sha256": "488f758fa3dd1bbdb11bae697f80aa107074357760899b4d9662eb4c01d15307",
+      "content_type": "text/html",
+      "captured_text_characters": 20356,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-refs",
+      "requested_url": "https://opencode.ai/v2/docs/references/",
+      "capture_origin": "https://opencode.ai/v2/docs/references/",
+      "retrieved_at": "2026-11-05T09:35:56.403114+00:00",
+      "capture_sha256": "6594bf0eca0b10699c8f73916d639d99fb87f6d41f61e059831c398cfe04423c",
+      "content_type": "text/html",
+      "captured_text_characters": 5898,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-skills",
+      "requested_url": "https://opencode.ai/v2/docs/skills/",
+      "capture_origin": "https://opencode.ai/v2/docs/skills/",
+      "retrieved_at": "2026-11-05T09:06:11.119305+00:00",
+      "capture_sha256": "c2596f805d37afa5cb41a459c2c64128acbdc5f130a2cd035185ae6c1f6f9068",
+      "content_type": "text/html",
+      "captured_text_characters": 7703,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-snapshots",
+      "requested_url": "https://opencode.ai/v2/docs/snapshots/",
+      "capture_origin": "https://opencode.ai/v2/docs/snapshots/",
+      "retrieved_at": "2026-11-05T09:06:12.444033+00:00",
+      "capture_sha256": "d3b713bf7e5679db1efd007383b6c22ba7968215e01e5a799c5929953688e3d8",
+      "content_type": "text/html",
+      "captured_text_characters": 4418,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-tools",
+      "requested_url": "https://opencode.ai/v2/docs/tools/",
+      "capture_origin": "https://opencode.ai/v2/docs/tools/",
+      "retrieved_at": "2026-11-05T09:32:29.944996+00:00",
+      "capture_sha256": "c3b52c91f79985c51374a831704f789e9c154108728839e81f4783a673d386ee",
+      "content_type": "text/html",
+      "captured_text_characters": 10138,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2-websearch",
+      "requested_url": "https://opencode.ai/v2/docs/websearch/",
+      "capture_origin": "https://opencode.ai/v2/docs/websearch/",
+      "retrieved_at": "2026-11-05T09:35:56.715523+00:00",
+      "capture_sha256": "d874b3009536edcc88f4a5f11a914273ae21eebe27ecf4edb198c5cc021ceabe",
+      "content_type": "text/html",
+      "captured_text_characters": 2152,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-v2",
+      "requested_url": "https://opencode.ai/v2/docs/",
+      "capture_origin": "https://opencode.ai/v2/docs/",
+      "retrieved_at": "2026-11-05T09:06:10.980025+00:00",
+      "capture_sha256": "de9734b57f96c3bf7002d9424db345f59bdcd8f5fb841935786af271892b89ca",
+      "content_type": "text/html",
+      "captured_text_characters": 2370,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-share",
+      "requested_url": "https://opencode.ai/docs/share/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-v2-migrate",
+      "requested_url": "https://opencode.ai/v2/docs/migrate/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-v2-instructions",
+      "requested_url": "https://opencode.ai/v2/docs/rules/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-v2-sdk",
+      "requested_url": "https://opencode.ai/v2/docs/sdk/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-v2-github",
+      "requested_url": "https://opencode.ai/v2/docs/github/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    },
+    {
+      "id": "s-v2-search",
+      "requested_url": "https://opencode.ai/v2/docs/web-search/",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.369627+00:00"
+}

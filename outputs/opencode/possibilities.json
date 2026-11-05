@@ -1,0 +1,887 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "OpenCode",
+    "scope": "以当前 OpenCode 2 官方文档为主；V1 文档仅用于对照迁移，不把旧 SDK、插件或 GitHub 示例视为 V2 自动兼容的确认能力。"
+  },
+  "sources": [
+    {
+      "id": "s-v2-agents",
+      "title": "Agents",
+      "url": "https://opencode.ai/v2/docs/agents/",
+      "evidence": "Explains code without changing it\n[…]\nList findings in severity order",
+      "location": "页面正文；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:11.112158+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/agents/",
+      "capture_sha256": "ec97403a901c11f9c6cd5f66e294eef8e2624e1e5f2963ee215d5141330c99ff",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-01",
+          "location": "页面正文；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/agents/"
+        },
+        {
+          "possibility_id": "oc-03",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/agents/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-tools",
+      "title": "Tools",
+      "url": "https://opencode.ai/v2/docs/tools/",
+      "evidence": "change the default\n[…]\nCreate docs/example.md\n[…]\nflat app icon",
+      "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 95–95 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:29.944996+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/tools/",
+      "capture_sha256": "c3b52c91f79985c51374a831704f789e9c154108728839e81f4783a673d386ee",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-02",
+          "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        },
+        {
+          "possibility_id": "oc-04",
+          "location": "页面正文；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        },
+        {
+          "possibility_id": "oc-17",
+          "location": "页面正文；本次 HTML 提取正文第 95–95 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-attachments",
+      "title": "Attachments",
+      "url": "https://opencode.ai/v2/docs/attachments/",
+      "evidence": "Choose a model with image input",
+      "location": "页面正文；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:56.307188+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/attachments/",
+      "capture_sha256": "c47df7af16f9350a1fe19d462477dec3b776e99a429673e553c4a6880d5d189c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-05",
+          "location": "页面正文；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/attachments/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-websearch",
+      "title": "Web search",
+      "url": "https://opencode.ai/v2/docs/websearch/",
+      "evidence": "search the web, read the results",
+      "location": "Web search；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:56.715523+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/websearch/",
+      "capture_sha256": "d874b3009536edcc88f4a5f11a914273ae21eebe27ecf4edb198c5cc021ceabe",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-06",
+          "location": "Web search；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/websearch/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-refs",
+      "title": "References",
+      "url": "https://opencode.ai/v2/docs/references/",
+      "evidence": "source from another repository",
+      "location": "页面正文；本次 HTML 提取正文第 17–18 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:56.403114+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/references/",
+      "capture_sha256": "6594bf0eca0b10699c8f73916d639d99fb87f6d41f61e059831c398cfe04423c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-07",
+          "location": "页面正文；本次 HTML 提取正文第 17–18 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/references/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-instructions",
+      "title": "OpenCode 2 · Instructions",
+      "url": "https://opencode.ai/v2/docs/instructions/",
+      "evidence": "give OpenCode persistent project guidance",
+      "location": "Instructions；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:56.889213+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/instructions/",
+      "capture_sha256": "31df1cf8b9c077e9b6e671755c11711cc5fa5dc1d0917f91ae4b123befb59bba",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-08",
+          "location": "Instructions；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/instructions/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-skills",
+      "title": "Skills",
+      "url": "https://opencode.ai/v2/docs/skills/",
+      "evidence": "reusable instructions for a specific task",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:11.119305+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/skills/",
+      "capture_sha256": "c2596f805d37afa5cb41a459c2c64128acbdc5f130a2cd035185ae6c1f6f9068",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-09",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/skills/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-commands",
+      "title": "Commands",
+      "url": "https://opencode.ai/v2/docs/commands/",
+      "evidence": "bugs and missing tests",
+      "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:56.807058+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/commands/",
+      "capture_sha256": "17b0a40642e07931c911528dcf486d524fcf07bffc1cee1fccb58857ed2e548e",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-10",
+          "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/commands/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-mcp",
+      "title": "MCP servers",
+      "url": "https://opencode.ai/v2/docs/mcp-servers/",
+      "evidence": "tools, prompts, resources, and instructions",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:12.677679+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/mcp-servers/",
+      "capture_sha256": "dab4276c15f605d5a6dd55ce4028fb2df58a2227138caf0a2a6b612ee3616939",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-11",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/mcp-servers/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-providers",
+      "title": "OpenCode 2 · Providers",
+      "url": "https://opencode.ai/v2/docs/providers/",
+      "evidence": "proxy or compatible endpoint",
+      "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:30.392762+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/providers/",
+      "capture_sha256": "488f758fa3dd1bbdb11bae697f80aa107074357760899b4d9662eb4c01d15307",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-12",
+          "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/providers/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-compaction",
+      "title": "Compaction",
+      "url": "https://opencode.ai/v2/docs/compaction/",
+      "evidence": "replacing older conversation with a summary",
+      "location": "Compaction；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:58.028393+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/compaction/",
+      "capture_sha256": "dbb7c1551013da3ff2f6478e4d9586514685f7bb3f5f2489bf62dc123f56e4f9",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-13",
+          "location": "Compaction；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/compaction/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-snapshots",
+      "title": "OpenCode 2 · Snapshots",
+      "url": "https://opencode.ai/v2/docs/snapshots/",
+      "evidence": "conversation and file changes together",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:12.444033+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/snapshots/",
+      "capture_sha256": "d3b713bf7e5679db1efd007383b6c22ba7968215e01e5a799c5929953688e3d8",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-14",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/snapshots/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-permissions",
+      "title": "Permissions",
+      "url": "https://opencode.ai/v2/docs/permissions/",
+      "evidence": "action on a resource",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:11.174974+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/permissions/",
+      "capture_sha256": "13221b2f43845f08744428e06f59ef2a589f95d1cc2bee5886c1e30c1df941ed",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-15",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/permissions/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-format",
+      "title": "Formatters",
+      "url": "https://opencode.ai/v2/docs/formatters/",
+      "evidence": "format files after its write, edit, or patch tools change them",
+      "location": "Formatters；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:35:58.003842+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/formatters/",
+      "capture_sha256": "ee31669092a2e52bd4a674853ac0ce93e73b0bb30f3430173c50324e64012ff7",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-16",
+          "location": "Formatters；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/formatters/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2-plugins",
+      "title": "Plugins",
+      "url": "https://opencode.ai/v2/docs/plugins/",
+      "evidence": "tools, hooks, integrations, commands, agents",
+      "location": "页面正文；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:32:28.999640+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/plugins/",
+      "capture_sha256": "bb2abb87913e6454f499bc909e0ce6359bad66d6ec5533e1194f72e28b462453",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-18",
+          "location": "页面正文；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/plugins/"
+        }
+      ]
+    },
+    {
+      "id": "s-v2",
+      "title": "Intro",
+      "url": "https://opencode.ai/v2/docs/",
+      "evidence": "Access the OpenCode web interface with the opencode pair command.",
+      "location": "Web；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:10.980025+00:00",
+      "capture_origin": "https://opencode.ai/v2/docs/",
+      "capture_sha256": "de9734b57f96c3bf7002d9424db345f59bdcd8f5fb841935786af271892b89ca",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "oc-19",
+          "location": "Web；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://opencode.ai/v2/docs/"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "engineering",
+      "name": "理解和交付工程任务"
+    },
+    {
+      "id": "information",
+      "name": "结合资料与外部系统工作"
+    },
+    {
+      "id": "reuse",
+      "name": "复用规范和团队流程"
+    },
+    {
+      "id": "continuity",
+      "name": "控制和接续任务"
+    },
+    {
+      "id": "inference",
+      "name": "使用合适的模型生产结果"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "oc-01",
+      "title": "解释代码而保持文件不变",
+      "result": "使用具有只读约束的专用代理调查并解释代码，形成理解结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要相应代理与权限配置；不能把提示词中的只读要求代替实际工具权限。",
+      "source_ids": [
+        "s-v2-agents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-agents",
+          "quote": "Explains code without changing it",
+          "location": "页面正文；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/agents/"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-02",
+      "title": "完成指定代码修改并执行现有测试",
+      "result": "从问题定位、修改到运行相关验证，交付可检查的工程变更。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可用模型、工具和工程依赖；官方超时配置任务示例支持流程，不保证任意任务成功。",
+      "source_ids": [
+        "s-v2-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-tools",
+          "quote": "change the default",
+          "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-03",
+      "title": "审查改动并按严重程度定位问题",
+      "result": "让专门 reviewer 检查正确性与回归，返回带文件和行号的问题。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "代理定义和权限需自行配置；审查发现仍需核实。",
+      "source_ids": [
+        "s-v2-agents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-agents",
+          "quote": "List findings in severity order",
+          "location": "页面正文；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/agents/"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-04",
+      "title": "生成或维护仓库说明文档",
+      "result": "根据任务编写 Markdown 等文本交付物，并与项目内容对照。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要提供准确上下文和人工核验，不保证说明与运行行为天然一致。",
+      "source_ids": [
+        "s-v2-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-tools",
+          "quote": "Create docs/example.md",
+          "location": "页面正文；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）",
+          "source_line_start": 45,
+          "source_line_end": 45,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-05",
+      "title": "结合截图或附件理解任务材料",
+      "result": "把受支持图片、PDF 或文本交给可接收相应输入的模型，辅助解释资料或实现修改。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "格式、数量和体积受客户端及模型限制；HTTP 附件 URL 当前不支持，不能假定所有模型都能看图。",
+      "source_ids": [
+        "s-v2-attachments"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-attachments",
+          "quote": "Choose a model with image input",
+          "location": "页面正文；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/attachments/"
+        }
+      ],
+      "group_ids": [
+        "information"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-06",
+      "title": "检索最新资料并给出带来源的答复",
+      "result": "连接搜索提供方，搜索当前信息、读取结果并返回来源链接。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要配置搜索服务和可能的凭据；搜索结果并不自动成为可靠事实。",
+      "source_ids": [
+        "s-v2-websearch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-websearch",
+          "quote": "search the web, read the results",
+          "location": "Web search；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/websearch/"
+        }
+      ],
+      "group_ids": [
+        "information"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-07",
+      "title": "在开发任务中引用其他仓库和共享文档",
+      "result": "为当前项目附加命名的本地目录或远程 Git 引用，读取设计系统、公共库和文档。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要路径或 Git 访问权限；授权范围与当前目录限制需自行检查。",
+      "source_ids": [
+        "s-v2-refs"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-refs",
+          "quote": "source from another repository",
+          "location": "页面正文；本次 HTML 提取正文第 17–18 行（不是 HTML 源码行号）",
+          "source_line_start": 17,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/references/"
+        }
+      ],
+      "group_ids": [
+        "information"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-08",
+      "title": "在后续任务中持续使用团队规范",
+      "result": "把构建、架构、风格和验证要求写入 AGENTS.md，供项目任务读取。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "V2 识别 AGENTS.md；不同目录指导会合并，冲突并不自动解决。",
+      "source_ids": [
+        "s-v2-instructions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-instructions",
+          "quote": "give OpenCode persistent project guidance",
+          "location": "Instructions；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/instructions/"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-09",
+      "title": "复用有资源支持的专业工作流程",
+      "result": "建立按需加载的 Skill，把说明、脚本和参考资料一起提供给任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "技能需要可信来源与实际工具依赖；官方 Git release 示例仅为可配置工作流。",
+      "source_ids": [
+        "s-v2-skills"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-skills",
+          "quote": "reusable instructions for a specific task",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/skills/"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-10",
+      "title": "把常用审查要求变成团队快捷工作流",
+      "result": "通过命令模板参数化重复提示，指定代理或模型执行相同检查流程。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自行定义模板；它复用要求，不等于确定性审查程序。",
+      "source_ids": [
+        "s-v2-commands"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-commands",
+          "quote": "bugs and missing tests",
+          "location": "页面正文；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/commands/"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-11",
+      "title": "连接外部工具和资料系统完成任务",
+      "result": "使用本地或远程 MCP 服务提供的工具、资料和提示资源参与任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需服务器、认证、权限和上下文预算；V2 配置位于 mcp.servers，不能直接假定旧扩展无需迁移。",
+      "source_ids": [
+        "s-v2-mcp"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-mcp",
+          "quote": "tools, prompts, resources, and instructions",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/mcp-servers/"
+        }
+      ],
+      "group_ids": [
+        "information"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-12",
+      "title": "按任务选择可访问的模型与推理服务",
+      "result": "为项目或单次任务连接不同提供方，也可使用自定义兼容端点完成编码。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要模型和运行包确实兼容；不保证任何 OpenAI-compatible 端点支持全部工具和媒体能力。",
+      "source_ids": [
+        "s-v2-providers"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-providers",
+          "quote": "proxy or compatible endpoint",
+          "location": "页面正文；本次 HTML 提取正文第 66–66 行（不是 HTML 源码行号）",
+          "source_line_start": 66,
+          "source_line_end": 66,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/providers/"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-13",
+      "title": "把长任务推进到原上下文窗口之外",
+      "result": "利用会话压缩摘要和保留的近期内容继续任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "压缩有损；长期准确性仍依赖文件化状态、上下文预算和检查点。",
+      "source_ids": [
+        "s-v2-compaction"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-compaction",
+          "quote": "replacing older conversation with a summary",
+          "location": "Compaction；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/compaction/"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-14",
+      "title": "撤回近期对话及受跟踪文件修改",
+      "result": "用快照回退最近 AI 工作，再修改提示并重新推进。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "文件快照需 Git，捕获为 best effort，局限活动目录和大小／忽略规则；不回滚数据库、进程或 Git 元数据。",
+      "source_ids": [
+        "s-v2-snapshots"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-snapshots",
+          "quote": "conversation and file changes together",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/snapshots/"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-15",
+      "title": "控制代理访问和修改的范围",
+      "result": "按动作与资源设置允许、拒绝或询问，减少未经预先授权的工具执行。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "最后匹配规则生效；未匹配会询问，V2 外部目录默认允许。宿主 shell 本身拥有用户权限，不是强沙箱保证。",
+      "source_ids": [
+        "s-v2-permissions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-permissions",
+          "quote": "action on a resource",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/permissions/"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-16",
+      "title": "在编辑后自动统一代码格式",
+      "result": "接入项目可用格式化器，让工具修改后的文件遵循已有格式规范。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "默认关闭；需启用并安装对应命令或项目依赖，不替代类型检查和语义测试。",
+      "source_ids": [
+        "s-v2-format"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-format",
+          "quote": "format files after its write, edit, or patch tools change them",
+          "location": "Formatters；本次 HTML 提取正文第 2–3 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/formatters/"
+        }
+      ],
+      "group_ids": [
+        "engineering"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-17",
+      "title": "制作任务需要的图像资产",
+      "result": "在有图像模型的提供方上从提示生成或修改图片，返回可用文件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "experimental_image_generate 是实验能力，需支持图像生成的连接与权限；不保证未来接口稳定或可商用许可。",
+      "source_ids": [
+        "s-v2-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-tools",
+          "quote": "flat app icon",
+          "location": "页面正文；本次 HTML 提取正文第 95–95 行（不是 HTML 源码行号）",
+          "source_line_start": 95,
+          "source_line_end": 95,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/tools/"
+        }
+      ],
+      "group_ids": [
+        "inference"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-18",
+      "title": "制作适合团队的工具与界面扩展",
+      "result": "以插件加入工具、Hook、命令、代理或桌面面板，整合团队工作方式。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要开发插件并核对 API；V1 插件实现不能直接在 V2 运行，GUI 插件为实验接口。",
+      "source_ids": [
+        "s-v2-plugins"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2-plugins",
+          "quote": "tools, hooks, integrations, commands, agents",
+          "location": "页面正文；本次 HTML 提取正文第 104–104 行（不是 HTML 源码行号）",
+          "source_line_start": 104,
+          "source_line_end": 104,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/plugins/"
+        }
+      ],
+      "group_ids": [
+        "reuse"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oc-19",
+      "title": "在浏览器接续本机 OpenCode 界面",
+      "result": "用配对连接进入已有服务的 Web 界面，在另一界面指导任务。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要当前服务可访问且一次性配对链接有效；并不意味着浏览器能脱离宿主运行仓库。",
+      "source_ids": [
+        "s-v2"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-v2",
+          "quote": "Access the OpenCode web interface with the opencode pair command.",
+          "location": "Web；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "extracted_html_text",
+          "url": "https://opencode.ai/v2/docs/"
+        }
+      ],
+      "group_ids": [
+        "continuity"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未安装 OpenCode 2 或运行提供方、插件、MCP 与图像模型。",
+    "V1 GitHub 自动化和 SDK 文档有示例，但 V2 server/client 契约已改变；本轮未确认完整 V2 接入路线，不列为通用已确认结果。",
+    "未验证桌面平台、第三方提供方账户和所有遗留字段的实际迁移行为；官方兼容意图不等于运行证书。",
+    "工作示例主要来自官方工具任务、只读 reviewer 和 release Skill，尚缺独立用户的可重复端到端评测。"
+  ],
+  "generated_at": "2026-11-05T09:38:59.158424+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先遍历任务、代理、媒体与外部资料的结果，再沿 V2 导航补查命令、压缩、格式化和快照。",
+      "归一化：把 grep/read/edit/shell 合并为可验证工程修改；模型选择与接入合并为可选推理路线，不罗列每个供应商。",
+      "补漏发现 V1 与 V2 并存、插件及 server API 有破坏性变更、外部目录默认行为不同，均保留来源和未知边界。",
+      "引用当前迁移说明核实兼容范围；未据搜索到的旧版示例保证新版本行为。"
+    ],
+    "source_classes": [
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 28,
+    "evidence_revision_at": "2026-11-05T10:56:01.369627+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

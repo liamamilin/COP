@@ -1,0 +1,8 @@
+PASS: /Users/milin/2026/软件开发/COP/outputs/llm-inference/possibilities.json (structural/evidence checks only; assess sources manually)
+
+source_supported=22; reviewed=0; sources=17; groups=5
+Evidence refs with source locations: 22. All quotes matched captured text at stated line intervals.
+GitHub main/master file citations are fixed to verified content commits. Other web/Wiki/PR content may change.
+Reproduce offline batch audit: python3 -B scripts/verify_atlas_research.py
+Recheck immutable files online: python3 -B scripts/verify_atlas_research.py --verify-pinned
+These checks are not a semantic, execution or independent human-review certificate.

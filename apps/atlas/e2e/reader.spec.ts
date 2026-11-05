@@ -1,5 +1,18 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { readFileSync } from "node:fs";
+import type { AtlasMap } from "../src/types";
+
+const catalog = JSON.parse(
+  readFileSync(new URL("../../../catalog/p-atlas-topics.v0.1.json", import.meta.url), "utf8"),
+) as { topics: { slug: string; title: string; status: "ready" | "planned" }[] };
+const ready = catalog.topics.filter((t) => t.status === "ready").map((t) => ({
+  ...t,
+  map: JSON.parse(readFileSync(
+    new URL(`../../../outputs/${t.slug}/possibilities.json`, import.meta.url), "utf8",
+  )) as AtlasMap,
+}));
+const planned = catalog.topics.filter((t) => t.status === "planned");
 
 test("library shows real counts and plans never masquerade as generated content", async ({
   page,
@@ -10,31 +23,23 @@ test("library shows real counts and plans never masquerade as generated content"
   await expect(
     page.getByRole("heading", { name: "已上线的主题" }),
   ).toBeVisible();
-  await expect(page.locator(".topic-card")).toHaveCount(3);
-  await expect(page.locator(".plan-card")).toHaveCount(17);
-  for (const [slug, count] of [
-    ["ggplot2", "74"],
-    ["langchain-agent", "53"],
-    ["obsidian", "63"],
-  ])
+  await expect(page.locator(".topic-card")).toHaveCount(ready.length);
+  await expect(page.locator(".plan-card")).toHaveCount(planned.length);
+  for (const {slug, map} of ready)
     await expect(
       page.locator(".tone-" + slug + " .topic-count strong"),
-    ).toHaveText(count);
-  await page.getByRole("link", { name: /Agent Harness/ }).click();
-  await expect(page.getByText("待研究 · 尚未上线")).toBeVisible();
-  await expect(page.getByText(/尚无可能性条目/)).toBeVisible();
-  expect(requests.some((u) => u.includes("content/agent-harness"))).toBe(false);
+    ).toHaveText(String(map.possibilities.length));
+  for (const topic of planned) {
+    await page.goto("./#/topic/" + topic.slug);
+    await expect(page.getByText("待研究 · 尚未上线")).toBeVisible();
+    await expect(page.getByText(/尚无可能性条目/)).toBeVisible();
+    expect(requests.some((u) => u.includes(`content/${topic.slug}.json`))).toBe(false);
+  }
 });
-test("all three maps and their entire P sets are readable", async ({
-  page,
-}) => {
-  for (const [slug, count] of [
-    ["ggplot2", 74],
-    ["langchain-agent", 53],
-    ["obsidian", 63],
-  ] as const) {
+for (const {slug, map} of ready) {
+  test(`${slug}: all P, sources and research report are readable`, async ({page}) => {
     await page.goto("./#/topic/" + slug);
-    await expect(page.locator(".p-card")).toHaveCount(count);
+    await expect(page.locator(".p-card")).toHaveCount(map.possibilities.length);
     await expect(
       page.getByRole("link", { name: "研究报告", exact: true }),
     ).toBeVisible();
@@ -45,8 +50,17 @@ test("all three maps and their entire P sets are readable", async ({
     await expect(
       page.getByRole("heading", { name: "条件与边界", exact: true }),
     ).toBeVisible();
-  }
-});
+    await page.goto(`./#/topic/${slug}/sources`);
+    await expect(page.locator(".source-card")).toHaveCount(map.sources.length);
+    const source = map.sources.at(-1)!;
+    await expect(page.locator(`#source-${source.id} blockquote`)).toContainText(
+      source.evidence,
+    );
+    await page.goto(`./#/topic/${slug}/report`);
+    await expect(page.locator(".prose")).toBeVisible();
+    await expect(page.locator(".prose")).toContainText(map.coverage_gaps[0]);
+  });
+}
 test("deep links survive refresh and unknown IDs fail visibly", async ({
   page,
 }) => {
@@ -141,6 +155,24 @@ test("all source records, original excerpts and source permalinks are available"
   await page.reload();
   await expect(page.locator("#source-s-pdf")).toBeVisible();
 });
+test("new research exposes pinned evidence lines and copies them into the request", async ({
+  page,
+  context,
+}) => {
+  const map = ready.find((topic) => topic.slug === "paperless-ngx")!.map;
+  const p = map.possibilities.find((p) => p.id === "paper-10")!;
+  const ref = p.evidence_refs![0];
+  expect(ref.url).toMatch(/\/blob\/[0-9a-f]{40}\/.+#L\d+-L\d+$/);
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.goto("./#/topic/paperless-ngx/p/paper-10");
+  const locator = page.locator(".detail .source-location a").first();
+  await expect(locator).toHaveAttribute("href", ref.url!);
+  await expect(locator).toHaveAttribute("target", "_blank");
+  await expect(locator).toContainText(ref.location!);
+  await page.getByRole("button", { name: /复制需求描述/ }).click();
+  const copied = await page.evaluate(() => navigator.clipboard.readText());
+  for (const evidence of p.evidence_refs!) expect(copied).toContain(evidence.url);
+});
 test("full Markdown report keeps coverage, internal navigation and safe raw links", async ({
   page,
 }) => {
@@ -213,7 +245,7 @@ test("responsive reading is accessible and requests only static site resources",
       external.push(r.url());
   });
   await page.goto("./");
-  await expect(page.locator(".topic-card")).toHaveCount(3);
+  await expect(page.locator(".topic-card")).toHaveCount(ready.length);
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.goto("./#/topic/obsidian/p/p-knowledge-network");
   await expect(page.locator(".detail h2")).toBeVisible();

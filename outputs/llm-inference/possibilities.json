@@ -1,0 +1,1026 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "大模型推理（Inference）",
+    "scope": "研究模型加载后能够交付的生成、理解、服务与运行优化结果；范围含语言/视觉语言模型和相关向量、分类、打分及 ASR 服务，采用 vLLM、llama.cpp、GuideLLM 和 vLLM-Omni 等具名路线，不包含训练。"
+  },
+  "sources": [
+    {
+      "id": "s-local",
+      "title": "llama.cpp",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md",
+      "evidence": "inference with minimal setup\n[…]\nmodels larger than the total VRAM capacity",
+      "location": "Description；取回 Markdown第 62–62 行；Description；取回 Markdown第 72–72 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:53.120884+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md",
+      "capture_sha256": "404287f3e07f32aeaa5b951cfe7e43277a6444b2cf921c9f70894c1f7e89dd80",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-local",
+          "location": "Description；取回 Markdown第 62–62 行",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md#L62-L62"
+        },
+        {
+          "possibility_id": "p-hybrid-memory",
+          "location": "Description；取回 Markdown第 72–72 行",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md#L72-L72"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md",
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md",
+      "pinned_content_sha256": "404287f3e07f32aeaa5b951cfe7e43277a6444b2cf921c9f70894c1f7e89dd80",
+      "pinned_verified_at": "2026-11-05T10:35:53.483Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-online",
+      "title": "vLLM · Online Serving",
+      "url": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+      "evidence": "compatible with many interfaces\n[…]\nAutomatic Speech Recognition (ASR) models",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:13.352374+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+      "capture_sha256": "89eb1f1247af6f2507402857428c2440972fa76adcfcf763853bc42eff2b7a14",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-api",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/serving/online_serving/"
+        },
+        {
+          "possibility_id": "p-transcribe",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/serving/online_serving/"
+        }
+      ]
+    },
+    {
+      "id": "s-local-server",
+      "title": "LLaMA.cpp HTTP Server",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md",
+      "evidence": "Responses are sent using\n[…]\nParallel decoding with multi-user support",
+      "location": "POST `/completion`: Given a `prompt`, it returns the predicted completion.；取回 Markdown第 617–617 行；LLaMA.cpp HTTP Server；取回 Markdown第 12–12 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:54.613337+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+      "capture_sha256": "eafc1b53abd787613d13d1fb9a86a1fc9f90b59f1240b3eeb88c85ea08d9a137",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-stream",
+          "location": "POST `/completion`: Given a `prompt`, it returns the predicted completion.；取回 Markdown第 617–617 行",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md#L617-L617"
+        },
+        {
+          "possibility_id": "p-multiuser",
+          "location": "LLaMA.cpp HTTP Server；取回 Markdown第 12–12 行",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md#L12-L12"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/tools/server/README.md",
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md",
+      "pinned_content_sha256": "eafc1b53abd787613d13d1fb9a86a1fc9f90b59f1240b3eeb88c85ea08d9a137",
+      "pinned_verified_at": "2026-11-05T10:35:54.281Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-batch",
+      "title": "vLLM · Quickstart",
+      "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "evidence": "Offline batched inference",
+      "location": "页面正文；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:11:35.945477+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/getting_started/quickstart/",
+      "capture_sha256": "e17dc17d5bd6e22d2cd0ddd8c2ff53a4e857d9c3ab5319cffe75380d61865832",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-batch",
+          "location": "页面正文；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/"
+        }
+      ]
+    },
+    {
+      "id": "s-quant",
+      "title": "vLLM · Quantization",
+      "url": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "evidence": "smaller memory footprint",
+      "location": "页面正文；本次 HTML 提取正文第 461–461 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:52.742526+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "capture_sha256": "8775a643f8804023e9a573132df244dca9a88e27fbaff5c0e5164cc64d1371a1",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-quantize",
+          "location": "页面正文；本次 HTML 提取正文第 461–461 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/quantization/"
+        }
+      ]
+    },
+    {
+      "id": "s-prefix",
+      "title": "Automatic Prefix Caching - vLLM",
+      "url": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/",
+      "evidence": "skip the computation of the shared part",
+      "location": "页面正文；本次 HTML 提取正文第 465–465 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:51.432952+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/",
+      "capture_sha256": "ebe3ebfa52c2b8315d9a7f30cd61618a614258d02c4eb210ecf2c23987575d9a",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-reuse-prefix",
+          "location": "页面正文；本次 HTML 提取正文第 465–465 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/"
+        }
+      ]
+    },
+    {
+      "id": "s-speculative",
+      "title": "Speculative Decoding¶",
+      "url": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",
+      "evidence": "reduce inter-token latency",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:06:13.230774+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/speculative_decoding/",
+      "capture_sha256": "7a596b0ca56341e8d591dbbaa2b8be1652104eae2ddbd7fae15eb4f7ad9c4112",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-speculate",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/speculative_decoding/"
+        }
+      ]
+    },
+    {
+      "id": "s-parallel",
+      "title": "vLLM · Parallelism and Scaling",
+      "url": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/",
+      "evidence": "too large for a single GPU",
+      "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:11:35.874645+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/",
+      "capture_sha256": "4be48950646a849b947a914d0f8730ddbb63996040f499a4dd0c3b33a70a47c4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-model-sharding",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/"
+        }
+      ]
+    },
+    {
+      "id": "s-lora",
+      "title": "vLLM · LoRA Adapters",
+      "url": "https://docs.vllm.ai/en/stable/features/lora/",
+      "evidence": "served on a per-request basis",
+      "location": "页面正文；本次 HTML 提取正文第 486–486 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:51.376721+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/lora/",
+      "capture_sha256": "180174de17aab4c6e2b8f913b41c35afc9b574cdceb5ece2b013bc06003b828c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-adapters",
+          "location": "页面正文；本次 HTML 提取正文第 486–486 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/lora/"
+        }
+      ]
+    },
+    {
+      "id": "s-structured",
+      "title": "Structured Outputs - vLLM",
+      "url": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "evidence": "generation of structured outputs",
+      "location": "页面正文；本次 HTML 提取正文第 466–466 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:51.545868+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/structured_outputs/",
+      "capture_sha256": "9c83f7a3c329ff6e585962bd0860712e398a89204652da9e9757965fdbc385ca",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-structured",
+          "location": "页面正文；本次 HTML 提取正文第 466–466 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/structured_outputs/"
+        }
+      ]
+    },
+    {
+      "id": "s-multimodal",
+      "title": "vLLM · Multimodal Inputs",
+      "url": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/",
+      "evidence": "pass multi-modal inputs to multi-modal models",
+      "location": "页面正文；本次 HTML 提取正文第 508–508 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:53.633783+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/",
+      "capture_sha256": "9d1f1db45adf1f5687e1d9a2ee5fa9b9b0909a4b1276c9c73ee10435d52b1983",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-multimodal",
+          "location": "页面正文；本次 HTML 提取正文第 508–508 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/"
+        }
+      ]
+    },
+    {
+      "id": "s-pooling",
+      "title": "vLLM · Pooling Models",
+      "url": "https://docs.vllm.ai/en/stable/models/pooling_models/",
+      "evidence": "structured numerical vectors (embeddings)\n[…]\nComputes similarity scores\n[…]\npredefined category, class, or label",
+      "location": "页面正文；本次 HTML 提取正文第 590–590 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 598–598 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 588–588 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:53.658450+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/models/pooling_models/",
+      "capture_sha256": "cde3e467548cd483e7b674a56a7f128f48d7502d8b45a959af7b71be0bdd631d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-vectors",
+          "location": "页面正文；本次 HTML 提取正文第 590–590 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        },
+        {
+          "possibility_id": "p-relevance",
+          "location": "页面正文；本次 HTML 提取正文第 598–598 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        },
+        {
+          "possibility_id": "p-classify",
+          "location": "页面正文；本次 HTML 提取正文第 588–588 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        }
+      ]
+    },
+    {
+      "id": "s-tools",
+      "title": "Function Calling",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md",
+      "evidence": "OpenAI-style function calling",
+      "location": "Function Calling；取回 Markdown第 3–3 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:11:35.255844+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/docs/function-calling.md",
+      "capture_sha256": "cde9ab32612b7764a99535924795817aa5661fb5a75f1a8bd68e31cb4d4d5f62",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-tool-requests",
+          "location": "Function Calling；取回 Markdown第 3–3 行",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md#L3-L3"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/master/docs/function-calling.md",
+      "git_commit": "c55b094880bb70dacac0b50c6653790650e8dd2d",
+      "git_repository": "ggml-org/llama.cpp",
+      "pinned_raw_url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md",
+      "pinned_content_sha256": "cde9ab32612b7764a99535924795817aa5661fb5a75f1a8bd68e31cb4d4d5f62",
+      "pinned_verified_at": "2026-11-05T10:35:53.689Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-metrics",
+      "title": "vLLM · Production Metrics",
+      "url": "https://docs.vllm.ai/en/stable/usage/metrics/",
+      "evidence": "monitor the health of the system",
+      "location": "页面正文；本次 HTML 提取正文第 470–471 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:49:53.861441+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/usage/metrics/",
+      "capture_sha256": "6c541cacfc8b84a4232bbe00f1bde99d2767672fbf3be8c74e38759bfa8ba4c2",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-monitor",
+          "location": "页面正文；本次 HTML 提取正文第 470–471 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/usage/metrics/"
+        }
+      ]
+    },
+    {
+      "id": "s-benchmark",
+      "title": "vLLM · Benchmark CLI",
+      "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "evidence": "performance benchmarking framework with live progress updates and automatic report generation",
+      "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:11:36.127162+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/benchmarking/cli/",
+      "capture_sha256": "c86c6dd9dc5fc3ab98ac9a12ff229e801d108b205d1b2100c1341515c1271b67",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-benchmark",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/"
+        }
+      ]
+    },
+    {
+      "id": "s-omni",
+      "title": "vLLM-Omni — project README",
+      "url": "https://github.com/vllm-project/vllm-omni/blob/fd82f6c84a464566e1c2b3780833706208084fce/README.md",
+      "evidence": "text, audio, image, video, and action generation",
+      "location": "页面概述；取回 Markdown第 20–20 行",
+      "source_class": "official_project_readme",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:11:35.266234+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/vllm-project/vllm-omni/main/README.md",
+      "capture_sha256": "29dd9006458e7b56c99b301bb9d57a6ee1d0a73083a643f34b7194bdd994cd5c",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-omni-output",
+          "location": "页面概述；取回 Markdown第 20–20 行",
+          "url": "https://github.com/vllm-project/vllm-omni/blob/fd82f6c84a464566e1c2b3780833706208084fce/README.md#L20-L20"
+        }
+      ],
+      "original_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/main/README.md",
+      "git_commit": "fd82f6c84a464566e1c2b3780833706208084fce",
+      "git_repository": "vllm-project/vllm-omni",
+      "pinned_raw_url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/fd82f6c84a464566e1c2b3780833706208084fce/README.md",
+      "pinned_content_sha256": "29dd9006458e7b56c99b301bb9d57a6ee1d0a73083a643f34b7194bdd994cd5c",
+      "pinned_verified_at": "2026-11-05T10:35:53.418Z",
+      "pinned_matches_capture": true
+    },
+    {
+      "id": "s-replicas",
+      "title": "vLLM · Data Parallel Deployment",
+      "url": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/",
+      "evidence": "process independent batches of requests",
+      "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T09:19:52.879324+00:00",
+      "capture_origin": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/",
+      "capture_sha256": "e7d96106699b68ef884c2de47b4601d1cf1cbc0326f29d76d54259e61e51b036",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-replicas",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-runtime",
+      "name": "在可用设备和内存中运行模型"
+    },
+    {
+      "id": "g-service",
+      "name": "向应用和多个用户交付推理"
+    },
+    {
+      "id": "g-results",
+      "name": "取得任务需要的结构和模态结果"
+    },
+    {
+      "id": "g-efficiency",
+      "name": "减少可复用计算和生成等待"
+    },
+    {
+      "id": "g-evidence",
+      "name": "观察实际运行并比较部署选择"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-local",
+      "title": "在自己的计算环境运行语言模型生成结果",
+      "result": "使用 llama.cpp 等运行时加载兼容权重，在本机或自管环境执行文本或视觉语言推理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "示范路线为 llama.cpp；需兼容模型格式和可用硬件，下载、许可证及外围工具联网行为另行核对。",
+      "source_ids": [
+        "s-local"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local",
+          "quote": "inference with minimal setup",
+          "location": "Description；取回 Markdown第 62–62 行",
+          "source_line_start": 62,
+          "source_line_end": 62,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md#L62-L62"
+        }
+      ],
+      "group_ids": [
+        "g-runtime"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-hybrid-memory",
+      "title": "把超过单独显存容量的模型分配给 CPU 与 GPU",
+      "result": "通过混合推理部分加速更大的模型，在系统内存和显存之间做资源取舍。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "llama.cpp 的 CPU+GPU 路线；仍需足够总内存，速度与硬件、量化和分配方式有关。",
+      "source_ids": [
+        "s-local"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local",
+          "quote": "models larger than the total VRAM capacity",
+          "location": "Description；取回 Markdown第 72–72 行",
+          "source_line_start": 72,
+          "source_line_end": 72,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/README.md#L72-L72"
+        }
+      ],
+      "group_ids": [
+        "g-runtime"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-api",
+      "title": "把模型托管成应用可调用的 HTTP 服务",
+      "result": "让多个应用通过支持的接口调用模型，而不是在各自应用中重复实现模型加载与推理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM Online Serving；仅支持文档列出的接口和模型类型，兼容接口不等于完整复现其他云平台。",
+      "source_ids": [
+        "s-online"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-online",
+          "quote": "compatible with many interfaces",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/serving/online_serving/"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-stream",
+      "title": "在生成完成前逐步向调用者交付文本",
+      "result": "以流式响应发送新增生成内容，使聊天或任务界面能在最后一段生成前呈现进展。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "llama-server 文档以 SSE 流返回；客户端要处理流协议，实际首字与逐 token 延迟取决于模型及负载。",
+      "source_ids": [
+        "s-local-server"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local-server",
+          "quote": "Responses are sent using",
+          "location": "POST `/completion`: Given a `prompt`, it returns the predicted completion.；取回 Markdown第 617–617 行",
+          "source_line_start": 617,
+          "source_line_end": 617,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md#L617-L617"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-batch",
+      "title": "批量为一组离线输入生成结果",
+      "result": "将多条提示交给推理引擎批处理，产出可供数据加工或离线评估使用的结果集合。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 离线批处理路线；需准备输入、采样规则与足够资源，不等于无需维护生成内容质量。",
+      "source_ids": [
+        "s-batch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-batch",
+          "quote": "Offline batched inference",
+          "location": "页面正文；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/getting_started/quickstart/"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-multiuser",
+      "title": "让模型服务并发处理多个用户请求",
+      "result": "使用并行解码和连续批处理，把多个用户的生成任务交给同一服务实例调度。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "llama-server；需规划槽位、上下文、内存和请求队列，不提供固定并发吞吐承诺。",
+      "source_ids": [
+        "s-local-server"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local-server",
+          "quote": "Parallel decoding with multi-user support",
+          "location": "LLaMA.cpp HTTP Server；取回 Markdown第 12–12 行",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/tools/server/README.md#L12-L12"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-quantize",
+      "title": "用较低权重精度换取更小模型内存占用",
+      "result": "选择受支持的量化权重或部署优化路线，使模型在不同内存预算设备上运行。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 支持多种量化后端；格式与硬件支持需逐项核对，精度、速度和任务质量都可能变化。",
+      "source_ids": [
+        "s-quant"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-quant",
+          "quote": "smaller memory footprint",
+          "location": "页面正文；本次 HTML 提取正文第 461–461 行（不是 HTML 源码行号）",
+          "source_line_start": 461,
+          "source_line_end": 461,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/quantization/"
+        }
+      ],
+      "group_ids": [
+        "g-runtime"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-reuse-prefix",
+      "title": "避免为共享长提示反复计算相同前缀",
+      "result": "在请求共享系统提示或资料前缀时重用 KV 缓存，减少该共享部分的重复预填充计算。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM Automatic Prefix Caching；收益依前缀命中、缓存容量、模型与负载，不能等同于所有生成步骤都被缓存。",
+      "source_ids": [
+        "s-prefix"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-prefix",
+          "quote": "skip the computation of the shared part",
+          "location": "页面正文；本次 HTML 提取正文第 465–465 行（不是 HTML 源码行号）",
+          "source_line_start": 465,
+          "source_line_end": 465,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/"
+        }
+      ],
+      "group_ids": [
+        "g-efficiency"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-speculate",
+      "title": "为适合的生成负载缩短连续输出等待",
+      "result": "采用投机解码候选与验证机制，尝试降低中低请求负载中受内存限制时的逐 token 延迟。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 具名方法；需兼容目标/草稿模型或提议器，收益取决于硬件与流量，不能保证更快或逐字输出完全相同。",
+      "source_ids": [
+        "s-speculative"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-speculative",
+          "quote": "reduce inter-token latency",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/speculative_decoding/"
+        }
+      ],
+      "group_ids": [
+        "g-efficiency"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-model-sharding",
+      "title": "把单设备装不下的模型分片到多卡或多节点",
+      "result": "通过张量与流水线等并行方式分摊一个模型副本，使足够总显存参与同一模型的推理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM Parallelism and Scaling；需匹配模型、GPU、运行时与节点网络，分片并不自动解决总内存不足。",
+      "source_ids": [
+        "s-parallel"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-parallel",
+          "quote": "too large for a single GPU",
+          "location": "页面正文；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/"
+        }
+      ],
+      "group_ids": [
+        "g-runtime"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-adapters",
+      "title": "在同一基座服务上按请求选用任务适配器",
+      "result": "针对不同请求加载或选择 LoRA 适配器，在共享基座上提供不同任务行为。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 需支持 SupportsLoRA 的基座和兼容适配器；加载策略、显存、授权及版本必须验证。",
+      "source_ids": [
+        "s-lora"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-lora",
+          "quote": "served on a per-request basis",
+          "location": "页面正文；本次 HTML 提取正文第 486–486 行（不是 HTML 源码行号）",
+          "source_line_start": 486,
+          "source_line_end": 486,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/lora/"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-structured",
+      "title": "让生成输出符合指定结构或语法约束",
+      "result": "在解码时使用 JSON、选择集合或语法约束，让下游应用更容易解析模型结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 的 xgrammar/guidance 等后端；旧 guided_* 参数和后端可能已弃用，结构正确不代表字段内容真实。",
+      "source_ids": [
+        "s-structured"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-structured",
+          "quote": "generation of structured outputs",
+          "location": "页面正文；本次 HTML 提取正文第 466–466 行（不是 HTML 源码行号）",
+          "source_line_start": 466,
+          "source_line_end": 466,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/structured_outputs/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-multimodal",
+      "title": "把图像、视频或音频作为模型推理输入",
+      "result": "给支持的多模态模型提供相应媒体内容，取得模型基于这些输入生成的响应。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 模型支持与输入格式依架构而异；需控制媒体 URL 访问、大小和资源，不能推定任意模型接受所有模态。",
+      "source_ids": [
+        "s-multimodal"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-multimodal",
+          "quote": "pass multi-modal inputs to multi-modal models",
+          "location": "页面正文；本次 HTML 提取正文第 508–508 行（不是 HTML 源码行号）",
+          "source_line_start": 508,
+          "source_line_end": 508,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/features/multimodal_inputs/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-transcribe",
+      "title": "把语音识别模型托管为转写接口",
+      "result": "提供音频转写或音频翻译的服务入口，把兼容 ASR 模型结果交付给应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 对应音频端点只适用于受支持 ASR 模型；语言、时长、音频质量与翻译能力需按模型验证。",
+      "source_ids": [
+        "s-online"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-online",
+          "quote": "Automatic Speech Recognition (ASR) models",
+          "location": "页面正文；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/serving/online_serving/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-vectors",
+      "title": "为检索和相似性分析生成向量表示",
+      "result": "使用兼容 embedding 模型把非结构化内容转成数值向量，供后续索引和比较。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM pooling 支持的模型与任务范围依实现；向量检索系统需另外构建，文档未保证优于专门框架的性能。",
+      "source_ids": [
+        "s-pooling"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pooling",
+          "quote": "structured numerical vectors (embeddings)",
+          "location": "页面正文；本次 HTML 提取正文第 590–590 行（不是 HTML 源码行号）",
+          "source_line_start": 590,
+          "source_line_end": 590,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-relevance",
+      "title": "为查询与候选内容计算相似度或相关性分数",
+      "result": "通过打分模型计算输入对的分数，作为检索重排或匹配选择的依据。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM 支持的 cross-encoder、late-interaction 或 bi-encoder；排序逻辑、阈值和业务效果需应用验证。",
+      "source_ids": [
+        "s-pooling"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pooling",
+          "quote": "Computes similarity scores",
+          "location": "页面正文；本次 HTML 提取正文第 598–598 行（不是 HTML 源码行号）",
+          "source_line_start": 598,
+          "source_line_end": 598,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-classify",
+      "title": "把输入预测为预定义类别或标签",
+      "result": "使用分类模型返回给定输入的候选类别，用于分流、筛选或信息标注。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是相关 pooling/分类模型的推理，不代表所有生成式 LLM 都可用该任务接口；需标签定义与校验集。",
+      "source_ids": [
+        "s-pooling"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pooling",
+          "quote": "predefined category, class, or label",
+          "location": "页面正文；本次 HTML 提取正文第 588–588 行（不是 HTML 源码行号）",
+          "source_line_start": 588,
+          "source_line_end": 588,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/models/pooling_models/"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-tool-requests",
+      "title": "让应用取得模型提出的函数调用请求",
+      "result": "把可用函数提供给兼容模型，取得结构化工具请求，再由应用决定和执行对应操作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "llama-server 的模板与 handler 路线；模型能否正确调用、并行调用和控制参数需实测，推理引擎本身不替应用授权业务动作。",
+      "source_ids": [
+        "s-tools"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tools",
+          "quote": "OpenAI-style function calling",
+          "location": "Function Calling；取回 Markdown第 3–3 行",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/c55b094880bb70dacac0b50c6653790650e8dd2d/docs/function-calling.md#L3-L3"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-monitor",
+      "title": "观察部署中的负载、延迟和资源相关指标",
+      "result": "从推理服务导出可监控指标，追踪运行健康与请求表现，为容量和故障分析提供数据。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM /metrics 与相应监控系统；指标种类随版本变化，告警和归因分析须另行配置。",
+      "source_ids": [
+        "s-metrics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-metrics",
+          "quote": "monitor the health of the system",
+          "location": "页面正文；本次 HTML 提取正文第 470–471 行（不是 HTML 源码行号）",
+          "source_line_start": 470,
+          "source_line_end": 471,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/usage/metrics/"
+        }
+      ],
+      "group_ids": [
+        "g-evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-benchmark",
+      "title": "用真实负载比较部署性能并交付测量报告",
+      "result": "对选定输入和负载测试推理部署，取得用于选择配置的性能结果与报告。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "文档对生产服务推荐 GuideLLM，另有 vLLM benchmark CLI；需代表性数据、硬件和配置，不能把他人基准外推到本环境。",
+      "source_ids": [
+        "s-benchmark"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-benchmark",
+          "quote": "performance benchmarking framework with live progress updates and automatic report generation",
+          "location": "页面正文；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/benchmarking/cli/"
+        }
+      ],
+      "group_ids": [
+        "g-evidence"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-omni-output",
+      "title": "为能生成多模态内容的模型搭建服务运行时",
+      "result": "采用 vLLM-Omni 等扩展承载文本、语音、图像或视频生成模型，交付对应媒体输出。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需单独 vLLM-Omni、受支持模型与匹配版本及资源；不是核心 vLLM 自动让任意语言模型生成媒体。",
+      "source_ids": [
+        "s-omni"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-omni",
+          "quote": "text, audio, image, video, and action generation",
+          "location": "页面概述；取回 Markdown第 20–20 行",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "captured_markdown",
+          "url": "https://github.com/vllm-project/vllm-omni/blob/fd82f6c84a464566e1c2b3780833706208084fce/README.md#L20-L20"
+        }
+      ],
+      "group_ids": [
+        "g-results"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-replicas",
+      "title": "用多副本分担独立推理请求",
+      "result": "把模型权重复制到不同实例或 GPU，让多个副本处理独立批次，并对在线请求进行负载分配。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "vLLM Data Parallel Deployment；需要足够副本资源与负载均衡，MoE 等配置还可能要求副本间同步。",
+      "source_ids": [
+        "s-replicas"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-replicas",
+          "quote": "process independent batches of requests",
+          "location": "页面正文；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text",
+          "url": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/"
+        }
+      ],
+      "group_ids": [
+        "g-service"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未实测硬件矩阵、吞吐、延迟、显存、输出质量或不同技术组合的兼容性；没有使用未经本地复现的性能数字。",
+    "解码约束只控制格式；量化、投机解码、前缀缓存、分片与并发调度的收益和行为必须按实际负载评估。",
+    "推理服务返回工具请求不等于执行工具、访问业务系统、长期保存用户记忆或自动完成 Agent 任务。",
+    "多模态输入与媒体生成需要不同模型和运行时；vLLM-Omni、ASR、embedding 与分类模型未被混成单一通用 LLM 能力。",
+    "未覆盖所有边缘设备、云平台、无服务器计费和私有加速器；版本变动与已弃用参数需以目标发行版重新核对。"
+  ],
+  "generated_at": "2026-11-05T09:21:21.036599+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "从用户结果先发现本地生成、API 托管、离线加工、并发、多模态与非生成式模型服务，再观察资源和运行目标。",
+      "示例视角读取 vLLM Quickstart 的批处理与在线服务、llama-server 的多用户接口以及多模态输入示例，未把模型家族名或 API 名当作 P。",
+      "扩展视角补读低比特权重、前缀复用、投机解码、LoRA 请求、模型分片、指标、生产基准与 vLLM-Omni，明确它们不是所有推理产品通用配置。",
+      "去重时合并不同量化位宽、草稿算法、GPU 品牌与 HTTP 路由；保留模型内存约束、请求并发、结构约束和服务观测等不同结果。",
+      "补漏检查当前文档与纯跳转旧路径，另读数据并行部署；相关版本及环境差异保留在条件。后续新资料主要是同类后端和算法变体。"
+    ],
+    "source_classes": [
+      "official_documentation",
+      "official_project_readme"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 20,
+    "evidence_revision_at": "2026-11-05T10:56:01.290795+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

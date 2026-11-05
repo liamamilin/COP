@@ -18,15 +18,26 @@ const fixture = JSON.parse(
 describe("build content contract", () => {
   it("reads every real P and report from outputs, preserving original fields", async () => {
     const { library, bundles } = await collectContent(root, false);
-    expect(library.summaries.map((s) => [s.slug, s.count])).toEqual([
-      ["ggplot2", 74],
-      ["langchain-agent", 53],
-      ["obsidian", 63],
-    ]);
-    expect(library.search).toHaveLength(190);
+    const catalog = JSON.parse(
+      await readFile(join(root, "catalog/p-atlas-topics.v0.1.json"), "utf8"),
+    );
+    expect(library.catalog).toEqual(catalog);
+    expect(bundles.map((b) => b.slug)).toEqual(
+      catalog.topics.filter((t) => t.status === "ready").map((t) => t.slug),
+    );
+    expect(library.summaries.map((s) => [s.slug, s.count])).toEqual(
+      bundles.map((b) => [b.slug, b.map.possibilities.length]),
+    );
+    expect(library.search).toEqual(
+      bundles.flatMap((b) =>
+        b.map.possibilities.map((possibility) => ({ slug: b.slug, possibility })),
+      ),
+    );
+    for (const [slug, count] of [["ggplot2", 74], ["langchain-agent", 53], ["obsidian", 63]])
+      expect(library.summaries.find((s) => s.slug === slug)?.count).toBe(count);
     expect(
       library.catalog.topics.filter((t) => t.status === "planned"),
-    ).toHaveLength(17);
+    ).toEqual(catalog.topics.filter((t) => t.status === "planned"));
     for (const b of bundles) {
       expect(b.map).toEqual(
         JSON.parse(
@@ -43,9 +54,8 @@ describe("build content contract", () => {
         ),
       );
     }
-    expect(
-      library.summaries.every((s) => s.researchDate === "2026-11-05"),
-    ).toBe(true);
+    for (const summary of library.summaries)
+      expect(summary.researchDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
   it("rejects broken IDs, references, URLs, fabricated quotes, and unsupported review labels", () => {
     const bads = [

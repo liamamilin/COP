@@ -1,0 +1,798 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Agent Harness",
+    "scope": "研究包围模型的执行系统能够帮助交付的任务结果；这是架构与方法类别，不是一款统一产品。以 Deep Agents、Claude Agent SDK 及官方工程实验为具名实现，不把某一实现的功能泛化给所有 Harness。"
+  },
+  "sources": [
+    {
+      "id": "s-long",
+      "title": "Effective harnesses for long-running agents \\ Anthropic",
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "evidence": "work effectively across many context windows\n[…]\nrevert bad code changes",
+      "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:05.275447+00:00",
+      "capture_origin": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "capture_sha256": "78aa4966f840162c2eef60cfe9c4d04213f56e75d7d0a516cb47327c2f952cb0",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-long-work",
+          "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"
+        },
+        {
+          "possibility_id": "p-rollback",
+          "location": "页面正文；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"
+        }
+      ]
+    },
+    {
+      "id": "s-deep",
+      "title": "Deep Agents overview",
+      "url": "https://docs.langchain.com/oss/python/deepagents/overview.md",
+      "evidence": "offload large results\n[…]\nmaintain a structured task list",
+      "location": "Choose how to run Deep Agents；取回 Markdown第 27–27 行；Task planning；取回 Markdown第 429–429 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:34.853800+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/overview.md",
+      "capture_sha256": "05ccbb112e01da8358714c8f3272d7b21a7d92eba9a4c5b901b5d00f9ad3e1c5",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-context",
+          "location": "Choose how to run Deep Agents；取回 Markdown第 27–27 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/overview.md"
+        },
+        {
+          "possibility_id": "p-planning",
+          "location": "Task planning；取回 Markdown第 429–429 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/overview.md"
+        }
+      ]
+    },
+    {
+      "id": "s-context",
+      "title": "Effective context engineering for AI agents \\ Anthropic",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "evidence": "retrieve files just-in-time\n[…]\nnew context window with the summary",
+      "location": "页面正文；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 65–65 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:04.861027+00:00",
+      "capture_origin": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "capture_sha256": "aa7aee383674c5187781d6e95833960e39972e7f67b1d2d58a0aa544c034b259",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-just-in-time",
+          "location": "页面正文；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"
+        },
+        {
+          "possibility_id": "p-compaction",
+          "location": "页面正文；本次 HTML 提取正文第 65–65 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"
+        }
+      ]
+    },
+    {
+      "id": "s-subagents",
+      "title": "Subagents",
+      "url": "https://docs.langchain.com/oss/python/deepagents/subagents.md",
+      "evidence": "Subagents isolate this detailed work\n[…]\nTasks requiring different model capabilities",
+      "location": "Why use subagents?；取回 Markdown第 30–30 行；Why use subagents?；取回 Markdown第 36–36 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:36.232496+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/subagents.md",
+      "capture_sha256": "56e56b250a51d9c5a220a3d15326d338d7c79439f5b7a40004a9a0fad5cd8612",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-specialists",
+          "location": "Why use subagents?；取回 Markdown第 30–30 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/subagents.md"
+        },
+        {
+          "possibility_id": "p-model-mix",
+          "location": "Why use subagents?；取回 Markdown第 36–36 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/subagents.md"
+        }
+      ]
+    },
+    {
+      "id": "s-async",
+      "title": "Async subagents",
+      "url": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md",
+      "evidence": "supervisor can continue interacting with the user",
+      "location": "Async subagents；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:06.600727+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md",
+      "capture_sha256": "b669008e1a73a565949dd8dc8f394adf96c5b5345c0a290967c28f4624adcdd0",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-background",
+          "location": "Async subagents；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md"
+        }
+      ]
+    },
+    {
+      "id": "s-skills",
+      "title": "Skills",
+      "url": "https://docs.langchain.com/oss/python/deepagents/skills.md",
+      "evidence": "share skills across agents and projects",
+      "location": "Skills；取回 Markdown第 11–11 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:04.766007+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/skills.md",
+      "capture_sha256": "81760adc9632811793a55bdb65e9852ef3b1f02030a3803af10289cb6cb650d7",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-skills",
+          "location": "Skills；取回 Markdown第 11–11 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/skills.md"
+        }
+      ]
+    },
+    {
+      "id": "s-memory",
+      "title": "Memory",
+      "url": "https://docs.langchain.com/oss/python/deepagents/memory.md",
+      "evidence": "memory that persists across conversations",
+      "location": "Memory；取回 Markdown第 17–17 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:05.674102+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/memory.md",
+      "capture_sha256": "f9ec0c8ce57fee8bc13a265393d4b8740b33056e4e405a7eba3adb70df57d6c4",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-memory",
+          "location": "Memory；取回 Markdown第 17–17 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/memory.md"
+        }
+      ]
+    },
+    {
+      "id": "s-backends",
+      "title": "Backends",
+      "url": "https://docs.langchain.com/oss/python/deepagents/backends.md",
+      "evidence": "Route different paths to different backends\n[…]\nagent can read or write",
+      "location": "Backends；取回 Markdown第 16–16 行；Permissions；取回 Markdown第 990–990 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:35.847104+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/backends.md",
+      "capture_sha256": "16afd42c5121d29bce0eb2ee26f61268921955881cd6d2af21fe19a7d86e0bc6",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-storage",
+          "location": "Backends；取回 Markdown第 16–16 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/backends.md"
+        },
+        {
+          "possibility_id": "p-file-policy",
+          "location": "Permissions；取回 Markdown第 990–990 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/backends.md"
+        }
+      ]
+    },
+    {
+      "id": "s-sandbox",
+      "title": "Sandboxes",
+      "url": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md",
+      "evidence": "Execute code in isolated environments",
+      "location": "Sandboxes；取回 Markdown第 7–7 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:36.187113+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md",
+      "capture_sha256": "f28298d796b78fd7814e21b503ea72909192dd968958c360dc46b2965c9c7c9f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sandbox",
+          "location": "Sandboxes；取回 Markdown第 7–7 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md"
+        }
+      ]
+    },
+    {
+      "id": "s-human",
+      "title": "Human-in-the-loop",
+      "url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md",
+      "evidence": "human approval before execution",
+      "location": "Human-in-the-loop；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:36:35.874856+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md",
+      "capture_sha256": "d6fa9981eb6be3dc8c6377a2ca61077a8bc35d4bb5e11724e3969010a2db432d",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-approval",
+          "location": "Human-in-the-loop；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md"
+        }
+      ]
+    },
+    {
+      "id": "s-mcp",
+      "title": "Model Context Protocol (MCP)",
+      "url": "https://docs.langchain.com/oss/python/langchain/mcp.md",
+      "evidence": "tools defined on MCP servers",
+      "location": "Model Context Protocol (MCP)；取回 Markdown第 9–9 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:05.670170+00:00",
+      "capture_origin": "https://docs.langchain.com/oss/python/langchain/mcp.md",
+      "capture_sha256": "d6af4351b236673d7e02d445d439c720f72d5ae831315bd52e7b88d9275a03dd",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-tools",
+          "location": "Model Context Protocol (MCP)；取回 Markdown第 9–9 行",
+          "url": "https://docs.langchain.com/oss/python/langchain/mcp.md"
+        }
+      ]
+    },
+    {
+      "id": "s-harness-design",
+      "title": "Harness design for long-running apps \\ Anthropic",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "evidence": "planner, generator, and evaluator\n[…]\ninteract with the live page directly",
+      "location": "页面正文；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）；页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T08:39:06.144927+00:00",
+      "capture_origin": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "capture_sha256": "ea05a7ecba38c818efbb2b2d75ba320e598fca05a4c9279f7079447d13ae552f",
+      "capture_method": "实际取回来源正文；引文只作空白归一化后逐字匹配。正文未随结果全文转载。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-build-evaluate",
+          "location": "页面正文；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/harness-design-long-running-apps"
+        },
+        {
+          "possibility_id": "p-browser-evaluation",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "url": "https://www.anthropic.com/research/harness-design-long-running-apps"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-sustain",
+      "name": "接续并控制长任务进度"
+    },
+    {
+      "id": "g-context",
+      "name": "在有限上下文中保留和复用知识"
+    },
+    {
+      "id": "g-delegate",
+      "name": "组织专长与后台工作"
+    },
+    {
+      "id": "g-execute",
+      "name": "连接工具并约束执行环境"
+    },
+    {
+      "id": "g-feedback",
+      "name": "用实际评价改进交付"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-long-work",
+      "title": "跨上下文窗口逐步推进长时工程任务",
+      "result": "通过初始化、进展文件和接续提示，让后续会话接手已有工程状态并继续完成工作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Claude Agent SDK 的工程实验路线；需显式交接工件、验收标准和接续策略，不保证任意长任务自动成功。",
+      "source_ids": [
+        "s-long"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-long",
+          "quote": "work effectively across many context windows",
+          "location": "页面正文；本次 HTML 提取正文第 27–27 行（不是 HTML 源码行号）",
+          "source_line_start": 27,
+          "source_line_end": 27,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"
+        }
+      ],
+      "group_ids": [
+        "g-sustain"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-rollback",
+      "title": "从代理引入的坏改动恢复可用工程状态",
+      "result": "把阶段进展保存为可追踪的版本，在后续迭代中回退有问题的改动并接续工作。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "示例依赖 git、提交纪律及进展记录；文件外的副作用需另外设计补偿。",
+      "source_ids": [
+        "s-long"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-long",
+          "quote": "revert bad code changes",
+          "location": "页面正文；本次 HTML 提取正文第 58–58 行（不是 HTML 源码行号）",
+          "source_line_start": 58,
+          "source_line_end": 58,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"
+        }
+      ],
+      "group_ids": [
+        "g-sustain"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-context",
+      "title": "把大型中间结果卸载到外部上下文",
+      "result": "把冗长工具结果保存到文件等外部上下文，在需要时回读，减少完整结果持续占用会话窗口。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents 的工具结果外部化路线；需要文件或其他持久上下文及回读工具，仍需管理可访问性、存储与关键约束。",
+      "source_ids": [
+        "s-deep"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deep",
+          "quote": "offload large results",
+          "location": "Choose how to run Deep Agents；取回 Markdown第 27–27 行",
+          "source_line_start": 27,
+          "source_line_end": 27,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/overview.md"
+        }
+      ],
+      "group_ids": [
+        "g-context"
+      ],
+      "aliases": [],
+      "evidence_note": "此条仅描述大型工具结果的外部化；历史压缩与摘要接续统一由 p-compaction 表达。"
+    },
+    {
+      "id": "p-planning",
+      "title": "跟踪多步任务的计划和执行进度",
+      "result": "让代理维护结构化任务清单，为长任务保留待做、进行中与完成情况的可见依据。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents v0.7 起 task planning 为可选能力，需显式添加 TodoListMiddleware；不是所有 Harness 默认启用。",
+      "source_ids": [
+        "s-deep"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deep",
+          "quote": "maintain a structured task list",
+          "location": "Task planning；取回 Markdown第 429–429 行",
+          "source_line_start": 429,
+          "source_line_end": 429,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/overview.md"
+        }
+      ],
+      "group_ids": [
+        "g-sustain"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-just-in-time",
+      "title": "让代理按当前任务查找所需文件上下文",
+      "result": "通过文件检索等工具在需要时取回资料，避免把整个项目一次塞进提示。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Anthropic 提出的上下文工程路线；需要检索工具与可访问文件，不保证检索完整性或免受过期资料影响。",
+      "source_ids": [
+        "s-context"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-context",
+          "quote": "retrieve files just-in-time",
+          "location": "页面正文；本次 HTML 提取正文第 59–59 行（不是 HTML 源码行号）",
+          "source_line_start": 59,
+          "source_line_end": 59,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"
+        }
+      ],
+      "group_ids": [
+        "g-context"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-compaction",
+      "title": "在会话接近上下文上限时保留关键摘要继续工作",
+      "result": "以总结后的任务状态接续后续上下文，减少窗口耗尽对长对话连续性的影响。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需支持压缩或重启交接的实现；不同模型与任务表现不同，摘要不保证无损。",
+      "source_ids": [
+        "s-context"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-context",
+          "quote": "new context window with the summary",
+          "location": "页面正文；本次 HTML 提取正文第 65–65 行（不是 HTML 源码行号）",
+          "source_line_start": 65,
+          "source_line_end": 65,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"
+        }
+      ],
+      "group_ids": [
+        "g-context"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-specialists",
+      "title": "把复杂子任务交给隔离上下文的专长代理",
+      "result": "主代理只接收子任务最终结果，使大量检索或分析细节留在子代理上下文中。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents 同步子代理实现；需定义职责、工具和输入输出，调度成本与质量需评估。",
+      "source_ids": [
+        "s-subagents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subagents",
+          "quote": "Subagents isolate this detailed work",
+          "location": "Why use subagents?；取回 Markdown第 30–30 行",
+          "source_line_start": 30,
+          "source_line_end": 30,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/subagents.md"
+        }
+      ],
+      "group_ids": [
+        "g-delegate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-model-mix",
+      "title": "为不同子任务配置各自的说明和模型",
+      "result": "把需要不同模型能力的工作交给各自配置的子代理，以专门指令完成对应结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents 自定义 subagents；需相应模型账户、权限和预算，不保证混用后更优或更便宜。",
+      "source_ids": [
+        "s-subagents"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subagents",
+          "quote": "Tasks requiring different model capabilities",
+          "location": "Why use subagents?；取回 Markdown第 36–36 行",
+          "source_line_start": 36,
+          "source_line_end": 36,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/subagents.md"
+        }
+      ],
+      "group_ids": [
+        "g-delegate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-background",
+      "title": "保持前台交互并调整后台执行的任务",
+      "result": "后台子代理并发工作时，主代理继续处理用户输入，并可跟踪、追加指令或取消子任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents Async subagents 需要实现 Agent Protocol 的服务；不同于进程内同步子代理，部署和状态需配置。",
+      "source_ids": [
+        "s-async"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-async",
+          "quote": "supervisor can continue interacting with the user",
+          "location": "Async subagents；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/async-subagents.md"
+        }
+      ],
+      "group_ids": [
+        "g-delegate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-skills",
+      "title": "把领域流程作为可复用技能交给不同代理",
+      "result": "打包工作流、参考资料和脚本，让代理按需读取专业说明并在多个项目中复用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents skills 目录与 Agent Skills 规范；脚本、服务权限、资料更新和适用条件需单独管理。",
+      "source_ids": [
+        "s-skills"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-skills",
+          "quote": "share skills across agents and projects",
+          "location": "Skills；取回 Markdown第 11–11 行",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/skills.md"
+        }
+      ],
+      "group_ids": [
+        "g-context"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-memory",
+      "title": "在不同对话中沿用可更新的经验文件",
+      "result": "把代理需要长期保存的事实、工作约定和经验写入记忆文件，在后续对话重新读取。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents memory 与持久化 backend；访问范围、写入质量和冲突处理需管理，文件记忆不是参数训练。",
+      "source_ids": [
+        "s-memory"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-memory",
+          "quote": "memory that persists across conversations",
+          "location": "Memory；取回 Markdown第 17–17 行",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/memory.md"
+        }
+      ],
+      "group_ids": [
+        "g-context"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-storage",
+      "title": "把临时资料与长期记忆分配到不同存储",
+      "result": "按虚拟路径把任务文件、长期记忆等交给不同后台保存，使文件生命周期与用途相匹配。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents CompositeBackend 等具名实现；应用需配置路由、存储与用户命名空间。",
+      "source_ids": [
+        "s-backends"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-backends",
+          "quote": "Route different paths to different backends",
+          "location": "Backends；取回 Markdown第 16–16 行",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/backends.md"
+        }
+      ],
+      "group_ids": [
+        "g-execute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-file-policy",
+      "title": "限制代理可读写的目录和文件范围",
+      "result": "在文件工具进入后台存储前应用访问规则，拒绝不被允许的读取或写入。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents filesystem permissions；只覆盖对应内置文件工具。LocalShellBackend 的 shell 可访问主机，不能把虚拟路径模式当作安全沙箱。",
+      "source_ids": [
+        "s-backends"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-backends",
+          "quote": "agent can read or write",
+          "location": "Permissions；取回 Markdown第 990–990 行",
+          "source_line_start": 990,
+          "source_line_end": 990,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/backends.md"
+        }
+      ],
+      "group_ids": [
+        "g-execute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-sandbox",
+      "title": "让代理在隔离环境执行代码并产出文件",
+      "result": "给代理可运行命令的环境，用于编程、数据计算或文稿工件生产，并与宿主资源建立边界。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需 Deep Agents sandbox backend 与具体提供商或隔离设施；可访问文件、网络和凭据取决于配置，不作绝对隔离保证。",
+      "source_ids": [
+        "s-sandbox"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sandbox",
+          "quote": "Execute code in isolated environments",
+          "location": "Sandboxes；取回 Markdown第 7–7 行",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/sandboxes.md"
+        }
+      ],
+      "group_ids": [
+        "g-execute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-approval",
+      "title": "在外部动作执行前让人批准或修改参数",
+      "result": "对指定工具调用暂停审阅，允许批准、编辑、拒绝或提供替代人工反馈。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Deep Agents HITL middleware 与 LangGraph 中断、检查点和审阅入口；需明确哪些工具受控。",
+      "source_ids": [
+        "s-human"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-human",
+          "quote": "human approval before execution",
+          "location": "Human-in-the-loop；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/deepagents/human-in-the-loop.md"
+        }
+      ],
+      "group_ids": [
+        "g-execute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-tools",
+      "title": "把外部系统的工具接入代理执行循环",
+      "result": "发现 MCP 服务器工具并适配为代理可调用的操作，把搜索、数据库或业务服务接进任务。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "该资料描述 LangChain MCPAdapter；需 langchain[mcp]>=1.4.0，当前为 beta，并需 MCP 服务器与认证。不是所有 Harness 都实现同一适配器。",
+      "source_ids": [
+        "s-mcp"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mcp",
+          "quote": "tools defined on MCP servers",
+          "location": "Model Context Protocol (MCP)；取回 Markdown第 9–9 行",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "captured_markdown",
+          "url": "https://docs.langchain.com/oss/python/langchain/mcp.md"
+        }
+      ],
+      "group_ids": [
+        "g-execute"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-build-evaluate",
+      "title": "用规划、生成和评价循环迭代完整应用",
+      "result": "给生成过程提供独立评价和具体反馈，分解工作并多轮改进完整应用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Anthropic Claude Agent SDK 工程实验；评价准则、模型和工具需配置，文中实验结果不构成普遍质量承诺。",
+      "source_ids": [
+        "s-harness-design"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-harness-design",
+          "quote": "planner, generator, and evaluator",
+          "location": "页面正文；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）",
+          "source_line_start": 29,
+          "source_line_end": 29,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/harness-design-long-running-apps"
+        }
+      ],
+      "group_ids": [
+        "g-feedback"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "p-browser-evaluation",
+      "title": "让代理在真实网页中操作并给出实现评价",
+      "result": "给评价代理浏览器工具，使其亲自导航和检查正在运行的界面，而非仅凭代码或静态截图评估。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "文中使用 Playwright MCP；需实际应用环境和评价准则，模型主观评分不等于可用性或用户验收结论。",
+      "source_ids": [
+        "s-harness-design"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-harness-design",
+          "quote": "interact with the live page directly",
+          "location": "页面正文；本次 HTML 提取正文第 47–47 行（不是 HTML 源码行号）",
+          "source_line_start": 47,
+          "source_line_end": 47,
+          "line_basis": "extracted_html_text",
+          "url": "https://www.anthropic.com/research/harness-design-long-running-apps"
+        }
+      ],
+      "group_ids": [
+        "g-feedback"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "未对不同 Harness、模型和任务做统一基准或长时可靠性测量；实验中的成功案例不能外推到所有工程。",
+    "未把无限执行、无损记忆、自动正确、绝对沙箱安全或无人监督上线列为已确认能力。",
+    "长期任务预算、可观测性、外部副作用补偿、租户隔离和特定部署产品尚需按选用实现深入验证。",
+    "部分当前接口有明确版本门槛，如 Deep Agents v0.7 的可选 planning，以及 LangChain 1.4 的 beta MCP 接口；未承诺与旧示例兼容。"
+  ],
+  "generated_at": "2026-11-05T08:45:51.860942+00:00",
+  "research": {
+    "method": "P Discovery existing Skill; evidence capture → uncategorized outcome/example/extension passes → normalization and gap challenge → purpose-based grouping",
+    "review_status": "source_supported is a source claim, not installed execution or independent human review",
+    "classification_notes": [
+      "先从执行、上下文、状态、工具与人类控制中提取可观察结果；不以内部模块名作为 P。",
+      "示例视角补读 Anthropic 长任务接续和完整应用迭代实验，把跨会话继续、git 回退与真实浏览器评价保留为不同结果。",
+      "扩展视角调查 Deep Agents 的 backend、沙箱、记忆、技能、同步与异步子代理、HITL 和 MCP 连接；依赖全部明确写进条目。",
+      "归一化时把工具列表和多个沙箱供应商合并进对应结果；未将供应商名、API 参数或任意“自动化所有工作”拆成 P。",
+      "复查上下文工程与长期应用实验后，更多材料主要重复已发现的接续、委派和反馈机制；未证实的运行保证保留为缺口。"
+    ],
+    "source_classes": [
+      "official_documentation"
+    ],
+    "collection_manifest": "source-coverage.json",
+    "captured_source_count": 12,
+    "evidence_revision_at": "2026-11-05T10:56:00.933221+00:00",
+    "evidence_revision_method": "逐条定位实际取回文本；修订薄弱摘录；GitHub 文件固定到逐字节匹配的 commit。语义判断仍由研究者核对，不是程序认证。",
+    "evidence_audit_version": "1"
+  }
+}

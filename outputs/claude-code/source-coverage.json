@@ -1,0 +1,167 @@
+{
+  "topic": "claude-code",
+  "generated_at": "2026-11-05T10:06:29.320225+00:00",
+  "scope": "资料取回记录，不表示每页均被逐字通读。只有 possibilities.json 中的条目来源用于确认具体结果。",
+  "capture_hash_note": "HTTP 来源哈希对应首次响应字节；GitHub PR 来源例外，hash_basis 明示其哈希只针对 API body 字段的 UTF-8 字节。仓库不转载完整第三方正文。已确认的 GitHub 主干文件另保留固定提交地址，并再次取回核对字节哈希；其他网页、Wiki 与 PR 正文仍可能编辑。原始临时缓存不作为产品运行依赖。",
+  "retrieved": [
+    {
+      "id": "s-actions",
+      "requested_url": "https://code.claude.com/docs/en/github-actions.md",
+      "capture_origin": "https://code.claude.com/docs/en/github-actions.md",
+      "retrieved_at": "2026-11-05T08:56:27.770168+00:00",
+      "capture_sha256": "5d695320e5381dd90cbe88a7c7df35407a75c4ccbd177e26572ac190731e41f4",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 29734,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-browser",
+      "requested_url": "https://code.claude.com/docs/en/chrome.md",
+      "capture_origin": "https://code.claude.com/docs/en/chrome.md",
+      "retrieved_at": "2026-11-05T08:56:26.081715+00:00",
+      "capture_sha256": "f490542401437f93c6b7d08313afef2766054e8a6c6c228b037b5e5c29165f73",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 24253,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-checkpoints",
+      "requested_url": "https://code.claude.com/docs/en/checkpointing.md",
+      "capture_origin": "https://code.claude.com/docs/en/checkpointing.md",
+      "retrieved_at": "2026-11-05T08:56:27.622062+00:00",
+      "capture_sha256": "e12d88404a36511c0fac5e9aaf1def707e4465b559aacbe258f854749dcffc32",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 9340,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-headless",
+      "requested_url": "https://code.claude.com/docs/en/headless.md",
+      "capture_origin": "https://code.claude.com/docs/en/headless.md",
+      "retrieved_at": "2026-11-05T08:56:28.174933+00:00",
+      "capture_sha256": "62359e4f8585a4044b217fb56416cbc3d27fdf9bc0c9963410b04fb0a416c886",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 37835,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-hooks",
+      "requested_url": "https://code.claude.com/docs/en/hooks-guide.md",
+      "capture_origin": "https://code.claude.com/docs/en/hooks-guide.md",
+      "retrieved_at": "2026-11-05T08:56:26.540013+00:00",
+      "capture_sha256": "22d4e4c5e593dd4d14f78f785691e9917d4eee811308c7197fa3aa8a18664fc4",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 66411,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-mcp",
+      "requested_url": "https://code.claude.com/docs/en/mcp.md",
+      "capture_origin": "https://code.claude.com/docs/en/mcp.md",
+      "retrieved_at": "2026-11-05T08:56:27.021505+00:00",
+      "capture_sha256": "4b3c2237229b454601119d2fd5d44228089ec3436b78edb395d357fc2bfe44d1",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 155688,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-memory",
+      "requested_url": "https://code.claude.com/docs/en/memory.md",
+      "capture_origin": "https://code.claude.com/docs/en/memory.md",
+      "retrieved_at": "2026-11-05T09:26:49.771125+00:00",
+      "capture_sha256": "275fe39e8501741ad308ab8ecd4552327cf34e53654841d7a121de80fbe6b595",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 55271,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://code.claude.com/docs/en/overview.md",
+      "capture_origin": "https://code.claude.com/docs/en/overview.md",
+      "retrieved_at": "2026-11-05T08:56:24.675810+00:00",
+      "capture_sha256": "966993397d19e6a81a2d36bb562b0a3c99fbc7198ff618b9fe1cfdd99f4f1427",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 17474,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-plugins",
+      "requested_url": "https://code.claude.com/docs/en/plugins.md",
+      "capture_origin": "https://code.claude.com/docs/en/plugins.md",
+      "retrieved_at": "2026-11-05T09:26:50.049060+00:00",
+      "capture_sha256": "9124d73faba1ae251d9f4229d03e19bd9fc0cd811a43aefc014c75a9d34e64ad",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 14519,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-remote",
+      "requested_url": "https://code.claude.com/docs/en/remote-control.md",
+      "capture_origin": "https://code.claude.com/docs/en/remote-control.md",
+      "retrieved_at": "2026-11-05T09:26:49.775954+00:00",
+      "capture_sha256": "1625e58d7b546703314ce50ad32df13fadc34996ffa487ff4e02ab4b52cfa9de",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 65479,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-review",
+      "requested_url": "https://code.claude.com/docs/en/code-review.md",
+      "capture_origin": "https://code.claude.com/docs/en/code-review.md",
+      "retrieved_at": "2026-11-05T09:26:49.443361+00:00",
+      "capture_sha256": "78ff48627f8e08e5551e254a963356b6988160a6b0edc873fc8772e3f301e06a",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 10662,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-scheduled",
+      "requested_url": "https://code.claude.com/docs/en/scheduled-tasks.md",
+      "capture_origin": "https://code.claude.com/docs/en/scheduled-tasks.md",
+      "retrieved_at": "2026-11-05T09:26:49.557719+00:00",
+      "capture_sha256": "f44fdf60df04074d869d0792b1b7c012d5c9b00307763e4d7434340c4e0da903",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 20107,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-skills",
+      "requested_url": "https://code.claude.com/docs/en/skills.md",
+      "capture_origin": "https://code.claude.com/docs/en/skills.md",
+      "retrieved_at": "2026-11-05T08:56:26.759214+00:00",
+      "capture_sha256": "977bb9f8d6a004c37e6731afd94bc3ad7bba1e64a2b2d7e7f22df910d4b06287",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 118983,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-subagents",
+      "requested_url": "https://code.claude.com/docs/en/sub-agents.md",
+      "capture_origin": "https://code.claude.com/docs/en/sub-agents.md",
+      "retrieved_at": "2026-11-05T08:56:26.842453+00:00",
+      "capture_sha256": "db8a532d4c04d8cec27622b3afd68f86f8d96efa121f4b498dcb430e2bc543b8",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 116722,
+      "used_for_confirmed_results": true
+    },
+    {
+      "id": "s-workflows",
+      "requested_url": "https://code.claude.com/docs/en/common-workflows.md",
+      "capture_origin": "https://code.claude.com/docs/en/common-workflows.md",
+      "retrieved_at": "2026-11-05T08:56:26.070306+00:00",
+      "capture_sha256": "fcd7053b20f22e66dbd7b08c3661f0b678a9fe499e5a24e3acf0be1d7f9f54dc",
+      "content_type": "text/markdown; charset=utf-8",
+      "captured_text_characters": 18653,
+      "used_for_confirmed_results": true
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-security",
+      "requested_url": "https://code.claude.com/docs/en/security-review.md",
+      "status": "没有取得可用正文；可能为访问限制、路径失效或网络错误，未作为确认依据。"
+    }
+  ],
+  "unused_source_note": "未采用的取回页包括索引、版本对照、重定向提示、壳页、重复路线和补漏资料；不能将取回成功等同于语义支持。",
+  "evidence_revision_at": "2026-11-05T10:56:01.128285+00:00"
+}
