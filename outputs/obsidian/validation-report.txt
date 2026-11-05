@@ -1,0 +1,76 @@
+Obsidian P Discovery — validation report
+Generated at: 2026-11-05T04:27:15Z
+Branch: proposal/cop-capability-map-v0
+
+Artifact summary
+Possibilities: 63; groups: 10; source records: 76; distinct source URLs: 75
+Statuses: {"source_supported": 63}
+Availability: {"core": 26, "extension": 37}
+Unverified complete workflows excluded from P count: 3 (see research.unverified_requests)
+
+Existing Skill validator — executed successfully
+$ python3 -B .agents/skills/p-discovery/scripts/validate.py outputs/obsidian/possibilities.json
+Exit code: 0
+PASS: outputs/obsidian/possibilities.json (structural/evidence checks only; assess sources manually)
+
+Existing Skill test suite — executed successfully
+$ python3 -B -m unittest discover -s .agents/skills/p-discovery/tests -v
+Exit code: 0
+Ran 14 tests; all passed (OK).
+Tests include fabricated quotes, wrong-source quotes, missing passages, extension conditions, duplicate IDs, unknown references, proposed status, and human-reviewed status requirements.
+
+Additional artifact/source checks — executed successfully
+$ python3 -B /private/tmp/obsidian-p-discovery/audit.py
+PASS: Every source excerpt is present in an actually retrieved body (whitespace-normalized)
+PASS: Stored capture hashes match the bodies used for source verification
+PASS: Every supported P has matching evidence attached to each cited outcome source
+PASS: All P records are source_supported; none self-awarded reviewed
+PASS: Every P appears exactly once as a Markdown outcome heading
+PASS: All Markdown outcome headings correspond to JSON records
+PASS: Each P result and conditions match the Markdown rendering
+PASS: Each P has one defined navigation group; no unclassified result remains
+PASS: No exact duplicate outcome title or result remains
+PASS: Concise excerpts remain within the per-source quotation budget including JSON repetition
+PASS: Saved Markdown and JSON are newline-terminated without trailing spaces
+PASS: Protected file paths and binary contents equal the pre-research baseline
+PASS: Only the three authorized Obsidian deliverables are changed/untracked
+Maximum total verbatim excerpt words per URL in JSON: 24
+
+Protected file integrity
+Compared paths and SHA-256 bytes only; prior experiment content was not used to form this map.
+Protected files unchanged: 11 (Skill files and both existing result directories).
+PYTHONDONTWRITEBYTECODE equivalent: all Python invocations used -B, including the test suite.
+cd923a346e502e7420744c149a2f4fbe15a809e0b74147a20aa4458cd942898d  .agents/skills/p-discovery/SKILL.md
+e3ae058bfb222cce4f90aeab209596c9c07d4f9132472384778631c9570b42ff  .agents/skills/p-discovery/examples/ggplot2-mini.json
+4882861ee4993a4d81a51815165389478efe64853eabc373cfbe84947e4ce9d8  .agents/skills/p-discovery/references/output-format.md
+dedb7c314016d408597f794da8f7bbb4ee772da5bded4f67b0da8b98e26bab44  .agents/skills/p-discovery/scripts/validate.py
+05cfb340790c47b0f6aa1ec4c6d0efa1afd3492855aad2967a5203a2e92f8265  .agents/skills/p-discovery/tests/test_quality.py
+ca38147017b5b6a72b1fc59a842bbec225bc0245fa02311a68427b97a7e104ab  outputs/ggplot2/possibilities.json
+2a1572efb50f3f7de7503a5802e8de1194632aaabafa2ff9392b3db64b857941  outputs/ggplot2/possibilities.md
+94ebcc6c74ffca7aedf57d116514d129677ef43d46d08e27b2b91034547a13ba  outputs/ggplot2/validation-report.txt
+23a68ad44675e538fd81d65443453797ffecac01965727d80b0e741590903193  outputs/langchain-agent/possibilities.json
+85597749488d5e9d9b6e974107fdb8eb5ea086049286d9b0b4082db7587c6fae  outputs/langchain-agent/possibilities.md
+0e8bb602459b3fec0d51e040c080889abf883b08266a43dd7b67440beb0e5274  outputs/langchain-agent/validation-report.txt
+
+Artifact digests
+a4800964e54b3f1fca8adb09f8c8cf2ee5039fb5232a358f4e1000e703d87407  outputs/obsidian/possibilities.md
+0effcc14880271504ca34530893e91ac489c402919f0b9086e43ce5e0e57c048  outputs/obsidian/possibilities.json
+
+Semantic and boundary assessment
+Each P was checked by the model against the surrounding retrieved context, not just by URL or quote matching. This is not an independent human review.
+Full Calendar API archived=true was observed; Text Extractor author explicitly states Unmaintained. PDF++ warns about private APIs. These are retained as limitations, not maintenance guarantees.
+The PDF help-page/mobile-export contradiction is recorded; the newer 1.15 public release notes support mobile PDF export. Other mobile PDF limitations were not silently overridden.
+Official separately installed components, community plugins, paid services, and third-party tool routes are distinguished. Publish/Quartz are merged as routes to one outcome.
+
+Not verified / limitations
+No Obsidian app or plugin was installed or executed. No live sync, publication, migration, OCR, model response, conversion, remote calendar, or case-vault end-to-end test was performed.
+No full compatibility matrix, performance benchmark, security/code audit, service uptime check, or independent human evaluation was performed.
+The validator cannot establish semantic truth, source freshness, runtime feasibility on the reader's device, or exhaustive coverage. Actual captured-body checks add provenance but do not remove these limits.
+Help-site URLs for repository-sourced pages follow official permalink metadata; not every display URL was separately HTTP-tested. The actual retrieval origin and source blob SHA are retained where available.
+Prices, quotas, model routing, maintenance status, and service dependencies may change. Use the recorded source snapshots as research evidence, not an ongoing compatibility warranty.
+
+Git status observed before writing this report
+?? outputs/obsidian/possibilities.json
+?? outputs/obsidian/possibilities.md
+
+Result: PASS for existing structural validation, existing tests, source-excerpt provenance, artifact consistency, and protected-file integrity. Runtime verification remains outstanding.

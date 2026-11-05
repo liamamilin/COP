@@ -1,0 +1,3298 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Obsidian",
+    "scope": "知识管理软件的可达用户结果；内置功能与可选官方/社区/第三方路线分开标注。资料截点 2026-11-05，正式版参照 1.15，不对版本与插件兼容作保证。"
+  },
+  "sources": [
+    {
+      "id": "s-local",
+      "title": "Obsidian Help — How Obsidian stores data",
+      "url": "https://obsidian.md/help/data-storage",
+      "evidence": "Markdown-formatted]] plain text files in a _vault_",
+      "location": "Introduction / external editors",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "01799214a670f3084a76e69c9fc0799d4cd763091526127906b6f31250d44dcd",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Files%20and%20folders/How%20Obsidian%20stores%20data.md",
+      "repository_blob_sha": "331f98bb60d699e6044b6aadb9bea9e36b53350b",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Files%20and%20folders/How%20Obsidian%20stores%20data.md"
+    },
+    {
+      "id": "s-offline",
+      "title": "Obsidian Help — Import notes",
+      "url": "https://obsidian.md/help/import",
+      "evidence": "use Obsidian offline and switch to another app easily",
+      "location": "Introduction",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "887b167b91806b1438c24131efedb90886f1d71522f43b3eb4af81b85ac095eb",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Getting%20started/Import%20notes.md",
+      "repository_blob_sha": "0c97188873584d7f1f4ec97338b2c3af49354257",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Getting%20started/Import%20notes.md"
+    },
+    {
+      "id": "s-links",
+      "title": "Obsidian Help — Internal links",
+      "url": "https://obsidian.md/help/links",
+      "evidence": "By linking notes, you can create a network of knowledge.",
+      "location": "Introduction / Link to a block",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "103d3c308bc10140fae87bc45f920c5e923713e56609b80f77489c5f2bc0371c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/Internal%20links.md",
+      "repository_blob_sha": "a6b7c4bbd0f5509aec731c9eb6c336b9f2c4cd99",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/Internal%20links.md"
+    },
+    {
+      "id": "s-backlinks",
+      "title": "Obsidian Help — Backlinks",
+      "url": "https://obsidian.md/help/plugins/backlinks",
+      "evidence": "find notes that reference the note you're writing.",
+      "location": "Introduction / Linked and unlinked mentions",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "be8fd5c5cbca11b27aa1a631bbe394cb98f371a70fc439f9b0acbcc69933fa36",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Backlinks.md",
+      "repository_blob_sha": "5b8a73588270a022ad2eeabaa1a8332c5378a7b9",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Backlinks.md"
+    },
+    {
+      "id": "s-graph",
+      "title": "Obsidian Help — Graph view",
+      "url": "https://obsidian.md/help/plugins/graph",
+      "evidence": "visualize the relationships between the notes in your vault.",
+      "location": "Introduction / Filters",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "f326b04084178684c0a8423336f19c4e0a0d1702936e14e3e71c7c9d5256208c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Graph%20view.md",
+      "repository_blob_sha": "ec1b3b8950c7b2e213b41d18aba073841dadce9e",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Graph%20view.md"
+    },
+    {
+      "id": "s-search",
+      "title": "Obsidian Help — Search",
+      "url": "https://obsidian.md/help/plugins/search",
+      "evidence": "using search terms and operators to narrow down results.",
+      "location": "Introduction / Search operators / Regular expressions",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "5abae034eaeb1330284315d18b19db3514a4cb62df787c992e3cefed41fc6031",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Search.md",
+      "repository_blob_sha": "d5c3bf32c599c5beb8ed93f2195bfbdfa3bb0807",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Search.md"
+    },
+    {
+      "id": "s-embeds",
+      "title": "Obsidian Help — Embed files",
+      "url": "https://obsidian.md/help/embeds",
+      "evidence": "stay up to date when the source file changes.",
+      "location": "Introduction / Embed a note / headings and blocks",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "8e8f91594de74161008e0c440ee1ee7730ba0e5ed696d8c3ebfc164d5367319d",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/Embed%20files.md",
+      "repository_blob_sha": "4867b733985a09da56d68dc238f09cba3e4d0e47",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/Embed%20files.md"
+    },
+    {
+      "id": "s-refactor",
+      "title": "Obsidian Help — Note composer",
+      "url": "https://obsidian.md/help/plugins/note-composer",
+      "evidence": "merge two notes or extract part of a note",
+      "location": "Introduction / Merge notes / Extract note",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "bdd1d1125c302472e806980ebcaac1a15f6b2f94f7a394a6841e467a88ad5432",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Note%20composer.md",
+      "repository_blob_sha": "da83e94327cb17e442222dfb3c1b5ab233d2be67",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Note%20composer.md"
+    },
+    {
+      "id": "s-daily",
+      "title": "Obsidian Help — Daily notes",
+      "url": "https://obsidian.md/help/plugins/daily-notes",
+      "evidence": "create journals, to-do lists, or daily logs",
+      "location": "Introduction / Create a daily note from template",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "02a654a40e4b55f2f12795de21d8b92706428a75f0eeb80a43d0b3dabae26fe2",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Daily%20notes.md",
+      "repository_blob_sha": "5aa2ab1effbc659f6a4a4aebb2f28797091252b8",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Daily%20notes.md"
+    },
+    {
+      "id": "s-templates",
+      "title": "Obsidian Help — Templates",
+      "url": "https://obsidian.md/help/plugins/templates",
+      "evidence": "insert pre-defined snippets of text into your active note.",
+      "location": "Introduction / Template variables / Properties",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "221fc409a624562ac24538693dfcf2630bc68efdf8da048d33e0ff5434310a47",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Templates.md",
+      "repository_blob_sha": "47ef3b261e8560b4eb9cc0d671d4b5e878ecdc2b",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Templates.md"
+    },
+    {
+      "id": "s-technical-writing",
+      "title": "Obsidian Help — Advanced formatting syntax",
+      "url": "https://obsidian.md/help/advanced-syntax",
+      "evidence": "add diagrams and charts to your notes\nadd math expressions",
+      "location": "Diagrams / Math",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "30753e1c400ba73fadd4589f56dd540b4df9717ec5917f27eff071cf34288c92",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Editing%20and%20formatting/Advanced%20formatting%20syntax.md",
+      "repository_blob_sha": "56764443f995437aa2bad34ab4f3eaf01a4af6e1",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Editing%20and%20formatting/Advanced%20formatting%20syntax.md"
+    },
+    {
+      "id": "s-audio",
+      "title": "Obsidian Help — Audio recorder",
+      "url": "https://obsidian.md/help/plugins/audio-recorder",
+      "evidence": "record and save audio in an Obsidian note.",
+      "location": "Introduction / Record audio in a note",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "dc5877896a3cbd6562d32e3ce2f51fa237441b2e9455f5a8386e805e03c9c064",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Audio%20recorder.md",
+      "repository_blob_sha": "87323d5529b8754fcd677e448d77fa58dd0f0e4e",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Audio%20recorder.md"
+    },
+    {
+      "id": "s-pdf",
+      "title": "Obsidian Help — PDFs",
+      "url": "https://obsidian.md/help/pdf",
+      "evidence": "link to a passage in it, and export any note as a PDF.",
+      "location": "Introduction / Link to a selection / mobile limitations",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "19f54bdc2392cc74f2c145a5e362aae783c553f01a912b8b1f5979ed00e9bcda",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/PDFs.md",
+      "repository_blob_sha": "c1ebe2f267109bc811c39281ec47d26e5efc944c",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Linking%20notes%20and%20files/PDFs.md"
+    },
+    {
+      "id": "s-slides",
+      "title": "Obsidian Help — Slides",
+      "url": "https://obsidian.md/help/plugins/slides",
+      "evidence": "lets you create presentations from your notes.",
+      "location": "Introduction / Markdown slide separators",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "deb393512a525221a337afc2d421adb3919bbdfdd40d5f8e29a7a79650bf4612",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Slides.md",
+      "repository_blob_sha": "2e7077ce7b8ad9e798cd0581360b8655bf60139c",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Slides.md"
+    },
+    {
+      "id": "s-canvas",
+      "title": "Obsidian Help — Canvas",
+      "url": "https://obsidian.md/help/plugins/canvas",
+      "evidence": "infinite space to lay out notes and connect them",
+      "location": "Introduction / Add cards / Groups",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "25ac329d58ac443d6bb7c5dd6c3fc2b45dbc67ec250db15c9e29de53efd74fbe",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Canvas.md",
+      "repository_blob_sha": "62f705fb25dfeefe0f2a7c9beeb217b13ddf77ba",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Canvas.md"
+    },
+    {
+      "id": "s-bases",
+      "title": "Obsidian Help — Introduction to Bases",
+      "url": "https://obsidian.md/help/bases",
+      "evidence": "view, edit, sort, and filter files and their [[Properties|properties]].",
+      "location": "Introduction / View types",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "4b95c559f5eaaa78dbcb73c5b3c18392e277db5a007ac87edf3d73e08c9744e8",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Introduction%20to%20Bases.md",
+      "repository_blob_sha": "32c77391f8f97fbb1226834a9c5fd7457a1123af",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Introduction%20to%20Bases.md"
+    },
+    {
+      "id": "s-formulas",
+      "title": "Obsidian Help — Formulas",
+      "url": "https://obsidian.md/help/formulas",
+      "evidence": "add prices, compute totals\ncalculate time differences, format dates, or determine deadlines.",
+      "location": "What formulas can do / Examples",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "078d0502ee0003e74ca4e8987bb5e87940c57fdeb1c51eec3c853ec5c1ee20a3",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Formulas.md",
+      "repository_blob_sha": "0e936711007d2f44b3eaf5564c0729ec068d0d47",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Formulas.md"
+    },
+    {
+      "id": "s-kanban",
+      "title": "Obsidian Help — Kanban view",
+      "url": "https://obsidian.md/help/bases/views/kanban",
+      "evidence": "display files as cards organized into columns.",
+      "location": "Requires Obsidian 1.14+ / Work with cards and columns",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "9ce74430fa888be4d6fc40fb2e5aea0b9c3ca493ab6ade29df4c4e8ecc39ef6c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Layouts/Kanban%20view.md",
+      "repository_blob_sha": "62b92be1387fca4c0f88c0d8c881810695bda99b",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Layouts/Kanban%20view.md"
+    },
+    {
+      "id": "s-recovery",
+      "title": "Obsidian Help — File recovery",
+      "url": "https://obsidian.md/help/plugins/file-recovery",
+      "evidence": "automatically saving complete snapshots of your notes at regular intervals.",
+      "location": "Introduction / local device snapshots",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "1afbd03fcedde9c543a95092f7cf42f21f907cff5deabb776bc9494a5a9a0248",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/File%20recovery.md",
+      "repository_blob_sha": "ac6410ecb8c71ff2675d1476a3640654f88038e4",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/File%20recovery.md"
+    },
+    {
+      "id": "s-ios",
+      "title": "Obsidian Help — Obsidian for iOS and iPadOS",
+      "url": "https://obsidian.md/help/ios",
+      "evidence": "Quick Capture can create a new note or add the text",
+      "location": "Quick Capture / requirements",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "073a8d7caec872b27e5ac291c7a26c0a49ca0c7e83a01c135f43e93b63f1468c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian/Obsidian%20for%20iOS%20and%20iPadOS.md",
+      "repository_blob_sha": "bd239d712e7033c8015173f86932216465a1f60d",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian/Obsidian%20for%20iOS%20and%20iPadOS.md"
+    },
+    {
+      "id": "s-mobile-release",
+      "title": "Obsidian 1.15 Mobile (Public)",
+      "url": "https://obsidian.md/changelog/2026-11-02-mobile-v1.15.0/",
+      "evidence": "export notes to PDF\nrecord voice notes and transcribe them",
+      "location": "2026-11-02 / PDF export / Voice capture on iOS",
+      "source_class": "official_release_notes",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "bb31908156fe90414ee4a31a02bba043f3a1652da6a097470f5e6c4e1fb15948",
+      "capture_origin": "https://obsidian.md/changelog/2026-11-02-mobile-v1.15.0/"
+    },
+    {
+      "id": "s-web-viewer",
+      "title": "Obsidian Help — Web viewer",
+      "url": "https://obsidian.md/help/plugins/web-viewer",
+      "evidence": "open external links within Obsidian on desktop.",
+      "location": "Introduction / Reader view / Save to vault",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "6a7e9184dde8b15b6b170498362837e8b37ca09b12c462d7d4f02c179050458c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Web%20viewer.md",
+      "repository_blob_sha": "6736415bc4e23d74016f419144bf64c6855e4fa4",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Plugins/Web%20viewer.md"
+    },
+    {
+      "id": "s-cli",
+      "title": "Obsidian Help — Obsidian CLI",
+      "url": "https://obsidian.md/help/cli",
+      "evidence": "control Obsidian from your terminal for scripting, automation, and integration",
+      "location": "Introduction / Install / Everyday use",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "b65e90f35ed1468aafc31a4406d78f9e6bcd979a6f05b573a07e281cb2e8d0e4",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Extending%20Obsidian/Obsidian%20CLI.md",
+      "repository_blob_sha": "154be21ac0cabc24e095e4dc933e60136ee8a9b4",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Extending%20Obsidian/Obsidian%20CLI.md"
+    },
+    {
+      "id": "s-uri",
+      "title": "Obsidian Help — Obsidian URI",
+      "url": "https://obsidian.md/help/uri",
+      "evidence": "Obsidian URI enables automation and cross-app workflows.",
+      "location": "Introduction / Open / New / Daily / Search",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "e4ca153309479737cd91bdaa02397e95a58de4a2d67f0e9d84a45bfb90f166d8",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Extending%20Obsidian/Obsidian%20URI.md",
+      "repository_blob_sha": "1d252ef36a3db1163d1edd246fc32c0a501f8a8f",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Extending%20Obsidian/Obsidian%20URI.md"
+    },
+    {
+      "id": "s-academic-case",
+      "title": "Emile van Krieken — How I use Obsidian for academic work",
+      "url": "https://www.emilevankrieken.com/blog/2025/academic-obsidian/",
+      "evidence": "to keep track of academic literature and ideas with minimal friction.",
+      "location": "The high-level overview / Types of notes / Plugins",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "c7e73548ecbd5b2cf3250a77ff6b1ac6d706c93cfa092c4a3091ad06318392e5",
+      "capture_origin": "https://www.emilevankrieken.com/blog/2025/academic-obsidian/"
+    },
+    {
+      "id": "s-research-case",
+      "title": "Science Research Vault — author showcase",
+      "url": "https://forum.obsidian.md/t/science-research-vault-a-structured-workflow-for-academics/95589",
+      "evidence": "Experiment Tracking – Logging protocols, results, and analysis notes",
+      "location": "Structure & Features / later issue updates",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "d6201f68832051d259cfcbd44a42420df9aae3a6a0d21e6620b3c61896c6df58",
+      "capture_origin": "https://forum.obsidian.md/t/science-research-vault-a-structured-workflow-for-academics/95589"
+    },
+    {
+      "id": "s-archive-teaching",
+      "title": "Long & Yunes — From Notes to Networks",
+      "url": "https://journal.code4lib.org/articles/18535",
+      "evidence": "prototype our archival work.\nvisually illustrating the semantic relationships and networks",
+      "location": "Case Study 1 / Staging for Data Publication / Technical Infrastructure",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "e99dc336a8d7801657029aa1ab668ad98e723d9d09fba14d42db80d30f76002d",
+      "capture_origin": "https://journal.code4lib.org/articles/18535"
+    },
+    {
+      "id": "s-novel-case",
+      "title": "Iain F Macleod — How to Write a Novel in Obsidian",
+      "url": "https://www.iainfmacleod.com/how-to-write-a-novel-in-obsidian/",
+      "evidence": "from carding a story, writing a scene-by-scene, to writing the scenes/chapters.",
+      "location": "Opening workflow / Changing Cards into Notes / Longform",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "7d50e9252d2aba422f53b194fb9c8d522ff6678824be933499015049b9b86b41",
+      "capture_origin": "https://www.iainfmacleod.com/how-to-write-a-novel-in-obsidian/"
+    },
+    {
+      "id": "s-rpg-case",
+      "title": "dclasair/ttrpg-campaign-vault — README.md",
+      "url": "https://github.com/dclasair/ttrpg-campaign-vault/blob/main/README.md",
+      "evidence": "An Obsidian vault to manage your TTRPG campaigns for DMs/GMs and Players.",
+      "location": "README / Vault overview",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "d845d6b02e51f954006c3ba7f7ccddee08cff5988050444cd83008b79f5d14ad",
+      "repository_blob_sha": "0f8a71c73a8b30f53f55202978a8d4c38e68cde1",
+      "capture_origin": "https://github.com/dclasair/ttrpg-campaign-vault/blob/main/README.md"
+    },
+    {
+      "id": "s-genealogy-case",
+      "title": "Alexander Kucera — Genealogy in Obsidian",
+      "url": "https://alexanderkucera.com/2025/11/03/genealogy-in-obsidian.html",
+      "evidence": "my whole family tree as Markdown in Obsidian",
+      "location": "GEDCOM exporter / Canvas output / outcome",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "b5d7170ce582bfb5939807d50fc0d0e2b05d718817489a95d40e872d7a3d2013",
+      "capture_origin": "https://alexanderkucera.com/2025/11/03/genealogy-in-obsidian.html"
+    },
+    {
+      "id": "s-crm-case",
+      "title": "Muted-Temperature212 — My take on using Obsidian as a CRM",
+      "url": "https://www.reddit.com/r/ObsidianMD/comments/1clswlh/my_take_on_using_obsidian_as_a_crm/",
+      "evidence": "a complete snapshot of everything related to the client",
+      "location": "Original post / author reply explaining Templater and Dataview",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "5c34519eedb2380ee71c793cf8188cd48504f5970c6997a3017ef21580850533",
+      "capture_origin": "https://www.reddit.com/r/ObsidianMD/comments/1clswlh/my_take_on_using_obsidian_as_a_crm/"
+    },
+    {
+      "id": "s-travel-case",
+      "title": "wallaburton45 — Obsidian Travel Planner",
+      "url": "https://forum.obsidian.md/t/obsidian-travel-planner-your-offline-trip-planner/100934",
+      "evidence": "after a few trips I’ve found it to work quite well",
+      "location": "Author experience / Required / Overview",
+      "source_class": "first_person_case",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "d62ab713773234835480dc524c86721cfeaedc32b81b26c004ce2516d6d16231",
+      "capture_origin": "https://forum.obsidian.md/t/obsidian-travel-planner-your-offline-trip-planner/100934"
+    },
+    {
+      "id": "s-importer",
+      "title": "Obsidian Help — Importer",
+      "url": "https://obsidian.md/help/plugins/importer",
+      "evidence": "migrate to Obsidian from various apps and formats.",
+      "location": "Introduction / Install Importer",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "b327e1b32783f33b9b19e6bfb358481db5d038b6dafd2fb0d4552a9f72bcf46a",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Import%20notes/Importer.md",
+      "repository_blob_sha": "08ede9d45c5314a70102a1de9d9cd0b14bc93f74",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Import%20notes/Importer.md"
+    },
+    {
+      "id": "s-import-formats",
+      "title": "Obsidian Help — Import notes",
+      "url": "https://obsidian.md/help/import",
+      "evidence": "[[Import from Notion|Notion]]",
+      "location": "Import from other apps and file formats",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "887b167b91806b1438c24131efedb90886f1d71522f43b3eb4af81b85ac095eb",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Getting%20started/Import%20notes.md",
+      "repository_blob_sha": "0c97188873584d7f1f4ec97338b2c3af49354257",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Getting%20started/Import%20notes.md"
+    },
+    {
+      "id": "s-clipper",
+      "title": "Obsidian Help — Clip web pages",
+      "url": "https://obsidian.md/help/web-clipper/capture",
+      "evidence": "Web Clipper extracts data from the current web page",
+      "location": "Capture a page / Download images",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "e33db823b58f3dda5b2a4c20dd4b884910540fa7c08e9f91665283560a87c7e4",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Clip%20web%20pages.md",
+      "repository_blob_sha": "802f07446963f2e6030433bf218c933bb7a404de",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Clip%20web%20pages.md"
+    },
+    {
+      "id": "s-clipper-templates",
+      "title": "Obsidian Help — Web Clipper Templates",
+      "url": "https://obsidian.md/help/web-clipper/templates",
+      "evidence": "templates that automatically capture and organize metadata from web pages.",
+      "location": "Introduction / Behavior / Template triggers",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "24815ff28091f3e883159fc4bfdf4ea75275a1745d9c0b30c43d6643c2eb53b2",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Templates.md",
+      "repository_blob_sha": "6c758055ec584527826875d885b702f48122105d",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Templates.md"
+    },
+    {
+      "id": "s-interpreter",
+      "title": "Obsidian Help — Interpreter",
+      "url": "https://obsidian.md/help/web-clipper/interpreter",
+      "evidence": "Summarize or explain information.\nTranslate text to a different language.",
+      "location": "Introduction / Examples of prompts / Get started",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "72db07e830b08bc2b407e11a6d6cba054d26d3d096cbdaa6f67ef430ba3a2e1d",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Interpreter.md",
+      "repository_blob_sha": "86432b9bdbc0a2a78eea4f6e24a0065e8d521126",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Web%20Clipper/Interpreter.md"
+    },
+    {
+      "id": "s-maps",
+      "title": "Obsidian Help — Map view",
+      "url": "https://obsidian.md/help/bases/views/map",
+      "evidence": "display files as an interactive map with markers for each file",
+      "location": "Introduction / Install Maps / Properties",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "31dd08b7891582320724330172787fe54d2d33c23d8481af66e119770dc000d0",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Layouts/Map%20view.md",
+      "repository_blob_sha": "43dacfca5bd68bdcc6d67c471cca7e43971fac89",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Bases/Layouts/Map%20view.md"
+    },
+    {
+      "id": "s-dataview",
+      "title": "blacksmithgu/obsidian-dataview — README.md",
+      "url": "https://github.com/blacksmithgu/obsidian-dataview/blob/master/README.md",
+      "evidence": "filtering, sorting, and extracting data from Markdown pages.",
+      "location": "Introduction / Data / Querying / Examples",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "96e9431f9aa64555d6ef74ba2ed62dbe3e635c94246edefc5c9dae3c968fc225",
+      "repository_blob_sha": "4e365f3ae7d22df5c9aa9926c0737fe36755dd32",
+      "capture_origin": "https://github.com/blacksmithgu/obsidian-dataview/blob/master/README.md"
+    },
+    {
+      "id": "s-tasks",
+      "title": "obsidian-tasks-group/obsidian-tasks — README.md",
+      "url": "https://github.com/obsidian-tasks-group/obsidian-tasks/blob/main/README.md",
+      "evidence": "Track tasks across your entire vault.\nSupports due dates, recurring tasks",
+      "location": "Introduction / Usage",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "c0f12c139764181f6de16d98ce33106738d6b5fc5d0c2b12af6d870667e88f33",
+      "repository_blob_sha": "63d214c1037328187a1d42ec200b50fc6dec7d9b",
+      "capture_origin": "https://github.com/obsidian-tasks-group/obsidian-tasks/blob/main/README.md"
+    },
+    {
+      "id": "s-calendar",
+      "title": "community-archive/obsidian-full-calendar — README.md",
+      "url": "https://github.com/community-archive/obsidian-full-calendar/blob/main/README.md",
+      "evidence": "Each event is stored as a separate note with special frontmatter",
+      "location": "README / calendar sources",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "6f227e3ee323933ad40ce4a8ad646ece6ef28bdfe8d693c87c72e43db6400378",
+      "repository_blob_sha": "02c0758202e344740cdeed2516a661286d983bf4",
+      "capture_origin": "https://github.com/community-archive/obsidian-full-calendar/blob/main/README.md"
+    },
+    {
+      "id": "s-spaced",
+      "title": "st3v3nmw/obsidian-spaced-repetition — README.md",
+      "url": "https://github.com/st3v3nmw/obsidian-spaced-repetition/blob/main/README.md",
+      "evidence": "reviewing flashcards & notes using the FSRS or the SM-2",
+      "location": "README / introductory paragraph",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "f409f49850b486e040818eafede64afe928d2bcc14429299309bf1c99eda8513",
+      "repository_blob_sha": "0b15ba5e69b1eab6eeed112341965c4c4b1a743f",
+      "capture_origin": "https://github.com/st3v3nmw/obsidian-spaced-repetition/blob/main/README.md"
+    },
+    {
+      "id": "s-zotero",
+      "title": "community-archive/obsidian-zotero-integration — README.md",
+      "url": "https://github.com/community-archive/obsidian-zotero-integration/blob/main/README.md",
+      "evidence": "Insert and import citations, bibliographies, notes, and PDF annotations from Zotero",
+      "location": "README / requirements",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "508d862d0c3bd83968d46373da927cb49cfe323aed01a202a08d8c27e30230bd",
+      "repository_blob_sha": "8c149b9cec274ad0ac2f365b05a63b03f706bfc6",
+      "capture_origin": "https://github.com/community-archive/obsidian-zotero-integration/blob/main/README.md"
+    },
+    {
+      "id": "s-readwise",
+      "title": "Readwiseio/obsidian-readwise — README.md",
+      "url": "https://github.com/readwiseio/obsidian-readwise/blob/master/README.md",
+      "evidence": "automatically export all your digital highlights to",
+      "location": "README / subscription note / sync features",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "ba1390f01ed50b88749bbd4707b875e4cb73a769842bcd27b03f0ef2fd02f972",
+      "repository_blob_sha": "d123347c6540693497192d5627bdf81bea430059",
+      "capture_origin": "https://github.com/readwiseio/obsidian-readwise/blob/master/README.md"
+    },
+    {
+      "id": "s-longform",
+      "title": "kevboh/longform — README.md",
+      "url": "https://github.com/kevboh/longform/blob/main/README.md",
+      "evidence": "organize a series of notes, or _scenes_, into an ordered manuscript.",
+      "location": "Introduction / Compilation",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "1852f3f373f731581a51b3b59add662dc733e6a57ccfc46fc92c3f3f2137a65a",
+      "repository_blob_sha": "efb27cab2f0f8752b9a394e97c94662029b155e2",
+      "capture_origin": "https://github.com/kevboh/longform/blob/main/README.md"
+    },
+    {
+      "id": "s-excalidraw",
+      "title": "zsviczian/obsidian-excalidraw-plugin — README.md",
+      "url": "https://github.com/zsviczian/obsidian-excalidraw-plugin/blob/master/README.md",
+      "evidence": "store and edit Excalidraw files in your vault",
+      "location": "README / introduction",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "2fcd53e2ae746d145b0698c223a9b25e59da46b3e8b4809156bf48c8aee635bb",
+      "repository_blob_sha": "5107bce58fe8702d40ae3610508f3f3f019dc165",
+      "capture_origin": "https://github.com/zsviczian/obsidian-excalidraw-plugin/blob/master/README.md"
+    },
+    {
+      "id": "s-quickadd",
+      "title": "chhoumann/quickadd — README.md",
+      "url": "https://github.com/chhoumann/quickadd/blob/master/README.md",
+      "evidence": "runs several steps in a row",
+      "location": "What you can build / Template / Capture / Macro / Forms",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "f43e9a5ecb1ca1af0471b945dad431ed683798b2c01cde62dd168315412b2bfd",
+      "repository_blob_sha": "5c66a2527957e3afe3e18a256563fcfc46ccfece",
+      "capture_origin": "https://github.com/chhoumann/quickadd/blob/master/README.md"
+    },
+    {
+      "id": "s-tracker",
+      "title": "pyrochlore/obsidian-tracker — README.md",
+      "url": "https://github.com/pyrochlore/obsidian-tracker/blob/master/README.md",
+      "evidence": "collect data from notes and represent it comprehensively.",
+      "location": "README / Introduction",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "aaee030bab64945f673926de4f32aeefd209cc5410dfb3ec40fa31e16ff34a6a",
+      "repository_blob_sha": "734a6cda51c8d88bba76ac7bc7ed2a572b171f03",
+      "capture_origin": "https://github.com/pyrochlore/obsidian-tracker/blob/master/README.md"
+    },
+    {
+      "id": "s-tracker-examples",
+      "title": "pyrochlore/obsidian-tracker — docs/Examples.md",
+      "url": "https://github.com/pyrochlore/obsidian-tracker/blob/master/docs/Examples.md",
+      "evidence": "Habit Tracker",
+      "location": "Table of Use Cases / Full examples",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "9c0a877e0ba52096056439af2e9d4bd080e1f38abb2a87fe03d8b816e476a1ab",
+      "repository_blob_sha": "efd0593d9bd0930c0a6e745771c11cf1a0cbc5cf",
+      "capture_origin": "https://github.com/pyrochlore/obsidian-tracker/blob/master/docs/Examples.md"
+    },
+    {
+      "id": "s-charts",
+      "title": "Phibr0/obsidian-charts — README.md",
+      "url": "https://github.com/phibr0/obsidian-charts/blob/master/README.md",
+      "evidence": "create interactive Charts",
+      "location": "README / Introduction",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "42f8405c57156f18185fc4e949fc1b085e181ec0c12f79ab156e13cb8f6e84a9",
+      "repository_blob_sha": "b3e7211397d69d9e138d69cd0121de2b03313aa4",
+      "capture_origin": "https://github.com/phibr0/obsidian-charts/blob/master/README.md"
+    },
+    {
+      "id": "s-pdf-plus",
+      "title": "RyotaUshio/obsidian-pdf-plus — README.md",
+      "url": "https://github.com/RyotaUshio/obsidian-pdf-plus/blob/main/README.md",
+      "evidence": "annotate PDF files with highlights just by linking to text selection",
+      "location": "Introduction / note on private APIs / saving annotations",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "6e126de582fd5f072ec0f81c0e838093d8bc1f0e5b891d29684f339b45407f82",
+      "repository_blob_sha": "c0fc925ce5ee894197d3b7721536bd7023b8e978",
+      "capture_origin": "https://github.com/RyotaUshio/obsidian-pdf-plus/blob/main/README.md"
+    },
+    {
+      "id": "s-semantic",
+      "title": "brianpetro/obsidian-smart-connections — README.md",
+      "url": "https://github.com/brianpetro/obsidian-smart-connections/blob/main/README.md",
+      "evidence": "surface notes that are semantically related to what you are working on",
+      "location": "What Smart Connections does / settings / Pro surfaces",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "124624907affb76b776d16b18c5ab0be8e07426eb5d10f72c23deff880ffe2c6",
+      "repository_blob_sha": "576be954d3a9fbc0e4a36ffde46f6a9e2f2792f1",
+      "capture_origin": "https://github.com/brianpetro/obsidian-smart-connections/blob/main/README.md"
+    },
+    {
+      "id": "s-copilot",
+      "title": "logancyang/obsidian-copilot — README.md",
+      "url": "https://github.com/logancyang/obsidian-copilot/blob/master/README.md",
+      "evidence": "Ask about a selection without leaving the note.",
+      "location": "Quick Ask / model routing / Plans",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "8de9b15a9114aa7be71421afea46d0017caf6fbfddaa3804097010ffca14a286",
+      "repository_blob_sha": "00f0b6432800779da2f4e514a2f529eb394c5082",
+      "capture_origin": "https://github.com/logancyang/obsidian-copilot/blob/master/README.md"
+    },
+    {
+      "id": "s-copilot-agent",
+      "title": "logancyang/obsidian-copilot — docs/agent-mode-and-tools.md",
+      "url": "https://github.com/logancyang/obsidian-copilot/blob/master/docs/agent-mode-and-tools.md",
+      "evidence": "answer questions, use tools, and make permissioned changes",
+      "location": "Agent Chat / Choose an agent / permissions",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "7943d0bc8422fb041e510fcbfb2c0c56b8114ee0c0e5b2b5074369c7a93e12eb",
+      "repository_blob_sha": "bf128d4e7f7e73d3608d93eed2f75f0a10998201",
+      "capture_origin": "https://github.com/logancyang/obsidian-copilot/blob/master/docs/agent-mode-and-tools.md"
+    },
+    {
+      "id": "s-ocr",
+      "title": "scambier/obsidian-text-extractor — README.md",
+      "url": "https://github.com/scambier/obsidian-text-extractor/blob/master/README.md",
+      "evidence": "quickly extract texts from **images & PDFs**.",
+      "location": "README / Unmaintained / Limitations / Cache & Sync",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "473bb58c64949e142aa032e33d4bdf60d4d40d05cc0083abfea6b8cc2bf0c054",
+      "repository_blob_sha": "20bbb08a116e03d1d49dcdc4e7262bd45466ab3d",
+      "capture_origin": "https://github.com/scambier/obsidian-text-extractor/blob/master/README.md"
+    },
+    {
+      "id": "s-omnisearch",
+      "title": "scambier/obsidian-omnisearch — README.md",
+      "url": "https://github.com/scambier/obsidian-omnisearch/blob/master/README.md",
+      "evidence": "Images, documents, and PDF indexing is available",
+      "location": "Features / Text Extractor dependency",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "1e1824c36f9ecca2de087d88e45f348eae4779c058aad172bdb809fdcc00a27e",
+      "repository_blob_sha": "0e1b6bad311b7ca6590e790ab0ff8685bb07894e",
+      "capture_origin": "https://github.com/scambier/obsidian-omnisearch/blob/master/README.md"
+    },
+    {
+      "id": "s-git",
+      "title": "Vinzent03/obsidian-git — README.md",
+      "url": "https://github.com/Vinzent03/obsidian-git/blob/master/README.md",
+      "evidence": "Automatically commit, pull, push, and see your changes",
+      "location": "README / Key Features / Mobile support",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "7ab293c322e0406c83d299eae7f1e77045d395a42732b7c221ef89fcc22b115b",
+      "repository_blob_sha": "7804b7777363bc8d4929c2e504f02dd1fa6b7fd3",
+      "capture_origin": "https://github.com/Vinzent03/obsidian-git/blob/master/README.md"
+    },
+    {
+      "id": "s-sync",
+      "title": "Obsidian Help — Introduction to Obsidian Sync",
+      "url": "https://obsidian.md/help/sync",
+      "evidence": "privately sync your notes across devices.",
+      "location": "Introduction / Important",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "000757dd637fa1e7898331f1d96cfff94071cd541a9c6127177e23233dbc9d30",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Introduction%20to%20Obsidian%20Sync.md",
+      "repository_blob_sha": "d490537c104de62a5eec8ba5c7c48eb3d4aad3d7",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Introduction%20to%20Obsidian%20Sync.md"
+    },
+    {
+      "id": "s-shared-vault",
+      "title": "Obsidian Help — Collaborate on a shared vault",
+      "url": "https://obsidian.md/help/sync/collaborate",
+      "evidence": "collaborate on a shared vault with your team.",
+      "location": "Introduction / Permissions / Live editing",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "84aaa3fa8a80b1bc786af839333b3f36d3ccb6fd55b643e986a22674cc71161b",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Collaborate%20on%20a%20shared%20vault.md",
+      "repository_blob_sha": "4bc7c129336d6ebc712692a22e49da8cbf43abb2",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Collaborate%20on%20a%20shared%20vault.md"
+    },
+    {
+      "id": "s-sync-versions",
+      "title": "Obsidian Help — Version history",
+      "url": "https://obsidian.md/help/sync/version-history",
+      "evidence": "a version history for restoring notes and attachments.",
+      "location": "Version history / Restore / plan retention",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "655b11cb76f9d95f03ae3b719e772fe7235620136e1ba82926cba7de39210435",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Version%20history.md",
+      "repository_blob_sha": "3cd4dd6753a1d8cc19154cf56c7fdcaa2e274668",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Version%20history.md"
+    },
+    {
+      "id": "s-publish",
+      "title": "Obsidian Help — Introduction to Obsidian Publish",
+      "url": "https://obsidian.md/help/publish",
+      "evidence": "publish your notes as a wiki, knowledge base, documentation, or digital",
+      "location": "Introduction / selected notes",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "07281452ddf6cddd8c99b972a1243d6f0e163016a6b85bff927dc078d4d2fb15",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Introduction%20to%20Obsidian%20Publish.md",
+      "repository_blob_sha": "d4fe14b55992d7aaa0edd1ec52ff09dcdf7273a6",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Introduction%20to%20Obsidian%20Publish.md"
+    },
+    {
+      "id": "s-publish-password",
+      "title": "Obsidian Help — Publish Security and privacy",
+      "url": "https://obsidian.md/help/publish/security",
+      "evidence": "apply a site password.",
+      "location": "Password protection",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "92228c33b2c16d629178831a4bb8faf4343fba3acf6940077043f7a792a5662c",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Security%20and%20privacy.md",
+      "repository_blob_sha": "c746984081506b64ead1762ba84c449e2f6349d7",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Security%20and%20privacy.md"
+    },
+    {
+      "id": "s-quartz",
+      "title": "Quartz 5 — Welcome",
+      "url": "https://quartz.jzhao.xyz/",
+      "evidence": "transforms Markdown content into fully functional websites.",
+      "location": "Introduction / Features / Deploy",
+      "source_class": "third_party_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "479cee62709d4e14ac8e1edd269ef50858d17f4468a16cd63bd4ff0a9b798c5f",
+      "capture_origin": "https://quartz.jzhao.xyz/"
+    },
+    {
+      "id": "s-headless-sync",
+      "title": "Obsidian Help — Headless Sync",
+      "url": "https://obsidian.md/help/sync/headless",
+      "evidence": "sync vaults without using the desktop app.",
+      "location": "Introduction / Quick start",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "6f10135f256090165c89d75cf54e701255428d884c147202c53718de66d18971",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Headless%20Sync.md",
+      "repository_blob_sha": "70a4cd985541e80c2005b8eb8757b2df053932c6",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Sync/Headless%20Sync.md"
+    },
+    {
+      "id": "s-headless-publish",
+      "title": "Obsidian Help — Headless Publish",
+      "url": "https://obsidian.md/help/publish/headless",
+      "evidence": "on a schedule or as part of a build pipeline.",
+      "location": "Introduction / Quick start / dry-run",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "465ad916b67e773b62c54492eb3fe24634a1138d155f77075b5a17ce9e638950",
+      "repository_url": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Headless%20Publish.md",
+      "repository_blob_sha": "7143a591ba726c07694db35380f87fa112afaa78",
+      "capture_origin": "https://github.com/obsidianmd/obsidian-help/blob/master/en/Obsidian%20Publish/Headless%20Publish.md"
+    },
+    {
+      "id": "s-recipe",
+      "title": "Adam Tommasi — Recipe Box",
+      "url": "https://community.obsidian.md/plugins/recipe-box",
+      "evidence": "Plan meals, build grocery lists, and view recipes as interactive cards",
+      "location": "Author description / Meal planning / Grocery list",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "96f854292344a8065dfd17ece80b74c39a1a8ab7aab8b75c17bca37cbb3966e9",
+      "capture_origin": "https://community.obsidian.md/plugins/recipe-box"
+    },
+    {
+      "id": "s-canvas-presentation",
+      "title": "Developer-Mike/obsidian-advanced-canvas — README.md",
+      "url": "https://github.com/Developer-Mike/obsidian-advanced-canvas/blob/main/README.md",
+      "evidence": "Create and navigate slide-like presentations.",
+      "location": "Feature Overview / Presentation Mode",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "3fc77dbdf37c2526dd29e76e7aa56f44740fdfe1245c956deab1e09be4c084b3",
+      "repository_blob_sha": "6366862b36927c5cfe184f824512858ca4dbf014",
+      "capture_origin": "https://github.com/Developer-Mike/obsidian-advanced-canvas/blob/main/README.md"
+    },
+    {
+      "id": "s-pandoc",
+      "title": "OliverBalfour/obsidian-pandoc — README.md",
+      "url": "https://github.com/OliverBalfour/obsidian-pandoc/blob/master/README.md",
+      "evidence": "Word Documents, PDFs, ePub books, HTML websites, PowerPoints and LaTeX",
+      "location": "Introduction / beta note",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "f6893691c7c5dd7f441ff81eea64535cb66b2f8d2e3e1124e80e0c7c1077e50c",
+      "repository_blob_sha": "8dee52b3f10a70255632ae24c32664ae6ff2432e",
+      "capture_origin": "https://github.com/OliverBalfour/obsidian-pandoc/blob/master/README.md"
+    },
+    {
+      "id": "s-execute",
+      "title": "twibiral/obsidian-execute-code — README.md",
+      "url": "https://github.com/twibiral/obsidian-execute-code/blob/master/README.md",
+      "evidence": "execute code snippets in code blocks in your notes.",
+      "location": "README / supported languages / requirements / notebook mode",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔，未把省略处写成连续引文。",
+      "capture_sha256": "3f4cac80fe7801b1a87e770bc1f2f6d533d6f3ad72ccfeffb8042e64e6214ccd",
+      "repository_blob_sha": "2df6341888d6dc0c6f90c2a121639ae3e371ab7b",
+      "capture_origin": "https://github.com/twibiral/obsidian-execute-code/blob/master/README.md"
+    },
+    {
+      "id": "s-pricing",
+      "title": "Obsidian Pricing",
+      "url": "https://obsidian.md/pricing",
+      "evidence": "You are not required to pay for a commercial license\nOptional add-on services make it easy to sync and publish\nEnd-to-end encryption",
+      "location": "Pricing / Do I have to pay for commercial use?",
+      "source_class": "official_product_information",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "e2cb66c9d8f79bbb5a2d485e7b3a43272a38b11e1c3728bc80d66ce02ea96d2f",
+      "capture_origin": "https://obsidian.md/pricing"
+    },
+    {
+      "id": "s-public-desktop",
+      "title": "Obsidian 1.15 Desktop (Public)",
+      "url": "https://obsidian.md/changelog/2026-11-02-desktop-v1.15.0/",
+      "evidence": "Mermaid diagrams and charts are now rendered",
+      "location": "2026-11-02 / Diagrams and charts",
+      "source_class": "official_release_notes",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "c200bcf1cfa98e2cf1787bc815fb7ab13b84fa415bea827d6bc47f308a56285f",
+      "capture_origin": "https://obsidian.md/changelog/2026-11-02-desktop-v1.15.0/"
+    },
+    {
+      "id": "s-core-list",
+      "title": "Obsidian Help — Core plugins",
+      "url": "https://obsidian.md/help/plugins",
+      "evidence": "core plugins that come installed with Obsidian.",
+      "location": "Introduction / Other plugins",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "551d359d813810c9b347eeee460fe2e063a0057e3413f61802bbdea6eca8b452",
+      "capture_origin": "https://obsidian.md/help/plugins"
+    },
+    {
+      "id": "s-publish-limits",
+      "title": "Obsidian Help — Publish limitations",
+      "url": "https://obsidian.md/help/publish/limitations",
+      "evidence": "will not work by default in Publish.",
+      "location": "Community plugins / Search / Media",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "f8b9e1df7d782bc2299e5a911884889c2e52d32e3df98ef5a838bd8ad97a18ba",
+      "capture_origin": "https://obsidian.md/help/publish/limitations"
+    },
+    {
+      "id": "s-backup-boundary",
+      "title": "Obsidian Help — Back up your files",
+      "url": "https://obsidian.md/help/backup",
+      "evidence": "they are not designed for backups",
+      "location": "Syncing is not a backup",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "61410d4c037d9e8da0ba7977ac1bef412da226117019131c20fc81b2c901b0c8",
+      "capture_origin": "https://obsidian.md/help/backup"
+    },
+    {
+      "id": "s-plugin-boundary",
+      "title": "Obsidian Help — Plugin security",
+      "url": "https://obsidian.md/help/plugin-security",
+      "evidence": "plugins will inherit Obsidian's access levels.",
+      "location": "Plugin capabilities",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "96667cd19722bfee6ed08bd5c045635a5183579b341d227c6594fc064f56457e",
+      "capture_origin": "https://obsidian.md/help/plugin-security"
+    },
+    {
+      "id": "s-calendar-archive",
+      "title": "GitHub metadata — community-archive/obsidian-full-calendar",
+      "url": "https://api.github.com/repos/community-archive/obsidian-full-calendar",
+      "evidence": "\"archived\":true",
+      "location": "archived field; observed 2026-11-05",
+      "source_class": "repository_metadata",
+      "retrieved_date": "2026-11-05",
+      "capture_method": "实际取回正文；仅对空白归一化核对。不同摘录以换行分隔。",
+      "capture_sha256": "f9af39fa2638522c1164291b03bdebe32fb7475e2c5cbe6f9ecf669c8b815dcb",
+      "capture_origin": "https://api.github.com/repos/community-archive/obsidian-full-calendar"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-capture",
+      "name": "收集外部资料与即时想法"
+    },
+    {
+      "id": "g-connect",
+      "name": "连接、找回与重用已有知识"
+    },
+    {
+      "id": "g-study",
+      "name": "阅读、学习与开展研究"
+    },
+    {
+      "id": "g-write",
+      "name": "形成文稿并交付给读者"
+    },
+    {
+      "id": "g-visual",
+      "name": "以空间和图解组织解释"
+    },
+    {
+      "id": "g-work",
+      "name": "管理项目、记录和行动"
+    },
+    {
+      "id": "g-life",
+      "name": "安排生活并保存个人世界"
+    },
+    {
+      "id": "g-steward",
+      "name": "保有、保护和共同维护资料"
+    },
+    {
+      "id": "g-publish",
+      "name": "发布和管理知识网站"
+    },
+    {
+      "id": "g-integrate",
+      "name": "把知识库接入工作流与计算实验"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-local-knowledge",
+      "title": "保有可离线使用、可迁出的个人知识库",
+      "result": "把笔记保存在本机文件夹，以普通文本继续编辑，并在需要时迁移到其他工具。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "本地 Markdown 文件；附件也需存于本地。链接、Canvas、Bases 和插件专用语法在其他工具中的表现需另行核对；本地文件不自动获得加密或备份。",
+      "source_ids": [
+        "s-local",
+        "s-offline"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-local",
+          "quote": "Markdown-formatted]] plain text files in a _vault_",
+          "location": "Introduction / external editors"
+        },
+        {
+          "source_id": "s-offline",
+          "quote": "use Obsidian offline and switch to another app easily",
+          "location": "Introduction"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "本地优先",
+        "离线笔记",
+        "数据可携带"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-knowledge-network",
+      "title": "建立能双向追溯的知识网络",
+      "result": "把概念、人物和资料相互链接，并从当前笔记回查引用它的其他笔记及未链接的提及。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Backlinks；引用与未链接提及依赖笔记内容和名称。链接主要在同一 vault 内生效，关联不代表事实正确。",
+      "source_ids": [
+        "s-links",
+        "s-backlinks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-links",
+          "quote": "By linking notes, you can create a network of knowledge.",
+          "location": "Introduction / Link to a block"
+        },
+        {
+          "source_id": "s-backlinks",
+          "quote": "find notes that reference the note you're writing.",
+          "location": "Introduction / Linked and unlinked mentions"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "个人维基",
+        "双向链接",
+        "概念网络"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-visual-network",
+      "title": "可视化浏览知识关联与孤立笔记",
+      "result": "在全库或局部关系图里查看链接结构，筛选要浏览的笔记与未连接节点。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Graph view 并有笔记链接；孤立节点筛选可辅助人工补链，图形本身不证明概念间因果。",
+      "source_ids": [
+        "s-graph"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-graph",
+          "quote": "visualize the relationships between the notes in your vault.",
+          "location": "Introduction / Filters"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "知识图谱浏览"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-retrieve-notes",
+      "title": "从大量笔记中找回指定信息",
+      "result": "用词句、路径、标签、属性条件和正则表达式缩小检索范围，找回相关笔记内容。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Search；正文搜索范围是笔记与 Canvas，不是所有 PDF、扫描件或 Office 附件；被排除的文件不参与搜索。",
+      "source_ids": [
+        "s-search"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-search",
+          "quote": "using search terms and operators to narrow down results.",
+          "location": "Introduction / Search operators / Regular expressions"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "全文检索",
+        "资料定位"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-reuse-content",
+      "title": "在多份文档里复用同一份资料",
+      "result": "嵌入原笔记、标题段落、块或媒体，使引用位置随源文件更新。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "使用内部嵌入链接；源文件必须仍可访问。远程图片或网页仍依赖网络，导出和发布的呈现需单独检查。",
+      "source_ids": [
+        "s-embeds"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-embeds",
+          "quote": "stay up to date when the source file changes.",
+          "location": "Introduction / Embed a note / headings and blocks"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "内容复用",
+        "转引",
+        "transclusion"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-refactor-notes",
+      "title": "把零散记录整理成可复用的主题笔记",
+      "result": "合并重复记录，或从长文抽出独立笔记，逐步调整知识库的粒度。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Note composer；合并会改动和移除源笔记，应保留独立备份。官方明确合并时更新指向合并笔记的链接。",
+      "source_ids": [
+        "s-refactor"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-refactor",
+          "quote": "merge two notes or extract part of a note",
+          "location": "Introduction / Merge notes / Extract note"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "拆分笔记",
+        "合并笔记",
+        "知识整理"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-daily-log",
+      "title": "按日期积累日记、工作日志与随手发现",
+      "result": "每天在固定日期笔记中连续记录当天的想法、事项和经历，供之后回顾。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Daily notes；可选择模板和存放路径。周月汇总与提醒不是此项自动提供的结果。",
+      "source_ids": [
+        "s-daily"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-daily",
+          "quote": "create journals, to-do lists, or daily logs",
+          "location": "Introduction / Create a daily note from template"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "日记",
+        "工作日志",
+        "每日记录"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-consistent-records",
+      "title": "按统一结构建立会议、读书和项目记录",
+      "result": "复用预设文字及标题、日期、时间变量，减少重复输入并保持记录结构一致。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Templates 并自行准备模板；例中的会议、读书和项目是模板内容的应用，内置模板不会自动抓取外部资料或执行复杂逻辑。",
+      "source_ids": [
+        "s-templates"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-templates",
+          "quote": "insert pre-defined snippets of text into your active note.",
+          "location": "Introduction / Template variables / Properties"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "标准化记录",
+        "重复文书"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-technical-documents",
+      "title": "撰写包含图解和数学表达的技术文档",
+      "result": "在笔记中呈现 Mermaid 流程或时序图，以及用 MathJax 渲染的数学表达式。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "需编写相应文本语法；不是完整 LaTeX 排版或公式求解器。具体语法支持跟随 Obsidian 捆绑的渲染版本。",
+      "source_ids": [
+        "s-technical-writing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-technical-writing",
+          "quote": "add diagrams and charts to your notes",
+          "location": "Diagrams / Math"
+        },
+        {
+          "source_id": "s-technical-writing",
+          "quote": "add math expressions",
+          "location": "Diagrams / Math"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "数学笔记",
+        "流程图文档"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-audio-evidence",
+      "title": "把讲座或会议录音附在记录中",
+      "result": "把现场声音录成库内音频附件并嵌入当前笔记，作为之后重听的资料。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Audio recorder，配置麦克风与系统权限；这项不包含转写、说话人识别或会议摘要。",
+      "source_ids": [
+        "s-audio"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-audio",
+          "quote": "record and save audio in an Obsidian note.",
+          "location": "Introduction / Record audio in a note"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "录音笔记"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-pdf-reading",
+      "title": "阅读 PDF 并把证据位置链接到笔记",
+      "result": "在内置阅读器查阅 PDF，把页码或具体选区链接纳入自己的阅读笔记。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "具体选区引用、复制引文和 PDF 内搜索按帮助页限桌面端；内置阅读器未宣称可添加 PDF 高亮批注。移动端 PDF 导出另见正式版更新证据。",
+      "source_ids": [
+        "s-pdf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pdf",
+          "quote": "link to a passage",
+          "location": "Introduction / Link to a selection / mobile limitations"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "论文精读",
+        "PDF 引文定位"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-present-notes",
+      "title": "直接把笔记作为幻灯演示",
+      "result": "用一份分段的 Markdown 笔记向听众逐页展示内容。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Slides 并用分隔线组织页面；不据此保证 PowerPoint 文件导出或完整演讲者工具。",
+      "source_ids": [
+        "s-slides"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-slides",
+          "quote": "lets you create presentations from your notes.",
+          "location": "Introduction / Markdown slide separators"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "笔记演示",
+        "幻灯片"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-visual-synthesis",
+      "title": "把多种资料整理成可浏览的视觉思考板",
+      "result": "在二维画布上并置笔记、图片、附件和网页，以连线和分组梳理结构。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Canvas；数据为 .canvas / JSON Canvas。纯文本卡片和笔记不是同一种对象，画布连线也不等于自动生成笔记内部链接。",
+      "source_ids": [
+        "s-canvas"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-canvas",
+          "quote": "infinite space to lay out notes and connect them",
+          "location": "Introduction / Add cards / Groups"
+        }
+      ],
+      "group_ids": [
+        "g-visual"
+      ],
+      "aliases": [
+        "研究白板",
+        "资料关系板",
+        "视觉思考"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-collections",
+      "title": "把项目、书单或收藏整理成动态目录",
+      "result": "把一条记录对应一篇笔记，用表格、卡片等视图统一查看、编辑、排序和筛选属性。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 Bases 并维护笔记属性；数据仍在文件与属性内。不能据此等同于关系数据库的事务、权限或任意跨表联接。",
+      "source_ids": [
+        "s-bases"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-bases",
+          "quote": "view, edit, sort, and filter files and their [[Properties|properties]].",
+          "location": "Introduction / View types"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "项目目录",
+        "阅读清单",
+        "资料库",
+        "收藏管理"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-derived-information",
+      "title": "从记录属性计算费用、时间和优先级",
+      "result": "用 Bases 计算字段把已有属性转成总成本、日期差或排序所需的评分。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "需自行设置公式及输入字段；结果依赖数据质量，公式字段并不意味着自动把计算结果写回 Markdown 属性。",
+      "source_ids": [
+        "s-formulas"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-formulas",
+          "quote": "add prices, compute totals",
+          "location": "What formulas can do / Examples"
+        },
+        {
+          "source_id": "s-formulas",
+          "quote": "calculate time differences, format dates, or determine deadlines.",
+          "location": "What formulas can do / Examples"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "计算属性",
+        "清单统计"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-progress-board",
+      "title": "用看板推进项目或内容的状态",
+      "result": "把项目或稿件笔记按状态分列，拖动卡片更新笔记的分组属性。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "Bases Kanban 需要 Obsidian 1.14+；要有分组属性。按公式或多数 file 属性分组时不能拖动写回；不能把所有旧版看板教程直接视为现行内置能力。",
+      "source_ids": [
+        "s-kanban"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-kanban",
+          "quote": "display files as cards organized into columns.",
+          "location": "Requires Obsidian 1.14+ / Work with cards and columns"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "项目看板",
+        "写作进度",
+        "状态流转"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-local-recovery",
+      "title": "找回误删或误改的笔记内容",
+      "result": "从设备保存的定期笔记快照中恢复旧内容，减少意外编辑造成的损失。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "启用 File recovery；快照有保留期限，位于 vault 外且依设备与原路径关联，不会随 Sync 同步，也不是完整备份。",
+      "source_ids": [
+        "s-recovery"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-recovery",
+          "quote": "automatically saving complete snapshots of your notes at regular intervals.",
+          "location": "Introduction / local device snapshots"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "本地恢复",
+        "撤销事故"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-mobile-capture",
+      "title": "在 iPhone 锁屏入口快速记录灵感",
+      "result": "从系统入口直接采集文字到新笔记、日记或选定笔记，无需等待整个库载入。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "Quick Capture 需要 Obsidian 1.14+ 与 iOS/iPadOS 26+；先配置入口和保存位置。其他移动系统不能按此项推定支持。",
+      "source_ids": [
+        "s-ios"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ios",
+          "quote": "Quick Capture can create a new note or add the text",
+          "location": "Quick Capture / requirements"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "移动收集箱",
+        "锁屏采集"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-voice-transcript",
+      "title": "把口述灵感保存成文字笔记",
+      "result": "在 iOS Quick Capture 说话时生成转写文字，并可选择把录音一同保存。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "正式版 Obsidian 1.15 移动端，要求 iOS 26；转写语言、设备支持及准确率未实测。不等同于导入任意长音频或多人会议分析。",
+      "source_ids": [
+        "s-mobile-release"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mobile-release",
+          "quote": "record voice notes and transcribe them",
+          "location": "2026-11-02 / PDF export / Voice capture on iOS"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "语音笔记",
+        "语音转写"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-share-pdf",
+      "title": "把笔记导出为可直接分发的 PDF",
+      "result": "将当前记录或文章转成 PDF，发给没有 Obsidian 的读者。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "桌面端 PDF 导出见 PDF 帮助页；移动端需 Obsidian 1.15+。旧 PDF 帮助页关于移动端不可导出的文字与此新正式版日志冲突，以新日志为准；排版未实测。",
+      "source_ids": [
+        "s-mobile-release",
+        "s-pdf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mobile-release",
+          "quote": "export notes to PDF",
+          "location": "2026-11-02 / PDF export / Voice capture on iOS"
+        },
+        {
+          "source_id": "s-pdf",
+          "quote": "export any note as a PDF.",
+          "location": "Introduction / Export a note as a PDF"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "静态文档交付"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-read-alongside",
+      "title": "在笔记旁对照阅读网页资料",
+      "result": "在应用内打开外部网页并与笔记分栏，减少研究时来回切换窗口。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "本文仅确认文档中的桌面端 Web viewer；1.15.1 移动端仍属早期访问。本功能访问网页需网络，不是完整浏览器替代品。",
+      "source_ids": [
+        "s-web-viewer"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-web-viewer",
+          "quote": "open external links within Obsidian on desktop.",
+          "location": "Introduction / Reader view / Save to vault"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "并排研究",
+        "网页对照阅读"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-cross-app-workflow",
+      "title": "让其他应用和脚本向知识库采集或检索资料",
+      "result": "用应用链接或桌面命令，把建笔记、追加内容和搜索串入既有工作流。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "URI 需正确编码和本机 Obsidian；CLI 需桌面应用运行并注册命令，官方要求 1.12 安装器，安装指引建议 1.12.7+。定时器及外部应用需自行配置。",
+      "source_ids": [
+        "s-cli",
+        "s-uri"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-cli",
+          "quote": "control Obsidian from your terminal for scripting, automation, and integration",
+          "location": "Introduction / Install / Everyday use"
+        },
+        {
+          "source_id": "s-uri",
+          "quote": "Obsidian URI enables automation and cross-app workflows.",
+          "location": "Introduction / Open / New / Daily / Search"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": [
+        "跨应用采集",
+        "脚本自动化"
+      ],
+      "discovery_pass": "outcome",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-academic-network",
+      "title": "建立可以反复检索的文献与研究想法网络",
+      "result": "把论文、主题、概念和研究设想分别建档并关联，在研究工作中重新找到相关文献。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "作者案例含自定义 Notebook Navigator 分支、Supercharged Links 和改造的 Citations；使用其完整界面和导入流程需相应版本与配置。不能把其个人规模或效率当通用性能保证。",
+      "source_ids": [
+        "s-academic-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-academic-case",
+          "quote": "to keep track of academic literature and ideas with minimal friction.",
+          "location": "The high-level overview / Types of notes / Plugins"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "文献综述资料",
+        "学术知识管理"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-experiment-record",
+      "title": "把实验过程和分析背景放在同一研究档案里",
+      "result": "围绕研究项目记录实验协议、结果及分析笔记，减少相关记录分散。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "来源为生物医学博士生自报使用的案例库，附模板、插件和 CSS/JavaScript；同帖后续仍记录运行问题。本轮只确认这种记录结果有案例，不确认整包目前即装即用或具备合规电子实验记录系统能力。 基础文字记录本身也可用内置编辑器完成，此项扩展标签指作者完整案例库路线。",
+      "source_ids": [
+        "s-research-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-research-case",
+          "quote": "Experiment Tracking – Logging protocols, results, and analysis notes",
+          "location": "Structure & Features / later issue updates"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "实验日志",
+        "研究项目档案"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-archive-prototype",
+      "title": "用本地资料库试作社区档案的关联描述",
+      "result": "在可离线访问的原型中链接、解释和查找档案材料，并保留社区自己的描述术语。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "案例为 Rematriation 项目；事先数字化、整理和导入文件由研究团队完成。此项是档案描述原型，不承诺原生扫描、OCR、标准档案导出或自动实现数据主权。",
+      "source_ids": [
+        "s-archive-teaching"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-archive-teaching",
+          "quote": "prototype our archival work.",
+          "location": "Case Study 1 / Staging for Data Publication / Technical Infrastructure"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "社区档案",
+        "档案原型"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-teach-relations",
+      "title": "用真实资料向团队讲清元数据关系",
+      "result": "把人物、事件和来源变成可浏览的链接笔记，帮助非专业参与者讨论和检查数据建模。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "案例还使用外部表格准备资料，并在后续迁往 Wikibase；本项限可视化讨论和原型验证，不等同于自动生成合规 RDF/LOD 数据。",
+      "source_ids": [
+        "s-archive-teaching"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-archive-teaching",
+          "quote": "visually illustrating the semantic relationships and networks",
+          "location": "Case Study 1 / Staging for Data Publication / Technical Infrastructure"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "元数据教学",
+        "数字人文资料建模"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-story-draft",
+      "title": "从故事卡片发展到分场景长篇初稿",
+      "result": "先在视觉板梳理故事，再把场景发展为章节，保留结构与素材之间的联系。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "作者展示基础工作流并另谈 Longform；文章把卡片界面称作 Graph View，与官方文档的 Canvas 不符，此处按官方 Canvas 解释，不沿用其界面命名。编译成连贯稿件另见 Longform 扩展项。",
+      "source_ids": [
+        "s-novel-case",
+        "s-canvas"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-novel-case",
+          "quote": "from carding a story, writing a scene-by-scene, to writing the scenes/chapters.",
+          "location": "Opening workflow / Changing Cards into Notes / Longform"
+        },
+        {
+          "source_id": "s-canvas",
+          "quote": "lay out notes",
+          "location": "Introduction / Add cards / Convert to file"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "小说构思",
+        "剧本分场",
+        "长篇写作"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-campaign-wiki",
+      "title": "把桌游战役的世界和跑团记录组织成可查资料",
+      "result": "把战役纲要、人物、地点和场次记录存为相互链接的主持人或玩家资料库。",
+      "status": "source_supported",
+      "availability": "core",
+      "capability_layer": "built_in",
+      "conditions": "公开案例以笔记、属性、标签、模板及 Bases 组织战役；本项基础记录不要求某个特定社区插件。套用作者库前仍需查看库内配置；未运行样例，不保证第三方游戏资料可再分发。",
+      "source_ids": [
+        "s-rpg-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rpg-case",
+          "quote": "An Obsidian vault to manage your TTRPG campaigns for DMs/GMs and Players.",
+          "location": "README / Vault overview"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "跑团管理",
+        "世界观资料",
+        "TTRPG"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-family-archive",
+      "title": "把家谱导成可读的人物档案和家族图",
+      "result": "从 GEDCOM 生成每人一篇的 Markdown、媒体链接及 Canvas 家族图，保留可读的家族资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "third_party_tool",
+      "conditions": "依赖作者单独编写的 GEDCOM 转换脚本，不是原生导入格式；作者称为一次性个人用途，Canvas 导出不完美。未验证它兼容其他 GEDCOM 数据或维护状态。",
+      "source_ids": [
+        "s-genealogy-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-genealogy-case",
+          "quote": "my whole family tree as Markdown in Obsidian",
+          "location": "GEDCOM exporter / Canvas output / outcome"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "家族档案",
+        "家谱迁移"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-client-context",
+      "title": "把客户、联系人、商机和沟通汇成客户全貌",
+      "result": "从客户页面集中查看相关会议、机会、联系人、待办及其他提及。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "作者明确需要 Templater、Dataview、模板和持续一致的记录习惯；动态汇总需要配置。此个人销售案例不证明多人 CRM、自动邮件同步或可靠提醒。",
+      "source_ids": [
+        "s-crm-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-crm-case",
+          "quote": "a complete snapshot of everything related to the client",
+          "location": "Original post / author reply explaining Templater and Dataview"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "个人 CRM",
+        "客户关系记录"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-travel-dossier",
+      "title": "建立随身可查的旅行行程资料包",
+      "result": "把地点、行程、事件和准备事项集中在旅行库，出行时查阅已保存的资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "作者案例需 Dataview、Map View、Meta Bind、Tasks、List Callouts 及同步方案。文本可本地查阅不等于地图瓦片、路线服务或远程图片也可离线使用；同行共享需另配同步。",
+      "source_ids": [
+        "s-travel-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-travel-case",
+          "quote": "after a few trips I’ve found it to work quite well",
+          "location": "Author experience / Required / Overview"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "旅行计划",
+        "行程档案"
+      ],
+      "discovery_pass": "example",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "作者公开的实际使用陈述或成品案例；未独立复现。"
+    },
+    {
+      "id": "p-migrate-notes",
+      "title": "把旧笔记系统迁成库内可编辑资料",
+      "result": "借助官方 Importer 把支持的笔记应用或文件格式转成 Obsidian 资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_plugin",
+      "conditions": "Importer 是官方另装的社区插件；Notion、Evernote、Apple Notes、OneNote 等需依各导入指南准备导出文件与平台环境。不要推定所有字段、附件和链接都能无损迁移。",
+      "source_ids": [
+        "s-importer",
+        "s-import-formats"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-importer",
+          "quote": "migrate to Obsidian from various apps and formats.",
+          "location": "Introduction / Install Importer"
+        },
+        {
+          "source_id": "s-import-formats",
+          "quote": "[[Import from Notion|Notion]]",
+          "location": "Import from other apps and file formats"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "笔记迁移",
+        "资料导入"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-capture-web",
+      "title": "把网页内容和出处保存为笔记资料",
+      "result": "从网页正文、所选文字或高亮采集内容，并用站点模板保存标题等元数据。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_browser_extension",
+      "conditions": "另装免费的官方 Web Clipper；浏览器与网站结构有影响，模板需配置。图片默认只保留远程 URL，完整离线归档需另下载附件；不承诺绕过登录或付费墙。",
+      "source_ids": [
+        "s-clipper",
+        "s-clipper-templates"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-clipper",
+          "quote": "Web Clipper extracts data from the current web page",
+          "location": "Capture a page / Download images"
+        },
+        {
+          "source_id": "s-clipper-templates",
+          "quote": "templates that automatically capture and organize metadata from web pages.",
+          "location": "Introduction / Behavior / Template triggers"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "网页剪藏",
+        "研究资料采集"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-interpret-web",
+      "title": "在保存网页前生成摘要或译文",
+      "result": "让语言模型把网页信息压缩、解释或翻译，再把结果写入采集笔记。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "third_party_service",
+      "conditions": "需要 Web Clipper Interpreter、模型提供方或本地模型及相应设置；云端可能需要 API 凭据和费用。模型结果需人工核对，发送内容的隐私取决于所选模型路线。",
+      "source_ids": [
+        "s-interpreter"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-interpreter",
+          "quote": "Summarize or explain information.",
+          "location": "Introduction / Examples of prompts / Get started"
+        },
+        {
+          "source_id": "s-interpreter",
+          "quote": "Translate text to a different language.",
+          "location": "Introduction / Examples of prompts / Get started"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "网页摘要",
+        "网页翻译"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-geographic-notes",
+      "title": "按地理位置浏览地点和相关笔记",
+      "result": "把带坐标的笔记显示为地图标记，从地点进入相应资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_plugin",
+      "conditions": "需 Obsidian 1.10+、Bases 和另装官方 Maps 插件，并填入坐标属性；地图图层与地理服务的网络、费用和可用性需检查。",
+      "source_ids": [
+        "s-maps"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-maps",
+          "quote": "display files as an interactive map with markers for each file",
+          "location": "Introduction / Install Maps / Properties"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "地点资料库",
+        "地图笔记"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-computed-dashboard",
+      "title": "把分散在笔记里的结构化信息汇成看板",
+      "result": "按字段、条件和分组生成动态列表、表格或任务汇总，作为项目或阅读仪表板。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "需要 Dataview、适当的 frontmatter/行内字段及查询；不同于 Bases 的文件属性编辑视图，此处强调可写入笔记正文的计算查询结果。动态块依赖插件，不能假设 Publish 会执行。",
+      "source_ids": [
+        "s-dataview"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-dataview",
+          "quote": "filtering, sorting, and extracting data from Markdown pages.",
+          "location": "Introduction / Data / Querying / Examples"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "查询仪表板",
+        "动态汇总"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-task-workflow",
+      "title": "集中处理散落各处的到期与重复待办",
+      "result": "跨笔记查询任务，按日期等条件组织，并在汇总处完成任务、更新原记录。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Tasks 并按其任务格式和过滤设置使用；该结果不自动等于系统推送提醒、外部日历双向同步或多人任务调度。",
+      "source_ids": [
+        "s-tasks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tasks",
+          "quote": "Track tasks across your entire vault.",
+          "location": "Introduction / Usage"
+        },
+        {
+          "source_id": "s-tasks",
+          "quote": "Supports due dates, recurring tasks",
+          "location": "Introduction / Usage"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "全库待办",
+        "周期任务"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-calendar-context",
+      "title": "把日程事件和上下文笔记连在一起",
+      "result": "在日历中查看事件，为每个事件保留一篇可链接的说明或会议笔记。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "Full Calendar 可读笔记属性、日记事件及只读 ICS/CalDAV 日历；远程日历需服务地址与可能的凭据。仓库取回时 archived=true，未验证当前 Obsidian 兼容性；不能据此声称可靠双向同步。",
+      "source_ids": [
+        "s-calendar"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-calendar",
+          "quote": "Each event is stored as a separate note with special frontmatter",
+          "location": "README / calendar sources"
+        }
+      ],
+      "group_ids": [
+        "g-work"
+      ],
+      "aliases": [
+        "事件笔记",
+        "日历视图"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-spaced-study",
+      "title": "按间隔复习笔记和自制记忆卡",
+      "result": "把学习内容制成卡片或复习笔记，由插件安排后续复习。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Spaced Repetition 并按其格式制作学习材料；算法安排不是记忆效果保证，也不意味着已与 Anki 双向同步。",
+      "source_ids": [
+        "s-spaced"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-spaced",
+          "quote": "reviewing flashcards & notes using the FSRS or the SM-2",
+          "location": "README / introductory paragraph"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "闪卡学习",
+        "间隔重复"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-zotero-material",
+      "title": "把文献管理器中的引文和批注接入阅读笔记",
+      "result": "从 Zotero 引入书目信息、引文、笔记和 PDF 批注，供写作与文献阅读使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "依赖 Zotero Integration、Zotero、Better BibTeX，以及导入模板/引用样式设置。仓库已转至 community-archive（取回时 archived=false）；不保证当前 Zotero/Better BibTeX/Obsidian 组合兼容。",
+      "source_ids": [
+        "s-zotero"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-zotero",
+          "quote": "Insert and import citations, bibliographies, notes, and PDF annotations from Zotero",
+          "location": "README / requirements"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "Zotero 工作流",
+        "参考文献资料"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-reading-highlights",
+      "title": "把跨阅读来源的划线汇入知识库",
+      "result": "把 Readwise 账户中的阅读划线和相关信息持续导入 Obsidian，纳入自己的阅读资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "third_party_service",
+      "conditions": "需要 Readwise 团队的插件、账户、付费订阅和网络；导入源以 Readwise 当前支持为准。旧 README 列出的 Pocket/Twitter 等名称不能证明对应外部连接器今天仍有效。",
+      "source_ids": [
+        "s-readwise"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-readwise",
+          "quote": "automatically export all your digital highlights to",
+          "location": "README / subscription note / sync features"
+        }
+      ],
+      "group_ids": [
+        "g-capture"
+      ],
+      "aliases": [
+        "阅读摘录归档"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-compile-manuscript",
+      "title": "把分场景草稿编成顺序连贯的稿件",
+      "result": "按场景顺序组织长篇创作，并通过编译流程输出合并的手稿。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Longform 并配置项目、场景顺序和编译流程；它不自动承诺 Word/ePub 交付格式、在线协作或出版级排版。",
+      "source_ids": [
+        "s-longform"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-longform",
+          "quote": "organize a series of notes, or _scenes_, into an ordered manuscript.",
+          "location": "Introduction / Compilation"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "小说编稿",
+        "剧本稿件"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-sketch-knowledge",
+      "title": "把手绘图解和文字知识相互连接",
+      "result": "在库中绘制和编辑草图，再嵌入笔记并与相关文档或其他图解建立链接。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Obsidian Excalidraw；图解格式、导出和跨设备编辑需按所用版本核对。手写识别或 AI 生成不是本项承诺。",
+      "source_ids": [
+        "s-excalidraw"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-excalidraw",
+          "quote": "store and edit Excalidraw files in your vault",
+          "location": "README / introduction"
+        }
+      ],
+      "group_ids": [
+        "g-visual"
+      ],
+      "aliases": [
+        "草图笔记",
+        "视觉解释"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-capture-workflow",
+      "title": "把重复采集和建档串成一次工作流",
+      "result": "把收集输入、按模板建笔记、追加日志等动作组合起来，重复处理同类记录。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "需要 QuickAdd 并配置 choice、宏或表单；查书籍数据、运行脚本、调用 AI 等步骤有各自外部依赖。此项不保证任意工作流无需编程。",
+      "source_ids": [
+        "s-quickadd"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-quickadd",
+          "quote": "runs several steps in a row",
+          "location": "What you can build / Template / Capture / Macro / Forms"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": [
+        "快捷建档",
+        "交互采集"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-journal-trends",
+      "title": "把日志里的习惯和数值变成趋势记录",
+      "result": "从日期笔记提取习惯、心情或收支等已有字段，用图表回看变化。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Tracker、统一日志字段并编写查询图表配置；它不会自动获取银行或健康设备数据，也不提供医学或财务判断。",
+      "source_ids": [
+        "s-tracker",
+        "s-tracker-examples"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tracker",
+          "quote": "collect data from notes and represent it comprehensively.",
+          "location": "README / Introduction"
+        },
+        {
+          "source_id": "s-tracker-examples",
+          "quote": "Habit Tracker",
+          "location": "Table of Use Cases / Full examples"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "习惯追踪",
+        "量化日记",
+        "收支趋势"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-data-charts",
+      "title": "在知识笔记中展示可交互的数据图表",
+      "result": "把自己提供的数据绘为图表，供笔记阅读时查看。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Charts 并遵循其图表数据格式及选项；与 Tracker 从日志提取记录不同，本项为通用笔记内图表呈现。具体交互和导出效果未实测。",
+      "source_ids": [
+        "s-charts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-charts",
+          "quote": "create interactive Charts",
+          "location": "README / Introduction"
+        }
+      ],
+      "group_ids": [
+        "g-visual"
+      ],
+      "aliases": [
+        "笔记图表"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-pdf-annotation",
+      "title": "把 PDF 高亮和自己的旁注互相连通",
+      "result": "通过链接选区形成高亮关联，把自己的 Markdown 解释与 PDF 证据放在一起。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 PDF++；反向链接高亮与直接写入 PDF 的批注有不同保存方式。作者说明依赖私有 API，升级可能破坏功能；直接写回 PDF 也有限制，不能把全部高亮当可移植原文件批注。",
+      "source_ids": [
+        "s-pdf-plus"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pdf-plus",
+          "quote": "annotate PDF files with highlights just by linking to text selection",
+          "location": "Introduction / note on private APIs / saving annotations"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "PDF 批注",
+        "证据旁注"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-semantic-rediscovery",
+      "title": "按含义重新发现没有手工链接的旧笔记",
+      "result": "用向量相似性在当前工作附近找回语义相关资料，减少只能依靠相同关键词检索的限制。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Smart Connections、建立索引并配置嵌入模型；当前作者说明默认本地嵌入，部分 Pro 界面另付费。是否上传内容取决于具体模型设置，未验证召回率或大库性能。",
+      "source_ids": [
+        "s-semantic"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-semantic",
+          "quote": "surface notes that are semantically related to what you are working on",
+          "location": "What Smart Connections does / settings / Pro surfaces"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "语义检索",
+        "关联推荐"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-ai-reading",
+      "title": "围绕正在阅读的内容向 AI 提问",
+      "result": "对选中的文字发问，并把回答插入、替换或复制到自己的写作中。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "需要 Copilot 和可用模型路线：已有代理账户、模型 API 或本地模型；托管模型可能需要付费。插件本身与模型/服务费用需区分，答案不自带正确性保证。",
+      "source_ids": [
+        "s-copilot"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-copilot",
+          "quote": "Ask about a selection without leaving the note.",
+          "location": "Quick Ask / model routing / Plans"
+        }
+      ],
+      "group_ids": [
+        "g-study"
+      ],
+      "aliases": [
+        "辅助阅读",
+        "AI 改写"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-ai-vault-work",
+      "title": "结合库资料撰写和整理笔记",
+      "result": "让配置好的代理读取相关笔记、使用工具，并在权限控制下创建或修改知识库文件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "Copilot 桌面 Agent Chat 依赖所选外部代理/适配器、账户或 API/本地模型；移动端聊天不能推定具备同等多步改文件能力。需审核修改；不保证完整引用、正确推理或任意自动化成功。",
+      "source_ids": [
+        "s-copilot-agent"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-copilot-agent",
+          "quote": "answer questions, use tools, and make permissioned changes",
+          "location": "Agent Chat / Choose an agent / permissions"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "知识库问答",
+        "AI 整理",
+        "辅助写作"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-attachment-search",
+      "title": "把部分图片与附件文字纳入检索",
+      "result": "用文字提取插件获取图片或文档内容，再由 Omnisearch 等工具检索。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "Text Extractor README 明示 Unmaintained，PDF 常失败，移动端不执行提取；OCR 语言资源需联网下载，已生成缓存可同步。须另装 Omnisearch 才得到该检索界面；不承诺全格式或当前版本可用。",
+      "source_ids": [
+        "s-ocr",
+        "s-omnisearch"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ocr",
+          "quote": "quickly extract texts from **images & PDFs**.",
+          "location": "README / Unmaintained / Limitations / Cache & Sync"
+        },
+        {
+          "source_id": "s-omnisearch",
+          "quote": "Images, documents, and PDF indexing is available",
+          "location": "Features / Text Extractor dependency"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "OCR 检索",
+        "附件全文搜索"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-git-history",
+      "title": "为知识库保留可比较的版本记录和远程副本",
+      "result": "在 Obsidian 内提交变更、比较差异并把库推到自己的 Git 远程仓库。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "需要 Git 插件、仓库、远程凭据与相应环境；作者明确移动端高度不稳定。冲突、忽略规则和备份策略需自行管理，不能把自动 push 等同于完整备份。",
+      "source_ids": [
+        "s-git"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-git",
+          "quote": "Automatically commit, pull, push, and see your changes",
+          "location": "README / Key Features / Mobile support"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "知识库版本管理"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-multi-device",
+      "title": "在自己的多台设备间延续笔记工作",
+      "result": "通过 Obsidian Sync 同步笔记和所选文件，在桌面与移动设备间接续使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "需要付费 Sync 订阅、账户和网络，按计划有空间/文件等限制；端到端加密设置及密码管理需核对。同步不是独立备份，不建议同目录叠加多个同步器。",
+      "source_ids": [
+        "s-sync"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sync",
+          "quote": "privately sync your notes across devices.",
+          "location": "Introduction / Important"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "跨设备同步"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-team-vault",
+      "title": "与团队共同维护同一组知识文件",
+      "result": "邀请协作者接入共享远程库，各自本地编辑并同步团队资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "所有协作者都需要有效 Sync 订阅；不支持细粒度权限，也不支持同一文件的实时协同光标编辑。并发修改可能产生合并或冲突，不等同于网页协作文档。",
+      "source_ids": [
+        "s-shared-vault"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-shared-vault",
+          "quote": "collaborate on a shared vault with your team.",
+          "location": "Introduction / Permissions / Live editing"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "团队知识库",
+        "共享资料库"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-restore-history",
+      "title": "从同步历史恢复旧笔记或附件",
+      "result": "查看文件以前的版本，找回误改内容或已删除的已同步资料。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "需要 Sync 且文件曾被同步；保留期限依订阅计划，不能保证永久版本历史；本地 File recovery 与该服务分开。",
+      "source_ids": [
+        "s-sync-versions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sync-versions",
+          "quote": "a version history for restoring notes and attachments.",
+          "location": "Version history / Restore / plan retention"
+        }
+      ],
+      "group_ids": [
+        "g-steward"
+      ],
+      "aliases": [
+        "云端历史恢复"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-publish-site",
+      "title": "把选定笔记发布为可浏览的知识网站",
+      "result": "把选定的知识资料变成读者可在浏览器访问的维基、文档或数字花园。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "multiple_routes",
+      "conditions": "两条有证据的路线：①付费 Obsidian Publish：需要订阅、账户与网络，由服务托管；②第三方 Quartz 5：需要 Node 22+、npm 10.9.2+，自行配置构建和静态托管，托管可能另收费。二者均不能假设运行所有社区插件；按平台检查格式、附件和交互。",
+      "source_ids": [
+        "s-publish",
+        "s-quartz"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-publish",
+          "quote": "publish your notes as a wiki, knowledge base, documentation, or digital",
+          "location": "Introduction / selected notes"
+        },
+        {
+          "source_id": "s-quartz",
+          "quote": "transforms Markdown content into fully functional websites.",
+          "location": "Introduction / Features / Deploy"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "公开知识库",
+        "文档网站",
+        "数字花园",
+        "自托管数字花园",
+        "静态知识网站"
+      ],
+      "discovery_pass": "extension",
+      "routes": [
+        {
+          "layer": "official_paid_service",
+          "name": "Obsidian Publish",
+          "source_ids": [
+            "s-publish"
+          ],
+          "payment": "需要 Publish 订阅",
+          "setup": "选择发布文件、配置站点；受 Publish 功能范围限制"
+        },
+        {
+          "layer": "third_party_tool",
+          "name": "Quartz 5",
+          "source_ids": [
+            "s-quartz"
+          ],
+          "payment": "托管及附加服务费用另核对",
+          "setup": "安装运行环境、配置内容、构建、部署；不是 Obsidian 内置服务"
+        }
+      ],
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-limited-readers",
+      "title": "用站点密码向有限读者分享已发布知识",
+      "result": "在 Publish 网站设置访问密码，让知道密码的人读取站点内容。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "需要 Publish 订阅；是全站密码，不支持给单篇笔记设置独立密码，也不等同于按人按页授权或端到端加密发布。",
+      "source_ids": [
+        "s-publish-password"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-publish-password",
+          "quote": "apply a site password.",
+          "location": "Password protection"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "受限分享"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-server-vault",
+      "title": "让服务器工作流取得持续更新的知识库副本",
+      "result": "在不运行桌面应用的环境同步库文件，供自建 CI、备份或代理工具读取。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "使用 Obsidian Headless 开放测试版，需 Node 22+、Sync 订阅和认证；同一设备不要并用桌面 Sync 与 Headless Sync。下游工具、调度和处理逻辑需自行搭建。",
+      "source_ids": [
+        "s-headless-sync"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-headless-sync",
+          "quote": "sync vaults without using the desktop app.",
+          "location": "Introduction / Quick start"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": [
+        "无界面同步",
+        "服务器资料副本"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-publish-pipeline",
+      "title": "把知识网站更新接入定时或构建流程",
+      "result": "在无桌面环境通过 Headless Publish 发布最新文件，使知识网站更新成为流水线的一步。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "official_paid_service",
+      "conditions": "Obsidian Headless 仍为开放测试，需 Node 22+、Publish 订阅、认证和外部调度/CI；本轮未执行发布，也不承诺服务稳定性或自动审核内容。",
+      "source_ids": [
+        "s-headless-publish"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-headless-publish",
+          "quote": "on a schedule or as part of a build pipeline.",
+          "location": "Introduction / Quick start / dry-run"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "自动发布知识站"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-meal-planning",
+      "title": "从菜谱安排餐食并汇总采购清单",
+      "result": "把菜谱笔记排入周计划，按所需食材合并购物清单。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "安装 Recipe Box 并提供结构化食材和份量；站点导入与分享可能依赖外部服务，应另核对。此项只确认作者文档中的本地计划与清单功能，未实测单位换算或移动端表现。",
+      "source_ids": [
+        "s-recipe"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-recipe",
+          "quote": "Plan meals, build grocery lists, and view recipes as interactive cards",
+          "location": "Author description / Meal planning / Grocery list"
+        }
+      ],
+      "group_ids": [
+        "g-life"
+      ],
+      "aliases": [
+        "菜谱管理",
+        "备餐计划"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-guided-canvas",
+      "title": "沿设定路径讲解画布上的资料结构",
+      "result": "把同一画布组织成可切换的演示步骤，向观众逐段讲解复杂主题。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "需要 Advanced Canvas 及 Canvas；与 Slides 的线性 Markdown 演示不同，此项保留空间资料板。增强格式与功能在其他 JSON Canvas 工具或 Publish 中是否保留需另核对。",
+      "source_ids": [
+        "s-canvas-presentation"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-canvas-presentation",
+          "quote": "Create and navigate slide-like presentations.",
+          "location": "Feature Overview / Presentation Mode"
+        }
+      ],
+      "group_ids": [
+        "g-visual"
+      ],
+      "aliases": [
+        "画布演示",
+        "视觉讲解"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-deliver-manuscript",
+      "title": "把 Markdown 稿件交付为 Word 或电子书等格式",
+      "result": "借助转换器把笔记内容导成 DOCX、ePub 等对方需要的文档格式。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "third_party_tool",
+      "conditions": "需要桌面 Pandoc 插件、另装 Pandoc 及正确路径；部分目标格式还需排版引擎或模板。作者标明 beta 且可能有格式问题，必须检查输出；不承诺复杂嵌入和插件块无损转换。",
+      "source_ids": [
+        "s-pandoc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pandoc",
+          "quote": "Word Documents, PDFs, ePub books, HTML websites, PowerPoints and LaTeX",
+          "location": "Introduction / beta note"
+        }
+      ],
+      "group_ids": [
+        "g-write"
+      ],
+      "aliases": [
+        "Word 交付",
+        "ePub 导出",
+        "多格式出版"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    },
+    {
+      "id": "p-executable-notes",
+      "title": "在技术笔记中运行实验代码并查看结果",
+      "result": "执行笔记中的代码块，把运行输出留在学习或计算过程的上下文中。",
+      "status": "source_supported",
+      "availability": "extension",
+      "capability_layer": "community_plugin",
+      "conditions": "Execute Code manifest 声明仅桌面，minAppVersion 1.7.2；需对应解释器/编译器和配置路径。Python/R 等图形依运行库；不是所有环境都可用，也不是原生代码高亮即能执行。",
+      "source_ids": [
+        "s-execute"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-execute",
+          "quote": "execute code snippets in code blocks in your notes.",
+          "location": "README / supported languages / requirements / notebook mode"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": [
+        "可执行笔记",
+        "编程学习实验"
+      ],
+      "discovery_pass": "extension",
+      "verification_limit": "文献支持，未经本轮实际安装或端到端运行测试；不是独立人工评审。",
+      "evidence_basis": "官方或扩展作者文档对可达结果的描述；未独立复现。"
+    }
+  ],
+  "coverage_gaps": [
+    "source_supported 只表示具体结果有实际取回的来源支撑；没有任何 P 被本模型授予 reviewed。尚无独立人工评审。",
+    "未安装或运行 Obsidian、插件、转换脚本、云服务、地图图层、模型或案例库；不能保证当前平台兼容、性能、维护响应或无故障。",
+    "以 2026-11-05 资料快照为准；已确认 2026-11-02 桌面和移动端 1.15 正式版日志，1.15.1 的移动 Web viewer、搜索相关性排序等早期访问功能未推广为普遍能力。",
+    "帮助页可能滞后：PDF 帮助页仍写移动端不可导出，已用 1.15 正式版日志纠正导出项；没有据此推断其他 PDF 移动端限制也已消失。",
+    "插件 README 可能描述开发分支或旧版本；没有逐个核对稳定版发布包、minAppVersion、所有系统与移动端实际兼容。少量 manifest 与仓库状态只能提供观察点。",
+    "Full Calendar 仓库归档、Text Extractor 作者声明停止维护、Zotero Integration 的仓库转移，以及 PDF++ 的私有 API 依赖均已保留；下载量或目录收录不代表维护承诺。",
+    "未确认任意长音频的说话人分离与时间戳会议纪要；iOS 实时口述转写不证明此目标。未确认所有远程日历的可靠双向同步。",
+    "未确认离线地图瓦片、离线路线计算、跨境网络可达性、模型答案引用完整性、超大库速度、历史数据无损迁移或复杂导出排版。",
+    "自报案例不是效果实验；不把作者个人效率或规模推为一般结论。案例的 CSS/JavaScript、模板和外部脚本未做代码或安全审计。",
+    "没有遍历全部社区插件，也未为每个行业单独调研法规要求或组织部署；中文排版、无障碍、输入法和地区服务情况仅零散涉及。",
+    "服务价格、额度、授权条款与连接器支持会变化；本图主要保留是否需要付费与配置，使用前应重新核对。"
+  ],
+  "research": {
+    "scope": {
+      "audience": "希望判断可达任务与实施边界的个人、研究者、作者及小团队",
+      "included": "桌面与移动端知识资料工作；官方可选组件；社区扩展；第三方工具与服务；公开真实工作流",
+      "excluded": "插件/API 清单、操作教程、新 Skill 规则、插件开发方案、具体法规合规保证，以及执行这些集成"
+    },
+    "source_priority": "官方产品与帮助文档 → 作者维护的扩展说明 → 作者公开的实际工作流或成品；搜索结果只作入口。",
+    "discovery_passes": [
+      {
+        "name": "结果视角",
+        "record": "从官方帮助站及英文文档仓库提取结果，不建立分类；核对文件存储、阅读、链接、视觉板、结构化记录、移动采集、恢复和跨应用入口。",
+        "candidate_ids": [
+          "p-local-knowledge",
+          "p-knowledge-network",
+          "p-visual-network",
+          "p-retrieve-notes",
+          "p-reuse-content",
+          "p-refactor-notes",
+          "p-daily-log",
+          "p-consistent-records",
+          "p-technical-documents",
+          "p-audio-evidence",
+          "p-pdf-reading",
+          "p-present-notes",
+          "p-visual-synthesis",
+          "p-collections",
+          "p-derived-information",
+          "p-progress-board",
+          "p-local-recovery",
+          "p-mobile-capture",
+          "p-voice-transcript",
+          "p-share-pdf",
+          "p-read-alongside",
+          "p-cross-app-workflow"
+        ]
+      },
+      {
+        "name": "示例视角",
+        "record": "单独搜索作者实际完成的研究、档案教学、小说、跑团、家谱、客户和旅行案例，提取成品与必要配置；与产品能力对照。",
+        "candidate_ids": [
+          "p-academic-network",
+          "p-experiment-record",
+          "p-archive-prototype",
+          "p-teach-relations",
+          "p-story-draft",
+          "p-campaign-wiki",
+          "p-family-archive",
+          "p-client-context",
+          "p-travel-dossier"
+        ]
+      },
+      {
+        "name": "扩展视角",
+        "record": "查看插件作者 README、官方插件目录、服务文档、示例和少量仓库元数据，发现原生范围以外的结果；不把“另装官方插件”等同于内置。",
+        "candidate_ids": [
+          "p-migrate-notes",
+          "p-capture-web",
+          "p-interpret-web",
+          "p-geographic-notes",
+          "p-computed-dashboard",
+          "p-task-workflow",
+          "p-calendar-context",
+          "p-spaced-study",
+          "p-zotero-material",
+          "p-reading-highlights",
+          "p-compile-manuscript",
+          "p-sketch-knowledge",
+          "p-capture-workflow",
+          "p-journal-trends",
+          "p-data-charts",
+          "p-pdf-annotation",
+          "p-semantic-rediscovery",
+          "p-ai-reading",
+          "p-ai-vault-work",
+          "p-attachment-search",
+          "p-git-history",
+          "p-multi-device",
+          "p-team-vault",
+          "p-restore-history",
+          "p-publish-site",
+          "p-limited-readers",
+          "p-server-vault",
+          "p-publish-pipeline",
+          "p-meal-planning",
+          "p-guided-canvas",
+          "p-deliver-manuscript",
+          "p-executable-notes"
+        ]
+      }
+    ],
+    "chronology": [
+      "建立 Skill 与既有结果的二进制哈希基线；不读取前两轮分类或 P 清单。",
+      "取回官方总览、价格、更新记录、帮助目录与正文，同时发现自报案例。",
+      "先保存 64 条带证据但无 group 的候选到临时研究缓存。",
+      "归一化结果动词、合并 Publish 与 Quartz 的同一发布结果，保留路线差异；纠正跑团示例的能力层次。",
+      "按读者目的给归一化后的 63 条结果建立 10 个导航分组；分类没有用于预先分配数量。",
+      "检查证据与原始正文、版本冲突、付费/维护边界，再运行现有校验和补充一致性检查。"
+    ],
+    "normalization_log": [
+      {
+        "action": "合并",
+        "inputs": [
+          "p-publish-site",
+          "p-self-host-site"
+        ],
+        "output": "p-publish-site",
+        "reason": "最终都是把选定 Markdown 资料变成知识网站；把付费托管与自行构建保留为路线，而不按工具重复计数。"
+      },
+      {
+        "action": "合并细粒度用途",
+        "inputs": [
+          "日记",
+          "工作日志",
+          "每日发现",
+          "书单",
+          "项目目录",
+          "收藏目录"
+        ],
+        "reason": "按有共同输出的模板/目录用途归并，不把每种字段、图表样式或卡片布局拆成 P。"
+      },
+      {
+        "action": "保留实质区别",
+        "inputs": [
+          "p-collections",
+          "p-computed-dashboard"
+        ],
+        "reason": "Bases 主要是可编辑的文件属性目录；Dataview 在笔记正文中计算查询。边界和输出关系不同。"
+      },
+      {
+        "action": "保留实质区别",
+        "inputs": [
+          "p-story-draft",
+          "p-compile-manuscript",
+          "p-deliver-manuscript"
+        ],
+        "reason": "发展故事、合并有序稿件和交付 DOCX/ePub 是不同可检查结果；不按插件名称拆分微操作。"
+      },
+      {
+        "action": "校正",
+        "inputs": [
+          "p-campaign-wiki"
+        ],
+        "reason": "实际示例主要利用内置笔记、属性、标签与 Bases；不因仓库是第三方就把基础能力记作社区插件。"
+      },
+      {
+        "action": "限制解释",
+        "inputs": [
+          "p-knowledge-network",
+          "p-academic-network"
+        ],
+        "reason": "保留通用双向追溯与有真实文献工作流的领域应用；后者明确附加配置，不再拆分每一种论文/概念/主题笔记。"
+      },
+      {
+        "action": "排除",
+        "inputs": [
+          "每个插件选项",
+          "每一种图表样式",
+          "Graph View 与 Canvas 命名混淆",
+          "同名游戏公司内容",
+          "泛泛最佳软件榜单"
+        ],
+        "reason": "不是独立结果、来源含混或不在本题范围。"
+      }
+    ],
+    "gap_check_log": [
+      "官方基础材料之外，补查图书馆研究项目和作者博客，得到社区档案原型、元数据教学、家谱迁移等结果。",
+      "从真实生活工作流补查旅行、CRM、菜谱，保留依赖与作者使用范围，没有仅以示例库可下载就认定可运行。",
+      "检查新版日志，发现已内置 Kanban 与新移动端转写/PDF 导出，并纠正 Maps 和 Importer 的安装边界。",
+      "最后补查技术写作和交付需求，新增可执行代码笔记及 DOCX/ePub 转换结果；其他返回结果主要重复模板、看板、写作、检索或依赖未经检查的环境。",
+      "停止点：本轮已覆盖多类资料和用途，邻近来源多数归入既有结果；仍保留长录音、双向日历、离线地图、企业权限与大型库验证缺口。这不是穷尽性或市场覆盖率证明。"
+    ],
+    "search_queries": [
+      "Obsidian real user case research writing knowledge management public vault",
+      "site.obsidian.md/blog Obsidian use cases users research",
+      "Obsidian use case novel writing Longform author workflow",
+      "Obsidian TTRPG campaign management Josh Plunkett vault",
+      "Obsidian personal CRM people notes user workflow",
+      "Obsidian habits tracker finances recipe real workflow",
+      "site.obsidian.md/help bases kanban map core plugin",
+      "site.github.com \"obsidian-zotero-integration\" \"Import\"",
+      "site.github.com \"obsidian-git\" \"automatic\"",
+      "site.github.com \"full-calendar\" \"Obsidian\"",
+      "site.forum.obsidian.md \"recipe\" \"share\"",
+      "site.forum.obsidian.md \"genealogy\"",
+      "site.forum.obsidian.md \"travel\" \"vault\"",
+      "site.forum.obsidian.md \"software development\" \"workflow\"",
+      "site.github.com Obsidian \"Pandoc\" \"docx\" plugin",
+      "site.github.com Obsidian \"Execute Code\" plugin \"Python\"",
+      "site.forum.obsidian.md \"software engineering\" \"notes\" \"use\"",
+      "site.forum.obsidian.md \"course\" \"lecture notes\" \"workflow\""
+    ],
+    "source_coverage": [
+      {
+        "source_class": "official_documentation",
+        "retained_sources": 40
+      },
+      {
+        "source_class": "official_release_notes",
+        "retained_sources": 2
+      },
+      {
+        "source_class": "first_person_case",
+        "retained_sources": 8
+      },
+      {
+        "source_class": "extension_author_documentation",
+        "retained_sources": 23
+      },
+      {
+        "source_class": "third_party_documentation",
+        "retained_sources": 1
+      },
+      {
+        "source_class": "official_product_information",
+        "retained_sources": 1
+      },
+      {
+        "source_class": "repository_metadata",
+        "retained_sources": 1
+      }
+    ],
+    "retrieval_notes": {
+      "official_markdown_documents_fetched": 45,
+      "plugin_or_case_files_fetched": 28,
+      "note": "“取回”不等于每行都通读或每项都纳入地图。仓库目录与失败请求未计作结果证据。保留来源表以实际引用/边界用途为准。"
+    },
+    "failure_and_redirect_notes": [
+      "help.obsidian.md 已重定向到 obsidian.md/help；一个猜测的 core-plugins URL 不可访问，改从官方仓库和 plugins 固定路径查证。",
+      "Zotero Integration 与 Full Calendar 的旧仓库入口返回迁移；沿作者/目录与实际重定向查到 community-archive，不把旧 URL 成功解析当维护保证。",
+      "若干探测的插件 README 路径无正文，未将失败请求作为支持证据；未确认的具体项目名没有进入 P 清单。"
+    ],
+    "maintenance_observations": [
+      {
+        "repo": "community-archive/obsidian-zotero-integration",
+        "full_name": "community-archive/obsidian-zotero-integration",
+        "archived": false,
+        "disabled": false,
+        "pushed_at": "2026-03-06T17:39:40Z",
+        "description": "Insert and import citations, bibliographies, notes, and PDF annotations from Zotero into Obsidian.",
+        "default_branch": "main"
+      },
+      {
+        "repo": "community-archive/obsidian-full-calendar",
+        "full_name": "community-archive/obsidian-full-calendar",
+        "archived": true,
+        "disabled": false,
+        "pushed_at": "2024-11-08T19:29:55Z",
+        "description": "Keep events and manage your calendar alongside all your other notes in your Obsidian Vault.",
+        "default_branch": "main"
+      },
+      {
+        "repo": "scambier/obsidian-text-extractor",
+        "full_name": "scambier/obsidian-text-extractor",
+        "archived": false,
+        "disabled": false,
+        "pushed_at": "2026-09-07T18:19:29Z",
+        "description": "A (companion) plugin to facilitate the extraction of text from images (OCR) and PDFs.",
+        "default_branch": "master"
+      },
+      {
+        "repo": "kevboh/longform",
+        "full_name": "kevboh/longform",
+        "archived": false,
+        "disabled": false,
+        "pushed_at": "2025-12-02T16:00:53Z",
+        "description": "A plugin for Obsidian that helps you write and edit novels, screenplays, and other long projects.",
+        "default_branch": "main"
+      }
+    ],
+    "evidence_policy": "每项 source_supported 都附原始短摘录和位置；摘录与取回正文逐项核对，语义由模型结合上下文检查。JSON 同时保留来源类型、捕获哈希和实际取回入口；官方文档显示链接依据其 permalink，正文来自官方仓库。",
+    "unverified_requests": [
+      {
+        "outcome": "从任意已有长会议录音自动形成带说话人与回跳时间戳的纪要",
+        "status": "未确认，未计入 P",
+        "reason": "现有 iOS 实时口述转写证据不足以证明完整流程，未完成相关插件/模型组合的专门验证。"
+      },
+      {
+        "outcome": "可靠双向维护任意远程日历",
+        "status": "未确认，未计入 P",
+        "reason": "选取的 Full Calendar 文档仅确认只读 ICS/CalDAV；其他插件或服务组合未核验。"
+      },
+      {
+        "outcome": "在完全无网环境持续进行地图与路线导航",
+        "status": "未确认，未计入 P",
+        "reason": "本地地点笔记不等于离线地图瓦片、地理编码或路线服务。"
+      }
+    ],
+    "classification_note": "分类只用于导航；一项当前展示一次，JSON 允许今后添加跨组标签。分组不代表互斥的软件模块。",
+    "integrity_constraint": "只写 outputs/obsidian 三个交付文件；Skill 和既有两轮成果在开始及结束比较路径集合和 SHA-256，未参考其具体清单。"
+  },
+  "generated_at": "2026-11-05T04:26:21Z"
+}
