@@ -1,0 +1,66 @@
+LangChain Python 1.x Agent — P Discovery validation record
+Local research date: 2026-11-05 Asia/Shanghai
+Branch: proposal/cop-capability-map-v0
+52 source_supported possibilities; 1 proposed; 0 human-reviewed.
+24 core public-interface/custom-pattern entries; 28 extension entries; 1 availability unknown.
+8 purpose groups; 66 source pages/files; 78 claim-specific evidence references.
+
+$ python3 .agents/skills/p-discovery/scripts/validate.py outputs/langchain-agent/possibilities.json
+PASS: outputs/langchain-agent/possibilities.json (structural/evidence checks only; assess sources manually)
+
+exit_code=0
+
+$ python3 -m unittest discover -s .agents/skills/p-discovery/tests -v
+
+test_claim_without_evidence_fails (test_quality.DiscoveryQualityTests) ... ok
+test_duplicate_id_across_types_fails (test_quality.DiscoveryQualityTests) ... ok
+test_extension_without_conditions_fails (test_quality.DiscoveryQualityTests) ... ok
+test_missing_source_passage_fails (test_quality.DiscoveryQualityTests) ... ok
+test_proposal_can_exist_without_evidence_but_is_not_confirmed (test_quality.DiscoveryQualityTests) ... ok
+test_quote_cannot_be_fabricated (test_quality.DiscoveryQualityTests) ... ok
+test_quote_must_point_to_correct_source (test_quality.DiscoveryQualityTests) ... ok
+test_reviewed_requires_human_reviewer (test_quality.DiscoveryQualityTests) ... ok
+test_reviewed_with_human_record_can_pass_structural_gate (test_quality.DiscoveryQualityTests) ... ok
+test_root_must_be_json_object (test_quality.DiscoveryQualityTests) ... ok
+test_sample_passes (test_quality.DiscoveryQualityTests) ... ok
+test_source_url_must_be_real_http_url_shape (test_quality.DiscoveryQualityTests) ... ok
+test_unknown_group_fails (test_quality.DiscoveryQualityTests) ... ok
+test_unknown_source_fails (test_quality.DiscoveryQualityTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK
+exit_code=0
+
+Source capture audit: PASS — 66/66 captured sources; 85 fragments matched.
+54 sources were retrieved as official Markdown/reference text via HTTP.
+12 source files were retrieved through the GitHub connector (requested line ranges; full-file blob SHA recorded).
+Readable-text comparison decodes HTML entities, removes Markdown formatting and normalises Unicode/whitespace.
+Each source records original URL, location, captured excerpt and capture hash/provenance.
+The source excerpts and per-entry quotation references stay within the checked short-excerpt budget.
+
+Artifact consistency: PASS
+- Distinct titles; each JSON entry appears in Markdown with its ID.
+- Every source-supported entry has claim-specific evidence.
+- Every entry records component layer and required components.
+- Proposed generative UI entry is visibly separated from confirmed Python outcomes.
+
+Published-package static audit: PASS — 17/17 modules contain the required symbols.
+Package: langchain 1.4.9
+Metadata: https://pypi.org/pypi/langchain/1.4.9/json
+Wheel: langchain-1.4.9-py3-none-any.whl
+Wheel SHA-256 matched PyPI metadata: 87cf3c15dfddaebd0e421d253e3b4abf70b70d6e18e56c45b9eb1873cc46f154
+Inspection read ZIP members and parsed Python AST only. No installation, imports or third-party execution.
+
+Limits:
+- No real LLM, business tool, paid search, database, email, calendar, sandbox or deployment executed.
+- Static API presence does not prove runtime compatibility or successful application behaviour.
+- Exact excerpt matching is not semantic truth checking or independent human review.
+- Mock tutorial services are explicitly distinguished from real connected systems.
+- Current 1.x support is not a claim that every feature exists in 1.0.
+- No exhaustive-coverage score or success-rate claim.
+
+Delivered artifact SHA-256:
+85597749488d5e9d9b6e974107fdb8eb5ea086049286d9b0b4082db7587c6fae  possibilities.md
+23a68ad44675e538fd81d65443453797ffecac01965727d80b0e741590903193  possibilities.json
