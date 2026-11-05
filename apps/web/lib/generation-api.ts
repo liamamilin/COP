@@ -37,6 +37,23 @@ export interface RunProgress {
   run: GenerationRun;
   phases: GenerationPhase[];
   candidate_available: boolean;
+  last_event_id?: number;
+  recovery?: {
+    allowed: boolean;
+    reason: string;
+    from_step: string | null;
+    completed_steps: string[];
+    attempt: number;
+    event_cursor: number;
+    timeout_seconds: number;
+    history: {
+      attempt: number;
+      status: string;
+      error_code: string | null;
+      error_message: string | null;
+      metrics: Record<string, unknown>;
+    }[];
+  };
 }
 
 export interface GenerationCandidate {

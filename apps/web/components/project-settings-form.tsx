@@ -3,7 +3,10 @@
 import { useRouter } from "next/navigation";
 import { type FormEvent, useState } from "react";
 
-import { publicApiBaseUrl, type ProjectSettingsView, type ProjectSummary } from "../lib/api";
+import {
+  archiveProject, deleteProject, restoreProject, publicApiBaseUrl,
+  type ProjectSettingsView, type ProjectSummary,
+} from "../lib/api";
 
 /**
  * Project Settings.
@@ -117,13 +120,10 @@ export function ProjectSettingsForm({
       return;
     }
     setPending(true);
-    const response = await fetch(`${publicApiBaseUrl()}/projects/${project.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status: "archived" }),
-    });
-    if (response.ok) router.push("/");
-    else {
+    try {
+      await archiveProject(project.id);
+      router.push("/");
+    } catch {
       setPending(false);
       setMessage("Unable to archive project");
     }
@@ -131,13 +131,11 @@ export function ProjectSettingsForm({
 
   async function restore() {
     setPending(true);
-    const response = await fetch(`${publicApiBaseUrl()}/projects/${project.id}/restore`, {
-      method: "POST",
-    });
-    if (response.ok) {
+    try {
+      await restoreProject(project.id);
       setMessage("Restored. This project is back in the active list.");
       router.refresh();
-    } else {
+    } catch {
       setMessage("Unable to restore project");
     }
     setPending(false);
@@ -158,11 +156,10 @@ export function ProjectSettingsForm({
       return;
     }
     setPending(true);
-    const response = await fetch(`${publicApiBaseUrl()}/projects/${project.id}`, {
-      method: "DELETE",
-    });
-    if (response.ok) router.push("/");
-    else {
+    try {
+      await deleteProject(project.id);
+      router.push("/");
+    } catch {
       setPending(false);
       setMessage("Unable to delete project");
     }

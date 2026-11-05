@@ -197,6 +197,34 @@ def _mock_processes(payload: dict[str, Any]) -> dict[str, Any]:
         "title": f"Deliver {goal.get('title', domain) if isinstance(goal, dict) else domain}",
         "outcome": outcome,
         "stages": stages,
+        # Mechanical fixture, not a claim that this plan teaches the domain.
+        # Mock and live providers must nevertheless share the same contract.
+        "teaching_plan": {
+            "central_question": f"How can the {domain} result be checked?",
+            "why_this_order": (
+                "Establish the inputs before using them; inspect the result after the action."
+            ),
+            "running_case": {
+                "scenario": "A synthetic workflow for offline integration testing.",
+                "facts": ["The scenario is supplied by the deterministic mock."],
+                "hypotheses": ["No real-world effectiveness is established by this fixture."],
+            },
+            "stages": [
+                {
+                    "stage_key": stage["key"],
+                    "learning_question": f"What does {stage['title']} establish?",
+                    "why_now": "The preceding planned result supplies this action's starting point."
+                    if index else "The first action establishes the workflow's starting point.",
+                    "builds_on": [stages[index - 1]["key"]] if index else [],
+                    "reasoning_moves": [
+                        "Compare the observed result with the declared expectation.",
+                    ],
+                    "check_focus": "State what this observation can and cannot establish.",
+                    "next_gap": "Actual execution and learner understanding remain unverified.",
+                }
+                for index, stage in enumerate(stages)
+            ],
+        },
     }
 
 

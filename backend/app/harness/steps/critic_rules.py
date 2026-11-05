@@ -17,6 +17,8 @@ them blocking for new candidates.
 from typing import Any
 
 from app.domain.quality import (
+    CONCEPT_FRAME_CODES,
+    L1,
     L2,
     blocking_issues,
 )
@@ -74,6 +76,21 @@ def content_gate_failures(artifact: dict[str, Any]) -> list[dict[str, Any]]:
     return [
         issue.as_dict()
         for issue in blocking_issues(check_operational_completeness(artifact, levels=[L2]))
+    ]
+
+
+def concept_frame_failures(artifact: dict[str, Any]) -> list[dict[str, Any]]:
+    """Concept-frame defects that a reader cannot work around.
+
+    Kept separate from `content_gate_failures` on purpose: the L2 gate is about a
+    Stage the learner cannot act on, while this one is about the structure the
+    whole route leans on. They reach the same `needs_attention` status but are
+    reported by name so a repair can target the concept instead of a Stage.
+    """
+    return [
+        issue.as_dict()
+        for issue in check_operational_completeness(artifact, levels=[L1])
+        if issue.code in CONCEPT_FRAME_CODES
     ]
 
 
@@ -183,6 +200,7 @@ def check_artifact(artifact: dict[str, Any]) -> list[dict[str, Any]]:
     # Content contract last, so the structural findings are read first. These
     # carry a `level` and an `entity_type` the older codes do not need.
     issues.extend(content_issues(artifact))
+    issues.extend(concept_frame_failures(artifact))
 
     return issues
 
@@ -218,6 +236,10 @@ def merged_report(
     elif any(issue["code"] in CONTENT_GATE_CODES for issue in combined):
         # A Stage a reader cannot act on is not a stylistic nit. The refiner has
         # to run, otherwise the candidate ships exactly as unusable as it was.
+        severity = "major"
+    elif any(issue["code"] in CONCEPT_FRAME_CODES for issue in combined):
+        # A definition that only repeats its own label leaves the reader with a
+        # glossary, not a frame. Also major: it must reach the refiner.
         severity = "major"
     elif combined and severity == "pass":
         severity = "minor"

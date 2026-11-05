@@ -1,0 +1,61 @@
+/* App settings only. Project settings and the reading workspace are unaffected. */
+.page { margin: 0 auto; max-width: 1600px; padding: 28px clamp(20px, 2.4vw, 44px) 48px; }
+.heading { margin-bottom: 28px; }
+.back { color: var(--muted); display: inline-block; font-size: 12px; margin-bottom: 18px; }
+.back:hover { color: var(--green); }
+.heading h1 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 400; letter-spacing: -0.025em; line-height: 1.4; margin: 0 0 6px; }
+.heading > p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0; }
+.layout { align-items: start; display: grid; gap: 28px; grid-template-columns: 156px minmax(0, 1fr); }
+.navigation { display: grid; gap: 4px; position: sticky; top: 96px; }
+.navigation a { border-radius: 5px; color: var(--muted); font-size: 13px; line-height: 1.6; padding: 10px 12px; }
+.navigation a:hover, .navigation a:focus-visible { background: var(--paper-strong); color: var(--ink); }
+.form { display: grid; gap: 18px; min-width: 0; }
+.section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; min-width: 0; padding: 24px; scroll-margin-top: 96px; }
+.sectionHeader { align-items: flex-start; display: flex; gap: 16px; justify-content: space-between; margin-bottom: 22px; }
+.sectionHeader h2 { font-family: inherit; font-size: 16px; font-weight: 600; line-height: 1.5; margin: 0 0 6px; }
+.sectionHeader p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0; max-width: 72ch; }
+.badge { border: 1px solid var(--line); border-radius: 4px; color: var(--muted); flex: 0 0 auto; font-size: 11px; line-height: 1.5; padding: 4px 8px; }
+.fields { align-items: start; display: grid; gap: 18px 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.field { min-width: 0; }
+.field > label { color: var(--ink); display: block; font-size: 12px; font-weight: 500; line-height: 1.5; margin-bottom: 7px; }
+.field input, .field select { background: var(--paper); border: 1px solid var(--line-strong); border-radius: 5px; color: var(--ink); font-family: inherit; font-size: 13px; line-height: 1.5; min-height: 40px; min-width: 0; padding: 9px 11px; width: 100%; }
+.field input::placeholder { color: var(--muted); opacity: 1; }
+.field input:focus-visible, .field select:focus-visible { border-color: var(--green); outline: 2px solid var(--green-soft); outline-offset: 1px; }
+.hint { color: var(--muted); font-size: 12px; line-height: 1.65; margin: 7px 0 0; overflow-wrap: anywhere; }
+.keyHint { font-family: ui-monospace, monospace; }
+.connectionActions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.connectionActions > p { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 0 0 0 4px; }
+.secondaryButton { background: none; border: 1px solid var(--line-strong); border-radius: 5px; color: var(--ink); cursor: pointer; font-family: inherit; font-size: 12px; line-height: 1.5; min-height: 36px; padding: 8px 11px; }
+.secondaryButton:hover { background: var(--paper-strong); }
+.advanced { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 14px; }
+.advanced > summary { color: var(--muted); cursor: pointer; font-size: 12px; line-height: 1.6; padding: 4px 0; }
+.advanced > summary:hover { color: var(--ink); }
+.advanced > .fields { margin-top: 16px; }
+.advanced > .hint { margin-top: 14px; }
+.saveBar { align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 7px; bottom: 16px; display: flex; gap: 20px; justify-content: space-between; padding: 12px 16px; position: sticky; z-index: 5; }
+.saveHint, .message, .error { font-size: 12px; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
+.saveHint { color: var(--muted); }
+.message { color: var(--green); }
+.error { color: var(--orange); }
+.saveButton { background: var(--dark); border: 1px solid var(--dark); border-radius: 5px; color: #fff; cursor: pointer; flex: 0 0 auto; font-size: 12px; font-weight: 500; line-height: 1.5; min-height: 38px; padding: 9px 16px; }
+.saveButton:hover { background: var(--green); border-color: var(--green); }
+.form button:disabled { cursor: not-allowed; opacity: 0.5; }
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 130px minmax(0, 1fr); gap: 20px; }
+  .section { padding: 20px; }
+  .fields { gap: 18px; }
+}
+@media (max-width: 760px) {
+  .page { padding: 24px 20px 32px; }
+  .heading { margin-bottom: 22px; }
+  .heading h1 { font-size: 26px; }
+  .layout { display: block; }
+  .navigation { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 18px; position: static; }
+  .navigation a { font-size: 12px; padding: 8px 10px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .sectionHeader { flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  .badge { font-size: 11px; }
+  .connectionActions > p { flex-basis: 100%; margin-left: 0; }
+  .saveBar { bottom: 8px; flex-wrap: wrap; gap: 10px; padding: 12px; }
+  .saveButton { margin-left: auto; }
+}

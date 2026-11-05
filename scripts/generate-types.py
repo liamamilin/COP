@@ -29,13 +29,14 @@ def ts_type(schema: dict[str, Any], *, indent: int = 0) -> str:
         return json.dumps(schema["const"], ensure_ascii=False)
     if "enum" in schema:
         return " | ".join(json.dumps(item, ensure_ascii=False) for item in schema["enum"])
-    if "oneOf" in schema:
+    if "oneOf" in schema or "anyOf" in schema:
         # `oneOf: [{$ref: Example}, {type: "null"}]` is how a nullable object is
         # expressed. Without this the whole union collapses to `unknown`, which
         # is the one thing a generated contract must never emit: `unknown` turns
         # every property access into a type error, so callers cast it away and
         # the contract stops protecting anything.
-        variants = list(dict.fromkeys(ts_type(option, indent=indent) for option in schema["oneOf"]))
+        options = schema.get("oneOf", schema.get("anyOf", []))
+        variants = list(dict.fromkeys(ts_type(option, indent=indent) for option in options))
         if len(variants) == 1:
             return variants[0]
         return " | ".join(f"({item})" if " | " in item else item for item in variants)
@@ -97,6 +98,15 @@ def generate(schema: dict[str, Any]) -> str:
         }
     root = {**schema, "properties": root_properties}
     blocks.append(interface("COPArtifact", root))
+    return "\n\n".join(blocks) + "\n"
+
+
+def generate_document(schema: dict[str, Any], name: str, source: str) -> str:
+    """An independent document; no COP collection rewriting or schema migration."""
+    blocks = [f"/* Generated from {source}. Do not edit by hand. */"]
+    for type_name, definition in (schema.get("$defs") or {}).items():
+        blocks.append(interface(type_name, definition))
+    blocks.append(interface(name, schema))
     return "\n\n".join(blocks) + "\n"
 
 

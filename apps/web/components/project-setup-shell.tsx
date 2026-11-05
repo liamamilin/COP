@@ -6,10 +6,12 @@ import type { ProjectSummary } from "../lib/api";
 export function ProjectSetupShell({
   project,
   active,
+  hasDraft = false,
   children,
 }: {
   project: ProjectSummary;
   active: "overview" | "sources" | "settings";
+  hasDraft?: boolean;
   children: ReactNode;
 }) {
   const root = `/projects/${project.id}`;
@@ -19,12 +21,13 @@ export function ProjectSetupShell({
         <div className="project-identity">
           <span className="sidebar-kicker">DRAFT PROJECT</span>
           <h2>{project.title}</h2>
-          <span className="draft-state"><i /> No COP generated</span>
+          <span className="draft-state"><i /> {hasDraft ? "Draft ready · Unpublished" : "No published COP"}</span>
         </div>
         <nav aria-label="Project setup navigation">
           <Link className={active === "overview" ? "active" : ""} href={root}><span>01</span> Overview</Link>
           <Link className={active === "sources" ? "active" : ""} href={`${root}/sources`}><span>02</span> Sources</Link>
           <Link className={active === "settings" ? "active" : ""} href={`${root}/settings`}><span>03</span> Project settings</Link>
+          {hasDraft && <Link href={`${root}/draft`}><span>04</span> Review draft ↗</Link>}
         </nav>
         <div className="sidebar-footer"><span>Setup mode</span><span>{project.preferred_language}</span></div>
       </aside>
@@ -35,4 +38,3 @@ export function ProjectSetupShell({
     </div>
   );
 }
-

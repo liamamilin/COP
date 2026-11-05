@@ -13,6 +13,15 @@ Goal → Main Process → Stage → Concept × Operation learning artifact.
 Published COP versions are immutable JSONB documents. Long-running generation
 work is claimed by a database-backed worker; no Redis service is required.
 
+### Reasoning-first teaching experiment
+
+The independent Chinese communication lesson is available at
+[`/prototypes/communication`](http://localhost:3000/prototypes/communication).
+It explains the learning route, evidence, inference and limits before methods.
+It is hand-authored, not a rewritten published project or proof of learning efficacy.
+See [implementation and verification](docs/CONTENT_OPTIMIZATION.md) and
+[content audit and pending human acceptance](docs/CONTENT_LOGIC_AUDIT.md).
+
 ## Implemented milestones
 
 - M0: runnable monorepo, FastAPI, PostgreSQL migration, worker heartbeat, CI
@@ -73,7 +82,25 @@ GET  /api/v1/generation-runs/{run_id}/progress
 GET  /api/v1/generation-runs/{run_id}/events      (SSE, honours Last-Event-ID)
 GET  /api/v1/generation-runs/{run_id}/candidate
 POST /api/v1/generation-runs/{run_id}/cancel
+POST /api/v1/generation-runs/{run_id}/resume
 ```
+
+Failed full-generation runs with intact, explicit checkpoints offer **Resume generation**
+and **Start over**. Resume requeues the same run and retries
+the first unfinished step; it does not reuse partial responses inside a step.
+It keeps the original model, generation settings and source snapshot. Only an
+explicit `timeout_seconds` adjustment (5–600) is allowed. The request includes
+`expected_attempt`, returned by the progress endpoint's `recovery` object, so
+duplicate clicks cannot enqueue another attempt, even after a later failure.
+Previous errors and metrics remain in the append-only event log and recovery
+history. Old terminal events are excluded from the new attempt's SSE stream.
+Cancelled runs, targeted refinements, incomplete/legacy checkpoints and errors
+that require intervention do not offer manual resume. Validation still reruns,
+and neither resume nor reconnect publishes anything automatically.
+
+The isolated browser regression uses mocked HTTP/SSE and no paid calls:
+`cd apps/web && node scripts/check-run-resume-ui.mjs`
+(set `PLAYWRIGHT_CHANNEL=chrome` to use an installed Chrome).
 
 ## Drafts and versions
 

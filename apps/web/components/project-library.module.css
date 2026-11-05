@@ -1,0 +1,100 @@
+/* The library owns its layout; no landing-page or workspace selectors leak out. */
+.library { margin: 0 auto; padding: 28px clamp(20px, 2.4vw, 44px) 40px; }
+.header { align-items: center; display: flex; gap: 24px; justify-content: space-between; }
+.header > div { min-width: 0; }
+.header h1 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 400; letter-spacing: -0.025em; line-height: 1.4; margin: 0; }
+.newProject { align-items: center; background: var(--dark); border: 1px solid var(--dark); border-radius: 7px; color: #fff; display: inline-flex; flex: 0 0 auto; font-size: 12px; font-weight: 500; gap: 10px; padding: 10px 14px; }
+.newProject > span { font-size: 16px; font-weight: 400; line-height: 1; }
+.newProject:hover { background: var(--green); border-color: var(--green); color: var(--paper); }
+.projects { padding-top: 24px; }
+.sectionHeading { margin-bottom: 14px; }
+.sectionHeading h2, .collectionHeading h2 { align-items: center; display: flex; font-size: 13px; font-weight: 500; gap: 9px; margin: 0; }
+.sectionHeading h2 > span, .collectionHeading h2 > span { color: var(--muted); font-family: ui-monospace, monospace; font-size: 11px; font-weight: 400; }
+.collection { min-width: 0; }
+.collectionHeading { align-items: center; display: flex; flex-wrap: wrap; gap: 12px 20px; justify-content: space-between; margin-bottom: 14px; }
+.viewControl { align-items: center; color: var(--muted); display: flex; font-size: 11px; gap: 8px; margin-left: auto; }
+.collection select, .collection input { background: var(--panel); border: 1px solid var(--line); border-radius: 5px; color: var(--ink); font: inherit; max-width: 100%; min-width: 0; padding: 7px 9px; }
+.findTools { align-items: center; display: flex; flex-wrap: wrap; font-size: 12px; gap: 12px 20px; margin-bottom: 12px; }
+.findTools input { flex: 1 1 200px; }
+.findTools label { align-items: center; color: var(--muted); display: flex; font-size: 11px; gap: 8px; }
+.resultCount { color: var(--muted); font-size: 11px; margin: 0 0 12px; }
+.projectGrid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); list-style: none; margin: 0; padding: 0; }
+.projectGrid:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.projectGrid > :only-child { max-width: 680px; width: 100%; }
+.projectCard { background: var(--panel); border: 1px solid var(--line); border-radius: 9px; display: grid; grid-template-columns: minmax(0, 1fr) auto; min-width: 0; transition: border-color 150ms ease; }
+.projectCard:hover { border-color: var(--line-strong); }
+.projectCard > .projectLink { align-items: stretch; flex-direction: column; gap: 0; grid-column: 1 / -1; justify-content: flex-start; min-height: clamp(340px, 46svh, 420px); padding: 28px; }
+.projectCard h3 { display: -webkit-box; font-size: 18px; font-weight: 500; line-height: 1.5; margin: 0 0 10px; overflow: hidden; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.cardStatus { color: var(--green); font-size: 11px; line-height: 1.5; margin: 0 44px 18px 0; }
+.cardScope { color: var(--muted); display: -webkit-box; font-size: 13px; line-height: 1.8; margin: 0 0 20px; overflow: hidden; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.startPreview { margin-bottom: 22px; }
+.startPreview > span { color: var(--muted); font-size: 10px; }
+.startPreview ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.startPreview li { display: grid; font-size: 13px; gap: 12px; grid-template-columns: 18px minmax(0, 1fr); line-height: 1.7; padding: 6px 0; }
+.startPreview li > span:first-child { color: var(--green); font-family: ui-monospace, monospace; font-size: 10px; padding-top: 2px; }
+.startPreview li > span:last-child { display: -webkit-box; overflow: hidden; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.cardFooter { align-items: center; border-top: 1px solid var(--line); color: var(--muted); display: flex; font-size: 11px; gap: 12px; justify-content: space-between; margin-top: auto; padding-top: 14px; }
+.projectLink { align-items: center; display: flex; gap: 24px; grid-column: 1; grid-row: 1; justify-content: space-between; min-height: 104px; min-width: 0; padding: 24px 20px; }
+.collection[data-view="overview"] .projectCard:not(:has(.startPreview)) > .projectLink { min-height: 240px; }
+.collection[data-view="compact"] .projectGrid { gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.collection[data-view="compact"] .projectLink { min-height: 198px; padding: 20px; }
+.collection[data-view="compact"] h3 { font-size: 15px; margin-bottom: 8px; }
+.collection[data-view="compact"] .cardStatus { margin-bottom: 12px; }
+.collection[data-view="compact"] .cardScope { font-size: 12px; margin-bottom: 12px; }
+.collection[data-view="compact"] .cardFooter { border: 0; padding-top: 12px; }
+.collection[data-view="list"] .projectGrid { border-top: 1px solid var(--line); gap: 0; grid-template-columns: minmax(0, 1fr); }
+.collection[data-view="list"] .projectCard { background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; max-width: none; }
+.collection[data-view="list"] .projectCard:hover { background: var(--panel); }
+.collection[data-view="list"] .projectLink { display: grid; gap: 4px 24px; grid-template-columns: minmax(0, 1fr) auto; min-height: 108px; padding: 20px 76px 20px 20px; }
+.collection[data-view="list"] h3 { font-size: 15px; grid-column: 1; grid-row: 1; margin: 0; }
+.collection[data-view="list"] .cardStatus { color: var(--muted); grid-column: 2; grid-row: 1; margin: 0; }
+.collection[data-view="list"] .cardScope { font-size: 12px; grid-column: 1; grid-row: 2; margin: 0; -webkit-line-clamp: 1; }
+.collection[data-view="list"] .cardFooter { border: 0; grid-column: 1 / -1; grid-row: 3; margin: 0; padding: 0; }
+.noMatches { border: 1px dashed var(--line); border-radius: 7px; color: var(--muted); font-size: 12px; padding: 24px; }
+.noMatches p { margin: 0 0 12px; }
+.noMatches button, .pagination button { background: var(--panel); border: 1px solid var(--line); border-radius: 5px; color: var(--ink); cursor: pointer; font-size: 11px; padding: 8px 11px; }
+.pagination { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+.pagination > span { color: var(--muted); font-size: 11px; margin-right: auto; }
+.pagination button:disabled { cursor: not-allowed; opacity: 0.45; }
+.projectArrow { color: var(--muted); flex: 0 0 auto; font-size: 16px; }
+.projectLink:hover .projectArrow { color: var(--ink); }
+.projectLink:focus-visible { outline: 2px solid var(--green); outline-offset: -3px; }
+.empty { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 30px; }
+.empty h3 { font-family: Georgia, serif; font-size: 20px; font-weight: 400; line-height: 1.5; margin: 0 0 10px; }
+.empty p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0 0 18px; max-width: 65ch; }
+.textLink { color: var(--green); font-size: 12px; }
+.textLink:hover { text-decoration: underline; text-underline-offset: 4px; }
+.archive { margin-top: 28px; }
+.archive > summary { color: var(--muted); cursor: pointer; font-size: 12px; }
+.archive > summary > span { font-family: ui-monospace, monospace; font-size: 10px; margin-left: 6px; }
+.archive > .collection { margin-top: 16px; }
+
+@media (max-width: 760px) {
+  .library { padding: 28px 20px 40px; }
+  .header { gap: 16px; }
+  .header h1 { font-size: 26px; }
+  .newProject { gap: 6px; padding: 9px 11px; }
+  .projectLink { gap: 12px; padding: 22px 12px; }
+  .projectGrid { gap: 14px; }
+  .projectCard > .projectLink { min-height: 260px; padding: 20px; }
+  .projectCard h3 { font-size: 17px; }
+  .findTools { gap: 10px; }
+  .findTools input { flex-basis: 100%; }
+  .findTools label { flex: 1; min-width: 0; }
+  .findTools label select { flex: 1; }
+  .collection[data-view="list"] .projectLink { grid-template-columns: minmax(0, 1fr); padding: 18px 60px 18px 16px; }
+  .collection[data-view="list"] .cardStatus { grid-column: 1; grid-row: 2; font-size: 10px; }
+  .collection[data-view="list"] .cardScope { grid-row: 3; }
+  .collection[data-view="list"] .cardFooter { grid-row: 4; }
+  .empty { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .projectCard { transition: none; }
+}
+@media (max-width: 600px) {
+  .collection[data-view="compact"] .projectGrid { gap: 10px; }
+  .collection[data-view="compact"] .projectLink { min-height: 0; padding: 16px; }
+  .collection[data-view="compact"] .cardStatus { font-size: 10px; margin-bottom: 8px; }
+  .collection[data-view="compact"] .cardScope { margin-bottom: 10px; -webkit-line-clamp: 1; }
+  .collection[data-view="compact"] .cardFooter { padding-top: 0; }
+}

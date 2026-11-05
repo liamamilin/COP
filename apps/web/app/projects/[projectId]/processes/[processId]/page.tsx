@@ -3,6 +3,7 @@ import { ProcessRail } from "../../../../../components/process-rail";
 import { ProjectShell } from "../../../../../components/project-shell";
 import { getLearningProgress, getWorkspace } from "../../../../../lib/api";
 import { artifactSelectors } from "../../../../../lib/artifact-selectors";
+import Link from "next/link";
 
 export default async function ProcessPage({
   params,
@@ -22,9 +23,10 @@ export default async function ProcessPage({
     <ProjectShell project={project} version={version} artifact={artifact} active="process">
       <div className="content-wrap narrow-content">
         <header className="page-header detail-header">
-          <p className="eyebrow">MAIN PROCESS · {process.stage_refs.length} STAGES</p>
+          <p className="eyebrow">STEP-BY-STEP ROUTE · {process.stage_refs.length} STEPS</p>
           <h1>{process.title}</h1>
           <p className="lead-copy">{goal.outcome}</p>
+          <div className="workspace-entry-actions"><Link className="primary-link" href={`/projects/${projectId}/learn?goal=${encodeURIComponent(goal.id)}&version=${encodeURIComponent(version.id)}`}>Follow these steps in Learn →</Link></div>
         </header>
         <ProcessRail artifact={artifact} process={process} projectId={projectId} />
         {practice && (

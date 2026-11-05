@@ -176,6 +176,11 @@ def load_source_bundle(db: Session, run: GenerationRun) -> list[dict[str, Any]]:
 
 
 def run_events_payload(db: Session, run_id: Any) -> list[dict[str, Any]]:
+    events = []
+    cursor = 0
+    while batch := read_events(db, run_id, after=cursor):
+        events.extend(batch)
+        cursor = batch[-1].sequence
     return [
         {
             "sequence": event.sequence,
@@ -184,7 +189,7 @@ def run_events_payload(db: Session, run_id: Any) -> list[dict[str, Any]]:
             "payload": event.payload_json,
             "created_at": event.created_at.isoformat() if event.created_at else None,
         }
-        for event in read_events(db, run_id)
+        for event in events
     ]
 
 

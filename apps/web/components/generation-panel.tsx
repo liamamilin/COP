@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   ApiError,
   cancelGenerationRun,
-  generationEventsUrl,
   getEffectiveGenerationSettings,
-  getRunProgress,
+  resumeGenerationRun,
   startGenerationRun,
 } from "../lib/api";
 import {
@@ -15,8 +14,8 @@ import {
   isTerminal,
   type GenerationPhase,
   type GenerationRequest,
-  type GenerationRun,
 } from "../lib/generation-api";
+import { useGenerationRun } from "../lib/use-generation-run";
 
 const DEPTH_LABELS = { fast: "Fast", standard: "Standard", deep: "Deep" } as const;
 const LEARNER_LABELS = {
@@ -77,13 +76,15 @@ export function GenerationPanel({
   effective,
   onCandidateReady,
 }: GenerationPanelProps) {
-  const [run, setRun] = useState<GenerationRun | null>(null);
-  const [phases, setPhases] = useState<GenerationPhase[]>(PLACEHOLDER_PHASES);
-  const [warnings, setWarnings] = useState<string[]>([]);
+  const { run, progress, restoring, error: observationError, warnings, live, observe } =
+    useGenerationRun(projectId, onCandidateReady);
+  const phases = progress?.phases ?? PLACEHOLDER_PHASES;
+  const recovery = progress?.recovery;
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
   const [webSearch, setWebSearch] = useState(false);
-  const [live, setLive] = useState(false);
+  const [resumeTimeout, setResumeTimeout] = useState("");
+  const submitting = useRef(false);
   // Run-scoped overrides. Empty means "inherit", which is what keeps the default
   // path identical to no override at all.
   const [overrides, setOverrides] = useState<Partial<EffectiveGeneration>>({});
@@ -92,8 +93,6 @@ export function GenerationPanel({
   // cannot drift (spec `24` §8 puts the merge in the backend).
   const [resolved, setResolved] = useState<EffectiveGeneration>(effective);
   const [showOptions, setShowOptions] = useState(false);
-  const sourceRef = useRef<EventSource | null>(null);
-  const lastEventId = useRef<number | undefined>(undefined);
   const requestSeq = useRef(0);
 
   useEffect(() => setResolved(effective), [effective]);
@@ -118,112 +117,12 @@ export function GenerationPanel({
 
   const isOverridden = (key: keyof EffectiveGeneration) => overrides[key] !== undefined;
 
-  const teardown = useCallback(() => {
-    sourceRef.current?.close();
-    sourceRef.current = null;
-    setLive(false);
-  }, []);
-
-  useEffect(() => teardown, [teardown]);
-
-  // Poll while a run is active. The SSE stream drives the phase list, but a
-  // poll is the fallback for when the stream cannot be established (proxies,
-  // corporate proxies that buffer, or EventSource being unavailable).
-  useEffect(() => {
-    if (!run || isTerminal(run.status)) {
-      teardown();
-      return;
-    }
-    let cancelled = false;
-    const tick = async () => {
-      try {
-        const progress = await getRunProgress(run.id);
-        if (cancelled) return;
-        setPhases(progress.phases);
-        if (isTerminal(progress.run.status)) {
-          setRun(progress.run);
-          teardown();
-          if (progress.run.status === "completed" || progress.run.status === "needs_attention") {
-            onCandidateReady(progress.run.id);
-          }
-        }
-      } catch (cause) {
-        // A transient poll failure must not tear down a healthy stream.
-        if (!cancelled) setError(describe(cause));
-      }
-    };
-    void tick();
-    const timer = setInterval(tick, 1500);
-    return () => {
-      cancelled = true;
-      clearInterval(timer);
-    };
-  }, [run, teardown, onCandidateReady]);
-
-  function connect(runId: string) {
-    teardown();
-    if (typeof EventSource === "undefined") return;
-    const source = new EventSource(generationEventsUrl(runId, lastEventId.current));
-    sourceRef.current = source;
-    source.onopen = () => setLive(true);
-    source.onmessage = () => {
-      // Named events carry the payload; this keeps the connection warm.
-    };
-    source.addEventListener("step.started", (event) => {
-      track(event as MessageEvent<string>);
-    });
-    source.addEventListener("step.completed", (event) => {
-      track(event as MessageEvent<string>);
-    });
-    source.addEventListener("step.warning", (event) => {
-      const data = parse(event as MessageEvent<string>);
-      if (Array.isArray(data?.warnings)) {
-        setWarnings((current) => [...current, ...(data.warnings as string[])]);
-      }
-    });
-    source.addEventListener("run.started", () => setLive(true));
-    source.addEventListener("run.resumed", () => setLive(true));
-    for (const type of ["run.completed", "run.failed", "run.cancelled", "run.needs_attention"]) {
-      source.addEventListener(type, (event) => {
-        const data = parse(event as MessageEvent<string>);
-        teardown();
-        void refreshRun(runId, data);
-      });
-    }
-    source.onerror = () => {
-      // The stream closing is normal when a run finishes; the poll owns the
-      // terminal transition so a dropped connection cannot strand the UI.
-      setLive(false);
-    };
-  }
-
-  function track(event: MessageEvent<string>) {
-    const data = parse(event);
-    if (typeof data?.sequence === "number") lastEventId.current = data.sequence;
-  }
-
-  async function refreshRun(runId: string, hint?: unknown) {
-    try {
-      const progress = await getRunProgress(runId);
-      setRun(progress.run);
-      setPhases(progress.phases);
-      if (progress.run.status === "completed" || progress.run.status === "needs_attention") {
-        onCandidateReady(runId);
-      }
-    } catch (cause) {
-      setError(describe(cause));
-    }
-    if (hint && typeof hint === "object" && "metrics" in hint) {
-      setWarnings([]);
-    }
-  }
-
   async function start() {
+    if (submitting.current) return;
+    if (run && !window.confirm("Start a new generation from scratch? This makes new model calls and may incur charges.")) return;
+    submitting.current = true;
     setError(null);
-    setWarnings([]);
     setPending(true);
-    setPhases(PLACEHOLDER_PHASES);
-    lastEventId.current = undefined;
     // `mode` mirrors `generation_depth` rather than being a second concept: the
     // run previously recorded one value and the Harness read another, so a run's
     // own record could not explain what it actually did.
@@ -238,12 +137,11 @@ export function GenerationPanel({
     };
     try {
       const created = await startGenerationRun(projectId, body);
-      setRun(created);
-      connect(created.id);
-      void refreshRun(created.id);
+      observe(created);
     } catch (cause) {
       setError(describe(cause));
     } finally {
+      submitting.current = false;
       setPending(false);
     }
   }
@@ -253,11 +151,30 @@ export function GenerationPanel({
     setPending(true);
     try {
       const updated = await cancelGenerationRun(run.id);
-      setRun(updated);
+      observe(updated);
       setError(null);
     } catch (cause) {
       setError(describe(cause));
     } finally {
+      setPending(false);
+    }
+  }
+
+  async function resume() {
+    if (!run || !recovery?.allowed || submitting.current) return;
+    submitting.current = true;
+    setPending(true);
+    setError(null);
+    try {
+      const timeout = resumeTimeout ? Number(resumeTimeout) : undefined;
+      if (timeout !== undefined && (!Number.isInteger(timeout) || timeout < 5 || timeout > 600)) {
+        throw new Error("Request timeout must be a whole number between 5 and 600 seconds.");
+      }
+      observe(await resumeGenerationRun(run.id, recovery.attempt, timeout));
+    } catch (cause) {
+      setError(describe(cause));
+    } finally {
+      submitting.current = false;
       setPending(false);
     }
   }
@@ -267,7 +184,13 @@ export function GenerationPanel({
 
   return (
     <div className="generation-panel">
-      {!run && (
+      {observationError && <p className="form-error" role="alert">{observationError}</p>}
+      {!run && restoring && (
+        <section className="generation-start">
+          <p className="muted-note">Checking for an existing run…</p>
+        </section>
+      )}
+      {!run && !restoring && !observationError && (
         <section className="generation-start">
           <div>
             <p className="eyebrow">RUN THE HARNESS</p>
@@ -478,24 +401,53 @@ export function GenerationPanel({
             </p>
           )}
 
+          {run.status === "failed" && recovery?.allowed && (
+            <div className="generation-recovery">
+              <p className="eyebrow">CHECKPOINT SAVED</p>
+              <h3>Continue where you left off.</h3>
+              <p className="recovery-summary">
+                {recovery.completed_steps.length} steps preserved. Next: {phases.find(
+                  (phase) => phase.steps.includes(recovery.from_step ?? ""),
+                )?.label ?? recovery.from_step}.
+              </p>
+              <p className="muted-note">Uses the same model, settings, and sources. Further model calls may incur charges.</p>
+              <details className="recovery-options">
+                <summary>Adjust request timeout</summary>
+                <label><span>Request timeout (seconds)</span>
+                  <input type="number" min="5" max="600" value={resumeTimeout}
+                    placeholder={String(recovery.timeout_seconds)}
+                    onChange={(event) => setResumeTimeout(event.target.value)} disabled={pending} />
+                </label>
+                <p className="muted-note">Leave blank to keep the current {recovery.timeout_seconds}-second limit.</p>
+              </details>
+            </div>
+          )}
+          {run.status === "failed" && recovery && !recovery.allowed && (
+            <p className="muted-note">{recovery.reason}</p>
+          )}
+          {!!recovery?.history.length && (
+            <details className="generation-warnings"><summary>Previous attempts ({recovery.history.length})</summary>
+              <ul>{recovery.history.map((attempt) => (
+                <li key={attempt.attempt}>Attempt {attempt.attempt}: {attempt.error_code} — {attempt.error_message}</li>
+              ))}</ul>
+            </details>
+          )}
           {!active && (
-            <button className="secondary-button" onClick={start} type="button">
-              {pending ? "Starting…" : "Run again"}
-            </button>
+            <div className="generation-actions">
+              {run.status === "failed" && recovery?.allowed && (
+                <button className="primary-button" disabled={pending} onClick={resume} type="button">
+                  {pending ? "Submitting…" : "Resume generation"}
+                </button>
+              )}
+              <button className="secondary-button" disabled={pending} onClick={start} type="button">
+                {pending ? "Submitting…" : "Start over"}
+              </button>
+            </div>
           )}
         </section>
       )}
     </div>
   );
-}
-
-function parse(event: MessageEvent<string>): Record<string, unknown> | null {
-  try {
-    const value = JSON.parse(event.data) as unknown;
-    return value && typeof value === "object" ? (value as Record<string, unknown>) : null;
-  } catch {
-    return null;
-  }
 }
 
 function describe(cause: unknown): string {

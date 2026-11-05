@@ -29,16 +29,17 @@ export default async function GoalPage({
     <ProjectShell project={project} version={version} artifact={artifact} active="goal">
       <div className="content-wrap narrow-content">
         <header className="page-header detail-header">
-          <p className="eyebrow">GOAL · CAPABILITY OUTCOME</p>
+          <p className="eyebrow">GOAL · EXPECTED RESULT</p>
           <h1>{goal.title}</h1>
           <p className="lead-copy">{goal.outcome}</p>
+          <div className="workspace-entry-actions"><Link className="primary-link" href={`/projects/${projectId}/learn?goal=${encodeURIComponent(goal.id)}&version=${encodeURIComponent(version.id)}`}>Follow this goal in Learn →</Link></div>
           {goal.why_it_matters && <div className="why-line"><span>WHY IT MATTERS</span>{goal.why_it_matters}</div>}
         </header>
 
         <div className="process-title-row">
           <div>
-            <p className="eyebrow">MAIN PROCESS</p>
-            <h2>{process.title}</h2>
+            <p className="eyebrow">YOUR ROUTE</p>
+            <h2>Steps to follow</h2>
           </div>
           <Link href={`/projects/${projectId}/processes/${encodeURIComponent(process.id)}`}>
             Focus process ↗
@@ -48,7 +49,7 @@ export default async function GoalPage({
             so a reader could not tell what this Goal assumes or what backs it. */}
         {(goal.prerequisite_goal_refs ?? []).length > 0 && (
           <section className="reading-section">
-            <p className="eyebrow">BUILDS ON</p>
+              <p className="eyebrow">BEFORE THIS GOAL</p>
             <div className="link-list">
               {(goal.prerequisite_goal_refs ?? []).map((id) => {
                 const prerequisite = artifactSelectors.getGoal(artifact, id);
@@ -88,4 +89,3 @@ export default async function GoalPage({
     </ProjectShell>
   );
 }
-

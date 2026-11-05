@@ -1,0 +1,21 @@
+{
+  "provider": {
+    "type": "openai_compatible",
+    "base_url": "https://provider.example/v1",
+    "model": "example-model",
+    "timeout": 90,
+    "max_retries": 2,
+    "mock_scenario": "success",
+    "has_api_key": true,
+    "api_key_hint": "••••demo"
+  },
+  "generation": {
+    "language": "zh-CN",
+    "generation_depth": "standard",
+    "learner_level": "some_experience",
+    "detail_density": "balanced",
+    "practice_mode": "all",
+    "evidence_density": "high"
+  },
+  "appearance": { "theme": "system", "density": "comfortable" }
+}

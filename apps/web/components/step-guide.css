@@ -1,0 +1,55 @@
+/* Shared reader styles; scoped to the content renderer, not page chrome. */
+.step-guide { font-size: 14px; line-height: 1.8; min-width: 0; overflow-wrap: anywhere; }
+.step-guide .step-purpose { border-bottom: 1px solid var(--line); padding: 22px 0; }
+.step-guide .step-purpose > p:not(.eyebrow) { margin: 0; }
+.step-guide .step-why { color: var(--muted); font-size: 12px; margin-top: 12px; }
+.step-guide .step-why > strong { color: var(--ink); font-size: 12px; font-weight: 500; }
+.step-guide .step-why > p { line-height: 1.85; margin: 6px 0 0; }
+.step-guide .step-handoff { background: var(--paper-strong); border-left: 2px solid var(--line-strong); font-size: 12px; margin-top: 18px; padding: 14px; }
+.step-guide .step-handoff > strong { font-weight: 500; }
+.step-guide .step-handoff p:not(.eyebrow) { line-height: 1.85; margin: 6px 0; }
+.step-guide .step-handoff small { color: var(--muted); font-size: 10px; }
+.step-guide .step-primer { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.step-guide .step-primer > summary { color: var(--green); font-size: 13px; font-weight: 500; }
+.step-guide .step-primer dl { display: grid; gap: 18px; margin: 18px 0 0; }
+.step-guide .step-primer dt { font-size: 13px; font-weight: 600; }
+.step-guide .step-primer dt a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.step-guide .step-primer dd { font-size: 13px; margin: 6px 0 0; }
+.step-guide .step-primer dd p { line-height: 1.85; margin: 0 0 6px; }
+.step-guide .step-concept-role { color: var(--muted); }
+.step-guide .step-concept-role strong { color: var(--green); font-size: 11px; font-weight: 500; margin-right: 6px; }
+.step-guide .step-next-context { border-left: 2px solid var(--line); color: var(--muted); font-size: 12px; margin-top: 18px; padding-left: 12px; }
+.step-guide .step-next-context > strong { color: var(--ink); font-size: 11px; font-weight: 500; }
+.step-guide .step-next-context p { margin: 6px 0 0; }
+.step-guide summary { cursor: pointer; }
+.step-guide .step-section-heading { align-items: baseline; display: flex; font-family: inherit; font-size: 16px; font-weight: 600; gap: 10px; line-height: 1.6; margin: 0 0 16px; }
+.step-guide .step-section-heading > span { color: var(--green); font-family: ui-monospace, monospace; font-size: 10px; }
+.step-guide .detail-list { gap: 22px; }
+.step-guide .detail-item { border-bottom: 0; display: block; padding: 0; }
+.step-guide .detail-item > strong { font-size: 13px; }
+.step-guide .detail-item > p { line-height: 1.85; }
+.step-guide .step-example { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 14px; }
+.step-guide .step-example > summary { color: var(--green); font-size: 12px; }
+.step-guide .step-target { background: var(--green-soft); border-left: 2px solid var(--green); margin-bottom: 18px; padding: 12px 14px; }
+.step-guide .step-target > span { color: var(--green); font-size: 10px; font-weight: 650; letter-spacing: 0.05em; text-transform: uppercase; }
+.step-guide .step-target p { margin: 5px 0 0; }
+.step-guide .step-checks,
+.step-guide .step-cautions { display: grid; gap: 14px; list-style: none; margin: 0; padding: 0; }
+.step-guide .step-checks > li,
+.step-guide .step-cautions > li { border: 0; border-left: 2px solid var(--line); display: block; padding: 0 0 0 12px; }
+.step-guide .step-checks > li { border-left-color: var(--green); }
+.step-guide .step-checks strong,
+.step-guide .step-cautions strong { font-size: 12px; font-weight: 600; }
+.step-guide .step-checks p,
+.step-guide .step-cautions p { margin: 4px 0 0; }
+.step-guide .step-reading-note { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 12px 0 18px; }
+.step-guide .step-content-gap { background: var(--orange-soft); border-radius: 7px; color: var(--ink); font-size: 12px; padding: 12px 14px; }
+.step-guide .step-help,
+.step-guide .step-reference { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.step-guide .step-help > summary,
+.step-guide .step-reference > summary { font-size: 13px; }
+.step-guide .step-help[open] > summary,
+.step-guide .step-reference[open] > summary { margin-bottom: 18px; }
+.step-guide .step-help .failure-list { margin-top: 18px; }
+.step-guide .step-reference .reading-section { padding: 16px 0; }
+.step-guide .step-reference .concept-inline li { display: grid; padding: 0; }

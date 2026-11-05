@@ -37,11 +37,8 @@ export function BasicPrototypeView({ artifact, sources }: {
         <header className="page-header detail-header">
           <p className="eyebrow">{context.kind === "foundation" ? "FOUNDATION" : "STAGE"} · {index + 1} OF {ordered.length}</p>
           <h2>{current.title}</h2>
-          <p className="lead-copy">{current.local_goal}</p>
-          <p>{current.why_it_exists}</p>
         </header>
         <StageContent artifact={artifact} projectId="" stage={current} sources={sources} referenceMode="local" />
-        {current.local_outcome && <section className="outcome-banner"><span>LOCAL OUTCOME</span><p>{current.local_outcome}</p></section>}
         <nav className="stage-step-navigation" aria-label="Move through the prototype">
           {index > 0 && <button type="button" className="secondary-button" onClick={() => setSelected(ordered[index - 1])}>← Previous</button>}
           {index < ordered.length - 1

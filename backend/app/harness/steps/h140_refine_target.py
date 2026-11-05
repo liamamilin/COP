@@ -20,7 +20,7 @@ from typing import Any
 from app.domain.patches import REFINABLE_ENTITIES, build_patch
 from app.harness.context import HarnessContext, HarnessEvent, StepResult
 from app.harness.prompts import build_refine_prompt
-from app.harness.schemas import REFINABLE_FIELDS, REFINE_SCHEMA
+from app.harness.schemas import REFINABLE_FIELDS, TEXT_REFINE_SCHEMA
 from app.harness.steps.h110_refine import apply_revisions
 
 TARGET_COLLECTIONS = {
@@ -85,12 +85,13 @@ class RefineTargetStep:
             issues=issues,
             locked_paths=locked_paths,
             language=language,
+            structured_values=False,
         )
         if instruction:
             user = f"{user}\n\nThe user asked specifically for: {instruction}"
 
         payload = await services.complete_structured(
-            system_prompt=system, user_prompt=user, schema=REFINE_SCHEMA
+            system_prompt=system, user_prompt=user, schema=TEXT_REFINE_SCHEMA
         )
         revisions = payload.get("revisions") or []
 
