@@ -38,7 +38,26 @@
 
 ## 部署记录
 
-本地验收已完成。此文件首次提交时，GitHub Pages 尚待启用和部署；实际站点状态、工作流及线上验收将在发布后追加，不能只凭工作流配置认定成功。
+已实际部署并验证：[P Atlas](https://liamamilin.github.io/COP/)。首页 HTTP 请求返回 **200**，静态资源使用 `/COP/` 子路径。
+
+- 部署的应用提交：[`017e5575b836b5d80ca05eea0b95f970686f8c34`](https://github.com/liamamilin/COP/commit/017e5575b836b5d80ca05eea0b95f970686f8c34)。
+- [实际 push 部署工作流](https://github.com/liamamilin/COP/actions/runs/41987801804)：构建、检查与发布最终成功。现有 PR 的另一条运行只做检查、按设计跳过部署，未混同为发布结果。
+- 首次启用 Pages 后，环境默认只允许 `main`。添加指定的 `proposal/cop-capability-map-v0` 分支规则并保留原规则后，只重试失败的 deploy 任务，成功发布。
+- 对真实线上 URL 复跑 `ATLAS_TEST_URL=https://liamamilin.github.io/COP/ pnpm --filter @cop-studio/atlas test:e2e`，**22/22 通过**，含桌面和移动仿真、深链接刷新、真实剪贴板与失败回退、原文报告、来源、筛选和 axe 检查。
+- HTTP 取回线上三个主题，逐一比对 map、完整 Markdown、原校验报告与 JSON SHA-256，均与仓库原始成果一致；构建 provenance 指向上述应用提交。
+- 可直接打开：[ggplot2](https://liamamilin.github.io/COP/#/topic/ggplot2)、[LangChain Agent](https://liamamilin.github.io/COP/#/topic/langchain-agent)、[Obsidian](https://liamamilin.github.io/COP/#/topic/obsidian)。
+
+本验收记录在上线后补充，不改动部署的应用代码；因此记录提交可以晚于站点构建提交。
+
+## 仓库总 CI 的既有失败
+
+Atlas 的独立工作流通过；全仓库旧 CI 仍有失败，未将其报告为通过。对照 [Atlas 实现前的 `d1d8041` 运行](https://github.com/liamamilin/COP/actions/runs/41984808225) 与 [当前应用提交的运行](https://github.com/liamamilin/COP/actions/runs/41987801603)，相同失败均已存在：
+
+1. Schema consistency：`fixtures/reference-langchain-cop.json` 与 packaged reference artifact 漂移。
+2. Backend：`app/domain/capability_map_v0.py`、`tests/test_capability_map_v0.py` 未满足 Ruff 格式检查。
+3. 旧 End-to-end：`make local-db` 启动时 `psql` 提示 `fe_sendauth: no password supplied`，未能启动旧全栈。
+
+这三项不属于静态 Atlas 的运行依赖。本轮保留旧系统源文件与基线内容，不通过改写参考数据或跳过检查来消除失败。
 
 ## 未实现项与验证限度
 

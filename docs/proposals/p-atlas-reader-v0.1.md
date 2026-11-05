@@ -1,6 +1,6 @@
 # P Atlas v0.1 — 静态可能性地图阅读产品
 
-> 状态：实施规格，尚未完成前端实现。工作名称：P Atlas / Possibility Atlas。
+> 状态：v0.1 已实现并部署；实际检查、线上地址和已知问题见 [实施验收](../validation/p-atlas-reader-v0.1.md)。工作名称：P Atlas / Possibility Atlas。
 > 产品目标：让用户浏览、理解和使用已有 P Discovery 成果。**生产是 Codex + p-discovery Skill 的职责，阅读端绝不生成 P 或调用模型。**
 > 开发基线：`proposal/cop-capability-map-v0`，现有三个内容资产位于 `outputs/ggplot2/`、`outputs/langchain-agent/`、`outputs/obsidian/`。
 
