@@ -1,0 +1,150 @@
+{
+  "topic": "syncthing",
+  "retrieved": [
+    {
+      "id": "s-syncing",
+      "requested_url": "https://docs.syncthing.net/users/syncing.html",
+      "final_url": "https://docs.syncthing.net/users/syncing.html",
+      "capture_origin": "https://docs.syncthing.net/users/syncing.html",
+      "retrieved_at": "2026-11-05T13:06:53.746675+00:00",
+      "capture_sha256": "8e28404366ef1b2db967668e2e1b3494f5bb3aafb2e973e4e29d77518b28d681",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-story",
+      "requested_url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "final_url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "capture_origin": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "retrieved_at": "2026-11-05T13:06:54.610670+00:00",
+      "capture_sha256": "dbf0036e974c714c31a54516ec2655c4063ebd0a3ad103af5f40b13e38d20ab8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "community_user_story"
+    },
+    {
+      "id": "s-untrusted",
+      "requested_url": "https://docs.syncthing.net/users/untrusted.html",
+      "final_url": "https://docs.syncthing.net/users/untrusted.html",
+      "capture_origin": "https://docs.syncthing.net/users/untrusted.html",
+      "retrieved_at": "2026-11-05T13:06:54.578775+00:00",
+      "capture_sha256": "a67a47b730cebaa3a2672c3018ffd1f25c333de5b6f0a4abaffa90b4c77d6d9d",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-ignores",
+      "requested_url": "https://docs.syncthing.net/users/ignoring.html",
+      "final_url": "https://docs.syncthing.net/users/ignoring.html",
+      "capture_origin": "https://docs.syncthing.net/users/ignoring.html",
+      "retrieved_at": "2026-11-05T13:06:54.633068+00:00",
+      "capture_sha256": "f5b3072f387ea256291e86fee41e6278727427226f03bebafbaadf5ff0152a81",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-foldertypes",
+      "requested_url": "https://docs.syncthing.net/users/foldertypes.html",
+      "final_url": "https://docs.syncthing.net/users/foldertypes.html",
+      "capture_origin": "https://docs.syncthing.net/users/foldertypes.html",
+      "retrieved_at": "2026-11-05T13:06:49.560015+00:00",
+      "capture_sha256": "657e61980d5a5633a67016080a95399679546b703b0c0bc70bb8d8564ea429b5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-security",
+      "requested_url": "https://docs.syncthing.net/users/security.html",
+      "final_url": "https://docs.syncthing.net/users/security.html",
+      "capture_origin": "https://docs.syncthing.net/users/security.html",
+      "retrieved_at": "2026-11-05T13:06:53.869595+00:00",
+      "capture_sha256": "f1f32873dfb3409d774966513f3a6f8bec28f8e9f701baf6f026bc0469108e41",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-versioning",
+      "requested_url": "https://docs.syncthing.net/users/versioning.html",
+      "final_url": "https://docs.syncthing.net/users/versioning.html",
+      "capture_origin": "https://docs.syncthing.net/users/versioning.html",
+      "retrieved_at": "2026-11-05T13:06:53.369495+00:00",
+      "capture_sha256": "b9afeca9edbddc075fb3601579c11424a2bbf550f42cb5143b4f3ccfdc08d9c7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-relay",
+      "requested_url": "https://docs.syncthing.net/users/relaying.html",
+      "final_url": "https://docs.syncthing.net/users/relaying.html",
+      "capture_origin": "https://docs.syncthing.net/users/relaying.html",
+      "retrieved_at": "2026-11-05T13:06:53.122102+00:00",
+      "capture_sha256": "a6d9dc90dbe90fc7ced36612dadd3108faa130c093b4caf0aed97aa7607f2487",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_documentation"
+    },
+    {
+      "id": "s-android-notice",
+      "requested_url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "final_url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "capture_origin": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "retrieved_at": "2026-11-05T13:19:32.997457+00:00",
+      "capture_sha256": "dcf0d12491e94f2e41dac637f54bffc459ae72e40f438482de63341b061b64b6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "maintainer_announcement"
+    },
+    {
+      "id": "s-android-repo-api",
+      "requested_url": "https://api.github.com/repos/syncthing/syncthing-android",
+      "final_url": "https://api.github.com/repos/syncthing/syncthing-android",
+      "capture_origin": "https://api.github.com/repos/syncthing/syncthing-android",
+      "retrieved_at": "2026-11-05T13:19:35.003365+00:00",
+      "capture_sha256": "e74bf0620581198f0fc9e9886d2c72c4c24666332c3f2d3603a4b4b912e07d0d",
+      "content_type": "application/json; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "source_class": "official_repository_metadata"
+    }
+  ],
+  "attempted_without_capture": [],
+  "background_not_used": [
+    {
+      "id": "s-faq",
+      "requested_url": "https://docs.syncthing.net/users/faq.html",
+      "final_url": "https://docs.syncthing.net/users/faq.html",
+      "capture_origin": "https://docs.syncthing.net/users/faq.html",
+      "retrieved_at": "2026-11-05T13:06:54.757044+00:00",
+      "capture_sha256": "008039674d2e66c5d89cd8a0c288ae845f542e8b0237d5bd4406a6f5b17552f4",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "source_class": "official_documentation",
+      "note": "已逐读用于核实同步与备份的产品边界，但仅建议借助其他工具，不能支撑 Syncthing 本身交付独立备份的 P；因此不列为确认来源。"
+    }
+  ],
+  "discovery_views": [
+    "结果视角：多设备共享文件夹、副本角色、忽略规则、版本找回、冲突识别、离线/不可直连时的数据传输。",
+    "完整案例视角：逐读社区用户描述的三地家庭服务器、成员设备、个人与共享目录及外置快照服务器；案例用于同步与独立备份组合的说明，不作普遍结果承诺。",
+    "扩展/依赖视角：逐读 receive-only/send-only 目录角色、不受信任设备加密（beta）、中继与发现服务边界，以及 FAQ 的备份限制。"
+  ],
+  "normalization_and_gap_check": "合并“设备间同步/家庭节点同步”；把版本找回和同步分开，冲突副本不包装为自动合并；独立快照归属外部系统。对具体客户端状态、性能、使用界面、版本恢复实际过程未找到本轮取回证据，列为缺口。 父审查后将 p-sync 的核心设备结果收窄至笔记本、桌面电脑及家用服务器。新核实的维护者公告说明官方 Android wrapper 退休；官方 GitHub API 当前将该仓库标记 archived，且显示最后推送时间 2024-12-03。没有据此推断同步引擎不能在 Android 运行；第三方客户端/分支与系统兼容性仍未知。",
+  "review_scope": "source_supported 表示这些文档声称该结果，不是安装或实测结果；待主 agent 独立复核。",
+  "capture_method": "按 /private/tmp/atlas-topic-research/capture.py 实际抓取；保存了原始 HTTP 响应字节 SHA-256 和提取正文。行号为 extracted_html_text。 本次 Android 公告与官方 GitHub API 元数据亦由 capture.py 实取；API 是 JSON 单行响应，使用 captured_text 行号。",
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}

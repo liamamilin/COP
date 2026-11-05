@@ -1,0 +1,324 @@
+{
+  "topic": "DuckDB",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (used without modification)",
+  "retrieved": [
+    {
+      "id": "s-benchmarks",
+      "requested_url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+      "capture_origin": "https://duckdb.org/2021/06/25/querying-parquet",
+      "retrieved_at": "2026-11-05T12:58:25.348578+00:00",
+      "capture_sha256": "bda9697d68534f3a6e29c38d50d54cd1d77f09b684575ae8c2ca68e36a1a3118",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-blog-fast",
+      "requested_url": "https://duckdb.org/2021/06/25/querying-parquet.html",
+      "capture_origin": "https://duckdb.org/2021/06/25/querying-parquet",
+      "retrieved_at": "2026-11-05T12:58:26.742537+00:00",
+      "capture_sha256": "bda9697d68534f3a6e29c38d50d54cd1d77f09b684575ae8c2ca68e36a1a3118",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-blog-wasm",
+      "requested_url": "https://duckdb.org/2021/10/29/duckdb-wasm.html",
+      "capture_origin": "https://duckdb.org/2021/10/29/duckdb-wasm",
+      "retrieved_at": "2026-11-05T12:58:21.258506+00:00",
+      "capture_sha256": "9aabd0c7432c6a62749af6ed619efae234a5a49391764055b8772ffb3dc94b98",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-cli",
+      "requested_url": "https://duckdb.org/docs/2.0/clients/cli/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/cli/overview",
+      "retrieved_at": "2026-11-05T12:57:03.091843+00:00",
+      "capture_sha256": "0dcd1a88b5e0c67a492acbb9520b9c4a565409b65c0b8dff940b502fd749768a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-clients",
+      "requested_url": "https://duckdb.org/docs/2.0/clients/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/overview",
+      "retrieved_at": "2026-11-05T12:57:00.420418+00:00",
+      "capture_sha256": "f3f231777c741939e772233ce83a8f4daee3ed2897c8abb8f495a8957c25523e",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-csv",
+      "requested_url": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "retrieved_at": "2026-11-05T12:57:18.384711+00:00",
+      "capture_sha256": "ed08538260f2c52270130a477b1a4f8269e5165837c385964827753430cb41d7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data-import-examples",
+      "requested_url": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "retrieved_at": "2026-11-05T12:59:38.477163+00:00",
+      "capture_sha256": "35c615f747e7cdd1cbf515da291636f387871f3fe0bcaee3b9b473830c5fedb9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data-import",
+      "requested_url": "https://duckdb.org/docs/2.0/data/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/overview",
+      "retrieved_at": "2026-11-05T12:57:12.431693+00:00",
+      "capture_sha256": "2ede16901b43e1cce99fb6a1a89fd328380ef64bd0912152040aa31381687c0f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-extensions",
+      "requested_url": "https://duckdb.org/docs/2.0/extensions/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/extensions/overview",
+      "retrieved_at": "2026-11-05T12:57:26.326903+00:00",
+      "capture_sha256": "86247be606deb4d262af5924222ecb1be116fdace5219f697bdfdcc650d48900",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-geospatial-case",
+      "requested_url": "https://duckdb.org/2023/04/28/spatial.html",
+      "capture_origin": "https://duckdb.org/2023/04/28/spatial",
+      "retrieved_at": "2026-11-05T12:58:42.741653+00:00",
+      "capture_sha256": "cff32ac447f334b128892496501dc09eef9d07b84e2b2057c2ef915fbae40591",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-getting-started",
+      "requested_url": "https://duckdb.org/docs/2.0/guides/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/guides/overview",
+      "retrieved_at": "2026-11-05T12:58:16.695818+00:00",
+      "capture_sha256": "e7c9b7be693ef3cfc47daae71b984ac69ace78dcd24e25561c9353b142555017",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-httpfs-doc",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "retrieved_at": "2026-11-05T12:58:34.995871+00:00",
+      "capture_sha256": "2f6b2f39ea5a1307546f91e12f98c20e0a1f610c89122bbda4f6404a5cb0e115",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-httpfs",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "retrieved_at": "2026-11-05T12:58:07.554267+00:00",
+      "capture_sha256": "2f6b2f39ea5a1307546f91e12f98c20e0a1f610c89122bbda4f6404a5cb0e115",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-json",
+      "requested_url": "https://duckdb.org/docs/2.0/data/json/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/json/overview",
+      "retrieved_at": "2026-11-05T12:57:23.184156+00:00",
+      "capture_sha256": "9d2eefc8b6c9b000826de06509a49e0321848eea433116bebd3051276f4b170a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://duckdb.org/docs/2.0/",
+      "capture_origin": "https://duckdb.org/docs/2.0/",
+      "retrieved_at": "2026-11-05T12:56:55.043701+00:00",
+      "capture_sha256": "62de1ac369eb926b2e4b29d1e09aa643da31d361bb6484a29639413ac04d1558",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-parquet",
+      "requested_url": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "retrieved_at": "2026-11-05T12:57:15.065671+00:00",
+      "capture_sha256": "35c615f747e7cdd1cbf515da291636f387871f3fe0bcaee3b9b473830c5fedb9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-postgres-doc",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "retrieved_at": "2026-11-05T12:58:38.106697+00:00",
+      "capture_sha256": "abb4c11e2af28f6afe665d90147f84185ef35a08852881396aeff92119139879",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-postgres",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "retrieved_at": "2026-11-05T12:58:10.450750+00:00",
+      "capture_sha256": "abb4c11e2af28f6afe665d90147f84185ef35a08852881396aeff92119139879",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-python",
+      "requested_url": "https://duckdb.org/docs/2.0/clients/python/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/python/overview",
+      "retrieved_at": "2026-11-05T12:57:05.763794+00:00",
+      "capture_sha256": "aefbc728a4a5543df7c71e7cb18d17a2d5d5b797aa0cd03d24352c38139751f5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-qstudio-case",
+      "requested_url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+      "capture_origin": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+      "retrieved_at": "2026-11-05T12:59:28.424677+00:00",
+      "capture_sha256": "a67b036d70466f6ca92d3501bd2fb3120375ee937be3317e9e0f6a8437aa5dbf",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-query-multiple-files",
+      "requested_url": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+      "retrieved_at": "2026-11-05T12:59:41.540795+00:00",
+      "capture_sha256": "bc7cce4b5f00f3b227610675db2db2b8ff7ffa5ca675cfa4df89394c2811fb87",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-r-read",
+      "requested_url": "https://duckdb.org/docs/2.0/clients/r",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/r",
+      "retrieved_at": "2026-11-05T12:58:47.305849+00:00",
+      "capture_sha256": "d7f28764e7143796c66b553f24d48658ad1ef504997d79510b9b7e8107539b94",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-read-csv",
+      "requested_url": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "retrieved_at": "2026-11-05T12:58:00.887264+00:00",
+      "capture_sha256": "ed08538260f2c52270130a477b1a4f8269e5165837c385964827753430cb41d7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-read-parquet",
+      "requested_url": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "retrieved_at": "2026-11-05T12:58:03.797022+00:00",
+      "capture_sha256": "35c615f747e7cdd1cbf515da291636f387871f3fe0bcaee3b9b473830c5fedb9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-spatial-usage",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/spatial/functions",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/spatial/functions",
+      "retrieved_at": "2026-11-05T12:58:15.018543+00:00",
+      "capture_sha256": "cb2f858b87e5e12b870479adef09b9e39192a93fea5080c47dbf51641e4ab1d9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-spatial",
+      "requested_url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+      "retrieved_at": "2026-11-05T12:57:29.073692+00:00",
+      "capture_sha256": "8cc737209342a393ea5498c018c2a4b6c2d74e26c4340cf3e978fce86cf8136e",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sql",
+      "requested_url": "https://duckdb.org/docs/2.0/sql/introduction",
+      "capture_origin": "https://duckdb.org/docs/2.0/sql/introduction",
+      "retrieved_at": "2026-11-05T12:56:57.583103+00:00",
+      "capture_sha256": "0d65f6f34515f11d1e40dea3335bf5d9816bd8f373f05a56828abe78c5bee9f7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-streamlit-case",
+      "requested_url": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit",
+      "capture_origin": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit",
+      "retrieved_at": "2026-11-05T12:59:31.899028+00:00",
+      "capture_sha256": "284cf2d8486507b65c928f792752d3c220068e6b3cb19392baa6002cc0d2befe",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-wasm-blog",
+      "requested_url": "https://duckdb.org/2021/10/29/duckdb-wasm.html",
+      "capture_origin": "https://duckdb.org/2021/10/29/duckdb-wasm",
+      "retrieved_at": "2026-11-05T12:58:31.598672+00:00",
+      "capture_sha256": "9aabd0c7432c6a62749af6ed619efae234a5a49391764055b8772ffb3dc94b98",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-wasm",
+      "requested_url": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+      "retrieved_at": "2026-11-05T12:57:08.233017+00:00",
+      "capture_sha256": "4d1f500b18f9eb1d34595b16111cffa3ff57e9efe647737ed4ea0595350a4888",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-quickstart-page",
+      "requested_url": "https://duckdb.org/docs/2.0/quickstart/overview",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-v2-release",
+      "requested_url": "https://duckdb.org/2026/06/30/announcing-duckdb-2-0-0.html",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-gladys-case",
+      "requested_url": "https://duckdb.org/2025/01/xx/gladys-assistant-duckdb",
+      "failure": "HTTP 404 Not Found"
+    }
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}

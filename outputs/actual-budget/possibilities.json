@@ -1,0 +1,788 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Actual Budget",
+    "scope": "个人记账与预算：管理账户和交易、分配当前已有资金、按预算类别结转余额、核对对账单、自动化交易归类、计划定期收支、观察账目报表；明确银行连接的地区/供应商/服务器/密钥依赖。只研究软件任务，不提供投资、税务、法律或债务决策结论。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "stop_reason": "完成无分类结果、完整任务教程、部署/银行连接扩展三轮：逐读官方预算、账户、交易导入、规则、定期交易、对账、报表、银行同步和本地浏览器模式文档。补漏检查投资/退休预测后按范围排除财务建议；未验证的银行服务费用、导出恢复细节和第三方社区银行连接方案不提升为能力。近期候选多为已覆盖交易、账户、预算和报表结果，停止扩展以避免按产品目录凑条目。",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:34:15.039246+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "a-envelope",
+      "title": "Envelope Budgeting",
+      "url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "requested_url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "evidence": "you can only budget what you have",
+      "location": "Envelope Budgeting；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:33.827289+00:00",
+      "capture_origin": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "capture_sha256": "1e4994e498b50d15259ee7b4eedd66067b8902002888f466468b88d192701946",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-01",
+          "location": "Envelope Budgeting；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-budget",
+      "title": "Budgeting",
+      "url": "https://actualbudget.org/docs/budgeting/",
+      "requested_url": "https://actualbudget.org/docs/budgeting/",
+      "evidence": "rolls over into the category's balance next month",
+      "location": "Budgeting；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:43.124420+00:00",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/",
+      "capture_sha256": "ef70b8507310fb376a6fa187e7d71d697becaa7c6f5b9d55f52fc91753036a29",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-02",
+          "location": "Budgeting；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/budgeting/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-accounts",
+      "title": "Accounts & Transactions",
+      "url": "https://actualbudget.org/docs/accounts/",
+      "requested_url": "https://actualbudget.org/docs/accounts/",
+      "evidence": "track stuff like investments and mortgages\n[…]\nchecking accounts and credit cards",
+      "location": "Accounts & Transactions；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）；Accounts & Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:42.010936+00:00",
+      "capture_origin": "https://actualbudget.org/docs/accounts/",
+      "capture_sha256": "b33b4d150b5d7900f64dcbca8a80ca0f74bbb517afc45f47081c829633dae01a",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-03",
+          "location": "Accounts & Transactions；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/accounts/"
+        },
+        {
+          "possibility_id": "ab-03",
+          "location": "Accounts & Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/accounts/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-account-register",
+      "title": "The Account Register",
+      "url": "https://actualbudget.org/docs/tour/accounts/",
+      "requested_url": "https://actualbudget.org/docs/tour/accounts/",
+      "evidence": "import transactions from CSV, QIF, OFX, QFX or CAMT files",
+      "location": "The Account Register；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:15.553502+00:00",
+      "capture_origin": "https://actualbudget.org/docs/tour/accounts/",
+      "capture_sha256": "c6457deb3b8ddc7832d1e4face6659496df4e24c66e18b148515fa71ef0c24b6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-04",
+          "location": "The Account Register；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/tour/accounts/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-import",
+      "title": "Importing Transactions",
+      "url": "https://actualbudget.org/docs/transactions/importing/",
+      "requested_url": "https://actualbudget.org/docs/transactions/importing",
+      "evidence": "manually add transactions\n[…]\nlinking your bank accounts to sync",
+      "location": "Importing Transactions；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）；Importing Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:44.675973+00:00",
+      "capture_origin": "https://actualbudget.org/docs/transactions/importing/",
+      "capture_sha256": "86990c93d6edc86b43772e28a3c5020b0358ec6fdea19442b2fa9320fe57df79",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-04",
+          "location": "Importing Transactions；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/transactions/importing/"
+        },
+        {
+          "possibility_id": "ab-08",
+          "location": "Importing Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/transactions/importing/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-reconcile",
+      "title": "Reconciliation",
+      "url": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "requested_url": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "evidence": "compare your bank statement\n[…]\nagainst Actual's ledger for that account",
+      "location": "Reconciliation；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:19:51.673754+00:00",
+      "capture_origin": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "capture_sha256": "c575fde5284928f5ba5f6e3e1aa061b5391e8e9fe1fd9a34bd207efa44f5c877",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-05",
+          "location": "Reconciliation；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/accounts/reconciliation/"
+        },
+        {
+          "possibility_id": "ab-05",
+          "location": "Reconciliation；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/accounts/reconciliation/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-rules",
+      "title": "Rules",
+      "url": "https://actualbudget.org/docs/budgeting/rules/",
+      "requested_url": "https://actualbudget.org/docs/budgeting/rules/",
+      "evidence": "Cleaning up payees\n[…]\nautomatically apply that category on import",
+      "location": "Rules；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）；Rules；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:08.442893+00:00",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/rules/",
+      "capture_sha256": "a784e5cde250bca03c14d1df5da4abfc9b30699e6239844d5bfbcf033a7abc43",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-06",
+          "location": "Rules；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/budgeting/rules/"
+        },
+        {
+          "possibility_id": "ab-06",
+          "location": "Rules；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/budgeting/rules/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-schedules",
+      "title": "Schedules",
+      "url": "https://actualbudget.org/docs/schedules/",
+      "requested_url": "https://actualbudget.org/docs/schedules/",
+      "evidence": "automatically entered into your account register\n[…]\nused for income, such as paychecks",
+      "location": "Schedules；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）；Schedules；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:11.500827+00:00",
+      "capture_origin": "https://actualbudget.org/docs/schedules/",
+      "capture_sha256": "756c82f06bd636c6b5e4034b9ba451db515de3aeccae9c372476b58ab6e802a3",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-07",
+          "location": "Schedules；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/schedules/"
+        },
+        {
+          "possibility_id": "ab-07",
+          "location": "Schedules；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/schedules/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-reports",
+      "title": "Reports",
+      "url": "https://actualbudget.org/docs/reports/",
+      "requested_url": "https://actualbudget.org/docs/reports/",
+      "evidence": "tracks and compares expenses over a specified period\n[…]\nall accounts over time",
+      "location": "Reports；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）；Reports；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:42.426302+00:00",
+      "capture_origin": "https://actualbudget.org/docs/reports/",
+      "capture_sha256": "6c907230a17c853736bc7f822a5835376b1395cf69a057e60ca6d0d60b7203dd",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-09",
+          "location": "Reports；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/reports/"
+        },
+        {
+          "possibility_id": "ab-09",
+          "location": "Reports；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/reports/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-bank-sync",
+      "title": "Connecting Your Bank",
+      "url": "https://actualbudget.org/docs/advanced/bank-sync/",
+      "requested_url": "https://actualbudget.org/docs/advanced/bank-sync",
+      "evidence": "only works if you are using actual-server\n[…]\nbank sync tokens",
+      "location": "Connecting Your Bank；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）；Connecting Your Bank；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:44.709803+00:00",
+      "capture_origin": "https://actualbudget.org/docs/advanced/bank-sync/",
+      "capture_sha256": "13c093cae21b593346b33142fe48f6a59fc7d85051b60489d3c2db47ce1457ca",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-08",
+          "location": "Connecting Your Bank；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/advanced/bank-sync/"
+        },
+        {
+          "possibility_id": "ab-08",
+          "location": "Connecting Your Bank；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/advanced/bank-sync/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-fresh",
+      "title": "Starting Fresh",
+      "url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "requested_url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "evidence": "GoCardless has stopped accepting accounts for this service\n[…]\nSimpleFIN for US/Canadian banks",
+      "location": "Starting Fresh；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:11.382746+00:00",
+      "capture_origin": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "capture_sha256": "43ec05e8351241ee00bcc6b2b2ad744692381d30040cecfd642bb7d19f81497c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-08",
+          "location": "Starting Fresh；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/getting-started/starting-fresh/"
+        },
+        {
+          "possibility_id": "ab-08",
+          "location": "Starting Fresh；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/getting-started/starting-fresh/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-install",
+      "title": "Installing Actual",
+      "url": "https://actualbudget.org/docs/install/",
+      "requested_url": "https://actualbudget.org/docs/install/",
+      "evidence": "saved to your local browser\n[…]\nsave your data\n[…]\ndata will be lost",
+      "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:15:10.900124+00:00",
+      "capture_origin": "https://actualbudget.org/docs/install/",
+      "capture_sha256": "0450a66f13d62e257164cc08ff63cc2bf4b596d299c9beeafd886492ee283cc1",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=UTF-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "ab-10",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/install/"
+        },
+        {
+          "possibility_id": "ab-10",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/install/"
+        },
+        {
+          "possibility_id": "ab-10",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://actualbudget.org/docs/install/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-budget",
+      "name": "分配资金与规划支出"
+    },
+    {
+      "id": "g-record",
+      "name": "记录账户并核对交易"
+    },
+    {
+      "id": "g-automation",
+      "name": "减少重复记账操作"
+    },
+    {
+      "id": "g-review",
+      "name": "观察个人账目表现"
+    },
+    {
+      "id": "g-connect",
+      "name": "连接服务与选择部署方式"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "ab-01",
+      "title": "把已有收入分配到月度预算类别",
+      "result": "只把已经拥有的钱分配到本月各项开支或储蓄类别，让每笔可用资金有明确用途。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Actual 的 envelope / zero-sum 预算方式以当前实际资金为起点；预算数字仍需个人录入并随实际支出调整。预算结果是记账计划，不保证支出或储蓄目标达成。",
+      "source_ids": [
+        "a-envelope"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-envelope",
+          "quote": "you can only budget what you have",
+          "url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+          "location": "Envelope Budgeting；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "source_line_start": 41,
+          "source_line_end": 41,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-budget"
+      ],
+      "aliases": [
+        "零基预算",
+        "按类别分配现有资金"
+      ]
+    },
+    {
+      "id": "ab-02",
+      "title": "将未用类别余额结转到下个月",
+      "result": "让某个月结束时某个类别剩余的钱继续留在该类别下月的可用余额中，便于为不定期开支逐月留存。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这是预算类别中的余额延续，不是独立银行账户或投资产品；不同类别的超支处理方式需按当前预算规则另行设置。",
+      "source_ids": [
+        "a-budget"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-budget",
+          "quote": "rolls over into the category's balance next month",
+          "url": "https://actualbudget.org/docs/budgeting/",
+          "location": "Budgeting；本次 HTML 提取正文第 45–45 行（不是 HTML 源码行号）",
+          "source_line_start": 45,
+          "source_line_end": 45,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-budget"
+      ],
+      "aliases": [
+        "预算余额滚存"
+      ]
+    },
+    {
+      "id": "ab-03",
+      "title": "区分纳入预算与仅跟踪余额的账户",
+      "result": "把日常现金流账户纳入预算，并将投资、贷款或房产等账户作为只跟踪余额的账目，避免它们直接进入日常类别预算。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Actual 的 on-budget / off-budget 是软件中的账目口径设置，不判断资产应如何配置，也不提供投资、税务或贷款建议。",
+      "source_ids": [
+        "a-accounts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-accounts",
+          "quote": "track stuff like investments and mortgages",
+          "url": "https://actualbudget.org/docs/accounts/",
+          "location": "Accounts & Transactions；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-accounts",
+          "quote": "checking accounts and credit cards",
+          "url": "https://actualbudget.org/docs/accounts/",
+          "location": "Accounts & Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-record"
+      ],
+      "aliases": [
+        "预算账户与账面跟踪账户分开"
+      ]
+    },
+    {
+      "id": "ab-04",
+      "title": "导入或手工录入交易记录",
+      "result": "将银行导出的交易文件导入账户，或为不支持导入的账目手工添加记录，减少把所有消费和收入留在记忆中的负担。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "支持 CSV、QIF、OFX、QFX、CAMT；CSV 需匹配列和日期格式。OFX/QFX 的重复交易识别信息较丰富；导入后仍要核对分类、金额和重复项。",
+      "source_ids": [
+        "a-account-register",
+        "a-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-account-register",
+          "quote": "import transactions from CSV, QIF, OFX, QFX or CAMT files",
+          "url": "https://actualbudget.org/docs/tour/accounts/",
+          "location": "The Account Register；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-import",
+          "quote": "manually add transactions",
+          "url": "https://actualbudget.org/docs/transactions/importing/",
+          "location": "Importing Transactions；本次 HTML 提取正文第 30–30 行（不是 HTML 源码行号）",
+          "source_line_start": 30,
+          "source_line_end": 30,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-record"
+      ],
+      "aliases": [
+        "导入银行交易",
+        "手动记账"
+      ]
+    },
+    {
+      "id": "ab-05",
+      "title": "把账户流水与银行对账单逐笔核对",
+      "result": "将 Actual 账户账簿与银行纸本或线上对账单比较，标记已核实交易并找出金额差异。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需拿到银行对账单或可信的账户余额，逐项核对后再完成 reconciliation；这是账目一致性检查，不构成财务判断。",
+      "source_ids": [
+        "a-reconcile"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-reconcile",
+          "quote": "compare your bank statement",
+          "url": "https://actualbudget.org/docs/accounts/reconciliation/",
+          "location": "Reconciliation；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-reconcile",
+          "quote": "against Actual's ledger for that account",
+          "url": "https://actualbudget.org/docs/accounts/reconciliation/",
+          "location": "Reconciliation；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-record"
+      ],
+      "aliases": [
+        "对账"
+      ]
+    },
+    {
+      "id": "ab-06",
+      "title": "自动清理常见商户名并分类新交易",
+      "result": "为常见 payee 规范名称并将符合条件的新导入交易自动放入指定类别，减少反复修改相同交易的工作。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "规则基于交易条件执行；Actual 也会从用户重复重命名或分类行为中生成规则。自动结果可能需要检查与编辑，规则不会证明实际消费性质。",
+      "source_ids": [
+        "a-rules"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-rules",
+          "quote": "Cleaning up payees",
+          "url": "https://actualbudget.org/docs/budgeting/rules/",
+          "location": "Rules；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-rules",
+          "quote": "automatically apply that category on import",
+          "url": "https://actualbudget.org/docs/budgeting/rules/",
+          "location": "Rules；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-automation"
+      ],
+      "aliases": [
+        "重复交易自动分类",
+        "payee 清理"
+      ]
+    },
+    {
+      "id": "ab-07",
+      "title": "预排重复账单与收入进入账簿",
+      "result": "将固定或近似金额的账单、订阅、薪资等设为未来计划交易，可自动记入账户或保留为待手动确认项目。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "可设周期与金额近似值，实际金额变化时需更新；定期计划只是预期记录，不会替用户支付账单或保证收入到账。",
+      "source_ids": [
+        "a-schedules"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-schedules",
+          "quote": "automatically entered into your account register",
+          "url": "https://actualbudget.org/docs/schedules/",
+          "location": "Schedules；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-schedules",
+          "quote": "used for income, such as paychecks",
+          "url": "https://actualbudget.org/docs/schedules/",
+          "location": "Schedules；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-automation"
+      ],
+      "aliases": [
+        "安排定期账单",
+        "安排薪资计划"
+      ]
+    },
+    {
+      "id": "ab-09",
+      "title": "比较一段时间内的支出并查看账户净值趋势",
+      "result": "用报表比较指定期间的开销变化，并查看所有账户余额随时间变化，作为个人账目回顾的可视化资料。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "金额与趋势依赖账目完整、分类一致和账户余额更新；净值/支出图表是描述性指标，不是投资、税务、法律建议，也不证明某项支出造成了其他结果。文档标注的实验性分析报表不纳入此项。",
+      "source_ids": [
+        "a-reports"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-reports",
+          "quote": "tracks and compares expenses over a specified period",
+          "url": "https://actualbudget.org/docs/reports/",
+          "location": "Reports；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "source_line_start": 35,
+          "source_line_end": 35,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-reports",
+          "quote": "all accounts over time",
+          "url": "https://actualbudget.org/docs/reports/",
+          "location": "Reports；本次 HTML 提取正文第 29–29 行（不是 HTML 源码行号）",
+          "source_line_start": 29,
+          "source_line_end": 29,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-review"
+      ],
+      "aliases": [
+        "支出趋势分析",
+        "查看净值变化"
+      ]
+    },
+    {
+      "id": "ab-08",
+      "title": "连接受支持银行并同步新交易",
+      "result": "借助 Actual 的可选银行连接，把受支持机构的新交易同步到账户账簿。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要自行在服务商开户/取得 API 凭据，且须运行 actual-server；密钥保存在服务器数据库中，不受 budget data 的端到端加密保护。支持范围依服务商和地区而异：官方 getting-started 文档列出 SimpleFIN 面向美国/加拿大，并说明 GoCardless 已停止接受新账户；Connecting Your Bank 页面另列地区供应商（如 Pluggy.ai 面向巴西）。这些文档页的供应商列表并不完全一致，应在连接前复核当前状态。同步默认关闭，实际后台同步只在 Actual 仍打开时运行，间隔还受银行刷新限额约束。服务商费用与服务器托管费用需按实际供应商/地区确认，本研究未核价。",
+      "source_ids": [
+        "a-import",
+        "a-bank-sync",
+        "a-fresh"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-import",
+          "quote": "linking your bank accounts to sync",
+          "url": "https://actualbudget.org/docs/transactions/importing/",
+          "location": "Importing Transactions；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-bank-sync",
+          "quote": "only works if you are using actual-server",
+          "url": "https://actualbudget.org/docs/advanced/bank-sync/",
+          "location": "Connecting Your Bank；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-bank-sync",
+          "quote": "bank sync tokens",
+          "url": "https://actualbudget.org/docs/advanced/bank-sync/",
+          "location": "Connecting Your Bank；本次 HTML 提取正文第 11–11 行（不是 HTML 源码行号）",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-fresh",
+          "quote": "GoCardless has stopped accepting accounts for this service",
+          "url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+          "location": "Starting Fresh；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "source_line_start": 41,
+          "source_line_end": 41,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-fresh",
+          "quote": "SimpleFIN for US/Canadian banks",
+          "url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+          "location": "Starting Fresh；本次 HTML 提取正文第 41–41 行（不是 HTML 源码行号）",
+          "source_line_start": 41,
+          "source_line_end": 41,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "银行交易同步"
+      ]
+    },
+    {
+      "id": "ab-10",
+      "title": "在浏览器本地使用并手工保存预算文件",
+      "result": "不搭建服务器时，可在当前浏览器本地使用 Actual 并手工保存预算文件，适合快速开始体验基础记账与预算功能。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "官方将这种浏览器路线定位为快速开始，不推荐长期使用；它不提供跨设备同步、自动保存或备份。每次使用后需手工导出/保存预算文件并另存安全副本，浏览器存储清除可能导致数据丢失，不宜把此模式作为长期唯一预算副本。文档关于网页应用不访问个人数据的表述未经独立审计，本研究不据此作更强隐私或安全承诺。对照而言，官方文档列出桌面客户端的离线使用与自动备份，以及 server 提供的跨设备同步和可选银行同步；实际部署与备份策略仍需核实。",
+      "source_ids": [
+        "a-install"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "a-install",
+          "quote": "saved to your local browser",
+          "url": "https://actualbudget.org/docs/install/",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-install",
+          "quote": "save your data",
+          "url": "https://actualbudget.org/docs/install/",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "a-install",
+          "quote": "data will be lost",
+          "url": "https://actualbudget.org/docs/install/",
+          "location": "Installing Actual；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-connect"
+      ],
+      "aliases": [
+        "无服务器浏览器本地使用"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "银行账户覆盖取决于所在地区、银行、provider 与当时是否接受新用户；本轮只按官方文档列出示例，未验证特定个人账户是否可连接。",
+    "银行同步 API 凭据需由使用者向第三方 provider 申请并存于服务器数据库；文档称其不受预算数据 E2E 加密保护。未审计服务器供应链或托管方安全。",
+    "银行连接服务、服务器或托管的当前价格、费率和套餐未逐项核价；按实际区域与提供商确认。",
+    "未测试真实 CSV/OFX 等银行文件导入、去重、自动规则、定期交易和 reconciliation 流程。",
+    "报表只展示依据输入账目的统计结果；不据此作投资、税务、法律或信贷判断。实验性 Balance Forecast / Monte Carlo / retirement projections 不作为推荐结果。",
+    "浏览器本地模式明确是快速开始路线，不推荐长期使用；实际预算文件的安全保存需由用户手工导出并保存到安全位置。本研究未实操桌面客户端、server 部署或备份恢复，也未审计隐私/安全文案。"
+  ],
+  "generated_at": "2026-11-05T13:23:56+00:00"
+}

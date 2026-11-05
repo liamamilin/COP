@@ -1,0 +1,11 @@
+PASS: outputs/actual-budget/possibilities.json (structural/evidence checks only; assess sources manually)
+
+PASS saved research: 1 topics; 10 source_supported; 0 proposed; 12 sources; 22 located excerpts
+PASS existing Skill contract, per-entry report content/labels/links, capture metadata and batch excerpt budgets
+PASS every excerpt matched its actual captured text at the recorded lines
+PENDING: none in the selected topics
+Limits: these checks do not certify semantic support, independent human review or execution.
+
+Author model: gpt-6-luna. Follow-up context, report and locator checks are recorded in discovery-log.md.
+No independent human-reviewed or runtime-certified status is asserted.
+The original cache is a research-session verification input, not a runtime dependency. Offline CI checks use the saved metadata and excerpts.

@@ -1,0 +1,503 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Syncthing",
+    "scope": "个人使用者在自己的设备、家用节点与可选不受信设备之间同步文件、处理冲突与保留远端变更版本；明确同步删除传播、版本保留默认关闭及独立备份边界。不限特定操作系统，具体客户端可用性未逐个平台核查。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "stop_reason": "按未分类候选顺序完成结果视角、完整社区案例视角、扩展与运行依赖视角，再合并重复候选并检查误删/版本留存、并发冲突、不受信节点、连接与备份边界。官方文档与一个完整社区家庭多地点案例支持的主要任务已纳入；平台特定客户端安装、性能基准、完整网络拓扑和其他社区案例未继续扩展，新增方向主要重复或需要额外实施测试。",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:27:01.127161+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-foldertypes",
+      "title": "Folder Types",
+      "url": "https://docs.syncthing.net/users/foldertypes.html",
+      "requested_url": "https://docs.syncthing.net/users/foldertypes.html",
+      "evidence": "send changes to and receive changes from remote devices",
+      "location": "Folder Types；本次 HTML 提取正文第 3–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:49.560015+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/foldertypes.html",
+      "capture_sha256": "657e61980d5a5633a67016080a95399679546b703b0c0bc70bb8d8564ea429b5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sync",
+          "location": "Folder Types；本次 HTML 提取正文第 3–5 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/foldertypes.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-story",
+      "title": "Syncthing: Redundancy and Backup",
+      "url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "requested_url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "evidence": "three servers in three different locations that sync between each other",
+      "location": "Syncthing: Redundancy and Backup；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+      "source_class": "community_user_story",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:54.610670+00:00",
+      "capture_origin": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+      "capture_sha256": "dbf0036e974c714c31a54516ec2655c4063ebd0a3ad103af5f40b13e38d20ab8",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sync",
+          "location": "Syncthing: Redundancy and Backup；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-versioning",
+      "title": "File Versioning",
+      "url": "https://docs.syncthing.net/users/versioning.html",
+      "requested_url": "https://docs.syncthing.net/users/versioning.html",
+      "evidence": "old version of a file when it is deleted or replaced",
+      "location": "File Versioning；本次 HTML 提取正文第 3–4 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:53.369495+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/versioning.html",
+      "capture_sha256": "b9afeca9edbddc075fb3601579c11424a2bbf550f42cb5143b4f3ccfdc08d9c7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-versions",
+          "location": "File Versioning；本次 HTML 提取正文第 3–4 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/versioning.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ignores",
+      "title": "Ignoring Files",
+      "url": "https://docs.syncthing.net/users/ignoring.html",
+      "requested_url": "https://docs.syncthing.net/users/ignoring.html",
+      "evidence": "file patterns to ignore",
+      "location": "Ignoring Files；本次 HTML 提取正文第 6–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:54.633068+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/ignoring.html",
+      "capture_sha256": "f5b3072f387ea256291e86fee41e6278727427226f03bebafbaadf5ff0152a81",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-ignore",
+          "location": "Ignoring Files；本次 HTML 提取正文第 6–7 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/ignoring.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-syncing",
+      "title": "Understanding Synchronization",
+      "url": "https://docs.syncthing.net/users/syncing.html",
+      "requested_url": "https://docs.syncthing.net/users/syncing.html",
+      "evidence": "one of the files will be renamed",
+      "location": "Understanding Synchronization；本次 HTML 提取正文第 61–63 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:53.746675+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/syncing.html",
+      "capture_sha256": "8e28404366ef1b2db967668e2e1b3494f5bb3aafb2e973e4e29d77518b28d681",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-conflict",
+          "location": "Understanding Synchronization；本次 HTML 提取正文第 61–63 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/syncing.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-untrusted",
+      "title": "Untrusted (Encrypted) Devices",
+      "url": "https://docs.syncthing.net/users/untrusted.html",
+      "requested_url": "https://docs.syncthing.net/users/untrusted.html",
+      "evidence": "Data sent will be encrypted by this password",
+      "location": "Untrusted (Encrypted) Devices；本次 HTML 提取正文第 5–7 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:54.578775+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/untrusted.html",
+      "capture_sha256": "a67a47b730cebaa3a2672c3018ffd1f25c333de5b6f0a4abaffa90b4c77d6d9d",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-encrypted",
+          "location": "Untrusted (Encrypted) Devices；本次 HTML 提取正文第 5–7 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/untrusted.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-relay",
+      "title": "Relaying",
+      "url": "https://docs.syncthing.net/users/relaying.html",
+      "requested_url": "https://docs.syncthing.net/users/relaying.html",
+      "evidence": "traffic via a relay when it’s not possible",
+      "location": "Relaying；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:53.122102+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/relaying.html",
+      "capture_sha256": "a6d9dc90dbe90fc7ced36612dadd3108faa130c093b4caf0aed97aa7607f2487",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-relay",
+          "location": "Relaying；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/relaying.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-security",
+      "title": "Security Principles",
+      "url": "https://docs.syncthing.net/users/security.html",
+      "requested_url": "https://docs.syncthing.net/users/security.html",
+      "evidence": "Any data exchanged between the two devices is encrypted as usual",
+      "location": "Security Principles；本次 HTML 提取正文第 84–87 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:53.869595+00:00",
+      "capture_origin": "https://docs.syncthing.net/users/security.html",
+      "capture_sha256": "f1f32873dfb3409d774966513f3a6f8bec28f8e9f701baf6f026bc0469108e41",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-relay",
+          "location": "Security Principles；本次 HTML 提取正文第 84–87 行（不是 HTML 源码行号）",
+          "url": "https://docs.syncthing.net/users/security.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-android-notice",
+      "title": "Discontinuing syncthing-android — Syncthing Community Forum maintainer announcement",
+      "url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "original_url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "evidence": "I am retiring it.",
+      "location": "Discontinuing syncthing-android — Syncthing Community Forum maintainer announcement；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "maintainer_announcement",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:19:32.997457+00:00",
+      "capture_origin": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+      "capture_sha256": "dcf0d12491e94f2e41dac637f54bffc459ae72e40f438482de63341b061b64b6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sync",
+          "location": "Discontinuing syncthing-android — Syncthing Community Forum maintainer announcement；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-android-repo-api",
+      "title": "syncthing/syncthing-android GitHub repository metadata",
+      "url": "https://api.github.com/repos/syncthing/syncthing-android",
+      "original_url": "https://api.github.com/repos/syncthing/syncthing-android",
+      "evidence": "\"archived\":true\n[…]\n\"pushed_at\":\"2024-12-03T21:13:47Z\"",
+      "location": "syncthing/syncthing-android GitHub repository metadata；取回源文本第 1–1 行",
+      "source_class": "official_repository_metadata",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:19:35.003365+00:00",
+      "capture_origin": "https://api.github.com/repos/syncthing/syncthing-android",
+      "capture_sha256": "e74bf0620581198f0fc9e9886d2c72c4c24666332c3f2d3603a4b4b912e07d0d",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "p-sync",
+          "location": "syncthing/syncthing-android GitHub repository metadata；取回源文本第 1–1 行",
+          "url": "https://api.github.com/repos/syncthing/syncthing-android"
+        },
+        {
+          "possibility_id": "p-sync",
+          "location": "syncthing/syncthing-android GitHub repository metadata；取回源文本第 1–1 行",
+          "url": "https://api.github.com/repos/syncthing/syncthing-android"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "application/json; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-sync",
+      "name": "同步与协作维护文件"
+    },
+    {
+      "id": "g-protection",
+      "name": "降低误操作与设备信任风险"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "p-sync",
+      "title": "在自己的设备与家用节点间保持文件同步",
+      "result": "让笔记本、桌面电脑与家用服务器上的共享文件夹相互发送并接收变更；家庭多地部署可按成员设置个人与共享文件夹。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需在设备间建立信任并分享对应文件夹；删除和修改也会同步传播。社区用户案例曾包含手机，但 Syncthing 官方 Android wrapper 的維護者公告已宣布退休，且官方 syncthing/syncthing-android 仓库当前元数据标记 archived，最后推送时间为 2024-12-03；这说明该官方 wrapper 已归档，不代表 Syncthing 同步引擎本身不能在 Android 上运行。当前移动端需依赖所选客户端与系统限制；未核实第三方维护状况及兼容性。社区案例不证明普遍可用性或备份安全。",
+      "source_ids": [
+        "s-foldertypes",
+        "s-story",
+        "s-android-notice",
+        "s-android-repo-api"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-foldertypes",
+          "quote": "send changes to and receive changes from remote devices",
+          "url": "https://docs.syncthing.net/users/foldertypes.html",
+          "location": "Folder Types；本次 HTML 提取正文第 3–5 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-story",
+          "quote": "three servers in three different locations that sync between each other",
+          "url": "https://forum.syncthing.net/t/syncthing-redundancy-and-backup/19175",
+          "location": "Syncthing: Redundancy and Backup；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-android-notice",
+          "quote": "I am retiring it.",
+          "url": "https://forum.syncthing.net/t/discontinuing-syncthing-android/23002",
+          "location": "Discontinuing syncthing-android — Syncthing Community Forum maintainer announcement；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-android-repo-api",
+          "quote": "\"archived\":true",
+          "url": "https://api.github.com/repos/syncthing/syncthing-android",
+          "location": "syncthing/syncthing-android GitHub repository metadata；取回源文本第 1–1 行",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "captured_text"
+        },
+        {
+          "source_id": "s-android-repo-api",
+          "quote": "\"pushed_at\":\"2024-12-03T21:13:47Z\"",
+          "url": "https://api.github.com/repos/syncthing/syncthing-android",
+          "location": "syncthing/syncthing-android GitHub repository metadata；取回源文本第 1–1 行",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "captured_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "个人设备间同步",
+        "家庭多地点文件夹同步"
+      ]
+    },
+    {
+      "id": "p-versions",
+      "title": "保留其他设备变更前的旧文件版本",
+      "result": "在接收设备上归档由其他设备删除或替换的旧文件，以便需要时找回较早版本。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需在该文件夹的该设备上手动选择并配置版本策略；默认关闭。只归档从其他设备收到的变更，本机自己修改的文件不会由本机版本功能归档。它不是独立备份。",
+      "source_ids": [
+        "s-versioning"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-versioning",
+          "quote": "old version of a file when it is deleted or replaced",
+          "url": "https://docs.syncthing.net/users/versioning.html",
+          "location": "File Versioning；本次 HTML 提取正文第 3–4 行（不是 HTML 源码行号）",
+          "source_line_start": 3,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "找回被替换或远端删除的旧文件"
+      ]
+    },
+    {
+      "id": "p-ignore",
+      "title": "排除不应跨设备同步的文件",
+      "result": "通过共享文件夹根目录中的忽略规则排除匹配的文件或路径，使其不从该设备发送或接收到其他设备。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "规则按共享文件夹相对路径匹配；.stignore 文件自身不会同步，修改规则需自行管理。",
+      "source_ids": [
+        "s-ignores"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ignores",
+          "quote": "file patterns to ignore",
+          "url": "https://docs.syncthing.net/users/ignoring.html",
+          "location": "Ignoring Files；本次 HTML 提取正文第 6–7 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "按规则筛除文件"
+      ]
+    },
+    {
+      "id": "p-conflict",
+      "title": "发现并保留设备间同时修改产生的冲突副本",
+      "result": "当两台设备同时改动同一文件且内容不同时，Syncthing 将其中一个副本改名为带冲突标记的文件，让用户比较并自行决定后续处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Syncthing 不对文档内容做语义合并；冲突副本会作为普通文件继续传播，需由用户检查、合并或删除。",
+      "source_ids": [
+        "s-syncing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-syncing",
+          "quote": "one of the files will be renamed",
+          "url": "https://docs.syncthing.net/users/syncing.html",
+          "location": "Understanding Synchronization；本次 HTML 提取正文第 61–63 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 63,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "处理并发文件修改"
+      ]
+    },
+    {
+      "id": "p-encrypted",
+      "title": "把共享文件以加密形式放到不完全信任的设备",
+      "result": "为指定共享文件夹设置密码，使同步到不完全信任设备上的数据以加密形式存储，并可由掌握密码的受信任设备解密。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "官方文档将此功能标为 beta/testing only。需要妥善保存密码与文件夹标识；不能将其视作成熟托管云盘或经过独立安全认证的加密方案。",
+      "source_ids": [
+        "s-untrusted"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-untrusted",
+          "quote": "Data sent will be encrypted by this password",
+          "url": "https://docs.syncthing.net/users/untrusted.html",
+          "location": "Untrusted (Encrypted) Devices；本次 HTML 提取正文第 5–7 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-protection"
+      ],
+      "aliases": [
+        "与不受信任设备同步加密文件"
+      ]
+    },
+    {
+      "id": "p-relay",
+      "title": "在无法直连时通过中继连接设备",
+      "result": "当两个设备无法直接建立连接时，使用中继转发同步数据；Syncthing 默认启用中继并会继续尝试恢复直连。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "中继通常比直连慢；链路仍端到端加密，但中继运营方可看到设备 ID、IP 地址和流量量级。若使用发现服务，设备寻址还涉及发现服务的可见信息。",
+      "source_ids": [
+        "s-relay",
+        "s-security"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-relay",
+          "quote": "traffic via a relay when it’s not possible",
+          "url": "https://docs.syncthing.net/users/relaying.html",
+          "location": "Relaying；本次 HTML 提取正文第 4–5 行（不是 HTML 源码行号）",
+          "source_line_start": 4,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-security",
+          "quote": "Any data exchanged between the two devices is encrypted as usual",
+          "url": "https://docs.syncthing.net/users/security.html",
+          "location": "Security Principles；本次 HTML 提取正文第 84–87 行（不是 HTML 源码行号）",
+          "source_line_start": 84,
+          "source_line_end": 87,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "经中继同步"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "没有逐一核实 Windows、macOS、Linux、Android、iOS 当前发行状态与后台运行限制；移动设备省电策略可能影响持续同步。",
+    "未实机配置设备配对、目录权限、NAS/路由器、端口转发或防火墙；网络连接成功与性能取决于具体环境。",
+    "文件版本功能默认关闭且只保护来自其他设备的变更；未验证版本空间占用、长期保留和恢复操作。",
+    "加密不受信任设备仍属 beta/testing；未进行安全审计或威胁模型评估。",
+    "同步会传播误删和恶意修改；独立备份系统、快照保留策略、异地副本与恢复测试不属于 Syncthing 核心保障。",
+    "社区案例是作者自述的家庭部署，不能据此推断其他家庭可达到相同恢复能力。"
+  ],
+  "generated_at": "2026-11-05T13:11:29+00:00"
+}

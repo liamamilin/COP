@@ -1,0 +1,192 @@
+{
+  "topic": "bitwarden",
+  "generated_at": "2026-11-05T13:40:00Z",
+  "capture_note": "capture_sha256 为 capture.py 对首次 HTTP 响应原始字节的 SHA-256；所有这些页面返回 text/html，引用行号是提取后的正文行号而非 HTML 源码行号。",
+  "retrieved": [
+    {
+      "id": "b-account-recovery",
+      "requested_url": "https://bitwarden.com/help/account-recovery/",
+      "capture_origin": "https://bitwarden.com/help/account-recovery/",
+      "retrieved_at": "2026-11-05T12:50:01.976400+00:00",
+      "capture_sha256": "bbd12616025c9d5d79364979960bd0c52f869c5866a3ca3c09d5578409638f0c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-autofill",
+      "requested_url": "https://bitwarden.com/help/auto-fill-browser/",
+      "capture_origin": "https://bitwarden.com/help/auto-fill-browser/",
+      "retrieved_at": "2026-11-05T12:49:29.746931+00:00",
+      "capture_sha256": "739b8e1a502fc5f52a6d25b4f0b56c81f18e864b21ff68677317bc4ad36dacff",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-collections",
+      "requested_url": "https://bitwarden.com/help/about-collections/",
+      "capture_origin": "https://bitwarden.com/help/about-collections/",
+      "retrieved_at": "2026-11-05T12:49:36.338746+00:00",
+      "capture_sha256": "fbc12fc3142a490b32ac63dd5695957b4bf6b9c1b57ba7d8e4854790c3a1afc2",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-emergency",
+      "requested_url": "https://bitwarden.com/help/emergency-access/",
+      "capture_origin": "https://bitwarden.com/help/emergency-access/",
+      "retrieved_at": "2026-11-05T12:49:39.009563+00:00",
+      "capture_sha256": "45f1da985c05aa660001416b63f7b3c5672cf9e758fb8269c0eceb4b14a23d0f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-export",
+      "requested_url": "https://bitwarden.com/help/export-your-data/",
+      "capture_origin": "https://bitwarden.com/help/export-your-data/",
+      "retrieved_at": "2026-11-05T12:51:39.786839+00:00",
+      "capture_sha256": "f2727f4da0f76c0448b47efa21b962f480b6ac00fd8b4db0424fa65d9e502134",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-forgot",
+      "requested_url": "https://bitwarden.com/help/forgot-master-password/",
+      "capture_origin": "https://bitwarden.com/help/forgot-master-password/",
+      "retrieved_at": "2026-11-05T12:50:05.223607+00:00",
+      "capture_sha256": "7368ffbb0c07b25f45b791460309034855737bf9fcf0b07f7a10129eebe0a7bf",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-generator",
+      "requested_url": "https://bitwarden.com/help/generator/",
+      "capture_origin": "https://bitwarden.com/help/generator/",
+      "retrieved_at": "2026-11-05T12:50:13.512523+00:00",
+      "capture_sha256": "e7001f9703810ef8539ecccdcb607896b1ae2635ba8a624712f7f56a0f9b6690",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-import",
+      "requested_url": "https://bitwarden.com/help/import-data/",
+      "capture_origin": "https://bitwarden.com/help/import-data/",
+      "retrieved_at": "2026-11-05T12:50:10.365803+00:00",
+      "capture_sha256": "94cfa981be2904827cd161a5257e8ea0721b96af918d6c84e2f1062da03e599a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-orgs",
+      "requested_url": "https://bitwarden.com/help/about-organizations/",
+      "capture_origin": "https://bitwarden.com/help/about-organizations/",
+      "retrieved_at": "2026-11-05T12:50:16.358723+00:00",
+      "capture_sha256": "709e57e8c7e65e0c743d42874fead9de17a1df54cab858d2de7c77ee999fa0d8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-overview",
+      "requested_url": "https://bitwarden.com/help/",
+      "capture_origin": "https://bitwarden.com/help/",
+      "retrieved_at": "2026-11-05T12:49:09.462378+00:00",
+      "capture_sha256": "009bef8af7705d7fae2cfb767e3c545a097a3e3d985206cb20d66e2fc38a3ff6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-pricing",
+      "requested_url": "https://bitwarden.com/pricing/business/",
+      "capture_origin": "https://bitwarden.com/pricing/business/",
+      "retrieved_at": "2026-11-05T12:50:19.573438+00:00",
+      "capture_sha256": "6d1f62d8c3c7b3a3d674dbb83a9a199aa17936cd474a2b8425b8946420c319fb",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-recovery",
+      "requested_url": "https://bitwarden.com/help/account-recovery/",
+      "capture_origin": "https://bitwarden.com/help/account-recovery/",
+      "retrieved_at": "2026-11-05T12:49:41.822528+00:00",
+      "capture_sha256": "bbd12616025c9d5d79364979960bd0c52f869c5866a3ca3c09d5578409638f0c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-reports",
+      "requested_url": "https://bitwarden.com/help/reports/",
+      "capture_origin": "https://bitwarden.com/help/reports/",
+      "retrieved_at": "2026-11-05T12:51:37.075841+00:00",
+      "capture_sha256": "4cc0c511a3d9f4a464df6dc846b737eea17c206e020ecc40081ad9cd88d74db9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-selfhost",
+      "requested_url": "https://bitwarden.com/help/self-host-bitwarden/",
+      "capture_origin": "https://bitwarden.com/help/self-host-bitwarden/",
+      "retrieved_at": "2026-11-05T12:51:33.957448+00:00",
+      "capture_sha256": "7bfe1e88553a7142aa75d9b00f988199293f139b6bd60f845b78d6840a366139",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "b-send",
+      "requested_url": "https://bitwarden.com/help/about-send/",
+      "capture_origin": "https://bitwarden.com/help/about-send/",
+      "retrieved_at": "2026-11-05T12:49:33.609861+00:00",
+      "capture_sha256": "e11d391d32451a184c3cc09822eba823a7c1ff2819eaf7816c3383e61e10e504",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "requested_url": "https://bitwarden.com/help/emergency-access/",
+      "note": "首次请求未产生可用缓存；随后重试规范 URL 并成功，记录为 b-emergency。"
+    }
+  ],
+  "not_adopted": [
+    "b-overview：仅为官方帮助中心入口导航，不直接支持具体结果。",
+    "b-collections：共享路线被更完整的 b-orgs 组织概览覆盖。",
+    "b-pricing：用于核对产品方案页面/组织特征；不引用当前价格或作为用户效果证据。",
+    "b-recovery：与 b-account-recovery 为同一规范 URL 和同一响应哈希的重复成功缓存；只用 b-account-recovery 引用。",
+    "b-overview 及 CLI/TOTP/其他客户端子功能未作为独立P，避免罗列产品菜单。"
+  ],
+  "search_limits": [
+    "未安装云端或自托管实例、客户端、浏览器扩展，未做功能/安全测试。",
+    "未核实时价、地区/付款限制、不同方案合同差异或配额。",
+    "没有比较第三方密码管理器导入结果和完整字段保真。",
+    "未验证 self-hosted 外部依赖、更新/备份实操或灾难恢复。"
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}

@@ -1,0 +1,916 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Ghost",
+    "scope": "个人创作者/经营者使用 Ghost 建立内容出版站：写作发布、邮件分发、会员/订阅、受众反馈与管理、分析、迁移和数据导出。区分 Ghost 软件核心功能、Ghost(Pro) 托管计划、Stripe 支付处理、外部邮件发送服务和自托管基础设施。行为指标与归因不等同于因果证明；案例不保证收入或增长。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "stop_reason": "完成无分类结果、完整案例、扩展/依赖三轮发现；逐读 Ghost 官方帮助与迁移文档、Ghost(Pro) 当前托管计划页、Stripe 官方地区及费用页、Rediverge 实际案例。补漏核对邮件分众/反馈、分析归因、数据导入导出与自托管邮件要求。新候选主要重复现有写作、会员和受众运营结果；高级定制/外部自动化未找到足够通用、完整的当前任务依据，不凑条目。",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:27:01.127161+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-publishing",
+      "title": "Publishing and scheduling",
+      "url": "https://ghost.org/help/publishing-content/",
+      "requested_url": "https://ghost.org/help/publishing-content/",
+      "evidence": "deliver as an email newsletter\n[…]\nschedule a post or newsletter",
+      "location": "Publishing and scheduling；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）；Publishing and scheduling；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:52.470272+00:00",
+      "capture_origin": "https://ghost.org/help/publishing-content/",
+      "capture_sha256": "0eb84b8d7b4dd4ad4b0e4d730c251d40bb0eaa8b357488e2181818785d73ef0e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-01",
+          "location": "Publishing and scheduling；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/publishing-content/"
+        },
+        {
+          "possibility_id": "gh-01",
+          "location": "Publishing and scheduling；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/publishing-content/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-newsletters",
+      "title": "Setting up email newsletters",
+      "url": "https://ghost.org/help/setup-email-newsletters/",
+      "requested_url": "https://ghost.org/help/setup-email-newsletters/",
+      "evidence": "each with its own subscriptions",
+      "location": "Setting up email newsletters；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:55.242162+00:00",
+      "capture_origin": "https://ghost.org/help/setup-email-newsletters/",
+      "capture_sha256": "576340d20a92e72924e6c3080f5833f45a47390ebe79079e6f08ba7ddfd72d75",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-02",
+          "location": "Setting up email newsletters；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/setup-email-newsletters/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-post-settings",
+      "title": "Preparing posts for publishing",
+      "url": "https://ghost.org/help/post-settings/",
+      "requested_url": "https://ghost.org/help/post-settings/",
+      "evidence": "decide who gets to access your content",
+      "location": "Preparing posts for publishing；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:56.582940+00:00",
+      "capture_origin": "https://ghost.org/help/post-settings/",
+      "capture_sha256": "8d1b6d64539b249d86c78f086afa2d2b9d21eee08ee9f589728c36bc90b65458",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-03",
+          "location": "Preparing posts for publishing；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/post-settings/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-tiers",
+      "title": "Create paid tiers",
+      "url": "https://ghost.org/help/tiers/",
+      "requested_url": "https://ghost.org/help/tiers/",
+      "evidence": "monthly and yearly prices, and list of benefits",
+      "location": "Create paid tiers；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:56.181500+00:00",
+      "capture_origin": "https://ghost.org/help/tiers/",
+      "capture_sha256": "6c1af46847d8b87f91a7ab647776a0a1cef40a9b8b7e21c334fd42f01abd48d7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "Create paid tiers；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/tiers/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-stripe",
+      "title": "Stripe + Ghost",
+      "url": "https://ghost.org/integrations/stripe/",
+      "requested_url": "https://ghost.org/integrations/stripe/",
+      "evidence": "secure Stripe integration",
+      "location": "Stripe + Ghost；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:55.230104+00:00",
+      "capture_origin": "https://ghost.org/integrations/stripe/",
+      "capture_sha256": "c66ca41f5b046d21322cd9c4c2af16f537f1f4ce09220fbaf02d518a451e6b66",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "Stripe + Ghost；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/integrations/stripe/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-stripe-global",
+      "title": "Stripe global availability",
+      "url": "https://stripe.com/global",
+      "requested_url": "https://stripe.com/global",
+      "evidence": "supported in the following countries/regions",
+      "location": "Stripe global availability；本次 HTML 提取正文第 306–306 行（不是 HTML 源码行号）",
+      "source_class": "external_service_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:53:27.245880+00:00",
+      "capture_origin": "https://stripe.com/global",
+      "capture_sha256": "de230f68c8415dd0faebe5f14062840a2a4ffd18c0ccc10b9ad86f46cf8df4f8",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "Stripe global availability；本次 HTML 提取正文第 306–306 行（不是 HTML 源码行号）",
+          "url": "https://stripe.com/global"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-stripe-fees",
+      "title": "Stripe pricing and fees",
+      "url": "https://stripe.com/pricing",
+      "requested_url": "https://stripe.com/pricing",
+      "evidence": "per-transaction fee depending on the payment method",
+      "location": "Stripe pricing and fees；本次 HTML 提取正文第 1186–1186 行（不是 HTML 源码行号）",
+      "source_class": "external_service_pricing",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:53:32.004655+00:00",
+      "capture_origin": "https://stripe.com/pricing",
+      "capture_sha256": "11410ad02cf2707d9ccac60310aed76d0af5ffa814803a19fca03d79f187fa7a",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "Stripe pricing and fees；本次 HTML 提取正文第 1186–1186 行（不是 HTML 源码行号）",
+          "url": "https://stripe.com/pricing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-pricing",
+      "title": "Ghost(Pro) plans and pricing",
+      "url": "https://ghost.org/pricing",
+      "requested_url": "https://ghost.org/pricing",
+      "evidence": "Accept payments from members using Stripe integration",
+      "location": "Ghost(Pro) plans and pricing；本次 HTML 提取正文第 222–222 行（不是 HTML 源码行号）",
+      "source_class": "official_product_pricing",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:49:25.844455+00:00",
+      "capture_origin": "https://ghost.org/pricing",
+      "capture_sha256": "74bbcf339321537d0816590e3549602673a10b24cca3ae316bd12d734eb01b77",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "Ghost(Pro) plans and pricing；本次 HTML 提取正文第 222–222 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/pricing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-case",
+      "title": "The ultimate creators guide to membership websites",
+      "url": "https://ghost.org/resources/membership-sites/",
+      "requested_url": "https://ghost.org/resources/membership-sites/",
+      "evidence": "built with Ghost\n[…]\nfirst 250 subscribers within a month",
+      "location": "The ultimate creators guide to membership websites；本次 HTML 提取正文第 86–86 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:56.109782+00:00",
+      "capture_origin": "https://ghost.org/resources/membership-sites/",
+      "capture_sha256": "e01cff8830eeeca4b54cf1340a9ebe916df0b76754f73c87d5c64549ea22db0b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-04",
+          "location": "The ultimate creators guide to membership websites；本次 HTML 提取正文第 86–86 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/resources/membership-sites/"
+        },
+        {
+          "possibility_id": "gh-04",
+          "location": "The ultimate creators guide to membership websites；本次 HTML 提取正文第 86–86 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/resources/membership-sites/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-members",
+      "title": "Member management",
+      "url": "https://ghost.org/help/member-management/",
+      "requested_url": "https://ghost.org/help/member-management/",
+      "evidence": "label, email subscription status, member status\n[…]\nfiltered view can be saved",
+      "location": "Member management；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）；Member management；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:55.046140+00:00",
+      "capture_origin": "https://ghost.org/help/member-management/",
+      "capture_sha256": "7f5d0c26bcadcc614c584267484ecb604d267a184167808a60c6f72fa1ca08fa",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-05",
+          "location": "Member management；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/member-management/"
+        },
+        {
+          "possibility_id": "gh-05",
+          "location": "Member management；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/member-management/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-audience-feedback",
+      "title": "Audience feedback",
+      "url": "https://ghost.org/help/audience-feedback/",
+      "requested_url": "https://ghost.org/help/audience-feedback/",
+      "evidence": "share feedback about your content",
+      "location": "Audience feedback；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:49:25.657890+00:00",
+      "capture_origin": "https://ghost.org/help/audience-feedback/",
+      "capture_sha256": "fd57477fb7f9c5e5f133cdb084520b0becc5fbad2a6af74fbe14f4965d3fdf1c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-06",
+          "location": "Audience feedback；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/audience-feedback/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-analytics",
+      "title": "Post analytics",
+      "url": "https://ghost.org/help/post-analytics/",
+      "requested_url": "https://ghost.org/help/post-analytics/",
+      "evidence": "traffic, engagement, and conversions\n[…]\nExport post analytics",
+      "location": "Post analytics；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）；Post analytics；本次 HTML 提取正文第 55–55 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:56.705102+00:00",
+      "capture_origin": "https://ghost.org/help/post-analytics/",
+      "capture_sha256": "9b80297c4801ce8b5f8e917427e0d229dd9186142d5e528dd6f135853ec65a53",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-07",
+          "location": "Post analytics；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/post-analytics/"
+        },
+        {
+          "possibility_id": "gh-07",
+          "location": "Post analytics；本次 HTML 提取正文第 55–55 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/post-analytics/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-export",
+      "title": "Exporting content and data",
+      "url": "https://ghost.org/help/exports/",
+      "requested_url": "https://ghost.org/help/exports/",
+      "evidence": "get everything as a single zip file",
+      "location": "Exporting content and data；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:56.277684+00:00",
+      "capture_origin": "https://ghost.org/help/exports/",
+      "capture_sha256": "7fbae22c4da4469e66c2aeeef211c3d8d6c17f4b11c3e50a784167b90d1fc615",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-08",
+          "location": "Exporting content and data；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/exports/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-import",
+      "title": "Importing content",
+      "url": "https://ghost.org/help/imports/",
+      "requested_url": "https://ghost.org/help/imports/",
+      "evidence": "import content and images directly to your new publication",
+      "location": "Importing content；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:48:55.185716+00:00",
+      "capture_origin": "https://ghost.org/help/imports/",
+      "capture_sha256": "5c9b797450b69b6a147f7d3fd9385041ccd1404f58810599c4fe09a6e9ac2ee6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-09",
+          "location": "Importing content；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/imports/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-member-import",
+      "title": "Import members",
+      "url": "https://ghost.org/help/import-members/",
+      "requested_url": "https://ghost.org/help/import-members/",
+      "evidence": "import your existing audience in an easy way",
+      "location": "Import members；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:51:16.753493+00:00",
+      "capture_origin": "https://ghost.org/help/import-members/",
+      "capture_sha256": "b15e8b16c7be98ffc4cd313a1cf4169517e22a8a578614e9428b71441fb155f5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-09",
+          "location": "Import members；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/import-members/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-wordpress-import",
+      "title": "Migrating from WordPress",
+      "url": "https://docs.ghost.org/migration/wordpress",
+      "requested_url": "https://ghost.org/help/importing-from-wordpress/",
+      "evidence": "migrate your posts and pages from WordPress site to Ghost",
+      "location": "Migrating from WordPress；本次 HTML 提取正文第 49–49 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:51:35.029924+00:00",
+      "capture_origin": "https://docs.ghost.org/migration/wordpress",
+      "capture_sha256": "0debc4bf91d362a2d66b1a063d5b4e0e33d5598fcfbb4fe82aa5ce639923b2b5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-09",
+          "location": "Migrating from WordPress；本次 HTML 提取正文第 49–49 行（不是 HTML 源码行号）",
+          "url": "https://docs.ghost.org/migration/wordpress"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-email-delivery",
+      "title": "Delivering emails to your audience",
+      "url": "https://ghost.org/help/delivering-emails/",
+      "requested_url": "https://ghost.org/help/delivering-emails/",
+      "evidence": "deliver emails to any segment of your members",
+      "location": "Delivering emails to your audience；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:49:22.993628+00:00",
+      "capture_origin": "https://ghost.org/help/delivering-emails/",
+      "capture_sha256": "91815cecaa773aa9c5a05f622e1d6eff3efb394e3421bbd7c8afe2cef4d51892",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-11",
+          "location": "Delivering emails to your audience；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "url": "https://ghost.org/help/delivering-emails/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-newsletter-mailgun-faq",
+      "title": "Why do I have to set up Mailgun?",
+      "url": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "requested_url": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "evidence": "any SMTP\n[…]\nonly bulk mail API we support is Mailgun",
+      "location": "Why do I have to set up Mailgun?；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）；Why do I have to set up Mailgun?；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:11:58.695411+00:00",
+      "capture_origin": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "capture_sha256": "df7c33536625f3b970896a3826c19cb934d7efcc23173fde18c548371b505b44",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "content_type": "text/html; charset=utf-8",
+      "line_basis": "extracted_html_text",
+      "evidence_locations": [
+        {
+          "possibility_id": "gh-10",
+          "location": "Why do I have to set up Mailgun?；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "url": "https://docs.ghost.org/faq/mailgun-newsletters"
+        },
+        {
+          "possibility_id": "gh-10",
+          "location": "Why do I have to set up Mailgun?；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "url": "https://docs.ghost.org/faq/mailgun-newsletters"
+        }
+      ],
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-publish",
+      "name": "写作与分发"
+    },
+    {
+      "id": "g-membership",
+      "name": "会员与订阅"
+    },
+    {
+      "id": "g-audience",
+      "name": "受众运营与反馈"
+    },
+    {
+      "id": "g-measure",
+      "name": "内容观察"
+    },
+    {
+      "id": "g-migrate",
+      "name": "数据导出与迁移"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "gh-01",
+      "title": "发布或定时发送文章与 newsletter",
+      "result": "将文章发布到网站、同时发送为 newsletter，或安排文章/邮件之后发布。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "发布与预览使用 Ghost 编辑器；若选择邮件分发，须另行配置 newsletter 邮件发送。",
+      "source_ids": [
+        "s-publishing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-publishing",
+          "quote": "deliver as an email newsletter",
+          "url": "https://ghost.org/help/publishing-content/",
+          "location": "Publishing and scheduling；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-publishing",
+          "quote": "schedule a post or newsletter",
+          "url": "https://ghost.org/help/publishing-content/",
+          "location": "Publishing and scheduling；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-02",
+      "title": "为不同内容建立独立 newsletter",
+      "result": "建立多份各自订阅设置和模板的 newsletter，形成读者可单独选择的邮件内容流。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "读者可在注册或邮件偏好设置中选择不同邮件；具体主题和发送频率由经营者提供。邮件送达仍依赖托管方案或自托管邮件配置。",
+      "source_ids": [
+        "s-newsletters"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-newsletters",
+          "quote": "each with its own subscriptions",
+          "url": "https://ghost.org/help/setup-email-newsletters/",
+          "location": "Setting up email newsletters；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-03",
+      "title": "按会员权限开放文章",
+      "result": "将单篇文章的访问范围设为公开或会员可读，安排公开内容与会员专属内容。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "付费会员与特定付费 tier 需要 Stripe 订阅功能；付费内容访问由主题/Portal 的会员流程呈现。",
+      "source_ids": [
+        "s-post-settings"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-post-settings",
+          "quote": "decide who gets to access your content",
+          "url": "https://ghost.org/help/post-settings/",
+          "location": "Preparing posts for publishing；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-membership"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-04",
+      "title": "配置月付/年付的会员等级",
+      "result": "创建有不同价格和权益的订阅等级，并将适用内容分配给相应会员。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要连接自己的 Stripe 账户；Stripe 商家账户仅在其支持的国家/地区可以开立，交易处理费由 Stripe 依付款方式等计收。Ghost(Pro) 的当前计划表显示付费订阅并非每档都包含，需按现行计划确认。Rediverge 案例只是该发布者的做法与结果，不能当作收入/增长保证。",
+      "source_ids": [
+        "s-tiers",
+        "s-stripe",
+        "s-stripe-global",
+        "s-stripe-fees",
+        "s-pricing",
+        "s-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-tiers",
+          "quote": "monthly and yearly prices, and list of benefits",
+          "url": "https://ghost.org/help/tiers/",
+          "location": "Create paid tiers；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-stripe",
+          "quote": "secure Stripe integration",
+          "url": "https://ghost.org/integrations/stripe/",
+          "location": "Stripe + Ghost；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-stripe-global",
+          "quote": "supported in the following countries/regions",
+          "url": "https://stripe.com/global",
+          "location": "Stripe global availability；本次 HTML 提取正文第 306–306 行（不是 HTML 源码行号）",
+          "source_line_start": 306,
+          "source_line_end": 306,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-stripe-fees",
+          "quote": "per-transaction fee depending on the payment method",
+          "url": "https://stripe.com/pricing",
+          "location": "Stripe pricing and fees；本次 HTML 提取正文第 1186–1186 行（不是 HTML 源码行号）",
+          "source_line_start": 1186,
+          "source_line_end": 1186,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-pricing",
+          "quote": "Accept payments from members using Stripe integration",
+          "url": "https://ghost.org/pricing",
+          "location": "Ghost(Pro) plans and pricing；本次 HTML 提取正文第 222–222 行（不是 HTML 源码行号）",
+          "source_line_start": 222,
+          "source_line_end": 222,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-case",
+          "quote": "built with Ghost",
+          "url": "https://ghost.org/resources/membership-sites/",
+          "location": "The ultimate creators guide to membership websites；本次 HTML 提取正文第 86–86 行（不是 HTML 源码行号）",
+          "source_line_start": 86,
+          "source_line_end": 86,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-case",
+          "quote": "first 250 subscribers within a month",
+          "url": "https://ghost.org/resources/membership-sites/",
+          "location": "The ultimate creators guide to membership websites；本次 HTML 提取正文第 86–86 行（不是 HTML 源码行号）",
+          "source_line_start": 86,
+          "source_line_end": 86,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-membership"
+      ],
+      "aliases": [],
+      "capability_layer": "Ghost原生会员能力：创建付费会员等级、价格和权益并限制内容访问；Stripe 是独立外部支付处理器，不属于 Ghost 自身。",
+      "required_components": [
+        "Ghost 会员/付费内容功能",
+        "Stripe 商户账户与支付处理（国家/地区需受支持）",
+        "如使用 Ghost(Pro)，选择包含所需付费订阅功能的当前计划"
+      ]
+    },
+    {
+      "id": "gh-05",
+      "title": "筛选会员并建立可复用受众视图",
+      "result": "按标签、邮件订阅状态或会员状态筛选成员，并保存常用视图以便后续管理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "可将筛选受众用于定向发送或导出；数据是否齐备取决于会员实际订阅与活动记录。",
+      "source_ids": [
+        "s-members"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-members",
+          "quote": "label, email subscription status, member status",
+          "url": "https://ghost.org/help/member-management/",
+          "location": "Member management；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-members",
+          "quote": "filtered view can be saved",
+          "url": "https://ghost.org/help/member-management/",
+          "location": "Member management；本次 HTML 提取正文第 9–9 行（不是 HTML 源码行号）",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-audience"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-06",
+      "title": "在 newsletter 中征集读者反馈",
+      "result": "让读者在阅读邮件后提交对内容的反馈，并在文章分析或会员资料中查看响应。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需在具体 newsletter 的设计设置中启用反馈；读者选择是否响应，反馈不代表全体受众观点。",
+      "source_ids": [
+        "s-audience-feedback"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-audience-feedback",
+          "quote": "share feedback about your content",
+          "url": "https://ghost.org/help/audience-feedback/",
+          "location": "Audience feedback；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-audience"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-07",
+      "title": "观察文章流量、互动和转化归属",
+      "result": "查看单篇内容的流量、邮件互动和会员转化归属指标，识别哪些内容与注册路径相关。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "会员/营收指标要求启用对应会员能力；Ghost 展示的归属数据是观察与归因口径，不证明文章对注册或收入的因果影响。",
+      "source_ids": [
+        "s-analytics"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-analytics",
+          "quote": "traffic, engagement, and conversions",
+          "url": "https://ghost.org/help/post-analytics/",
+          "location": "Post analytics；本次 HTML 提取正文第 13–13 行（不是 HTML 源码行号）",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-analytics",
+          "quote": "Export post analytics",
+          "url": "https://ghost.org/help/post-analytics/",
+          "location": "Post analytics；本次 HTML 提取正文第 55–55 行（不是 HTML 源码行号）",
+          "source_line_start": 55,
+          "source_line_end": 55,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-measure"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-08",
+      "title": "导出 Ghost 站点数据包",
+      "result": "从 Ghost Admin 将站点数据导出为归档包，供存档或迁移时继续处理。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "数据包括内容/设置、会员和文章分析等 JSON/CSV 项目；媒体文件在 Ghost(Pro) 的导出选项中可用，托管方式影响下载流程。",
+      "source_ids": [
+        "s-export"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-export",
+          "quote": "get everything as a single zip file",
+          "url": "https://ghost.org/help/exports/",
+          "location": "Exporting content and data；本次 HTML 提取正文第 12–12 行（不是 HTML 源码行号）",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-migrate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-09",
+      "title": "将已有出版内容与成员迁入 Ghost",
+      "result": "从受支持平台导入文章/图片，并用会员 CSV 导入现有订阅名单。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "不同来源需使用相应迁移器、导出格式和字段映射；WordPress 导入有文件大小/文章数量与不支持内容限制。导入名单不等于自动转移旧支付合约；已有付费成员需匹配 Stripe 客户数据。",
+      "source_ids": [
+        "s-import",
+        "s-member-import",
+        "s-wordpress-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-import",
+          "quote": "import content and images directly to your new publication",
+          "url": "https://ghost.org/help/imports/",
+          "location": "Importing content；本次 HTML 提取正文第 6–6 行（不是 HTML 源码行号）",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-member-import",
+          "quote": "import your existing audience in an easy way",
+          "url": "https://ghost.org/help/import-members/",
+          "location": "Import members；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-wordpress-import",
+          "quote": "migrate your posts and pages from WordPress site to Ghost",
+          "url": "https://docs.ghost.org/migration/wordpress",
+          "location": "Migrating from WordPress；本次 HTML 提取正文第 49–49 行（不是 HTML 源码行号）",
+          "source_line_start": 49,
+          "source_line_end": 49,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-migrate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-10",
+      "title": "让自托管 Ghost 发送事务邮件与 Mailgun newsletters",
+      "result": "自行托管 Ghost 时，配置事务邮件送达，并通过 Mailgun Bulk Email API 发送 newsletter。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "交易/事务邮件（如邀请、密码重置、登录链接）可配置任意 SMTP 或其他邮件服务；newsletter 批量发送不能用普通 SMTP，当前官方支持的 Bulk Email API 为 Mailgun。Amazon SES 示例只是 SMTP 配置示例，不能据此推断 SES 可发送 Ghost newsletters。自托管者须自行管理服务账户、SMTP/DNS 配置与相关费用；Ghost(Pro) 管理发送服务。",
+      "source_ids": [
+        "s-newsletter-mailgun-faq"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-newsletter-mailgun-faq",
+          "quote": "any SMTP",
+          "url": "https://docs.ghost.org/faq/mailgun-newsletters",
+          "location": "Why do I have to set up Mailgun?；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "source_line_start": 68,
+          "source_line_end": 68,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-newsletter-mailgun-faq",
+          "quote": "only bulk mail API we support is Mailgun",
+          "url": "https://docs.ghost.org/faq/mailgun-newsletters",
+          "location": "Why do I have to set up Mailgun?；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "source_line_start": 69,
+          "source_line_end": 69,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "gh-11",
+      "title": "按会员群组发送定向邮件",
+      "result": "选择会员状态、newsletter 订阅、等级或标签，将文章邮件发给指定成员群体。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "适用于 Ghost 会员与 newsletter 邮件流程；遵守订阅偏好，并检查发送前的收件人摘要。自托管需要配置送信服务。",
+      "source_ids": [
+        "s-email-delivery"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-email-delivery",
+          "quote": "deliver emails to any segment of your members",
+          "url": "https://ghost.org/help/delivering-emails/",
+          "location": "Delivering emails to your audience；本次 HTML 提取正文第 20–20 行（不是 HTML 源码行号）",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-audience"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "当前 Ghost(Pro) 计划资格、金额和会员上限可能变化；只按 2026-11-05 抓取的计划表说明功能分层，不作长期报价。",
+    "Stripe 商家资格、费率和支付方式需按所在国家/地区及客户付款方式复核；本研究不评估某一用户的资格或实际商户费率。",
+    "自托管的邮件送达和服务器维护可能需更多 DNS、SMTP、备份、CDN 与分析服务；未逐一估算或部署测试。",
+    "真实案例为 Ghost 官方发布的单个出版者案例；没有独立核实其经营结果，也不能据此预测其他创作者表现。",
+    "具体迁移平台的字段、图片、付费订阅和自定义内容保真度各异；未实跑导入。"
+  ]
+}

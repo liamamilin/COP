@@ -1,0 +1,259 @@
+{
+  "topic": "actual-budget",
+  "retrieved": [
+    {
+      "id": "a-budget",
+      "requested_url": "https://actualbudget.org/docs/budgeting/",
+      "final_url": "https://actualbudget.org/docs/budgeting/",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/",
+      "retrieved_at": "2026-11-05T13:14:43.124420+00:00",
+      "capture_sha256": "ef70b8507310fb376a6fa187e7d71d697becaa7c6f5b9d55f52fc91753036a29",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-categories",
+      "requested_url": "https://actualbudget.org/docs/budgeting/categories/",
+      "final_url": "https://actualbudget.org/docs/budgeting/categories/",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/categories/",
+      "retrieved_at": "2026-11-05T13:15:12.878026+00:00",
+      "capture_sha256": "053c2d2d710d6420cef3f6290bc8dba3cd61abfb63b919161108e51f938814ba",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-reports",
+      "requested_url": "https://actualbudget.org/docs/reports/",
+      "final_url": "https://actualbudget.org/docs/reports/",
+      "capture_origin": "https://actualbudget.org/docs/reports/",
+      "retrieved_at": "2026-11-05T13:14:42.426302+00:00",
+      "capture_sha256": "6c907230a17c853736bc7f822a5835376b1395cf69a057e60ca6d0d60b7203dd",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-reconcile",
+      "requested_url": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "final_url": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "capture_origin": "https://actualbudget.org/docs/accounts/reconciliation/",
+      "retrieved_at": "2026-11-05T13:19:51.673754+00:00",
+      "capture_sha256": "c575fde5284928f5ba5f6e3e1aa061b5391e8e9fe1fd9a34bd207efa44f5c877",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-schedules",
+      "requested_url": "https://actualbudget.org/docs/schedules/",
+      "final_url": "https://actualbudget.org/docs/schedules/",
+      "capture_origin": "https://actualbudget.org/docs/schedules/",
+      "retrieved_at": "2026-11-05T13:15:11.500827+00:00",
+      "capture_sha256": "756c82f06bd636c6b5e4034b9ba451db515de3aeccae9c372476b58ab6e802a3",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-bank-sync",
+      "requested_url": "https://actualbudget.org/docs/advanced/bank-sync",
+      "final_url": "https://actualbudget.org/docs/advanced/bank-sync/",
+      "capture_origin": "https://actualbudget.org/docs/advanced/bank-sync/",
+      "retrieved_at": "2026-11-05T13:14:44.709803+00:00",
+      "capture_sha256": "13c093cae21b593346b33142fe48f6a59fc7d85051b60489d3c2db47ce1457ca",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-transactions",
+      "requested_url": "https://actualbudget.org/docs/tour/accounts/",
+      "final_url": "https://actualbudget.org/docs/tour/accounts/",
+      "capture_origin": "https://actualbudget.org/docs/tour/accounts/",
+      "retrieved_at": "2026-11-05T13:15:36.426043+00:00",
+      "capture_sha256": "c6457deb3b8ddc7832d1e4face6659496df4e24c66e18b148515fa71ef0c24b6",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-install",
+      "requested_url": "https://actualbudget.org/docs/install/",
+      "final_url": "https://actualbudget.org/docs/install/",
+      "capture_origin": "https://actualbudget.org/docs/install/",
+      "retrieved_at": "2026-11-05T13:15:10.900124+00:00",
+      "capture_sha256": "0450a66f13d62e257164cc08ff63cc2bf4b596d299c9beeafd886492ee283cc1",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-overview",
+      "requested_url": "https://actualbudget.org/docs/",
+      "final_url": "https://actualbudget.org/docs/",
+      "capture_origin": "https://actualbudget.org/docs/",
+      "retrieved_at": "2026-11-05T13:14:39.066730+00:00",
+      "capture_sha256": "dd6588071aa0268eb02e7cacfb241360741bc8d36c2f48b86693163a3217a962",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-import",
+      "requested_url": "https://actualbudget.org/docs/transactions/importing",
+      "final_url": "https://actualbudget.org/docs/transactions/importing/",
+      "capture_origin": "https://actualbudget.org/docs/transactions/importing/",
+      "retrieved_at": "2026-11-05T13:14:44.675973+00:00",
+      "capture_sha256": "86990c93d6edc86b43772e28a3c5020b0358ec6fdea19442b2fa9320fe57df79",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-envelope",
+      "requested_url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "final_url": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "capture_origin": "https://actualbudget.org/docs/getting-started/envelope-budgeting/",
+      "retrieved_at": "2026-11-05T13:15:33.827289+00:00",
+      "capture_sha256": "1e4994e498b50d15259ee7b4eedd66067b8902002888f466468b88d192701946",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-rules",
+      "requested_url": "https://actualbudget.org/docs/budgeting/rules/",
+      "final_url": "https://actualbudget.org/docs/budgeting/rules/",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/rules/",
+      "retrieved_at": "2026-11-05T13:15:08.442893+00:00",
+      "capture_sha256": "a784e5cde250bca03c14d1df5da4abfc9b30699e6239844d5bfbcf033a7abc43",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-fresh",
+      "requested_url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "final_url": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "capture_origin": "https://actualbudget.org/docs/getting-started/starting-fresh/",
+      "retrieved_at": "2026-11-05T13:15:11.382746+00:00",
+      "capture_sha256": "43ec05e8351241ee00bcc6b2b2ad744692381d30040cecfd642bb7d19f81497c",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-accounts",
+      "requested_url": "https://actualbudget.org/docs/accounts/",
+      "final_url": "https://actualbudget.org/docs/accounts/",
+      "capture_origin": "https://actualbudget.org/docs/accounts/",
+      "retrieved_at": "2026-11-05T13:14:42.010936+00:00",
+      "capture_sha256": "b33b4d150b5d7900f64dcbca8a80ca0f74bbb517afc45f47081c829633dae01a",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "a-account-register",
+      "requested_url": "https://actualbudget.org/docs/tour/accounts/",
+      "final_url": "https://actualbudget.org/docs/tour/accounts/",
+      "capture_origin": "https://actualbudget.org/docs/tour/accounts/",
+      "retrieved_at": "2026-11-05T13:15:15.553502+00:00",
+      "capture_sha256": "c6457deb3b8ddc7832d1e4face6659496df4e24c66e18b148515fa71ef0c24b6",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "attempt-envelope-old-path",
+      "requested_url": "https://actualbudget.org/docs/budgeting/envelope-budgeting",
+      "error": "HTTPError 404; corrected using official /docs/getting-started/envelope-budgeting/ page."
+    },
+    {
+      "id": "attempt-transactions-old-path",
+      "requested_url": "https://actualbudget.org/docs/transactions/",
+      "error": "HTTPError 404; account register/import guidance captured at /docs/tour/accounts/ and /docs/transactions/importing/."
+    },
+    {
+      "id": "attempt-rules-old-path",
+      "requested_url": "https://actualbudget.org/docs/transactions/rules",
+      "error": "HTTPError 404; correct official page captured at /docs/budgeting/rules/."
+    },
+    {
+      "id": "attempt-schedules-old-path",
+      "requested_url": "https://actualbudget.org/docs/transactions/schedules",
+      "error": "HTTPError 404; correct official page captured at /docs/schedules/."
+    },
+    {
+      "id": "attempt-simplefin-doc",
+      "requested_url": "https://actualbudget.org/docs/advanced/simplefin/",
+      "error": "HTTPError 404; official combined Connecting Your Bank page used instead."
+    },
+    {
+      "id": "attempt-exporting",
+      "requested_url": "https://actualbudget.org/docs/advanced/exporting/",
+      "error": "HTTPError 404; no detailed export guide adopted."
+    },
+    {
+      "id": "attempt-import-budget",
+      "requested_url": "https://actualbudget.org/docs/advanced/importing/",
+      "error": "HTTPError 404; no detailed budget-file import guide adopted."
+    },
+    {
+      "id": "attempt-getting-started",
+      "requested_url": "https://actualbudget.org/docs/getting-started/",
+      "error": "HTTPError 404; specific introduction and task pages captured instead."
+    }
+  ],
+  "background_not_used": [
+    {
+      "id": "a-overview",
+      "requested_url": "https://actualbudget.org/docs/",
+      "final_url": "https://actualbudget.org/docs/",
+      "capture_origin": "https://actualbudget.org/docs/",
+      "retrieved_at": "2026-11-05T13:14:39.066730+00:00",
+      "capture_sha256": "dd6588071aa0268eb02e7cacfb241360741bc8d36c2f48b86693163a3217a962",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "Official docs entrypoint only; substantive task claims cite the specific feature guides."
+    },
+    {
+      "id": "a-categories",
+      "requested_url": "https://actualbudget.org/docs/budgeting/categories/",
+      "final_url": "https://actualbudget.org/docs/budgeting/categories/",
+      "capture_origin": "https://actualbudget.org/docs/budgeting/categories/",
+      "retrieved_at": "2026-11-05T13:15:12.878026+00:00",
+      "capture_sha256": "053c2d2d710d6420cef3f6290bc8dba3cd61abfb63b919161108e51f938814ba",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "Category management guide read during gap review; existing budget and account tasks already cover category use, so no separate granular category-management result."
+    },
+    {
+      "id": "a-transactions",
+      "requested_url": "https://actualbudget.org/docs/tour/accounts/",
+      "final_url": "https://actualbudget.org/docs/tour/accounts/",
+      "capture_origin": "https://actualbudget.org/docs/tour/accounts/",
+      "retrieved_at": "2026-11-05T13:15:36.426043+00:00",
+      "capture_sha256": "c6457deb3b8ddc7832d1e4face6659496df4e24c66e18b148515fa71ef0c24b6",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "Duplicate capture of the Account Register route and byte-identical body/hash; retained as duplicate retrieval record, not duplicate cited source."
+    }
+  ],
+  "discovery_views": [
+    "结果视角：分配当前已有资金、类别余额跨月延续、交易文件/手工记录、账目核对、自动商户清理与类别规则、重复收支计划、支出/净值报表。",
+    "完整任务视角：阅读 Actual 的 Starting Fresh 与 Envelope Budgeting 用户指南，识别建立账户、录入历史、预算分配、持续调整和对账的完整个人记账流程；教程中的任何财务建议都只作为软件使用材料，不作为独立建议。",
+    "扩展/部署视角：阅读 Installing Actual、Connecting Your Bank、银行连接支持地区列表和 credentials/服务器限制；检查 browser-only local 模式的手工保存限制。"
+  ],
+  "normalization_and_gap_check": "将预算类别、账目记录与报表观察分组；bank sync 不和 CSV/OFX 导入混为一项依赖。未将资产净值图写成理财建议；不使用退休/投资预测作为结果。对导出迁移的完整步骤、provider 定价和银行覆盖范围只记录为缺口。",
+  "capture_method": "capture.py 取回真实 HTTPS 页面；所有采用来源响应均为 text/html，定位行号对应 HTML 提取正文（不是源码行号），哈希针对原始 HTTP 响应字节。",
+  "usage_limit": "没有安装 Actual，也未访问或写入真实银行/个人财务数据；citation/cache 检查不证明语义或实效。",
+  "parent_evidence_check_at": "2026-11-05T13:34:15.039246+00:00"
+}

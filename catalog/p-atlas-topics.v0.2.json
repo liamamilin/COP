@@ -1,0 +1,533 @@
+{
+  "schema_version": "0.1",
+  "edition": "0.2",
+  "description": "P Atlas v0.2 personal capability editorial catalog. Preserve the 20 published topics. New entries stay planned until research, evidence review and validation succeed.",
+  "editorial_goal": "以软件开发与商业为主线，支持个人理解问题、学习、创造产品、交付价值、整理数据和维护个人资产。",
+  "created_at": "2026-11-05T12:15:57.400475+00:00",
+  "research_policy": "沿用现有 P Discovery Skill；由用户指定的 gpt-6-luna 研究生成，主 agent 复核证据与边界；不预设每个主题 P 的数量。",
+  "domains": [
+    {
+      "id": "agents",
+      "title": "Agent 与智能体系统",
+      "description": "发现能交付哪些智能体任务、组织方式和应用"
+    },
+    {
+      "id": "model-engineering",
+      "title": "大模型工程",
+      "description": "模型推理、微调、部署与本地化"
+    },
+    {
+      "id": "coding",
+      "title": "AI 编程与自动化",
+      "description": "编程代理、开发工作流与自动化执行"
+    },
+    {
+      "id": "creation",
+      "title": "AI 内容创作",
+      "description": "视频、音乐、配音及内容生产"
+    },
+    {
+      "id": "data",
+      "title": "数据分析与可视化",
+      "description": "探索数据、表达结果、进行统计分析"
+    },
+    {
+      "id": "knowledge",
+      "title": "知识与个人数字工作",
+      "description": "资料组织、知识管理、个人事务与信息雷达"
+    },
+    {
+      "id": "software-products",
+      "title": "软件开发与产品交付",
+      "description": "把想法做成可运行、可发布和可维护的产品"
+    },
+    {
+      "id": "business",
+      "title": "商业与个人经营",
+      "description": "发现真实需求、验证产品、交付服务与经营内容或商品"
+    },
+    {
+      "id": "learning",
+      "title": "学习、研究与表达",
+      "description": "获取知识、长期记忆、整理证据并形成可分享的成果"
+    },
+    {
+      "id": "workflow-automation",
+      "title": "工作流与个人运营",
+      "description": "把重复流程交给工具，持续运行和检查交付"
+    },
+    {
+      "id": "personal-resilience",
+      "title": "个人资产、财务与数字安全",
+      "description": "管理账户、文件和预算，保留个人经营的基础资料"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "ggplot2",
+      "title": "ggplot2",
+      "domain_id": "data",
+      "status": "ready",
+      "priority": 0,
+      "description": "用 R 进行统计可视化、图形表达和多图组合。"
+    },
+    {
+      "slug": "langchain-agent",
+      "title": "LangChain Agent",
+      "domain_id": "agents",
+      "status": "ready",
+      "priority": 0,
+      "description": "用 LangChain Python 构建能够调用工具并完成任务的 Agent。"
+    },
+    {
+      "slug": "obsidian",
+      "title": "Obsidian",
+      "domain_id": "knowledge",
+      "status": "ready",
+      "priority": 0,
+      "description": "构建知识库，支持研究、阅读、写作和个人工作流。"
+    },
+    {
+      "slug": "agent-harness",
+      "title": "Agent Harness",
+      "domain_id": "agents",
+      "status": "ready",
+      "priority": 1,
+      "description": "如何组织代理的工具、上下文、权限、状态和执行环境。"
+    },
+    {
+      "slug": "langgraph",
+      "title": "LangGraph",
+      "domain_id": "agents",
+      "status": "ready",
+      "priority": 1,
+      "description": "状态化流程、多代理编排、暂停恢复及长期任务。"
+    },
+    {
+      "slug": "mcp",
+      "title": "Model Context Protocol (MCP)",
+      "domain_id": "agents",
+      "status": "ready",
+      "priority": 1,
+      "description": "通过协议让 AI 应用连接工具、数据源及服务。"
+    },
+    {
+      "slug": "llm-inference",
+      "title": "大模型推理（Inference）",
+      "domain_id": "model-engineering",
+      "status": "ready",
+      "priority": 1,
+      "description": "模型加载、推理优化、量化、服务及部署路线。"
+    },
+    {
+      "slug": "llm-finetuning",
+      "title": "大模型微调",
+      "domain_id": "model-engineering",
+      "status": "ready",
+      "priority": 1,
+      "description": "数据构造、参数高效微调、评估和模型适配。"
+    },
+    {
+      "slug": "ollama",
+      "title": "Ollama",
+      "domain_id": "model-engineering",
+      "status": "ready",
+      "priority": 1,
+      "description": "在本地运行、管理和提供模型接口。"
+    },
+    {
+      "slug": "codex",
+      "title": "Codex",
+      "domain_id": "coding",
+      "status": "ready",
+      "priority": 1,
+      "description": "将工程任务交给编程代理完成、检查和交付。"
+    },
+    {
+      "slug": "claude-code",
+      "title": "Claude Code",
+      "domain_id": "coding",
+      "status": "ready",
+      "priority": 1,
+      "description": "编程代理在代码库、桌面和终端中的能力边界与用途。"
+    },
+    {
+      "slug": "opencode",
+      "title": "OpenCode",
+      "domain_id": "coding",
+      "status": "ready",
+      "priority": 2,
+      "description": "可组合模型、工具与本地工程工作流的编程代理。"
+    },
+    {
+      "slug": "playwright",
+      "title": "Playwright",
+      "domain_id": "coding",
+      "status": "ready",
+      "priority": 1,
+      "description": "浏览器操作、自动化测试和网页任务。"
+    },
+    {
+      "slug": "ai-video-generation",
+      "title": "AI 视频生成",
+      "domain_id": "creation",
+      "status": "ready",
+      "priority": 1,
+      "description": "文本、图片、音频与镜头驱动的视频创作可能性。"
+    },
+    {
+      "slug": "ai-music-production",
+      "title": "AI 音乐创作",
+      "domain_id": "creation",
+      "status": "ready",
+      "priority": 2,
+      "description": "作曲、配器、人声、混音、音乐视频等用途。"
+    },
+    {
+      "slug": "ai-voice",
+      "title": "AI 语音与配音",
+      "domain_id": "creation",
+      "status": "ready",
+      "priority": 2,
+      "description": "文字转语音、配音、声音编辑及多语言音频制作。"
+    },
+    {
+      "slug": "r-data-analysis",
+      "title": "R 数据分析",
+      "domain_id": "data",
+      "status": "ready",
+      "priority": 2,
+      "description": "数据整理、统计分析、探索和报告生成。"
+    },
+    {
+      "slug": "paperless-ngx",
+      "title": "Paperless-ngx",
+      "domain_id": "knowledge",
+      "status": "ready",
+      "priority": 2,
+      "description": "数字文档归档、检索、标签、结构化信息及资料处理。"
+    },
+    {
+      "slug": "changedetection",
+      "title": "changedetection.io",
+      "domain_id": "knowledge",
+      "status": "ready",
+      "priority": 2,
+      "description": "网页与信息源变化跟踪、比较和提醒。"
+    },
+    {
+      "slug": "research-workflows",
+      "title": "AI 辅助研究工作流",
+      "domain_id": "knowledge",
+      "status": "ready",
+      "priority": 2,
+      "description": "资料搜索、整理、引用核查和研究成果交付。"
+    },
+    {
+      "slug": "nextjs",
+      "title": "Next.js",
+      "domain_id": "software-products",
+      "status": "ready",
+      "priority": 1,
+      "description": "把想法做成可使用的 Web 产品。",
+      "edition": "0.2",
+      "research_scope": "个人开发者如何交付内容网站、交互应用和业务前端；区分框架与数据库、认证、支付和托管。",
+      "official_entrypoints": [
+        "https://nextjs.org/docs"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 1,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T14:12:23.316291+00:00"
+    },
+    {
+      "slug": "fastapi",
+      "title": "FastAPI",
+      "domain_id": "software-products",
+      "status": "ready",
+      "priority": 2,
+      "description": "把数据和业务能力交付为可调用的服务。",
+      "edition": "0.2",
+      "research_scope": "面向个人开发者的 API、数据验证、文件与流式服务、集成和部署；区分第三方数据库、队列和身份服务。",
+      "official_entrypoints": [
+        "https://fastapi.tiangolo.com/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T14:12:23.316291+00:00"
+    },
+    {
+      "slug": "supabase",
+      "title": "Supabase",
+      "domain_id": "software-products",
+      "status": "ready",
+      "priority": 2,
+      "description": "为个人产品建立数据、账户和文件后端。",
+      "edition": "0.2",
+      "research_scope": "托管或自托管数据库、身份、存储、实时数据和业务逻辑；明确独立产品与配额费用。",
+      "official_entrypoints": [
+        "https://supabase.com/docs"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:08:27.712132+00:00"
+    },
+    {
+      "slug": "cloudflare-workers",
+      "title": "Cloudflare Workers",
+      "domain_id": "software-products",
+      "status": "ready",
+      "priority": 3,
+      "description": "发布和运行面向用户的应用与网络服务。",
+      "edition": "0.2",
+      "research_scope": "Workers 代码运行与应用发布；KV、D1、R2、Queues、Durable Objects 等分清具名额外组件，不把整个平台混作单一核心。",
+      "official_entrypoints": [
+        "https://developers.cloudflare.com/workers/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T14:12:23.316291+00:00"
+    },
+    {
+      "slug": "customer-discovery",
+      "title": "客户发现与需求验证",
+      "domain_id": "business",
+      "status": "ready",
+      "priority": 2,
+      "description": "通过真实问题和反馈检验产品想法。",
+      "edition": "0.2",
+      "research_scope": "发现需求、访谈、验证假设和原型反馈的方法；将研究活动与已证明需求、因果效应和商业成功严格区分。",
+      "official_entrypoints": [
+        "https://www.nsf.gov/funding/initiatives/i-corps/about-teams"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:08:27.712132+00:00"
+    },
+    {
+      "slug": "posthog",
+      "title": "PostHog",
+      "domain_id": "business",
+      "status": "ready",
+      "priority": 1,
+      "description": "观察用户行为并收集产品反馈。",
+      "edition": "0.2",
+      "research_scope": "个人产品的分析、反馈、实验和产品运维任务；区分观察与因果，以及平台产品与第三方数据采集条件。",
+      "official_entrypoints": [
+        "https://posthog.com/docs"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 1,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:08:27.712132+00:00"
+    },
+    {
+      "slug": "woocommerce",
+      "title": "WooCommerce",
+      "domain_id": "business",
+      "status": "ready",
+      "priority": 3,
+      "description": "建立能够展示、交付和管理商品的网上商店。",
+      "edition": "0.2",
+      "research_scope": "个人经营的商品、订单、数字交付与运营；明确 WordPress、插件、支付服务、地区和额外费用。",
+      "official_entrypoints": [
+        "https://woocommerce.com/documentation/woocommerce/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "ghost",
+      "title": "Ghost",
+      "domain_id": "business",
+      "status": "ready",
+      "priority": 3,
+      "description": "建立持续发布和经营内容的独立站点。",
+      "edition": "0.2",
+      "research_scope": "写作、出版、邮件、会员与内容经营；明确邮件发送、Stripe、托管和迁移等服务条件。",
+      "official_entrypoints": [
+        "https://docs.ghost.org/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "n8n",
+      "title": "n8n",
+      "domain_id": "workflow-automation",
+      "status": "ready",
+      "priority": 1,
+      "description": "连接个人工作中的应用和数据，减少重复处理。",
+      "edition": "0.2",
+      "research_scope": "可视化跨应用工作流与业务自动化；区分核心、社区节点、AI 服务和 cloud/self-host 条件。",
+      "official_entrypoints": [
+        "https://docs.n8n.io/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 1,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:08:27.712132+00:00"
+    },
+    {
+      "slug": "github-actions",
+      "title": "GitHub Actions",
+      "domain_id": "workflow-automation",
+      "status": "ready",
+      "priority": 3,
+      "description": "让软件检查、交付和维护流程持续执行。",
+      "edition": "0.2",
+      "research_scope": "个人代码库的构建、测试、发布及维护自动化；明确 runner、仓库权限、费用和外部 action 依赖。",
+      "official_entrypoints": [
+        "https://docs.github.com/en/actions"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T14:08:42.799550+00:00"
+    },
+    {
+      "slug": "anki",
+      "title": "Anki",
+      "domain_id": "learning",
+      "status": "ready",
+      "priority": 2,
+      "description": "把需要掌握的知识组织成持续复习的材料。",
+      "edition": "0.2",
+      "research_scope": "学习材料、检索练习、复习调度和同步；区分桌面、移动、AnkiWeb 与插件，不承诺学习成效。",
+      "official_entrypoints": [
+        "https://docs.ankiweb.net/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T14:08:42.799550+00:00"
+    },
+    {
+      "slug": "zotero",
+      "title": "Zotero",
+      "domain_id": "learning",
+      "status": "ready",
+      "priority": 2,
+      "description": "形成可检索、可引用和可协作的资料库。",
+      "edition": "0.2",
+      "research_scope": "资料收集、阅读标注、引用和协作；区分原生、第三方插件、出版物访问与存储服务。",
+      "official_entrypoints": [
+        "https://www.zotero.org/support/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:08:27.712132+00:00"
+    },
+    {
+      "slug": "quarto",
+      "title": "Quarto",
+      "domain_id": "learning",
+      "status": "ready",
+      "priority": 3,
+      "description": "把研究、分析和经验发布成可阅读的成果。",
+      "edition": "0.2",
+      "research_scope": "文档、报告、演示、网站、书籍与可执行分析；明确渲染环境、扩展与发布平台。",
+      "official_entrypoints": [
+        "https://quarto.org/docs/guide/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "duckdb",
+      "title": "DuckDB",
+      "domain_id": "data",
+      "status": "ready",
+      "priority": 2,
+      "description": "从手边的数据中查询和整理决策依据。",
+      "edition": "0.2",
+      "research_scope": "个人本地数据分析与可分享计算结果；区分核心 SQL、文件格式、可选扩展和托管产品。",
+      "official_entrypoints": [
+        "https://duckdb.org/docs/2.0/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "metabase",
+      "title": "Metabase",
+      "domain_id": "data",
+      "status": "ready",
+      "priority": 3,
+      "description": "将业务数据变成可持续查看和讨论的报表。",
+      "edition": "0.2",
+      "research_scope": "数据查询、图表、看板、共享及嵌入；明确数据源、开源/商业版本、账户与部署依赖。",
+      "official_entrypoints": [
+        "https://www.metabase.com/docs/latest/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:34:15.039246+00:00"
+    },
+    {
+      "slug": "bitwarden",
+      "title": "Bitwarden",
+      "domain_id": "personal-resilience",
+      "status": "ready",
+      "priority": 2,
+      "description": "管理个人与小团队的账户和访问资料。",
+      "edition": "0.2",
+      "research_scope": "密码库、自动填写、共享、账户恢复相关任务；明确产品版本、套餐、客户端、恢复与访问边界。",
+      "official_entrypoints": [
+        "https://bitwarden.com/help/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 2,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "syncthing",
+      "title": "Syncthing",
+      "domain_id": "personal-resilience",
+      "status": "ready",
+      "priority": 3,
+      "description": "在自己的设备间维护可持续使用的文件副本。",
+      "edition": "0.2",
+      "research_scope": "设备间文件同步、版本保留和连接管理；明确同步、版本控制、独立备份的差异与平台限制。",
+      "official_entrypoints": [
+        "https://docs.syncthing.net/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:27:01.127161+00:00"
+    },
+    {
+      "slug": "actual-budget",
+      "title": "Actual Budget",
+      "domain_id": "personal-resilience",
+      "status": "ready",
+      "priority": 3,
+      "description": "整理收支记录并制定可检查的个人预算。",
+      "edition": "0.2",
+      "research_scope": "交易记录、账户、分类、预算、报告与同步；明确银行连接的地区/提供商条件，只研究软件任务，不提供投资、税务或法律结论。",
+      "official_entrypoints": [
+        "https://actualbudget.org/docs/"
+      ],
+      "generation_model": "gpt-6-luna",
+      "batch": 3,
+      "research_status": "evidence_checked",
+      "evidence_checked_at": "2026-11-05T13:34:15.039246+00:00"
+    }
+  ]
+}

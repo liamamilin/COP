@@ -1,0 +1,294 @@
+{
+  "topic": "quarto",
+  "generated_at": "2026-11-05T13:20:00Z",
+  "capture_note": "capture_sha256 为 capture.py 对首次 HTTP 响应原始字节计算；所列成功页面为 text/html，source_line_start/end 为提取后的正文行号，不是HTML源码行号。",
+  "retrieved": [
+    {
+      "id": "q-book-crossrefs",
+      "requested_url": "https://quarto.org/docs/books/book-crossrefs.html",
+      "capture_origin": "https://quarto.org/docs/books/book-crossrefs.html",
+      "retrieved_at": "2026-11-05T13:05:55.141074+00:00",
+      "capture_sha256": "af3933cec8ed52ba0a254b60ea51d827da9f0894e00dcda26cb5164a77093fd7",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-book-structure",
+      "requested_url": "https://quarto.org/docs/books/book-structure.html",
+      "capture_origin": "https://quarto.org/docs/books/book-structure.html",
+      "retrieved_at": "2026-11-05T13:04:46.028620+00:00",
+      "capture_sha256": "1c22516d188f57d9a5b6cec36cc0af5e5159ee4771f056bbc54f81b395eb2611",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-books",
+      "requested_url": "https://quarto.org/docs/books/",
+      "capture_origin": "https://quarto.org/docs/books/",
+      "retrieved_at": "2026-11-05T13:03:26.825772+00:00",
+      "capture_sha256": "98d81f4174411a8453a7565895f5bb1893f52425d19a03dcd0370caf2c8194f2",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-dashboard-deploy",
+      "requested_url": "https://quarto.org/docs/dashboards/deployment.html",
+      "capture_origin": "https://quarto.org/docs/dashboards/deployment.html",
+      "retrieved_at": "2026-11-05T13:05:57.929123+00:00",
+      "capture_sha256": "c449c15476fc1e0eabbb398f803fbe0f588183e5940187ff751058a1b159f87f",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-dashboards",
+      "requested_url": "https://quarto.org/docs/dashboards/",
+      "capture_origin": "https://quarto.org/docs/dashboards/",
+      "retrieved_at": "2026-11-05T13:03:30.706270+00:00",
+      "capture_sha256": "5ff14de3fc4dd5f9c2ca75f9f81fa75cb1beb9cb5fb825dd79fc2936d73118ec",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-documents",
+      "requested_url": "https://quarto.org/docs/authoring/",
+      "capture_origin": "https://quarto.org/docs/authoring/",
+      "retrieved_at": "2026-11-05T13:03:14.713556+00:00",
+      "capture_sha256": "c394b5945734ac955d7978e1ea75229e4461a0e2c5bcf17d13868cfbb2e1ac4d",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-execution",
+      "requested_url": "https://quarto.org/docs/computations/execution-options.html",
+      "capture_origin": "https://quarto.org/docs/computations/execution-options.html",
+      "retrieved_at": "2026-11-05T13:04:33.672634+00:00",
+      "capture_sha256": "10d09f4c33e4f8b00cb060ef8d802bf73a9b14a9d8288ee12dfe4e8378c93f56",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-extensions",
+      "requested_url": "https://quarto.org/docs/extensions/",
+      "capture_origin": "https://quarto.org/docs/extensions/",
+      "retrieved_at": "2026-11-05T13:03:36.415031+00:00",
+      "capture_sha256": "2e6d64482e27b9b2b6331036705e8440c6f7641f00d3c8d9d6b46c5f4b138860",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-gallery",
+      "requested_url": "https://quarto.org/docs/gallery/",
+      "capture_origin": "https://quarto.org/docs/gallery/",
+      "retrieved_at": "2026-11-05T13:06:01.818260+00:00",
+      "capture_sha256": "981b8543753b1a5e610ccfcfe63d90995bb9fafaae9ce31ba4f674a743299294",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-github-pages",
+      "requested_url": "https://quarto.org/docs/publishing/github-pages.html",
+      "capture_origin": "https://quarto.org/docs/publishing/github-pages.html",
+      "retrieved_at": "2026-11-05T13:04:43.204106+00:00",
+      "capture_sha256": "906f0c55aa22a56c9ecaa93c0d7596d0f0d7814d48ecfd56661818bdfe90b678",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-guide",
+      "requested_url": "https://quarto.org/docs/guide/",
+      "capture_origin": "https://quarto.org/docs/guide/",
+      "retrieved_at": "2026-11-05T13:03:12.830983+00:00",
+      "capture_sha256": "0f87c0f6f29c62e6bcd657c56f5e0718efcfdadb8d5e5ddc9c4adfffbc0d5968",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-html",
+      "requested_url": "https://quarto.org/docs/output-formats/html-basics.html",
+      "capture_origin": "https://quarto.org/docs/output-formats/html-basics.html",
+      "retrieved_at": "2026-11-05T13:04:36.780453+00:00",
+      "capture_sha256": "68958a482f70a954aa4c34a188863efb6eb3ace7860f7d5ea441615a04e5e151",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-managing-execution",
+      "requested_url": "https://quarto.org/docs/projects/code-execution.html",
+      "capture_origin": "https://quarto.org/docs/projects/code-execution.html",
+      "retrieved_at": "2026-11-05T13:11:49.914451+00:00",
+      "capture_sha256": "0cb4f4bfc4ac1d9496bae1601d0ac3bc12787f50f02885cd4c3de8d76f81b8e6",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-manuscripts",
+      "requested_url": "https://quarto.org/docs/manuscripts/",
+      "capture_origin": "https://quarto.org/docs/manuscripts/",
+      "retrieved_at": "2026-11-05T13:06:06.353409+00:00",
+      "capture_sha256": "67d2eaafd15d817fe567e068373b1a66b88f0da1ad1bb14252d4efbd565b1b3a",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-pdf",
+      "requested_url": "https://quarto.org/docs/output-formats/pdf-basics.html",
+      "capture_origin": "https://quarto.org/docs/output-formats/pdf-basics.html",
+      "retrieved_at": "2026-11-05T13:09:00.922080+00:00",
+      "capture_sha256": "20feeee09330156852c67bb9003f4cf8a09b88039b69035f748e508b3bbb0629",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-presentations",
+      "requested_url": "https://quarto.org/docs/presentations/",
+      "capture_origin": "https://quarto.org/docs/presentations/",
+      "retrieved_at": "2026-11-05T13:03:20.350875+00:00",
+      "capture_sha256": "3c0b95234cfac0e7407227da2f2ca4724190ccc8025807409021070cbecf4c4e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-publishing-ci",
+      "requested_url": "https://quarto.org/docs/publishing/ci.html",
+      "capture_origin": "https://quarto.org/docs/publishing/ci.html",
+      "retrieved_at": "2026-11-05T13:04:51.519330+00:00",
+      "capture_sha256": "300389aa9759dcbcf5efa443543efe7a267fa17d19e5f06a4c2f28692a076f7f",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-publishing",
+      "requested_url": "https://quarto.org/docs/publishing/",
+      "capture_origin": "https://quarto.org/docs/publishing/",
+      "retrieved_at": "2026-11-05T13:03:33.330015+00:00",
+      "capture_sha256": "9b56acbdc8907832dcd412a1c414a77b1b4bbeefd335fa5f8c67ace69b3108e1",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-python",
+      "requested_url": "https://quarto.org/docs/computations/python.html",
+      "capture_origin": "https://quarto.org/docs/computations/python.html",
+      "retrieved_at": "2026-11-05T13:04:30.897139+00:00",
+      "capture_sha256": "88527031692436a479b90b40a9c78468c4157481a028d431960e3b9b4ca38eec",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-revealjs",
+      "requested_url": "https://quarto.org/docs/presentations/revealjs/",
+      "capture_origin": "https://quarto.org/docs/presentations/revealjs/",
+      "retrieved_at": "2026-11-05T13:04:39.400538+00:00",
+      "capture_sha256": "723fbe9388d1ef947b16de6c82dd53d8f107c40f487416544dae761cf30037e0",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-shiny-python",
+      "requested_url": "https://quarto.org/docs/interactive/shiny/",
+      "capture_origin": "https://quarto.org/docs/interactive/shiny/",
+      "retrieved_at": "2026-11-05T13:04:48.935925+00:00",
+      "capture_sha256": "6295bd9da82864aeaf78ed23e8e2c584968b6e61750bd9c728d70066b8d791b2",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-shinylive",
+      "requested_url": "https://quarto-ext.github.io/shinylive/",
+      "capture_origin": "https://quarto-ext.github.io/shinylive/",
+      "retrieved_at": "2026-11-05T13:06:03.725225+00:00",
+      "capture_sha256": "dc86e3cca1f7eff42d40a1c7b526db34181dfc1c6eb06fe5f7d98dd018e81d44",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-websites",
+      "requested_url": "https://quarto.org/docs/websites/",
+      "capture_origin": "https://quarto.org/docs/websites/",
+      "retrieved_at": "2026-11-05T13:03:23.115420+00:00",
+      "capture_sha256": "fa7b9a0cd335b621571aeaeae7baa0c95b7d02a93f14e9e12a2fc52c9da5b722",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "q-word",
+      "requested_url": "https://quarto.org/docs/output-formats/ms-word.html",
+      "capture_origin": "https://quarto.org/docs/output-formats/ms-word.html",
+      "retrieved_at": "2026-11-05T13:05:51.456752+00:00",
+      "capture_sha256": "93be78b214f85d68004a26b3f6f9431ba7bbd7bf855771fd013486690d73be46",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "requested_url": "https://quarto.org/docs/computations/",
+      "note": "capture.py 返回 HTTP 404；改查官方目录中可访问的 Python 与 execution-options 子页。"
+    }
+  ],
+  "not_adopted": [
+    "q-guide：Quarto 官方内容导航入口，不单独支持具体结果。",
+    "q-documents：原请求返回仅含 Redirect 的薄页面；改用 PDF、HTML、Word、计算和引用专页。",
+    "q-books、q-book-structure、q-html等同族导航/版式资料只在对应结果已有直接用户任务证据时采用；其他微配置不另拆 P。",
+    "q-extensions：除 Shinylive 具名作者工作流外，画廊大量项目未核验，不从目录描述扩展成确认能力。",
+    "q-gallery：以目录/示例集合为主，不作 P 独立证据；dashboard 页面本身含更完整 walkthrough。",
+    "q-presentations：演示主题模板没有对应客户/部署案例，本轮使用完整 format 指南说明。",
+    "q-publishing、q-publishing-ci：被更具体的 GitHub Pages 教程和 dashboard 部署说明覆盖，保留为已读背景资料。",
+    "q-manuscripts：官方 docs 提及 live example，但本轮没有把该示例标成已实测客户项目。"
+  ],
+  "search_limits": [
+    "没有渲染、安装、发布或运行任何 Quarto project。",
+    "没有逐项审核扩展作者、版本兼容、代码安全和长期维护。",
+    "没有核算托管平台费用、地区可用性或机构访问控制。",
+    "没有横向比较所有 PDF 引擎、笔记本类型与展示软件之间的视觉/交互差异。"
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}
