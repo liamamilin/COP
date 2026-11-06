@@ -1,0 +1,831 @@
+{
+  "schema_version": "0.3",
+  "purpose": "research_backlog_not_published_atlas_catalog",
+  "notes": "These are candidate topics, not verified P and not published. P classification happens only after discovery. Never mark candidate topics ready until reviewed assets exist.",
+  "existing_catalog_refs": [
+    {
+      "path": "catalog/p-atlas-topics.v0.1.json",
+      "state": "merged_main",
+      "count": 20
+    },
+    {
+      "path": "catalog/p-atlas-topics.v0.2.json",
+      "state": "PR_4_unmerged_at_creation",
+      "count": 38,
+      "total_including_v0_1": true
+    }
+  ],
+  "domains": [
+    {
+      "id": "agent-frameworks",
+      "title": "Agent 框架与应用"
+    },
+    {
+      "id": "agent-infrastructure",
+      "title": "Agent 工具与知识连接"
+    },
+    {
+      "id": "model-infrastructure",
+      "title": "本地模型与模型训练"
+    },
+    {
+      "id": "coding-agents",
+      "title": "AI 编程代理与工程操作"
+    },
+    {
+      "id": "video-workflows",
+      "title": "AI 视频与视觉生产"
+    },
+    {
+      "id": "audio-music",
+      "title": "AI 音乐、声音与配音"
+    },
+    {
+      "id": "app-production",
+      "title": "应用开发与产品交付"
+    },
+    {
+      "id": "data-apps",
+      "title": "数据处理与应用分析"
+    },
+    {
+      "id": "personal-knowledge",
+      "title": "个人知识与数字生活"
+    },
+    {
+      "id": "information-monitoring",
+      "title": "信息采集、订阅与变化监控"
+    },
+    {
+      "id": "marketing-publishing",
+      "title": "内容发布与增长分析"
+    },
+    {
+      "id": "llm-quality",
+      "title": "LLM 质量、评测与控制"
+    }
+  ],
+  "batches": [
+    {
+      "id": "B01",
+      "intent": "six cross-domain pilot topics",
+      "max_parallel": 2,
+      "topics": [
+        "pydantic-ai",
+        "mlx-lm",
+        "comfyui",
+        "tauri",
+        "shiny",
+        "rsshub"
+      ]
+    },
+    {
+      "id": "B02",
+      "intent": "second batch after B01 review",
+      "max_parallel": 2,
+      "topics": [
+        "llamaindex",
+        "firecrawl",
+        "browser-use",
+        "llama-cpp",
+        "remotion",
+        "qdrant"
+      ]
+    },
+    {
+      "id": "B03",
+      "intent": "third batch after B02 review",
+      "max_parallel": 2,
+      "topics": [
+        "langfuse",
+        "vllm",
+        "openhands",
+        "ltx-video",
+        "astro",
+        "home-assistant"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "slug": "pydantic-ai",
+      "title": "PydanticAI",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "以 Python 构建结构化工具型 Agent、验证输出与协调依赖。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "llamaindex",
+      "title": "LlamaIndex",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "利用外部资料构建检索、索引、查询和知识型 Agent 应用。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "crewai",
+      "title": "CrewAI",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "研究多角色 Agent 协作与任务执行的可交付结果。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "autogen",
+      "title": "AutoGen",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "研究多 Agent 对话、工具执行与协作系统。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "openai-agents-sdk",
+      "title": "OpenAI Agents SDK",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "基于 SDK 构建工具调用、交接与可观测 Agent 工作流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "dify",
+      "title": "Dify",
+      "domain_id": "agent-frameworks",
+      "kind": "tool_or_framework",
+      "scope_hint": "可视化构建、管理和发布 LLM 应用与智能体。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "langfuse",
+      "title": "Langfuse",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "Agent 与 LLM 应用追踪、评测和质量分析。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "litellm",
+      "title": "LiteLLM",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "统一多个模型提供商的调用与路由、用量管理。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "mem0",
+      "title": "Mem0",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "为 Agent 应用添加跨对话记忆与检索能力。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "firecrawl",
+      "title": "Firecrawl",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "网页抓取、结构化抽取和研究资料获取。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "crawl4ai",
+      "title": "Crawl4AI",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "面向 LLM 的网页采集、内容抽取和页面处理。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "browser-use",
+      "title": "browser-use",
+      "domain_id": "agent-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "使用浏览器代理执行网页操作与工作流。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "mlx-lm",
+      "title": "MLX LM",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "在 Apple Silicon 上加载、运行或适配开放权重语言模型。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "llama-cpp",
+      "title": "llama.cpp",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "在本地设备部署、量化和调用语言模型。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "vllm",
+      "title": "vLLM",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "在适配计算环境中高吞吐提供语言模型推理服务。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "sglang",
+      "title": "SGLang",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "模型推理服务、结构化生成与服务优化。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "unsloth",
+      "title": "Unsloth",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "使用其现有训练方案对模型进行微调与导出。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "llama-factory",
+      "title": "LLaMA-Factory",
+      "domain_id": "model-infrastructure",
+      "kind": "tool_or_framework",
+      "scope_hint": "配置数据、训练策略与模型适配的微调流程。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "openhands",
+      "title": "OpenHands",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "让代码 Agent 理解项目、修改文件与验证软件任务。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "aider",
+      "title": "Aider",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "终端中的代码协作、改动审核与 Git 工作流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "cline",
+      "title": "Cline",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "编辑器内编码 Agent 的任务与工具使用能力。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "continue-dev",
+      "title": "Continue",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "编辑器与 CLI 中的模型辅助编码、规则和上下文。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "goose-ai",
+      "title": "Goose",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "可扩展的本地 AI 代理与开发工作流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "cursor",
+      "title": "Cursor",
+      "domain_id": "coding-agents",
+      "kind": "tool_or_framework",
+      "scope_hint": "AI 辅助代码理解、编辑、代理开发与工程协作。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "comfyui",
+      "title": "ComfyUI",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "节点工作流驱动图像/视频模型和素材处理。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "ltx-video",
+      "title": "LTX Video",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "用 LTX 模型生态生成、编辑和组合视频素材。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "wan-video",
+      "title": "Wan 视频模型生态",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "围绕 Wan 模型及支持工具探索文本/图片视频生成。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "remotion",
+      "title": "Remotion",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "通过 React 组件和代码程序化制作视频。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "ffmpeg",
+      "title": "FFmpeg",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "视频转码、拼接、滤镜、音视频合成和交付。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "whisper",
+      "title": "Whisper",
+      "domain_id": "video-workflows",
+      "kind": "tool_or_framework",
+      "scope_hint": "从音视频提取语音转写与字幕文本。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "ace-step",
+      "title": "ACE-Step",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "使用开源音乐生成模型创作与编辑音乐。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "audiocraft",
+      "title": "AudioCraft / MusicGen",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "开放模型的音乐与音频生成用途及限制。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "demucs",
+      "title": "Demucs",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "从音频分离人声与伴奏等音轨。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "cosyvoice",
+      "title": "CosyVoice",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "文本语音生成、语音克隆与多语言配音。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "fish-speech",
+      "title": "Fish Speech",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "语音合成、声音风格与多语言输出。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "rvc",
+      "title": "RVC",
+      "domain_id": "audio-music",
+      "kind": "tool_or_framework",
+      "scope_hint": "利用 Retrieval-based Voice Conversion 进行声音转换。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "tauri",
+      "title": "Tauri",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "构建和分发跨平台轻量桌面应用。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "swiftui",
+      "title": "SwiftUI",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "创建 macOS/iOS 原生应用界面与交互。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "electron",
+      "title": "Electron",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "使用 Web 技术构建桌面应用。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "astro",
+      "title": "Astro",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "构建内容型网站、静态站点和交互页面。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "vite",
+      "title": "Vite",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "构建与发布前端应用及组件开发环境。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "stripe",
+      "title": "Stripe",
+      "domain_id": "app-production",
+      "kind": "tool_or_framework",
+      "scope_hint": "在线收款、订阅和付款相关业务流程。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "shiny",
+      "title": "Shiny for R",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "将 R 数据分析转化为可交互的网页应用。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "pandas",
+      "title": "pandas",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "Python 数据清洗、变换、分组与表格分析。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "polars",
+      "title": "Polars",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "结构化数据处理、分析与批处理工作流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "streamlit",
+      "title": "Streamlit",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "用 Python 快速制作交互式数据和 AI 应用。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "qdrant",
+      "title": "Qdrant",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "向量检索、语义搜索及知识检索后端。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B02"
+    },
+    {
+      "slug": "gradio",
+      "title": "Gradio",
+      "domain_id": "data-apps",
+      "kind": "tool_or_framework",
+      "scope_hint": "为模型、工具和数据功能建立交互演示界面。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "home-assistant",
+      "title": "Home Assistant",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "家庭设备数据、自动化控制和本地优先应用。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B03"
+    },
+    {
+      "slug": "immich",
+      "title": "Immich",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "自建照片资料库、检索、备份和共享。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "logseq",
+      "title": "Logseq",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "大纲式知识管理、链接和个人工作记录。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "joplin",
+      "title": "Joplin",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "笔记存储、同步、资料整理及可迁移性。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "memos",
+      "title": "Memos",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "轻量个人记录、时间线与自托管笔记。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "vaultwarden",
+      "title": "Vaultwarden",
+      "domain_id": "personal-knowledge",
+      "kind": "tool_or_framework",
+      "scope_hint": "自托管兼容 Bitwarden 客户端的凭据服务。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "rsshub",
+      "title": "RSSHub",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "将支持的互联网来源转为可订阅的更新信息。",
+      "priority": 1,
+      "status": "candidate",
+      "batch": "B01"
+    },
+    {
+      "slug": "freshrss",
+      "title": "FreshRSS",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "自行订阅、过滤和整理 RSS 信息流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "maxun",
+      "title": "Maxun",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "网页数据抓取、提取与监控任务。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "huginn",
+      "title": "Huginn",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "自托管自动化代理监控事件与信息变化。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "apify",
+      "title": "Apify",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "部署和运行现成网页自动化/采集任务。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "openalex",
+      "title": "OpenAlex",
+      "domain_id": "information-monitoring",
+      "kind": "tool_or_framework",
+      "scope_hint": "研究文献、作者与机构的发现和关联分析。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "plausible",
+      "title": "Plausible Analytics",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "自托管或托管的网站流量与目标跟踪。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "umami",
+      "title": "Umami Analytics",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "轻量网站分析、事件和用户路径观察。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "matomo",
+      "title": "Matomo",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "网站分析、用户行为和隐私相关配置。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "google-search-console",
+      "title": "Google Search Console",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "网站索引表现、搜索可见性和问题诊断。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "mailchimp",
+      "title": "Mailchimp",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "电子邮件订阅、内容发送与营销活动管理。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "youtube-data-api",
+      "title": "YouTube Data API",
+      "domain_id": "marketing-publishing",
+      "kind": "tool_or_framework",
+      "scope_hint": "视频和频道资料读取、发布管理和统计分析的 API 用途。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "ragas",
+      "title": "Ragas",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "检索增强生成系统的质量指标与评测工作流。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "promptfoo",
+      "title": "promptfoo",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "提示词和 LLM 应用的回归评测与安全测试。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "deepeval",
+      "title": "DeepEval",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "面向模型输出和 Agent 结果的自动评测。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "guardrails-ai",
+      "title": "Guardrails AI",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "LLM 输出验证、格式约束与输入输出校验。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "openevals",
+      "title": "OpenEvals",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "生成式应用的评审函数和评测集成。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    },
+    {
+      "slug": "arize-phoenix",
+      "title": "Arize Phoenix",
+      "domain_id": "llm-quality",
+      "kind": "evaluation_tool",
+      "scope_hint": "LLM 应用追踪、评测与问题诊断。",
+      "priority": 2,
+      "status": "candidate",
+      "batch": null
+    }
+  ]
+}
