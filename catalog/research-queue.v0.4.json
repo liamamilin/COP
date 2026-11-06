@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.4",
+  "source_registry": "catalog/topic-registry.v0.4.json",
+  "state": "proposal_only_not_executed",
+  "output_root": "outputs/<slug>/",
+  "max_parallel_global": 2,
+  "default_validation": "python3 .agents/skills/p-discovery/scripts/validate.py outputs/<slug>/possibilities.json",
+  "pipeline": [
+    "selected",
+    "researching",
+    "source_review",
+    "accepted_or_rework",
+    "merge_after_review",
+    "published_in_atlas_after_catalog_update"
+  ],
+  "require_artifacts": [
+    "possibilities.json",
+    "possibilities.md",
+    "validation-report.txt",
+    "discovery-log.md",
+    "source-coverage.json"
+  ],
+  "release_policy": "Never auto-mark reviewed, never auto-merge PRs, never edit P Atlas live catalog until accepted research and browser regression",
+  "waves": [
+    {
+      "id": "wave-01-agent-local",
+      "title": "Agent 与本地模型研究",
+      "state": "proposed_not_started",
+      "max_parallel": 2,
+      "topic_slugs": [
+        "pydantic-ai",
+        "mlx-lm",
+        "llama-cpp",
+        "mem0",
+        "langfuse",
+        "browser-use"
+      ],
+      "policy": "独立运行现有 P Discovery Skill；先来源搜集后分类，按具体主题写单独 outputs，不在本步骤发布"
+    },
+    {
+      "id": "wave-02-creative-desktop",
+      "title": "创作流水线与桌面交付",
+      "state": "proposed_not_started",
+      "max_parallel": 2,
+      "topic_slugs": [
+        "comfyui",
+        "remotion",
+        "ltx-video",
+        "ace-step",
+        "ffmpeg",
+        "tauri"
+      ],
+      "policy": "独立运行现有 P Discovery Skill；先来源搜集后分类，按具体主题写单独 outputs，不在本步骤发布"
+    },
+    {
+      "id": "wave-03-info-personal",
+      "title": "信息雷达与个人数字资产",
+      "state": "proposed_not_started",
+      "max_parallel": 2,
+      "topic_slugs": [
+        "rsshub",
+        "firecrawl",
+        "home-assistant",
+        "immich",
+        "restic",
+        "hammerspoon"
+      ],
+      "policy": "独立运行现有 P Discovery Skill；先来源搜集后分类，按具体主题写单独 outputs，不在本步骤发布"
+    },
+    {
+      "id": "wave-04-product-data",
+      "title": "产品与数据工具",
+      "state": "proposed_not_started",
+      "max_parallel": 2,
+      "topic_slugs": [
+        "figma",
+        "postgresql",
+        "docker",
+        "qdrant",
+        "plotly",
+        "apple-shortcuts"
+      ],
+      "policy": "独立运行现有 P Discovery Skill；先来源搜集后分类，按具体主题写单独 outputs，不在本步骤发布"
+    }
+  ]
+}
