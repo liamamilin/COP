@@ -1,0 +1,705 @@
+{
+  "schema_version": "0.4",
+  "scope": "近期涉及的 AI、软件、数据、创作、信息、知识、自动化、商业、个人数字事务和认知方法；不声称覆盖所有学科或全球软件生态。",
+  "hierarchy": "domain -> area -> topic; P is discovered after topic research; domains and areas are never themselves P",
+  "taxonomy_created_for": "systematic_topic_discovery",
+  "domains": [
+    {
+      "id": "ai",
+      "title": "大模型与 AI 基础",
+      "description": "面向大模型与 AI 基础领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "agent",
+      "title": "Agent 与智能体系统",
+      "description": "面向Agent 与智能体系统领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "software",
+      "title": "软件工程与应用交付",
+      "description": "面向软件工程与应用交付领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "data",
+      "title": "数据科学、统计与分析",
+      "description": "面向数据科学、统计与分析领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "creative",
+      "title": "AI 内容创作与媒体制作",
+      "description": "面向AI 内容创作与媒体制作领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "information",
+      "title": "信息获取、搜索与持续监测",
+      "description": "面向信息获取、搜索与持续监测领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "knowledge",
+      "title": "知识管理、学习与研究出版",
+      "description": "面向知识管理、学习与研究出版领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "automation",
+      "title": "自动化、系统连接与持续执行",
+      "description": "面向自动化、系统连接与持续执行领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "product",
+      "title": "产品设计、商业与增长",
+      "description": "面向产品设计、商业与增长领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "personal",
+      "title": "个人数字事务与生活管理",
+      "description": "面向个人数字事务与生活管理领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    },
+    {
+      "id": "cognition",
+      "title": "认知、表达与行动方法",
+      "description": "面向认知、表达与行动方法领域的工具、具体技术及有边界的方法，按用户可实现任务组织研究对象。"
+    }
+  ],
+  "areas": [
+    {
+      "id": "ai-foundations",
+      "domain_id": "ai",
+      "title": "模型基础、架构与训练范式",
+      "scope": "以「模型基础、架构与训练范式」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-datasets",
+      "domain_id": "ai",
+      "title": "训练数据、数据处理与标注",
+      "scope": "以「训练数据、数据处理与标注」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-finetune",
+      "domain_id": "ai",
+      "title": "微调与模型适配",
+      "scope": "以「微调与模型适配」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-inference",
+      "domain_id": "ai",
+      "title": "推理运行时与执行引擎",
+      "scope": "以「推理运行时与执行引擎」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-optimization",
+      "domain_id": "ai",
+      "title": "量化、压缩与性能优化",
+      "scope": "以「量化、压缩与性能优化」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-local",
+      "domain_id": "ai",
+      "title": "本地模型桌面与开发工具",
+      "scope": "以「本地模型桌面与开发工具」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-multimodal",
+      "domain_id": "ai",
+      "title": "多模态模型与任务生态",
+      "scope": "以「多模态模型与任务生态」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "ai-quality",
+      "domain_id": "ai",
+      "title": "模型性能、可靠性与输出评测",
+      "scope": "以「模型性能、可靠性与输出评测」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-architecture",
+      "domain_id": "agent",
+      "title": "Agent 结构与执行 Harness",
+      "scope": "以「Agent 结构与执行 Harness」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-sdk",
+      "domain_id": "agent",
+      "title": "Agent SDK 与应用构建框架",
+      "scope": "以「Agent SDK 与应用构建框架」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-orchestration",
+      "domain_id": "agent",
+      "title": "状态化流程与多 Agent 协作",
+      "scope": "以「状态化流程与多 Agent 协作」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-connect",
+      "domain_id": "agent",
+      "title": "工具协议、检索与模型网关",
+      "scope": "以「工具协议、检索与模型网关」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-browser",
+      "domain_id": "agent",
+      "title": "浏览器、桌面和计算机操作 Agent",
+      "scope": "以「浏览器、桌面和计算机操作 Agent」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-memory",
+      "domain_id": "agent",
+      "title": "上下文管理与长期记忆",
+      "scope": "以「上下文管理与长期记忆」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-observability",
+      "domain_id": "agent",
+      "title": "Agent 追踪、评测与运行质量",
+      "scope": "以「Agent 追踪、评测与运行质量」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "agent-coding",
+      "domain_id": "agent",
+      "title": "AI 编程代理和代码任务交付",
+      "scope": "以「AI 编程代理和代码任务交付」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-web",
+      "domain_id": "software",
+      "title": "Web UI 与前端应用开发",
+      "scope": "以「Web UI 与前端应用开发」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-backend",
+      "domain_id": "software",
+      "title": "API、后端框架与接口设计",
+      "scope": "以「API、后端框架与接口设计」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-database",
+      "domain_id": "software",
+      "title": "数据库、索引和应用存储",
+      "scope": "以「数据库、索引和应用存储」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-desktop",
+      "domain_id": "software",
+      "title": "原生桌面与跨平台应用",
+      "scope": "以「原生桌面与跨平台应用」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-mobile",
+      "domain_id": "software",
+      "title": "移动端应用与平台集成",
+      "scope": "以「移动端应用与平台集成」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-testing",
+      "domain_id": "software",
+      "title": "自动测试、调试与质量检查",
+      "scope": "以「自动测试、调试与质量检查」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-cicd",
+      "domain_id": "software",
+      "title": "版本管理、构建与持续交付",
+      "scope": "以「版本管理、构建与持续交付」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-deploy",
+      "domain_id": "software",
+      "title": "云部署、容器与托管网络",
+      "scope": "以「云部署、容器与托管网络」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-wrangling",
+      "domain_id": "data",
+      "title": "数据清洗、变换与表格计算",
+      "scope": "以「数据清洗、变换与表格计算」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-queries",
+      "domain_id": "data",
+      "title": "分析型查询、SQL 与本地分析引擎",
+      "scope": "以「分析型查询、SQL 与本地分析引擎」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-statistics",
+      "domain_id": "data",
+      "title": "统计分析与概率建模",
+      "scope": "以「统计分析与概率建模」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-visualization",
+      "domain_id": "data",
+      "title": "统计可视化与图形表达",
+      "scope": "以「统计可视化与图形表达」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-apps",
+      "domain_id": "data",
+      "title": "交互式数据应用与仪表板开发",
+      "scope": "以「交互式数据应用与仪表板开发」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-bi",
+      "domain_id": "data",
+      "title": "商业分析、指标与 BI",
+      "scope": "以「商业分析、指标与 BI」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-reproducible",
+      "domain_id": "data",
+      "title": "可复现分析、计算文档与报告",
+      "scope": "以「可复现分析、计算文档与报告」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-experiments",
+      "domain_id": "data",
+      "title": "实验设计、因果推断与模型诊断",
+      "scope": "以「实验设计、因果推断与模型诊断」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-image",
+      "domain_id": "creative",
+      "title": "图像生成、控制与视觉工作流",
+      "scope": "以「图像生成、控制与视觉工作流」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-video-models",
+      "domain_id": "creative",
+      "title": "视频生成模型、服务和能力",
+      "scope": "以「视频生成模型、服务和能力」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-video-workflow",
+      "domain_id": "creative",
+      "title": "视频生成编排与跨镜头一致性",
+      "scope": "以「视频生成编排与跨镜头一致性」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-video-edit",
+      "domain_id": "creative",
+      "title": "程序化剪辑、转码与特效制作",
+      "scope": "以「程序化剪辑、转码与特效制作」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-animation",
+      "domain_id": "creative",
+      "title": "角色、数字人、动画与 3D",
+      "scope": "以「角色、数字人、动画与 3D」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-music",
+      "domain_id": "creative",
+      "title": "音乐生成、作曲与编配",
+      "scope": "以「音乐生成、作曲与编配」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-speech",
+      "domain_id": "creative",
+      "title": "语音识别、合成与配音",
+      "scope": "以「语音识别、合成与配音」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "creative-audiopost",
+      "domain_id": "creative",
+      "title": "混音、降噪、分轨与声音后期",
+      "scope": "以「混音、降噪、分轨与声音后期」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-search",
+      "domain_id": "information",
+      "title": "搜索引擎、研究检索与检索 API",
+      "scope": "以「搜索引擎、研究检索与检索 API」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-extract",
+      "domain_id": "information",
+      "title": "网页抓取、结构化提取与自动采集",
+      "scope": "以「网页抓取、结构化提取与自动采集」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-feeds",
+      "domain_id": "information",
+      "title": "RSS、订阅与信息流阅读",
+      "scope": "以「RSS、订阅与信息流阅读」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-monitor",
+      "domain_id": "information",
+      "title": "网站变化与信息事件监控",
+      "scope": "以「网站变化与信息事件监控」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-scientific",
+      "domain_id": "information",
+      "title": "学术文献、作者与引用数据发现",
+      "scope": "以「学术文献、作者与引用数据发现」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-aggregation",
+      "domain_id": "information",
+      "title": "跨来源汇总、告警与信息交付",
+      "scope": "以「跨来源汇总、告警与信息交付」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "info-validation",
+      "domain_id": "information",
+      "title": "来源保存、去重与事实核对",
+      "scope": "以「来源保存、去重与事实核对」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-notes",
+      "domain_id": "knowledge",
+      "title": "笔记、个人知识库与链接",
+      "scope": "以「笔记、个人知识库与链接」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-reference",
+      "domain_id": "knowledge",
+      "title": "文献管理、批注与引文整理",
+      "scope": "以「文献管理、批注与引文整理」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-learning",
+      "domain_id": "knowledge",
+      "title": "间隔复习与学习实践工具",
+      "scope": "以「间隔复习与学习实践工具」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-research",
+      "domain_id": "knowledge",
+      "title": "研究过程、证据整理与笔记协作",
+      "scope": "以「研究过程、证据整理与笔记协作」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-publishing",
+      "domain_id": "knowledge",
+      "title": "论文、书籍、文档及知识站发布",
+      "scope": "以「论文、书籍、文档及知识站发布」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-graphs",
+      "domain_id": "knowledge",
+      "title": "知识图谱、概念网络与信息组织",
+      "scope": "以「知识图谱、概念网络与信息组织」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "knowledge-curriculum",
+      "domain_id": "knowledge",
+      "title": "课程、练习、学习路径与教学",
+      "scope": "以「课程、练习、学习路径与教学」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-no-code",
+      "domain_id": "automation",
+      "title": "可视化工作流、业务自动化",
+      "scope": "以「可视化工作流、业务自动化」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-browser",
+      "domain_id": "automation",
+      "title": "浏览器自动操作与网页测试",
+      "scope": "以「浏览器自动操作与网页测试」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-desktop",
+      "domain_id": "automation",
+      "title": "本地桌面操作与系统快捷流程",
+      "scope": "以「本地桌面操作与系统快捷流程」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-pipelines",
+      "domain_id": "automation",
+      "title": "数据任务与异步作业编排",
+      "scope": "以「数据任务与异步作业编排」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-scheduling",
+      "domain_id": "automation",
+      "title": "定时任务、作业调度与通知",
+      "scope": "以「定时任务、作业调度与通知」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-home",
+      "domain_id": "automation",
+      "title": "家庭设备、传感器与本地自动化",
+      "scope": "以「家庭设备、传感器与本地自动化」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "automation-integration",
+      "domain_id": "automation",
+      "title": "跨平台 API、连接器与触发器",
+      "scope": "以「跨平台 API、连接器与触发器」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-discovery",
+      "domain_id": "product",
+      "title": "客户发现、需求与商业假设验证",
+      "scope": "以「客户发现、需求与商业假设验证」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-design",
+      "domain_id": "product",
+      "title": "原型、UI/UX 与可用性测试",
+      "scope": "以「原型、UI/UX 与可用性测试」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-analytics",
+      "domain_id": "product",
+      "title": "产品数据、使用行为与效果观察",
+      "scope": "以「产品数据、使用行为与效果观察」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-growth",
+      "domain_id": "product",
+      "title": "SEO、获客、营销与传播",
+      "scope": "以「SEO、获客、营销与传播」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-publishing",
+      "domain_id": "product",
+      "title": "内容站点、Newsletter 与会员出版",
+      "scope": "以「内容站点、Newsletter 与会员出版」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-commerce",
+      "domain_id": "product",
+      "title": "商品展示、独立站与电商交付",
+      "scope": "以「商品展示、独立站与电商交付」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-payments",
+      "domain_id": "product",
+      "title": "在线收款、订阅计费与交付",
+      "scope": "以「在线收款、订阅计费与交付」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "product-support",
+      "domain_id": "product",
+      "title": "CRM、售后、客服与用户反馈",
+      "scope": "以「CRM、售后、客服与用户反馈」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-documents",
+      "domain_id": "personal",
+      "title": "文件、票据、合同与个人资料归档",
+      "scope": "以「文件、票据、合同与个人资料归档」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-photos",
+      "domain_id": "personal",
+      "title": "照片、媒体档案与家庭素材",
+      "scope": "以「照片、媒体档案与家庭素材」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-security",
+      "domain_id": "personal",
+      "title": "密码、密钥、身份与访问管理",
+      "scope": "以「密码、密钥、身份与访问管理」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-backup",
+      "domain_id": "personal",
+      "title": "备份、同步、恢复与数字资产保全",
+      "scope": "以「备份、同步、恢复与数字资产保全」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-finance",
+      "domain_id": "personal",
+      "title": "记账、预算与个人财务记录",
+      "scope": "以「记账、预算与个人财务记录」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-tasks",
+      "domain_id": "personal",
+      "title": "日程、任务、提醒与日常事务",
+      "scope": "以「日程、任务、提醒与日常事务」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "personal-privacy",
+      "domain_id": "personal",
+      "title": "本地优先、隐私与家庭数据服务",
+      "scope": "以「本地优先、隐私与家庭数据服务」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-representation",
+      "domain_id": "cognition",
+      "title": "概念、对象、关系与知识表征",
+      "scope": "以「概念、对象、关系与知识表征」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-problems",
+      "domain_id": "cognition",
+      "title": "问题定义、问题结构化和假设",
+      "scope": "以「问题定义、问题结构化和假设」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-decisions",
+      "domain_id": "cognition",
+      "title": "决策、权衡与不确定性分析",
+      "scope": "以「决策、权衡与不确定性分析」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-communication",
+      "domain_id": "cognition",
+      "title": "论证、表达与协作对齐",
+      "scope": "以「论证、表达与协作对齐」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-practice",
+      "domain_id": "cognition",
+      "title": "刻意练习、学习迁移与反馈",
+      "scope": "以「刻意练习、学习迁移与反馈」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "cognition-attention",
+      "domain_id": "cognition",
+      "title": "注意力、行动习惯与自我观察",
+      "scope": "以「注意力、行动习惯与自我观察」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    }
+  ],
+  "seed_indexes": [
+    {
+      "id": "hf-tasks",
+      "url": "https://huggingface.co/tasks",
+      "purpose": "AI 多模态任务和模型能力类型索引",
+      "domain_ids": [
+        "ai",
+        "creative"
+      ]
+    },
+    {
+      "id": "hf-models",
+      "url": "https://huggingface.co/models",
+      "purpose": "AI 模型库、运行工具及推理提供者候选入口",
+      "domain_ids": [
+        "ai",
+        "creative"
+      ]
+    },
+    {
+      "id": "cran-views",
+      "url": "https://cran.r-project.org/web/views/",
+      "purpose": "R 的统计与数据科学子领域任务视图",
+      "domain_ids": [
+        "data",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "apple-tech",
+      "url": "https://developer.apple.com/technologies/",
+      "purpose": "原生应用框架和系统集成参考入口",
+      "domain_ids": [
+        "software",
+        "automation"
+      ]
+    },
+    {
+      "id": "cncf-projects",
+      "url": "https://www.cncf.io/projects/",
+      "purpose": "云原生交付、运行、观测与安全技术领域参考",
+      "domain_ids": [
+        "software",
+        "automation"
+      ]
+    },
+    {
+      "id": "mcp-registry",
+      "url": "https://registry.modelcontextprotocol.io/",
+      "purpose": "MCP 服务器候选发现入口；注册不等于质量认可",
+      "domain_ids": [
+        "agent",
+        "automation"
+      ]
+    },
+    {
+      "id": "obsidian-community",
+      "url": "https://community.obsidian.md/",
+      "purpose": "知识管理扩展生态发现入口，非完整性证明",
+      "domain_ids": [
+        "knowledge",
+        "personal"
+      ]
+    }
+  ],
+  "rule": "This is a scoped initial taxonomy, not a completed exhaustive web census. Subarea source coverage must be independently audited before claiming completeness."
+}
