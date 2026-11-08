@@ -1,8 +1,11 @@
 """Regression tests for Topic Registry eligibility, lifecycle, and queue derivation."""
 from __future__ import annotations
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 FILE = Path(__file__).resolve().parents[1] / "validate_topic_registry.py"
@@ -117,6 +120,54 @@ class TopicRegistryTests(unittest.TestCase):
              "research_state": "candidate", "selection_status": "candidate",
              "identity_status": "unverified", "related_topics": []})
         self.assertEqual(len(module.validate(tax, reg)), 3)
+
+    def test_state_change_persists_and_rebuilds_queue(self):
+        tax, reg, waves = fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            (base / "catalog").mkdir()
+            data = {"topic-taxonomy.v0.4.json": tax,
+                    "topic-registry.v0.4.json": reg,
+                    "research-queue.v0.4.json": waves}
+            for filename, value in data.items():
+                (base / "catalog" / filename).write_text(
+                    json.dumps(value), encoding="utf-8")
+            with patch.object(module, "ROOT", base), patch.object(
+                sys, "argv", ["validate_topic_registry.py", "--set-status",
+                              "ready-topic", "eligible"]):
+                module.main()
+            saved = json.loads((base / "catalog/topic-registry.v0.4.json").read_text())
+            q = json.loads((base / "catalog/research-queue.v0.4.json").read_text())
+            self.assertEqual(saved["items"][0]["research_state"], "eligible")
+            self.assertEqual(saved["items"][0]["state_history"][-1]["from"], "candidate")
+            self.assertEqual([x["slug"] for x in q["executable"]], ["ready-topic"])
+            self.assertEqual(
+                module.build_queue(saved, {x["slug"]: x for x in saved["items"]}, q), q)
+
+    def test_blocking_requires_reason_and_removes_from_queue(self):
+        tax, reg, waves = fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            (base / "catalog").mkdir()
+            for filename, value in {
+                "topic-taxonomy.v0.4.json": tax,
+                "topic-registry.v0.4.json": reg,
+                "research-queue.v0.4.json": waves
+            }.items():
+                (base / "catalog" / filename).write_text(
+                    json.dumps(value), encoding="utf-8")
+            with patch.object(module, "ROOT", base), patch.object(
+                sys, "argv", ["validate_topic_registry.py", "--set-status",
+                              "ready-topic", "blocked"]):
+                with self.assertRaisesRegex(ValueError, "Missing review/change reason"):
+                    module.main()
+            with patch.object(module, "ROOT", base), patch.object(
+                sys, "argv", ["validate_topic_registry.py", "--set-status",
+                              "ready-topic", "blocked", "--reason", "identity disputed"]):
+                module.main()
+            q = json.loads((base / "catalog/research-queue.v0.4.json").read_text())
+            self.assertEqual(q["executable"], [])
+            self.assertEqual(q["deferred_preferred"][0]["reason"], "blocked")
 
 if __name__ == "__main__":
     unittest.main()
