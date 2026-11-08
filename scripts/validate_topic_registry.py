@@ -96,7 +96,7 @@ def validate(tax: dict, registry: dict) -> dict:
 def build_queue(registry: dict, topics: dict, previous: dict) -> dict:
     order = []
     group = {}
-    for wave in previous.get("waves", []):
+    for wave in previous.get("planned_wave_definitions", previous.get("waves", [])):
         for slug in wave.get("topic_slugs", []):
             require(slug not in group, f"Repeated wave assignment {slug}")
             require(slug in topics, f"Unknown wave topic {slug}")
@@ -132,7 +132,7 @@ def build_queue(registry: dict, topics: dict, previous: dict) -> dict:
         "max_parallel_global": previous.get("max_parallel_global", 2),
         "executable": executable,
         "deferred_preferred": deferred,
-        "planned_wave_definitions": previous.get("waves", []),
+        "planned_wave_definitions": previous.get("planned_wave_definitions", previous.get("waves", [])),
         "policy": "Only eligible, identity-checked bounded subjects enter executable. No automatic research or publication."
     }
 
