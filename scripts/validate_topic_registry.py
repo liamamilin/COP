@@ -2,6 +2,7 @@
 """Validate Topic Registry and derive a safe research queue from current data."""
 from __future__ import annotations
 import argparse
+from datetime import datetime, timezone
 import json
 import re
 from collections import Counter
@@ -143,7 +144,12 @@ def main():
     parser.add_argument("--check-transition", nargs=3,
                         metavar=("SLUG", "FROM", "TO"),
                         help="Validate a lifecycle state change; does not write data")
+    parser.add_argument("--set-status", nargs=2, metavar=("SLUG", "NEW_STATE"),
+                        help="Apply an allowed state change and regenerate queue")
+    parser.add_argument("--reason", default="",
+                        help="Human-readable reason, required for accepted/blocked/rework/published")
     args = parser.parse_args()
+    require(not (args.write_queue and args.set_status), "Choose --write-queue OR --set-status")
     tax = load("catalog/topic-taxonomy.v0.4.json")
     reg = load("catalog/topic-registry.v0.4.json")
     existing = load("catalog/research-queue.v0.4.json")
@@ -155,8 +161,40 @@ def main():
                 f"Disallowed transition {old} -> {new}")
         print(f"PASS transition {slug}: {old} -> {new}")
         return
+    if args.set_status:
+        slug, new = args.set_status
+        require(slug in topics, f"Unknown topic {slug}")
+        topic = topics[slug]
+        old = topic["research_state"]
+        require(old in TRANSITIONS and new in TRANSITIONS[old],
+                f"Disallowed transition {old} -> {new}")
+        if new == "eligible":
+            require(topic["scope_level"] == "bounded_subject" and
+                    topic["identity_status"] == "source_checked" and
+                    bool(re.match(r"^https://", topic.get("official_url") or "")),
+                    f"Identity gate not met: {slug}")
+        if new in {"accepted", "blocked", "rework", "published"}:
+            require(bool(args.reason.strip()), f"Missing review/change reason for {slug}")
+        if new in {"accepted", "published"}:
+            target = ROOT / "outputs" / slug
+            for filename in ("possibilities.json", "possibilities.md", "validation-report.txt"):
+                require((target / filename).is_file(),
+                        f"Missing result artifact for {slug}: {filename}")
+        if new == "published":
+            main_catalog = load("catalog/p-atlas-topics.v0.1.json")
+            require(any(t["slug"] == slug and t["status"] == "ready"
+                        for t in main_catalog["topics"]), f"Not in active Atlas catalog: {slug}")
+        topic["research_state"] = new
+        topic["selection_status"] = ("already_researched" if new == "published" else new)
+        topic.setdefault("state_history", []).append({
+            "from": old, "to": new, "reason": args.reason.strip() or "state transition",
+            "at_utc": datetime.now(timezone.utc).isoformat()
+        })
+        validate(tax, reg)
+        (ROOT / "catalog/topic-registry.v0.4.json").write_text(
+            json.dumps(reg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     queue = build_queue(reg, topics, existing)
-    if args.write_queue:
+    if args.write_queue or args.set_status:
         (ROOT / "catalog/research-queue.v0.4.json").write_text(
             json.dumps(queue, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8")
