@@ -1,7 +1,7 @@
 {
   "schema_version": "0.4",
   "generated_for": "COP Topic Registry",
-  "provenance_note": "Merged 20 on main + 18 studied in unmerged PR #4 + 72 v0.3 candidate items + independent taxonomy-led seed suggestions. New suggestions are not independently verified or P discoveries.",
+  "provenance_note": "Merged 20 on main + 18 studied in unmerged PR #4 + 72 v0.3 candidate items + independent taxonomy-led seed suggestions. New suggestions are not independently verified or P discoveries. P0 editorial review reconciles misclassifications, identity and review readiness; 291 items remain without fabricated additions.",
   "reconciliation": {
     "main_researched": 20,
     "v0_2_unmerged_researched": 18,
@@ -22,7 +22,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "langchain-agent",
@@ -37,7 +42,16 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "langgraph",
+        "agent-harness",
+        "pydantic-ai"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "obsidian",
@@ -52,7 +66,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "agent-harness",
@@ -67,7 +86,16 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "langchain-agent",
+        "openai-agent-harness",
+        "langgraph"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "langgraph",
@@ -82,7 +110,15 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "langchain-agent",
+        "agent-harness"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "mcp",
@@ -97,7 +133,15 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "fastmcp",
+        "mcp-inspector"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "llm-inference",
@@ -112,7 +156,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "llm-finetuning",
@@ -127,7 +176,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ollama",
@@ -142,7 +196,15 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "llama-cpp",
+        "mlx-lm"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "codex",
@@ -157,7 +219,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "claude-code",
@@ -172,7 +239,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "opencode",
@@ -187,7 +259,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "playwright",
@@ -202,7 +279,14 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "browser-use"
+      ],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ai-video-generation",
@@ -217,7 +301,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ai-music-production",
@@ -232,7 +321,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ai-voice",
@@ -247,7 +341,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "r-data-analysis",
@@ -262,7 +361,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "paperless-ngx",
@@ -277,7 +381,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "changedetection",
@@ -292,7 +401,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "research-workflows",
@@ -307,7 +421,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "nextjs",
@@ -322,7 +441,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "fastapi",
@@ -337,7 +461,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "supabase",
@@ -352,7 +481,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cloudflare-workers",
@@ -367,7 +501,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "customer-discovery",
@@ -382,7 +521,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "posthog",
@@ -397,7 +541,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "woocommerce",
@@ -412,7 +561,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ghost",
@@ -427,7 +581,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "n8n",
@@ -442,7 +601,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "github-actions",
@@ -457,7 +621,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "anki",
@@ -472,7 +641,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "zotero",
@@ -487,7 +661,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "quarto",
@@ -502,7 +681,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "duckdb",
@@ -517,7 +701,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "metabase",
@@ -532,7 +721,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "bitwarden",
@@ -547,7 +741,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "syncthing",
@@ -562,7 +761,12 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "actual-budget",
@@ -577,22 +781,35 @@
       "selection_status": "already_researched",
       "evidence_status": "has_existing_research_artifact",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "existing_research",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "pydantic-ai",
       "title": "PydanticAI",
-      "description": "以 Python 构建结构化工具型 Agent、验证输出与协调依赖。",
+      "description": "Python Agent 框架及其公开接口；不把依赖的模型、Logfire 和全部集成视为内置能力。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "framework",
       "area_id": "agent-sdk",
       "domain_id": "agent",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "langchain-agent",
+        "openai-agents-sdk"
+      ],
+      "identity_status": "source_checked",
+      "official_url": "https://pydantic.dev/docs/ai/overview/install/",
+      "identity_evidence_note": "Pydantic 官方文档明确提供 pydantic-ai 包、Agent 指南与额外集成。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "llamaindex",
@@ -607,7 +824,15 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "qdrant",
+        "langchain-agent"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "crewai",
@@ -622,7 +847,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "autogen",
@@ -637,7 +867,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openai-agents-sdk",
@@ -652,7 +887,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "dify",
@@ -667,22 +907,32 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "langfuse",
       "title": "Langfuse",
-      "description": "Agent 与 LLM 应用追踪、评测和质量分析。",
+      "description": "Langfuse 的 LLM 追踪、评估与调试产品能力；外部模型调用、托管账号和 SDK 依赖另行标注。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "platform",
       "area_id": "agent-observability",
       "domain_id": "agent",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "source_checked",
+      "official_url": "https://langfuse.com/docs/observability/overview",
+      "identity_evidence_note": "Langfuse 官方文档描述 tracing、指标与观测应用。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "litellm",
@@ -697,22 +947,32 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "mem0",
       "title": "Mem0",
-      "description": "为 Agent 应用添加跨对话记忆与检索能力。",
+      "description": "Mem0 项目中的记忆存储、检索与 Agent 集成；云托管能力和开发者自建逻辑另行标注。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "library",
       "area_id": "agent-memory",
       "domain_id": "agent",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "source_checked",
+      "official_url": "https://github.com/mem0ai/mem0",
+      "identity_evidence_note": "mem0ai 维护者仓库定义其为 Agent 的记忆基础设施。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "firecrawl",
@@ -727,7 +987,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "crawl4ai",
@@ -742,52 +1007,83 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "browser-use",
       "title": "browser-use",
-      "description": "使用浏览器代理执行网页操作与工作流。",
+      "description": "browser-use 开源浏览器 Agent Python 库；付费 Browser Use Cloud/CLI/独立桌面产品分开描述。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "framework",
       "area_id": "agent-browser",
       "domain_id": "agent",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "playwright",
+        "computer-use-method"
+      ],
+      "identity_status": "source_checked",
+      "official_url": "https://github.com/browser-use/browser-use",
+      "identity_evidence_note": "维护者仓库区分开源库、CLI、托管 Agent 和云浏览器。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "mlx-lm",
       "title": "MLX LM",
-      "description": "在 Apple Silicon 上加载、运行或适配开放权重语言模型。",
+      "description": "Apple Silicon 上的 MLX LM Python 包，涵盖有来源的推理、微调与模型转换；不研究全部 MLX 或泛指所有本地模型。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "library",
       "area_id": "ai-local",
       "domain_id": "ai",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "ollama",
+        "llama-cpp",
+        "llm-inference"
+      ],
+      "identity_status": "source_checked",
+      "official_url": "https://github.com/ml-explore/mlx-lm",
+      "identity_evidence_note": "ml-explore 维护者仓库介绍 MLX LM 的推理与训练用途。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "llama-cpp",
       "title": "llama.cpp",
-      "description": "在本地设备部署、量化和调用语言模型。",
+      "description": "llama.cpp 项目的模型推理和服务运行时；不把使用该引擎的任意桌面客户端当成核心能力。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "runtime",
       "area_id": "ai-inference",
       "domain_id": "ai",
       "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "selection_status": "eligible",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "mlx-lm",
+        "ollama",
+        "llm-inference"
+      ],
+      "identity_status": "source_checked",
+      "official_url": "https://github.com/ggml-org/llama.cpp",
+      "identity_evidence_note": "ggml-org 项目 README 描述 C/C++ 推理、CLI 和服务接口。",
+      "scope_excludes": [],
+      "research_batch": "wave-01-agent-local"
     },
     {
       "slug": "vllm",
@@ -802,7 +1098,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "sglang",
@@ -817,7 +1118,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "unsloth",
@@ -832,7 +1138,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "llama-factory",
@@ -847,7 +1158,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openhands",
@@ -862,7 +1178,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "aider",
@@ -877,7 +1198,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cline",
@@ -892,7 +1218,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "continue-dev",
@@ -907,7 +1238,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "goose-ai",
@@ -922,7 +1258,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cursor",
@@ -937,12 +1278,17 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "comfyui",
       "title": "ComfyUI",
-      "description": "节点工作流驱动图像/视频模型和素材处理。",
+      "description": "ComfyUI 本地开源节点应用和工作流，区分外部模型、Partner Nodes 与云服务。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "application",
@@ -952,7 +1298,15 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "ltx-video",
+        "wan-video"
+      ],
+      "identity_status": "source_checked",
+      "official_url": "https://docs.comfy.org/",
+      "identity_evidence_note": "ComfyUI 官方文档说明节点工作流与生成模型集成。",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "ltx-video",
@@ -967,7 +1321,14 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "comfyui"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "wan-video",
@@ -982,7 +1343,14 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "comfyui"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "remotion",
@@ -997,7 +1365,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "ffmpeg",
@@ -1012,7 +1385,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "whisper",
@@ -1027,7 +1405,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ace-step",
@@ -1042,7 +1425,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "audiocraft",
@@ -1057,7 +1445,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "demucs",
@@ -1072,7 +1465,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cosyvoice",
@@ -1087,7 +1485,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "fish-speech",
@@ -1102,7 +1505,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "rvc",
@@ -1117,12 +1525,17 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "tauri",
       "title": "Tauri",
-      "description": "构建和分发跨平台轻量桌面应用。",
+      "description": "Tauri v2 的跨平台桌面与移动应用框架；插件、平台 SDK 及操作系统能力应分开注明。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "framework",
@@ -1132,7 +1545,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "source_checked",
+      "official_url": "https://v2.tauri.app/",
+      "identity_evidence_note": "Tauri 官方 v2 文档区分核心框架与系统平台集成。",
+      "scope_excludes": [],
+      "research_batch": "wave-02-creative-desktop"
     },
     {
       "slug": "swiftui",
@@ -1147,7 +1565,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "electron",
@@ -1162,7 +1585,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "astro",
@@ -1177,7 +1605,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vite",
@@ -1192,7 +1625,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "stripe",
@@ -1207,7 +1645,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "shiny",
@@ -1222,7 +1665,15 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "streamlit",
+        "gradio"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "pandas",
@@ -1237,7 +1688,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "polars",
@@ -1252,7 +1708,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "streamlit",
@@ -1267,22 +1728,38 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "shiny"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "qdrant",
       "title": "Qdrant",
-      "description": "向量检索、语义搜索及知识检索后端。",
+      "description": "Qdrant 向量数据库与检索系统，不把它仅视作 Agent 工具接口。",
       "origin": "prior_v0.3_backlog",
       "research_state": "candidate",
       "topic_type": "service",
-      "area_id": "agent-connect",
-      "domain_id": "agent",
+      "area_id": "software-vector",
+      "domain_id": "software",
       "scope_level": "bounded_subject",
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "llamaindex",
+        "langchain-agent"
+      ],
+      "previous_area_id": "agent-connect",
+      "identity_status": "source_checked",
+      "official_url": "https://qdrant.tech/documentation/overview/",
+      "identity_evidence_note": "Qdrant 官方文档描述向量、集合、索引和检索。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "gradio",
@@ -1297,7 +1774,14 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "shiny"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "home-assistant",
@@ -1312,7 +1796,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "immich",
@@ -1327,7 +1816,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "logseq",
@@ -1342,7 +1836,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "joplin",
@@ -1357,7 +1856,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "memos",
@@ -1372,7 +1876,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vaultwarden",
@@ -1387,7 +1896,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "rsshub",
@@ -1402,7 +1916,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "freshrss",
@@ -1417,7 +1936,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "maxun",
@@ -1432,7 +1956,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "huginn",
@@ -1447,7 +1976,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "apify",
@@ -1462,7 +1996,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openalex",
@@ -1477,7 +2016,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "plausible",
@@ -1492,7 +2036,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "umami",
@@ -1507,7 +2056,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "matomo",
@@ -1522,7 +2076,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "google-search-console",
@@ -1537,7 +2096,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "mailchimp",
@@ -1552,7 +2116,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "youtube-data-api",
@@ -1567,7 +2136,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ragas",
@@ -1582,7 +2156,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "promptfoo",
@@ -1597,7 +2176,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "deepeval",
@@ -1612,7 +2196,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "guardrails-ai",
@@ -1627,7 +2216,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openevals",
@@ -1642,7 +2236,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "arize-phoenix",
@@ -1657,7 +2256,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "transformers",
@@ -1672,7 +2276,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "pytorch",
@@ -1687,7 +2296,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "jax",
@@ -1702,7 +2316,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "huggingface-datasets",
@@ -1717,7 +2336,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "label-studio",
@@ -1732,7 +2356,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "argilla",
@@ -1747,7 +2376,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "peft",
@@ -1762,7 +2396,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "trl",
@@ -1777,7 +2416,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "onnx-runtime",
@@ -1792,7 +2436,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "tensorrt-llm",
@@ -1807,7 +2456,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "bitsandbytes",
@@ -1822,7 +2476,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "auto-gptq",
@@ -1837,12 +2496,17 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "gguf",
       "title": "GGUF",
-      "description": "研究 GGUF 在「量化、压缩与性能优化」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "GGUF 模型存储格式及与推理工具的兼容性，不把文件格式视为独立模型推理引擎。",
       "origin": "taxonomy_seed_curated",
       "research_state": "candidate",
       "topic_type": "file_format",
@@ -1852,7 +2516,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "lm-studio",
@@ -1867,7 +2536,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "jan",
@@ -1882,7 +2556,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "diffusers",
@@ -1897,7 +2576,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "transformers-js",
@@ -1912,7 +2596,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "imagebind",
@@ -1927,7 +2616,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "lm-evaluation-harness",
@@ -1942,7 +2636,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "helm",
@@ -1957,22 +2656,34 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openai-agent-harness",
       "title": "Agent Harness（参考架构）",
-      "description": "研究 Agent Harness（参考架构） 在「Agent 结构与执行 Harness」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "与现有 Agent Harness 概览高度重合，尚无可区分的官方独立实体，不作为研究任务。",
       "origin": "taxonomy_seed_curated",
-      "research_state": "candidate",
+      "research_state": "blocked",
       "topic_type": "technical_concept",
       "area_id": "agent-architecture",
       "domain_id": "agent",
-      "scope_level": "bounded_subject",
-      "selection_status": "candidate",
+      "scope_level": "area_survey",
+      "selection_status": "blocked",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "agent-harness"
+      ],
+      "identity_status": "ambiguous",
+      "official_url": null,
+      "identity_evidence_note": "原目录的 openai-agent-harness 是无明确来源的泛化名称；需要确定独立项目身份，否则与 agent-harness 合并。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "google-adk",
@@ -1987,7 +2698,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "semantic-kernel",
@@ -2002,7 +2718,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "agentscope",
@@ -2017,7 +2738,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "haystack",
@@ -2032,7 +2758,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "mcp-inspector",
@@ -2047,7 +2778,15 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "mcp",
+        "fastmcp"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "fastmcp",
@@ -2062,7 +2801,15 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "mcp",
+        "mcp-inspector"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "computer-use-method",
@@ -2077,7 +2824,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "stagehand",
@@ -2092,7 +2844,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "zep",
@@ -2107,7 +2864,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "letta",
@@ -2122,7 +2884,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "langsmith",
@@ -2137,7 +2904,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "opentelemetry",
@@ -2152,7 +2924,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "claude-agent-sdk",
@@ -2167,7 +2944,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "openhands-sdk",
@@ -2182,7 +2964,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "react",
@@ -2197,7 +2984,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vue",
@@ -2212,7 +3004,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "sveltekit",
@@ -2227,7 +3024,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "django",
@@ -2242,7 +3044,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "flask",
@@ -2257,7 +3064,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "hono",
@@ -2272,7 +3084,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "postgresql",
@@ -2287,7 +3104,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "sqlite",
@@ -2302,7 +3124,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "redis",
@@ -2317,7 +3144,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "flutter",
@@ -2332,7 +3164,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "react-native",
@@ -2347,7 +3184,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "expo",
@@ -2362,7 +3204,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "pytest",
@@ -2377,7 +3224,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vitest",
@@ -2392,7 +3244,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cypress",
@@ -2407,7 +3264,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "git",
@@ -2422,7 +3284,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "gitlab-ci",
@@ -2437,7 +3304,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "docker",
@@ -2452,7 +3324,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "vercel",
@@ -2467,7 +3344,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "github-pages",
@@ -2482,7 +3364,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "dplyr",
@@ -2497,7 +3384,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "numpy",
@@ -2512,7 +3404,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "apache-arrow",
@@ -2527,7 +3424,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "clickhouse",
@@ -2542,7 +3444,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "statsmodels",
@@ -2557,7 +3464,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "scikit-learn",
@@ -2572,7 +3484,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "brms",
@@ -2587,7 +3504,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "plotly",
@@ -2602,7 +3524,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "echarts",
@@ -2617,7 +3544,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vega-lite",
@@ -2632,7 +3564,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "observable-framework",
@@ -2647,7 +3584,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "apache-superset",
@@ -2662,7 +3604,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "power-bi",
@@ -2677,7 +3624,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "jupyterlab",
@@ -2692,7 +3644,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "rmarkdown",
@@ -2707,7 +3664,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ab-testing",
@@ -2722,7 +3684,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "causal-inference",
@@ -2737,7 +3704,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "stable-diffusion",
@@ -2752,7 +3724,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "controlnet",
@@ -2767,7 +3744,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "krita",
@@ -2782,7 +3764,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "hunyuanvideo",
@@ -2797,7 +3784,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cogvideox",
@@ -2812,7 +3804,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vidu",
@@ -2827,7 +3824,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "animatediff",
@@ -2842,7 +3844,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "rife",
@@ -2857,7 +3864,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "davinci-resolve",
@@ -2872,7 +3884,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "kdenlive",
@@ -2887,7 +3904,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "blender",
@@ -2902,7 +3924,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "heygen",
@@ -2917,7 +3944,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "facefusion",
@@ -2932,7 +3964,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "yue-music",
@@ -2947,7 +3984,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "musescore",
@@ -2962,7 +4004,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "piper-tts",
@@ -2977,7 +4024,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "kokoro-tts",
@@ -2992,7 +4044,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "voxcpm",
@@ -3007,7 +4064,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "audacity",
@@ -3022,7 +4084,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "reaper",
@@ -3037,7 +4104,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "exa",
@@ -3052,7 +4124,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "tavily",
@@ -3067,7 +4144,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "brave-search-api",
@@ -3082,7 +4164,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "scrapy",
@@ -3097,7 +4184,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "trafilatura",
@@ -3112,7 +4204,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "miniflux",
@@ -3127,7 +4224,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "distill-web-monitor",
@@ -3142,7 +4244,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "crossref",
@@ -3157,7 +4264,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "semantic-scholar-api",
@@ -3172,7 +4284,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "arxiv",
@@ -3187,22 +4304,33 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "searxng",
       "title": "SearXNG",
-      "description": "研究 SearXNG 在「跨来源汇总、告警与信息交付」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "SearXNG 自托管元搜索引擎；不是通用告警和事件交付平台。",
       "origin": "taxonomy_seed_curated",
       "research_state": "candidate",
       "topic_type": "application",
-      "area_id": "info-aggregation",
+      "area_id": "info-search",
       "domain_id": "information",
       "scope_level": "bounded_subject",
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "previous_area_id": "info-aggregation",
+      "identity_status": "source_checked",
+      "official_url": "https://docs.searxng.org/user/about.html",
+      "identity_evidence_note": "官方 About 文档将其定义为 metasearch engine。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "feedly",
@@ -3217,7 +4345,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "hypothes-is",
@@ -3232,7 +4365,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "perma-cc",
@@ -3247,7 +4385,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "anytype",
@@ -3262,7 +4405,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "notion",
@@ -3277,7 +4425,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "zotero-better-bibtex",
@@ -3292,7 +4445,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "jabref",
@@ -3307,7 +4465,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "remnote",
@@ -3322,7 +4485,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "supermemo",
@@ -3337,7 +4505,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "research-rabbit",
@@ -3352,7 +4525,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "connected-papers",
@@ -3367,7 +4545,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "pandoc",
@@ -3382,7 +4565,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "typst",
@@ -3397,7 +4585,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "mkdocs",
@@ -3412,22 +4605,35 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "graphviz",
       "title": "Graphviz",
-      "description": "研究 Graphviz 在「知识图谱、概念网络与信息组织」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "Graphviz 的抽象图/网络可视化与布局，不等同于知识图谱数据库。",
       "origin": "taxonomy_seed_curated",
       "research_state": "candidate",
       "topic_type": "application",
-      "area_id": "knowledge-graphs",
-      "domain_id": "knowledge",
+      "area_id": "data-graph-visual",
+      "domain_id": "data",
       "scope_level": "bounded_subject",
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "neo4j"
+      ],
+      "previous_area_id": "knowledge-graphs",
+      "identity_status": "source_checked",
+      "official_url": "https://graphviz.org/",
+      "identity_evidence_note": "官方主页描述 graph visualization 和布局工具。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "neo4j",
@@ -3442,7 +4648,14 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "graphviz"
+      ],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "moodle",
@@ -3457,7 +4670,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "h5p",
@@ -3472,7 +4690,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "activepieces",
@@ -3487,7 +4710,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "windmill",
@@ -3502,7 +4730,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "puppeteer",
@@ -3517,7 +4750,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "selenium",
@@ -3532,7 +4770,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "apple-shortcuts",
@@ -3547,7 +4790,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "hammerspoon",
@@ -3562,7 +4810,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "keyboard-maestro",
@@ -3577,7 +4830,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "prefect",
@@ -3592,7 +4850,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "dagster",
@@ -3607,7 +4870,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "apache-airflow",
@@ -3622,7 +4890,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "cron",
@@ -3637,7 +4910,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "systemd-timers",
@@ -3652,7 +4930,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "node-red",
@@ -3667,7 +4950,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "esphome",
@@ -3682,7 +4970,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "make-com",
@@ -3697,7 +4990,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "zapier",
@@ -3712,7 +5010,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "jobs-to-be-done",
@@ -3727,7 +5030,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "lean-startup",
@@ -3742,7 +5050,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "figma",
@@ -3757,7 +5070,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-04-product-data"
     },
     {
       "slug": "penpot",
@@ -3772,7 +5090,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "maze-ux",
@@ -3787,7 +5110,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "google-analytics",
@@ -3802,7 +5130,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "hotjar",
@@ -3817,7 +5150,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "buffer",
@@ -3832,7 +5170,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ahrefs",
@@ -3847,7 +5190,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "substack",
@@ -3862,7 +5210,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "beehiiv",
@@ -3877,7 +5230,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "shopify",
@@ -3892,7 +5250,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "medusa",
@@ -3907,7 +5270,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "paddle",
@@ -3922,7 +5290,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "lemonsqueezy",
@@ -3937,7 +5310,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "chatwoot",
@@ -3952,7 +5330,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "formbricks",
@@ -3967,7 +5350,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "discourse",
@@ -3982,7 +5370,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "nextcloud",
@@ -3997,7 +5390,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "filebrowser",
@@ -4012,7 +5410,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "photoprism",
@@ -4027,7 +5430,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "digikam",
@@ -4042,7 +5450,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "keepassxc",
@@ -4057,7 +5470,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "onepassword",
@@ -4072,7 +5490,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "restic",
@@ -4087,7 +5510,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": "wave-03-info-personal"
     },
     {
       "slug": "kopia",
@@ -4102,7 +5530,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "firefly-iii",
@@ -4117,7 +5550,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "beancount",
@@ -4132,7 +5570,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "vikunja",
@@ -4147,7 +5590,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "todoist",
@@ -4162,37 +5610,58 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "tailscale",
       "title": "Tailscale",
-      "description": "研究 Tailscale 在「本地优先、隐私与家庭数据服务」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "Tailscale 网络连接平台；额外身份管理与服务能力应与 WireGuard 基础协议区分。",
       "origin": "taxonomy_seed_curated",
       "research_state": "candidate",
       "topic_type": "platform",
-      "area_id": "personal-privacy",
-      "domain_id": "personal",
+      "area_id": "software-network",
+      "domain_id": "software",
       "scope_level": "bounded_subject",
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "wireguard"
+      ],
+      "previous_area_id": "personal-privacy",
+      "identity_status": "source_checked",
+      "official_url": "https://tailscale.com/docs/concepts/wireguard",
+      "identity_evidence_note": "Tailscale 官方文档解释自身基于 WireGuard 的不同服务层。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "wireguard",
       "title": "WireGuard",
-      "description": "研究 WireGuard 在「本地优先、隐私与家庭数据服务」中的实际可达结果、条件、扩展和已知限制。",
+      "description": "WireGuard VPN 协议及实现的安全隧道；不与 Tailscale 平台功能混同。",
       "origin": "taxonomy_seed_curated",
       "research_state": "candidate",
       "topic_type": "protocol",
-      "area_id": "personal-privacy",
-      "domain_id": "personal",
+      "area_id": "software-network",
+      "domain_id": "software",
       "scope_level": "bounded_subject",
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [
+        "tailscale"
+      ],
+      "previous_area_id": "personal-privacy",
+      "identity_status": "source_checked",
+      "official_url": "https://www.wireguard.com/",
+      "identity_evidence_note": "项目官网描述通用加密网络隧道与协议。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "concept-mapping",
@@ -4207,7 +5676,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "knowledge-representation",
@@ -4222,7 +5696,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "problem-structuring-methods",
@@ -4237,7 +5716,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "five-whys",
@@ -4252,7 +5736,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "decision-matrix",
@@ -4267,7 +5756,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "bayesian-decision-theory",
@@ -4282,7 +5776,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "argument-mapping",
@@ -4297,7 +5796,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "nonviolent-communication",
@@ -4312,7 +5816,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "deliberate-practice",
@@ -4327,7 +5836,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "retrieval-practice",
@@ -4342,7 +5856,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "ooda-loop",
@@ -4357,7 +5876,12 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     },
     {
       "slug": "time-blocking",
@@ -4372,7 +5896,13 @@
       "selection_status": "candidate",
       "evidence_status": "not_topic_verified",
       "aliases": [],
-      "related_topics": []
+      "related_topics": [],
+      "identity_status": "unverified",
+      "official_url": null,
+      "identity_evidence_note": "仅为分类种子，尚需确认官方身份、研究边界和来源；不能直接入队。",
+      "scope_excludes": [],
+      "research_batch": null
     }
-  ]
+  ],
+  "identity_review_policy": "source_checked denotes a checked official entry, not that the full P-map has been verified; eligible is limited to scoped named subjects with an official source."
 }

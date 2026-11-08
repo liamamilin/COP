@@ -1,0 +1,41 @@
+name: Topic Registry quality
+
+on:
+  push:
+    branches:
+      - fix/topic-registry-p0
+      - plan/topic-registry-v0.4
+      - main
+    paths:
+      - "catalog/topic-*.v0.4.json"
+      - "catalog/research-queue.v0.4.json"
+      - "scripts/validate_topic_registry.py"
+      - "scripts/tests/test_topic_registry.py"
+      - ".github/workflows/topic-registry-quality.yml"
+  pull_request:
+    paths:
+      - "catalog/topic-*.v0.4.json"
+      - "catalog/research-queue.v0.4.json"
+      - "scripts/validate_topic_registry.py"
+      - "scripts/tests/test_topic_registry.py"
+      - ".github/workflows/topic-registry-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check registry and queue are synchronized
+        run: python3 -B scripts/validate_topic_registry.py
+      - name: Check lifecycle, identity, and queue regressions
+        run: python3 -B -m unittest discover -s scripts/tests -p test_topic_registry.py -v
+      - name: Queue regeneration must be deterministic
+        run: |
+          python3 -B scripts/validate_topic_registry.py --write-queue
+          git diff --exit-code -- catalog/research-queue.v0.4.json

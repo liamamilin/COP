@@ -1,27 +1,139 @@
 {
   "schema_version": "0.4",
   "source_registry": "catalog/topic-registry.v0.4.json",
-  "state": "proposal_only_not_executed",
-  "output_root": "outputs/<slug>/",
+  "state": "generated_not_running",
   "max_parallel_global": 2,
-  "default_validation": "python3 .agents/skills/p-discovery/scripts/validate.py outputs/<slug>/possibilities.json",
-  "pipeline": [
-    "selected",
-    "researching",
-    "source_review",
-    "accepted_or_rework",
-    "merge_after_review",
-    "published_in_atlas_after_catalog_update"
+  "executable": [
+    {
+      "slug": "pydantic-ai",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://pydantic.dev/docs/ai/overview/install/",
+      "area_id": "agent-sdk"
+    },
+    {
+      "slug": "mlx-lm",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://github.com/ml-explore/mlx-lm",
+      "area_id": "ai-local"
+    },
+    {
+      "slug": "llama-cpp",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://github.com/ggml-org/llama.cpp",
+      "area_id": "ai-inference"
+    },
+    {
+      "slug": "mem0",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://github.com/mem0ai/mem0",
+      "area_id": "agent-memory"
+    },
+    {
+      "slug": "langfuse",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://langfuse.com/docs/observability/overview",
+      "area_id": "agent-observability"
+    },
+    {
+      "slug": "browser-use",
+      "source_wave": "wave-01-agent-local",
+      "official_url": "https://github.com/browser-use/browser-use",
+      "area_id": "agent-browser"
+    }
   ],
-  "require_artifacts": [
-    "possibilities.json",
-    "possibilities.md",
-    "validation-report.txt",
-    "discovery-log.md",
-    "source-coverage.json"
+  "deferred_preferred": [
+    {
+      "slug": "comfyui",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "remotion",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "ltx-video",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "ace-step",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "ffmpeg",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "tauri",
+      "source_wave": "wave-02-creative-desktop",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "rsshub",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "firecrawl",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "home-assistant",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "immich",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "restic",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "hammerspoon",
+      "source_wave": "wave-03-info-personal",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "figma",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "postgresql",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "docker",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "qdrant",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "plotly",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    },
+    {
+      "slug": "apple-shortcuts",
+      "source_wave": "wave-04-product-data",
+      "reason": "identity_or_scope_not_approved"
+    }
   ],
-  "release_policy": "Never auto-mark reviewed, never auto-merge PRs, never edit P Atlas live catalog until accepted research and browser regression",
-  "waves": [
+  "planned_wave_definitions": [
     {
       "id": "wave-01-agent-local",
       "title": "Agent 与本地模型研究",
@@ -82,5 +194,6 @@
       ],
       "policy": "独立运行现有 P Discovery Skill；先来源搜集后分类，按具体主题写单独 outputs，不在本步骤发布"
     }
-  ]
+  ],
+  "policy": "Only eligible, identity-checked bounded subjects enter executable. No automatic research or publication."
 }
