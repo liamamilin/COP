@@ -2,7 +2,7 @@
   "schema_version": "0.4",
   "scope": "近期涉及的 AI、软件、数据、创作、信息、知识、自动化、商业、个人数字事务和认知方法；不声称覆盖所有学科或全球软件生态。",
   "hierarchy": "domain -> area -> topic; P is discovered after topic research; domains and areas are never themselves P",
-  "taxonomy_created_for": "systematic_topic_discovery",
+  "taxonomy_created_for": "systematic_topic_discovery_with_explicit_unseeded_gaps",
   "domains": [
     {
       "id": "ai",
@@ -591,7 +591,7 @@
       "domain_id": "personal",
       "title": "本地优先、隐私与家庭数据服务",
       "scope": "以「本地优先、隐私与家庭数据服务」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
-      "coverage_state": "taxonomy_seeded_not_exhaustive"
+      "coverage_state": "unseeded_needs_discovery"
     },
     {
       "id": "cognition-representation",
@@ -633,6 +633,27 @@
       "domain_id": "cognition",
       "title": "注意力、行动习惯与自我观察",
       "scope": "以「注意力、行动习惯与自我观察」为对象范围发现有明确身份、独立资料和可研究成果的具体主题；本分组只是导航，不预设任何 P。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-vector",
+      "domain_id": "software",
+      "title": "向量数据库与检索基础设施",
+      "scope": "向量检索系统、检索索引与数据后端，不等同于 Agent 编排框架。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "data-graph-visual",
+      "domain_id": "data",
+      "title": "图结构与网络可视化",
+      "scope": "一般图结构、节点关系和网络数据的布局与表达，不等同于语义知识图谱存储。",
+      "coverage_state": "taxonomy_seeded_not_exhaustive"
+    },
+    {
+      "id": "software-network",
+      "domain_id": "software",
+      "title": "安全网络连接与远程访问",
+      "scope": "安全隧道、虚拟专用网络、远程设备连接和网络访问控制。",
       "coverage_state": "taxonomy_seeded_not_exhaustive"
     }
   ],
@@ -701,5 +722,5 @@
       ]
     }
   ],
-  "rule": "This is a scoped initial taxonomy, not a completed exhaustive web census. Subarea source coverage must be independently audited before claiming completeness."
+  "rule": "An Area may have zero candidates; that is a discovery gap, never a reason to invent a seed. Source survey status is independent of candidate counts."
 }
