@@ -67,7 +67,7 @@ def validate(tax: dict, registry: dict) -> dict:
         require(topic.get("identity_status") in IDENTITY,
                 f"Unknown identity status {slug}")
         if selection == "eligible":
-            require(state == "candidate", f"Eligible non-candidate {slug}")
+            require(state in {"candidate", "eligible"}, f"Eligible non-candidate {slug}")
             require(topic["scope_level"] == "bounded_subject",
                     f"Area survey eligible {slug}")
             require(topic["identity_status"] == "source_checked",
@@ -106,7 +106,7 @@ def build_queue(registry: dict, topics: dict, previous: dict) -> dict:
     deferred = []
     def ready(t: dict) -> bool:
         return (t.get("selection_status") == "eligible" and
-                t["research_state"] == "candidate" and
+                t["research_state"] in {"candidate", "eligible"} and
                 t["scope_level"] == "bounded_subject" and
                 t.get("identity_status") == "source_checked" and
                 bool(re.match(r"^https://", t.get("official_url") or "")))
