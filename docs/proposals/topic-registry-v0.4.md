@@ -10,16 +10,16 @@ Domain 领域 → Area 子领域 → Topic 独立研究对象
                          P (可达用户结果)
 ```
 
-**Domain、Area 只用于组织对象。** Topic 的 `scope_level` 表示研究层级：`bounded_subject` 是具体产品、库、框架、服务、协议或边界清晰的方法；`area_survey` 是较宽的领域概览，当前不进入默认批次。对象类型通过 `topic_type` 独立标识。不要把数据应用这个 Area 与 Shiny 这个 Topic、或 Shiny 研究后发现的 P 混淆。
+**Domain、Area 只用于组织对象。** Topic 的 `scope_level` 表示研究层级：`bounded_subject` 是具体产品、库、框架、服务、协议或边界清晰的方法；`area_survey` 是较宽的领域概览，当前不进入默认批次；新增加的 181 个种子除少量身份已核验者外，都不得直接入队。对象类型通过 `topic_type` 独立标识。不要把数据应用这个 Area 与 Shiny 这个 Topic、或 Shiny 研究后发现的 P 混淆。
 
 ## 四份核心文件
 
-- `catalog/topic-taxonomy.v0.4.json`：11 个 Domain + 82 个 Area + 官方类别索引入口。
-- `catalog/topic-registry.v0.4.json`：291 个 Topics、身份类型、范围摘要、来源批次与研究状态。
-- `catalog/coverage.v0.4.md`：各 Area 的种子覆盖及仍待进行的来源调查，防止将对象数当成覆盖率。
-- `catalog/research-queue.v0.4.json`：研究工作流建议，不包含已研究主题，不负责发布。
+- `catalog/topic-taxonomy.v0.4.json`：11 个 Domain + 85 个 Area（其中一个暂为空） + 官方类别索引入口。
+- `catalog/topic-registry.v0.4.json`：291 个 Topics、身份与来源核对、范围摘要、关联主题与研究状态。
+- `catalog/coverage.v0.4.md`：各 Area 的候选分布、分类修订、空白子领域及待进行的来源调查，防止将对象数当成覆盖率。
+- `catalog/research-queue.v0.4.json`：自动从身份已核实且已批准的候选派生的可执行队列，其他优先候选只保留为 deferred，不负责发布。
 
-可以运行 `python3 scripts/validate_topic_registry.py` 检查父子引用、去重、来源批次状态和队列是否引用尚未研究的具体对象。
+可以运行 `python3 scripts/validate_topic_registry.py` 检查父子引用、状态和队列是否同步；运行 `python3 scripts/validate_topic_registry.py --write-queue` 按当前目录重新生成队列。运行 `python3 -m unittest discover -s scripts/tests -p test_topic_registry.py -v` 执行回归测试。批次不自动执行。
 
 ## 研究状态及来源来源
 
@@ -46,7 +46,19 @@ Domain 领域 → Area 子领域 → Topic 独立研究对象
 
 ## v0.4 审查重点
 
-- 以前的 v0.3 以工具凑目录，现根据活动领域先建立 82 个 Area，再将旧的 110 项和 181 项种子映射。
+- 以前的 v0.3 以工具凑目录，现根据活动领域先建立 82 个 Area，随后审查增至 85 个 Area；再将旧的 110 项和 181 项种子映射。新增空子领域不强制补齐。
 - 具体方法可以进入目录（例如 A/B 测试、刻意练习），但不能仅凭名称假装它是一款有 API 的软件；证据主要来自研究方法与实际案例。
 - 已有的 LLM 推理、微调、AI 视频等概览仍保留但标注 `area_survey`，不与 llama.cpp、LTX Video、Shiny 等具体对象在默认批次里比较数量。
 - 此版本解决的是**结构上的系统性**。覆盖报告承认独立来源普查未完成，不声称目录已穷尽。
+
+## P0 修订：分类与执行准入（本分支）
+
+上次审查指出 Qdrant、SearXNG、Graphviz、Tailscale、WireGuard 归属不精确，现已调整各自主要 Area。新增向量检索、图结构可视化、安全网络连接三个子领域；移走网络工具后，个人领域的「本地优先、隐私与家庭数据服务」没有种子，因此保留为 `unseeded_needs_discovery`，不生成假对象。
+
+`openai-agent-harness` 未找到清楚独立于现有 `agent-harness` 的身份，状态设为 `blocked`；若找到有权威来源的独立对象，必须先提供范围和来源再重新解锁。
+
+新增 `identity_status`、`official_url`、`identity_evidence_note`、`selection_status` 及有限的 `related_topics`。仅当一个**具体有界对象**同时满足「状态仍待研究」「身份已核验」「有官方入口」「已明确批准」时，才能出现在 `research-queue.v0.4.json` 的 `executable` 列表。其他优先候选仍可作为 `deferred_preferred`，不能被 Codex 当作已准入任务执行。
+
+当前只有 6 项进入可执行队列：PydanticAI、MLX LM、llama.cpp、Mem0、Langfuse、browser-use。其余并未完成目录调查；此处只把来源明确的对象作为试运行候选，而非认为其他对象不值得研究。
+
+**目录处于修复规划分支，不代表 P Atlas 线上内容已经修改。** 独立来源普查仍未完成；本轮也没有实际运行 P Discovery。
