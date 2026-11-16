@@ -1,0 +1,40 @@
+name: 新增 P
+description: 提议一项可以纳入 P Atlas 的可能性
+title: "[新增 P] "
+body:
+  - type: markdown
+    attributes:
+      value: 提案会作为公开 Issue 接受审核。请用可公开分享的资料描述一项用户能完成的事。
+  - type: input
+    id: topic
+    attributes:
+      label: 主题
+      description: 填写相关主题的名称。主题尚未收录时，也可以填写建议的主题名。
+      placeholder: 例如 Obsidian
+    validations:
+      required: true
+  - type: input
+    id: possibility
+    attributes:
+      label: 可能性名称
+      description: 用动词和可观察的结果来命名。
+      placeholder: 例如把读书摘录整理成可回溯的笔记
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 可观察结果
+      description: 描述用户最后能看到、得到或完成什么。
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 条件与边界
+      description: 标明属于内置功能还是扩展，并列出所需插件、版本、付费条件或仍待验证的限制。
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 来源与证据
+      description: 请提供支持这一结果的链接和相关原文或位置。没有证据时，可以先提交为待验证方向。

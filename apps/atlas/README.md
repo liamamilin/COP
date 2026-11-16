@@ -39,6 +39,10 @@ pnpm --filter @cop-studio/atlas preview
 
 Markdown 使用 react-markdown + GFM，不启用原始 HTML；仅转换严格匹配的命名锚点，以保留原报告目录；其他原始 HTML 均不执行。外链只允许 HTTP(S)，以 `noopener noreferrer` 打开；相对成果链接指向固定 GitHub 原文。图片以文字说明显示，避免读报告自动连接外部站点。没有分析追踪或外部字体请求。
 
+## 新增 P
+
+主导航的「新增 P」打开 GitHub 提案表单。从主题页进入时会自动填写主题名。提交需要 GitHub 登录，提案通过审核并纳入研究文件后会随下一次构建发布。
+
 ## 部署
 
 `.github/workflows/atlas-pages.yml` 在 `main` 分支相关内容更新时执行质量检查、构建、桌面/移动浏览器验收，成功后发布到 GitHub Pages；PR 只检查。Pages 应选择 GitHub Actions 作为发布来源，`github-pages` 环境须允许 `main` 分支部署。旧 Studio 的部署方式保持不变。

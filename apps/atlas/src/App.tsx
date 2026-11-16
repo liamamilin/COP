@@ -1108,6 +1108,9 @@ export function App() {
     return () => window.removeEventListener("hashchange", handler);
   }, []);
   const topic = library.catalog.topics.find((t) => t.slug === route.slug);
+  const addPossibility = new URL("https://github.com/liamamilin/COP/issues/new");
+  addPossibility.searchParams.set("template", "add-possibility.yml");
+  if (topic) addPossibility.searchParams.set("topic", topic.title);
   useEffect(() => {
     document.title = topic
       ? `${topic.title} · P Atlas`
@@ -1139,6 +1142,7 @@ export function App() {
           <a href="#/" aria-current={!route.slug ? "page" : undefined}>
             主题图书馆
           </a>
+          <External url={addPossibility.href}>新增 P</External>
           <External url="https://github.com/liamamilin/COP/tree/main">
             GitHub
           </External>
@@ -1164,7 +1168,7 @@ export function App() {
           <button aria-label="搜索整个图书馆">⌕</button>
         </form>
         <span className="edition">
-          READING EDITION <strong>0.1</strong>
+          READING EDITION <strong>{library.catalog.edition}</strong>
         </span>
       </header>
       <main id="main-content" tabIndex={-1}>

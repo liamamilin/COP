@@ -14,6 +14,20 @@ const ready = catalog.topics.filter((t) => t.status === "ready").map((t) => ({
 }));
 const planned = catalog.topics.filter((t) => t.status === "planned");
 
+test("the contribution link opens the issue form with the current topic when available", async ({ page, isMobile }) => {
+  if (isMobile) await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto("./");
+  const link = page.getByRole("navigation", { name: "主导航" }).getByRole("link", { name: /新增 P/ });
+  const formUrl = "https://github.com/liamamilin/COP/issues/new";
+  await expect(link).toBeInViewport({ ratio: 1 });
+  await expect(link).toHaveAttribute("href", `${formUrl}?template=add-possibility.yml`);
+  await expect(link).toHaveAttribute("target", "_blank");
+
+  await page.goto("./#/topic/customer-discovery/report");
+  const topic = new URLSearchParams({ template: "add-possibility.yml", topic: "客户发现与需求验证" });
+  await expect(link).toHaveAttribute("href", `${formUrl}?${topic}`);
+});
+
 test("library shows real counts and plans never masquerade as generated content", async ({
   page,
 }) => {
