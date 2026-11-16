@@ -1,11 +1,12 @@
 import { describe, it, expect } from "vitest";
 import {
+  catalogPath,
   collectContent,
   validateCatalog,
   validateMap,
   root,
 } from "../scripts/content.mjs";
-import { readFile, mkdtemp, mkdir, writeFile, rm, symlink } from "node:fs/promises";
+import { readFile, mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -16,44 +17,14 @@ const fixture = JSON.parse(
   ),
 );
 describe("build content contract", () => {
-  it("loads the complete v0.2 handoff through the real collector while preserving the active catalog", async () => {
-    const activePath = join(root, "catalog/p-atlas-topics.v0.1.json");
-    const activeBefore = await readFile(activePath, "utf8");
-    const candidate = JSON.parse(
-      await readFile(join(root, "catalog/p-atlas-topics.v0.2.json"), "utf8"),
-    );
-    const dir = await mkdtemp(join(tmpdir(), "atlas-v02-contract-"));
-    try {
-      await mkdir(join(dir, "catalog"));
-      await writeFile(
-        join(dir, "catalog/p-atlas-topics.v0.1.json"),
-        JSON.stringify(candidate),
-      );
-      await symlink(join(root, "outputs"), join(dir, "outputs"), "dir");
-      const { library, bundles } = await collectContent(dir, false);
-      expect(bundles).toHaveLength(38);
-      expect(library.search).toHaveLength(726);
-      expect(bundles.map((b) => b.slug)).toEqual(
-        candidate.topics.filter((t) => t.status === "ready").map((t) => t.slug),
-      );
-      for (const b of bundles) {
-        const expected = JSON.parse(
-          await readFile(join(root, "outputs", b.slug, "possibilities.json"), "utf8"),
-        );
-        expect(b.map).toEqual(expected);
-        expect(b.markdown).toContain(b.map.coverage_gaps[0]);
-      }
-    } finally {
-      await rm(dir, { recursive: true, force: true });
-    }
-    expect(await readFile(activePath, "utf8")).toBe(activeBefore);
-  });
   it("reads every real P and report from outputs, preserving original fields", async () => {
     const { library, bundles } = await collectContent(root, false);
     const catalog = JSON.parse(
-      await readFile(join(root, "catalog/p-atlas-topics.v0.1.json"), "utf8"),
+      await readFile(join(root, "catalog/p-atlas-topics.v0.2.json"), "utf8"),
     );
     expect(library.catalog).toEqual(catalog);
+    expect(bundles).toHaveLength(38);
+    expect(library.search).toHaveLength(726);
     expect(bundles.map((b) => b.slug)).toEqual(
       catalog.topics.filter((t) => t.status === "ready").map((t) => t.slug),
     );
@@ -85,6 +56,7 @@ describe("build content contract", () => {
           "utf8",
         ),
       );
+      expect(b.markdown).toContain(b.map.coverage_gaps[0]);
     }
     for (const summary of library.summaries)
       expect(summary.researchDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
@@ -134,13 +106,13 @@ describe("build content contract", () => {
         ],
       };
       await writeFile(
-        join(dir, "catalog/p-atlas-topics.v0.1.json"),
+        join(dir, catalogPath),
         JSON.stringify(c),
       );
       expect((await collectContent(dir, false)).bundles).toHaveLength(0);
       c.topics[0].status = "ready";
       await writeFile(
-        join(dir, "catalog/p-atlas-topics.v0.1.json"),
+        join(dir, catalogPath),
         JSON.stringify(c),
       );
       await expect(collectContent(dir, false)).rejects.toThrow();

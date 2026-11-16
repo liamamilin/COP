@@ -59,6 +59,7 @@ export interface Bundle {
 }
 export interface Library {
   catalog: {
+    edition?: string;
     domains: { id: string; title: string; description: string }[];
     topics: Topic[];
   };

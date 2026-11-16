@@ -41,7 +41,7 @@
 
 每项研究保存 possibilities.md、possibilities.json、validation-report.txt、discovery-log.md、source-coverage.json。实际缓存只用于原文核对，不作为网页运行依赖。每一确认结果都要有具体原文支持；记录未支持方向和覆盖缺口，不自授 reviewed。
 
-现有 20 个研究主题、原 Skill 与已上线目录保持不变。新目录在 catalog/p-atlas-topics.v0.2.json；新条目只有通过研究、复核和校验才可改为 ready。当前线上仍使用 v0.1 目录，新版不会因文件存在就自动发布。
+v0.2 目录保留原有 20 个研究主题，新增主题通过研究、复核和校验后标记为 ready。P Atlas 从 [v0.2 目录](../../catalog/p-atlas-topics.v0.2.json) 构建。发布流程见 [阅读器说明](../../apps/atlas/README.md)。
 
 支付、银行连接、地区、套餐、版本、扩展维护和实际运行等边界按来源如实描述。客户访谈、预算或产品分析能力不等于已获得市场、投资收益或确定的因果解释。
 
@@ -51,4 +51,4 @@
 
 ## 本轮交付状态
 
-18 个主题已完成 Luna 研究与主 agent 来源复核，合计 179 项有来源支持的结果。完整交付、验证与未解决问题见 [研究报告](../../outputs/atlas-v0.2-report.md)。新版目录尚未切换到线上阅读器。
+18 个主题已完成 Luna 研究与主 agent 来源复核，合计 179 项有来源支持的结果。完整交付、验证与未解决问题见 [研究报告](../../outputs/atlas-v0.2-report.md)。
