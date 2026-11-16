@@ -1,0 +1,504 @@
+{
+  "topic": "posthog",
+  "checked_at": "2026-11-05",
+  "retrieved": [
+    {
+      "id": "s-web-analytics",
+      "requested_url": "https://posthog.com/docs/web-analytics",
+      "capture_origin": "https://posthog.com/docs/web-analytics",
+      "retrieved_at": "2026-11-05T12:14:05.138397+00:00",
+      "capture_sha256": "d0fa347db25974c4f2a93d7a4564c01091c725c2d997fb64d377a3a4600a734b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-product-analytics",
+      "requested_url": "https://posthog.com/docs/product-analytics",
+      "capture_origin": "https://posthog.com/docs/product-analytics",
+      "retrieved_at": "2026-11-05T12:14:06.362278+00:00",
+      "capture_sha256": "9c3fa1507eab91417268ecda7216a039351ffbe5c34049be1a59d4c09ff2a405",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-replay-tutorial",
+      "requested_url": "https://posthog.com/tutorials/explore-insights-session-recordings",
+      "capture_origin": "https://posthog.com/tutorials/explore-insights-session-recordings",
+      "retrieved_at": "2026-11-05T12:14:42.708770+00:00",
+      "capture_sha256": "7228794897420a00447b6b3869aa11dbe193c21b28db8d3b17a4baff797e8003",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-surveys",
+      "requested_url": "https://posthog.com/docs/surveys",
+      "capture_origin": "https://posthog.com/docs/surveys",
+      "retrieved_at": "2026-11-05T12:14:05.879948+00:00",
+      "capture_sha256": "ad219b60dcceb4e2903d87a0165ed2c90b6a2497b0bccf588b47013d07579529",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-feature-flags",
+      "requested_url": "https://posthog.com/docs/feature-flags",
+      "capture_origin": "https://posthog.com/docs/feature-flags",
+      "retrieved_at": "2026-11-05T12:14:04.287407+00:00",
+      "capture_sha256": "b12e08db2c67412783dc94e8b42be065196b38d2d5dc023c394c311a9946c68b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-experiments",
+      "requested_url": "https://posthog.com/docs/experiments",
+      "capture_origin": "https://posthog.com/docs/experiments",
+      "retrieved_at": "2026-11-05T12:14:06.142770+00:00",
+      "capture_sha256": "a5bd148f5e6fa7d56b48358869bb965cfd2bc53d87dbd04fc25ef8d72b2f53d8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-error-tracking",
+      "requested_url": "https://posthog.com/docs/error-tracking",
+      "capture_origin": "https://posthog.com/docs/error-tracking",
+      "retrieved_at": "2026-11-05T12:14:06.023445+00:00",
+      "capture_sha256": "a4934fa45d27f995571bc1034243ad413e38d8f48cc1cb44e9c0109420e76927",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data-warehouse",
+      "requested_url": "https://posthog.com/docs/data-warehouse",
+      "capture_origin": "https://posthog.com/docs/data-warehouse",
+      "retrieved_at": "2026-11-05T12:14:05.224575+00:00",
+      "capture_sha256": "8d49485e74fa2d8cacfbcbbbc175cd15bad391f974283f72ede37b5d5957ec70",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-llm-analytics",
+      "requested_url": "https://posthog.com/docs/llm-analytics",
+      "capture_origin": "https://posthog.com/docs/ai-observability",
+      "retrieved_at": "2026-11-05T12:14:10.640838+00:00",
+      "capture_sha256": "6c20b6e48faa8e8274db3f8ffd9fe49e9a7ea1f0160586a58b89fed13bf33056",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-yc-story",
+      "requested_url": "https://posthog.com/customers/ycombinator",
+      "capture_origin": "https://posthog.com/customers/ycombinator",
+      "retrieved_at": "2026-11-05T12:14:40.472020+00:00",
+      "capture_sha256": "24f265787aecae1fa7b126074d866dad24622252f9aa7a4f4bf875573c8f9b14",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-products",
+      "requested_url": "https://posthog.com/docs",
+      "capture_origin": "https://posthog.com/docs",
+      "retrieved_at": "2026-11-05T12:13:42.236759+00:00",
+      "capture_sha256": "dd0e55e7984743491cc1dc9f1e1adea32b5bbfb6b55aad0b285848fa91fd40c7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "use_status": "background_or_not_adopted_as_confirmed_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-events",
+      "requested_url": "https://posthog.com/docs/data/events",
+      "capture_origin": "https://posthog.com/docs/data/events",
+      "retrieved_at": "2026-11-05T12:14:00.031671+00:00",
+      "capture_sha256": "f7f5162092ae2edca997fcf8b4d85b96f69f8a105473e0ba6f4dcdf291df913c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-session-replay",
+      "requested_url": "https://posthog.com/docs/session-replay",
+      "capture_origin": "https://posthog.com/docs/session-replay",
+      "retrieved_at": "2026-11-05T12:14:04.931415+00:00",
+      "capture_sha256": "c7854d3fc43cbae5323811038ed103bf4ab17057c05d91f611c1588a6ab8069d",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-cohorts",
+      "requested_url": "https://posthog.com/docs/data/cohorts",
+      "capture_origin": "https://posthog.com/docs/data/cohorts",
+      "retrieved_at": "2026-11-05T12:14:06.469205+00:00",
+      "capture_sha256": "491b986375341800d2929c0aa6df2b56c37413184bcdd2acfe86dca322d41073",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "use_status": "background_or_not_adopted_as_confirmed_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://posthog.com/pricing",
+      "capture_origin": "https://posthog.com/pricing",
+      "retrieved_at": "2026-11-05T12:14:06.203322+00:00",
+      "capture_sha256": "3d1020a30e3f2ee9656fa95f113021ee45e43f03657246141ab50a3a981c6e7b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "use_status": "direct_support_or_explicit_condition_for_confirmed_result",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-products",
+      "requested_url": "https://posthog.com/docs",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-product-analytics",
+      "requested_url": "https://posthog.com/docs/product-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-events",
+      "requested_url": "https://posthog.com/docs/data/events",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-session-replay",
+      "requested_url": "https://posthog.com/docs/session-replay",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-surveys",
+      "requested_url": "https://posthog.com/docs/surveys",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-experiments",
+      "requested_url": "https://posthog.com/docs/experiments",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-feature-flags",
+      "requested_url": "https://posthog.com/docs/feature-flags",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-error-tracking",
+      "requested_url": "https://posthog.com/docs/error-tracking",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-web-analytics",
+      "requested_url": "https://posthog.com/docs/web-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-data-warehouse",
+      "requested_url": "https://posthog.com/docs/data-warehouse",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-cohorts",
+      "requested_url": "https://posthog.com/docs/data/cohorts",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-llm-analytics",
+      "requested_url": "https://posthog.com/docs/llm-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://posthog.com/pricing",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "s-web-analytics",
+      "requested_url": "https://posthog.com/docs/web-analytics",
+      "final_url": "https://posthog.com/docs/web-analytics",
+      "retrieved_at": "2026-11-05T12:14:05.138397+00:00",
+      "capture_sha256": "d0fa347db25974c4f2a93d7a4564c01091c725c2d997fb64d377a3a4600a734b",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-product-analytics",
+      "requested_url": "https://posthog.com/docs/product-analytics",
+      "final_url": "https://posthog.com/docs/product-analytics",
+      "retrieved_at": "2026-11-05T12:14:06.362278+00:00",
+      "capture_sha256": "9c3fa1507eab91417268ecda7216a039351ffbe5c34049be1a59d4c09ff2a405",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-replay-tutorial",
+      "requested_url": "https://posthog.com/tutorials/explore-insights-session-recordings",
+      "final_url": "https://posthog.com/tutorials/explore-insights-session-recordings",
+      "retrieved_at": "2026-11-05T12:14:42.708770+00:00",
+      "capture_sha256": "7228794897420a00447b6b3869aa11dbe193c21b28db8d3b17a4baff797e8003",
+      "source_class": "official_tutorial",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-surveys",
+      "requested_url": "https://posthog.com/docs/surveys",
+      "final_url": "https://posthog.com/docs/surveys",
+      "retrieved_at": "2026-11-05T12:14:05.879948+00:00",
+      "capture_sha256": "ad219b60dcceb4e2903d87a0165ed2c90b6a2497b0bccf588b47013d07579529",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-feature-flags",
+      "requested_url": "https://posthog.com/docs/feature-flags",
+      "final_url": "https://posthog.com/docs/feature-flags",
+      "retrieved_at": "2026-11-05T12:14:04.287407+00:00",
+      "capture_sha256": "b12e08db2c67412783dc94e8b42be065196b38d2d5dc023c394c311a9946c68b",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-experiments",
+      "requested_url": "https://posthog.com/docs/experiments",
+      "final_url": "https://posthog.com/docs/experiments",
+      "retrieved_at": "2026-11-05T12:14:06.142770+00:00",
+      "capture_sha256": "a5bd148f5e6fa7d56b48358869bb965cfd2bc53d87dbd04fc25ef8d72b2f53d8",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-error-tracking",
+      "requested_url": "https://posthog.com/docs/error-tracking",
+      "final_url": "https://posthog.com/docs/error-tracking",
+      "retrieved_at": "2026-11-05T12:14:06.023445+00:00",
+      "capture_sha256": "a4934fa45d27f995571bc1034243ad413e38d8f48cc1cb44e9c0109420e76927",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-data-warehouse",
+      "requested_url": "https://posthog.com/docs/data-warehouse",
+      "final_url": "https://posthog.com/docs/data-warehouse",
+      "retrieved_at": "2026-11-05T12:14:05.224575+00:00",
+      "capture_sha256": "8d49485e74fa2d8cacfbcbbbc175cd15bad391f974283f72ede37b5d5957ec70",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-llm-analytics",
+      "requested_url": "https://posthog.com/docs/llm-analytics",
+      "final_url": "https://posthog.com/docs/ai-observability",
+      "retrieved_at": "2026-11-05T12:14:10.640838+00:00",
+      "capture_sha256": "6c20b6e48faa8e8274db3f8ffd9fe49e9a7ea1f0160586a58b89fed13bf33056",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-yc-story",
+      "requested_url": "https://posthog.com/customers/ycombinator",
+      "final_url": "https://posthog.com/customers/ycombinator",
+      "retrieved_at": "2026-11-05T12:14:40.472020+00:00",
+      "capture_sha256": "24f265787aecae1fa7b126074d866dad24622252f9aa7a4f4bf875573c8f9b14",
+      "source_class": "official_customer_story",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-products",
+      "requested_url": "https://posthog.com/docs",
+      "final_url": "https://posthog.com/docs",
+      "retrieved_at": "2026-11-05T12:13:42.236759+00:00",
+      "capture_sha256": "dd0e55e7984743491cc1dc9f1e1adea32b5bbfb6b55aad0b285848fa91fd40c7",
+      "source_class": "official_background_documentation",
+      "adopted": false,
+      "adoption_note": "background_or_not_adopted_as_confirmed_evidence"
+    },
+    {
+      "source_id": "s-events",
+      "requested_url": "https://posthog.com/docs/data/events",
+      "final_url": "https://posthog.com/docs/data/events",
+      "retrieved_at": "2026-11-05T12:14:00.031671+00:00",
+      "capture_sha256": "f7f5162092ae2edca997fcf8b4d85b96f69f8a105473e0ba6f4dcdf291df913c",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-session-replay",
+      "requested_url": "https://posthog.com/docs/session-replay",
+      "final_url": "https://posthog.com/docs/session-replay",
+      "retrieved_at": "2026-11-05T12:14:04.931415+00:00",
+      "capture_sha256": "c7854d3fc43cbae5323811038ed103bf4ab17057c05d91f611c1588a6ab8069d",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    },
+    {
+      "source_id": "s-cohorts",
+      "requested_url": "https://posthog.com/docs/data/cohorts",
+      "final_url": "https://posthog.com/docs/data/cohorts",
+      "retrieved_at": "2026-11-05T12:14:06.469205+00:00",
+      "capture_sha256": "491b986375341800d2929c0aa6df2b56c37413184bcdd2acfe86dca322d41073",
+      "source_class": "official_background_documentation",
+      "adopted": false,
+      "adoption_note": "background_or_not_adopted_as_confirmed_evidence"
+    },
+    {
+      "source_id": "s-pricing",
+      "requested_url": "https://posthog.com/pricing",
+      "final_url": "https://posthog.com/pricing",
+      "retrieved_at": "2026-11-05T12:14:06.203322+00:00",
+      "capture_sha256": "3d1020a30e3f2ee9656fa95f113021ee45e43f03657246141ab50a3a981c6e7b",
+      "source_class": "official_pricing",
+      "adopted": true,
+      "adoption_note": "direct_support_or_explicit_condition_for_confirmed_result"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "id": "s-products",
+      "requested_url": "https://posthog.com/docs",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-product-analytics",
+      "requested_url": "https://posthog.com/docs/product-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-events",
+      "requested_url": "https://posthog.com/docs/data/events",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-session-replay",
+      "requested_url": "https://posthog.com/docs/session-replay",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-surveys",
+      "requested_url": "https://posthog.com/docs/surveys",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-experiments",
+      "requested_url": "https://posthog.com/docs/experiments",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-feature-flags",
+      "requested_url": "https://posthog.com/docs/feature-flags",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-error-tracking",
+      "requested_url": "https://posthog.com/docs/error-tracking",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-web-analytics",
+      "requested_url": "https://posthog.com/docs/web-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-data-warehouse",
+      "requested_url": "https://posthog.com/docs/data-warehouse",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-cohorts",
+      "requested_url": "https://posthog.com/docs/data/cohorts",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-llm-analytics",
+      "requested_url": "https://posthog.com/docs/llm-analytics",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://posthog.com/pricing",
+      "result": "failed_attempt_without_capture",
+      "reason": "ordinary sandbox DNS lookup failure; a subsequent approved retrieval succeeded; this failed attempt has no capture hash or timestamp"
+    }
+  ],
+  "background_sources": [
+    {
+      "id": "s-products",
+      "requested_url": "https://posthog.com/docs",
+      "capture_origin": "https://posthog.com/docs",
+      "retrieved_at": "2026-11-05T12:13:42.236759+00:00",
+      "capture_sha256": "dd0e55e7984743491cc1dc9f1e1adea32b5bbfb6b55aad0b285848fa91fd40c7",
+      "content_type": "text/html; charset=utf-8",
+      "reason": "浏览产品范围、cohort 定向或事件采集背景；不作为任何 source_supported P 的直接证据。"
+    },
+    {
+      "id": "s-cohorts",
+      "requested_url": "https://posthog.com/docs/data/cohorts",
+      "capture_origin": "https://posthog.com/docs/data/cohorts",
+      "retrieved_at": "2026-11-05T12:14:06.469205+00:00",
+      "capture_sha256": "491b986375341800d2929c0aa6df2b56c37413184bcdd2acfe86dca322d41073",
+      "content_type": "text/html; charset=utf-8",
+      "reason": "浏览产品范围、cohort 定向或事件采集背景；不作为任何 source_supported P 的直接证据。"
+    }
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

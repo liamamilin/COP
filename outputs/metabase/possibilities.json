@@ -1,0 +1,1056 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Metabase",
+    "scope": "面向个人开发者研究数据查询、图表、仪表板、共享/订阅、告警、指标建模与应用嵌入；区分开源自托管、Metabase Cloud、付费计划和外部数据库/通知服务。官方 docs 页面在本次抓取时显示 v0.65（同时显示 v0.64 LTS）；价格、计划和支持矩阵会变化。本次无实际安装或运行。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:34:15.039246+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-overview",
+      "title": "Metabase documentation — v0.65",
+      "url": "https://www.metabase.com/docs/latest/",
+      "evidence": "open-source business intelligence platform\n[…]\nv0.65",
+      "location": "Metabase documentation — v0.65；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）；Metabase documentation — v0.65；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:11.241877+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/",
+      "capture_sha256": "1f4f05b48837f24aff4ce95d527be3c54bea3a09f25999feb0acf3b0bf7e6d83",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-01",
+          "location": "Metabase documentation — v0.65；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/"
+        },
+        {
+          "possibility_id": "mb-01",
+          "location": "Metabase documentation — v0.65；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-connect",
+      "title": "Adding and managing databases",
+      "url": "https://www.metabase.com/docs/latest/databases/connecting",
+      "evidence": "Connect Metabase to your data sources",
+      "location": "Adding and managing databases；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:16.008744+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/databases/connecting",
+      "capture_sha256": "ab25fa449c137aec9a5e47cb128d126bdb93d5faf2a9775e8f8d1787842fd026",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-01",
+          "location": "Adding and managing databases；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/databases/connecting"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-install",
+      "title": "Installing Metabase",
+      "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+      "evidence": "Java JAR file\n[…]\nMetabase Cloud\n[…]\nDocker container",
+      "location": "Installing Metabase；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）；Installing Metabase；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）；Installing Metabase；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:39.273244+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+      "capture_sha256": "6a08331a72cff5f03b66168ec8f2953ece384405d07af9ada8e999f4a1136a5b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-01",
+          "location": "Installing Metabase；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase"
+        },
+        {
+          "possibility_id": "mb-01",
+          "location": "Installing Metabase；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase"
+        },
+        {
+          "possibility_id": "mb-01",
+          "location": "Installing Metabase；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-query-builder",
+      "title": "The query builder",
+      "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+      "evidence": "Join tables\n[…]\nSummarize and group data\n[…]\nVisualize results as a chart",
+      "location": "The query builder；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）；The query builder；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）；The query builder；本次 HTML 提取正文第 26–26 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:18.973638+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+      "capture_sha256": "9b529044b404350f8195c263fed6f4641417fe3101bd27a9af64ca094484878b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-01",
+          "location": "The query builder；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor"
+        },
+        {
+          "possibility_id": "mb-01",
+          "location": "The query builder；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor"
+        },
+        {
+          "possibility_id": "mb-01",
+          "location": "The query builder；本次 HTML 提取正文第 26–26 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-sql",
+      "title": "SQL editor",
+      "url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+      "evidence": "Questions asked using SQL can be saved\n[…]\nadded to dashboards",
+      "location": "SQL editor；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:33.967661+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+      "capture_sha256": "851c1c9b3168abe43333212f58534c438e215a551f5f286ec09363ff77a1fd1f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-02",
+          "location": "SQL editor；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql"
+        },
+        {
+          "possibility_id": "mb-02",
+          "location": "SQL editor；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-dashboard",
+      "title": "Introduction to dashboards",
+      "url": "https://www.metabase.com/docs/latest/dashboards/introduction",
+      "evidence": "Dashboards group a set of questions into tabs on a single page",
+      "location": "Introduction to dashboards；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:23.247801+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/introduction",
+      "capture_sha256": "3c8008aa2737c67b1f37c3a86cbf329f4ac48ed8adbc37fb1ad2ce01eb1ef19d",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-03",
+          "location": "Introduction to dashboards；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/introduction"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-dashboard-filters",
+      "title": "Dashboard filters and parameters",
+      "url": "https://www.metabase.com/docs/latest/dashboards/filters",
+      "evidence": "duplicate dashboards\n[…]\nlet people change what data is displayed",
+      "location": "Dashboard filters and parameters；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:44.965365+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/filters",
+      "capture_sha256": "a79a79babe1134bc6086df77207c29ca111f9c7ce2119195e59d52c85f156dd5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-03",
+          "location": "Dashboard filters and parameters；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/filters"
+        },
+        {
+          "possibility_id": "mb-03",
+          "location": "Dashboard filters and parameters；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/filters"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-download-results",
+      "title": "Exporting results",
+      "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+      "evidence": "results of a question or dashboard\n[…]\n.csv\n[…]\n.xlsx\n[…]\n.json\n[…]\n.csv\n.xlsx\n.json",
+      "location": "Exporting results；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）；Exporting results；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）；Exporting results；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）；Exporting results；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）；Exporting results；本次 HTML 提取正文第 71–73 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:07:26.208663+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/exporting-results",
+      "capture_sha256": "1375fedf4c6eb686e7049e818dc3787907e04e4047585ca6a89d3561dcca2858",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-04",
+          "location": "Exporting results；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results"
+        },
+        {
+          "possibility_id": "mb-04",
+          "location": "Exporting results；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results"
+        },
+        {
+          "possibility_id": "mb-04",
+          "location": "Exporting results；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results"
+        },
+        {
+          "possibility_id": "mb-04",
+          "location": "Exporting results；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results"
+        },
+        {
+          "possibility_id": "mb-04",
+          "location": "Exporting results；本次 HTML 提取正文第 71–73 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-subscriptions",
+      "title": "Dashboard subscriptions",
+      "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+      "evidence": "how often\n[…]\nsend out an update\n[…]\nvia email or Slack",
+      "location": "Dashboard subscriptions；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）；Dashboard subscriptions；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:28.163946+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+      "capture_sha256": "f666109e101e50f04e99d5dedcc9d6b931e5de1146f193a17f6e5266f6fc2e66",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-05",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions"
+        },
+        {
+          "possibility_id": "mb-05",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions"
+        },
+        {
+          "possibility_id": "mb-05",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-alerts",
+      "title": "Alerts",
+      "url": "https://www.metabase.com/docs/latest/questions/alerts",
+      "evidence": "question returns a result\n[…]\nemail or Slack",
+      "location": "Alerts；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）；Alerts；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:31.161344+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/alerts",
+      "capture_sha256": "ac73af32b03506105833eba36c9c75a28ee43c5a1c04a3a4e3222b88971c8a31",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-06",
+          "location": "Alerts；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/alerts"
+        },
+        {
+          "possibility_id": "mb-06",
+          "location": "Alerts；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/alerts"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-metrics-canonical",
+      "title": "Metrics",
+      "url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "evidence": "create a metric that calculates revenue\n[…]\nstandardize how revenue is calculated",
+      "location": "Metrics；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:14:32.435006+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "capture_sha256": "37409d6899a602c179af49c1aa75ce07ff8ce6640b1deac43ebadf5d8fe32bb6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-07",
+          "location": "Metrics；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics"
+        },
+        {
+          "possibility_id": "mb-07",
+          "location": "Metrics；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-hola-case",
+      "title": "Hola Health case study",
+      "url": "https://www.metabase.com/case-studies/hola-health",
+      "evidence": "centralized reporting layer\n[…]\nstandardized core metrics\n[…]\nExecutives receive automated daily reports",
+      "location": "Hola Health case study；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）；Hola Health case study；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）；Hola Health case study；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:35.701623+00:00",
+      "capture_origin": "https://www.metabase.com/case-studies/hola-health",
+      "capture_sha256": "4fb43562daf4781e6c64321da4c1ea1f97773c43553e80a807ae69d4e29da08a",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-08",
+          "location": "Hola Health case study；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health"
+        },
+        {
+          "possibility_id": "mb-08",
+          "location": "Hola Health case study；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health"
+        },
+        {
+          "possibility_id": "mb-08",
+          "location": "Hola Health case study；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-embed",
+      "title": "Embedding overview",
+      "url": "https://www.metabase.com/docs/latest/embedding/start",
+      "evidence": "embed Metabase in your app",
+      "location": "Embedding overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:36.513250+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/start",
+      "capture_sha256": "1ee915406ad7586a1a2f17a41a589aaaa360b7a56c51d6b5f1f9568bc5bb34ed",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-09",
+          "location": "Embedding overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/start"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-guest-embed",
+      "title": "Guest embeds",
+      "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+      "evidence": "every Metabase plan\n[…]\nyou aren’t billed for them\n[…]\nJWT signed\n[…]\nlocked parameters",
+      "location": "Guest embeds；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）；Guest embeds；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）；Guest embeds；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:10:07.346877+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+      "capture_sha256": "4ccca8a6261af6d211ac21409178b9f0954ce5502f9cd5e87b42186dd1ccdb97",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-09",
+          "location": "Guest embeds；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding"
+        },
+        {
+          "possibility_id": "mb-09",
+          "location": "Guest embeds；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding"
+        },
+        {
+          "possibility_id": "mb-09",
+          "location": "Guest embeds；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding"
+        },
+        {
+          "possibility_id": "mb-09",
+          "location": "Guest embeds；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-embedding-sdk",
+      "title": "Modular embedding",
+      "url": "https://www.metabase.com/docs/latest/embedding/modular-embedding",
+      "evidence": "authenticated embeds (Pro/Enterprise only)",
+      "location": "Modular embedding；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:07:17.113520+00:00",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/modular-embedding",
+      "capture_sha256": "9d26388aaf166b3e60a3abeb843b15b54f75d86c6031eb21d43268e27de15f23",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-09",
+          "location": "Modular embedding；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/modular-embedding"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-synctera-case",
+      "title": "Synctera case study",
+      "url": "https://www.metabase.com/case-studies/synctera",
+      "evidence": "provide their customers with the ability to answer their own questions",
+      "location": "Synctera case study；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+      "source_class": "official_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:38.266602+00:00",
+      "capture_origin": "https://www.metabase.com/case-studies/synctera",
+      "capture_sha256": "c8f53c4d8a7741b46a84dd8ab98d271db4af1422b05adddf590c5a3f193ebe37",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-09",
+          "location": "Synctera case study；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/synctera"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-pricing",
+      "title": "Metabase Pricing",
+      "url": "https://www.metabase.com/pricing",
+      "evidence": "users of your embeds accessed through your product count as users",
+      "location": "Metabase Pricing；本次 HTML 提取正文第 127–127 行（不是 HTML 源码行号）",
+      "source_class": "official_pricing",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:40.617824+00:00",
+      "capture_origin": "https://www.metabase.com/pricing",
+      "capture_sha256": "333ae313735e182aa8be85e50332b9b9bc8ca4a3676b0150f4931bb3b2118cd0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-09",
+          "location": "Metabase Pricing；本次 HTML 提取正文第 127–127 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/pricing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-learn-example",
+      "title": "Explore dashboards",
+      "url": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data",
+      "evidence": "shows the total revenue and order count for each month",
+      "location": "Explore dashboards；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+      "source_class": "official_complete_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:26.488898+00:00",
+      "capture_origin": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data",
+      "capture_sha256": "4bd0a387b8d06f95b9c076c99c0f2201efc49377c6148770c7914a5c64d1085e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "mb-01",
+          "location": "Explore dashboards；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-analyze",
+      "name": "查询与理解数据"
+    },
+    {
+      "id": "g-report",
+      "name": "持续查看业务表现"
+    },
+    {
+      "id": "g-model",
+      "name": "统一指标定义"
+    },
+    {
+      "id": "g-share",
+      "name": "导出与传递结果"
+    },
+    {
+      "id": "g-automate",
+      "name": "自动推送与告警"
+    },
+    {
+      "id": "g-embed",
+      "name": "把分析交付给产品用户"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "mb-01",
+      "title": "用图形化查询器整理业务问题",
+      "result": "用可视化查询器关联表格、分组汇总数据并生成图表；官方电商演示用月度收入和订单数展示这种数据探索。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Metabase v0.65 文档所述功能；需先安装 Metabase 实例并连接有访问权限的受支持数据库。表连接范围受数据库/驱动支持限制。 Learn 教程使用 Examples 演示数据，不代表用户的生产业务数据；示例集合可能由管理员关闭或删除。",
+      "source_ids": [
+        "s-overview",
+        "s-install",
+        "s-connect",
+        "s-query-builder",
+        "s-learn-example"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "open-source business intelligence platform",
+          "location": "Metabase documentation — v0.65；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/",
+          "source_line_start": 24,
+          "source_line_end": 24,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-overview",
+          "quote": "v0.65",
+          "location": "Metabase documentation — v0.65；本次 HTML 提取正文第 1–1 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-install",
+          "quote": "Java JAR file",
+          "location": "Installing Metabase；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-install",
+          "quote": "Metabase Cloud",
+          "location": "Installing Metabase；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-install",
+          "quote": "Docker container",
+          "location": "Installing Metabase；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-connect",
+          "quote": "Connect Metabase to your data sources",
+          "location": "Adding and managing databases；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/databases/connecting",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-query-builder",
+          "quote": "Join tables",
+          "location": "The query builder；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-query-builder",
+          "quote": "Summarize and group data",
+          "location": "The query builder；本次 HTML 提取正文第 24–24 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+          "source_line_start": 24,
+          "source_line_end": 24,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-query-builder",
+          "quote": "Visualize results as a chart",
+          "location": "The query builder；本次 HTML 提取正文第 26–26 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+          "source_line_start": 26,
+          "source_line_end": 26,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-learn-example",
+          "quote": "shows the total revenue and order count for each month",
+          "location": "Explore dashboards；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-analyze"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-02",
+      "title": "编写 SQL 问题并保存为可复用报告",
+      "result": "在 SQL 编辑器中运行数据库原生查询，把结果保存为问题并加入仪表板。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需连接数据库并具有 SQL 编辑权限。查询语法/函数由连接的数据库决定；Metabase 不替代底层数据库。",
+      "source_ids": [
+        "s-sql"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sql",
+          "quote": "Questions asked using SQL can be saved",
+          "location": "SQL editor；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+          "source_line_start": 35,
+          "source_line_end": 35,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-sql",
+          "quote": "added to dashboards",
+          "location": "SQL editor；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+          "source_line_start": 35,
+          "source_line_end": 35,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-analyze"
+      ],
+      "aliases": [
+        "SQL 报表"
+      ]
+    },
+    {
+      "id": "mb-03",
+      "title": "制作可交互的筛选仪表板",
+      "result": "让浏览者用仪表板筛选器改变图表显示的数据，避免为每个时间段或类别复制一份报表。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "仪表板由已保存的问题构成；筛选器须映射到支持的字段/卡片，权限仍由 Metabase 与数据源的设置决定。",
+      "source_ids": [
+        "s-dashboard",
+        "s-dashboard-filters"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-dashboard",
+          "quote": "Dashboards group a set of questions into tabs on a single page",
+          "location": "Introduction to dashboards；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/introduction",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-dashboard-filters",
+          "quote": "duplicate dashboards",
+          "location": "Dashboard filters and parameters；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/filters",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-dashboard-filters",
+          "quote": "let people change what data is displayed",
+          "location": "Dashboard filters and parameters；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/filters",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-report"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-04",
+      "title": "下载问题或仪表板的结果文件",
+      "result": "下载问题/查询结果或仪表板卡片结果为 CSV、XLSX 或 JSON 文件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "问题与仪表板卡片的下载菜单均列出 CSV、XLSX、JSON；用户需要下载结果的权限，实际可下载内容受图表类型、数据库和管理员设置限制。仪表板整体另可导出 PDF（文档说明仅含当时可见图表的截图），本结果不将整体 PDF 与卡片数据文件混为一谈。",
+      "source_ids": [
+        "s-download-results"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-download-results",
+          "quote": "results of a question or dashboard",
+          "location": "Exporting results；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-download-results",
+          "quote": ".csv",
+          "location": "Exporting results；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-download-results",
+          "quote": ".xlsx",
+          "location": "Exporting results；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-download-results",
+          "quote": ".json",
+          "location": "Exporting results；本次 HTML 提取正文第 23–23 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+          "source_line_start": 23,
+          "source_line_end": 23,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-download-results",
+          "quote": ".csv\n.xlsx\n.json",
+          "location": "Exporting results；本次 HTML 提取正文第 71–73 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+          "source_line_start": 71,
+          "source_line_end": 73,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-share"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-05",
+      "title": "通过邮件或 Slack 收到仪表板更新",
+      "result": "将仪表板问题结果发送给收件人或 Slack 频道，按设置的时间安排推送更新。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "管理员需先配置 SMTP 邮件或 Slack 集成；外部收件地址可用于邮件订阅。特定订阅筛选和安全选项依版本/计划而异。",
+      "source_ids": [
+        "s-subscriptions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-subscriptions",
+          "quote": "how often",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-subscriptions",
+          "quote": "send out an update",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-subscriptions",
+          "quote": "via email or Slack",
+          "location": "Dashboard subscriptions；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-automate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-06",
+      "title": "在问题产生结果时接收告警",
+      "result": "为已保存的问题订阅邮件或 Slack 告警，及时发现查询返回结果的情况。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "管理员需配置通知通道；Webhook 告警需要管理员或具备设置权限者。检查周期可配置，精确选项依问题类型而定。",
+      "source_ids": [
+        "s-alerts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-alerts",
+          "quote": "question returns a result",
+          "location": "Alerts；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/alerts",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-alerts",
+          "quote": "email or Slack",
+          "location": "Alerts；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/questions/alerts",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-automate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-07",
+      "title": "定义团队共用的收入指标",
+      "result": "把收入算法保存为可复用指标，让后续问题按统一公式计算收入。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可建模的数据库字段与创建/管理指标的权限。定义是否业务正确需由团队确认。",
+      "source_ids": [
+        "s-metrics-canonical"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-metrics-canonical",
+          "quote": "create a metric that calculates revenue",
+          "location": "Metrics；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-metrics-canonical",
+          "quote": "standardize how revenue is calculated",
+          "location": "Metrics；本次 HTML 提取正文第 19–19 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-model"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-08",
+      "title": "集中运营报告并自动发送每日管理报表",
+      "result": "把分散的运营报告集中到共享指标与仪表板，并自动向管理层发送每日摘要。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Metabase 官方案例描述了 Hola Health 的 telehealth 运营实践，属于客户案例而非本次实测；需要连接对应运营系统并配置报告订阅。",
+      "source_ids": [
+        "s-hola-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-hola-case",
+          "quote": "centralized reporting layer",
+          "location": "Hola Health case study；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-hola-case",
+          "quote": "standardized core metrics",
+          "location": "Hola Health case study；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-hola-case",
+          "quote": "Executives receive automated daily reports",
+          "location": "Hola Health case study；本次 HTML 提取正文第 37–37 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/hola-health",
+          "source_line_start": 37,
+          "source_line_end": 37,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-report"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "mb-09",
+      "title": "把客户自助分析嵌入自己的产品",
+      "result": "在应用中展示 Metabase 仪表板或查询界面，让客户围绕自己的业务数据提出问题。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Metabase 提供官方内嵌组件。Guest embeds 在各计划可用；访客无需 Metabase 登录、不计入用户数且不向访客计费，但应使用签名 JWT 和锁定参数隔离客户数据。认证/SSO 嵌入仅 Pro/Enterprise；这些商业版计划的登录/认证用户按其方案口径计费，不能把 Guest viewers 计作付费用户，具体价格以当前方案为准。Synctera 案例展示了金融产品的客户自助分析。",
+      "source_ids": [
+        "s-embed",
+        "s-guest-embed",
+        "s-embedding-sdk",
+        "s-synctera-case",
+        "s-pricing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-embed",
+          "quote": "embed Metabase in your app",
+          "location": "Embedding overview；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/start",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-guest-embed",
+          "quote": "every Metabase plan",
+          "location": "Guest embeds；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-guest-embed",
+          "quote": "JWT signed",
+          "location": "Guest embeds；本次 HTML 提取正文第 21–21 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-guest-embed",
+          "quote": "locked parameters",
+          "location": "Guest embeds；本次 HTML 提取正文第 22–22 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-embedding-sdk",
+          "quote": "authenticated embeds (Pro/Enterprise only)",
+          "location": "Modular embedding；本次 HTML 提取正文第 25–25 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/modular-embedding",
+          "source_line_start": 25,
+          "source_line_end": 25,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-synctera-case",
+          "quote": "provide their customers with the ability to answer their own questions",
+          "location": "Synctera case study；本次 HTML 提取正文第 15–15 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/case-studies/synctera",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-pricing",
+          "quote": "users of your embeds accessed through your product count as users",
+          "location": "Metabase Pricing；本次 HTML 提取正文第 127–127 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/pricing",
+          "source_line_start": 127,
+          "source_line_end": 127,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-guest-embed",
+          "quote": "you aren’t billed for them",
+          "location": "Guest embeds；本次 HTML 提取正文第 17–17 行（不是 HTML 源码行号）",
+          "url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-embed"
+      ],
+      "aliases": []
+    }
+  ],
+  "coverage_gaps": [
+    "资料基于 Metabase 官方 v0.65 文档及案例，未安装或部署；自托管生产环境的数据库、备份、SMTP/Slack、安全、升级和容量需单独规划。",
+    "支持的数据源、驱动、查询能力取决于底层数据库与 Metabase 版本；本次未对任一数据库实际连接或执行查询。",
+    "Embedding/SSO、多租户隔离、行列权限和订阅筛选在 OSS/Starter 与 Pro/Enterprise 的边界不同；版次和价格可能变更，须在采购前核验。",
+    "客户案例为 Metabase 发布的客户材料，不能视为独立性能评估或普遍结果。未进一步确认的 public link 路径不列为成果。"
+  ]
+}

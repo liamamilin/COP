@@ -1,0 +1,322 @@
+{
+  "topic": "customer-discovery",
+  "checked_at": "2026-11-05T12:33:26Z",
+  "retrieved": [
+    {
+      "id": "s-gov-analysis",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "retrieved_at": "2026-11-05T12:27:02.008133+00:00",
+      "capture_sha256": "2f2b989158e08dbc23531f804bede64498710f1d977596af037ee9b10bb9c669",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-ethics",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "retrieved_at": "2026-11-05T12:27:02.667188+00:00",
+      "capture_sha256": "c87e6bc20a14352d425a71fe5033ef1024629cb04999fd9899739d21aafb68a4",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-interviews",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "retrieved_at": "2026-11-05T12:27:02.579631+00:00",
+      "capture_sha256": "4f11006216fe47228a6af0c55a3f966a55557438c921de9a7aaa6376bcd7a00c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-method-example",
+      "requested_url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "capture_origin": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "retrieved_at": "2026-11-05T12:28:04.486448+00:00",
+      "capture_sha256": "cd33368e6797dbef4b1013dbd5a3f3894be33106dfea56c4507830a32bebf83e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-navigation-case",
+      "requested_url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "capture_origin": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "retrieved_at": "2026-11-05T12:28:07.429161+00:00",
+      "capture_sha256": "85d8ec023e7d0bccaf0812dbd86b5f8b19e92a92c3a8bebf472ebcf116cf822e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-plan",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "retrieved_at": "2026-11-05T12:27:00.938388+00:00",
+      "capture_sha256": "e95990c7839e940f89264a7465141f7c5af3ce0153ebf89a3738532fa85655e7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-round",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "retrieved_at": "2026-11-05T12:27:03.289944+00:00",
+      "capture_sha256": "581c8572baa2c41265bff0eccd0fe95c6ee7211208dc0710f3da1a3692439d59",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-sharing",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "retrieved_at": "2026-11-05T12:27:01.122261+00:00",
+      "capture_sha256": "140fb7289284d07e4930bd63fea8dc76323bfce67fc129eeea504d9abdb20d24",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-six-cases",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "capture_origin": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "retrieved_at": "2026-11-05T12:28:07.364529+00:00",
+      "capture_sha256": "6d25996065c77ca50528d3a210da4e119a5ce3022d453123f0c7987cecd7fff6",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-usability",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "retrieved_at": "2026-11-05T12:27:03.060884+00:00",
+      "capture_sha256": "8906842c186859785c361e25b91a9a2874f490b368f949eac6e85ae96768be83",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-gov-verify-case",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "capture_origin": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "retrieved_at": "2026-11-05T12:28:06.922109+00:00",
+      "capture_sha256": "7b09ea14d503c32f10b84146b7ebad2230280c7ff10eb10e3dd7e51a4d495676",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-nsf-teams",
+      "requested_url": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "capture_origin": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "retrieved_at": "2026-11-05T12:27:01.236523+00:00",
+      "capture_sha256": "1d303d0fcee9d908306e727e38237eab9b67718440571748c0595cbaa7ceffee",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-yc-lecture",
+      "requested_url": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "capture_origin": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "retrieved_at": "2026-11-05T12:27:02.143243+00:00",
+      "capture_sha256": "afe65033e9be833e2f566b349954f4867998874bb96df56ba189e01436288f4a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-yc-startup-school",
+      "requested_url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "capture_origin": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "retrieved_at": "2026-11-05T12:27:01.953010+00:00",
+      "capture_sha256": "efa2d4566390d0301e47f323fbafd9f55a57c94671e59dc44211f738c7b573eb",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [],
+  "background_sources": [
+    {
+      "id": "s-gov-round",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "capture_origin": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "retrieved_at": "2026-11-05T12:27:03.289944+00:00",
+      "capture_sha256": "581c8572baa2c41265bff0eccd0fe95c6ee7211208dc0710f3da1a3692439d59",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "reason": "已读取全文用于补漏/资格边界；无直接支持现有 P 的引文，未纳入 sources。"
+    },
+    {
+      "id": "s-nsf-teams",
+      "requested_url": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "capture_origin": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "retrieved_at": "2026-11-05T12:27:01.236523+00:00",
+      "capture_sha256": "1d303d0fcee9d908306e727e38237eab9b67718440571748c0595cbaa7ceffee",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "reason": "已读取全文用于补漏/资格边界；无直接支持现有 P 的引文，未纳入 sources。"
+    },
+    {
+      "id": "s-yc-lecture",
+      "requested_url": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "capture_origin": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "retrieved_at": "2026-11-05T12:27:02.143243+00:00",
+      "capture_sha256": "afe65033e9be833e2f566b349954f4867998874bb96df56ba189e01436288f4a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "reason": "页面取回只有标题，未提供可引用正文；改用同一作者的可读完整 YC Transcript。"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "s-gov-analysis",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "final_url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "retrieved_at": "2026-11-05T12:27:02.008133+00:00",
+      "capture_sha256": "2f2b989158e08dbc23531f804bede64498710f1d977596af037ee9b10bb9c669",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-ethics",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "final_url": "https://www.gov.uk/service-manual/user-research/managing-user-research-data-participant-privacy",
+      "retrieved_at": "2026-11-05T12:27:02.667188+00:00",
+      "capture_sha256": "c87e6bc20a14352d425a71fe5033ef1024629cb04999fd9899739d21aafb68a4",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-interviews",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "final_url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+      "retrieved_at": "2026-11-05T12:27:02.579631+00:00",
+      "capture_sha256": "4f11006216fe47228a6af0c55a3f966a55557438c921de9a7aaa6376bcd7a00c",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-method-example",
+      "requested_url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "final_url": "https://userresearch.blog.gov.uk/2016/06/08/choosing-the-best-methods-to-answer-user-research-questions/",
+      "retrieved_at": "2026-11-05T12:28:04.486448+00:00",
+      "capture_sha256": "cd33368e6797dbef4b1013dbd5a3f3894be33106dfea56c4507830a32bebf83e",
+      "source_class": "official_case_study",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-navigation-case",
+      "requested_url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "final_url": "https://userresearch.blog.gov.uk/2017/06/29/how-we-researched-the-new-navigation-on-gov-uk/",
+      "retrieved_at": "2026-11-05T12:28:07.429161+00:00",
+      "capture_sha256": "85d8ec023e7d0bccaf0812dbd86b5f8b19e92a92c3a8bebf472ebcf116cf822e",
+      "source_class": "official_case_study",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-plan",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "final_url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+      "retrieved_at": "2026-11-05T12:27:00.938388+00:00",
+      "capture_sha256": "e95990c7839e940f89264a7465141f7c5af3ce0153ebf89a3738532fa85655e7",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-round",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "final_url": "https://www.gov.uk/service-manual/user-research/plan-round-of-user-research",
+      "retrieved_at": "2026-11-05T12:27:03.289944+00:00",
+      "capture_sha256": "581c8572baa2c41265bff0eccd0fe95c6ee7211208dc0710f3da1a3692439d59",
+      "source_class": "official_background",
+      "adopted": false,
+      "adoption_note": "仅作资格/范围/检索背景；未计为已确认来源。"
+    },
+    {
+      "source_id": "s-gov-sharing",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "final_url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
+      "retrieved_at": "2026-11-05T12:27:01.122261+00:00",
+      "capture_sha256": "140fb7289284d07e4930bd63fea8dc76323bfce67fc129eeea504d9abdb20d24",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-six-cases",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "final_url": "https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/",
+      "retrieved_at": "2026-11-05T12:28:07.364529+00:00",
+      "capture_sha256": "6d25996065c77ca50528d3a210da4e119a5ce3022d453123f0c7987cecd7fff6",
+      "source_class": "official_case_study",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-usability",
+      "requested_url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "final_url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+      "retrieved_at": "2026-11-05T12:27:03.060884+00:00",
+      "capture_sha256": "8906842c186859785c361e25b91a9a2874f490b368f949eac6e85ae96768be83",
+      "source_class": "official_documentation",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-gov-verify-case",
+      "requested_url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "final_url": "https://userresearch.blog.gov.uk/2014/10/20/what-you-wont-learn-from-a-prototype/",
+      "retrieved_at": "2026-11-05T12:28:06.922109+00:00",
+      "capture_sha256": "7b09ea14d503c32f10b84146b7ebad2230280c7ff10eb10e3dd7e51a4d495676",
+      "source_class": "official_case_study",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    },
+    {
+      "source_id": "s-nsf-teams",
+      "requested_url": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "final_url": "https://www.nsf.gov/funding/initiatives/i-corps/about-teams",
+      "retrieved_at": "2026-11-05T12:27:01.236523+00:00",
+      "capture_sha256": "1d303d0fcee9d908306e727e38237eab9b67718440571748c0595cbaa7ceffee",
+      "source_class": "official_background",
+      "adopted": false,
+      "adoption_note": "仅作资格/范围/检索背景；未计为已确认来源。"
+    },
+    {
+      "source_id": "s-yc-lecture",
+      "requested_url": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "final_url": "https://www.ycombinator.com/library/dS-how-to-start-a-startup-building-product-talking-to-users-and-growing",
+      "retrieved_at": "2026-11-05T12:27:02.143243+00:00",
+      "capture_sha256": "afe65033e9be833e2f566b349954f4867998874bb96df56ba189e01436288f4a",
+      "source_class": "official_background",
+      "adopted": false,
+      "adoption_note": "仅作资格/范围/检索背景；未计为已确认来源。"
+    },
+    {
+      "source_id": "s-yc-startup-school",
+      "requested_url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "final_url": "https://www.ycombinator.com/blog/startup-school-week-1-recap-kevin-hale-and-eric-migicovsky/",
+      "retrieved_at": "2026-11-05T12:27:01.953010+00:00",
+      "capture_sha256": "efa2d4566390d0301e47f323fbafd9f55a57c94671e59dc44211f738c7b573eb",
+      "source_class": "official_course_transcript",
+      "adopted": true,
+      "adoption_note": "直接支持 P 并已逐段阅读上下文。"
+    }
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

@@ -1,0 +1,727 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Supabase",
+    "scope": "面向个人开发者，研究 Supabase 的 Postgres 数据库、自动 API、Auth、RLS、Storage、Realtime、Edge Functions、向量搜索及自托管。区分 Supabase 自身服务与 Next.js、OpenAI、Docker、第三方 OAuth/支付等路线。资料于 2026-11-05 取回；计划/配额可能变更，未固定各服务组件版本。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "classification_corrections": [
+        {
+          "possibility_id": "su-09",
+          "from": "extension",
+          "to": "core",
+          "reason": "官方支持的常规运行/自托管形态；部署与运维前提保留在条件中，不把安装基础设施等同于额外业务扩展。"
+        }
+      ],
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-platform",
+      "title": "Supabase Platform",
+      "url": "https://supabase.com/docs/guides/platform",
+      "evidence": "without needing to manage any infrastructure.",
+      "location": "Supabase Platform；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:32.581589+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/platform",
+      "capture_sha256": "a39b247117f088c4334c0e7760f564b77b380f779e26d8c54a8b832fef81c64a",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-01",
+          "location": "Supabase Platform；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/platform"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-database",
+      "title": "Database",
+      "url": "https://supabase.com/docs/guides/database/overview",
+      "evidence": "Every Supabase project gets a full Postgres database",
+      "location": "Database；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:29.922989+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/database/overview",
+      "capture_sha256": "fa6fedca0bef34b953abee452998012d090e14aec214e04b1c8a98761b433515",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-01",
+          "location": "Database；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/database/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-way",
+      "title": "The Supabase way to build",
+      "url": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build",
+      "evidence": "Supabase generates a REST API from your schema automatically.",
+      "location": "The Supabase way to build；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:33.777562+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build",
+      "capture_sha256": "5dfdf10d66a74d4089764b6d8004e22feb8fd9dfe31d1749cb9e277f8779578b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-01",
+          "location": "The Supabase way to build；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-pricing",
+      "title": "Supabase Pricing & Fees",
+      "url": "https://supabase.com/pricing",
+      "evidence": "Perfect for passion projects & simple websites.Start for Free\n[…]\n$0\n/ month",
+      "location": "Supabase Pricing & Fees；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）；Supabase Pricing & Fees；本次 HTML 提取正文第 39–40 行（不是 HTML 源码行号）",
+      "source_class": "official_pricing",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:33.636876+00:00",
+      "capture_origin": "https://supabase.com/pricing",
+      "capture_sha256": "d666f612745198be66c1d88242fb4c21e0e50b79cd9442b8a4cb9697eae8b62f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-01",
+          "location": "Supabase Pricing & Fees；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/pricing"
+        },
+        {
+          "possibility_id": "su-01",
+          "location": "Supabase Pricing & Fees；本次 HTML 提取正文第 39–40 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/pricing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-auth",
+      "title": "Auth",
+      "url": "https://supabase.com/docs/guides/auth",
+      "evidence": "implement authentication and authorization\n[…]\nCharges apply to Monthly Active Users",
+      "location": "Auth；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）；Auth；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:32.893691+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/auth",
+      "capture_sha256": "db2e9ff21dddf20fd8b9a14aa115b5b902c03a97f659cbea6c70e07645c32ef2",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-02",
+          "location": "Auth；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth"
+        },
+        {
+          "possibility_id": "su-02",
+          "location": "Auth；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-rls",
+      "title": "Row Level Security",
+      "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "evidence": "granular authorization rules that run inside the database.",
+      "location": "Row Level Security；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:33.407283+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "capture_sha256": "6e085e23f0ea96ba06d68bd4b5870cb0da22fb542102163e134843a8ea92dbdc",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-03",
+          "location": "Row Level Security；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/database/postgres/row-level-security"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-user-app",
+      "title": "Build a User Management App with Next.js",
+      "url": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs",
+      "evidence": "allows the user to log in, update their profile details",
+      "location": "Build a User Management App with Next.js；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+      "source_class": "official_complete_app_tutorial",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:34.033477+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs",
+      "capture_sha256": "bd85c7fbd6e4c7c4b7869a7efead46147ae31a676971903ad753064beab43792",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-04",
+          "location": "Build a User Management App with Next.js；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-ssr",
+      "title": "Server-Side Rendering",
+      "url": "https://supabase.com/docs/guides/auth/server-side",
+      "evidence": "API is still unstable and may have breaking changes",
+      "location": "Server-Side Rendering；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:32.065428+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/auth/server-side",
+      "capture_sha256": "8a63100e488a57d72cd2f088751197aec041f3dbd2057af6bf8f6704fdb71a5f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-04",
+          "location": "Server-Side Rendering；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth/server-side"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-storage",
+      "title": "Storage Quickstart",
+      "url": "https://supabase.com/docs/guides/storage/quickstart",
+      "evidence": "Learn how to use Supabase to store and serve files.",
+      "location": "Storage Quickstart；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:34.104425+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/storage/quickstart",
+      "capture_sha256": "5ab6ffcf193305d433d766eeeee760d8fa183d37817fa1a7875f5c75dc556477",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-05",
+          "location": "Storage Quickstart；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/storage/quickstart"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-realtime",
+      "title": "Subscribing to Database Changes",
+      "url": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes",
+      "evidence": "You can use Supabase to subscribe to real-time database changes.",
+      "location": "Subscribing to Database Changes；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:32.587274+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes",
+      "capture_sha256": "acdfdb944a0e92d05e407953a3f18fc2031afc2442dbd0910f62e18ba8732985",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-06",
+          "location": "Subscribing to Database Changes；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-functions",
+      "title": "Edge Functions",
+      "url": "https://supabase.com/docs/guides/functions",
+      "evidence": "listening to webhooks or integrating your Supabase project with third-parties like Stripe.",
+      "location": "Edge Functions；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:32.338826+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/functions",
+      "capture_sha256": "1d1983766bf56efef9aa8760fcf741f73da4366ebc924645ff01ab0d44e34ec8",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-07",
+          "location": "Edge Functions；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/functions"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-ai",
+      "title": "AI & Vectors",
+      "url": "https://supabase.com/docs/guides/ai",
+      "evidence": "using Postgres and pgvector",
+      "location": "AI & Vectors；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:34.871102+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/ai",
+      "capture_sha256": "06369cec617a11af4aa7ca64ce1b1439c307b99ab73ac89b92b19e34f78fe703",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-08",
+          "location": "AI & Vectors；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/ai"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-ai-chat",
+      "title": "Vector search with Next.js and OpenAI",
+      "url": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search",
+      "evidence": "build a custom ChatGPT-like search experience from the ground-up using Next.js.",
+      "location": "Vector search with Next.js and OpenAI；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+      "source_class": "official_complete_app_tutorial",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:10.634270+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search",
+      "capture_sha256": "bc38fd84dffea04f202b4ade9c7555406c3f5e409e93b8de50d166fd790de98b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-08",
+          "location": "Vector search with Next.js and OpenAI；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-self-host",
+      "title": "Self-Hosting",
+      "url": "https://supabase.com/docs/guides/self-hosting",
+      "evidence": "run your own Supabase\n[…]\nmanaged backups and PITR",
+      "location": "Self-Hosting；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）；Self-Hosting；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:39:31.726203+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/self-hosting",
+      "capture_sha256": "9926703eb9fec29e0a9ddcefd25311b9f077fdf37e7b18323c0eab80c67b29bf",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "su-09",
+          "location": "Self-Hosting；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/self-hosting"
+        },
+        {
+          "possibility_id": "su-09",
+          "location": "Self-Hosting；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/self-hosting"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-data",
+      "name": "建立数据后端"
+    },
+    {
+      "id": "g-identity",
+      "name": "管理账号与身份"
+    },
+    {
+      "id": "g-security",
+      "name": "保护数据"
+    },
+    {
+      "id": "g-app",
+      "name": "完成应用场景"
+    },
+    {
+      "id": "g-files",
+      "name": "管理文件"
+    },
+    {
+      "id": "g-realtime",
+      "name": "实时协作与更新"
+    },
+    {
+      "id": "g-integrations",
+      "name": "运行集成逻辑"
+    },
+    {
+      "id": "g-ai",
+      "name": "构建 AI 数据能力"
+    },
+    {
+      "id": "g-deploy",
+      "name": "部署与运维"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "su-01",
+      "title": "使用托管 Postgres 与自动生成的数据 API",
+      "result": "为应用创建托管 Postgres 数据库，并让数据库 schema 自动生成 REST API，作为数据驱动应用的后端。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需 Supabase 账号和 project。捕获的官方价格页显示免费计划 $0/月；项目数量、计算资源和用量受计划约束，费用页面可能变化。托管服务替开发者管理基础设施，但数据库 schema 和安全规则仍由开发者设计。",
+      "source_ids": [
+        "s-platform",
+        "s-database",
+        "s-way",
+        "s-pricing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-platform",
+          "quote": "without needing to manage any infrastructure.",
+          "location": "Supabase Platform；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/platform",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-database",
+          "quote": "Every Supabase project gets a full Postgres database",
+          "location": "Database；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/database/overview",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-way",
+          "quote": "Supabase generates a REST API from your schema automatically.",
+          "location": "The Supabase way to build；本次 HTML 提取正文第 16–16 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-pricing",
+          "quote": "Perfect for passion projects & simple websites.Start for Free",
+          "location": "Supabase Pricing & Fees；本次 HTML 提取正文第 38–38 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/pricing",
+          "source_line_start": 38,
+          "source_line_end": 38,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-pricing",
+          "quote": "$0\n/ month",
+          "location": "Supabase Pricing & Fees；本次 HTML 提取正文第 39–40 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/pricing",
+          "source_line_start": 39,
+          "source_line_end": 40,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "su-02",
+      "title": "为应用加入账号注册与登录",
+      "result": "为用户提供认证和授权能力，可采用密码、magic link、一次性密码、社交登录或 SSO。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Supabase project；社交 OAuth/SSO 需要对应第三方身份提供者与回调配置。Supabase 对 MAU、第三方 MAU、SSO MAU 和高级 MFA 等项目计费，具体价格依当前计划。",
+      "source_ids": [
+        "s-auth"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-auth",
+          "quote": "implement authentication and authorization",
+          "location": "Auth；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-auth",
+          "quote": "Charges apply to Monthly Active Users",
+          "location": "Auth；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth",
+          "source_line_start": 48,
+          "source_line_end": 48,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-identity"
+      ],
+      "aliases": [
+        "Supabase Auth"
+      ]
+    },
+    {
+      "id": "su-03",
+      "title": "按用户限制数据库行的读写",
+      "result": "用 Postgres RLS policy 在数据库层控制不同用户可读取或修改哪些行。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需为暴露给浏览器/移动端的数据表设置合适的 grants 和 RLS policies；没有匹配 policy 时请求会被拒绝，错误配置可能泄露或误开放数据。应逐表审查并测试。",
+      "source_ids": [
+        "s-rls"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-rls",
+          "quote": "granular authorization rules that run inside the database.",
+          "location": "Row Level Security；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-security"
+      ],
+      "aliases": [
+        "用户数据隔离"
+      ]
+    },
+    {
+      "id": "su-04",
+      "title": "交付可登录并编辑资料的用户管理应用",
+      "result": "官方 Next.js 完整教程让用户登录并更新个人资料，后端用 Supabase Database/Auth/Storage 组合完成。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要一个 Next.js 前端项目和 Supabase project；这是一条框架集成路线，不是 Supabase 单独生成的完整 UI。教程使用 `@supabase/ssr`；当前 SSR 指南说明该包处于 beta，API 不稳定、可能有破坏性变化。",
+      "source_ids": [
+        "s-user-app",
+        "s-ssr"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-user-app",
+          "quote": "allows the user to log in, update their profile details",
+          "location": "Build a User Management App with Next.js；本次 HTML 提取正文第 5–5 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ssr",
+          "quote": "API is still unstable and may have breaking changes",
+          "location": "Server-Side Rendering；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/auth/server-side",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": [
+        "个人资料管理"
+      ]
+    },
+    {
+      "id": "su-05",
+      "title": "存储并提供用户文件",
+      "result": "将图片、视频或文档上传到 bucket，再由应用下载或提供文件访问链接。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Supabase Storage 是项目服务；需要创建 bucket 和文件访问 policy。公开 bucket 可被任何人读取，私有/用户自有文件需配置独立 Storage RLS rules。存储和流量受当前计划配额/费用影响。",
+      "source_ids": [
+        "s-storage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-storage",
+          "quote": "Learn how to use Supabase to store and serve files.",
+          "location": "Storage Quickstart；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/storage/quickstart",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-files"
+      ],
+      "aliases": [
+        "上传头像和附件"
+      ]
+    },
+    {
+      "id": "su-06",
+      "title": "让应用界面实时反映数据库变化",
+      "result": "订阅数据库新增、更新或删除事件，让仪表板或协作界面在数据变化时刷新。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需配置 Realtime 通道、表 publication/触发器和授权。官方区分 Broadcast（更推荐扩展性与安全性）和设置更简单但扩展性较低的 Postgres Changes；具体流量/连接限制依计划。",
+      "source_ids": [
+        "s-realtime"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-realtime",
+          "quote": "You can use Supabase to subscribe to real-time database changes.",
+          "location": "Subscribing to Database Changes；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-realtime"
+      ],
+      "aliases": [
+        "实时仪表板"
+      ]
+    },
+    {
+      "id": "su-07",
+      "title": "运行第三方 webhook 与服务端集成",
+      "result": "用 Edge Function 接收 webhook 或代表应用调用 Stripe 等第三方 API。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Supabase 项目包含 Edge Functions；函数用 Deno 兼容的 TypeScript runtime，第三方 secret 要放在 project secrets。执行可能冷启动，应设计短时、幂等操作；长任务应交给后台 worker。Stripe 等账户和费用另计。",
+      "source_ids": [
+        "s-functions"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-functions",
+          "quote": "listening to webhooks or integrating your Supabase project with third-parties like Stripe.",
+          "location": "Edge Functions；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/functions",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-integrations"
+      ],
+      "aliases": [
+        "Webhook 接收端"
+      ]
+    },
+    {
+      "id": "su-08",
+      "title": "为知识库应用构建语义问答搜索",
+      "result": "用 pgvector 保存内容与查询的 embeddings，搭配 Next.js 和 OpenAI 构建可回答文档问题的检索体验。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "依赖 Postgres `pgvector`、Next.js 示例工程和 OpenAI API key/模型；OpenAI 用量单独计费，需按当前可用模型更新教程示例。embedding 同一索引必须使用兼容的模型/维度；未运行或核对模型质量。",
+      "source_ids": [
+        "s-ai",
+        "s-ai-chat"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ai",
+          "quote": "using Postgres and pgvector",
+          "location": "AI & Vectors；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/ai",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ai-chat",
+          "quote": "build a custom ChatGPT-like search experience from the ground-up using Next.js.",
+          "location": "Vector search with Next.js and OpenAI；本次 HTML 提取正文第 3–3 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-ai"
+      ],
+      "aliases": [
+        "向量搜索",
+        "RAG 文档搜索"
+      ]
+    },
+    {
+      "id": "su-09",
+      "title": "在自有服务器运行 Supabase",
+      "result": "将 Supabase 服务栈部署在自己的电脑、服务器或云基础设施上，自己掌握数据库所在环境。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需 Docker、服务器、网络、安全加固、备份、升级、监控和高可用运维。自托管不是托管平台的等价替代；管理备份/PITR 等若干托管能力不提供。自托管成本转为自己的基础设施与运维。",
+      "source_ids": [
+        "s-self-host"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-self-host",
+          "quote": "run your own Supabase",
+          "location": "Self-Hosting；本次 HTML 提取正文第 2–2 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/self-hosting",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-self-host",
+          "quote": "managed backups and PITR",
+          "location": "Self-Hosting；本次 HTML 提取正文第 14–14 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/self-hosting",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-deploy"
+      ],
+      "aliases": [
+        "自托管 Supabase"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "没有逐项固定托管产品内部组件的 semver，也未运行托管或 Docker 安装。",
+    "没有验证实际 RLS policy、Auth 回调、对象权限、Realtime channel、Edge Function webhook 签名等安全实现。",
+    "免费和付费套餐配额与价格会变动；捕获的价格页说明免费层级，但具体项目的存储、流量、计算、Auth MAU、Edge Function 用量应按当前 dashboard 估算。",
+    "AI 文档搜索教程引用的 OpenAI 模型/SDK 示例未运行；服务 API 和价格可能与示例不同，答复质量和延迟不作保证。",
+    "自托管负责方要自行维护升级、备份、监控、HA 与安全；本研究未核算基础设施成本。"
+  ],
+  "generated_at": "2026-11-05T12:46:22.673576+00:00"
+}

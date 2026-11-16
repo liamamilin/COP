@@ -1,0 +1,705 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "DuckDB",
+    "scope": "面向个人开发者研究本地数据分析与可分享计算结果；覆盖 DuckDB 2.0 LTS（官方 Python 与 Wasm client 页面标注 2.0.0），区分 SQL/内置能力、官方 extensions、Python/Java/Wasm clients、Streamlit/QStudio 外部应用与托管数据库。资料于 2026-11-05 取回；未安装实测。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:27:01.127161+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "s-overview",
+      "title": "DuckDB Documentation — 2.0 LTS",
+      "url": "https://duckdb.org/docs/2.0/",
+      "evidence": "2.0 LTS",
+      "location": "DuckDB Documentation — 2.0 LTS；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:56:55.043701+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/",
+      "capture_sha256": "62de1ac369eb926b2e4b29d1e09aa643da31d361bb6484a29639413ac04d1558",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-01",
+          "location": "DuckDB Documentation — 2.0 LTS；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-csv",
+      "title": "CSV Import — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "evidence": "Read a CSV file from disk\n[…]\nauto-infer options",
+      "location": "CSV Import — DuckDB 2.0；本次 HTML 提取正文第 464–464 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:57:18.384711+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/csv/overview",
+      "capture_sha256": "ed08538260f2c52270130a477b1a4f8269e5165837c385964827753430cb41d7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-01",
+          "location": "CSV Import — DuckDB 2.0；本次 HTML 提取正文第 464–464 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/csv/overview"
+        },
+        {
+          "possibility_id": "du-01",
+          "location": "CSV Import — DuckDB 2.0；本次 HTML 提取正文第 464–464 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/csv/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-query-multiple-files",
+      "title": "Reading Multiple Files — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+      "evidence": "Read three Parquet files\n[…]\ntreat them as a single table",
+      "location": "Reading Multiple Files — DuckDB 2.0；本次 HTML 提取正文第 484–484 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:41.540795+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+      "capture_sha256": "bc7cce4b5f00f3b227610675db2db2b8ff7ffa5ca675cfa4df89394c2811fb87",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-02",
+          "location": "Reading Multiple Files — DuckDB 2.0；本次 HTML 提取正文第 484–484 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview"
+        },
+        {
+          "possibility_id": "du-02",
+          "location": "Reading Multiple Files — DuckDB 2.0；本次 HTML 提取正文第 484–484 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-parquet",
+      "title": "Reading and Writing Parquet Files — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "evidence": "Write the results of a query to a Parquet file",
+      "location": "Reading and Writing Parquet Files — DuckDB 2.0；本次 HTML 提取正文第 504–504 行（不是 HTML 源码行号）",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:57:15.065671+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/data/parquet/overview",
+      "capture_sha256": "35c615f747e7cdd1cbf515da291636f387871f3fe0bcaee3b9b473830c5fedb9",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-03",
+          "location": "Reading and Writing Parquet Files — DuckDB 2.0；本次 HTML 提取正文第 504–504 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/parquet/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-httpfs-doc",
+      "title": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "evidence": "object storage using the S3 API\n[…]\nsupports reading/writing/globbing files",
+      "location": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0；本次 HTML 提取正文第 459–459 行（不是 HTML 源码行号）",
+      "source_class": "official_extension_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:58:34.995871+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+      "capture_sha256": "2f6b2f39ea5a1307546f91e12f98c20e0a1f610c89122bbda4f6404a5cb0e115",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-04",
+          "location": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0；本次 HTML 提取正文第 459–459 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview"
+        },
+        {
+          "possibility_id": "du-04",
+          "location": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0；本次 HTML 提取正文第 459–459 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-python",
+      "title": "Python API — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/clients/python/overview",
+      "evidence": "To directly query a Pandas DataFrame",
+      "location": "Python API — DuckDB 2.0；本次 HTML 提取正文第 489–489 行（不是 HTML 源码行号）",
+      "source_class": "official_client_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:57:05.763794+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/python/overview",
+      "capture_sha256": "aefbc728a4a5543df7c71e7cb18d17a2d5d5b797aa0cd03d24352c38139751f5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-05",
+          "location": "Python API — DuckDB 2.0；本次 HTML 提取正文第 489–489 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/python/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-streamlit-case",
+      "title": "Using DuckDB in Streamlit",
+      "url": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit",
+      "evidence": "five closest train stations on any point selected on the map",
+      "location": "Using DuckDB in Streamlit；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+      "source_class": "official_application_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:31.899028+00:00",
+      "capture_origin": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit",
+      "capture_sha256": "284cf2d8486507b65c928f792752d3c220068e6b3cb19392baa6002cc0d2befe",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-06",
+          "location": "Using DuckDB in Streamlit；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-qstudio-case",
+      "title": "Bringing Local Analytics to the Quant's Desktop",
+      "url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+      "evidence": "queries that saved result directly\n[…]\nwithout rerunning the original workload",
+      "location": "Bringing Local Analytics to the Quant's Desktop；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+      "source_class": "official_application_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:59:28.424677+00:00",
+      "capture_origin": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+      "capture_sha256": "a67b036d70466f6ca92d3501bd2fb3120375ee937be3317e9e0f6a8437aa5dbf",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-07",
+          "location": "Bringing Local Analytics to the Quant's Desktop；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop"
+        },
+        {
+          "possibility_id": "du-07",
+          "location": "Bringing Local Analytics to the Quant's Desktop；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-geospatial-case",
+      "title": "Introducing the DuckDB Spatial Extension",
+      "url": "https://duckdb.org/2023/04/28/spatial",
+      "evidence": "operate, transform, and join your geospatial data",
+      "location": "Introducing the DuckDB Spatial Extension；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+      "source_class": "official_extension_case_study",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:58:42.741653+00:00",
+      "capture_origin": "https://duckdb.org/2023/04/28/spatial",
+      "capture_sha256": "cff32ac447f334b128892496501dc09eef9d07b84e2b2057c2ef915fbae40591",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-08",
+          "location": "Introducing the DuckDB Spatial Extension；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2023/04/28/spatial"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-postgres-doc",
+      "title": "PostgreSQL Extension — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "evidence": "underlying data is read directly from PostgreSQL at query time",
+      "location": "PostgreSQL Extension — DuckDB 2.0；本次 HTML 提取正文第 517–517 行（不是 HTML 源码行号）",
+      "source_class": "official_extension_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:58:38.106697+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+      "capture_sha256": "abb4c11e2af28f6afe665d90147f84185ef35a08852881396aeff92119139879",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-09",
+          "location": "PostgreSQL Extension — DuckDB 2.0；本次 HTML 提取正文第 517–517 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-wasm",
+      "title": "DuckDB Wasm Client — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+      "evidence": "SQL query\n[…]\nin your browser\n[…]\nrun it right here",
+      "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+      "source_class": "official_client_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:57:08.233017+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+      "capture_sha256": "4d1f500b18f9eb1d34595b16111cffa3ff57e9efe647737ed4ea0595350a4888",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-10",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview"
+        },
+        {
+          "possibility_id": "du-10",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview"
+        },
+        {
+          "possibility_id": "du-10",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-spatial",
+      "title": "Spatial Extension — DuckDB 2.0",
+      "url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+      "evidence": "spatial extension provides support for geospatial data processing\n[…]\nnot autoloadable",
+      "location": "Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 458–458 行（不是 HTML 源码行号）；Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 463–463 行（不是 HTML 源码行号）",
+      "source_class": "official_extension_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:57:29.073692+00:00",
+      "capture_origin": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+      "capture_sha256": "8cc737209342a393ea5498c018c2a4b6c2d74e26c4340cf3e978fce86cf8136e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "du-08",
+          "location": "Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 458–458 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview"
+        },
+        {
+          "possibility_id": "du-08",
+          "location": "Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 463–463 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-local",
+      "name": "查询与整理手边的数据"
+    },
+    {
+      "id": "g-share",
+      "name": "导出可交换的成果"
+    },
+    {
+      "id": "g-integrate",
+      "name": "连接外部数据源"
+    },
+    {
+      "id": "g-embed",
+      "name": "嵌入开发工作流"
+    },
+    {
+      "id": "g-app",
+      "name": "构建面向用户的应用"
+    },
+    {
+      "id": "g-spatial",
+      "name": "处理地理空间数据"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "du-01",
+      "title": "直接用 SQL 查询本地 CSV",
+      "result": "在 CLI 中读取本地 CSV，并让 DuckDB 自动推断读取选项以便开始分析。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "面向 DuckDB 2.0 LTS 文档；需安装 DuckDB CLI。CSV reader 的自动推断对异常/非标准文件仍需检查或手动配置。",
+      "source_ids": [
+        "s-overview",
+        "s-csv"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-overview",
+          "quote": "2.0 LTS",
+          "location": "DuckDB Documentation — 2.0 LTS；本次 HTML 提取正文第 4–4 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-csv",
+          "quote": "Read a CSV file from disk",
+          "location": "CSV Import — DuckDB 2.0；本次 HTML 提取正文第 464–464 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/csv/overview",
+          "source_line_start": 464,
+          "source_line_end": 464,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-csv",
+          "quote": "auto-infer options",
+          "location": "CSV Import — DuckDB 2.0；本次 HTML 提取正文第 464–464 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/csv/overview",
+          "source_line_start": 464,
+          "source_line_end": 464,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-local"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "du-02",
+      "title": "把多份 Parquet 文件作为一张表查询",
+      "result": "把多份结构兼容的 Parquet 文件一次读入同一个查询，便于汇总分散在多个文件里的数据。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Parquet 扩展在绝大多数 DuckDB clients 中随附；精简嵌入发行版可能需单独安装。不同 schema 的文件需另外选择 schema 合并策略。",
+      "source_ids": [
+        "s-query-multiple-files"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-query-multiple-files",
+          "quote": "Read three Parquet files",
+          "location": "Reading Multiple Files — DuckDB 2.0；本次 HTML 提取正文第 484–484 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+          "source_line_start": 484,
+          "source_line_end": 484,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-query-multiple-files",
+          "quote": "treat them as a single table",
+          "location": "Reading Multiple Files — DuckDB 2.0；本次 HTML 提取正文第 484–484 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/multiple_files/overview",
+          "source_line_start": 484,
+          "source_line_end": 484,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-local"
+      ],
+      "aliases": [
+        "合并 Parquet 数据集"
+      ]
+    },
+    {
+      "id": "du-03",
+      "title": "把分析查询结果导出为 Parquet",
+      "result": "将 SQL 查询的结果写成压缩列式 Parquet 文件，交给其他分析工具或流程继续使用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要可写的目标路径与磁盘空间。目标客户端须包含 Parquet 支持；不同压缩/行组参数会影响文件和性能。",
+      "source_ids": [
+        "s-parquet"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-parquet",
+          "quote": "Write the results of a query to a Parquet file",
+          "location": "Reading and Writing Parquet Files — DuckDB 2.0；本次 HTML 提取正文第 504–504 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/data/parquet/overview",
+          "source_line_start": 504,
+          "source_line_end": 504,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-share"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "du-04",
+      "title": "查询 S3 对象存储中的数据文件",
+      "result": "使用 S3 API 读取或写入对象存储中的分析文件，并用 DuckDB 的文件查询能力整理结果。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "依赖官方 httpfs 扩展；需 S3-compatible endpoint、凭据/权限和网络访问。Plain HTTP(S) 只支持读取；不同对象存储实现兼容性需验证。",
+      "source_ids": [
+        "s-httpfs-doc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-httpfs-doc",
+          "quote": "object storage using the S3 API",
+          "location": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0；本次 HTML 提取正文第 459–459 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+          "source_line_start": 459,
+          "source_line_end": 459,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-httpfs-doc",
+          "quote": "supports reading/writing/globbing files",
+          "location": "httpfs Extension for HTTP and S3 Support — DuckDB 2.0；本次 HTML 提取正文第 459–459 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/httpfs/overview",
+          "source_line_start": 459,
+          "source_line_end": 459,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": [
+        "读取 S3 文件"
+      ]
+    },
+    {
+      "id": "du-05",
+      "title": "在 Python 中直接分析 Pandas 数据",
+      "result": "在 Python 脚本或应用里把 Pandas DataFrame 作为 SQL 查询的数据源。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需安装 DuckDB 的 Python client（如 pip install duckdb）与 Pandas。Python 包版本和 pandas 版本应按项目锁定；未测试兼容性。",
+      "source_ids": [
+        "s-python"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-python",
+          "quote": "To directly query a Pandas DataFrame",
+          "location": "Python API — DuckDB 2.0；本次 HTML 提取正文第 489–489 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/python/overview",
+          "source_line_start": 489,
+          "source_line_end": 489,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-embed"
+      ],
+      "aliases": [
+        "查询 DataFrame"
+      ]
+    },
+    {
+      "id": "du-06",
+      "title": "制作可交互的铁路数据地图",
+      "result": "用铁路公开数据做交互式地图：展示 2024 铁路网络流量，并查询地图选点附近的车站。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "此完整示例使用第三方 Streamlit、Plotly、Streamlit Folium 组件和 DuckDB Python API；需这些依赖及铁路数据访问，地图可视化不是 DuckDB 内建 UI。",
+      "source_ids": [
+        "s-streamlit-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-streamlit-case",
+          "quote": "five closest train stations on any point selected on the map",
+          "location": "Using DuckDB in Streamlit；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2025/03/28/using-duckdb-in-streamlit",
+          "source_line_start": 35,
+          "source_line_end": 35,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "du-07",
+      "title": "复用已保存的分析结果继续查询",
+      "result": "在桌面分析工具里对先前保存的查询结果继续执行 SQL，而不必重跑原始远端工作负载。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是 QStudio 的真实集成案例，使用 DuckDB Java client 和 Parquet 文件；QStudio/Java 应用是额外环境，文章的性能/适用性观察不构成保证。",
+      "source_ids": [
+        "s-qstudio-case"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-qstudio-case",
+          "quote": "queries that saved result directly",
+          "location": "Bringing Local Analytics to the Quant's Desktop；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+          "source_line_start": 48,
+          "source_line_end": 48,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-qstudio-case",
+          "quote": "without rerunning the original workload",
+          "location": "Bringing Local Analytics to the Quant's Desktop；本次 HTML 提取正文第 48–48 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2026/11/03/bringing-local-analytics-to-the-quants-desktop",
+          "source_line_start": 48,
+          "source_line_end": 48,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "du-08",
+      "title": "分析空间几何并连接地理数据",
+      "result": "使用空间扩展处理地理数据，支持空间变换与连接，适用于位置或区域类数据分析。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装并显式加载 DuckDB Spatial extension；DuckDB 2.0 官方文档仍列出该扩展并说明其不可自动加载。这里关于 transform/join 的具体结果来自 2023 历史案例；2.0 下相同函数、格式及兼容性未逐一核实或运行测试。",
+      "source_ids": [
+        "s-geospatial-case",
+        "s-spatial"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-geospatial-case",
+          "quote": "operate, transform, and join your geospatial data",
+          "location": "Introducing the DuckDB Spatial Extension；本次 HTML 提取正文第 31–31 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/2023/04/28/spatial",
+          "source_line_start": 31,
+          "source_line_end": 31,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-spatial",
+          "quote": "spatial extension provides support for geospatial data processing",
+          "location": "Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 458–458 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+          "source_line_start": 458,
+          "source_line_end": 458,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-spatial",
+          "quote": "not autoloadable",
+          "location": "Spatial Extension — DuckDB 2.0；本次 HTML 提取正文第 463–463 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/spatial/overview",
+          "source_line_start": 463,
+          "source_line_end": 463,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-spatial"
+      ],
+      "aliases": [
+        "地理空间分析"
+      ]
+    },
+    {
+      "id": "du-09",
+      "title": "把 PostgreSQL 表接入本地 SQL 分析",
+      "result": "在 DuckDB 中附加 PostgreSQL 数据库，并在查询时直接读取其表。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装/加载 PostgreSQL extension、可访问的 PostgreSQL 数据库与适当权限/凭据；该扩展也可执行写入，应显式使用 READ_ONLY 以避免修改源库。",
+      "source_ids": [
+        "s-postgres-doc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-postgres-doc",
+          "quote": "underlying data is read directly from PostgreSQL at query time",
+          "location": "PostgreSQL Extension — DuckDB 2.0；本次 HTML 提取正文第 517–517 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/core_extensions/postgres/overview",
+          "source_line_start": 517,
+          "source_line_end": 517,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-integrate"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "du-10",
+      "title": "在浏览器里运行 SQL 查询",
+      "result": "把 DuckDB-Wasm 集成进网页，在浏览器交互式运行 SQL。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "DuckDB 官方 WebAssembly client 2.0.0（JavaScript/WebAssembly）可作为 DuckDB 官方客户端用于网页；需在网页应用中集成。默认单线程，内存上限 4 GB 且浏览器可能更低，多线程仍为实验性。此条是官方 client 形态，不表示浏览器无限资源或本次运行验证。",
+      "source_ids": [
+        "s-wasm"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-wasm",
+          "quote": "SQL query",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+          "source_line_start": 468,
+          "source_line_end": 468,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-wasm",
+          "quote": "in your browser",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+          "source_line_start": 468,
+          "source_line_end": 468,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-wasm",
+          "quote": "run it right here",
+          "location": "DuckDB Wasm Client — DuckDB 2.0；本次 HTML 提取正文第 468–468 行（不是 HTML 源码行号）",
+          "url": "https://duckdb.org/docs/2.0/clients/wasm/overview",
+          "source_line_start": 468,
+          "source_line_end": 468,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": [
+        "DuckDB-Wasm"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "研究重点为本地及嵌入式分析、文件型数据和开发者集成；未调查大型并发多写 OLTP 服务、企业级数据仓库替换或多租户在线 SaaS 的生产适用性。",
+    "Spatial、HTTPFS、PostgreSQL extension 的版本/二进制兼容性需按 DuckDB client、平台架构、权限和远端服务逐一测试；文档有讲述其能力，不代表本次部署实测。",
+    "财务/业务决策结果仍取决于输入数据质量、查询逻辑和可视化表达；未校验样例数据、业务结论或性能声明。"
+  ]
+}

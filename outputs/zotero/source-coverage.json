@@ -1,0 +1,164 @@
+{
+  "topic": "zotero",
+  "generated_at": "2026-11-05T13:30:00Z",
+  "capture_note": "capture_sha256 为 capture.py 对首次 HTTP 响应原始字节计算值；这些页面返回 text/html，引用行号是 capture.py 提取正文行，不是 HTML 源码行号。",
+  "retrieved": [
+    {
+      "id": "s-better-bibtex",
+      "requested_url": "https://retorque.re/zotero-better-bibtex/",
+      "capture_origin": "https://retorque.re/zotero-better-bibtex/",
+      "retrieved_at": "2026-11-05T12:42:18.775285+00:00",
+      "capture_sha256": "b605fd8822cc5f63c862f71f0c2df47846ab4edb94e20f7d94b730e7842fec0b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-connector",
+      "requested_url": "https://www.zotero.org/support/connector",
+      "capture_origin": "https://www.zotero.org/support/connector",
+      "retrieved_at": "2026-11-05T12:31:23.793909+00:00",
+      "capture_sha256": "1ea27105b1ced2e338ce06560f42a5b5f92fc9ec2a8f0211d5cb56c9108c3a7e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-duplicates",
+      "requested_url": "https://www.zotero.org/support/duplicate_detection",
+      "capture_origin": "https://www.zotero.org/support/duplicate_detection",
+      "retrieved_at": "2026-11-05T12:42:57.162158+00:00",
+      "capture_sha256": "486c2c686799f48c9b9d2ac5d75981808f3146986c738a50351ac6a2af025115",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-endnote",
+      "requested_url": "https://www.zotero.org/support/kb/endnote_import",
+      "capture_origin": "https://www.zotero.org/support/kb/endnote_import",
+      "retrieved_at": "2026-11-05T12:43:41.063330+00:00",
+      "capture_sha256": "acae5d20ce0ba3c38dc0c37bc8ec6ec60b2ee11b3ed45f4b1f210473057f16ff",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-google-docs",
+      "requested_url": "https://www.zotero.org/support/google_docs",
+      "capture_origin": "https://www.zotero.org/support/google_docs",
+      "retrieved_at": "2026-11-05T12:31:43.269071+00:00",
+      "capture_sha256": "7298eb9bbfea481178c3dbcbd2b9552708ff5327b653197a3d2c7713deeaf037",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-groups",
+      "requested_url": "https://www.zotero.org/support/groups",
+      "capture_origin": "https://www.zotero.org/support/groups",
+      "retrieved_at": "2026-11-05T12:31:54.552428+00:00",
+      "capture_sha256": "adc651227dcf06a5c2ff56755fad58347deaa4483eed12b1826c0f0e4e5e7bc1",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-mendeley",
+      "requested_url": "https://www.zotero.org/support/kb/mendeley_import",
+      "capture_origin": "https://www.zotero.org/support/kb/mendeley_import",
+      "retrieved_at": "2026-11-05T12:43:31.971906+00:00",
+      "capture_sha256": "754b19c9c585d6513ab95e21dc4e4fea6d29218874dbeb1f982967329c2c93a0",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-moving",
+      "requested_url": "https://www.zotero.org/support/moving_to_zotero",
+      "capture_origin": "https://www.zotero.org/support/moving_to_zotero",
+      "retrieved_at": "2026-11-05T12:43:21.312216+00:00",
+      "capture_sha256": "17b3b21e628989201aa322d92f490f4845cbed084b30f183b0867f62bbc662ab",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-organize",
+      "requested_url": "https://www.zotero.org/support/collections_and_tags",
+      "capture_origin": "https://www.zotero.org/support/collections_and_tags",
+      "retrieved_at": "2026-11-05T12:42:47.382402+00:00",
+      "capture_sha256": "543e4bc3a29a1058d89f3c2eecefe1b3f1710c65c4170352ac37a16a3cf12044",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pdf-reader",
+      "requested_url": "https://www.zotero.org/support/pdf_reader",
+      "capture_origin": "https://www.zotero.org/support/pdf_reader",
+      "retrieved_at": "2026-11-05T12:31:33.947004+00:00",
+      "capture_sha256": "83904f955d00950810ceb57d524feb328a3aaca3b8004db809d00faeabdf0838",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-storage",
+      "requested_url": "https://www.zotero.org/support/storage_faq",
+      "capture_origin": "https://www.zotero.org/support/storage_faq",
+      "retrieved_at": "2026-11-05T12:32:04.324724+00:00",
+      "capture_sha256": "b0973e67adcd3682dbfc18690f148d3ddf4ee31c3b532c311e7f8ec177ebe560",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sync",
+      "requested_url": "https://www.zotero.org/support/sync",
+      "capture_origin": "https://www.zotero.org/support/sync",
+      "retrieved_at": "2026-11-05T12:33:53.093503+00:00",
+      "capture_sha256": "0a1bfa12dc158271972d396379bcb3bf58faecc915c8e89614c46edf5de14637",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-wordproc",
+      "requested_url": "https://www.zotero.org/support/word_processor_integration",
+      "capture_origin": "https://www.zotero.org/support/word_processor_integration",
+      "retrieved_at": "2026-11-05T12:43:06.473215+00:00",
+      "capture_sha256": "374a85b642c1e20803b03e9d4c37a3a727eba8549eb7f1c27921bad7051b4bda",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [],
+  "not_adopted": [
+    "s-google-docs：本轮用覆盖 Word/LibreOffice/Google Docs 的官方 integration 页面归并引用写作结果。",
+    "s-organize 仅作为分类/动态搜索结果来源；没有把每种过滤/标签操作拆为P。",
+    "s-moving 用于标准格式迁移边界，不代表所有外部格式均无损。",
+    "s-better-bibtex 仅描述文档明确的文本写作/自动导出任务；未验证扩展实际安装或版本兼容。",
+    "Groups/Storage/Connector 的更细权限、订阅、代理子功能未分别拆成独立结果。"
+  ],
+  "search_limits": [
+    "没有运行 Zotero 客户端、浏览器扩展、引用插件或 Better BibTeX。",
+    "没有查询实时价格、配额、地区付款与 WebDAV 服务。",
+    "没有实测导入迁移数据保真、网页识别准确率或当前版本兼容性。"
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

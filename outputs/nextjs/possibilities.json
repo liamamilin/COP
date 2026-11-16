@@ -1,0 +1,883 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Next.js",
+    "scope": "面向独立开发者，关注 App Router 可交付的 Web 软件产品、内容站和商业结果，明确区分 React/Next.js 核心功能与认证、数据库、CMS、AI、支付、商店、托管等扩展。当前官方资料中的更新日期不等于框架 semver；使用者需具备基本 Web/React/JavaScript 知识。"
+  },
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 11,
+      "canonical_citation_updates": 1,
+      "followup_review": {
+        "checked_at": "2026-11-05T14:12:23.316291+00:00",
+        "checked_by": "primary_agent",
+        "changes": [
+          "s-metadata 改用直接支持用户结果的原文，定位为本次捕获第 3 行；原始来源、时间与响应哈希保持不变。",
+          "s-ai-chatbot 改用直接支持用户结果的原文，定位为本次捕获第 18 行；原始来源、时间与响应哈希保持不变。"
+        ],
+        "limits": "来源上下文复核，不是运行实测或独立人工审核。"
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "s-data",
+      "title": "Fetching Data",
+      "url": "https://nextjs.org/docs/app/getting-started/fetching-data",
+      "evidence": "fetch data in Server Components using any asynchronous I/O",
+      "location": "Fetching Data；取回 Markdown第 26–26 行",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:39.130992+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/fetching-data",
+      "capture_sha256": "6af6346cb4d1ff453a064cad2acec99c412f50d07780639d7e57a5fd83a3206f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-02",
+          "location": "Fetching Data；取回 Markdown第 26–26 行",
+          "url": "https://nextjs.org/docs/app/getting-started/fetching-data"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-supabase",
+      "title": "Use Supabase with Next.js",
+      "url": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs",
+      "evidence": "query and display the instruments table",
+      "location": "Use Supabase with Next.js；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+      "source_class": "third_party_integration_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:10.791941+00:00",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs",
+      "capture_sha256": "ee7baf9f3d1719eb7e96a1c24a93fd69caa19af3c2cdc444faadea56efc9636c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-02",
+          "location": "Use Supabase with Next.js；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-forms",
+      "title": "How to create forms with Server Actions",
+      "url": "https://nextjs.org/docs/app/guides/forms",
+      "evidence": "called in Server and Client Components to handle form submissions.",
+      "location": "How to create forms with Server Actions；取回 Markdown第 14–14 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:09.841222+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/forms",
+      "capture_sha256": "5ad8b19d5570f5f237c541c4af73c2ac2abc3dff5dcf3e8f159701b30335ee0f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-03",
+          "location": "How to create forms with Server Actions；取回 Markdown第 14–14 行",
+          "url": "https://nextjs.org/docs/app/guides/forms"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-auth",
+      "title": "How to implement authentication in Next.js",
+      "url": "https://nextjs.org/docs/app/guides/authentication",
+      "evidence": "These offer built-in solutions for authentication, session management, and authorization,",
+      "location": "How to implement authentication in Next.js；取回 Markdown第 26–26 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:07.480632+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/authentication",
+      "capture_sha256": "96c25720d84caed16c677b6cdd1d73be60c4a1513b319eef973bc9e33219a07c",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-04",
+          "location": "How to implement authentication in Next.js；取回 Markdown第 26–26 行",
+          "url": "https://nextjs.org/docs/app/guides/authentication"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-backend",
+      "title": "How to use Next.js as a backend for your frontend",
+      "url": "https://nextjs.org/docs/app/guides/backend-for-frontend",
+      "evidence": "access data sources and perform side effects like updating remote data.",
+      "location": "How to use Next.js as a backend for your frontend；取回 Markdown第 18–18 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:09.656329+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/backend-for-frontend",
+      "capture_sha256": "57114b56faa15dc14476b5ee990388bb194edb6b983d8ed783711af0cd8d09b4",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-05",
+          "location": "How to use Next.js as a backend for your frontend；取回 Markdown第 18–18 行",
+          "url": "https://nextjs.org/docs/app/guides/backend-for-frontend"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-metadata",
+      "title": "Metadata and OG images",
+      "url": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images",
+      "evidence": "add metadata to your pages and create dynamic OG images.",
+      "location": "Metadata and OG images；取回 Markdown第 3–3 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:41.476605+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images",
+      "capture_sha256": "78106fe6aff6e3181b79afde1b4c75e130a9d3df1d56d2975f846a2b8fe35e39",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-06",
+          "location": "Metadata and OG images；取回 Markdown第 3–3 行",
+          "url": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-commerce",
+      "title": "Vercel Shop",
+      "url": "https://vercel.com/templates/next.js/vercel-shop",
+      "evidence": "Catalog, cart, checkout, customer accounts, predictive search, and policies come from Shopify",
+      "location": "Vercel Shop；取回 Markdown第 19–19 行",
+      "source_class": "official_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:11.835619+00:00",
+      "capture_origin": "https://vercel.com/templates/next.js/vercel-shop",
+      "capture_sha256": "30125bbcacf1f69ebc5ffe6c147c9ab60a97d22351839c0b10e5793ff394c0f7",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-07",
+          "location": "Vercel Shop；取回 Markdown第 19–19 行",
+          "url": "https://vercel.com/templates/next.js/vercel-shop"
+        }
+      ],
+      "original_url": "https://vercel.com/templates/next.js/nextjs-commerce",
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    {
+      "id": "s-deploy",
+      "title": "Deploying",
+      "url": "https://nextjs.org/docs/app/getting-started/deploying",
+      "evidence": "Next.js can be deployed as a Node.js server, Docker container, static export",
+      "location": "Deploying；取回 Markdown第 13–13 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:13:09.548792+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/getting-started/deploying",
+      "capture_sha256": "38b9000ee4eab745b65eae53e83d87551f42bce9c3f53b0192e815c6ddcf01e8",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-08",
+          "location": "Deploying；取回 Markdown第 13–13 行",
+          "url": "https://nextjs.org/docs/app/getting-started/deploying"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-i18n",
+      "title": "Internationalization",
+      "url": "https://nextjs.org/docs/app/guides/internationalization",
+      "evidence": "configure the routing and rendering of content to support multiple languages",
+      "location": "Internationalization；取回 Markdown第 15–15 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:47.655239+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/internationalization",
+      "capture_sha256": "7958239fc96df6b3d51aef878938b6f0388169dc61ed0f4c3093b918411126bb",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-09",
+          "location": "Internationalization；取回 Markdown第 15–15 行",
+          "url": "https://nextjs.org/docs/app/guides/internationalization"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-pwa",
+      "title": "How to build a Progressive Web Application (PWA) with Next.js",
+      "url": "https://nextjs.org/docs/app/guides/progressive-web-apps",
+      "evidence": "native-like features such as home screen installation and push notifications",
+      "location": "How to build a Progressive Web Application (PWA) with Next.js；取回 Markdown第 22–22 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:46.126204+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/progressive-web-apps",
+      "capture_sha256": "5fd27f26e090871daf1b488d41f0064df5ca72013f36666539e56c1fd59f0ed6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-10",
+          "location": "How to build a Progressive Web Application (PWA) with Next.js；取回 Markdown第 22–22 行",
+          "url": "https://nextjs.org/docs/app/guides/progressive-web-apps"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-mdx",
+      "title": "How to use markdown and MDX in Next.js",
+      "url": "https://nextjs.org/docs/app/guides/mdx",
+      "evidence": "`.mdx` files to act as pages, routes, or imports",
+      "location": "How to use markdown and MDX in Next.js；取回 Markdown第 88–88 行",
+      "source_class": "official_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:48.578431+00:00",
+      "capture_origin": "https://nextjs.org/docs/app/guides/mdx",
+      "capture_sha256": "ed108a65302c4ae941135e5fa102332ead27f9dd6374e69873d51c6ca4f95b00",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-11",
+          "location": "How to use markdown and MDX in Next.js；取回 Markdown第 88–88 行",
+          "url": "https://nextjs.org/docs/app/guides/mdx"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown"
+    },
+    {
+      "id": "s-sanity",
+      "title": "Sanity and Next.js",
+      "url": "https://www.sanity.io/docs/nextjs/introduction",
+      "evidence": "a customizable editing environment, and APIs designed for modern React patterns.",
+      "location": "Sanity and Next.js；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+      "source_class": "third_party_integration_guide",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:48.119823+00:00",
+      "capture_origin": "https://www.sanity.io/docs/nextjs/introduction",
+      "capture_sha256": "c0aeba0b1a07889ccf3f769c3b80fa8859a8f099a88b25301f57eeabfaf9f166",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-12",
+          "location": "Sanity and Next.js；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://www.sanity.io/docs/nextjs/introduction"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html"
+    },
+    {
+      "id": "s-dashboard",
+      "title": "Next.js Foundations course: Dashboard App",
+      "url": "https://nextjs.org/learn/dashboard-app",
+      "evidence": "users to add, edit, and delete invoices.",
+      "location": "Next.js Foundations course: Dashboard App；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+      "source_class": "official_complete_app_tutorial",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:47.959214+00:00",
+      "capture_origin": "https://nextjs.org/learn/dashboard-app",
+      "capture_sha256": "a853d94b87eb2ec2fff63104a196ca5a1dab0ce4e6ae9860e9f05df5d8714a91",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-13",
+          "location": "Next.js Foundations course: Dashboard App；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://nextjs.org/learn/dashboard-app"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-ai-chatbot",
+      "title": "AI SDK Chatbot",
+      "url": "https://chatbot.ai-sdk.dev/docs",
+      "evidence": "allow your users to register accounts and sign in.",
+      "location": "AI SDK Chatbot；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+      "source_class": "third_party_open_source_application",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:48.260808+00:00",
+      "capture_origin": "https://chatbot.ai-sdk.dev/docs",
+      "capture_sha256": "2f19909cac4df76138b62d56e9aae631ad2a1e17b8ea514534ba5171d72ec47e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-14",
+          "location": "AI SDK Chatbot；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://chatbot.ai-sdk.dev/docs"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-ai-architecture",
+      "title": "Chatbot architecture",
+      "url": "https://chatbot.ai-sdk.dev/docs/architecture",
+      "evidence": "saves the response messages to the database.",
+      "location": "Chatbot architecture；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+      "source_class": "third_party_open_source_application",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:18:48.932288+00:00",
+      "capture_origin": "https://chatbot.ai-sdk.dev/docs/architecture",
+      "capture_sha256": "324130131b2eb8ef869345eb46070b8b41dd2df5e28c0f0a82341bf669ade2bd",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-14",
+          "location": "Chatbot architecture；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+          "url": "https://chatbot.ai-sdk.dev/docs/architecture"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-stripe-saas-template",
+      "title": "Next.js SaaS Starter",
+      "url": "https://vercel.com/templates/next.js/next-js-saas-starter",
+      "evidence": "Subscription management with Stripe Customer Portal",
+      "location": "Next.js SaaS Starter；取回 Markdown第 27–27 行",
+      "source_class": "official_template",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:19:36.091189+00:00",
+      "capture_origin": "https://vercel.com/templates/next.js/next-js-saas-starter",
+      "capture_sha256": "6f9550da616d75485344f758b09463c9c5dec3ced28f1e81491bada1fbe9d6b0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-16",
+          "location": "Next.js SaaS Starter；取回 Markdown第 27–27 行",
+          "url": "https://vercel.com/templates/next.js/next-js-saas-starter"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    {
+      "id": "s-stripe-readme-d768085563d520882e200a244a90e068f71a6571",
+      "title": "Example using Stripe with TypeScript and react-stripe-js",
+      "url": "https://github.com/vercel/next.js/blob/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "evidence": "Custom Amount Donation with redirect to Stripe Checkout:",
+      "location": "Example using Stripe with TypeScript and react-stripe-js；取回 Markdown第 40–40 行",
+      "source_class": "official_repository_example",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:25:32.389710+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/vercel/next.js/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "capture_sha256": "662fa7e8d0f3ae9ff35b49bb0ca032301773c9ff51515daeeb3e68a26be7d6f6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "nx-15",
+          "location": "Example using Stripe with TypeScript and react-stripe-js；取回 Markdown第 40–40 行",
+          "url": "https://github.com/vercel/next.js/blob/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md#L40-L40"
+        }
+      ],
+      "original_url": "https://github.com/vercel/next.js/blob/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md#L40",
+      "git_commit": "d768085563d520882e200a244a90e068f71a6571",
+      "git_repository": "vercel/next.js",
+      "pinned_raw_url": "https://raw.githubusercontent.com/vercel/next.js/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md",
+      "pinned_content_sha256": "662fa7e8d0f3ae9ff35b49bb0ca032301773c9ff51515daeeb3e68a26be7d6f6",
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/plain; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-content",
+      "name": "发布与触达用户"
+    },
+    {
+      "id": "g-app",
+      "name": "运营数据型应用"
+    },
+    {
+      "id": "g-integrations",
+      "name": "连接外部系统"
+    },
+    {
+      "id": "g-commerce",
+      "name": "收款与经营"
+    },
+    {
+      "id": "g-mobile",
+      "name": "面向移动访问"
+    },
+    {
+      "id": "g-delivery",
+      "name": "部署与交付"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "nx-02",
+      "title": "交付读取真实数据的应用页面",
+      "result": "从服务端组件读取异步数据并渲染页面；搭配 Supabase 可查询托管数据库并显示记录。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Next.js 提供数据读取/渲染方式；Supabase 项目、表结构、URL、密钥与访问策略需另行配置。托管服务费用随计划与用量而定，本轮未核价。",
+      "source_ids": [
+        "s-data",
+        "s-supabase"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-data",
+          "quote": "fetch data in Server Components using any asynchronous I/O",
+          "location": "Fetching Data；取回 Markdown第 26–26 行",
+          "url": "https://nextjs.org/docs/app/getting-started/fetching-data",
+          "source_line_start": 26,
+          "source_line_end": 26,
+          "line_basis": "captured_markdown"
+        },
+        {
+          "source_id": "s-supabase",
+          "quote": "query and display the instruments table",
+          "location": "Use Supabase with Next.js；本次 HTML 提取正文第 10–10 行（不是 HTML 源码行号）",
+          "url": "https://supabase.com/docs/guides/getting-started/quickstarts/nextjs",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": [
+        "数据驱动页面"
+      ]
+    },
+    {
+      "id": "nx-03",
+      "title": "处理服务端表单提交",
+      "result": "使用 React Server Actions 在服务端接收表单提交。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这是表单提交机制；具体业务逻辑、字段验证、认证授权、数据持久化或通知需要自行实现或接入其他服务。未将预约、留言等具体业务当作该来源已证明的功能。",
+      "source_ids": [
+        "s-forms"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-forms",
+          "quote": "called in Server and Client Components to handle form submissions.",
+          "location": "How to create forms with Server Actions；取回 Markdown第 14–14 行",
+          "url": "https://nextjs.org/docs/app/guides/forms",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "nx-04",
+      "title": "为应用加入账号与访问控制",
+      "result": "实现注册登录、会话管理及依据用户身份限制数据/路由访问。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Next.js/React 提供服务端机制；官方建议生产应用用认证库或身份服务处理认证，会话和授权。需供应商配置、密钥/回调及安全实现；供应商费用未核实。",
+      "source_ids": [
+        "s-auth"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-auth",
+          "quote": "These offer built-in solutions for authentication, session management, and authorization,",
+          "location": "How to implement authentication in Next.js；取回 Markdown第 26–26 行",
+          "url": "https://nextjs.org/docs/app/guides/authentication",
+          "source_line_start": 26,
+          "source_line_end": 26,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "nx-05",
+      "title": "提供应用 API 与远程操作接口",
+      "result": "建立 HTTP 端点，访问数据源并执行远端数据更新等副作用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "用 Next.js Route Handlers；官方明确 BFF/API 层不是完整后端替代品。认证、授权、校验、持久化和运行维护仍需落实。",
+      "source_ids": [
+        "s-backend"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-backend",
+          "quote": "access data sources and perform side effects like updating remote data.",
+          "location": "How to use Next.js as a backend for your frontend；取回 Markdown第 18–18 行",
+          "url": "https://nextjs.org/docs/app/guides/backend-for-frontend",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-integrations"
+      ],
+      "aliases": [
+        "HTTP API"
+      ]
+    },
+    {
+      "id": "nx-06",
+      "title": "发布可被搜索与分享的内容站",
+      "result": "为页面生成 SEO 与社交分享所需元数据，也可制作动态 OG 图像。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Next.js 提供 Metadata API；排名、社交站点的实际展示和流量效果不作保证。动态内容仍依赖内容源。",
+      "source_ids": [
+        "s-metadata"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-metadata",
+          "quote": "add metadata to your pages and create dynamic OG images.",
+          "location": "Metadata and OG images；取回 Markdown第 3–3 行",
+          "url": "https://nextjs.org/docs/app/getting-started/metadata-and-og-images",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-content"
+      ],
+      "aliases": [
+        "SEO 内容站"
+      ]
+    },
+    {
+      "id": "nx-07",
+      "title": "搭建品牌在线商店前台",
+      "result": "用 Next.js 交付店面界面，连接由 Shopify 提供的商品目录、购物车、结账和客户账户。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Vercel Shop 模板采用 Shopify；需 Shopify 店铺、Storefront 凭证和环境变量。Next.js 本身不提供这些商业能力；Shopify 计划/交易费用未核实。",
+      "source_ids": [
+        "s-commerce"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-commerce",
+          "quote": "Catalog, cart, checkout, customer accounts, predictive search, and policies come from Shopify",
+          "location": "Vercel Shop；取回 Markdown第 19–19 行",
+          "url": "https://vercel.com/templates/next.js/vercel-shop",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-commerce"
+      ],
+      "aliases": [
+        "无头商店"
+      ]
+    },
+    {
+      "id": "nx-08",
+      "title": "部署并交付可访问的网站",
+      "result": "将应用部署为 Node.js 服务、Docker 容器或静态导出网站。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Node/Docker 支持完整 Next.js 功能；静态导出功能受限。托管、域名、云额度和运维成本依平台而定，未核价。",
+      "source_ids": [
+        "s-deploy"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-deploy",
+          "quote": "Next.js can be deployed as a Node.js server, Docker container, static export",
+          "location": "Deploying；取回 Markdown第 13–13 行",
+          "url": "https://nextjs.org/docs/app/getting-started/deploying",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-delivery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "nx-09",
+      "title": "提供多语言路由与本地化页面",
+      "result": "按语言路由并渲染相应语言内容，让不同 locale 的访客访问对应站点版本。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "路由和渲染可用 Next.js；译文、locale 字典、缺译处理需自行提供，具体翻译服务/第三方 i18n 库是可选扩展。国际 SEO 标签也需按需处理。",
+      "source_ids": [
+        "s-i18n"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-i18n",
+          "quote": "configure the routing and rendering of content to support multiple languages",
+          "location": "Internationalization；取回 Markdown第 15–15 行",
+          "url": "https://nextjs.org/docs/app/guides/internationalization",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-content"
+      ],
+      "aliases": [
+        "国际化网站",
+        "多语言站点"
+      ]
+    },
+    {
+      "id": "nx-10",
+      "title": "让网站可安装到手机主屏并发送推送",
+      "result": "制作可作为 PWA 添加到手机主屏的站点，并向订阅用户发送 Web Push 通知。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需配置 Web App Manifest、Service Worker、HTTPS、VAPID 密钥、推送订阅持久化/发送；用户浏览器及系统需支持。官方指南标明 iOS 需 16.4+ 且添加到主屏才能用 Web Push。离线缓存不在此能力承诺内。",
+      "source_ids": [
+        "s-pwa"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pwa",
+          "quote": "native-like features such as home screen installation and push notifications",
+          "location": "How to build a Progressive Web Application (PWA) with Next.js；取回 Markdown第 22–22 行",
+          "url": "https://nextjs.org/docs/app/guides/progressive-web-apps",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-mobile"
+      ],
+      "aliases": [
+        "PWA",
+        "手机主屏应用"
+      ]
+    },
+    {
+      "id": "nx-11",
+      "title": "用 Markdown/MDX 发布文档或博客",
+      "result": "把 MDX 内容转成 Next.js 路由页面，并在文章中嵌入 React 组件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需安装并配置 `@next/mdx` 等相关包；App Router 还需 `mdx-components.tsx`。内容由本地文件维护；本条不意味着具备非技术编辑用的 CMS。",
+      "source_ids": [
+        "s-mdx"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mdx",
+          "quote": "`.mdx` files to act as pages, routes, or imports",
+          "location": "How to use markdown and MDX in Next.js；取回 Markdown第 88–88 行",
+          "url": "https://nextjs.org/docs/app/guides/mdx",
+          "source_line_start": 88,
+          "source_line_end": 88,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-content"
+      ],
+      "aliases": [
+        "MDX 文档站",
+        "博客"
+      ]
+    },
+    {
+      "id": "nx-12",
+      "title": "搭建由编辑维护的 CMS 内容站",
+      "result": "让内容编辑者通过 Sanity Studio 管理结构化内容，Next.js 前台负责读取、渲染和路由。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "依赖 Sanity 项目、Studio/内容 schema、`next-sanity` 集成和环境配置；Sanity 价格/额度未核实。Sanity 能力不是 Next.js 内建。",
+      "source_ids": [
+        "s-sanity"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sanity",
+          "quote": "a customizable editing environment, and APIs designed for modern React patterns.",
+          "location": "Sanity and Next.js；本次 HTML 提取正文第 7–7 行（不是 HTML 源码行号）",
+          "url": "https://www.sanity.io/docs/nextjs/introduction",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-content"
+      ],
+      "aliases": [
+        "可编辑营销站",
+        "CMS 网站"
+      ]
+    },
+    {
+      "id": "nx-13",
+      "title": "交付可管理发票的财务仪表板",
+      "result": "官方完整课程案例涵盖公开首页、登录、受保护的仪表板和发票新增/编辑/删除，数据库使用 Postgres。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是官方学习课程展示的完整应用任务，不代表开箱即有。课程用身份认证和 Postgres；课程列出 React/JavaScript、Node.js 20.9+、GitHub 与 Vercel 账号为前提。需要自行完成实施与部署。",
+      "source_ids": [
+        "s-dashboard"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-dashboard",
+          "quote": "users to add, edit, and delete invoices.",
+          "location": "Next.js Foundations course: Dashboard App；本次 HTML 提取正文第 8–8 行（不是 HTML 源码行号）",
+          "url": "https://nextjs.org/learn/dashboard-app",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-app"
+      ],
+      "aliases": [
+        "财务仪表板",
+        "发票 CRUD"
+      ]
+    },
+    {
+      "id": "nx-14",
+      "title": "交付可登录并保存会话的 AI 聊天应用",
+      "result": "扩展 Next.js 与 AI SDK/模型提供商，用户提交消息后流式生成回复并把会话消息保存到数据库。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是 AI SDK 团队维护的开源应用样板，不是 Next.js 内建 AI。需模型提供商 API key（按模型用量计费可能产生费用）、数据库及认证配置；文件附件还需对象存储，API 应做限流。",
+      "source_ids": [
+        "s-ai-chatbot",
+        "s-ai-architecture"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-ai-chatbot",
+          "quote": "allow your users to register accounts and sign in.",
+          "location": "AI SDK Chatbot；本次 HTML 提取正文第 18–18 行（不是 HTML 源码行号）",
+          "url": "https://chatbot.ai-sdk.dev/docs",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-ai-architecture",
+          "quote": "saves the response messages to the database.",
+          "location": "Chatbot architecture；本次 HTML 提取正文第 39–39 行（不是 HTML 源码行号）",
+          "url": "https://chatbot.ai-sdk.dev/docs/architecture",
+          "source_line_start": 39,
+          "source_line_end": 39,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-integrations",
+        "g-app"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "nx-15",
+      "title": "接受一次性线上付款",
+      "result": "借助 Stripe Checkout 收取一次性捐款或单次付款，并将支付流程连接到 Next.js 服务端操作与回调。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "Next.js 官方仓库示例需 Stripe 账户、publishable/secret key、Webhook secret 与 Stripe CLI/线上 webhook 设置；真实交易费、税务与退款要求按地区/业务核实。示例运行于测试模式，测试成功不代表生产支付已配置。",
+      "source_ids": [
+        "s-stripe-readme-d768085563d520882e200a244a90e068f71a6571"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stripe-readme-d768085563d520882e200a244a90e068f71a6571",
+          "quote": "Custom Amount Donation with redirect to Stripe Checkout:",
+          "location": "Example using Stripe with TypeScript and react-stripe-js；取回 Markdown第 40–40 行",
+          "url": "https://github.com/vercel/next.js/blob/d768085563d520882e200a244a90e068f71a6571/examples/with-stripe-typescript/README.md#L40-L40",
+          "source_line_start": 40,
+          "source_line_end": 40,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-commerce"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "nx-16",
+      "title": "交付带订阅管理的 SaaS 产品",
+      "result": "以 Next.js SaaS Starter 为基础提供定价页、Stripe Checkout、登录用户仪表板与 Stripe 客户门户订阅管理。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这项由官方组织模板结合 Stripe、Postgres、Drizzle 与认证组成，需各服务账号、数据库连接、webhook 与环境变量。模板不是 Next.js 核心功能；Stripe/托管价格与计费条件未核实。",
+      "source_ids": [
+        "s-stripe-saas-template"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stripe-saas-template",
+          "quote": "Subscription management with Stripe Customer Portal",
+          "location": "Next.js SaaS Starter；取回 Markdown第 27–27 行",
+          "url": "https://vercel.com/templates/next.js/next-js-saas-starter",
+          "source_line_start": 27,
+          "source_line_end": 27,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-commerce",
+        "g-app"
+      ],
+      "aliases": [
+        "SaaS 订阅",
+        "周期性计费"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "未固定当前稳定版 semver；官方页面更新日和示例模板版本不能视为统一兼容矩阵。",
+    "PWA 离线缓存没有列为确认 P：指南指向 Serwist 扩展，并要求其 webpack 配置；浏览器和离线策略仍需独立验证。",
+    "CMS 与 SaaS/Stripe 各有直接集成指南或模板证据，但未独立完成模板的安装运行、内容发布、支付/退款/webhook 或生产部署测试。",
+    "未核实各供应商当前价格、额度、交易费、国家/地区可用性与税务合规要求；AI 模型消耗尤其会随实际调用产生费用。",
+    "本轮研究确认的是资料描述的可实现结果，不保证特定项目性能、准确性、安全审查、收入或交付时长。"
+  ],
+  "generated_at": "2026-11-05T12:23:44.118904+00:00"
+}

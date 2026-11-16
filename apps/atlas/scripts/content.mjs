@@ -8,6 +8,7 @@ export const root = resolve(
   dirname(fileURLToPath(import.meta.url)),
   "../../..",
 );
+export const catalogPath = "catalog/p-atlas-topics.v0.2.json";
 const text = (x) => typeof x === "string" && x.trim().length > 0;
 function assert(ok, message) {
   if (!ok) throw new Error(message);
@@ -127,7 +128,7 @@ export function researchDate(d) {
 export async function collectContent(repoRoot, validateWithSkill = true) {
   const catalog = JSON.parse(
     await readFile(
-      resolve(repoRoot, "catalog/p-atlas-topics.v0.1.json"),
+      resolve(repoRoot, catalogPath),
       "utf8",
     ),
   );

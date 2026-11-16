@@ -1,0 +1,674 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Zotero",
+    "scope": "资料收集、阅读标注、引用和协作；区分原生、第三方插件、出版物访问与存储服务。"
+  },
+  "sources": [
+    {
+      "id": "s-connector",
+      "title": "Zotero Connector | Zotero Documentation",
+      "url": "https://www.zotero.org/support/connector",
+      "original_url": "https://www.zotero.org/support/connector",
+      "evidence": "save the currently open website into your Zotero library",
+      "location": "Zotero Connector | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:31:23.793909+00:00",
+      "capture_origin": "https://www.zotero.org/support/connector",
+      "capture_sha256": "1ea27105b1ced2e338ce06560f42a5b5f92fc9ec2a8f0211d5cb56c9108c3a7e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-01",
+          "location": "Zotero Connector | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/connector"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-pdf-reader",
+      "title": "Zotero PDF Reader and Note Editor | Zotero Documentation",
+      "url": "https://www.zotero.org/support/pdf_reader",
+      "original_url": "https://www.zotero.org/support/pdf_reader",
+      "evidence": "links back to the PDF page as well as citations",
+      "location": "Zotero PDF Reader and Note Editor | Zotero Documentation；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:31:33.947004+00:00",
+      "capture_origin": "https://www.zotero.org/support/pdf_reader",
+      "capture_sha256": "83904f955d00950810ceb57d524feb328a3aaca3b8004db809d00faeabdf0838",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-02",
+          "location": "Zotero PDF Reader and Note Editor | Zotero Documentation；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/pdf_reader"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-groups",
+      "title": "Zotero Groups | Zotero Documentation",
+      "url": "https://www.zotero.org/support/groups",
+      "original_url": "https://www.zotero.org/support/groups",
+      "evidence": "share collections with a class, work closely with colleagues",
+      "location": "Zotero Groups | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:31:54.552428+00:00",
+      "capture_origin": "https://www.zotero.org/support/groups",
+      "capture_sha256": "adc651227dcf06a5c2ff56755fad58347deaa4483eed12b1826c0f0e4e5e7bc1",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-08",
+          "location": "Zotero Groups | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/groups"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-sync",
+      "title": "Syncing | Zotero Documentation",
+      "url": "https://www.zotero.org/support/sync",
+      "original_url": "https://www.zotero.org/support/sync",
+      "evidence": "Data syncing merges library items, notes, links, tags\n[…]\ndoesn’t sync attached files",
+      "location": "Syncing | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）；Syncing | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:33:53.093503+00:00",
+      "capture_origin": "https://www.zotero.org/support/sync",
+      "capture_sha256": "0a1bfa12dc158271972d396379bcb3bf58faecc915c8e89614c46edf5de14637",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-09",
+          "location": "Syncing | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/sync"
+        },
+        {
+          "possibility_id": "zotero-09",
+          "location": "Syncing | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/sync"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-storage",
+      "title": "Zotero Storage FAQ | Zotero Documentation",
+      "url": "https://www.zotero.org/support/storage_faq",
+      "original_url": "https://www.zotero.org/support/storage_faq",
+      "evidence": "synchronize PDFs, images, web snapshots, and other files",
+      "location": "Zotero Storage FAQ | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:32:04.324724+00:00",
+      "capture_origin": "https://www.zotero.org/support/storage_faq",
+      "capture_sha256": "b0973e67adcd3682dbfc18690f148d3ddf4ee31c3b532c311e7f8ec177ebe560",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-09",
+          "location": "Zotero Storage FAQ | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/storage_faq"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-organize",
+      "title": "Collections and Tags | Zotero Documentation",
+      "url": "https://www.zotero.org/support/collections_and_tags",
+      "original_url": "https://www.zotero.org/support/collections_and_tags",
+      "evidence": "automatically update to include all the items\n[…]\nfilter your library",
+      "location": "Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 89–89 行（不是 HTML 源码行号）；Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:47.382402+00:00",
+      "capture_origin": "https://www.zotero.org/support/collections_and_tags",
+      "capture_sha256": "543e4bc3a29a1058d89f3c2eecefe1b3f1710c65c4170352ac37a16a3cf12044",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-03",
+          "location": "Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 89–89 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/collections_and_tags"
+        },
+        {
+          "possibility_id": "zotero-03",
+          "location": "Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/collections_and_tags"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-duplicates",
+      "title": "Duplicate Detection | Zotero Documentation",
+      "url": "https://www.zotero.org/support/duplicate_detection",
+      "original_url": "https://www.zotero.org/support/duplicate_detection",
+      "evidence": "Merges will retain all of the collections and tags",
+      "location": "Duplicate Detection | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:57.162158+00:00",
+      "capture_origin": "https://www.zotero.org/support/duplicate_detection",
+      "capture_sha256": "486c2c686799f48c9b9d2ac5d75981808f3146986c738a50351ac6a2af025115",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-04",
+          "location": "Duplicate Detection | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/duplicate_detection"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-wordproc",
+      "title": "Word Processor Plugins | Zotero Documentation",
+      "url": "https://www.zotero.org/support/word_processor_integration",
+      "original_url": "https://www.zotero.org/support/word_processor_integration",
+      "evidence": "insert a new in-text citation\n[…]\nWord, LibreOffice, and Google Docs",
+      "location": "Word Processor Plugins | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:06.473215+00:00",
+      "capture_origin": "https://www.zotero.org/support/word_processor_integration",
+      "capture_sha256": "374a85b642c1e20803b03e9d4c37a3a727eba8549eb7f1c27921bad7051b4bda",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-05",
+          "location": "Word Processor Plugins | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/word_processor_integration"
+        },
+        {
+          "possibility_id": "zotero-05",
+          "location": "Word Processor Plugins | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/word_processor_integration"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-mendeley",
+      "title": "How do I import a Mendeley library into Zotero? | Zotero Documentation",
+      "url": "https://www.zotero.org/support/kb/mendeley_import",
+      "original_url": "https://www.zotero.org/support/kb/mendeley_import",
+      "evidence": "import all data, including the full folder structure",
+      "location": "How do I import a Mendeley library into Zotero? | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:31.971906+00:00",
+      "capture_origin": "https://www.zotero.org/support/kb/mendeley_import",
+      "capture_sha256": "754b19c9c585d6513ab95e21dc4e4fea6d29218874dbeb1f982967329c2c93a0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-06",
+          "location": "How do I import a Mendeley library into Zotero? | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/kb/mendeley_import"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-endnote",
+      "title": "How do I import from EndNote? | Zotero Documentation",
+      "url": "https://www.zotero.org/support/kb/endnote_import",
+      "original_url": "https://www.zotero.org/support/kb/endnote_import",
+      "evidence": "best export format for this is XML",
+      "location": "How do I import from EndNote? | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:41.063330+00:00",
+      "capture_origin": "https://www.zotero.org/support/kb/endnote_import",
+      "capture_sha256": "acae5d20ce0ba3c38dc0c37bc8ec6ec60b2ee11b3ed45f4b1f210473057f16ff",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-06",
+          "location": "How do I import from EndNote? | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/kb/endnote_import"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-moving",
+      "title": "Importing from Other Reference Managers | Zotero Documentation",
+      "url": "https://www.zotero.org/support/moving_to_zotero",
+      "original_url": "https://www.zotero.org/support/moving_to_zotero",
+      "evidence": "exporting to a standardized reference format\n[…]\nRIS, BibTeX, or CSL JSON",
+      "location": "Importing from Other Reference Managers | Zotero Documentation；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:43:21.312216+00:00",
+      "capture_origin": "https://www.zotero.org/support/moving_to_zotero",
+      "capture_sha256": "17b3b21e628989201aa322d92f490f4845cbed084b30f183b0867f62bbc662ab",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-06",
+          "location": "Importing from Other Reference Managers | Zotero Documentation；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/moving_to_zotero"
+        },
+        {
+          "possibility_id": "zotero-06",
+          "location": "Importing from Other Reference Managers | Zotero Documentation；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "url": "https://www.zotero.org/support/moving_to_zotero"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "s-better-bibtex",
+      "title": "Better BibTeX for Zotero",
+      "url": "https://retorque.re/zotero-better-bibtex/",
+      "original_url": "https://retorque.re/zotero-better-bibtex/",
+      "evidence": "Auto export of collections or entire libraries when they change",
+      "location": "Better BibTeX for Zotero；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:42:18.775285+00:00",
+      "capture_origin": "https://retorque.re/zotero-better-bibtex/",
+      "capture_sha256": "b605fd8822cc5f63c862f71f0c2df47846ab4edb94e20f7d94b730e7842fec0b",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "zotero-07",
+          "location": "Better BibTeX for Zotero；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "url": "https://retorque.re/zotero-better-bibtex/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-collect",
+      "name": "收集与建库"
+    },
+    {
+      "id": "g-organize",
+      "name": "整理与查重"
+    },
+    {
+      "id": "g-read",
+      "name": "阅读与笔记"
+    },
+    {
+      "id": "g-cite",
+      "name": "写作与引用"
+    },
+    {
+      "id": "g-migrate",
+      "name": "导入与迁移"
+    },
+    {
+      "id": "g-collaborate",
+      "name": "协作与共享"
+    },
+    {
+      "id": "g-sync",
+      "name": "同步与存储"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "zotero-01",
+      "title": "把网页收进可检索的文献库",
+      "result": "用浏览器 Zotero Connector 保存当前网页为资料库条目，后续可整理、检索并关联附件。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要安装浏览器 Zotero Connector 和桌面端 Zotero；网页识别/可保存字段因站点而异。Connector 不授予出版物全文权限，全文访问仍取决于出版商和机构授权。",
+      "source_ids": [
+        "s-connector"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-connector",
+          "quote": "save the currently open website into your Zotero library",
+          "url": "https://www.zotero.org/support/connector",
+          "location": "Zotero Connector | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "source_line_start": 63,
+          "source_line_end": 63,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-collect"
+      ],
+      "aliases": [
+        "浏览器收集文献"
+      ]
+    },
+    {
+      "id": "zotero-02",
+      "title": "把 PDF 标注整理成可回到原文的研究笔记",
+      "result": "在内置 PDF 阅读器标注并将选中内容汇入笔记；笔记保留回到 PDF 页面的链接和引文，便于复核上下文。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用 Zotero 内置 PDF 阅读器和笔记编辑器。注释保存在 Zotero 数据中；外部 PDF 查看器不一定会同步显示这些注释，向外分享需导出带注释副本。",
+      "source_ids": [
+        "s-pdf-reader"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-pdf-reader",
+          "quote": "links back to the PDF page as well as citations",
+          "url": "https://www.zotero.org/support/pdf_reader",
+          "location": "Zotero PDF Reader and Note Editor | Zotero Documentation；本次 HTML 提取正文第 67–67 行（不是 HTML 源码行号）",
+          "source_line_start": 67,
+          "source_line_end": 67,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-read"
+      ],
+      "aliases": [
+        "PDF 高亮与笔记"
+      ]
+    },
+    {
+      "id": "zotero-03",
+      "title": "按主题整理文献并让动态清单自动更新",
+      "result": "用 collections、tags 和 saved searches 建立主题/项目清单；一个条目可出现在多个集合而不复制，匹配搜索条件的新增资料会自动进入保存搜索结果。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "集合/标签适合人工分类与过滤；保存搜索按当前条件刷新。集合在个人库与组库之间复制时不保留位置，标签会保留。",
+      "source_ids": [
+        "s-organize"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-organize",
+          "quote": "automatically update to include all the items",
+          "url": "https://www.zotero.org/support/collections_and_tags",
+          "location": "Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 89–89 行（不是 HTML 源码行号）",
+          "source_line_start": 89,
+          "source_line_end": 89,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-organize",
+          "quote": "filter your library",
+          "url": "https://www.zotero.org/support/collections_and_tags",
+          "location": "Collections and Tags | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "source_line_start": 63,
+          "source_line_end": 63,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-organize"
+      ],
+      "aliases": [
+        "保存搜索",
+        "主题文献整理"
+      ]
+    },
+    {
+      "id": "zotero-04",
+      "title": "合并重复文献并保住分类与引用关联",
+      "result": "检查 Zotero 标出的疑似重复项，合并为一条资料记录并保留集合、标签；官方说明文字处理器插件会识别合并，自动生成的引用和书目不会因此失效。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "检测只在单个资料库内运行，使用标题、DOI、ISBN 等字段；可能有误报，目前不能把误报标记为非重复，需人工检查合并字段。",
+      "source_ids": [
+        "s-duplicates"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-duplicates",
+          "quote": "Merges will retain all of the collections and tags",
+          "url": "https://www.zotero.org/support/duplicate_detection",
+          "location": "Duplicate Detection | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "source_line_start": 68,
+          "source_line_end": 68,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-organize"
+      ],
+      "aliases": [
+        "重复文献清理"
+      ]
+    },
+    {
+      "id": "zotero-05",
+      "title": "在 Word、LibreOffice 或 Google Docs 中维护引用和书目",
+      "result": "从 Zotero 文献库插入文内引文或脚注，生成动态参考书目；修正文献条目后可更新文档中的书目信息。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "官方桌面端文字处理插件与 Zotero 捆绑并通常自动安装；Google Docs 路线还涉及浏览器 Connector 与文档授权。各文字处理器支持方式不同，未实测当前客户端兼容性。",
+      "source_ids": [
+        "s-wordproc"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-wordproc",
+          "quote": "insert a new in-text citation",
+          "url": "https://www.zotero.org/support/word_processor_integration",
+          "location": "Word Processor Plugins | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-wordproc",
+          "quote": "Word, LibreOffice, and Google Docs",
+          "url": "https://www.zotero.org/support/word_processor_integration",
+          "location": "Word Processor Plugins | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-cite"
+      ],
+      "aliases": [
+        "文内引用与自动书目"
+      ]
+    },
+    {
+      "id": "zotero-06",
+      "title": "从其他文献管理器迁移资料库",
+      "result": "将已有文献库导入 Zotero，尽量延续条目和文件夹/集合结构，继续在同一库中检索与引用。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Mendeley 可从在线库直接导入资料与文件夹结构，但需先同步到其服务器；群组库不能直接导入，Mendeley Cite 引用不可读。EndNote 需先导出 XML，附件目录位置影响附件导入；其他工具可尝试 RIS、BibTeX 或 CSL JSON，字段保留情况因格式而异。迁移前备份并抽查结果。",
+      "source_ids": [
+        "s-mendeley",
+        "s-endnote",
+        "s-moving"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-mendeley",
+          "quote": "import all data, including the full folder structure",
+          "url": "https://www.zotero.org/support/kb/mendeley_import",
+          "location": "How do I import a Mendeley library into Zotero? | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-endnote",
+          "quote": "best export format for this is XML",
+          "url": "https://www.zotero.org/support/kb/endnote_import",
+          "location": "How do I import from EndNote? | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "source_line_start": 62,
+          "source_line_end": 62,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-moving",
+          "quote": "exporting to a standardized reference format",
+          "url": "https://www.zotero.org/support/moving_to_zotero",
+          "location": "Importing from Other Reference Managers | Zotero Documentation；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "source_line_start": 69,
+          "source_line_end": 69,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-moving",
+          "quote": "RIS, BibTeX, or CSL JSON",
+          "url": "https://www.zotero.org/support/moving_to_zotero",
+          "location": "Importing from Other Reference Managers | Zotero Documentation；本次 HTML 提取正文第 69–69 行（不是 HTML 源码行号）",
+          "source_line_start": 69,
+          "source_line_end": 69,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-migrate"
+      ],
+      "aliases": [
+        "导入旧文献库"
+      ]
+    },
+    {
+      "id": "zotero-07",
+      "title": "让 LaTeX/Markdown 文献文件随 Zotero 集合变化自动导出",
+      "result": "使用 Better BibTeX 维护引用键，并在 Zotero 集合变化时自动导出 BibTeX/BibLaTeX 文件，供文本化写作流程使用。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是第三方 Better BibTeX 作者文档描述的扩展工作流，不是 Zotero 核心导出承诺。文档注明 Zotero 8 已有原生引用键，Better BibTeX 的 Zotero 7 支持不再更新；须按当前 Zotero/扩展版本核对迁移和兼容性。未实装验证。",
+      "source_ids": [
+        "s-better-bibtex"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-better-bibtex",
+          "quote": "Auto export of collections or entire libraries when they change",
+          "url": "https://retorque.re/zotero-better-bibtex/",
+          "location": "Better BibTeX for Zotero；本次 HTML 提取正文第 35–35 行（不是 HTML 源码行号）",
+          "source_line_start": 35,
+          "source_line_end": 35,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-cite"
+      ],
+      "aliases": [
+        "自动导出 BibTeX"
+      ]
+    },
+    {
+      "id": "zotero-08",
+      "title": "与同学或同事共建共享资料库",
+      "result": "在 Zotero Group Library 中共同维护项目资料，让成员访问共享条目并按组设置查看、编辑和附件权限。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Zotero.org 账户和组成员权限。组库与个人库分开；组类型和管理员设置决定成员权限。组附件共享使用组所有者的存储配额，公开开放组不能启用文件存储。",
+      "source_ids": [
+        "s-groups"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-groups",
+          "quote": "share collections with a class, work closely with colleagues",
+          "url": "https://www.zotero.org/support/groups",
+          "location": "Zotero Groups | Zotero Documentation；本次 HTML 提取正文第 61–61 行（不是 HTML 源码行号）",
+          "source_line_start": 61,
+          "source_line_end": 61,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-collaborate"
+      ],
+      "aliases": [
+        "课题组文献库"
+      ]
+    },
+    {
+      "id": "zotero-09",
+      "title": "在个人电脑间同步文献记录、笔记和附件",
+      "result": "在 Zotero 安装的设备间同步个人库条目、笔记、链接、标签及配置的附件文件；需要时通过 Zotero 在线资料库访问记录。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是数据同步与附件同步组合后的用户结果：官方明确两者分别处理。条目/笔记需启用 Zotero 账户数据同步；PDF、快照等附件需 Zotero Storage 或 WebDAV。WebDAV 不支持组库；当前配额、价格和地区付款未核实。",
+      "source_ids": [
+        "s-sync",
+        "s-storage"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sync",
+          "quote": "Data syncing merges library items, notes, links, tags",
+          "url": "https://www.zotero.org/support/sync",
+          "location": "Syncing | Zotero Documentation；本次 HTML 提取正文第 63–63 行（不是 HTML 源码行号）",
+          "source_line_start": 63,
+          "source_line_end": 63,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-sync",
+          "quote": "doesn’t sync attached files",
+          "url": "https://www.zotero.org/support/sync",
+          "location": "Syncing | Zotero Documentation；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "source_line_start": 68,
+          "source_line_end": 68,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "s-storage",
+          "quote": "synchronize PDFs, images, web snapshots, and other files",
+          "url": "https://www.zotero.org/support/storage_faq",
+          "location": "Zotero Storage FAQ | Zotero Documentation；本次 HTML 提取正文第 62–62 行（不是 HTML 源码行号）",
+          "source_line_start": 62,
+          "source_line_end": 62,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "跨设备同步文献与附件"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "未安装或运行 Zotero、Connector、Word/LibreOffice/Google Docs 插件及 Better BibTeX；兼容性与具体授权流程未验证。",
+    "未核实 Zotero Storage 当前价格/配额、各地区付款方式及第三方 WebDAV 服务条件。",
+    "未验证特定出版商 translator 的准确率和字段修复路径，也未核验第三方扩展的安全审查。",
+    "未验证迁移后附件、非标准字段、引用键和 PDF 标注逐项完整；建议对关键库先备份并抽样核对。"
+  ],
+  "generated_at": "2026-11-05T13:30:00Z",
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  }
+}

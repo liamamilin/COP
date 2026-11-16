@@ -1,0 +1,166 @@
+{
+  "topic": "FastAPI",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (read-only use)",
+  "retrieved": [
+    {
+      "id": "s-background",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+      "retrieved_at": "2026-11-05T12:30:40.252665+00:00",
+      "capture_sha256": "e53e2ac70502bd086ccbcc715076a12f6607eead8a2b369143183911a706a19a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-deployment",
+      "requested_url": "https://fastapi.tiangolo.com/deployment/",
+      "capture_origin": "https://fastapi.tiangolo.com/deployment/",
+      "retrieved_at": "2026-11-05T12:30:39.514226+00:00",
+      "capture_sha256": "15cee1bd2442193cb9956314281554c1479b83ced4b0d9c0509d70139159a35c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-errors",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/handling-errors/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/handling-errors/",
+      "retrieved_at": "2026-11-05T12:31:33.879184+00:00",
+      "capture_sha256": "1aeacac4212667f50cf4b5b18b56a40d5d48615e971c1ead0f449e4d610deaa1",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-files",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/request-files/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/request-files/",
+      "retrieved_at": "2026-11-05T12:30:40.763008+00:00",
+      "capture_sha256": "b11e7dbb764fdb7b0d03674c49093bf4cf71ab6ec8838927d606d4dc89bace1b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-fullstack-readme-aabb90126964a164e02aff39e7c385bb0598236d",
+      "requested_url": "https://raw.githubusercontent.com/fastapi/full-stack-fastapi-template/aabb90126964a164e02aff39e7c385bb0598236d/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/fastapi/full-stack-fastapi-template/aabb90126964a164e02aff39e7c385bb0598236d/README.md",
+      "retrieved_at": "2026-11-05T12:31:33.485982+00:00",
+      "capture_sha256": "0efd6a53be63b7de181bff854f601a87e6be5b4ab39e69ad696505122455931d",
+      "content_type": "text/plain; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "git_commit": "aabb90126964a164e02aff39e7c385bb0598236d",
+      "git_repository": "fastapi/full-stack-fastapi-template",
+      "pinned_raw_url": "https://raw.githubusercontent.com/fastapi/full-stack-fastapi-template/aabb90126964a164e02aff39e7c385bb0598236d/README.md",
+      "pinned_content_sha256": "0efd6a53be63b7de181bff854f601a87e6be5b4ab39e69ad696505122455931d",
+      "immutable_url": "https://github.com/fastapi/full-stack-fastapi-template/blob/aabb90126964a164e02aff39e7c385bb0598236d/README.md"
+    },
+    {
+      "id": "s-models",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/body/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/body/",
+      "retrieved_at": "2026-11-05T12:31:34.070897+00:00",
+      "capture_sha256": "f11901b226a695972685f70a812e1044ae6a178405a9dbf5a8801b956e797cd9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://fastapi.tiangolo.com/features/",
+      "capture_origin": "https://fastapi.tiangolo.com/features/",
+      "retrieved_at": "2026-11-05T12:30:40.216204+00:00",
+      "capture_sha256": "f3fb0cf505e0b335cbf685d8c6108fbb33ac839803280c8695c7c6efd8547880",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-response-model",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/response-model/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/response-model/",
+      "retrieved_at": "2026-11-05T12:31:30.977343+00:00",
+      "capture_sha256": "0c258eff0955f17a9380d0f440abd588b2585192c49168f63dede621f6b6d7bc",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-security",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/",
+      "retrieved_at": "2026-11-05T12:30:40.440562+00:00",
+      "capture_sha256": "23cd3a9e83acc1635aec2ab2256c72cca4138e7dfcdc8df70ac157ca2fe0ef4c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sql",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/sql-databases/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/sql-databases/",
+      "retrieved_at": "2026-11-05T12:30:39.180609+00:00",
+      "capture_sha256": "a9f8818db04a61360512f4d0e12c0eef792632f1e9b85bfc32cf7990970de545",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-streaming",
+      "requested_url": "https://fastapi.tiangolo.com/advanced/custom-response/",
+      "capture_origin": "https://fastapi.tiangolo.com/advanced/custom-response/",
+      "retrieved_at": "2026-11-05T12:30:40.631217+00:00",
+      "capture_sha256": "0723b50e59aa81b0f0ae539dd5c246e0bb22b0acd3ae2ee97295d5c67377c189",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-tutorial",
+      "requested_url": "https://fastapi.tiangolo.com/tutorial/",
+      "capture_origin": "https://fastapi.tiangolo.com/tutorial/",
+      "retrieved_at": "2026-11-05T12:30:39.675033+00:00",
+      "capture_sha256": "481584af4cf2070cacc1719686abf16ca9419c6d629d1fa849b26f76591e17a5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-websockets",
+      "requested_url": "https://fastapi.tiangolo.com/advanced/websockets/",
+      "capture_origin": "https://fastapi.tiangolo.com/advanced/websockets/",
+      "retrieved_at": "2026-11-05T12:30:40.259338+00:00",
+      "capture_sha256": "f4cd0fd725495c64c93b62db60fd0cdac7ef506051182a53b6fd46279f347ab8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "a-webhooks-route",
+      "requested_url": "https://fastapi.tiangolo.com/advanced/webhooks/",
+      "attempt_date": "2026-11-05",
+      "outcome": "HTTP 404; no cached body or hash. Webhooks not included as a confirmed outcome.",
+      "adopted": false
+    },
+    {
+      "id": "a-template-github-commit-main",
+      "requested_url": "https://api.github.com/repos/fastapi/full-stack-fastapi-template/commits/main",
+      "attempt_date": "2026-11-05",
+      "outcome": "GitHub API returned HTTP 422 because main was not the default branch; repository metadata was queried next to determine the actual default branch.",
+      "adopted": false
+    },
+    {
+      "id": "a-template-github-repo-metadata",
+      "requested_url": "https://api.github.com/repos/fastapi/full-stack-fastapi-template",
+      "attempt_date": "2026-11-05",
+      "outcome": "Successful metadata lookup identified master as default branch. Its response body was not retained as a content source; the raw README was captured at commit aabb90126964a164e02aff39e7c385bb0598236d.",
+      "adopted": false
+    }
+  ],
+  "notes": "Each successful capture cache is listed once. Pages with Content-Type text/html use extracted_html_text line indices; the pinned template README was captured as text/plain and uses captured_markdown line indices.",
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

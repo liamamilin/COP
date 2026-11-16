@@ -1,0 +1,329 @@
+{
+  "topic": "Metabase",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (used without modification)",
+  "retrieved": [
+    {
+      "id": "s-alerts",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/alerts",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/alerts",
+      "retrieved_at": "2026-11-05T13:05:31.161344+00:00",
+      "capture_sha256": "ac73af32b03506105833eba36c9c75a28ee43c5a1c04a3a4e3222b88971c8a31",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-connect",
+      "requested_url": "https://www.metabase.com/docs/latest/databases/connecting",
+      "capture_origin": "https://www.metabase.com/docs/latest/databases/connecting",
+      "retrieved_at": "2026-11-05T13:05:16.008744+00:00",
+      "capture_sha256": "ab25fa449c137aec9a5e47cb128d126bdb93d5faf2a9775e8f8d1787842fd026",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-dashboard-filters",
+      "requested_url": "https://www.metabase.com/docs/latest/dashboards/filters",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/filters",
+      "retrieved_at": "2026-11-05T13:06:44.965365+00:00",
+      "capture_sha256": "a79a79babe1134bc6086df77207c29ca111f9c7ce2119195e59d52c85f156dd5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-dashboard-gallery",
+      "requested_url": "https://www.metabase.com/dashboards",
+      "capture_origin": "https://www.metabase.com/dashboards",
+      "retrieved_at": "2026-11-05T13:06:29.093814+00:00",
+      "capture_sha256": "540144c345ab0f5f9b6eaf8484b333a1ea42208a31a317497262ecbf530b8f36",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-dashboard",
+      "requested_url": "https://www.metabase.com/docs/latest/dashboards/introduction",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/introduction",
+      "retrieved_at": "2026-11-05T13:05:23.247801+00:00",
+      "capture_sha256": "3c8008aa2737c67b1f37c3a86cbf329f4ac48ed8adbc37fb1ad2ce01eb1ef19d",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-download-results",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/exporting-results",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/exporting-results",
+      "retrieved_at": "2026-11-05T13:07:26.208663+00:00",
+      "capture_sha256": "1375fedf4c6eb686e7049e818dc3787907e04e4047585ca6a89d3561dcca2858",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-embed",
+      "requested_url": "https://www.metabase.com/docs/latest/embedding/start",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/start",
+      "retrieved_at": "2026-11-05T13:05:36.513250+00:00",
+      "capture_sha256": "1ee915406ad7586a1a2f17a41a589aaaa360b7a56c51d6b5f1f9568bc5bb34ed",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-embedding-full",
+      "requested_url": "https://www.metabase.com/docs/latest/embedding/full-app-embedding",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/full-app-embedding",
+      "retrieved_at": "2026-11-05T13:07:21.172856+00:00",
+      "capture_sha256": "247ad23e1fc5528b47946d8b9109f7f1f56d8411d507c2ceb3cc5e2d06261933",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-embedding-guest",
+      "requested_url": "https://www.metabase.com/docs/latest/embedding/static-embedding",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/static-embedding",
+      "retrieved_at": "2026-11-05T13:07:13.754444+00:00",
+      "capture_sha256": "bb94662b3706963de2cc8b5ed69b037c398d487337f6b9a6fc33f9d3004d268c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-embedding-sdk",
+      "requested_url": "https://www.metabase.com/docs/latest/embedding/modular-embedding",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/modular-embedding",
+      "retrieved_at": "2026-11-05T13:07:17.113520+00:00",
+      "capture_sha256": "9d26388aaf166b3e60a3abeb843b15b54f75d86c6031eb21d43268e27de15f23",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-example-gallery",
+      "requested_url": "https://www.metabase.com/examples",
+      "capture_origin": "https://www.metabase.com/examples",
+      "retrieved_at": "2026-11-05T13:06:31.973503+00:00",
+      "capture_sha256": "0d9dd2fcd55c2c2bea88de65bf268e914a66c7e97b76f0656a91a4d052b46555",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-guest-embed",
+      "requested_url": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+      "capture_origin": "https://www.metabase.com/docs/latest/embedding/guest-embedding",
+      "retrieved_at": "2026-11-05T13:10:07.346877+00:00",
+      "capture_sha256": "4ccca8a6261af6d211ac21409178b9f0954ce5502f9cd5e87b42186dd1ccdb97",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-hola-case",
+      "requested_url": "https://www.metabase.com/case-studies/hola-health",
+      "capture_origin": "https://www.metabase.com/case-studies/hola-health",
+      "retrieved_at": "2026-11-05T13:06:35.701623+00:00",
+      "capture_sha256": "4fb43562daf4781e6c64321da4c1ea1f97773c43553e80a807ae69d4e29da08a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-install",
+      "requested_url": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+      "capture_origin": "https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase",
+      "retrieved_at": "2026-11-05T13:05:39.273244+00:00",
+      "capture_sha256": "6a08331a72cff5f03b66168ec8f2953ece384405d07af9ada8e999f4a1136a5b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-learn-example",
+      "requested_url": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data",
+      "capture_origin": "https://www.metabase.com/learn/metabase-basics/getting-started/explore-data",
+      "retrieved_at": "2026-11-05T13:06:26.488898+00:00",
+      "capture_sha256": "4bd0a387b8d06f95b9c076c99c0f2201efc49377c6148770c7914a5c64d1085e",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-metrics-canonical",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "retrieved_at": "2026-11-05T13:14:32.435006+00:00",
+      "capture_sha256": "37409d6899a602c179af49c1aa75ce07ff8ce6640b1deac43ebadf5d8fe32bb6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-metrics",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/metrics",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/metrics",
+      "retrieved_at": "2026-11-05T13:06:48.602026+00:00",
+      "capture_sha256": "1499d9517fa14c5e42cd2c91937099b793c409bfcb89b498aac3b1eb3ba77daa",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-models-fixed",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/semantic-layer/metrics",
+      "retrieved_at": "2026-11-05T13:07:09.278204+00:00",
+      "capture_sha256": "37409d6899a602c179af49c1aa75ce07ff8ce6640b1deac43ebadf5d8fe32bb6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-models-models",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/models/models",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/models/models",
+      "retrieved_at": "2026-11-05T13:07:11.975678+00:00",
+      "capture_sha256": "a864d8da7ecf21ab505b6b90770e5de1f7dabebd30ab5eb63360cdc1a7b1e453",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-models",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/models",
+      "capture_origin": "https://www.metabase.com/docs/latest/data-modeling/models",
+      "retrieved_at": "2026-11-05T13:06:50.859353+00:00",
+      "capture_sha256": "a50e7839f0ac00090eeb6c9e13cc8dc71ed5b8ce3eb54f84c6684c20ee7bd258",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://www.metabase.com/docs/latest/",
+      "capture_origin": "https://www.metabase.com/docs/latest/",
+      "retrieved_at": "2026-11-05T13:05:11.241877+00:00",
+      "capture_sha256": "1f4f05b48837f24aff4ce95d527be3c54bea3a09f25999feb0acf3b0bf7e6d83",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://www.metabase.com/pricing",
+      "capture_origin": "https://www.metabase.com/pricing",
+      "retrieved_at": "2026-11-05T13:06:40.617824+00:00",
+      "capture_sha256": "333ae313735e182aa8be85e50332b9b9bc8ca4a3676b0150f4931bb3b2118cd0",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-query-builder",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/query-builder/editor",
+      "retrieved_at": "2026-11-05T13:05:18.973638+00:00",
+      "capture_sha256": "9b529044b404350f8195c263fed6f4641417fe3101bd27a9af64ca094484878b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sql",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+      "capture_origin": "https://www.metabase.com/docs/latest/questions/native-editor/writing-sql",
+      "retrieved_at": "2026-11-05T13:05:33.967661+00:00",
+      "capture_sha256": "851c1c9b3168abe43333212f58534c438e215a551f5f286ec09363ff77a1fd1f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-subscriptions",
+      "requested_url": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+      "capture_origin": "https://www.metabase.com/docs/latest/dashboards/subscriptions",
+      "retrieved_at": "2026-11-05T13:05:28.163946+00:00",
+      "capture_sha256": "f666109e101e50f04e99d5dedcc9d6b931e5de1146f193a17f6e5266f6fc2e66",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-synctera-case",
+      "requested_url": "https://www.metabase.com/case-studies/synctera",
+      "capture_origin": "https://www.metabase.com/case-studies/synctera",
+      "retrieved_at": "2026-11-05T13:06:38.266602+00:00",
+      "capture_sha256": "c8f53c4d8a7741b46a84dd8ab98d271db4af1422b05adddf590c5a3f193ebe37",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-get-started",
+      "requested_url": "https://www.metabase.com/docs/latest/getting-started/start",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-chart",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/visualizations/introduction",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-sharing",
+      "requested_url": "https://www.metabase.com/docs/latest/sharing/public-links",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-question-overview",
+      "requested_url": "https://www.metabase.com/docs/latest/questions/overview",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-data-permissions",
+      "requested_url": "https://www.metabase.com/docs/latest/permissions/data-permissions",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-csv-upload",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/csv-upload",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-public-sharing",
+      "requested_url": "https://www.metabase.com/docs/latest/sharing/public-sharing",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-feature-version",
+      "requested_url": "https://www.metabase.com/blog/metabase-65",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-csv-uploads",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/csv-uploading",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-public-links",
+      "requested_url": "https://www.metabase.com/docs/latest/sharing/public-links",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "s-user-permissions",
+      "requested_url": "https://www.metabase.com/docs/latest/permissions/permissions-introduction",
+      "failure": "HTTP 404 Not Found"
+    },
+    {
+      "id": "a-csv-upload-repeat",
+      "requested_url": "https://www.metabase.com/docs/latest/data-modeling/csv-upload",
+      "failure": "HTTP 404 Not Found"
+    }
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:34:15.039246+00:00"
+}

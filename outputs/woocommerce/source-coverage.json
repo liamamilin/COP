@@ -1,0 +1,237 @@
+{
+  "topic": "woocommerce",
+  "checked_at": "2026-11-05T13:19:00Z",
+  "retrieved": [
+    {
+      "id": "s-analytics",
+      "requested_url": "https://woocommerce.com/document/woocommerce-analytics/",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-analytics/",
+      "retrieved_at": "2026-11-05T12:42:36.551837+00:00",
+      "capture_sha256": "f97cd858ff67cee9b256237b2a8b3f5a16b99eae924f0269b3d9173c76653a90",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-booking-case",
+      "requested_url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+      "capture_origin": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-bookings-use-cases/bookings-use-case-hair-salon/",
+      "retrieved_at": "2026-11-05T12:59:44.782633+00:00",
+      "capture_sha256": "6fdd4b9f7d4a16892659fdace37d33a6b559d9aa6bfbce375875e186edad40ec",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-bookings-intro",
+      "requested_url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+      "capture_origin": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/",
+      "retrieved_at": "2026-11-05T12:59:44.796943+00:00",
+      "capture_sha256": "6fca6365f8c3c85b6d7737f03129d1f82303b1bb345b80a214dccfcd17967732",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-case",
+      "requested_url": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+      "capture_origin": "https://woocommerce.com/posts/landyachtz-woocommerce-success-story/",
+      "retrieved_at": "2026-11-05T12:42:36.126258+00:00",
+      "capture_sha256": "f454eba36137e9391d175994974a0f5cfcd7f3966ba86769c191d5eadacaa737",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-coffee-case",
+      "requested_url": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+      "capture_origin": "https://woocommerce.com/document/subscriptions-use-case-coffee/",
+      "retrieved_at": "2026-11-05T12:59:41.535530+00:00",
+      "capture_sha256": "32bbce801970b8caab4d664702766dc34f8adf2cbc728cb8d101e5f3344ce7b0",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-countries",
+      "requested_url": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+      "capture_origin": "https://woocommerce.com/document/woopayments/compatibility/countries/",
+      "retrieved_at": "2026-11-05T12:42:36.455127+00:00",
+      "capture_sha256": "6c272684ae3ef0ede6aa648e7bbe6a0f17d6beb3aeb7b8fa50e75379d954b50c",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-coupons",
+      "requested_url": "https://woocommerce.com/document/coupon-management/",
+      "capture_origin": "https://woocommerce.com/document/coupon-management/",
+      "retrieved_at": "2026-11-05T12:42:35.554432+00:00",
+      "capture_sha256": "7e0c0a428d873ca4d115a12cd6e7b821ffe714d6962d70165ae8dd6aafcd8e82",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-digital",
+      "requested_url": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+      "capture_origin": "https://woocommerce.com/document/digital-downloadable-product-handling/",
+      "retrieved_at": "2026-11-05T12:42:35.006027+00:00",
+      "capture_sha256": "18d5576e526cacdfbf520c2dc4cbceab1b3e6056bd8db76b5e9eaf45f6f0b2c2",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ext-price-bookings",
+      "requested_url": "https://woocommerce.com/products/woocommerce-bookings/",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-bookings/",
+      "retrieved_at": "2026-11-05T13:04:12.215448+00:00",
+      "capture_sha256": "d9a93d7b2713942e3b78112cad4e526b9fc64071e1192391329084f39b18e33f",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ext-price-memberships",
+      "requested_url": "https://woocommerce.com/products/woocommerce-memberships/",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-memberships/",
+      "retrieved_at": "2026-11-05T13:04:13.138775+00:00",
+      "capture_sha256": "1d1e3b70cfb72aca1a520846a8b5737cc6a21c9ea217fd884d99a8e3a9b2c23e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ext-price-subscriptions",
+      "requested_url": "https://woocommerce.com/products/woocommerce-subscriptions/",
+      "capture_origin": "https://woocommerce.com/products/woocommerce-subscriptions/",
+      "retrieved_at": "2026-11-05T13:04:12.387462+00:00",
+      "capture_sha256": "c33c86313ccf7abd69d1e98f8e6d15ebc6d8bca177afeab562a786288c866f23",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-membership",
+      "requested_url": "https://woocommerce.com/document/woocommerce-memberships/",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-memberships/",
+      "retrieved_at": "2026-11-05T12:59:45.498170+00:00",
+      "capture_sha256": "a34cbfc9c738e0b36b83b5d479dcbcad757f4d299da4a5d3e5ddbc3b21800bfb",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-orders",
+      "requested_url": "https://woocommerce.com/document/managing-orders/",
+      "capture_origin": "https://woocommerce.com/document/managing-orders/",
+      "retrieved_at": "2026-11-05T12:42:35.435962+00:00",
+      "capture_sha256": "40808e7752cb7917fa4c1bc1ed3b7b121b79d2992ab033e799ce5bca9c8e84a3",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-payment-fees",
+      "requested_url": "https://woocommerce.com/document/woopayments/fees-and-debits/",
+      "capture_origin": "https://woocommerce.com/document/woopayments/fees/",
+      "retrieved_at": "2026-11-05T12:43:38.977482+00:00",
+      "capture_sha256": "7da802d86cbafeb2c3d54c0a0da84c6034fe6167ca25d25563c7af10c87cd5f8",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-payments",
+      "requested_url": "https://woocommerce.com/document/woopayments/startup-guide/",
+      "capture_origin": "https://woocommerce.com/document/woopayments/startup-guide/",
+      "retrieved_at": "2026-11-05T12:42:36.701834+00:00",
+      "capture_sha256": "9be8967d846d2f00396869e2a48211d7870ab0cbcf3e26eeb7307b8e7da408b3",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-products",
+      "requested_url": "https://woocommerce.com/document/managing-products/",
+      "capture_origin": "https://woocommerce.com/document/managing-products/",
+      "retrieved_at": "2026-11-05T12:42:17.407707+00:00",
+      "capture_sha256": "e8148034cc5dc2635c290bddc6874a74102ea1468beb588472f24fde612744f4",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-shipping",
+      "requested_url": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+      "capture_origin": "https://woocommerce.com/document/woocommerce-shipping-and-tax/",
+      "retrieved_at": "2026-11-05T12:42:36.047272+00:00",
+      "capture_sha256": "9fca2eb13c61eec371ec23ea60e6200e38999a4aa25cd415c317f2be69fffcac",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sub-renewals",
+      "requested_url": "https://woocommerce.com/document/subscriptions/renewal-process/",
+      "capture_origin": "https://woocommerce.com/document/subscriptions/renewal-process/",
+      "retrieved_at": "2026-11-05T12:59:44.452270+00:00",
+      "capture_sha256": "0b081d4cf3529114714f49f4d3270e444d44be2b2c98cbb218309026aae2a4f5",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-subscriptions",
+      "requested_url": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+      "capture_origin": "https://woocommerce.com/document/subscriptions/creating-subscription-products/",
+      "retrieved_at": "2026-11-05T12:59:45.795483+00:00",
+      "capture_sha256": "2c0d63f48643715989ee561848fb51f9d71bc53b3fdf4d5ca84ae4b0420ec442",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-taxes",
+      "requested_url": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+      "capture_origin": "https://woocommerce.com/document/setting-up-taxes-in-woocommerce/",
+      "retrieved_at": "2026-11-05T12:42:35.471159+00:00",
+      "capture_sha256": "082aeb591cf3d766ee15202570d7633aa4ec2021b6246bf5125a84e2f60fd94e",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-variable",
+      "requested_url": "https://woocommerce.com/document/variable-product/",
+      "capture_origin": "https://woocommerce.com/document/variable-product/",
+      "retrieved_at": "2026-11-05T12:42:36.478017+00:00",
+      "capture_sha256": "8f72a081fa3dee63ca00a003747cab5d830f0ea763f0f49b8fb210fdaf976646",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "background_not_used": [
+    {
+      "id": "s-bookings-manage",
+      "requested_url": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-booking-settings/",
+      "capture_origin": "https://woocommerce.com/document/introduction-to-woocommerce-bookings/woocommerce-booking-settings/",
+      "retrieved_at": "2026-11-05T12:59:45.495111+00:00",
+      "capture_sha256": "a8a5f91681c50adce63269377a76f66a74d1a02f7f7c21179ee0bdb17fd7dd59",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "HTTP response bytes",
+      "note": "Captured during discovery but not needed to support a retained P."
+    }
+  ],
+  "attempted_without_capture": [],
+  "discovery_views": {
+    "outcome_view": "店铺经营者可直接观察到的商品维护、订单履约、优惠、经营数据、周期商品销售、会员内容和服务预约结果。",
+    "example_view": "Landyachtz 多币种商店案例；扩展案例包括 monthly coffee subscription 和 hair salon 的逐人时段预约配置。每个案例只说明单一可行配置，不推出通常业绩。",
+    "extension_view": "检查 WooCommerce Tax/Shipping 与 WooCommerce Subscriptions、Memberships、Bookings 的具名扩展说明；明确主机、支付网关、版本及附加费用依赖。"
+  },
+  "coverage_method": "保留原有无分类结果/案例/扩展候选记录；补充阅读三个具名扩展的手册、完整案例和官方产品/年费页面后再将结果去重、收窄运输标签路线并分类。HTML摘录行号对应实际HTML提取正文，SHA-256对应原始HTTP响应字节。",
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}

@@ -1,0 +1,725 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Quarto",
+    "scope": "文档、报告、演示、网站、书籍与可执行分析；明确渲染环境、扩展与发布平台。"
+  },
+  "sources": [
+    {
+      "id": "q-python",
+      "title": "Using Python – Quarto",
+      "url": "https://quarto.org/docs/computations/python.html",
+      "original_url": "https://quarto.org/docs/computations/python.html",
+      "evidence": "automatically run computations\n[…]\nrendered to various formats",
+      "location": "Using Python – Quarto；本次 HTML 提取正文第 275–275 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:30.897139+00:00",
+      "capture_origin": "https://quarto.org/docs/computations/python.html",
+      "capture_sha256": "88527031692436a479b90b40a9c78468c4157481a028d431960e3b9b4ca38eec",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-01",
+          "location": "Using Python – Quarto；本次 HTML 提取正文第 275–275 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/computations/python.html"
+        },
+        {
+          "possibility_id": "quarto-01",
+          "location": "Using Python – Quarto；本次 HTML 提取正文第 275–275 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/computations/python.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-pdf",
+      "title": "PDF Basics – Quarto",
+      "url": "https://quarto.org/docs/output-formats/pdf-basics.html",
+      "original_url": "https://quarto.org/docs/output-formats/pdf-basics.html",
+      "evidence": "Typst is an alternative way to produce PDFs",
+      "location": "PDF Basics – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:09:00.922080+00:00",
+      "capture_origin": "https://quarto.org/docs/output-formats/pdf-basics.html",
+      "capture_sha256": "20feeee09330156852c67bb9003f4cf8a09b88039b69035f748e508b3bbb0629",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-01",
+          "location": "PDF Basics – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/output-formats/pdf-basics.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-manuscripts",
+      "title": "Quarto Manuscripts – Quarto",
+      "url": "https://quarto.org/docs/manuscripts/",
+      "original_url": "https://quarto.org/docs/manuscripts/",
+      "evidence": "publish these computations alongside the manuscript",
+      "location": "Quarto Manuscripts – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:06.353409+00:00",
+      "capture_origin": "https://quarto.org/docs/manuscripts/",
+      "capture_sha256": "67d2eaafd15d817fe567e068373b1a66b88f0da1ad1bb14252d4efbd565b1b3a",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-03",
+          "location": "Quarto Manuscripts – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/manuscripts/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-books",
+      "title": "Creating a Book – Quarto",
+      "url": "https://quarto.org/docs/books/",
+      "original_url": "https://quarto.org/docs/books/",
+      "evidence": "multiple documents (chapters) into a single manuscript\n[…]\nvariety of formats",
+      "location": "Creating a Book – Quarto；本次 HTML 提取正文第 232–232 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:03:26.825772+00:00",
+      "capture_origin": "https://quarto.org/docs/books/",
+      "capture_sha256": "98d81f4174411a8453a7565895f5bb1893f52425d19a03dcd0370caf2c8194f2",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-02",
+          "location": "Creating a Book – Quarto；本次 HTML 提取正文第 232–232 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/books/"
+        },
+        {
+          "possibility_id": "quarto-02",
+          "location": "Creating a Book – Quarto；本次 HTML 提取正文第 232–232 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/books/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-book-structure",
+      "title": "Book Structure – Quarto",
+      "url": "https://quarto.org/docs/books/book-structure.html",
+      "original_url": "https://quarto.org/docs/books/book-structure.html",
+      "evidence": "chapters and sections are automatically numbered",
+      "location": "Book Structure – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:46.028620+00:00",
+      "capture_origin": "https://quarto.org/docs/books/book-structure.html",
+      "capture_sha256": "1c22516d188f57d9a5b6cec36cc0af5e5159ee4771f056bbc54f81b395eb2611",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-02",
+          "location": "Book Structure – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/books/book-structure.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-presentations",
+      "title": "Presentations – Quarto",
+      "url": "https://quarto.org/docs/presentations/",
+      "original_url": "https://quarto.org/docs/presentations/",
+      "evidence": "formats for creating presentations\n[…]\nslides are delineated using headings",
+      "location": "Presentations – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）；Presentations – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:03:20.350875+00:00",
+      "capture_origin": "https://quarto.org/docs/presentations/",
+      "capture_sha256": "3c0b95234cfac0e7407227da2f2ca4724190ccc8025807409021070cbecf4c4e",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-04",
+          "location": "Presentations – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/presentations/"
+        },
+        {
+          "possibility_id": "quarto-04",
+          "location": "Presentations – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/presentations/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-dashboards",
+      "title": "Quarto Dashboards – Quarto",
+      "url": "https://quarto.org/docs/dashboards/",
+      "original_url": "https://quarto.org/docs/dashboards/",
+      "evidence": "create interactive dashboards\n[…]\ndeployed as static web pages",
+      "location": "Quarto Dashboards – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）；Quarto Dashboards – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:03:30.706270+00:00",
+      "capture_origin": "https://quarto.org/docs/dashboards/",
+      "capture_sha256": "5ff14de3fc4dd5f9c2ca75f9f81fa75cb1beb9cb5fb825dd79fc2936d73118ec",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-05",
+          "location": "Quarto Dashboards – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/dashboards/"
+        },
+        {
+          "possibility_id": "quarto-05",
+          "location": "Quarto Dashboards – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/dashboards/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-dashboard-deploy",
+      "title": "Dashboard Deployment – Quarto",
+      "url": "https://quarto.org/docs/dashboards/deployment.html",
+      "original_url": "https://quarto.org/docs/dashboards/deployment.html",
+      "evidence": "require a server for deployment",
+      "location": "Dashboard Deployment – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:05:57.929123+00:00",
+      "capture_origin": "https://quarto.org/docs/dashboards/deployment.html",
+      "capture_sha256": "c449c15476fc1e0eabbb398f803fbe0f588183e5940187ff751058a1b159f87f",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-05",
+          "location": "Dashboard Deployment – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/dashboards/deployment.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-websites",
+      "title": "Creating a Website – Quarto",
+      "url": "https://quarto.org/docs/websites/",
+      "original_url": "https://quarto.org/docs/websites/",
+      "evidence": "publish groups of documents\n[…]\nenable full text search",
+      "location": "Creating a Website – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）；Creating a Website – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:03:23.115420+00:00",
+      "capture_origin": "https://quarto.org/docs/websites/",
+      "capture_sha256": "fa7b9a0cd335b621571aeaeae7baa0c95b7d02a93f14e9e12a2fc52c9da5b722",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-06",
+          "location": "Creating a Website – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/websites/"
+        },
+        {
+          "possibility_id": "quarto-06",
+          "location": "Creating a Website – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/websites/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-github-pages",
+      "title": "GitHub Pages – Quarto",
+      "url": "https://quarto.org/docs/publishing/github-pages.html",
+      "original_url": "https://quarto.org/docs/publishing/github-pages.html",
+      "evidence": "automatically render your files\n[…]\npublish the resulting content",
+      "location": "GitHub Pages – Quarto；本次 HTML 提取正文第 247–247 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:04:43.204106+00:00",
+      "capture_origin": "https://quarto.org/docs/publishing/github-pages.html",
+      "capture_sha256": "906f0c55aa22a56c9ecaa93c0d7596d0f0d7814d48ecfd56661818bdfe90b678",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-07",
+          "location": "GitHub Pages – Quarto；本次 HTML 提取正文第 247–247 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/publishing/github-pages.html"
+        },
+        {
+          "possibility_id": "quarto-07",
+          "location": "GitHub Pages – Quarto；本次 HTML 提取正文第 247–247 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/publishing/github-pages.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-shinylive",
+      "title": "Shinylive applications embedded in Quarto documents – Quarto + Shinylive",
+      "url": "https://quarto-ext.github.io/shinylive/",
+      "original_url": "https://quarto-ext.github.io/shinylive/",
+      "evidence": "modify the code and re-run the application",
+      "location": "Shinylive applications embedded in Quarto documents – Quarto + Shinylive；本次 HTML 提取正文第 43–43 行（不是 HTML 源码行号）",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:06:03.725225+00:00",
+      "capture_origin": "https://quarto-ext.github.io/shinylive/",
+      "capture_sha256": "dc86e3cca1f7eff42d40a1c7b526db34181dfc1c6eb06fe5f7d98dd018e81d44",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-08",
+          "location": "Shinylive applications embedded in Quarto documents – Quarto + Shinylive；本次 HTML 提取正文第 43–43 行（不是 HTML 源码行号）",
+          "url": "https://quarto-ext.github.io/shinylive/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "q-extensions",
+      "title": "Quarto Extensions – Quarto",
+      "url": "https://quarto.org/docs/extensions/",
+      "original_url": "https://quarto.org/docs/extensions/",
+      "evidence": "This extension lets you embed Shinylive applications in a Quarto document",
+      "location": "Quarto Extensions – Quarto；本次 HTML 提取正文第 433–433 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:03:36.415031+00:00",
+      "capture_origin": "https://quarto.org/docs/extensions/",
+      "capture_sha256": "2e6d64482e27b9b2b6331036705e8440c6f7641f00d3c8d9d6b46c5f4b138860",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-08",
+          "location": "Quarto Extensions – Quarto；本次 HTML 提取正文第 433–433 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/extensions/"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "q-managing-execution",
+      "title": "Managing Execution – Quarto",
+      "url": "https://quarto.org/docs/projects/code-execution.html",
+      "original_url": "https://quarto.org/docs/projects/code-execution.html",
+      "evidence": "re-render only when source changes",
+      "location": "Managing Execution – Quarto；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+      "source_class": "official_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T13:11:49.914451+00:00",
+      "capture_origin": "https://quarto.org/docs/projects/code-execution.html",
+      "capture_sha256": "0cb4f4bfc4ac1d9496bae1601d0ac3bc12787f50f02885cd4c3de8d76f81b8e6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "quarto-09",
+          "location": "Managing Execution – Quarto；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "url": "https://quarto.org/docs/projects/code-execution.html"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-analysis",
+      "name": "研究与可执行分析"
+    },
+    {
+      "id": "g-publish",
+      "name": "长文与公开发布"
+    },
+    {
+      "id": "g-present",
+      "name": "演示与仪表板"
+    },
+    {
+      "id": "g-interact",
+      "name": "交互扩展"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "quarto-01",
+      "title": "把可执行分析与说明渲染成可复查的报告",
+      "result": "在一份 Quarto 文档中组织说明文字、Python 计算和输出，并把代码运行结果渲染成报告。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "须安装 Quarto CLI 和所需的 Python/Jupyter 或其他语言执行环境及项目依赖。Jupyter notebook 默认不会在 render 时重新执行，需显式启用。可输出 HTML，也可按目标格式渲染 PDF/DOCX；PDF 可用 Quarto 随附的 Typst 或配置 LaTeX/其他引擎。数据、程序包和引擎版本仍需自行锁定，未在本机运行。",
+      "source_ids": [
+        "q-python",
+        "q-pdf"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-python",
+          "quote": "automatically run computations",
+          "url": "https://quarto.org/docs/computations/python.html",
+          "location": "Using Python – Quarto；本次 HTML 提取正文第 275–275 行（不是 HTML 源码行号）",
+          "source_line_start": 275,
+          "source_line_end": 275,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-python",
+          "quote": "rendered to various formats",
+          "url": "https://quarto.org/docs/computations/python.html",
+          "location": "Using Python – Quarto；本次 HTML 提取正文第 275–275 行（不是 HTML 源码行号）",
+          "source_line_start": 275,
+          "source_line_end": 275,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-pdf",
+          "quote": "Typst is an alternative way to produce PDFs",
+          "url": "https://quarto.org/docs/output-formats/pdf-basics.html",
+          "location": "PDF Basics – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+          "source_line_start": 258,
+          "source_line_end": 258,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-analysis"
+      ],
+      "aliases": [
+        "可复现报告",
+        "Python分析文档"
+      ]
+    },
+    {
+      "id": "quarto-02",
+      "title": "把长篇内容整理成可交叉引用的多章书籍",
+      "result": "从多个章节文件组装一本书，并输出网站、PDF、Word、EPUB 等格式；章节编号与图表/章节引用可自动贯穿全书。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用 Quarto Book 项目结构；HTML 书可带全文搜索。PDF 输出依赖所选 PDF 引擎，其他目标格式仍需检查主题、字体和交叉引用兼容。官方文档列举 R for Data Science、Python for Data Analysis 等真实书籍项目作为范例；本研究未重建。",
+      "source_ids": [
+        "q-books",
+        "q-book-structure"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-books",
+          "quote": "multiple documents (chapters) into a single manuscript",
+          "url": "https://quarto.org/docs/books/",
+          "location": "Creating a Book – Quarto；本次 HTML 提取正文第 232–232 行（不是 HTML 源码行号）",
+          "source_line_start": 232,
+          "source_line_end": 232,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-books",
+          "quote": "variety of formats",
+          "url": "https://quarto.org/docs/books/",
+          "location": "Creating a Book – Quarto；本次 HTML 提取正文第 232–232 行（不是 HTML 源码行号）",
+          "source_line_start": 232,
+          "source_line_end": 232,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-book-structure",
+          "quote": "chapters and sections are automatically numbered",
+          "url": "https://quarto.org/docs/books/book-structure.html",
+          "location": "Book Structure – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+          "source_line_start": 235,
+          "source_line_end": 235,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "Quarto Book"
+      ]
+    },
+    {
+      "id": "quarto-03",
+      "title": "将研究论文与可查看的计算过程一起发布",
+      "result": "用 Manuscript 项目发布一篇论文网页，同时提供 LaTeX/Word/PDF 等审稿格式、相关 notebook 和用于生成结果的计算过程。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "研究稿项目会产出网站；读者可在浏览器查看 notebook、代码和输出。期刊模板、字体和精确投稿格式需按目标期刊要求自行检查，Quarto 不负责投稿或保证接受。示例页面展示了下载 Word、AGU 模板 PDF 与 notebook 的实际组织方式，但未作为作者客户结果验证。",
+      "source_ids": [
+        "q-manuscripts"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-manuscripts",
+          "quote": "publish these computations alongside the manuscript",
+          "url": "https://quarto.org/docs/manuscripts/",
+          "location": "Quarto Manuscripts – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）",
+          "source_line_start": 231,
+          "source_line_end": 231,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "学术稿件工作流"
+      ]
+    },
+    {
+      "id": "quarto-04",
+      "title": "从一份 Markdown 内容制作演示文稿",
+      "result": "用 Markdown 标题拆分幻灯片，并选择 Reveal.js 网页演示、PowerPoint 或 Beamer/PDF 输出。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "Reveal.js 支持网页端展示和交互样式；PowerPoint 与 Beamer 功能各异。页面版式、字体和媒体需对目标格式逐一预览，不能假定同一内容在三种格式中外观完全一致。",
+      "source_ids": [
+        "q-presentations"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-presentations",
+          "quote": "formats for creating presentations",
+          "url": "https://quarto.org/docs/presentations/",
+          "location": "Presentations – Quarto；本次 HTML 提取正文第 231–231 行（不是 HTML 源码行号）",
+          "source_line_start": 231,
+          "source_line_end": 231,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-presentations",
+          "quote": "slides are delineated using headings",
+          "url": "https://quarto.org/docs/presentations/",
+          "location": "Presentations – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+          "source_line_start": 238,
+          "source_line_end": 238,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-present"
+      ],
+      "aliases": [
+        "Markdown幻灯片"
+      ]
+    },
+    {
+      "id": "quarto-05",
+      "title": "发布用图表和数据卡片组成的交互仪表板",
+      "result": "将多个数据可视化放入一个响应式仪表板，例如以 Gapminder 数据展示各洲 GDP/寿命散点图、人口面积图和寿命趋势图。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "可用 Python、R、Julia、Observable 等进行计算。静态 dashboard 可作为网页托管且不需要专用服务器；使用 Shiny Python/R 的动态应用则需要服务器或相应托管平台。交互图表与外部资源在离线/静态环境下的能力取决于具体组件。",
+      "source_ids": [
+        "q-dashboards",
+        "q-dashboard-deploy"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-dashboards",
+          "quote": "create interactive dashboards",
+          "url": "https://quarto.org/docs/dashboards/",
+          "location": "Quarto Dashboards – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）",
+          "source_line_start": 234,
+          "source_line_end": 234,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-dashboards",
+          "quote": "deployed as static web pages",
+          "url": "https://quarto.org/docs/dashboards/",
+          "location": "Quarto Dashboards – Quarto；本次 HTML 提取正文第 238–238 行（不是 HTML 源码行号）",
+          "source_line_start": 238,
+          "source_line_end": 238,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-dashboard-deploy",
+          "quote": "require a server for deployment",
+          "url": "https://quarto.org/docs/dashboards/deployment.html",
+          "location": "Dashboard Deployment – Quarto；本次 HTML 提取正文第 258–258 行（不是 HTML 源码行号）",
+          "source_line_start": 258,
+          "source_line_end": 258,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-present"
+      ],
+      "aliases": [
+        "数据仪表板"
+      ]
+    },
+    {
+      "id": "quarto-06",
+      "title": "把多篇文档整理为带导航和搜索的网站",
+      "result": "把多个报告、文章或博客放进同一个 Quarto Website，共享导航和视觉风格，并启用全文搜索供读者查找内容。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "网站通常是渲染后的静态输出，可部署到 GitHub Pages、Netlify、Posit Connect 或其他静态托管服务；若页面嵌入需要后端的交互应用，部署条件会改变。需要管理导航、搜索索引、静态资源和版本更新。",
+      "source_ids": [
+        "q-websites"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-websites",
+          "quote": "publish groups of documents",
+          "url": "https://quarto.org/docs/websites/",
+          "location": "Creating a Website – Quarto；本次 HTML 提取正文第 234–234 行（不是 HTML 源码行号）",
+          "source_line_start": 234,
+          "source_line_end": 234,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-websites",
+          "quote": "enable full text search",
+          "url": "https://quarto.org/docs/websites/",
+          "location": "Creating a Website – Quarto；本次 HTML 提取正文第 235–235 行（不是 HTML 源码行号）",
+          "source_line_start": 235,
+          "source_line_end": 235,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "个人知识网站",
+        "博客"
+      ]
+    },
+    {
+      "id": "quarto-07",
+      "title": "每次提交后自动渲染并更新 GitHub Pages 网站",
+      "result": "将 Quarto 文档或项目连接 GitHub Pages；通过 GitHub Action 在源代码推送后自动渲染并发布站点。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "需要 Git 仓库、GitHub Pages 配置以及正确的工作流权限/发布分支或 Pages Actions 配置。工作流要能安装 Quarto、执行所需语言代码并获得发布权限。Pages 是外部托管服务；公开访问与私有站点功能按 GitHub Pages 规则，未实测本仓库或核价。",
+      "source_ids": [
+        "q-github-pages"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-github-pages",
+          "quote": "automatically render your files",
+          "url": "https://quarto.org/docs/publishing/github-pages.html",
+          "location": "GitHub Pages – Quarto；本次 HTML 提取正文第 247–247 行（不是 HTML 源码行号）",
+          "source_line_start": 247,
+          "source_line_end": 247,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-github-pages",
+          "quote": "publish the resulting content",
+          "url": "https://quarto.org/docs/publishing/github-pages.html",
+          "location": "GitHub Pages – Quarto；本次 HTML 提取正文第 247–247 行（不是 HTML 源码行号）",
+          "source_line_start": 247,
+          "source_line_end": 247,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-publish"
+      ],
+      "aliases": [
+        "Quarto+GitHub Pages"
+      ]
+    },
+    {
+      "id": "quarto-08",
+      "title": "在文档里嵌入可运行和编辑的 Shiny 小应用",
+      "result": "用 Shinylive 扩展在 Quarto 页面中嵌入 Python Shiny 应用，让读者调参数查看输出，也可打开代码编辑器后重新运行。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是 Quarto 扩展目录中的具名第三方扩展和维护者文档示例，不是 Quarto 核心功能。作者文档示例要求完整的 standalone 应用，并明确不能把此组件用于 self-contained HTML；页面必须保留相应资源。未安装、渲染或实测托管。",
+      "source_ids": [
+        "q-extensions",
+        "q-shinylive"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-extensions",
+          "quote": "This extension lets you embed Shinylive applications in a Quarto document",
+          "url": "https://quarto.org/docs/extensions/",
+          "location": "Quarto Extensions – Quarto；本次 HTML 提取正文第 433–433 行（不是 HTML 源码行号）",
+          "source_line_start": 433,
+          "source_line_end": 433,
+          "line_basis": "extracted_html_text"
+        },
+        {
+          "source_id": "q-shinylive",
+          "quote": "modify the code and re-run the application",
+          "url": "https://quarto-ext.github.io/shinylive/",
+          "location": "Shinylive applications embedded in Quarto documents – Quarto + Shinylive；本次 HTML 提取正文第 43–43 行（不是 HTML 源码行号）",
+          "source_line_start": 43,
+          "source_line_end": 43,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-interact"
+      ],
+      "aliases": [
+        "Shinylive交互页面"
+      ]
+    },
+    {
+      "id": "quarto-09",
+      "title": "大型项目渲染时跳过未变更文档的重复计算",
+      "result": "用 Quarto 的 freeze 配置缓存项目级计算结果，只在源文档变化时重新运行对应计算，缩短整个项目的批量渲染时间。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "这适用于项目整体渲染；单个文档或子目录的增量 render 仍会执行代码。缓存结果不是验证数据或包版本一致性的替代品；切换数据、环境或计算依赖时应有意识地刷新。",
+      "source_ids": [
+        "q-managing-execution"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "q-managing-execution",
+          "quote": "re-render only when source changes",
+          "url": "https://quarto.org/docs/projects/code-execution.html",
+          "location": "Managing Execution – Quarto；本次 HTML 提取正文第 246–246 行（不是 HTML 源码行号）",
+          "source_line_start": 246,
+          "source_line_end": 246,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-analysis"
+      ],
+      "aliases": [
+        "冻结执行结果"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "没有本机安装 Quarto/Python/R/Julia/PDF 引擎、Shinylive 或扩展，也没有渲染、部署或访问真实站点。",
+    "可执行分析的重现性仍取决于用户固定数据、运行时、程序包、网络资源、随机种子和操作系统；Quarto 本身不自动锁定完整环境。",
+    "PDF、PPTX、DOCX、HTML、书籍和交互 widget 的功能并非完全一致；期刊模板/字体、TeX/Typst 依赖和无障碍输出需逐项目核查。",
+    "GitHub Pages、Netlify、Posit Connect、Quarto Pub 等的账户、访问控制、费用、地区和服务限制未核实；Shiny 发布需外部服务器/托管。",
+    "扩展作者、社区扩展维护与安全状态未逐个审核；Shinylive 是文档充分的具名示例，不代表其他扩展兼容。"
+  ],
+  "generated_at": "2026-11-05T13:20:00Z",
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:27:01.127161+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 0
+    }
+  }
+}

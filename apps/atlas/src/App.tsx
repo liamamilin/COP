@@ -199,7 +199,9 @@ function LibraryPage({ route }: { route: Route }) {
     <div className="library-shell">
       <section className="hero">
         <div>
-          <p className="eyebrow">POSSIBILITY ATLAS / v0.1</p>
+          <p className="eyebrow">
+            POSSIBILITY ATLAS{library.catalog.edition && ` / v${library.catalog.edition}`}
+          </p>
           <h1>
             探索一个主题
             <br />

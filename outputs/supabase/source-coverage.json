@@ -1,0 +1,149 @@
+{
+  "topic": "Supabase",
+  "capture_helper": "/private/tmp/atlas-topic-research/capture.py (read-only use)",
+  "retrieved": [
+    {
+      "id": "s-ai-chat",
+      "requested_url": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search",
+      "capture_origin": "https://supabase.com/docs/guides/ai/examples/nextjs-vector-search",
+      "retrieved_at": "2026-11-05T12:43:10.634270+00:00",
+      "capture_sha256": "bc38fd84dffea04f202b4ade9c7555406c3f5e409e93b8de50d166fd790de98b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ai",
+      "requested_url": "https://supabase.com/docs/guides/ai",
+      "capture_origin": "https://supabase.com/docs/guides/ai",
+      "retrieved_at": "2026-11-05T12:39:34.871102+00:00",
+      "capture_sha256": "06369cec617a11af4aa7ca64ce1b1439c307b99ab73ac89b92b19e34f78fe703",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-auth",
+      "requested_url": "https://supabase.com/docs/guides/auth",
+      "capture_origin": "https://supabase.com/docs/guides/auth",
+      "retrieved_at": "2026-11-05T12:39:32.893691+00:00",
+      "capture_sha256": "db2e9ff21dddf20fd8b9a14aa115b5b902c03a97f659cbea6c70e07645c32ef2",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-database",
+      "requested_url": "https://supabase.com/docs/guides/database/overview",
+      "capture_origin": "https://supabase.com/docs/guides/database/overview",
+      "retrieved_at": "2026-11-05T12:39:29.922989+00:00",
+      "capture_sha256": "fa6fedca0bef34b953abee452998012d090e14aec214e04b1c8a98761b433515",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-functions",
+      "requested_url": "https://supabase.com/docs/guides/functions",
+      "capture_origin": "https://supabase.com/docs/guides/functions",
+      "retrieved_at": "2026-11-05T12:39:32.338826+00:00",
+      "capture_sha256": "1d1983766bf56efef9aa8760fcf741f73da4366ebc924645ff01ab0d44e34ec8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-platform",
+      "requested_url": "https://supabase.com/docs/guides/platform",
+      "capture_origin": "https://supabase.com/docs/guides/platform",
+      "retrieved_at": "2026-11-05T12:39:32.581589+00:00",
+      "capture_sha256": "a39b247117f088c4334c0e7760f564b77b380f779e26d8c54a8b832fef81c64a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://supabase.com/pricing",
+      "capture_origin": "https://supabase.com/pricing",
+      "retrieved_at": "2026-11-05T12:39:33.636876+00:00",
+      "capture_sha256": "d666f612745198be66c1d88242fb4c21e0e50b79cd9442b8a4cb9697eae8b62f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-realtime",
+      "requested_url": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes",
+      "capture_origin": "https://supabase.com/docs/guides/realtime/subscribing-to-database-changes",
+      "retrieved_at": "2026-11-05T12:39:32.587274+00:00",
+      "capture_sha256": "acdfdb944a0e92d05e407953a3f18fc2031afc2442dbd0910f62e18ba8732985",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-rls",
+      "requested_url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "capture_origin": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "retrieved_at": "2026-11-05T12:39:33.407283+00:00",
+      "capture_sha256": "6e085e23f0ea96ba06d68bd4b5870cb0da22fb542102163e134843a8ea92dbdc",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-self-host",
+      "requested_url": "https://supabase.com/docs/guides/self-hosting",
+      "capture_origin": "https://supabase.com/docs/guides/self-hosting",
+      "retrieved_at": "2026-11-05T12:39:31.726203+00:00",
+      "capture_sha256": "9926703eb9fec29e0a9ddcefd25311b9f077fdf37e7b18323c0eab80c67b29bf",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-ssr",
+      "requested_url": "https://supabase.com/docs/guides/auth/server-side",
+      "capture_origin": "https://supabase.com/docs/guides/auth/server-side",
+      "retrieved_at": "2026-11-05T12:39:32.065428+00:00",
+      "capture_sha256": "8a63100e488a57d72cd2f088751197aec041f3dbd2057af6bf8f6704fdb71a5f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-storage",
+      "requested_url": "https://supabase.com/docs/guides/storage/quickstart",
+      "capture_origin": "https://supabase.com/docs/guides/storage/quickstart",
+      "retrieved_at": "2026-11-05T12:39:34.104425+00:00",
+      "capture_sha256": "5ab6ffcf193305d433d766eeeee760d8fa183d37817fa1a7875f5c75dc556477",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-user-app",
+      "requested_url": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs",
+      "retrieved_at": "2026-11-05T12:39:34.033477+00:00",
+      "capture_sha256": "bd85c7fbd6e4c7c4b7869a7efead46147ae31a676971903ad753064beab43792",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-way",
+      "requested_url": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build",
+      "capture_origin": "https://supabase.com/docs/guides/getting-started/the-supabase-way-to-build",
+      "retrieved_at": "2026-11-05T12:39:33.777562+00:00",
+      "capture_sha256": "5dfdf10d66a74d4089764b6d8004e22feb8fd9dfe31d1749cb9e277f8779578b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [],
+  "notes": "HTML rows use extracted_html_text because their actual HTTP Content-Type is text/html; no requests failed in this topic. Successful captures are listed once each.",
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

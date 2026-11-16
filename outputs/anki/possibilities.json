@@ -1,0 +1,602 @@
+{
+  "schema_version": "0.1",
+  "topic": {
+    "name": "Anki",
+    "scope": "学习材料、检索练习、复习调度和同步；区分桌面、移动、AnkiWeb 与插件，不承诺学习成效。"
+  },
+  "sources": [
+    {
+      "id": "s-editing",
+      "title": "Adding/Editing - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/editing",
+      "original_url": "https://docs.ankiweb.net/editing.html",
+      "evidence": "hide some parts of an image\n[…]\ncard will be created as well",
+      "location": "Adding/Editing - Anki Docs；本次 HTML 提取正文第 419–420 行（不是 HTML 源码行号）；Adding/Editing - Anki Docs；本次 HTML 提取正文第 103–103 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:26:58.956506+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/editing",
+      "capture_sha256": "ea0c3933d5e53eb7514362d18f6d510a951cba0236b6d5a57764ea70d2ee23e6",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-01",
+          "location": "Adding/Editing - Anki Docs；本次 HTML 提取正文第 419–420 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/editing"
+        },
+        {
+          "possibility_id": "anki-02",
+          "location": "Adding/Editing - Anki Docs；本次 HTML 提取正文第 103–103 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/editing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-start",
+      "title": "Getting Started - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/getting-started",
+      "original_url": "https://docs.ankiweb.net/getting-started.html",
+      "evidence": "download a deck of cards someone else has shared",
+      "location": "Getting Started - Anki Docs；本次 HTML 提取正文第 266–267 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:25:43.529690+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/getting-started",
+      "capture_sha256": "682939961d6efdd8136ce0bc10dcf337ef4d53732a2620f80498c2d710741c85",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-03",
+          "location": "Getting Started - Anki Docs；本次 HTML 提取正文第 266–267 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/getting-started"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-sync",
+      "title": "Syncing with AnkiWeb - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/syncing",
+      "original_url": "https://docs.ankiweb.net/syncing.html",
+      "evidence": "keep your collection synchronized across multiple devices",
+      "location": "Syncing with AnkiWeb - Anki Docs；本次 HTML 提取正文第 68–69 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:25:56.019554+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/syncing",
+      "capture_sha256": "720008cb821784f86c97c646b2a1511c4ed2653c956ab7c3e0f363d5b3ec3465",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-06",
+          "location": "Syncing with AnkiWeb - Anki Docs；本次 HTML 提取正文第 68–69 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/syncing"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-filtered",
+      "title": "Filtered Decks & Cramming - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/filtered-decks",
+      "original_url": "https://docs.ankiweb.net/filtered-decks.html",
+      "evidence": "cramming cards before a test",
+      "location": "Filtered Decks & Cramming - Anki Docs；本次 HTML 提取正文第 74–74 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:26:07.630236+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/filtered-decks",
+      "capture_sha256": "aa4a799a479c4b24de2408a468589cd783167a1042e733b978593073ca569158",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-05",
+          "location": "Filtered Decks & Cramming - Anki Docs；本次 HTML 提取正文第 74–74 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/filtered-decks"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-decks",
+      "title": "Deck Options - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/deck-options",
+      "original_url": "https://docs.ankiweb.net/deck-options.html",
+      "evidence": "By more accurately determining how much information you are likely to forget",
+      "location": "Deck Options - Anki Docs；本次 HTML 提取正文第 400–401 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:26:18.156138+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/deck-options",
+      "capture_sha256": "cde12ce6ae647472e795c535214f821685fd58e975f3deee47b3ab9947836ab3",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-04",
+          "location": "Deck Options - Anki Docs；本次 HTML 提取正文第 400–401 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/deck-options"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-import",
+      "title": "Text Files - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/importing/text-files",
+      "original_url": "https://docs.ankiweb.net/importing/text-files.html",
+      "evidence": "existing note’s other fields will be updated based on content",
+      "location": "Text Files - Anki Docs；本次 HTML 提取正文第 186–186 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:26:33.279010+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/importing/text-files",
+      "capture_sha256": "66549f3eb367e6e2ec740b71b655d6d3ae0adf2cd5b3e3ee6f80c48dfaac95c9",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-07",
+          "location": "Text Files - Anki Docs；本次 HTML 提取正文第 186–186 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/importing/text-files"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-backups",
+      "title": "Backups - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/backups",
+      "original_url": "https://docs.ankiweb.net/backups.html",
+      "evidence": "useful to recover from mistakes",
+      "location": "Backups - Anki Docs；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:36:23.564043+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/backups",
+      "capture_sha256": "a0412836cfd4c66a024cf963546176042a8a56453c8fec4ebf4ebe1c7a3bcd49",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-08",
+          "location": "Backups - Anki Docs；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/backups"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-export",
+      "title": "Exporting - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/exporting",
+      "original_url": "https://docs.ankiweb.net/exporting.html",
+      "evidence": "transfer cards between people",
+      "location": "Exporting - Anki Docs；本次 HTML 提取正文第 83–83 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:36:36.753862+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/exporting",
+      "capture_sha256": "91de976febce123e6dc427cdf6f602333773bdb825581108916b27ddc4f2fef5",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-09",
+          "location": "Exporting - Anki Docs；本次 HTML 提取正文第 83–83 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/exporting"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-stats",
+      "title": "Card Info, Graphs and Statistics - Anki Docs",
+      "url": "https://docs.ankiweb.net/manual/stats",
+      "original_url": "https://docs.ankiweb.net/stats.html",
+      "evidence": "save a PDF document of the statistics",
+      "location": "Card Info, Graphs and Statistics - Anki Docs；本次 HTML 提取正文第 125–125 行（不是 HTML 源码行号）",
+      "source_class": "official_manual",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:37:23.332863+00:00",
+      "capture_origin": "https://docs.ankiweb.net/manual/stats",
+      "capture_sha256": "b1622a239a917a98a07d047d4e78119e6c1b34617682b21323972597ce1d12a0",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次 HTML 提取正文，不是 HTML 源码。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-10",
+          "location": "Card Info, Graphs and Statistics - Anki Docs；本次 HTML 提取正文第 125–125 行（不是 HTML 源码行号）",
+          "url": "https://docs.ankiweb.net/manual/stats"
+        }
+      ],
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "s-fsrs-helper",
+      "title": "# FSRS Helper",
+      "url": "https://github.com/open-spaced-repetition/fsrs4anki-helper/blob/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "original_url": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "evidence": "Redistributes cards due during an upcoming break period",
+      "location": "# FSRS Helper；取回 Markdown第 43–43 行",
+      "source_class": "extension_author_documentation",
+      "retrieved_date": "2026-11-05",
+      "retrieved_at": "2026-11-05T12:38:35.394095+00:00",
+      "capture_origin": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "capture_sha256": "9a9d03a3645d591c380e3c5071fdc7a5649097284719842d954ed963bc972f80",
+      "capture_method": "实际取回来源；哈希依据：HTTP response bytes。行号对应本次取回的原始文本。未在成果中转载来源全文。",
+      "evidence_locations": [
+        {
+          "possibility_id": "anki-11",
+          "location": "# FSRS Helper；取回 Markdown第 43–43 行",
+          "url": "https://github.com/open-spaced-repetition/fsrs4anki-helper/blob/29208f220f21ff994c199712a6aaac47636773bf/README.md#L43-L43"
+        }
+      ],
+      "git_commit": "29208f220f21ff994c199712a6aaac47636773bf",
+      "git_repository": "open-spaced-repetition/fsrs4anki-helper",
+      "pinned_raw_url": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "pinned_content_sha256": "9a9d03a3645d591c380e3c5071fdc7a5649097284719842d954ed963bc972f80",
+      "hash_basis": "HTTP response bytes",
+      "content_type": "text/plain; charset=utf-8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-create",
+      "name": "制作与获取学习卡片"
+    },
+    {
+      "id": "g-review",
+      "name": "调度与集中复习"
+    },
+    {
+      "id": "g-sync",
+      "name": "跨设备学习"
+    },
+    {
+      "id": "g-data",
+      "name": "导入、备份与迁移"
+    }
+  ],
+  "possibilities": [
+    {
+      "id": "anki-01",
+      "title": "从图像制作遮挡检索卡",
+      "result": "把图像中需要记忆的区域遮住，制作基于图片的回忆卡，适用于依赖图形信息的材料。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "内置 Image Occlusion 自 Anki 23.10 起提供；需要图像素材。官方说明其用于测试被遮挡信息的回忆，不代表学习成效。",
+      "source_ids": [
+        "s-editing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-editing",
+          "quote": "hide some parts of an image",
+          "url": "https://docs.ankiweb.net/manual/editing",
+          "location": "Adding/Editing - Anki Docs；本次 HTML 提取正文第 419–420 行（不是 HTML 源码行号）",
+          "source_line_start": 419,
+          "source_line_end": 420,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-create"
+      ],
+      "aliases": [
+        "图片遮挡卡"
+      ]
+    },
+    {
+      "id": "anki-02",
+      "title": "把笔记内容编成可复习卡片",
+      "result": "把正面和背面等内容录入笔记，Anki 根据笔记类型生成可复习卡片。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "使用内置笔记编辑器和卡片模板；同一笔记类型可以按模板生成卡片。",
+      "source_ids": [
+        "s-editing"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-editing",
+          "quote": "card will be created as well",
+          "url": "https://docs.ankiweb.net/manual/editing",
+          "location": "Adding/Editing - Anki Docs；本次 HTML 提取正文第 103–103 行（不是 HTML 源码行号）",
+          "source_line_start": 103,
+          "source_line_end": 103,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-create"
+      ],
+      "aliases": [
+        "创建问答卡"
+      ]
+    },
+    {
+      "id": "anki-03",
+      "title": "导入共享牌组作为学习起点",
+      "result": "下载其他人分享的牌组并导入到本地 Anki 集合。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要 Anki Desktop、AnkiMobile 或 AnkiDroid 先完成导入；官方手册说明不能直接把共享牌组加入 AnkiWeb。复杂主题的共享卡片可能缺少背景讲解，应补充教材或其他学习材料。",
+      "source_ids": [
+        "s-start"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-start",
+          "quote": "download a deck of cards someone else has shared",
+          "url": "https://docs.ankiweb.net/manual/getting-started",
+          "location": "Getting Started - Anki Docs；本次 HTML 提取正文第 266–267 行（不是 HTML 源码行号）",
+          "source_line_start": 266,
+          "source_line_end": 267,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-create"
+      ],
+      "aliases": [
+        "导入公开牌组"
+      ]
+    },
+    {
+      "id": "anki-04",
+      "title": "按遗忘风险安排间隔复习",
+      "result": "使用 FSRS 根据目标保留率安排卡片复习间隔，并可查看目标保留率变化对每日工作量的影响。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "FSRS 是调度算法，不是学习成效保证；官方手册列出的最低客户端版本为 Anki 23.10、AnkiMobile 23.10、AnkiDroid 2.17，AnkiWeb 支持。更高目标保留率会增加复习量。",
+      "source_ids": [
+        "s-decks"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-decks",
+          "quote": "By more accurately determining how much information you are likely to forget",
+          "url": "https://docs.ankiweb.net/manual/deck-options",
+          "location": "Deck Options - Anki Docs；本次 HTML 提取正文第 400–401 行（不是 HTML 源码行号）",
+          "source_line_start": 400,
+          "source_line_end": 401,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-review"
+      ],
+      "aliases": [
+        "FSRS 间隔复习"
+      ]
+    },
+    {
+      "id": "anki-05",
+      "title": "临时筛选卡片进行考前或积压复习",
+      "result": "建立筛选牌组，集中预览新卡、考前突击、复习某些标签或处理漏复习卡片。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "筛选牌组按搜索条件临时挑卡；卡片学习后通常回到原牌组，是否改变排期取决于重排设置。",
+      "source_ids": [
+        "s-filtered"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-filtered",
+          "quote": "cramming cards before a test",
+          "url": "https://docs.ankiweb.net/manual/filtered-decks",
+          "location": "Filtered Decks & Cramming - Anki Docs；本次 HTML 提取正文第 74–74 行（不是 HTML 源码行号）",
+          "source_line_start": 74,
+          "source_line_end": 74,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-review"
+      ],
+      "aliases": [
+        "自定义临时复习"
+      ]
+    },
+    {
+      "id": "anki-06",
+      "title": "在多个设备间同步个人卡片集合",
+      "result": "通过 AnkiWeb 在不同设备间同步自己的卡片集合，并可在线学习。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "需要免费 AnkiWeb 账户并在受支持客户端登录；首次同步要选择上传或下载，双端已有不同数据时需要谨慎处理以免丢失。音频和图片可随集合同步，但文件编辑检测有边界。",
+      "source_ids": [
+        "s-sync"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-sync",
+          "quote": "keep your collection synchronized across multiple devices",
+          "url": "https://docs.ankiweb.net/manual/syncing",
+          "location": "Syncing with AnkiWeb - Anki Docs；本次 HTML 提取正文第 68–69 行（不是 HTML 源码行号）",
+          "source_line_start": 68,
+          "source_line_end": 69,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-sync"
+      ],
+      "aliases": [
+        "AnkiWeb 同步"
+      ]
+    },
+    {
+      "id": "anki-07",
+      "title": "从文本表格批量更新已有笔记",
+      "result": "将文本或 CSV 表格导入 Anki，并按首字段匹配已有笔记；选择更新时可批量改写现有字段。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "字段顺序、笔记类型和匹配范围需正确；导入设置可改为忽略重复或另建新笔记。导入更新可能保留现有排期。",
+      "source_ids": [
+        "s-import"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-import",
+          "quote": "existing note’s other fields will be updated based on content",
+          "url": "https://docs.ankiweb.net/manual/importing/text-files",
+          "location": "Text Files - Anki Docs；本次 HTML 提取正文第 186–186 行（不是 HTML 源码行号）",
+          "source_line_start": 186,
+          "source_line_end": 186,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": [
+        "CSV 批量导入/更新"
+      ]
+    },
+    {
+      "id": "anki-08",
+      "title": "从备份中恢复误改的卡片与排期",
+      "result": "打开本机自动备份或导入手动集合备份，恢复误删/误改前的卡片文本与复习排期。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "自动备份在本地，默认不含声音/图像，因此不能单独保护设备损坏或失窃；恢复会丢失备份后更改。含媒体的完整备份需导出 collection package 并启用媒体。",
+      "source_ids": [
+        "s-backups"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-backups",
+          "quote": "useful to recover from mistakes",
+          "url": "https://docs.ankiweb.net/manual/backups",
+          "location": "Backups - Anki Docs；本次 HTML 提取正文第 68–68 行（不是 HTML 源码行号）",
+          "source_line_start": 68,
+          "source_line_end": 68,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": [
+        "本地备份恢复"
+      ]
+    },
+    {
+      "id": "anki-09",
+      "title": "导出牌组或集合用于迁移和分享",
+      "result": "把单个牌组导出为可导入的牌组包，或将完整集合打包备份，用于转移给他人或其他配置文件。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "桌面版导出支持 .apkg 牌组包与 .colpkg 集合包；排期信息和媒体可按导出选项决定是否包含。导入牌组会合并内容而不是覆盖整个集合。",
+      "source_ids": [
+        "s-export"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-export",
+          "quote": "transfer cards between people",
+          "url": "https://docs.ankiweb.net/manual/exporting",
+          "location": "Exporting - Anki Docs；本次 HTML 提取正文第 83–83 行（不是 HTML 源码行号）",
+          "source_line_start": 83,
+          "source_line_end": 83,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-data"
+      ],
+      "aliases": [
+        "导出牌组/集合"
+      ]
+    },
+    {
+      "id": "anki-10",
+      "title": "查看复习统计并导出可分享报告",
+      "result": "按牌组或整个集合查看历史复习统计，并将统计窗口保存为 PDF 以便分享。",
+      "status": "source_supported",
+      "availability": "core",
+      "conditions": "官方提示单日答题正确率不宜作为总体学习进度判断；FSRS true retention 更适合看月度数据。结果记录的是 Anki 复习历史，不证明掌握或考试成绩。",
+      "source_ids": [
+        "s-stats"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-stats",
+          "quote": "save a PDF document of the statistics",
+          "url": "https://docs.ankiweb.net/manual/stats",
+          "location": "Card Info, Graphs and Statistics - Anki Docs；本次 HTML 提取正文第 125–125 行（不是 HTML 源码行号）",
+          "source_line_start": 125,
+          "source_line_end": 125,
+          "line_basis": "extracted_html_text"
+        }
+      ],
+      "group_ids": [
+        "g-review"
+      ],
+      "aliases": [
+        "复习数据复盘"
+      ]
+    },
+    {
+      "id": "anki-11",
+      "title": "为假期或忙碌时段提前重新分配到期复习",
+      "result": "使用 FSRS Helper 的 Schedule a Break，将假期期间到期的卡片分配到之后的日期。",
+      "status": "source_supported",
+      "availability": "extension",
+      "conditions": "这是 open-spaced-repetition 作者维护的 Anki add-on，不是核心功能；README 要求 Anki 23.10+ 启用内置 FSRS，旧 2.1.55–2.1.66 支持已不再维护，且作者称它仅是附加工具、不建议大量使用。未运行验证。 作者明确提醒：假期重排会降低未来记忆保持率，算法只能尽量减小下降；可通过 Edit → Undo 撤销重排。",
+      "source_ids": [
+        "s-fsrs-helper"
+      ],
+      "evidence_refs": [
+        {
+          "source_id": "s-fsrs-helper",
+          "quote": "Redistributes cards due during an upcoming break period",
+          "url": "https://github.com/open-spaced-repetition/fsrs4anki-helper/blob/29208f220f21ff994c199712a6aaac47636773bf/README.md#L43-L43",
+          "location": "# FSRS Helper；取回 Markdown第 43–43 行",
+          "source_line_start": 43,
+          "source_line_end": 43,
+          "line_basis": "captured_markdown"
+        }
+      ],
+      "group_ids": [
+        "g-review"
+      ],
+      "aliases": [
+        "假期复习安排"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    "未安装 Anki 或实际测试桌面、AnkiMobile、AnkiDroid、AnkiWeb 同步；不作学习结果保证。",
+    "未核实当前移动应用商店价格、AnkiWeb 存储限额或不同平台的收费条款。",
+    "FSRS Helper 是单个作者 add-on 案例；未安装运行，其他 add-on 的维护、兼容和安全性未评估。",
+    "共享牌组内容质量、教材/出版物版权和适用地区均未逐项检查。"
+  ],
+  "generated_at": "2026-11-05T12:40:00Z",
+  "research": {
+    "generation_model": "gpt-6-luna",
+    "evidence_check": {
+      "checked_at": "2026-11-05T13:08:27.712132+00:00",
+      "checked_by": "primary_agent",
+      "scope": "逐项阅读来源上下文与结果/依赖边界，核对原始缓存及真实正文行号。",
+      "limits": "模型作者和主 agent 的复核不是独立人工审核，也不是运行实测。",
+      "line_basis_corrections": 0,
+      "canonical_citation_updates": 1,
+      "followup_review": {
+        "checked_at": "2026-11-05T14:08:42.799550+00:00",
+        "checked_by": "primary_agent",
+        "changes": [
+          "根据固定提交 README 的 Schedule a Break 章节，补充重排会降低未来记忆保持率及可撤销的限制。"
+        ],
+        "limits": "来源上下文复核，不是运行实测或独立人工审核。"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# P Atlas v0.1
+# P Atlas v0.2
 
 独立于 `apps/web` COP Studio 的静态阅读应用。只消费仓库内已有的研究资产，无服务端、数据库、登录或 AI 调用。
 
@@ -12,18 +12,19 @@ pnpm --filter @cop-studio/atlas dev
 pnpm --filter @cop-studio/atlas lint
 pnpm --filter @cop-studio/atlas test
 pnpm --filter @cop-studio/atlas build
-pnpm --filter @cop-studio/atlas exec playwright install chromium
 pnpm --filter @cop-studio/atlas test:e2e
 pnpm --filter @cop-studio/atlas preview
 ```
 
 开发地址：`http://127.0.0.1:5173/COP/`；生产构建预览：`http://127.0.0.1:4174/COP/`。
 
+浏览器验收使用系统安装的 Google Chrome。运行 `test:e2e` 前先构建站点。
+
 默认静态 base 为 `/COP/`。其他部署路径可在构建时设 `ATLAS_BASE=/your-path/`。hash 路由支持直接打开、刷新及浏览器返回，例如 `/COP/#/topic/obsidian/p/p-knowledge-network`。
 
 ## 内容来源
 
-`scripts/content.mjs` 每次开发或构建时读取 `catalog/p-atlas-topics.v0.1.json`。对每个 `ready` 主题读取 `outputs/<slug>/possibilities.json`、`possibilities.md`、`validation-report.txt`，执行引用/证据检查和现有 P Discovery 校验器，然后生成：
+`scripts/content.mjs` 每次开发或构建时读取 `catalog/p-atlas-topics.v0.2.json`，当前包含 38 个主题、726 项可能性。对每个 `ready` 主题读取 `outputs/<slug>/possibilities.json`、`possibilities.md`、`validation-report.txt`，执行引用和证据检查后生成：
 
 - `src/generated/library.json`：目录、统计及全站检索索引。
 - `public/content/<slug>.json`：原始地图、完整报告、校验记录、正文摘要哈希及 Git 快照信息。
@@ -52,6 +53,4 @@ ATLAS_TEST_URL=https://liamamilin.github.io/COP/ pnpm --filter @cop-studio/atlas
 
 ## 验证边界
 
-验收覆盖当前三个主题的数据对账、错误输入、搜索筛选、多分类、深链接、来源与报告阅读、HTML/URL 边界、复制及失败恢复、静态网络请求、响应式宽度和 axe 自动可访问性检查。浏览器项目为桌面 Chromium 与移动视口 Chromium；不把移动仿真视为真实 iOS Safari 测试，也不把来源结构检查视为研究结论实测。
-
-没有在线生成、图谱引擎、编辑后台、账号或云端收藏同步；这些不在 v0.1 范围内。
+浏览器验收逐一打开 38 个主题，核对条目数量、详情、来源与报告，并检查搜索筛选、深链接、复制及失败恢复、静态网络请求、响应式宽度和 axe 自动可访问性。测试使用系统 Chrome 的桌面和移动仿真配置。研究结论的实际运行验证见各主题报告。

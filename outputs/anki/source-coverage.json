@@ -1,0 +1,171 @@
+{
+  "topic": "anki",
+  "generated_at": "2026-11-05T12:40:00Z",
+  "scope": "成功缓存与不可用来源记录；引文和支持映射见 possibilities.json。",
+  "hash_note": "capture_sha256 是 capture.py 对首次 HTTP 响应原始字节计算。HTML 引用行号是提取正文行（不是 HTML 源码）；GitHub raw README 的 content_type 为 text/plain，按原 Markdown 正文行计数，line_basis=captured_markdown。GitHub 文件链接固定在提交 29208f220f21ff994c199712a6aaac47636773bf；main API 响应仅用来解析提交 SHA。",
+  "retrieved": [
+    {
+      "id": "s-addons",
+      "requested_url": "https://docs.ankiweb.net/addons.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/addons",
+      "retrieved_at": "2026-11-05T12:26:47.533312+00:00",
+      "capture_sha256": "9260598be853cfbcb2a7a6f3ed9653b4561ff2d691e2a9e5d58ca2850b70a02d",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-backups",
+      "requested_url": "https://docs.ankiweb.net/backups.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/backups",
+      "retrieved_at": "2026-11-05T12:36:23.564043+00:00",
+      "capture_sha256": "a0412836cfd4c66a024cf963546176042a8a56453c8fec4ebf4ebe1c7a3bcd49",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-decks",
+      "requested_url": "https://docs.ankiweb.net/deck-options.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/deck-options",
+      "retrieved_at": "2026-11-05T12:26:18.156138+00:00",
+      "capture_sha256": "cde12ce6ae647472e795c535214f821685fd58e975f3deee47b3ab9947836ab3",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-editing",
+      "requested_url": "https://docs.ankiweb.net/editing.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/editing",
+      "retrieved_at": "2026-11-05T12:26:58.956506+00:00",
+      "capture_sha256": "ea0c3933d5e53eb7514362d18f6d510a951cba0236b6d5a57764ea70d2ee23e6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-export",
+      "requested_url": "https://docs.ankiweb.net/exporting.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/exporting",
+      "retrieved_at": "2026-11-05T12:36:36.753862+00:00",
+      "capture_sha256": "91de976febce123e6dc427cdf6f602333773bdb825581108916b27ddc4f2fef5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-filtered",
+      "requested_url": "https://docs.ankiweb.net/filtered-decks.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/filtered-decks",
+      "retrieved_at": "2026-11-05T12:26:07.630236+00:00",
+      "capture_sha256": "aa4a799a479c4b24de2408a468589cd783167a1042e733b978593073ca569158",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-fsrs-helper",
+      "requested_url": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "capture_origin": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "retrieved_at": "2026-11-05T12:38:35.394095+00:00",
+      "capture_sha256": "9a9d03a3645d591c380e3c5071fdc7a5649097284719842d954ed963bc972f80",
+      "content_type": "text/plain; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes",
+      "git_commit": "29208f220f21ff994c199712a6aaac47636773bf",
+      "git_repository": "open-spaced-repetition/fsrs4anki-helper",
+      "pinned_raw_url": "https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki-helper/29208f220f21ff994c199712a6aaac47636773bf/README.md",
+      "pinned_content_sha256": "9a9d03a3645d591c380e3c5071fdc7a5649097284719842d954ed963bc972f80",
+      "immutable_url": "https://github.com/open-spaced-repetition/fsrs4anki-helper/blob/29208f220f21ff994c199712a6aaac47636773bf/README.md"
+    },
+    {
+      "id": "s-fsrs-meta",
+      "requested_url": "https://api.github.com/repos/open-spaced-repetition/fsrs4anki-helper/commits/main",
+      "capture_origin": "https://api.github.com/repos/open-spaced-repetition/fsrs4anki-helper/commits/main",
+      "retrieved_at": "2026-11-05T12:38:24.624309+00:00",
+      "capture_sha256": "e3943913b366dd86f7b494b0ece71a0a0ab791cfaf899b2915c692ead2cc2968",
+      "content_type": "application/json; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-heatmap",
+      "requested_url": "https://ankiweb.net/shared/info/688199788",
+      "capture_origin": "https://ankiweb.net/shared/info/688199788",
+      "retrieved_at": "2026-11-05T12:37:33.523776+00:00",
+      "capture_sha256": "6bd4e7a6a53698865fa90601a5857a82386d0a1e26acf381a2f415efa63eb8f1",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-import",
+      "requested_url": "https://docs.ankiweb.net/importing/text-files.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/importing/text-files",
+      "retrieved_at": "2026-11-05T12:26:33.279010+00:00",
+      "capture_sha256": "66549f3eb367e6e2ec740b71b655d6d3ae0adf2cd5b3e3ee6f80c48dfaac95c9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-start",
+      "requested_url": "https://docs.ankiweb.net/getting-started.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/getting-started",
+      "retrieved_at": "2026-11-05T12:25:43.529690+00:00",
+      "capture_sha256": "682939961d6efdd8136ce0bc10dcf337ef4d53732a2620f80498c2d710741c85",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-stats",
+      "requested_url": "https://docs.ankiweb.net/stats.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/stats",
+      "retrieved_at": "2026-11-05T12:37:23.332863+00:00",
+      "capture_sha256": "b1622a239a917a98a07d047d4e78119e6c1b34617682b21323972597ce1d12a0",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sync",
+      "requested_url": "https://docs.ankiweb.net/syncing.html",
+      "capture_origin": "https://docs.ankiweb.net/manual/syncing",
+      "retrieved_at": "2026-11-05T12:25:56.019554+00:00",
+      "capture_sha256": "720008cb821784f86c97c646b2a1511c4ed2653c956ab7c3e0f363d5b3ec3465",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "id": "s-heatmap",
+      "requested_url": "https://ankiweb.net/shared/info/688199788",
+      "attempted_at": "2026-11-05T12:37:33.523776+00:00",
+      "reason": "capture.py 记录到 HTTP 响应，但提取正文 0 字符，无法取得可核验的引文；响应哈希保留在 retrieved 中。"
+    }
+  ],
+  "not_adopted": [
+    "s-addons：官方手册只证明 add-on 扩展机制及更新兼容风险；未找到可与之直接对应的具体任务，不作为 P。",
+    "s-fsrs-meta：GitHub API 的 main 元数据仅用于读取当次实际 40 位提交 SHA；具体作者源码引用来自 pinned raw URL，不引用移动分支。",
+    "s-heatmap：响应提取正文为空，不能用于逐字证据。",
+    "共享牌组、CSV、恢复和统计的具体用户结果分别归入相应手册 P，不以额外组件清单扩展条目数。"
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

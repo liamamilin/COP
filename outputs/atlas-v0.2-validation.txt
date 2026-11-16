@@ -1,0 +1,29 @@
+P Atlas v0.2 research validation (follow-up): 2026-11-05T14:14:56.272002+00:00
+Branch: research/atlas-v0.2-personal-capabilities
+Base commit: 88be8cd5d14ccae200bb706dc7ab6e6982659464
+Author model: gpt-6-luna; primary agent checked source contexts and dependency boundaries.
+New maps: 18; source_supported: 179; proposed: 0; reviewed: 0
+Sources: 237 records / 237 distinct URLs; 316 located evidence refs
+Coverage: 327 retrieved records; 56 attempts without usable capture
+Catalog: 38 ready / 0 planned; 726 P including unchanged original 547
+
+Actual checks executed:
+PASS original Skill validator across all 38 maps
+PASS python3 -B scripts/verify_atlas_batch.py --require-all --cache-dir /private/tmp/atlas-topic-research --baseline outputs/atlas-v0.2-protected-baseline.json
+PASS python3 -B scripts/verify_atlas_batch.py --require-all --verify-pinned (7 fixed-commit files, 5 repositories; live bytes and quote lines)
+PASS python3 -B scripts/verify_atlas_research.py (original 17-topic cohort unchanged)
+PASS python3 -B -m unittest discover -s scripts/tests -p test_atlas_batch.py -v (13 tests)
+PASS python3 -B -m unittest discover -s .agents/skills/p-discovery/tests -v (14 tests)
+PASS existing content collector with a temporary v0.2 catalog fixture linked to original outputs (38 maps / 726 P; no possibility data copied or regenerated)
+PASS pnpm --filter @cop-studio/atlas lint
+PASS pnpm --filter @cop-studio/atlas test (14 tests; includes v0.2 collector fixture)
+PASS pnpm --filter @cop-studio/atlas build (TypeScript and real Vite production build; active v0.1 catalog = 20 maps / 547 P)
+PASS pnpm --filter @cop-studio/atlas test:e2e (62 Chrome desktop/mobile tests; active 20-topic build)
+PASS per-entry Markdown result, conditions, capability label and evidence-link consistency for all 179 new P
+PASS git diff --check
+
+Publication: this is the local validation snapshot taken before GitHub submission. Consult the corresponding PR/Actions for current commit and remote CI status. The active reader catalog remains v0.1; committing the v0.2 research does not enable or deploy that catalog.
+Limits: text/capture/schema checks cannot certify semantic truth, complete coverage, independent human review, runtime behavior, business outcomes, privacy or security. Real SDK/cloud/bank/payment integrations and current plan entitlements were not tested. New 38-topic browser acceptance was not run. Atlas and Studio runtime code is unchanged; one Atlas content test was added. Studio backend/full-stack tests were not rerun for this batch.
+Build note: nonblocking main-chunk warning 712.07 kB / gzip 195.28 kB remains in the existing reader.
+The original capture directory is a verification input for this session, not a product dependency. Offline metadata checks run without it; --verify-pinned independently re-fetches only commit-fixed public GitHub files.
+Protected prior file SHA-256 values are saved in outputs/atlas-v0.2-protected-baseline.json (102 files).

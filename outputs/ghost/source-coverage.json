@@ -1,0 +1,263 @@
+{
+  "topic": "ghost",
+  "checked_at": "2026-11-05T13:08:00Z",
+  "retrieved": [
+    {
+      "id": "s-analytics",
+      "requested_url": "https://ghost.org/help/post-analytics/",
+      "capture_origin": "https://ghost.org/help/post-analytics/",
+      "retrieved_at": "2026-11-05T12:48:56.705102+00:00",
+      "capture_sha256": "9b80297c4801ce8b5f8e917427e0d229dd9186142d5e528dd6f135853ec65a53",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/post-analytics/"
+    },
+    {
+      "id": "s-audience-feedback",
+      "requested_url": "https://ghost.org/help/audience-feedback/",
+      "capture_origin": "https://ghost.org/help/audience-feedback/",
+      "retrieved_at": "2026-11-05T12:49:25.657890+00:00",
+      "capture_sha256": "fd57477fb7f9c5e5f133cdb084520b0becc5fbad2a6af74fbe14f4965d3fdf1c",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/audience-feedback/"
+    },
+    {
+      "id": "s-case",
+      "requested_url": "https://ghost.org/resources/membership-sites/",
+      "capture_origin": "https://ghost.org/resources/membership-sites/",
+      "retrieved_at": "2026-11-05T12:48:56.109782+00:00",
+      "capture_sha256": "e01cff8830eeeca4b54cf1340a9ebe916df0b76754f73c87d5c64549ea22db0b",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/resources/membership-sites/"
+    },
+    {
+      "id": "s-email-delivery",
+      "requested_url": "https://ghost.org/help/delivering-emails/",
+      "capture_origin": "https://ghost.org/help/delivering-emails/",
+      "retrieved_at": "2026-11-05T12:49:22.993628+00:00",
+      "capture_sha256": "91815cecaa773aa9c5a05f622e1d6eff3efb394e3421bbd7c8afe2cef4d51892",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/delivering-emails/"
+    },
+    {
+      "id": "s-export",
+      "requested_url": "https://ghost.org/help/exports/",
+      "capture_origin": "https://ghost.org/help/exports/",
+      "retrieved_at": "2026-11-05T12:48:56.277684+00:00",
+      "capture_sha256": "7fbae22c4da4469e66c2aeeef211c3d8d6c17f4b11c3e50a784167b90d1fc615",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/exports/"
+    },
+    {
+      "id": "s-import",
+      "requested_url": "https://ghost.org/help/imports/",
+      "capture_origin": "https://ghost.org/help/imports/",
+      "retrieved_at": "2026-11-05T12:48:55.185716+00:00",
+      "capture_sha256": "5c9b797450b69b6a147f7d3fd9385041ccd1404f58810599c4fe09a6e9ac2ee6",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/imports/"
+    },
+    {
+      "id": "s-member-import",
+      "requested_url": "https://ghost.org/help/import-members/",
+      "capture_origin": "https://ghost.org/help/import-members/",
+      "retrieved_at": "2026-11-05T12:51:16.753493+00:00",
+      "capture_sha256": "b15e8b16c7be98ffc4cd313a1cf4169517e22a8a578614e9428b71441fb155f5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/import-members/"
+    },
+    {
+      "id": "s-members",
+      "requested_url": "https://ghost.org/help/member-management/",
+      "capture_origin": "https://ghost.org/help/member-management/",
+      "retrieved_at": "2026-11-05T12:48:55.046140+00:00",
+      "capture_sha256": "7f5d0c26bcadcc614c584267484ecb604d267a184167808a60c6f72fa1ca08fa",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/member-management/"
+    },
+    {
+      "id": "s-newsletters",
+      "requested_url": "https://ghost.org/help/setup-email-newsletters/",
+      "capture_origin": "https://ghost.org/help/setup-email-newsletters/",
+      "retrieved_at": "2026-11-05T12:48:55.242162+00:00",
+      "capture_sha256": "576340d20a92e72924e6c3080f5833f45a47390ebe79079e6f08ba7ddfd72d75",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/setup-email-newsletters/"
+    },
+    {
+      "id": "s-post-settings",
+      "requested_url": "https://ghost.org/help/post-settings/",
+      "capture_origin": "https://ghost.org/help/post-settings/",
+      "retrieved_at": "2026-11-05T12:48:56.582940+00:00",
+      "capture_sha256": "8d1b6d64539b249d86c78f086afa2d2b9d21eee08ee9f589728c36bc90b65458",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/post-settings/"
+    },
+    {
+      "id": "s-pricing",
+      "requested_url": "https://ghost.org/pricing",
+      "capture_origin": "https://ghost.org/pricing",
+      "retrieved_at": "2026-11-05T12:49:25.844455+00:00",
+      "capture_sha256": "74bbcf339321537d0816590e3549602673a10b24cca3ae316bd12d734eb01b77",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/pricing"
+    },
+    {
+      "id": "s-publishing",
+      "requested_url": "https://ghost.org/help/publishing-content/",
+      "capture_origin": "https://ghost.org/help/publishing-content/",
+      "retrieved_at": "2026-11-05T12:48:52.470272+00:00",
+      "capture_sha256": "0eb84b8d7b4dd4ad4b0e4d730c251d40bb0eaa8b357488e2181818785d73ef0e",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/publishing-content/"
+    },
+    {
+      "id": "s-stripe-fees",
+      "requested_url": "https://stripe.com/pricing",
+      "capture_origin": "https://stripe.com/pricing",
+      "retrieved_at": "2026-11-05T12:53:32.004655+00:00",
+      "capture_sha256": "11410ad02cf2707d9ccac60310aed76d0af5ffa814803a19fca03d79f187fa7a",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://stripe.com/pricing"
+    },
+    {
+      "id": "s-stripe-global",
+      "requested_url": "https://stripe.com/global",
+      "capture_origin": "https://stripe.com/global",
+      "retrieved_at": "2026-11-05T12:53:27.245880+00:00",
+      "capture_sha256": "de230f68c8415dd0faebe5f14062840a2a4ffd18c0ccc10b9ad86f46cf8df4f8",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://stripe.com/global"
+    },
+    {
+      "id": "s-stripe",
+      "requested_url": "https://ghost.org/integrations/stripe/",
+      "capture_origin": "https://ghost.org/integrations/stripe/",
+      "retrieved_at": "2026-11-05T12:48:55.230104+00:00",
+      "capture_sha256": "c66ca41f5b046d21322cd9c4c2af16f537f1f4ce09220fbaf02d518a451e6b66",
+      "content_type": "text/html; charset=UTF-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/integrations/stripe/"
+    },
+    {
+      "id": "s-tiers",
+      "requested_url": "https://ghost.org/help/tiers/",
+      "capture_origin": "https://ghost.org/help/tiers/",
+      "retrieved_at": "2026-11-05T12:48:56.181500+00:00",
+      "capture_sha256": "6c1af46847d8b87f91a7ab647776a0a1cef40a9b8b7e21c334fd42f01abd48d7",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://ghost.org/help/tiers/"
+    },
+    {
+      "id": "s-wordpress-import",
+      "requested_url": "https://ghost.org/help/importing-from-wordpress/",
+      "capture_origin": "https://docs.ghost.org/migration/wordpress",
+      "retrieved_at": "2026-11-05T12:51:35.029924+00:00",
+      "capture_sha256": "0debc4bf91d362a2d66b1a063d5b4e0e33d5598fcfbb4fe82aa5ce639923b2b5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "final_url": "https://docs.ghost.org/migration/wordpress"
+    },
+    {
+      "id": "s-newsletter-mailgun-faq",
+      "requested_url": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "final_url": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "capture_origin": "https://docs.ghost.org/faq/mailgun-newsletters",
+      "retrieved_at": "2026-11-05T13:11:58.695411+00:00",
+      "capture_sha256": "df7c33536625f3b970896a3826c19cb934d7efcc23173fde18c548371b505b44",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "hash_basis": "HTTP response bytes",
+      "note": "Ghost 官方 FAQ 明确区分事务 SMTP 与 newsletter bulk mail API。"
+    }
+  ],
+  "background_not_used": [
+    {
+      "id": "s-business-case",
+      "requested_url": "https://ghost.org/resources/how-to-create-a-newsletter/",
+      "capture_origin": "https://ghost.org/resources/how-to-create-a-newsletter/",
+      "retrieved_at": "2026-11-05T12:48:55.081025+00:00",
+      "capture_sha256": "4d0f192b9d5361a249a161f9f4bcdea8cef2c3b683084ba8577261707b3bf9e2",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "Full creator guide with case examples; not cited because Rediverge detail in the dedicated case section was sufficient and we avoid duplicated evidence.",
+      "final_url": "https://ghost.org/resources/how-to-create-a-newsletter/"
+    },
+    {
+      "id": "s-hosting",
+      "requested_url": "https://docs.ghost.org/hosting/",
+      "capture_origin": "https://docs.ghost.org/hosting",
+      "retrieved_at": "2026-11-05T12:48:57.129200+00:00",
+      "capture_sha256": "3eb96da5940a33fd504b0de01c3511af47e45c411b273a40eb5b62030cfb9f84",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "Docs route returned navigation text without substantive hosting instructions; used the richer pricing matrix and mail configuration docs instead.",
+      "final_url": "https://docs.ghost.org/hosting"
+    },
+    {
+      "id": "s-wordpress-migration",
+      "requested_url": "https://ghost.org/help/importing-from-wordpress/",
+      "capture_origin": "https://docs.ghost.org/migration/wordpress",
+      "retrieved_at": "2026-11-05T12:49:32.754535+00:00",
+      "capture_sha256": "0debc4bf91d362a2d66b1a063d5b4e0e33d5598fcfbb4fe82aa5ce639923b2b5",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "This duplicate request resolved to the same full migration guide cited through the other route; retained as an unadopted capture, not a second source.",
+      "final_url": "https://docs.ghost.org/migration/wordpress"
+    },
+    {
+      "id": "s-mail-config",
+      "requested_url": "https://ghost.org/docs/config/",
+      "capture_origin": "https://docs.ghost.org/config",
+      "retrieved_at": "2026-11-05T12:49:29.793930+00:00",
+      "capture_sha256": "5afb9d6e3849892f0e3e05cee03b6e17b599eb4c3a328da2f6ba5c7261585119",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "hash_basis": "raw_http_response_bytes",
+      "note": "原自托管配置文档仍提供 SMTP/SES 交易邮件设置示例；为避免其示例被宽泛解释成 Newsletter 支持，修订后改用官方 FAQ 直接限定 bulk mail 服务。",
+      "final_url": "https://docs.ghost.org/config"
+    }
+  ],
+  "attempted_without_capture": [],
+  "discovery_views": {
+    "outcome_view": "发布/定时内容，按偏好邮件分发，访问控制，订阅等级，会员管理，反馈与内容表现分析，导入/导出数据。",
+    "example_view": "阅读 Ghost 官方创作者会员案例的完整页面，聚焦 Rediverge 在已有关众基础上配置会员站和早期定价；不将案例结果推广为能力保证。",
+    "extension_view": "核对 Ghost(Pro) 计划、Stripe、Mailgun/Amazon SES 和自托管配置；区分核心出版功能、付费托管选项与外部支付/邮件系统。"
+  },
+  "coverage_method": "按结果、真实完整案例、扩展/部署依赖无分类探索三轮；随后按用户结果归并同类，补查可定向邮件、听取反馈、观察归因、迁移和导出，再按创作/会员/受众/测量/迁移分组。所有已采用网页为实际 HTML 抓取；定位行是提取正文行，不是HTML源代码行。",
+  "parent_evidence_check_at": "2026-11-05T13:27:01.127161+00:00"
+}

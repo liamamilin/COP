@@ -1,0 +1,187 @@
+{
+  "topic": "n8n",
+  "generated_at": "2026-11-05T12:22:37Z",
+  "scope": "取回记录；采纳的具体能力与引文见 possibilities.json。",
+  "hash_note": "capture_sha256 是 capture.py 对首次 HTTP 响应原始字节计算的 SHA-256；正文经 capture.py 提取用于阅读和行号。引用行号为 extracted_html_text（提取正文行，不是 HTML 源码行）。",
+  "retrieved": [
+    {
+      "id": "s-auto-retry",
+      "requested_url": "https://n8n.io/workflows/3144-auto-retry-engine-error-recovery-workflow/",
+      "capture_origin": "https://n8n.io/workflows/3144-auto-retry-engine-error-recovery-workflow/",
+      "retrieved_at": "2026-11-05T12:20:18.302837+00:00",
+      "capture_sha256": "fc07189a97d122b23e5e9bc0e640099752a04f856a06eacb3ea14d4cf864b52e",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-comm-nodes",
+      "requested_url": "https://docs.n8n.io/integrations/community-nodes/installation/",
+      "capture_origin": "https://docs.n8n.io/integrations/community-nodes/installation-and-management",
+      "retrieved_at": "2026-11-05T12:14:50.319321+00:00",
+      "capture_sha256": "e6d5ae4f8327e7b097bde48682a8a31104a1167e9342a9346cbc7770eb2240c4",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data-join",
+      "requested_url": "https://docs.n8n.io/try-it-out/",
+      "capture_origin": "https://docs.n8n.io/build-your-first-workflow",
+      "retrieved_at": "2026-11-05T12:13:51.000932+00:00",
+      "capture_sha256": "bf71119626eda54bcbf879cd441d208550711619f58048efcc528a0470f1e8a9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-data-tables",
+      "requested_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable/",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.datatable",
+      "retrieved_at": "2026-11-05T12:14:35.053393+00:00",
+      "capture_sha256": "80c5ff18250947d1ebe6591556978125b903ded483f4ecb26e52cbcdab39a0c0",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-deploy",
+      "requested_url": "https://docs.n8n.io/hosting/",
+      "capture_origin": "https://docs.n8n.io/deploy/host-n8n",
+      "retrieved_at": "2026-11-05T12:15:34.167008+00:00",
+      "capture_sha256": "d487d7bc96ed8c5b98c265a15278a1fcde8dd979861ed633d39c626025cff9af",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-error-trigger",
+      "requested_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger/",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger",
+      "retrieved_at": "2026-11-05T12:20:46.391904+00:00",
+      "capture_sha256": "af76169d43b0b31c251c1d0f3d9f1494d5a04e2ba2b2326e95388595df751163",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-invoice-example",
+      "requested_url": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+      "capture_origin": "https://n8n.io/workflows/19739-process-validate-and-approve-invoices-with-openai-gpt-4o-and-google-sheets/",
+      "retrieved_at": "2026-11-05T12:14:23.675003+00:00",
+      "capture_sha256": "523a0fe405f4cd3141030106fd174c79b069c89e6de6a080f1806bb22fbfda98",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-lead-case",
+      "requested_url": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+      "capture_origin": "https://n8n.io/workflows/16740-capture-and-route-real-estate-leads-with-google-sheets-gmail-and-slack/",
+      "retrieved_at": "2026-11-05T12:15:08.504428+00:00",
+      "capture_sha256": "8acc56a529149d57902a021d1a441facd836a711987b1a248a9cd15e2dd26561",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-overview",
+      "requested_url": "https://docs.n8n.io/",
+      "capture_origin": "https://docs.n8n.io/",
+      "retrieved_at": "2026-11-05T12:13:09.676453+00:00",
+      "capture_sha256": "fcb444ce9894ba5b8abd60857ea3cf18c0a705d192c2644c2bc9c3929538285f",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-pdf-clean",
+      "requested_url": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+      "capture_origin": "https://n8n.io/workflows/6937-turn-any-pdf-into-a-clean-google-doc-with-mistral-ocr/",
+      "retrieved_at": "2026-11-05T12:19:49.290538+00:00",
+      "capture_sha256": "af11eb474ee8890e6a4f6fd91bc61d93bb388f0b8d7a5a6d7eeb1f356d22c483",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-quickstart",
+      "requested_url": "https://docs.n8n.io/try-it-out/",
+      "capture_origin": "https://docs.n8n.io/build-your-first-workflow",
+      "retrieved_at": "2026-11-05T12:13:25.321605+00:00",
+      "capture_sha256": "bf71119626eda54bcbf879cd441d208550711619f58048efcc528a0470f1e8a9",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-sheet-postgres",
+      "requested_url": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+      "capture_origin": "https://n8n.io/workflows/3079-query-google-sheetscsv-data-through-an-ai-agent-using-postgresql/",
+      "retrieved_at": "2026-11-05T12:20:07.987936+00:00",
+      "capture_sha256": "72d29754a4f8910ca0bf6b72128f572399362bb7f0e431af6360677aa3bfa243",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-support-case",
+      "requested_url": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+      "capture_origin": "https://n8n.io/workflows/19884-triage-support-emails-and-schedule-sla-tasks-with-gmail-gemini-google-calendar-sheets-and-discord/",
+      "retrieved_at": "2026-11-05T12:15:18.563165+00:00",
+      "capture_sha256": "7502d24aa8a73a45b1947168cab0642150819a84b649ba528e0c466a69a60aa7",
+      "content_type": "text/html;charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-webhook",
+      "requested_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/",
+      "capture_origin": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook",
+      "retrieved_at": "2026-11-05T12:14:06.683189+00:00",
+      "capture_sha256": "bac7f1d573cc1378d9bf2bbe2152949c01fe69399be8566945a974f2556c3e76",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": true,
+      "usage": "adopted_as_P_evidence",
+      "hash_basis": "HTTP response bytes"
+    },
+    {
+      "id": "s-workflows",
+      "requested_url": "https://n8n.io/workflows/",
+      "capture_origin": "https://n8n.io/workflows/",
+      "retrieved_at": "2026-11-05T12:13:36.961991+00:00",
+      "capture_sha256": "536bf1188c03592a592c83d59a3537a792e30d42f2b7983c761ce30ae12e3744",
+      "content_type": "text/html; charset=utf-8",
+      "used_for_confirmed_results": false,
+      "usage": "reviewed_not_adopted",
+      "hash_basis": "HTTP response bytes"
+    }
+  ],
+  "attempted_without_capture": [
+    {
+      "requested_url": "https://docs.n8n.io/",
+      "attempted_at": "2026-11-05（UTC 时分秒未作为结构化结果保留；终端记录显示约 12:13 UTC）",
+      "reason": "首次沙盒内 Python urllib DNS 解析失败；同一页面随后经获准公开网页读取成功，缓存 s-overview 是成功响应。失败尝试没有响应内容或哈希。"
+    }
+  ],
+  "not_adopted": [
+    "官方模板目录首页只证明模板库存在，不作为任何具体 P 的证据。",
+    "官方首页导航目录没有具体结果上下文，不作为 P 证据。",
+    "社区节点说明只验证扩展安装与 Cloud 限制；节点机制本身不是用户结果。",
+    "作者自动重试模板声称每小时通过 n8n API 重试失败执行，但要求 URL/用户名/密码字段；未核实当前认证方式与安全配置，不纳入已确认 P。"
+  ],
+  "parent_evidence_check_at": "2026-11-05T13:08:27.712132+00:00"
+}

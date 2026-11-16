@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import type { AtlasMap } from "../src/types";
 
 const catalog = JSON.parse(
-  readFileSync(new URL("../../../catalog/p-atlas-topics.v0.1.json", import.meta.url), "utf8"),
+  readFileSync(new URL("../../../catalog/p-atlas-topics.v0.2.json", import.meta.url), "utf8"),
 ) as { topics: { slug: string; title: string; status: "ready" | "planned" }[] };
 const ready = catalog.topics.filter((t) => t.status === "ready").map((t) => ({
   ...t,
@@ -25,6 +25,7 @@ test("library shows real counts and plans never masquerade as generated content"
   ).toBeVisible();
   await expect(page.locator(".topic-card")).toHaveCount(ready.length);
   await expect(page.locator(".plan-card")).toHaveCount(planned.length);
+  await expect(page.getByText("POSSIBILITY ATLAS / v0.2", { exact: true })).toBeVisible();
   for (const {slug, map} of ready)
     await expect(
       page.locator(".tone-" + slug + " .topic-count strong"),
@@ -36,9 +37,10 @@ test("library shows real counts and plans never masquerade as generated content"
     expect(requests.some((u) => u.includes(`content/${topic.slug}.json`))).toBe(false);
   }
 });
-for (const {slug, map} of ready) {
+for (const {slug, title, map} of ready) {
   test(`${slug}: all P, sources and research report are readable`, async ({page}) => {
     await page.goto("./#/topic/" + slug);
+    await expect(page.getByRole("heading", { level: 1, name: title, exact: true })).toBeVisible();
     await expect(page.locator(".p-card")).toHaveCount(map.possibilities.length);
     await expect(
       page.getByRole("link", { name: "研究报告", exact: true }),
@@ -61,6 +63,15 @@ for (const {slug, map} of ready) {
     await expect(page.locator(".prose")).toContainText(map.coverage_gaps[0]);
   });
 }
+test("second-edition content is searchable and opens at the matching possibility", async ({ page }) => {
+  await page.goto("./");
+  await page.getByLabel("搜索主题与可能性").fill("为假期或忙碌时段提前重新分配到期复习");
+  const result = page.locator(".search-grid .p-card");
+  await expect(result).toHaveCount(1);
+  await result.click();
+  await expect(page).toHaveURL(/#\/topic\/anki\/p\/anki-11/);
+  await expect(page.locator(".detail")).toContainText("降低未来记忆保持率");
+});
 test("deep links survive refresh and unknown IDs fail visibly", async ({
   page,
 }) => {
